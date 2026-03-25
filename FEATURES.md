@@ -128,17 +128,18 @@
 
 # Cut Content
 ## Thaumic Tinkerer
-| Feature                   |               Replacement Mod                |           Replacement Item/Block           | Reason                                                       |
-| :------------------------ | :------------------------------------------: | :----------------------------------------: | :----------------------------------------------------------- |
-| Cleansing Charm           |    Thaumcraft/Thaumic Wonders Unofficial     | Verdant Charm/Initiate's Band of Cleansing | Removed to reduce overlapping features.                      |
-| Cursed Spirit's Blade     |                     N/A                      |                    N/A                     | Removed due to Mob Aspect removal.                           |
-| Enchanting Pillar         |       Thaumic Wonders Unofficial (WIP)       |                                            |                                                              |
-| Helmet of Revealing       |  ThaumicTweaker / Magiculture Integrations   |                    N/A                     | ThaumicTweaker allows you to attach goggles to Thaumium and Void helmets with an updated appearance. Magiculture Integrations introduces the Revealing Infusion that lets you apply the revealing effect to any helmet. |
-| Mob Aspect                |                     N/A                      |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
-| Mob Aspect (Condensed)    |                     N/A                      |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
-| Osmotic Enchanter         |       Thaumic Wonders Unofficial (WIP)       |                                            |                                                              |
-| Spellbinding Cloth        |          Thaumic Wonders Unofficial          |             Disjunction Cloth              | Removed to reduce duplicate features.                        |
-| Tome of Knowledge Sharing | Thaumic Wonders Unofficial/Thaumic Additions |          Tome of Shared Knowledge          | Removed to reduce duplicate features.                        |
+| Feature                   |                Replacement Mod                 |           Replacement Item/Block           | Reason                                                       |
+| :------------------------ | :--------------------------------------------: | :----------------------------------------: | :----------------------------------------------------------- |
+| Cleansing Charm           |    Thaumcraft / Thaumic Wonders Unofficial     | Verdant Charm/Initiate's Band of Cleansing | Removed to reduce overlapping features.                      |
+| Cursed Spirit's Blade     |                      N/A                       |                    N/A                     | Removed due to Mob Aspect removal.                           |
+| Enchanting Pillar         |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
+| Helmet of Revealing       |   ThaumicTweaker / Magiculture Integrations    |                    N/A                     | ThaumicTweaker allows you to attach goggles to Thaumium and Void helmets with an updated appearance. Magiculture Integrations introduces the Revealing Infusion that lets you apply the revealing effect to any helmet. |
+| Mob Aspect                |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
+| Mob Aspect (Condensed)    |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
+| Osmotic Enchanter         |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
+| Spellbinding Cloth        |           Thaumic Wonders Unofficial           |             Disjunction Cloth              | Removed to reduce duplicate features.                        |
+| Tome of Knowledge Sharing | Thaumic Wonders Unofficial / Thaumic Additions |          Tome of Shared Knowledge          | Removed to reduce duplicate features.                        |
+| Wand Focus: Mending       |                   Thaumcraft                   |             Focus Effect: Heal             | Same functionality.                                          |
 
 ## Forbidden Magic
 | Feature                    |      Replacement Mod       |   Replacement Item/Block    | Reason                                                       |
