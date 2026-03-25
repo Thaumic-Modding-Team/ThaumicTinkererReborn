@@ -4,9 +4,8 @@ import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import thaumcraft.api.items.ItemsTC;
-
 import org.jetbrains.annotations.NotNull;
+import thaumcraft.api.items.ItemsTC;
 
 public class CreativeTabsTT extends CreativeTabs {
     public CreativeTabsTT(int length, String name) {
