@@ -1,68 +1,76 @@
 # Content
 ## Thaumic Tinkerer: Reborn
-| Feature                          | Replacement | Description                                                  |
-| :------------------------------- | :---------: | :----------------------------------------------------------- |
-| Alchemy: Aquatic                 |             | Glass Pane -> Prismarine Shard                               |
-| Black Hole Ring                  |             | Stores a near infinite amount of a single item               |
-| Black Quartz Block               |             | Construction block for the Osmotic Enchanter                 |
-| Corporeal Attractor              |             | Pulls nearby entities to the block                           |
-| Dissimulation Block              |             | Can appear like any other full block                         |
-| Dynamism Tablet                  |             | Uses an item on the block in front of it                     |
-| Enchant: Ascent Boost            |             | Increases jump height (doesn't work)                         |
-| Enchant: Desintegrate            |             | Increases harvest speed for blocks made of soft material (sand, dirt, et cetera) |
-| Enchant: Dispersed Strikes       |             | Increases damage against full hp targets, decreases damage against hurt targets |
-| Enchant: Final Strike            |             | Gives the weapon a chance to deal a critical strike          |
-| Enchant: Flaming Touch           |             | Increases harvest speed for blocks made out of wood          |
-| Enchant: Focused Strike          |             | Increases damage of consecutive attacks on the same target   |
-| Enchant: Pounce                  |             | Increases damage while airborne                              |
-| Enchant: Quick Draw              |             | Increases bow draw speed                                     |
-| Enchant: Shatter                 |             | Increases mining speed for blocks with high hardness value   |
-| Enchant: Shockwave               |             | Falling causes a damaging shockwave when impacting the ground (doesn't work) |
-| Enchant: Slow Fall               |             | Causes the player to fall more slowly                        |
-| Enchant: Tunnel                  |             | Increases speed while mining in a straight line              |
-| Enchant: Valiance                |             | Increases weapon damage while the player has less hp than the target |
-| Enchant: Vampirism               |             | Heals the player when dealing damage                         |
-| Energetic Nitor                  |             | Places light sources in the world while carried              |
-| Essentia Funnel                  |             | Transfers essentia from one jar to another. Requires a hopper. |
-| Feline Amulet                    |             | Prevents nearby creepers from exploding and causes them to run away |
-| Focus Effect: Celestial Teleport |             | Instantly teleport to a linked Celestial Gateway             |
-| Focus Effect: Dislocation        |             | Reposition a block from one location to another              |
-| Focus Effect: Efreet's Flame     |             | Smelt blocks and item entities in the world                  |
-| Focus Effect: Ender Rift         |             | Opens a player's ender chest                                 |
-| Focus Effect: Telekinesis        |             | Causes items to float towards the point of spell impact      |
-| Gas Remover                      |             | Removes gas from an area around the player                   |
-| Imbued Grain                     |             | 5 Essentia in the Primal varieties                           |
-| Infused Seeds                    |             | Used to grow primal essentia plants                          |
-| Kinetic Attractor                |             | Pulls nearby item entities to the block                      |
-| Light Gas Phial                  |             | Places gas into the world that creates light                 |
-| Shadow Gas Phial                 |             | Places gas into the world that creates darkness              |
-| Smokey Quartz                    |             | Crafting ingredient for Osmotic Enchanter multiblock         |
-| Soul Mould                       |             | Used to filter animals attracted by the Corporeal Attractor  |
-| Tablet of Necromancy             |             | Uses Mob Aspects and a recipe registry to summon mobs        |
-| Thaumic Restorer                 |             | Uses essentia to repair items                                |
-| Transvector Binder               |             | Tool used to bind blocks to the Transvector Interface        |
-| Transvector Dislocator           |             | Swaps position of blocks                                     |
-| Transvector Interface            |             | Phantomface block                                            |
-| Worldshaper's Looking Glass      |             | Places blocks into the world in patters. Can pull from the Black Hole Talisman |
-| XP Talisman                      |             | Collects nearby experience orbs which can be placed into empty bottles |
-| Elemental Fire: Aer              |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms certain blocks to other blocks (dirt and wood to sand for example). Does not harm players and creatures. |
-| Elemental Fire: Aqua             |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms Nether blocks to other blocks (netherrack to snow for example). Does not harm players and creatures. |
-| Elemental Fire: Ignis            |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms certain blocks to their Nether counterparts blocks (dirt to netherrack for example). Does not harm players and creatures. |
-| Elemental Fire: Ordo             |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms ore blocks to full metal blocks (iron ore to blocks of iron for example). Does not harm players and creatures. |
-| Elemental Fire: Perditio         |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and turns all other types of elemental fire to normal fire. Does not harm players and creatures. |
-| Elemental Fire: Terra            |             | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms most blocks into dirt. Does not harm players and creatures. |
-| Ethereal Platform                |             | Solid on the top, sneaking lets you sink down, right-clicking any block on it will change its texture to it. Meant to be a companion block for the Arcane Levitator. |
-| Levitational Locomotive          |             | Acts as a transport system when two of them are placed on a straight line between each other. It's able to move entities (and item entities) around. |
-| Osmotic Enchanter                |             | The functionality is slightly different. In even older versions it's completely different. Enchants also are learned separately. |
-| Potion of Aer                    |             | Drinking it gives you an effect that knocks the target upwards several times when hitting them |
-| Potion of Aqua                   |             | Drinking it gives you an effect that cools down lava around you |
-| Potion of Ignis                  |             | Drinking it gives you an effect that sets the target on fire when hitting them, unlike normal fire, the damage overtime is faster and there are extra particles |
-| Potion of Terra                  |             | Drinking it gives you an effect that places a barrier between you and the target when hitting them |
-| Wand Focus: Distortion           |             | Right-clicking and holding will cause most projectiles to dispel and disappear |
-| Wand Focus: Experience Drain     |             | Let's you exchange experience for vis                        |
-| Wand Focus: Shadowbeam           |             | Fires a beam of energy that can reflect the walls several times (see Shadowbeam Staff from Terraria). Seems to also be buggy. |
-| Wand Focus: Telekinesis          |             | Unlike 1.12.2, the wand focus is continuous and far more effective, you can even drag the items on the air |
-| Wand Focus: Uprising             |             | Pushes you forward whenever you right-click with it          |
+| Feature                          |     Replacement      | Description                                                  |
+| :------------------------------- | :------------------: | :----------------------------------------------------------- |
+| Alchemy: Aquatic                 |                      | Glass Pane -> Prismarine Shard                               |
+| Black Hole Ring                  |                      | Stores a near infinite amount of a single item               |
+| Black Quartz Block               |                      | Construction block for the Osmotic Enchanter                 |
+| Corporeal Attractor              |                      | Pulls nearby entities to the block                           |
+| Dissimulation Block              |                      | Can appear like any other full block                         |
+| Dynamism Tablet                  |                      | Uses an item on the block in front of it                     |
+| Enchant: Ascent Boost            |                      | Increases jump height (doesn't work)                         |
+| Enchant: Desintegrate            |                      | Increases harvest speed for blocks made of soft material (sand, dirt, et cetera) |
+| Enchant: Dispersed Strikes       |                      | Increases damage against full hp targets, decreases damage against hurt targets |
+| Enchant: Final Strike            |                      | Gives the weapon a chance to deal a critical strike          |
+| Enchant: Flaming Touch           |                      | Increases harvest speed for blocks made out of wood          |
+| Enchant: Focused Strike          |                      | Increases damage of consecutive attacks on the same target   |
+| Enchant: Pounce                  |                      | Increases damage while airborne                              |
+| Enchant: Quick Draw              |                      | Increases bow draw speed                                     |
+| Enchant: Shatter                 |                      | Increases mining speed for blocks with high hardness value   |
+| Enchant: Shockwave               |                      | Falling causes a damaging shockwave when impacting the ground (doesn't work) |
+| Enchant: Slow Fall               |                      | Causes the player to fall more slowly                        |
+| Enchant: Tunnel                  |                      | Increases speed while mining in a straight line              |
+| Enchant: Valiance                |                      | Increases weapon damage while the player has less hp than the target |
+| Enchant: Vampirism               |                      | Heals the player when dealing damage                         |
+| Ender Mirror                     |                      | An item version of the Ender Rift focus.                     |
+| Energetic Nitor                  |                      | Places light sources in the world while carried              |
+| Essentia Funnel                  |                      | Transfers essentia from one jar to another. Requires a hopper. |
+| Feline Amulet                    |                      | Prevents nearby creepers from exploding and causes them to run away |
+| Focus Effect: Celestial Teleport |                      | Instantly teleport to a linked Celestial Gateway             |
+| Focus Effect: Dislocation        |                      | Reposition a block from one location to another              |
+| Focus Effect: Efreet's Flame     |                      | Smelt blocks and item entities in the world                  |
+| Focus Effect: Ender Rift         |                      | Opens a player's ender chest                                 |
+| Focus Effect: Telekinesis        |                      | Causes items to float towards the point of spell impact      |
+| Gas Remover                      |                      | Removes gas from an area around the player                   |
+| Imbued Grain                     |                      | 5 Essentia in the Primal varieties                           |
+| Infused Seeds                    |                      | Used to grow primal essentia plants                          |
+| Kinetic Attractor                |                      | Pulls nearby item entities to the block                      |
+| Light Gas Phial                  |                      | Places gas into the world that creates light                 |
+| Shadow Gas Phial                 |                      | Places gas into the world that creates darkness              |
+| Smokey Quartz                    |                      | Crafting ingredient for Osmotic Enchanter multiblock         |
+| Soul Mould                       |                      | Used to filter animals attracted by the Corporeal Attractor  |
+| Tablet of Necromancy             |                      | Uses Mob Aspects and a recipe registry to summon mobs        |
+| Thaumic Restorer                 |                      | Uses essentia to repair items                                |
+| Transvector Binder               |                      | Tool used to bind blocks to the Transvector Interface        |
+| Transvector Dislocator           |                      | Swaps position of blocks                                     |
+| Transvector Interface            |                      | Phantomface block                                            |
+| Worldshaper's Looking Glass      |                      | Places blocks into the world in patters. Can pull from the Black Hole Talisman |
+| XP Talisman                      |                      | Collects nearby experience orbs which can be placed into empty bottles |
+| Elemental Fire: Aer              |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms certain blocks to other blocks (dirt and wood to sand for example). Does not harm players and creatures. |
+| Elemental Fire: Aqua             |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms Nether blocks to other blocks (netherrack to snow for example). Does not harm players and creatures. |
+| Elemental Fire: Ignis            |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms certain blocks to their Nether counterparts blocks (dirt to netherrack for example). Does not harm players and creatures. |
+| Elemental Fire: Ordo             |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms ore blocks to full metal blocks (iron ore to blocks of iron for example). Does not harm players and creatures. |
+| Elemental Fire: Perditio         |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and turns all other types of elemental fire to normal fire. Does not harm players and creatures. |
+| Elemental Fire: Terra            |                      | Infamous as a griefing tool, places a special elemental fire that spreads out quickly and transforms most blocks into dirt. Does not harm players and creatures. |
+| Ethereal Platform                |                      | Solid on the top, sneaking lets you sink down, right-clicking any block on it will change its texture to it. Meant to be a companion block for the Arcane Levitator. |
+| Levitational Locomotive          |                      | Acts as a transport system when two of them are placed on a straight line between each other. It's able to move entities (and item entities) around. |
+| Osmotic Enchanter                |                      | The functionality is slightly different. In even older versions it's completely different. Enchants also are learned separately. |
+| Potion of Aer                    |                      | Drinking it gives you an effect that knocks the target upwards several times when hitting them |
+| Potion of Aqua                   |                      | Drinking it gives you an effect that cools down lava around you |
+| Potion of Ignis                  |                      | Drinking it gives you an effect that sets the target on fire when hitting them, unlike normal fire, the damage overtime is faster and there are extra particles |
+| Potion of Terra                  |                      | Drinking it gives you an effect that places a barrier between you and the target when hitting them |
+| Wand Focus: Distortion           |                      | Right-clicking and holding will cause most projectiles to dispel and disappear |
+| Wand Focus: Experience Drain     |                      | Let's you exchange experience for vis                        |
+| Wand Focus: Shadowbeam           |                      | Fires a beam of energy that can reflect the walls several times (see Shadowbeam Staff from Terraria). Seems to also be buggy. |
+| Wand Focus: Telekinesis          |                      | Unlike 1.12.2, the wand focus is continuous and far more effective, you can even drag the items on the air |
+| Wand Focus: Uprising             |                      | Pushes you forward whenever you right-click with it          |
+| Aphrodisiac Concoction           |                      | A splash potion that can be thrown at animals to put them in love mode. |
+| Goliath's Leggings               |                      | Upgraded Thaumaturge's Leggings that reduces all incoming damage by 1. When the wearer has a killing blow while they have more than 2.5 hearts, they will get healed to half a heart. Will be turned into an infusion enchantment instead. |
+| Reaper's Scythe                  |                      | Slay mobs with it to obtain soul hearts (upwards to 20 soul hearts), these soul hearts act like Absorption. It can also cut groups of tall grass and quickly cut leaves. |
+| Sigil of Memories                |                      | Right-click to make a warp point. Hold right-click for a bit to teleport back to that warp point, but will shatter it in the process. |
+| Stopwatch of the Timetwister     |                      | Binds your position, health, and hunger on the current location. After a minute passes, you will teleport back alongside the state you were at the time when you used it. |
+| Sword of the Condor              |                      | An upgraded Sword of Zephyr that pushes you forward even at the air. Sneak and right-clicking will push you backward instead. Based on the Sword of Zephyr from TC2. |
+| Warded Chest                     | Thaumic Augmentation | Similar to Augmentation's Warded Chest but the model and animation of it is interesting. |
 
 
 ## Thaumic Tinkerer: Kami
@@ -97,7 +105,7 @@
 | Nether Shard                           |             | Crafting ingredient for Ichor. Not sure how they are obtained.                                            |
 | Proto Clay                             |             | Swaps to the correct tool for breaking the targeted block                                                 |
 
-## ReForbidden Magic
+## Forbidden Magic
 | Feature                        |    Replacement    | Description                                                  |
 | :----------------------------- | :---------------: | :----------------------------------------------------------- |
 | Arcane Cake                    | Thaumic Additions | Cake block that regenerates over time                        |
@@ -107,6 +115,7 @@
 | Hexcoal                        |                   | Coal item made from smelting Tainted Logs. Has random burntime between 1 and 2400. |
 | Infusion Enchant: Consuming    |                   | Voids trash blocks such as dirt, netherrack, gravel and cobblestone |
 | Infusion Enchant: Educational  |                   | Increases experience dropped when slaying enemies            |
+| Infusion Enchant: Eternal      |                   | Makes the tool completely unbreakable.                       |
 | Infusion Enchant: Void Touched |                   | Gives any tool void repair                                   |
 | Infusion Enchant: Wrath        |                   | Increases weapon damage, stacks with Sharpness               |
 | Nether Star Block              |                   | Nether Star storage block                                    |
@@ -128,18 +137,32 @@
 
 # Cut Content
 ## Thaumic Tinkerer
-| Feature                   |                Replacement Mod                 |           Replacement Item/Block           | Reason                                                       |
-| :------------------------ | :--------------------------------------------: | :----------------------------------------: | :----------------------------------------------------------- |
-| Cleansing Charm           |    Thaumcraft / Thaumic Wonders Unofficial     | Verdant Charm/Initiate's Band of Cleansing | Removed to reduce overlapping features.                      |
-| Cursed Spirit's Blade     |                      N/A                       |                    N/A                     | Removed due to Mob Aspect removal.                           |
-| Enchanting Pillar         |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
-| Helmet of Revealing       |   ThaumicTweaker / Magiculture Integrations    |                    N/A                     | ThaumicTweaker allows you to attach goggles to Thaumium and Void helmets with an updated appearance. Magiculture Integrations introduces the Revealing Infusion that lets you apply the revealing effect to any helmet. |
-| Mob Aspect                |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
-| Mob Aspect (Condensed)    |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
-| Osmotic Enchanter         |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
-| Spellbinding Cloth        |           Thaumic Wonders Unofficial           |             Disjunction Cloth              | Removed to reduce duplicate features.                        |
-| Tome of Knowledge Sharing | Thaumic Wonders Unofficial / Thaumic Additions |          Tome of Shared Knowledge          | Removed to reduce duplicate features.                        |
-| Wand Focus: Mending       |                   Thaumcraft                   |             Focus Effect: Heal             | Same functionality.                                          |
+| Feature                                     |                Replacement Mod                 |           Replacement Item/Block           | Reason                                                       |
+| :------------------------------------------ | :--------------------------------------------: | :----------------------------------------: | :----------------------------------------------------------- |
+| Arcane Transmutator                         |                      N/A                       |                    N/A                     | Extremely overpowered and was originally disabled by default. |
+| Bottle of Rain Water                        |                      N/A                       |                    N/A                     | Wasn't very useful.                                          |
+| Cleansing Charm                             |    Thaumcraft / Thaumic Wonders Unofficial     | Verdant Charm/Initiate's Band of Cleansing | Removed to reduce overlapping features.                      |
+| Cryogenic Globe                             |                   Minecraft                    |                  Name Tag                  | Name Tags already cause mobs to never despawn.               |
+| Crystals of Climate (Sunlight and Rainfall) |           Thaumic Wonders Unofficial           |                  Meteorb                   | Meteorb already has the ability to change the weather.       |
+| Cursed Spirit's Blade                       |                      N/A                       |                    N/A                     | Removed due to Mob Aspect removal.                           |
+| Enchanting Pillar                           |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
+| Enchant: Ashes                              |                      N/A                       |                    N/A                     | Overlaps with similar enchantments in other mods.            |
+| Enchant: Freezing                           |                      N/A                       |                    N/A                     | Rather overpowered.                                          |
+| Enchant: Soulbringer                        |                      N/A                       |                    N/A                     | Compatibility concerns.                                      |
+| Fortune Maul                                |                   Thaumcraft                   |               Primal Crusher               |                                                              |
+| Fluxometer                                  |                   Thaumcraft                   |                Thaumometer                 | Functionality already exists on the Thaumometer.             |
+| Golem Name Tag                              |                   Minecraft                    |                  Name Tag                  | Name Tags already can rename any mob.                        |
+| Helmet of Revealing                         |   ThaumicTweaker / Magiculture Integrations    |                    N/A                     | ThaumicTweaker allows you to attach goggles to Thaumium and Void helmets with an updated appearance. Magiculture Integrations introduces the Revealing Infusion that lets you apply the revealing effect to any helmet. |
+| Infernal Bracelet                           |            Thaumic Tinkerer: Reborn            |        Focus Effect: Efreet's Flame        | Focus effect is easier to work with.                         |
+| Mob Aspect                                  |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
+| Mob Aspect (Condensed)                      |                      N/A                       |                    N/A                     | Removed to reduce bloat. Tablet of Necromancy now uses a recipe structure. |
+| Osmotic Enchanter                           |        Thaumic Wonders Unofficial (WIP)        |                                            |                                                              |
+| Phantom Stone                               |                      N/A                       |                    N/A                     | Wasn't very useful. Might be turned into decorative blocks?  |
+| Silk Cutter                                 |              Thaumic Augmentation              |               Primal Cutter                |                                                              |
+| Spellbinding Cloth                          |           Thaumic Wonders Unofficial           |             Disjunction Cloth              | Removed to reduce duplicate features.                        |
+| Thanatos Rune                               |                Planar Artifice                 |              Mirrored Amulet               | Mirrored Amulet already safely transfers your items for you. |
+| Tome of Knowledge Sharing                   | Thaumic Wonders Unofficial / Thaumic Additions |          Tome of Shared Knowledge          | Removed to reduce duplicate features.                        |
+| Wand Focus: Mending                         |                   Thaumcraft                   |             Focus Effect: Heal             | Same functionality.                                          |
 
 ## Forbidden Magic
 | Feature                    |      Replacement Mod       |   Replacement Item/Block    | Reason                                                       |
@@ -164,10 +187,13 @@
 | Empowered Luxuria Crystal  |            N/A             |             N/A             | Removed to reduce bloat.                                     |
 | Empowered Superbia Crystal |            N/A             |             N/A             | Removed to reduce bloat.                                     |
 | Enchant: Wrath             |            N/A             |             N/A             | The sharpness enchant can be applied to axes directly.       |
+| Enchant: Porcivore         |            N/A             |             N/A             | Wasn't very useful.                                          |
 | Imprinting Crystal         |            N/A             |             N/A             | Removed due to Wrath Cage removal.                           |
 | Infusion Enchant: Greedy   |            N/A             |             N/A             | Removed due to Emerald Fragment removal.                     |
 | Pickaxe of Distortion      |  New Crimson Revelations   |    Pickaxe of Distortion    | Improved implementation.                                     |
+| Primordial Scribing Tools  |  New Crimson Revelations   |  Primordial Scribing Tools  | Improved implementation.                                     |
 | Ring of Nutrition          |  New Crimson Revelations   |      Ring of Nutrition      | Improved implementation.                                     |
+| Scribing Tools of Thoth    |  New Crimson Revelations   |  Primordial Scribing Tools  | Improved implementation.                                     |
 | Shovel of the Purifier     |  New Crimson Revelations   |   Shovel of the Purifier    | Improved implementation.                                     |
 | Spell Effect: Blink        | Thaumic Wonders Unofficial |     Spell Effect: Blink     | Improved implementation.                                     |
 | Taint Blood Shard          |            N/A             |             N/A             | Removed to reduce bloat.                                     |
