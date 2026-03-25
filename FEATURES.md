@@ -107,6 +107,8 @@
 | Umbral Rosebush                |                   | Grows Umbral Roses around it when placed in world                                         |
 | Vitenfruit                     |                   | Apple drop from Tainted trees, causes taint effects and warp                              |
 
+---
+
 # Cut Content
 ## Thaumic Tinkerer
 | Feature                   |               Replacement Mod                |           Replacement Item/Block           | Reason                                                                     |
