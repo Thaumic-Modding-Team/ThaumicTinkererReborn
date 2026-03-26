@@ -1,7 +1,7 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
-| :--------------------------: | :------: | :------: | :------: | :------: | :----: |
+|:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
 |    Attractor (Corporeal)     |          |          |          |          |        |
 |     Attractor (Kinetic)      |          |          |          |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
@@ -32,33 +32,33 @@
 |         XP Talisman          |          |   N/A    |          |          |        |
 
 ## Thaumic Tinkerer: Kami Reborn
-|                Feature                 | Item | Block | Texture | Research | Recipe |
-|:--------------------------------------:|:----:|:-----:|:-------:|:--------:|:------:|
-| (Armor) Boots of the Horizontal Shield |      |  N/A  |         |          |        |
-|   (Armor) Cowl of the Abyssal Depths   |      |  N/A  |         |          |        |
-|        (Armor) Ichorcloth Boots        |      |  N/A  |         |          |        |
-|        (Armor) Ichorcloth Cowl         |      |  N/A  |         |          |        |
-|      (Armor) Ichorcloth Leggings       |      |  N/A  |         |          |        |
-|        (Armor) Ichorcloth Pouch        |      |  N/A  |         |          |        |
-|        (Armor) Ichorcloth Robe         |      |  N/A  |         |          |        |
-| (Armor) Leggings of the Burning Mantle |      |  N/A  |         |          |        |
-|   (Armor) Robes of the Stratosphere    |      |  N/A  |         |          |        |
-|      (Tool) Awakened Ichorium Axe      |      |  N/A  |         |          |        |
-|    (Tool) Awakened Ichorium Pickaxe    |      |  N/A  |         |          |        |
-|    (Tool) Awakened Ichorium Shovel     |      |  N/A  |         |          |        |
-|     (Tool) Awakened Ichorium Sword     |      |  N/A  |         |          |        |
-|          (Tool) Ichorium Axe           |      |  N/A  |         |          |        |
-|        (Tool) Ichorium Pickaxe         |      |  N/A  |         |          |        |
-|         (Tool) Ichorium Shovel         |      |  N/A  |         |          |        |
-|         (Tool) Ichorium Sword          |      |  N/A  |         |          |        |
-|                 Ichor                  |      |  N/A  |         |          |        |
-|              Ichor Block               |      |       |         |          |        |
-|              Ichor Cloth               |      |  N/A  |         |          |        |
-|             Ichorium Ingot             |      |  N/A  |         |          |        |
-|            Ichorium Nugget             |      |  N/A  |         |          |        |
-|       Infusion Enchant: Eternal        |      |  N/A  |         |          |        |
-|               Proto Clay               |      |       |         |          |        |
-|       Sword of the Dragonslayer        |      |  N/A  |         |          |        |
+|                      Feature                      | Item | Block | Texture | Research | Recipe |
+|:-------------------------------------------------:|:----:|:-----:|:-------:|:--------:|:------:|
+| (Armor - Awakened) Boots of the Horizontal Shield |      |  N/A  |         |          |        |
+|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |  N/A  |         |          |        |
+| (Armor - Awakened) Leggings of the Burning Mantle |      |  N/A  |         |          |        |
+|   (Armor - Awakened) Robes of the Stratosphere    |      |  N/A  |         |          |        |
+|             (Armor) Ichorcloth Boots              |      |  N/A  |         |          |        |
+|              (Armor) Ichorcloth Cowl              |      |  N/A  |         |          |        |
+|            (Armor) Ichorcloth Leggings            |      |  N/A  |         |          |        |
+|             (Armor) Ichorcloth Pouch              |      |  N/A  |         |          |        |
+|              (Armor) Ichorcloth Robe              |      |  N/A  |         |          |        |
+|           (Tool) Awakened Ichorium Axe            |      |  N/A  |         |          |        |
+|         (Tool) Awakened Ichorium Pickaxe          |      |  N/A  |         |          |        |
+|          (Tool) Awakened Ichorium Shovel          |      |  N/A  |         |          |        |
+|          (Tool) Awakened Ichorium Sword           |      |  N/A  |         |          |        |
+|                (Tool) Ichorium Axe                |      |  N/A  |         |          |        |
+|              (Tool) Ichorium Pickaxe              |      |  N/A  |         |          |        |
+|              (Tool) Ichorium Shovel               |      |  N/A  |         |          |        |
+|               (Tool) Ichorium Sword               |      |  N/A  |         |          |        |
+|                       Ichor                       |      |  N/A  |         |          |        |
+|                    Ichor Block                    |      |       |         |          |        |
+|                    Ichor Cloth                    |      |  N/A  |         |          |        |
+|                  Ichorium Ingot                   |      |  N/A  |         |          |        |
+|                  Ichorium Nugget                  |      |  N/A  |         |          |        |
+|             Infusion Enchant: Eternal             |      |  N/A  |         |          |        |
+|                    Proto Clay                     |      |       |         |          |        |
+|             Sword of the Dragonslayer             |      |  N/A  |         |          |        |
 
 ---
 
