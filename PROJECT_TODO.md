@@ -1,14 +1,14 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
-|:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+| :--------------------------: | :------: | :------: | :------: | :------: | :----: |
 |    Attractor (Corporeal)     |          |          |          |          |        |
 |     Attractor (Kinetic)      |          |          |          |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
 |       Black Hole Ring        |          |   N/A    |          |          |        |
 |     Dissimulation Block      |          |          |          |          |        |
 |       Dynamism Tablet        |          |          |          |          |        |
-|         Ender Mirror         | COMPLETE |   N/A    |          |          |        |
+|         Ender Mirror         | COMPLETE |   N/A    | COMPLETE |          |        |
 |       Energetic Nitor        | COMPLETE |          | COMPLETE |          |        |
 |       Essentia Funnel        |          |          |          |          |        |
 |      Ethereal Platform       |          |          |          |          |        |
@@ -17,14 +17,14 @@
 |      Gas Phial (Shadow)      |          |          |          |          |        |
 |         Gas Remover          |          |   N/A    |          |          |        |
 |        Infused Seeds         |          |          |          |          |        |
-|   Ring of Goliath's Might    | COMPLETE |   N/A    |          |          |        |
+|   Ring of Goliath's Might    | COMPLETE |   N/A    | COMPLETE |          |        |
 |      Sigil of Memories       |          |   N/A    |          |          |        |
 | Stopwatch of the Timetwister |          |   N/A    |          |          |        |
 |     Tablet of Necromancy     |          |          |          |          |        |
 |       Thaumic Restorer       |          |          |          |          |        |
 |      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
-|    Transvector Interface     | COMPLETE | COMPLETE |          |          |        |
+|    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |          Umbral Dye          |          |   N/A    |          |          |        |
 |         Umbral Rose          |          |          |          |          |        |
 |       Umbral Rosebush        |          |          |          |          |        |
