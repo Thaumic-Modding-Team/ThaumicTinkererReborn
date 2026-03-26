@@ -5,11 +5,10 @@
     "textures": {
       "particle": "thaumictinkerer:items/energetic_nitor",
       "all": "thaumictinkerer:items/energetic_nitor"
-    },
-    "transform": "forge:default-block"
+    }
   },
   "variants": {
-    "inventory": [{}],
+    "inventory": [{"model": "thaumictinkerer:item/energetic_nitor"}],
     "normal": [{}]
   }
 }
