@@ -57,7 +57,7 @@
 |                  Ichorium Ingot                   |      |  N/A  |         |          |        |
 |                  Ichorium Nugget                  |      |  N/A  |         |          |        |
 |             Infusion Enchant: Eternal             |      |  N/A  |         |          |        |
-|                    Proto Clay                     |      |       |         |          |        |
+|                    Proto Clay                     |      |  N/A  |         |          |        |
 |             Sword of the Dragonslayer             |      |  N/A  |         |          |        |
 
 ---
@@ -109,10 +109,10 @@
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
 | Hexcoal                        |                   | Coal item made from smelting Tainted Logs. Has random burntime between 1 and 2400.        |
-| Infusion Enchant: Consuming    |                   |                                                                                           |
-| Infusion Enchant: Educational  |                   |                                                                                           |
-| Infusion Enchant: Void Touched |                   |                                                                                           |
-| Infusion Enchant: Wrath        |                   |                                                                                           |
+| Infusion Enchant: Consuming    |                   | Voids trash blocks such as cobblestone, stone, netherrack, or dirt.                       |
+| Infusion Enchant: Educational  |                   | Increases experience dropped.                                                             |
+| Infusion Enchant: Void Touched |                   | Gives tools voidmetal auto repair.                                                        |
+| Infusion Enchant: Wrath        |                   | Bonus damage to weapon. Stacks with Sharpness.                                            |
 | Nether Star Block              |                   | Nether Star storage block                                                                 |
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
 | Riding Crop                    |                   | Adds speed effect to mobs struck by the crop. Increases mounted movement speed when used. |
@@ -123,3 +123,23 @@
 | Tainted Sapling                |                   | Grows tainted trees                                                                       |
 | Tainted Stone                  |                   | Decorative block                                                                          |
 | Vitenfruit                     |                   | Apple drop from Tainted trees, causes taint effects and warp                              |
+
+## Planar Artifice
+| Feature                         | Replacement | Description                                      |
+|:--------------------------------|:-----------:|:-------------------------------------------------|
+| Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                  |
+| Infusion Enchant: Curious       |             | Grants a low chance to drop curiositiies.        |
+| Infusion Enchant: Projecting    |             | Increases reach distance.                        |
+| Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items. |
+
+## Thaumic Restoration
+| Feature                      | Replacement | Description                                                       |
+|:-----------------------------|:-----------:|:------------------------------------------------------------------|
+| Aqua Infused Water Bucket    |             | Infinite water bucket.                                            |
+| Flux Scrubber                |             | Removes flux from the environment using Salis Mundus.             |
+| Greatwood Block              |             | Decorative greatwood block.                                       |
+| Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
+| Terra Infused Obsidian       |             | Wither-proof obsidian.                                            |
+| Thaumium Framed Greatwood    |             | Blast-resistant decorative greatwood block.                       |
+| Thaumium Plated Stone        |             | Blast-resistant decorative stone block.                           |
+

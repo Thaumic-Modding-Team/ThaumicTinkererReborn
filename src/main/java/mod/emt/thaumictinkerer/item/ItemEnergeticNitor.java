@@ -67,8 +67,7 @@ public class ItemEnergeticNitor extends AbstractItemAddition {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void addInformation(ItemStack stack, @Nullable World worldIn, List<String> tooltip, ITooltipFlag flagIn) {
-        super.addInformation(stack, worldIn, tooltip, flagIn);
+    public void addInformation(@NotNull ItemStack stack, @Nullable World worldIn, List<String> tooltip, @NotNull ITooltipFlag flagIn) {
         tooltip.add(I18n.format("tooltip.thaumictinkerer:" + (this.isEnabled(stack) ? "enabled" : "disabled")));
     }
 

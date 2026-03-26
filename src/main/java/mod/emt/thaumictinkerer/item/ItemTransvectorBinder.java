@@ -53,30 +53,38 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
         TileEntity tile = world.getTileEntity(pos);
         if(tile != null) {
             if (player.isSneaking()) {
-                this.setLinkedPos(stack, pos);
-                this.setLinkedFacing(stack, side);
-                player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_stored"), true);
+                this.linkToBlock(player, stack, pos, side);
             } else if (tile instanceof TileTransvectorInterface && this.isLinked(stack)) {
-                BlockPos linkPos = this.getLinkedPos(stack);
-                if (!pos.equals(linkPos)) {
-                    if (this.isInRange(pos, linkPos)) {
-                        if (this.isFaceLinkingMode(stack)) {
-                            EnumFacing linkFace = this.getLinkedFacing(stack);
-                            ((TileTransvectorInterface) tile).linkToFace(side, linkPos, linkFace);
-                        } else {
-                            ((TileTransvectorInterface) tile).linkToPosition(linkPos);
-                        }
-                        player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_successful"), true);
-                    } else {
-                        player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.out_of_range"), true);
-                    }
-                } else {
-                    player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.self_link"), true);
-                }
+                this.linkToInterface(player, stack, (TileTransvectorInterface) tile, pos, side);
             }
             return EnumActionResult.SUCCESS;
         }
         return super.onItemUseFirst(player, world, pos, side, hitX, hitY, hitZ, hand);
+    }
+
+    public void linkToBlock(EntityPlayer player, ItemStack stack, BlockPos pos, EnumFacing facing) {
+        this.setLinkedPos(stack, pos);
+        this.setLinkedFacing(stack, facing);
+        player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_stored"), true);
+    }
+
+    public void linkToInterface(EntityPlayer player, ItemStack stack, TileTransvectorInterface tile, BlockPos pos, EnumFacing side) {
+        BlockPos linkPos = this.getLinkedPos(stack);
+        if (!pos.equals(linkPos)) {
+            if (this.isInRange(pos, linkPos)) {
+                if (this.isFaceLinkingMode(stack)) {
+                    EnumFacing linkFace = this.getLinkedFacing(stack);
+                    tile.linkToFace(side, linkPos, linkFace);
+                } else {
+                    tile.linkToPosition(linkPos);
+                }
+                player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_successful"), true);
+            } else {
+                player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.out_of_range"), true);
+            }
+        } else {
+            player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.self_link"), true);
+        }
     }
 
     @SideOnly(Side.CLIENT)
