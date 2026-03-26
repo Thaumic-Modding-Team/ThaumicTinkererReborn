@@ -11,6 +11,7 @@ public class ModBlocksTT {
 
     public static void initBlocks() {
         //Block initialization goes here. Be sure to register them with RegistrarTT#addAdditionToRegister()
+        //TODO: Organize order
         RegistrarTT.addAdditionToRegister(new BlockEnergeticNitor());
     }
 }

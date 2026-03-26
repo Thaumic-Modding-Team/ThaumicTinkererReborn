@@ -5,6 +5,7 @@ itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
 # Blocks
 
 # Items
+item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
 
 # Tooltip
