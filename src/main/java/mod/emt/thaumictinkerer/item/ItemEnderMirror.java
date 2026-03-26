@@ -1,7 +1,6 @@
 package mod.emt.thaumictinkerer.item;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
-import net.minecraft.block.BlockEnderChest;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.InventoryEnderChest;
@@ -10,7 +9,6 @@ import net.minecraft.stats.StatList;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.SoundEvent;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
 

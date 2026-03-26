@@ -1,18 +1,14 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
-import mod.emt.thaumictinkerer.api.block.AbstractBlockAddition;
 import mod.emt.thaumictinkerer.api.block.IBlockAddition;
 import mod.emt.thaumictinkerer.tile.TileEnergeticNitor;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockContainer;
-import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
-import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumParticleTypes;

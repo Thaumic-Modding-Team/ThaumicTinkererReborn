@@ -17,7 +17,7 @@
 |      Gas Phial (Shadow)      |          |       |          |          |        |
 |         Gas Remover          |          |  N/A  |          |          |        |
 |        Infused Seeds         |          |       |          |          |        |
-|   Ring of Goliath's Might    |          |  N/A  |          |          |        |
+|   Ring of Goliath's Might    | COMPLETE |  N/A  |          |          |        |
 |      Sigil of Memories       |          |  N/A  |          |          |        |
 | Stopwatch of the Timetwister |          |  N/A  |          |          |        |
 |     Tablet of Necromancy     |          |       |          |          |        |

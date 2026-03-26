@@ -1,12 +1,14 @@
 itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
 
 # Chat
+chat.thaumictinkerer:golaith_ring.shattered=Your Goliath Ring shatters as it protects you from a fatal blow.
 
 # Blocks
 
 # Items
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
+item.thaumictinkerer:goliath_ring.name=Goliath Ring
 
 # Tooltip
 tooltip.thaumictinkerer:enabled=Enabled
