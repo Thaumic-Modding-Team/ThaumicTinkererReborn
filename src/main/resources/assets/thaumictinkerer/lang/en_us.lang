@@ -1,1 +1,14 @@
 itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
+
+# Chat
+
+# Blocks
+
+# Items
+item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
+
+# Tooltip
+tooltip.thaumictinkerer:enabled=Enabled
+tooltip.thaumictinkerer:disabled=Disabled
+
+# Research
