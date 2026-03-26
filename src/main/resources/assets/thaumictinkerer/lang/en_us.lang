@@ -2,16 +2,26 @@ itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
 
 # Chat
 chat.thaumictinkerer:golaith_ring.shattered=Your Goliath Ring shatters as it protects you from a fatal blow.
+chat.thaumictinkerer:transvector_binder.link_stored=Link Stored.
+chat.thaumictinkerer:transvector_binder.link_successful=Link Successful!
+chat.thaumictinkerer:transvector_binder.out_of_range=Link out of range.
+chat.thaumictinkerer:transvector_binder.self_link=Block cannot be linked to itself.
 
 # Blocks
+tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 
 # Items
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
 item.thaumictinkerer:goliath_ring.name=Goliath Ring
+item.thaumictinkerer:transvector_binder.name=Transvector Binder
 
 # Tooltip
 tooltip.thaumictinkerer:enabled=Enabled
 tooltip.thaumictinkerer:disabled=Disabled
+tooltip.thaumictinkerer:transvector_binder.link_mode.block=Link Mode: Block
+tooltip.thaumictinkerer:transvector_binder.link_mode.face=Link Mode: Face
+tooltip.thaumictinkerer:transvector_binder.linked_face=Face: %s
+tooltip.thaumictinkerer:transvector_binder.linked_pos=Pos: x:%d y:%d z:%d
 
 # Research

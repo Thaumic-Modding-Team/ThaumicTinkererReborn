@@ -1,35 +1,35 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
-|           Feature            |   Item   | Block | Texture  | Research | Recipe |
-|:----------------------------:|:--------:|:-----:|:--------:|:--------:|:------:|
-|    Attractor (Corporeal)     |          |       |          |          |        |
-|     Attractor (Kinetic)      |          |       |          |          |        |
-|    Attractor (Soul Mould)    |          |  N/A  |          |          |        |
-|       Black Hole Ring        |          |  N/A  |          |          |        |
-|     Dissimulation Block      |          |       |          |          |        |
-|       Dynamism Tablet        |          |       |          |          |        |
-|         Ender Mirror         | COMPLETE |  N/A  |          |          |        |
-|       Energetic Nitor        | COMPLETE |       | COMPLETE |          |        |
-|       Essentia Funnel        |          |       |          |          |        |
-|      Ethereal Platform       |          |       |          |          |        |
-|        Feline Amulet         |          |  N/A  |          |          |        |
-|      Gas Phial (Light)       |          |       |          |          |        |
-|      Gas Phial (Shadow)      |          |       |          |          |        |
-|         Gas Remover          |          |  N/A  |          |          |        |
-|        Infused Seeds         |          |       |          |          |        |
-|   Ring of Goliath's Might    | COMPLETE |  N/A  |          |          |        |
-|      Sigil of Memories       |          |  N/A  |          |          |        |
-| Stopwatch of the Timetwister |          |  N/A  |          |          |        |
-|     Tablet of Necromancy     |          |       |          |          |        |
-|       Thaumic Restorer       |          |       |          |          |        |
-|      Transvector Binder      |          |  N/A  |          |          |        |
-|    Transvector Dislocator    |          |       |          |          |        |
-|    Transvector Interface     |          |       |          |          |        |
-|          Umbral Dye          |          |  N/A  |          |          |        |
-|         Umbral Rose          |          |       |          |          |        |
-|       Umbral Rosebush        |          |       |          |          |        |
-| Worldshaper's Looking Glass  |          |  N/A  |          |          |        |
-|         XP Talisman          |          |  N/A  |          |          |        |
+|           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
+|:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+|    Attractor (Corporeal)     |          |          |          |          |        |
+|     Attractor (Kinetic)      |          |          |          |          |        |
+|    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
+|       Black Hole Ring        |          |   N/A    |          |          |        |
+|     Dissimulation Block      |          |          |          |          |        |
+|       Dynamism Tablet        |          |          |          |          |        |
+|         Ender Mirror         | COMPLETE |   N/A    |          |          |        |
+|       Energetic Nitor        | COMPLETE |          | COMPLETE |          |        |
+|       Essentia Funnel        |          |          |          |          |        |
+|      Ethereal Platform       |          |          |          |          |        |
+|        Feline Amulet         |          |   N/A    |          |          |        |
+|      Gas Phial (Light)       |          |          |          |          |        |
+|      Gas Phial (Shadow)      |          |          |          |          |        |
+|         Gas Remover          |          |   N/A    |          |          |        |
+|        Infused Seeds         |          |          |          |          |        |
+|   Ring of Goliath's Might    | COMPLETE |   N/A    |          |          |        |
+|      Sigil of Memories       |          |   N/A    |          |          |        |
+| Stopwatch of the Timetwister |          |   N/A    |          |          |        |
+|     Tablet of Necromancy     |          |          |          |          |        |
+|       Thaumic Restorer       |          |          |          |          |        |
+|      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
+|    Transvector Dislocator    |          |          |          |          |        |
+|    Transvector Interface     | COMPLETE | COMPLETE |          |          |        |
+|          Umbral Dye          |          |   N/A    |          |          |        |
+|         Umbral Rose          |          |          |          |          |        |
+|       Umbral Rosebush        |          |          |          |          |        |
+| Worldshaper's Looking Glass  |          |   N/A    |          |          |        |
+|         XP Talisman          |          |   N/A    |          |          |        |
 
 ## Thaumic Tinkerer: Kami Reborn
 |                Feature                 | Item | Block | Texture | Research | Recipe |
