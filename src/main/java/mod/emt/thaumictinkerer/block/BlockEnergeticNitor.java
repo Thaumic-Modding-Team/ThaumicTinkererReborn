@@ -1,33 +1,51 @@
 package mod.emt.thaumictinkerer.block;
 
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.AbstractBlockAddition;
+import mod.emt.thaumictinkerer.api.block.IBlockAddition;
+import mod.emt.thaumictinkerer.tile.TileEnergeticNitor;
+import net.minecraft.block.Block;
+import net.minecraft.block.BlockContainer;
+import net.minecraft.block.BlockRedstoneOre;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumBlockRenderType;
+import net.minecraft.util.EnumParticleTypes;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
+import java.util.Objects;
 import java.util.Random;
 
-public class BlockEnergeticNitor extends AbstractBlockAddition {
+public class BlockEnergeticNitor extends BlockContainer implements IBlockAddition {
     public BlockEnergeticNitor() {
-        super("energetic_nitor", Material.AIR, MapColor.AIR);
-        this.setTickRandomly(true);
+        super(Material.AIR, MapColor.AIR);
+        this.setRegistryName(ThaumicTinkerer.MOD_ID, "energetic_nitor");
+        this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
+        this.setCreativeTab(ThaumicTinkerer.tabTT);
     }
 
     @Override
-    public void randomTick(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull Random random) {
-        if(!worldIn.isRemote) {
-            worldIn.setBlockToAir(pos);
-        }
+    public boolean hasTileEntity(@NotNull IBlockState state) {
+        return true;
+    }
+
+    @Override
+    public @Nullable TileEntity createNewTileEntity(@NotNull World worldIn, int meta) {
+        return new TileEnergeticNitor();
     }
 
     @SuppressWarnings("deprecation")
@@ -74,7 +92,15 @@ public class BlockEnergeticNitor extends AbstractBlockAddition {
     @SideOnly(Side.CLIENT)
     @Override
     public void randomDisplayTick(@NotNull IBlockState stateIn, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull Random rand) {
-        //TODO: Maybe some particles randomly?
+        if(worldIn.rand.nextInt(4) == 0) {
+            worldIn.spawnParticle(EnumParticleTypes.REDSTONE, pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5, 0, 0, 0);
+        }
+    }
+
+    @Override
+    public void registerBlock(IForgeRegistry<Block> registry) {
+        IBlockAddition.super.registerBlock(registry);
+        GameRegistry.registerTileEntity(TileEnergeticNitor.class, Objects.requireNonNull(this.getRegistryName()));
     }
 
     @Override
