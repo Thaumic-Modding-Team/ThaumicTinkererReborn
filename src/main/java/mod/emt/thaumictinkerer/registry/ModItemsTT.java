@@ -1,10 +1,7 @@
 package mod.emt.thaumictinkerer.registry;
 
 
-import mod.emt.thaumictinkerer.item.ItemEnderMirror;
-import mod.emt.thaumictinkerer.item.ItemEnergeticNitor;
-import mod.emt.thaumictinkerer.item.ItemTransvectorBinder;
-import mod.emt.thaumictinkerer.item.ItemUmbralDye;
+import mod.emt.thaumictinkerer.item.*;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import net.minecraft.item.Item;
 
@@ -23,5 +20,6 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemGoliathRing());
         RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());
         RegistrarTT.addAdditionToRegister(new ItemUmbralDye());
+        RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
     }
 }

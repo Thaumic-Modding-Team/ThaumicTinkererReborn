@@ -12,6 +12,9 @@ tile.thaumictinkerer:thaumic_cake.name=Thaumic Cake
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 tile.thaumictinkerer:umbral_rose.name=Umbral Rose
 
+# Infusion Enchantments
+enchantment.infusion.EDUCATIONAL=Educational
+
 # Items
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor

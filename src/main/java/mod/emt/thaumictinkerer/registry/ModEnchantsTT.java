@@ -1,5 +1,8 @@
 package mod.emt.thaumictinkerer.registry;
 
+import com.invadermonky.thaumicapi.api.ThaumicAPI;
+import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
+
 public class ModEnchantsTT {
     // Consuming List
     /*
@@ -26,4 +29,8 @@ public class ModEnchantsTT {
     stoneDiorite
     stoneGranite
      */
+
+    //TODO: Change required research.
+    public static EnumInfusionEnchantment EDUCATIONAL = ThaumicAPI.registerInfusionEnchantment(
+            "EDUCATIONAL", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
 }
