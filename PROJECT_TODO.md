@@ -2,6 +2,7 @@
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+|         Arcane Cake          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Corporeal)     |          |          |          |          |        |
 |     Attractor (Kinetic)      |          |          |          |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
@@ -25,8 +26,8 @@
 |      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
 |    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Umbral Dye          |          |   N/A    |          |          |        |
-|         Umbral Rose          |          |          |          |          |        |
+|          Umbral Dye          | COMPLETE |   N/A    | COMPLETE |          |        |
+|         Umbral Rose          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Umbral Rosebush        |          |          |          |          |        |
 | Worldshaper's Looking Glass  |          |   N/A    |          |          |        |
 |         XP Talisman          |          |   N/A    |          |          |        |
@@ -104,7 +105,6 @@
 ## Forbidden Magic
 | Feature                        |    Replacement    | Description                                                                               |
 |:-------------------------------|:-----------------:|:------------------------------------------------------------------------------------------|
-| Arcane Cake                    | Thaumic Additions | Cake block that regenerates over time                                                     |
 | BM Ritual: Delayed Insanity    |                   | Grants warp ward and reduces temporary warp                                               |
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
