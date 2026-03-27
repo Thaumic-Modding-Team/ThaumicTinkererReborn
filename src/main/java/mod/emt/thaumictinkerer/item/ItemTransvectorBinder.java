@@ -1,7 +1,7 @@
 package mod.emt.thaumictinkerer.item;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
-import mod.emt.thaumictinkerer.tile.TileTransvectorInterface;
+import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
@@ -54,8 +54,11 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
         if(tile != null) {
             if (player.isSneaking()) {
                 this.linkToBlock(player, stack, pos, side);
-            } else if (tile instanceof TileTransvectorInterface && this.isLinked(stack)) {
-                this.linkToInterface(player, stack, (TileTransvectorInterface) tile, pos, side);
+            } else if (tile instanceof ITransvectorLink && this.isLinked(stack)) {
+                BlockPos linkPos = this.getLinkedPos(stack);
+                EnumFacing linkFace = this.getLinkedFacing(stack);
+                boolean isFaceLinking = this.isFaceLinkingMode(stack);
+                ((ITransvectorLink) tile).createLink(player, hand, side, linkPos, linkFace, isFaceLinking);
             }
             return EnumActionResult.SUCCESS;
         }
@@ -66,25 +69,6 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
         this.setLinkedPos(stack, pos);
         this.setLinkedFacing(stack, facing);
         player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_stored"), true);
-    }
-
-    public void linkToInterface(EntityPlayer player, ItemStack stack, TileTransvectorInterface tile, BlockPos pos, EnumFacing side) {
-        BlockPos linkPos = this.getLinkedPos(stack);
-        if (!pos.equals(linkPos)) {
-            if (this.isInRange(pos, linkPos)) {
-                if (this.isFaceLinkingMode(stack)) {
-                    EnumFacing linkFace = this.getLinkedFacing(stack);
-                    tile.linkToFace(side, linkPos, linkFace);
-                } else {
-                    tile.linkToPosition(linkPos);
-                }
-                player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_successful"), true);
-            } else {
-                player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.out_of_range"), true);
-            }
-        } else {
-            player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.self_link"), true);
-        }
     }
 
     @SideOnly(Side.CLIENT)
@@ -105,13 +89,6 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
 
     public boolean isLinked(ItemStack stack) {
         return this.getLinkedFacing(stack) != null && this.getLinkedPos(stack) != null;
-    }
-
-    public boolean isInRange(BlockPos interfacePos, BlockPos linkedPos) {
-        //TODO: Configurable distance
-        return interfacePos.getX() - linkedPos.getX() < 8
-                && interfacePos.getY() - linkedPos.getY() < 8
-                && interfacePos.getZ() - linkedPos.getZ() < 8;
     }
 
     public BlockPos getLinkedPos(ItemStack stack) {
