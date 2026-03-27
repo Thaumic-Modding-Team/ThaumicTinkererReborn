@@ -19,17 +19,17 @@ import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public class BlockEnergeticNitor extends BlockTileAddition {
-    public static PropertyInteger LIGHT = PropertyInteger.create("light", 0, 15);
+    public static PropertyInteger LIGHT = PropertyInteger.create("light", 0, 10);
 
     public BlockEnergeticNitor() {
         super("energetic_nitor", Material.AIR, MapColor.AIR, TileEnergeticNitor.class);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(LIGHT, 15));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(LIGHT, 10));
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public int getLightValue(@NotNull IBlockState state) {
-        return state.getValue(LIGHT);
+        return state.getValue(LIGHT) + 5;
     }
 
     @Override

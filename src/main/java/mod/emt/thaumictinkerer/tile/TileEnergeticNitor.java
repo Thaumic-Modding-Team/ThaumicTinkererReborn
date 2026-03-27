@@ -16,7 +16,7 @@ public class TileEnergeticNitor extends TileEntity implements ITickable {
         if(!this.world.isRemote && this.world.getTotalWorldTime() % 20L == 0) {
             if(this.duration > 0) {
                 this.duration--;
-                if(this.duration < 14) {
+                if(this.duration < 10) {
                     this.reduceLightLevel();
                 }
             } else {
@@ -36,7 +36,7 @@ public class TileEnergeticNitor extends TileEntity implements ITickable {
     public void reduceLightLevel() {
         IBlockState state = this.world.getBlockState(this.pos);
         TileEnergeticNitor tile = this;
-        this.world.setBlockState(this.pos, state.withProperty(BlockEnergeticNitor.LIGHT, this.duration + 1));
+        this.world.setBlockState(this.pos, state.withProperty(BlockEnergeticNitor.LIGHT, this.duration));
         tile.validate();
         this.world.setTileEntity(this.pos, tile);
     }
