@@ -2,7 +2,6 @@
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
-|         Arcane Cake          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Corporeal)     |          |          |          |          |        |
 |     Attractor (Kinetic)      |          |          |          |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
@@ -22,6 +21,7 @@
 |      Sigil of Memories       |          |   N/A    |          |          |        |
 | Stopwatch of the Timetwister |          |   N/A    |          |          |        |
 |     Tablet of Necromancy     |          |          |          |          |        |
+|         Thaumic Cake         | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Thaumic Restorer       |          |          |          |          |        |
 |      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
