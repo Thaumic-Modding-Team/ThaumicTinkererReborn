@@ -28,6 +28,9 @@ public class ItemSwordTest extends ItemSword implements IItemAddition {
             if(ModEnchantsTT.EDUCATIONAL != null) {
                 EnumInfusionEnchantment.addInfusionEnchantment(stack, ModEnchantsTT.EDUCATIONAL, 3);
             }
+            if(ModEnchantsTT.WRATH != null) {
+                EnumInfusionEnchantment.addInfusionEnchantment(stack, ModEnchantsTT.WRATH, 5);
+            }
             items.add(stack);
         }
     }

@@ -1,7 +1,7 @@
 package mod.emt.thaumictinkerer.registry;
 
-import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.enchants.InfusionEnchantmentEducational;
+import mod.emt.thaumictinkerer.enchants.InfusionEnchantmentWrath;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 public class ModEnchantsTT {
@@ -32,8 +32,10 @@ public class ModEnchantsTT {
      */
 
     public static EnumInfusionEnchantment EDUCATIONAL;
+    public static EnumInfusionEnchantment WRATH;
 
     public static void initEnchants() {
         RegistrarTT.addAdditionToRegister(new InfusionEnchantmentEducational());
+        RegistrarTT.addAdditionToRegister(new InfusionEnchantmentWrath());
     }
 }
