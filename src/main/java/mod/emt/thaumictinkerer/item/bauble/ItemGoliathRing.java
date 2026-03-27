@@ -40,7 +40,7 @@ public class ItemGoliathRing extends AbstractItemBauble implements IProxy {
         if(player instanceof EntityPlayer) {
             return BaublesApi.isBaubleEquipped((EntityPlayer) player, this) < 0;
         }
-        return true;
+        return false;
     }
 
     @Override
