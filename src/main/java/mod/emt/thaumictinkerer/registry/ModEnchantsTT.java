@@ -23,10 +23,7 @@ public class ModEnchantsTT {
     sandstone
     stone
     stoneAndesite
-    stoneAndesitePolished
     stoneDiorite
-    stoneDioritePolished
     stoneGranite
-    stoneGranitePolished
      */
 }
