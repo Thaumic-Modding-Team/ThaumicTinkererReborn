@@ -22,6 +22,8 @@ item.thaumictinkerer:goliath_ring.name=Goliath Ring
 item.thaumictinkerer:transvector_binder.name=Transvector Binder
 item.thaumictinkerer:umbral_dye.name=Umbral Black
 
+item.thaumictinkerer:test_sword.name=Test Sword
+
 # Tooltip
 tooltip.thaumictinkerer:enabled=Enabled
 tooltip.thaumictinkerer:disabled=Disabled
