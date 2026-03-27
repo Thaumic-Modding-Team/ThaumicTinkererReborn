@@ -25,7 +25,9 @@ public class ItemSwordTest extends ItemSword implements IItemAddition {
     public void getSubItems(@NotNull CreativeTabs tab, @NotNull NonNullList<ItemStack> items) {
         if (this.isInCreativeTab(tab)) {
             ItemStack stack = new ItemStack(this);
-            EnumInfusionEnchantment.addInfusionEnchantment(stack, ModEnchantsTT.EDUCATIONAL, 3);
+            if(ModEnchantsTT.EDUCATIONAL != null) {
+                EnumInfusionEnchantment.addInfusionEnchantment(stack, ModEnchantsTT.EDUCATIONAL, 3);
+            }
             items.add(stack);
         }
     }

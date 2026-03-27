@@ -1,12 +1,14 @@
 package mod.emt.thaumictinkerer.tile;
 
+import mod.emt.thaumictinkerer.block.BlockEnergeticNitor;
+import net.minecraft.block.BlockFurnace;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 import thaumcraft.client.fx.FXDispatcher;
 
 public class TileEnergeticNitor extends TileEntity implements ITickable {
     public int count = 0;
-    //TODO: Configurable duration?
     public int duration = 20;
 
     @Override
@@ -14,6 +16,9 @@ public class TileEnergeticNitor extends TileEntity implements ITickable {
         if(!this.world.isRemote && this.world.getTotalWorldTime() % 20L == 0) {
             if(this.duration > 0) {
                 this.duration--;
+                if(this.duration < 14) {
+                    this.reduceLightLevel();
+                }
             } else {
                 this.world.setBlockToAir(this.pos);
             }
@@ -26,5 +31,13 @@ public class TileEnergeticNitor extends TileEntity implements ITickable {
                 FXDispatcher.INSTANCE.drawNitorCore(pos.getX() + 0.5F, pos.getY() + 0.49F, pos.getZ() + 0.5F, 0.0, 0.0, 0.0);
             }
         }
+    }
+
+    public void reduceLightLevel() {
+        IBlockState state = this.world.getBlockState(this.pos);
+        TileEnergeticNitor tile = this;
+        this.world.setBlockState(this.pos, state.withProperty(BlockEnergeticNitor.LIGHT, this.duration + 1));
+        tile.validate();
+        this.world.setTileEntity(this.pos, tile);
     }
 }
