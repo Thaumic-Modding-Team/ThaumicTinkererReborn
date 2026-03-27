@@ -7,6 +7,7 @@ import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
@@ -42,6 +43,12 @@ public class BlockTileAddition extends BlockContainer implements IBlockAddition 
         } catch (Exception e) {
             throw new RuntimeException("Failed to initialize TileEntity", e);
         }
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull EnumBlockRenderType getRenderType(@NotNull IBlockState state) {
+        return EnumBlockRenderType.MODEL;
     }
 
     @Override
