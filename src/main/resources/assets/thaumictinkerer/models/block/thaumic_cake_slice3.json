@@ -1,15 +1,15 @@
 {
   "textures": {
-    "particle": "thaumictinkerer:blocks/arcane_cake_side",
-    "bottom": "thaumictinkerer:blocks/arcane_cake_bottom",
-    "top": "thaumictinkerer:blocks/arcane_cake_top",
-    "side": "thaumictinkerer:blocks/arcane_cake_side",
-    "inside": "thaumictinkerer:blocks/arcane_cake_inner"
+    "particle": "thaumictinkerer:blocks/thaumic_cake_side",
+    "bottom": "thaumictinkerer:blocks/thaumic_cake_bottom",
+    "top": "thaumictinkerer:blocks/thaumic_cake_top",
+    "side": "thaumictinkerer:blocks/thaumic_cake_side",
+    "inside": "thaumictinkerer:blocks/thaumic_cake_inner"
   },
   "elements": [
     {
       "from": [
-        9,
+        7,
         0,
         1
       ],

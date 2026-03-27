@@ -1,6 +1,6 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "thaumictinkerer:items/arcane_cake"
+    "layer0": "thaumictinkerer:items/thaumic_cake"
   }
 }

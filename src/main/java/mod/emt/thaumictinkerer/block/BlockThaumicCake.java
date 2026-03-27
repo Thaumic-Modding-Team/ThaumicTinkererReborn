@@ -25,12 +25,12 @@ import org.jetbrains.annotations.NotNull;
 import java.util.Objects;
 import java.util.Random;
 
-public class BlockArcaneCake extends BlockCake implements IBlockAddition {
-    private static final ResourceLocation ARCANE_CAKE = new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_cake");
+public class BlockThaumicCake extends BlockCake implements IBlockAddition {
+    private static final ResourceLocation THAUMIC_CAKE = new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_cake");
 
-    public BlockArcaneCake() {
+    public BlockThaumicCake() {
         super();
-        this.setRegistryName(ThaumicTinkerer.MOD_ID, "arcane_cake");
+        this.setRegistryName(ThaumicTinkerer.MOD_ID, "thaumic_cake");
         this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
         this.setCreativeTab(ThaumicTinkerer.tabTT);
         this.disableStats();
@@ -58,7 +58,7 @@ public class BlockArcaneCake extends BlockCake implements IBlockAddition {
     @Override
     public @NotNull Item getItemDropped(IBlockState state, @NotNull Random rand, int fortune) {
         if(state.getValue(BITES) == 0) {
-            return ForgeRegistries.ITEMS.getValue(ARCANE_CAKE);
+            return ForgeRegistries.ITEMS.getValue(THAUMIC_CAKE);
         }
 
         return Items.AIR;
@@ -66,7 +66,7 @@ public class BlockArcaneCake extends BlockCake implements IBlockAddition {
 
     @Override
     public @NotNull ItemStack getItem(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state) {
-        return new ItemStack(ForgeRegistries.ITEMS.getValue(ARCANE_CAKE));
+        return new ItemStack(ForgeRegistries.ITEMS.getValue(THAUMIC_CAKE));
     }
 
     private boolean eatCake(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
