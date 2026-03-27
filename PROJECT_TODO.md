@@ -2,6 +2,7 @@
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+|         Arcane Cake          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Corporeal)     |          |          |          |          |        |
 |     Attractor (Kinetic)      |          |          |          |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
@@ -104,7 +105,6 @@
 ## Forbidden Magic
 | Feature                        |    Replacement    | Description                                                                               |
 |:-------------------------------|:-----------------:|:------------------------------------------------------------------------------------------|
-| Arcane Cake                    | Thaumic Additions | Cake block that regenerates over time                                                     |
 | BM Ritual: Delayed Insanity    |                   | Grants warp ward and reduces temporary warp                                               |
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
