@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.block.BlockEnergeticNitor;
+import mod.emt.thaumictinkerer.block.BlockFlower;
 import mod.emt.thaumictinkerer.block.BlockTransvectorInterface;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -16,5 +17,6 @@ public class ModBlocksTT {
         //TODO: Organize order
         RegistrarTT.addAdditionToRegister(new BlockEnergeticNitor());
         RegistrarTT.addAdditionToRegister(new BlockTransvectorInterface());
+        RegistrarTT.addAdditionToRegister(new BlockFlower("umbral_rose"));
     }
 }

@@ -1,0 +1,11 @@
+{
+  "type": "forge:ore_shapeless",
+  "ingredients": [
+    {
+      "item": "thaumictinkerer:umbral_rose"
+    }
+  ],
+  "result": {
+    "item": "thaumictinkerer:umbral_dye"
+  }
+}

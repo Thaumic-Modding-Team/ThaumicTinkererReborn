@@ -25,8 +25,8 @@
 |      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
 |    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Umbral Dye          |          |   N/A    |          |          |        |
-|         Umbral Rose          |          |          |          |          |        |
+|          Umbral Dye          | COMPLETE |   N/A    | COMPLETE |          |        |
+|         Umbral Rose          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Umbral Rosebush        |          |          |          |          |        |
 | Worldshaper's Looking Glass  |          |   N/A    |          |          |        |
 |         XP Talisman          |          |   N/A    |          |          |        |
