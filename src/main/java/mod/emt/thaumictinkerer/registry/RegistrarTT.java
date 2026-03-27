@@ -58,7 +58,7 @@ public class RegistrarTT {
 
     @SubscribeEvent
     public static void registerEnchants(RegistryEvent.Register<Enchantment> event) {
-        //TODO
+        ModEnchantsTT.initEnchants();
     }
 
     @SubscribeEvent

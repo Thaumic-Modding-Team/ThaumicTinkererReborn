@@ -1,35 +1,60 @@
 package mod.emt.thaumictinkerer.enchants;
 
-import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import com.invadermonky.thaumicapi.api.ThaumicAPI;
+import mod.emt.thaumictinkerer.api.IAddition;
+import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
-import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.registries.IForgeRegistry;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
-@Mod.EventBusSubscriber(modid = ThaumicTinkerer.MOD_ID)
-public class InfusionEnchantmentEducational {
+public class InfusionEnchantmentEducational implements IAddition, IProxy {
     @SubscribeEvent
-    public static void onXpDropped(LivingExperienceDropEvent event) {
+    public void onXpDropped(LivingExperienceDropEvent event) {
         EntityPlayer player = event.getAttackingPlayer();
 
         if(event.getEntity() instanceof EntityLiving) {
             ItemStack heldStack = player.getHeldItemMainhand();
             int level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldStack, ModEnchantsTT.EDUCATIONAL);
-            int experience = event.getDroppedExperience();
-            double experienceCalc = experience * (0.25D * level);
-            int experienceCap = 10 * level;
-
             if(level > 0) {
-                if(experienceCalc > experienceCap) {
-                    experienceCalc = experienceCap;
+                int experience = event.getDroppedExperience();
+                double bonus = experience * (0.25D * level);
+                int cap = 10 * level;
+                if(bonus > cap) {
+                    bonus = cap;
                 }
 
-                event.setDroppedExperience(experience + (int) Math.round(experienceCalc));
+                event.setDroppedExperience(experience + (int) Math.round(bonus));
             }
         }
+    }
+
+    @Override
+    public void preInit() {
+        MinecraftForge.EVENT_BUS.register(this);
+        ModEnchantsTT.EDUCATIONAL = ThaumicAPI.registerInfusionEnchantment(
+                "EDUCATIONAL", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
+    }
+
+    @Override
+    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+        //TODO: Recipes
+    }
+
+    @Override
+    public void registerResearchLocation() {
+        //TODO: Research location
+    }
+
+    @Override
+    public boolean isEnabled() {
+        //TODO: Config toggle
+        return true;
     }
 }
