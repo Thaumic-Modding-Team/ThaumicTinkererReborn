@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 public class ModItemsTT {
     public static final Item ENDER_MIRROR = null;
     public static final Item ENERGETIC_NITOR = null;
+    public static final Item FELINE_CHARM = null;
     public static final Item GOLIATH_RING = null;
     public static final Item TRANSVECTOR_BINDER = null;
     public static final Item UMBRAL_DYE = null;
@@ -20,6 +21,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemGoliathRing());
         RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());
         RegistrarTT.addAdditionToRegister(new ItemUmbralDye());
+        RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
     }
 }
