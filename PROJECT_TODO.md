@@ -2,8 +2,8 @@
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
-|    Attractor (Corporeal)     | COMPLETE |          |          |          |        |
-|     Attractor (Kinetic)      | COMPLETE |          |          |          |        |
+|    Attractor (Corporeal)     | COMPLETE | COMPLETE | COMPLETE |          |        |
+|     Attractor (Kinetic)      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
 |       Black Hole Ring        |          |   N/A    |          |          |        |
 |     Dissimulation Block      |          |          |          |          |        |
