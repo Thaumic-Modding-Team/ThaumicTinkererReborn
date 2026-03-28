@@ -13,7 +13,7 @@
 |       Energetic Nitor        | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Essentia Funnel        |          |          |          |          |        |
 |      Ethereal Platform       |          |          |          |          |        |
-|        Feline Amulet         |          |          |          |          |        |
+|        Feline Amulet         | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)      |          |          |          |          |        |
 |         Gas Remover          |          |          |          |          |        |
