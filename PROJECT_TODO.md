@@ -17,9 +17,9 @@
 |      Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)      |          |          |          |          |        |
 |         Gas Remover          |          |          |          |          |        |
-| Infusion Enchant: Consuming  |          |    N/A   |          |          |        |
-|Infusion Enchant: Educational | COMPLETE |    N/A   |          |          |        |
-|    Infusion Enchant: Wrath   |   WIP    |    N/A   |          |          |        |
+| Infusion Enchant: Consuming  |          |    N/A   | COMPLETE |          |        |
+|Infusion Enchant: Educational | COMPLETE |    N/A   | COMPLETE |          |        |
+|    Infusion Enchant: Wrath   |   WIP    |    N/A   | COMPLETE |          |        |
 |        Infused Seeds         |          |          |          |          |        |
 |   Ring of Goliath's Might    | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Sigil of Memories       |          |          |          |          |        |
