@@ -120,7 +120,7 @@ public class BlockAttractor extends BlockTileAddition {
 
     @Override
     public @NotNull BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.TRANSLUCENT;
+        return BlockRenderLayer.CUTOUT_MIPPED;
     }
 
     @Override
