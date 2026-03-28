@@ -1,8 +1,10 @@
 package mod.emt.thaumictinkerer.api.tile;
 
 import mod.emt.thaumictinkerer.block.BlockAttractor;
+import mod.emt.thaumictinkerer.block.BlockAttractor.AttractorMode;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -12,34 +14,28 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
 
     public abstract Class<S> getEntityClass();
 
+    public abstract void openGui(EntityPlayer player);
+
     public abstract boolean isValidEntity(S entity);
 
     @Override
     public void update() {
-        if(!this.world.isRemote && this.isEnabled()) {
-            for(S entity : this.world.getEntitiesWithinAABB(this.getEntityClass(), this.getSearchArea())) {
-                if(entity.isEntityAlive() && this.isValidEntity(entity)) {
-                    double distance = this.pos.distanceSqToCenter(entity.posX, entity.posY, entity.posZ);
-                    if(distance > 1.0) {
-                        //TODO: Configurable attract/repulse
-                        this.moveEntity(entity, true);
+        int redstonePower = this.getRedstonePower();
+        if(redstonePower > 0) {
+            if (!this.world.isRemote) {
+                AttractorMode mode = this.getAttractorMode();
+                AxisAlignedBB searchArea = this.getSearchArea(redstonePower);
+                for (S entity : this.world.getEntitiesWithinAABB(this.getEntityClass(), searchArea, this::isValidEntity)) {
+                    double distance = mode == AttractorMode.ATTRACT ? this.pos.distanceSqToCenter(entity.posX, entity.posY, entity.posZ) : 1.1;
+                    if (distance > 1.0) {
+                        this.moveEntity(entity, mode == AttractorMode.ATTRACT);
                     }
                 }
             }
         }
     }
 
-    public boolean isEnabled() {
-        IBlockState state = this.world.getBlockState(this.pos);
-        return state.getValue(BlockAttractor.ENABLED);
-    }
-
-    public EnumFacing getDirection() {
-        IBlockState state = this.world.getBlockState(this.pos);
-        return state.getValue(BlockAttractor.FACING);
-    }
-
-    public int getSearchRadius() {
+    public int getRedstonePower() {
         int power = 0;
         for(EnumFacing facing : EnumFacing.VALUES) {
             int checkPower = this.world.getRedstonePower(this.pos.offset(facing), facing);
@@ -47,11 +43,25 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
                 power = checkPower;
             }
         }
-        return (int) Math.ceil((double) power / 4.0);
+        return power;
     }
 
-    public AxisAlignedBB getSearchArea() {
-        int radius = this.getSearchRadius();
+    public EnumFacing getDirection() {
+        IBlockState state = this.world.getBlockState(this.pos);
+        return state.getValue(BlockAttractor.FACING);
+    }
+
+    public AttractorMode getAttractorMode() {
+        IBlockState state = this.world.getBlockState(this.pos);
+        return state.getValue(BlockAttractor.MODE);
+    }
+
+    public int getSearchRadius(int redstonePower) {
+        return (int) Math.ceil((double) redstonePower / 4.0);
+    }
+
+    public AxisAlignedBB getSearchArea(int redstonePower) {
+        int radius = this.getSearchRadius(redstonePower);
         EnumFacing opposite = this.getDirection();
         int minX = opposite.getXOffset() == -1 ? 0 : -radius;
         int minY = opposite.getYOffset() == -1 ? 0 : -radius;
@@ -71,6 +81,8 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
         if(finalVec.mag() > 1.0) {
             finalVec.normalize();
         }
+
+        //TODO: Effects on moving entity.
 
         double movementModifier = shouldAttract ? 0.25 : -0.25;
         entity.motionX = finalVec.x * movementModifier;

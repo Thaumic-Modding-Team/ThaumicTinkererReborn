@@ -8,6 +8,8 @@ chat.thaumictinkerer:transvector_binder.out_of_range=Link out of range.
 chat.thaumictinkerer:transvector_binder.self_link=Block cannot be linked to itself.
 
 # Blocks
+tile.thaumictinkerer:attractor_item.name=Kinetic Attractor
+tile.thaumictinkerer:attractor_mob.name=Corporeal Attractor
 tile.thaumictinkerer:thaumic_cake.name=Thaumic Cake
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 tile.thaumictinkerer:umbral_rose.name=Umbral Rose

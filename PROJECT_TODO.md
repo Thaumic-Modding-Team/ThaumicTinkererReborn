@@ -23,7 +23,7 @@
 |     Tablet of Necromancy     |          |          |          |          |        |
 |         Thaumic Cake         | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Thaumic Restorer       |          |          |          |          |        |
-|      Transvector Binder      | COMPLETE |   N/A    |          |          |        |
+|      Transvector Binder      | COMPLETE |   N/A    | COMPLETE |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
 |    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |          Umbral Dye          | COMPLETE |   N/A    | COMPLETE |          |        |

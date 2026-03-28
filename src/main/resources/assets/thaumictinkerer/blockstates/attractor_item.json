@@ -1,0 +1,22 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "thaumictinkerer:attractor_item_attract"
+  },
+  "variants": {
+    "inventory": { "model": "thaumictinkerer:attractor_item_attract", "transform": "forge:default-block"},
+    "facing=up,mode=attract":     { "model": "thaumictinkerer:attractor_item_attract", "x": 180 },
+    "facing=down,mode=attract":   { "model": "thaumictinkerer:attractor_item_attract" },
+    "facing=north,mode=attract":  { "model": "thaumictinkerer:attractor_item_attract", "x": 90, "y": 180 },
+    "facing=south,mode=attract":  { "model": "thaumictinkerer:attractor_item_attract", "x": 90 },
+    "facing=west,mode=attract":   { "model": "thaumictinkerer:attractor_item_attract", "x": 90, "y": 90 },
+    "facing=east,mode=attract":   { "model": "thaumictinkerer:attractor_item_attract", "x": 90, "y": 270 },
+
+    "facing=up,mode=repulse":     { "model": "thaumictinkerer:attractor_item_repulse", "x": 180 },
+    "facing=down,mode=repulse":   { "model": "thaumictinkerer:attractor_item_repulse" },
+    "facing=north,mode=repulse":  { "model": "thaumictinkerer:attractor_item_repulse", "x": 90 },
+    "facing=south,mode=repulse":  { "model": "thaumictinkerer:attractor_item_repulse", "x": 90 },
+    "facing=west,mode=repulse":   { "model": "thaumictinkerer:attractor_item_repulse", "z": 90 },
+    "facing=east,mode=repulse":   { "model": "thaumictinkerer:attractor_item_repulse", "z": 270 }
+  }
+}

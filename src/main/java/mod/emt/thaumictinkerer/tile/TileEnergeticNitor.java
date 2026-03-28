@@ -1,7 +1,6 @@
 package mod.emt.thaumictinkerer.tile;
 
 import mod.emt.thaumictinkerer.block.BlockEnergeticNitor;
-import net.minecraft.block.BlockFurnace;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;

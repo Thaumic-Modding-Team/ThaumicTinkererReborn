@@ -1,6 +1,5 @@
 package mod.emt.thaumictinkerer.registry;
 
-import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.enchants.InfusionEnchantmentEducational;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 

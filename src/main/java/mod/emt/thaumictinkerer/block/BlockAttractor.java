@@ -1,69 +1,95 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
-import net.minecraft.block.Block;
+import mod.emt.thaumictinkerer.api.tile.AbstractTileAttractor;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.tileentity.TileEntity;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.Mirror;
-import net.minecraft.util.Rotation;
+import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.List;
+import java.util.Random;
+
 public class BlockAttractor extends BlockTileAddition {
-    public static final PropertyBool ENABLED = PropertyBool.create("enabled");
+    public static final PropertyEnum<AttractorMode> MODE = PropertyEnum.create("mode", AttractorMode.class);
     public static final PropertyEnum<EnumFacing> FACING = PropertyEnum.create("facing", EnumFacing.class);
+    public static final AxisAlignedBB[] AABB_BASE = new AxisAlignedBB[] {
+            new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.125,0.9375),     //DOWN
+            new AxisAlignedBB(0.0625, 0.875, 0.0625, 0.9375, 1.0, 0.9375),  //UP
+            new AxisAlignedBB(0.0625, 0.0625, 0, 0.9375, 0.9375, 0.125),    //NORTH
+            new AxisAlignedBB(0.0625, 0.0625, 0.875, 0.9375, 0.9375, 1.0),  //SOUTH
+            new AxisAlignedBB(0, 0.0625, 0.0625, 0.125, 0.9375, 0.9375),    //WEST
+            new AxisAlignedBB(0.875, 0.0625, 0.0625, 1.0, 0.9375, 0.9375)   //EAST
+
+    };
+    public static final AxisAlignedBB[] AABB_SPIRE = new AxisAlignedBB[] {
+            new AxisAlignedBB(0.3125, 0, 0.3125, 0.6875, 1.0, 0.6875),  //DOWN
+            new AxisAlignedBB(0.3125, 0, 0.3125, 0.6875, 1.0, 0.6875),  //UP
+            new AxisAlignedBB(0.3125, 0.3125, 0, 0.6875, 0.6875, 1.0),  //NORTH
+            new AxisAlignedBB(0.3125, 0.3125, 0, 0.6875, 0.6875, 1.0),  //SOUTH
+            new AxisAlignedBB(0, 0.3125, 0.3125, 1.0, 0.6875, 0.6875),  //WEST
+            new AxisAlignedBB(0, 0.3125, 0.3125, 1.0, 0.6875, 0.6875)   //EAST
+    };
 
     public BlockAttractor(String unlocName, Class<? extends TileEntity> tileClazz) {
         super(unlocName, Material.IRON, MapColor.GRAY, tileClazz);
         this.setSoundType(SoundType.METAL);
         this.setHardness(2.0f);
         this.setResistance(12.0f);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH).withProperty(ENABLED, false));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.DOWN).withProperty(MODE, AttractorMode.ATTRACT));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
-    public AxisAlignedBB getBoundingBox(IBlockState state, IBlockAccess source, BlockPos pos) {
-        //TODO: Fix bounding box
-        return super.getBoundingBox(state, source, pos);
+    public @NotNull AxisAlignedBB getBoundingBox(IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
+        return AABB_SPIRE[state.getValue(FACING).getIndex()];
     }
 
+    @SuppressWarnings("deprecation")
     @Override
-    public @Nullable AxisAlignedBB getCollisionBoundingBox(IBlockState blockState, IBlockAccess worldIn, BlockPos pos) {
-        return super.getCollisionBoundingBox(blockState, worldIn, pos);
+    public void addCollisionBoxToList(IBlockState state, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull AxisAlignedBB entityBox, @NotNull List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+        EnumFacing facing = state.getValue(FACING);
+        addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_BASE[facing.getIndex()]);
+        addCollisionBoxToList(pos, entityBox, collidingBoxes, AABB_SPIRE[facing.getIndex()]);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
-    public AxisAlignedBB getSelectedBoundingBox(IBlockState state, World worldIn, BlockPos pos) {
-        return super.getSelectedBoundingBox(state, worldIn, pos);
+    public @Nullable RayTraceResult collisionRayTrace(IBlockState state, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull Vec3d start, @NotNull Vec3d end) {
+        EnumFacing facing = state.getValue(FACING);
+        if(rayTrace(pos, start, end, AABB_BASE[facing.getIndex()]) != null || rayTrace(pos, start, end, AABB_SPIRE[facing.getIndex()]) != null) {
+            return super.collisionRayTrace(state, worldIn, pos, start, end);
+        } else {
+            return null;
+        }
     }
 
     @Override
     public boolean onBlockActivated(@NotNull World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
         //TODO: Open GUI
-        return true;
-    }
-
-    @SuppressWarnings("deprecation")
-    @Override
-    public void neighborChanged(@NotNull IBlockState state, World worldIn, @NotNull BlockPos pos, @NotNull Block blockIn, @NotNull BlockPos fromPos) {
-        boolean isPowered = worldIn.isBlockPowered(pos);
-        if((isPowered && !state.getValue(ENABLED)) || (!isPowered && state.getValue(ENABLED))) {
-            worldIn.setBlockState(pos, state.withProperty(ENABLED, isPowered));
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof AbstractTileAttractor<?>) {
+            ((AbstractTileAttractor<?>) tile).openGui(playerIn);
+            return true;
         }
+        return false;
     }
 
     @SuppressWarnings("deprecation")
@@ -79,24 +105,41 @@ public class BlockAttractor extends BlockTileAddition {
     }
 
     @Override
+    public @NotNull BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    public boolean doesSideBlockRendering(@NotNull IBlockState state, @NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing face) {
+        return false;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isSideSolid(@NotNull IBlockState base_state, IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing side) {
+        return world.getBlockState(pos).getValue(FACING).getOpposite() == side;
+    }
+
+    @Override
     public @NotNull IBlockState getStateForPlacement(@NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ, int meta, @NotNull EntityLivingBase placer, @NotNull EnumHand hand) {
-        return this.getDefaultState().withProperty(ENABLED, false).withProperty(FACING, facing.getOpposite());
+        return this.getDefaultState().withProperty(MODE, AttractorMode.ATTRACT).withProperty(FACING, facing.getOpposite());
     }
 
     @SuppressWarnings("deprecation")
     @Override
     public @NotNull IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(ENABLED, (meta / 6) == 1).withProperty(FACING, EnumFacing.byIndex(meta % 6));
+        return this.getDefaultState().withProperty(MODE, AttractorMode.values()[meta / 6])
+                .withProperty(FACING, EnumFacing.byIndex(meta % 6));
     }
 
     @Override
     public int getMetaFromState(@NotNull IBlockState state) {
-        return (state.getValue(ENABLED) ? 6 : 0) + state.getValue(FACING).getIndex();
+        return (state.getValue(MODE).ordinal() * 6) + state.getValue(FACING).getIndex();
     }
 
     @Override
     protected @NotNull BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, FACING, ENABLED);
+        return new BlockStateContainer(this, FACING, MODE);
     }
 
     @SuppressWarnings("deprecation")
@@ -109,5 +152,28 @@ public class BlockAttractor extends BlockTileAddition {
     @Override
     public @NotNull IBlockState withMirror(@NotNull IBlockState state, @NotNull Mirror mirrorIn) {
         return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void randomDisplayTick(@NotNull IBlockState stateIn, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull Random rand) {
+        if(worldIn.isBlockPowered(pos) && rand.nextInt(5) == 0) {
+            //TODO: Effect while active.
+
+        }
+    }
+
+    public enum AttractorMode implements IStringSerializable {
+        ATTRACT,
+        REPULSE;
+
+        public AttractorMode next() {
+            return AttractorMode.values()[this.ordinal() + 1 % AttractorMode.values().length];
+        }
+
+        @Override
+        public @NotNull String getName() {
+            return this.toString().toLowerCase();
+        }
     }
 }
