@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.enchants;
 import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
@@ -24,9 +25,9 @@ public class InfusionEnchantmentEducational implements IAddition, IProxy {
             int level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldStack, ModEnchantsTT.EDUCATIONAL);
             if(level > 0) {
                 int experience = event.getDroppedExperience();
-                double bonus = experience * (0.25D * level);
-                int cap = 10 * level;
-                if(bonus > cap) {
+                double bonus = experience * (ConfigHandlerTT.infusionEnchantments.educational.xpGainPerLevel * level);
+                int cap = ConfigHandlerTT.infusionEnchantments.educational.maxXpPerLevel * level;
+                if(cap > 0 && bonus > cap) {
                     bonus = cap;
                 }
 
@@ -54,7 +55,6 @@ public class InfusionEnchantmentEducational implements IAddition, IProxy {
 
     @Override
     public boolean isEnabled() {
-        //TODO: Config toggle
-        return true;
+        return ConfigHandlerTT.infusionEnchantments.educational.enable;
     }
 }

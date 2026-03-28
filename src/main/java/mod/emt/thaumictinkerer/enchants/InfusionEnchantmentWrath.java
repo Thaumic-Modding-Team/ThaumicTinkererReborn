@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.enchants;
 import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -54,6 +55,6 @@ public class InfusionEnchantmentWrath implements IAddition, IProxy {
     @Override
     public boolean isEnabled() {
         //TODO: Config toggle
-        return true;
+        return ConfigHandlerTT.infusionEnchantments.wrath.enable;
     }
 }

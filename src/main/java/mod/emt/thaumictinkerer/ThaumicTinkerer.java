@@ -1,5 +1,6 @@
 package mod.emt.thaumictinkerer;
 
+import mod.emt.thaumictinkerer.config.ConfigTags;
 import mod.emt.thaumictinkerer.proxy.CommonProxy;
 import mod.emt.thaumictinkerer.registry.CreativeTabsTT;
 import mod.emt.thaumictinkerer.utils.helpers.LogHelper;
@@ -49,6 +50,7 @@ public class ThaumicTinkerer {
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         proxy.postInit();
+        ConfigTags.syncConfigs();
         LogHelper.debug("Finished postInit phase.");
     }
 }
