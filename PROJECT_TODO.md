@@ -1,65 +1,69 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
-|           Feature            |   Item   |  Block   | Texture  | Research | Recipe |
+|           Feature            |   Code   |  Model   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+|       Aquatic Alchemy        |    N/A   |    N/A   |    N/A   |          |        |
 |    Attractor (Corporeal)     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |     Attractor (Kinetic)      | COMPLETE | COMPLETE | COMPLETE |          |        |
-|    Attractor (Soul Mould)    |          |   N/A    |          |          |        |
-|       Black Hole Ring        |          |   N/A    |          |          |        |
+|    Attractor (Soul Mould)    |          |          |          |          |        |
+|       Black Hole Ring        |          |          |          |          |        |
 |     Dissimulation Block      |          |          |          |          |        |
 |       Dynamism Tablet        |          |          |          |          |        |
-|         Ender Mirror         | COMPLETE |   N/A    | COMPLETE |          |        |
-|       Energetic Nitor        | COMPLETE |          | COMPLETE |          |        |
+|         Ender Mirror         | COMPLETE | COMPLETE | COMPLETE |          |        |
+|       Energetic Nitor        | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Essentia Funnel        |          |          |          |          |        |
 |      Ethereal Platform       |          |          |          |          |        |
-|        Feline Amulet         |          |   N/A    |          |          |        |
+|        Feline Amulet         |          |          |          |          |        |
 |      Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)      |          |          |          |          |        |
-|         Gas Remover          |          |   N/A    |          |          |        |
+|         Gas Remover          |          |          |          |          |        |
+| Infusion Enchant: Consuming  |          |    N/A   | COMPLETE |          |        |
+|Infusion Enchant: Educational | COMPLETE |    N/A   | COMPLETE |          |        |
+|    Infusion Enchant: Wrath   |   WIP    |    N/A   | COMPLETE |          |        |
 |        Infused Seeds         |          |          |          |          |        |
-|   Ring of Goliath's Might    | COMPLETE |   N/A    | COMPLETE |          |        |
-|      Sigil of Memories       |          |   N/A    |          |          |        |
-| Stopwatch of the Timetwister |          |   N/A    |          |          |        |
+|   Ring of Goliath's Might    | COMPLETE | COMPLETE | COMPLETE |          |        |
+|      Sigil of Memories       |          |          |          |          |        |
+| Stopwatch of the Timetwister |          |          |          |          |        |
 |     Tablet of Necromancy     |          |          |          |          |        |
 |         Thaumic Cake         | COMPLETE | COMPLETE | COMPLETE |          |        |
-|       Thaumic Restorer       |          |          |          |          |        |
-|      Transvector Binder      | COMPLETE |   N/A    | COMPLETE |          |        |
+|       Thaumic Restorer       |   WIP    |          |          |          |        |
+|      Transvector Binder      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
 |    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Umbral Dye          | COMPLETE |   N/A    | COMPLETE |          |        |
+|          Umbral Dye          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |         Umbral Rose          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Umbral Rosebush        |          |          |          |          |        |
-| Worldshaper's Looking Glass  |          |   N/A    |          |          |        |
-|         XP Talisman          |          |   N/A    |          |          |        |
+| Worldshaper's Looking Glass  |          |          |          |          |        |
+|         XP Talisman          |          |          |          |          |        |
 
 ## Thaumic Tinkerer: Kami Reborn
-|                      Feature                      | Item | Block | Texture | Research | Recipe |
+|                      Feature                      | Code | Model | Texture | Research | Recipe |
 |:-------------------------------------------------:|:----:|:-----:|:-------:|:--------:|:------:|
-| (Armor - Awakened) Boots of the Horizontal Shield |      |  N/A  |         |          |        |
-|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |  N/A  |         |          |        |
-| (Armor - Awakened) Leggings of the Burning Mantle |      |  N/A  |         |          |        |
-|   (Armor - Awakened) Robes of the Stratosphere    |      |  N/A  |         |          |        |
-|             (Armor) Ichorcloth Boots              |      |  N/A  |         |          |        |
-|              (Armor) Ichorcloth Cowl              |      |  N/A  |         |          |        |
-|            (Armor) Ichorcloth Leggings            |      |  N/A  |         |          |        |
-|             (Armor) Ichorcloth Pouch              |      |  N/A  |         |          |        |
-|              (Armor) Ichorcloth Robe              |      |  N/A  |         |          |        |
-|           (Tool) Awakened Ichorium Axe            |      |  N/A  |         |          |        |
-|         (Tool) Awakened Ichorium Pickaxe          |      |  N/A  |         |          |        |
-|          (Tool) Awakened Ichorium Shovel          |      |  N/A  |         |          |        |
-|          (Tool) Awakened Ichorium Sword           |      |  N/A  |         |          |        |
-|                (Tool) Ichorium Axe                |      |  N/A  |         |          |        |
-|              (Tool) Ichorium Pickaxe              |      |  N/A  |         |          |        |
-|              (Tool) Ichorium Shovel               |      |  N/A  |         |          |        |
-|               (Tool) Ichorium Sword               |      |  N/A  |         |          |        |
-|                       Ichor                       |      |  N/A  |         |          |        |
+| (Armor - Awakened) Boots of the Horizontal Shield |      |       |         |          |        |
+|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |       |         |          |        |
+| (Armor - Awakened) Leggings of the Burning Mantle |      |       |         |          |        |
+|   (Armor - Awakened) Robes of the Stratosphere    |      |       |         |          |        |
+|             (Armor) Ichorcloth Boots              |      |       |         |          |        |
+|              (Armor) Ichorcloth Cowl              |      |       |         |          |        |
+|            (Armor) Ichorcloth Leggings            |      |       |         |          |        |
+|             (Armor) Ichorcloth Pouch              |      |       |         |          |        |
+|              (Armor) Ichorcloth Robe              |      |       |         |          |        |
+|           (Tool) Awakened Ichorium Axe            |      |       |         |          |        |
+|         (Tool) Awakened Ichorium Pickaxe          |      |       |         |          |        |
+|          (Tool) Awakened Ichorium Shovel          |      |       |         |          |        |
+|          (Tool) Awakened Ichorium Sword           |      |       |         |          |        |
+|                (Tool) Ichorium Axe                |      |       |         |          |        |
+|              (Tool) Ichorium Pickaxe              |      |       |         |          |        |
+|              (Tool) Ichorium Shovel               |      |       |         |          |        |
+|               (Tool) Ichorium Sword               |      |       |         |          |        |
+|                       Ichor                       |      |       |         |          |        |
 |                    Ichor Block                    |      |       |         |          |        |
-|                    Ichor Cloth                    |      |  N/A  |         |          |        |
-|                  Ichorium Ingot                   |      |  N/A  |         |          |        |
-|                  Ichorium Nugget                  |      |  N/A  |         |          |        |
+|                    Ichor Cloth                    |      |       |         |          |        |
+|                  Ichorium Ingot                   |      |       |         |          |        |
+|                  Ichorium Nugget                  |      |       |         |          |        |
 |             Infusion Enchant: Eternal             |      |  N/A  |         |          |        |
-|                    Proto Clay                     |      |  N/A  |         |          |        |
-|             Sword of the Dragonslayer             |      |  N/A  |         |          |        |
+|                    Proto Clay                     |      |       |         |          |        |
+|             Sword of the Dragonslayer             |      |       |         |          |        |
 
 ---
 
@@ -109,10 +113,7 @@
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
 | Hexcoal                        |                   | Coal item made from smelting Tainted Logs. Has random burntime between 1 and 2400.        |
-| Infusion Enchant: Consuming    |                   | Voids trash blocks such as cobblestone, stone, netherrack, or dirt.                       |
-| Infusion Enchant: Educational  |                   | Increases experience dropped.                                                             |
 | Infusion Enchant: Void Touched |                   | Gives tools voidmetal auto repair.                                                        |
-| Infusion Enchant: Wrath        |                   | Bonus damage to weapon. Stacks with Sharpness.                                            |
 | Nether Star Block              |                   | Nether Star storage block                                                                 |
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
 | Riding Crop                    |                   | Adds speed effect to mobs struck by the crop. Increases mounted movement speed when used. |
