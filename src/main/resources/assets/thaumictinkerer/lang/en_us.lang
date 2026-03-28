@@ -24,6 +24,7 @@ enchantment.infusion.WRATH=Wrath
 # Items
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
+item.thaumictinkerer:feline_charm.name=Feline Charm
 item.thaumictinkerer:goliath_ring.name=Goliath Ring
 item.thaumictinkerer:transvector_binder.name=Transvector Binder
 item.thaumictinkerer:umbral_dye.name=Umbral Black

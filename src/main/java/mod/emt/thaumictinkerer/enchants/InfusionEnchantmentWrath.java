@@ -12,12 +12,14 @@ import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.DamageSource;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingHurtEvent;
+import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.registries.IForgeRegistry;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 // TODO: Temporary implementation until we adjust the attribute directly
+@Mod.EventBusSubscriber
 public class InfusionEnchantmentWrath implements IAddition, IProxy {
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onLivingHurt(LivingHurtEvent event) {
