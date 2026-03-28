@@ -14,6 +14,7 @@ public class ModBlocksTT {
     public static final Block MOB_ATTRACTOR = null;
     public static final Block THAUMIC_CAKE = null;
     public static final Block TRANSVECTOR_INTERFACE = null;
+    public static final Block THAUMIC_RESTORER = null;
     public static final Block UMBRAL_ROSE = null;
 
     public static void initBlocks() {
@@ -25,5 +26,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockThaumicCake());
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_item", TileItemAttractor.class));
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
     }
 }

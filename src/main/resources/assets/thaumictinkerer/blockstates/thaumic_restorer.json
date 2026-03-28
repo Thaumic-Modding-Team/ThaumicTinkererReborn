@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "thaumictinkerer:thaumic_restorer"
+  },
+  "variants": {
+    "inventory":    { "model": "thaumictinkerer:thaumic_restorer", "transform": "forge:default-block" },
+    "facing=north": { "model": "thaumictinkerer:thaumic_restorer" },
+    "facing=south": { "model": "thaumictinkerer:thaumic_restorer", "y": 180 },
+    "facing=east":  { "model": "thaumictinkerer:thaumic_restorer", "y": 90 },
+    "facing=west":  { "model": "thaumictinkerer:thaumic_restorer", "y": 270 }
+  }
+}

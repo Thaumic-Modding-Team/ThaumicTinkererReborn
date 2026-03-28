@@ -1,0 +1,131 @@
+package mod.emt.thaumictinkerer.block;
+
+import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.tile.TileThaumicRestorer;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.inventory.EntityEquipmentSlot;
+import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.registries.IForgeRegistry;
+import org.jetbrains.annotations.NotNull;
+import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.aspects.AspectList;
+
+import java.util.Map;
+
+public class BlockThaumicRestorer extends BlockTileAddition {
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
+
+    public BlockThaumicRestorer() {
+        super("thaumic_restorer", Material.IRON, MapColor.PURPLE, TileThaumicRestorer.class);
+        this.setHardness(2.0f);
+        this.setResistance(10.f);
+        this.setSoundType(SoundType.METAL);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+    }
+
+    @Override
+    public boolean onBlockActivated(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof TileThaumicRestorer) {
+            IItemHandler handler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, facing);
+            if(handler != null) {
+                ItemStack heldStack = playerIn.getHeldItemMainhand();
+                if(!heldStack.isEmpty()) {
+                    if(ItemHandlerHelper.insertItem(handler, heldStack, true).isEmpty()) {
+                        playerIn.setItemStackToSlot(EntityEquipmentSlot.MAINHAND, ItemHandlerHelper.insertItem(handler, heldStack, false));
+                        return true;
+                    }
+                }
+
+                ItemStack extracted = handler.extractItem(0, 1, true);
+                if(!extracted.isEmpty()) {
+                    extracted = handler.extractItem(0, 1, false);
+                    ItemHandlerHelper.giveItemToPlayer(playerIn, extracted, playerIn.inventory.currentItem);
+                }
+            }
+            return true;
+        }
+        return false;
+    }
+
+    @Override
+    public boolean isOpaqueCube(@NotNull IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public @NotNull BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+
+    @Override
+    public @NotNull IBlockState getStateForPlacement(@NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, @NotNull EnumHand hand) {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+
+    @Override
+    public @NotNull IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta));
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(FACING).getHorizontalIndex();
+    }
+
+    @Override
+    protected @NotNull BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, FACING);
+    }
+
+    @Override
+    public @NotNull IBlockState withRotation(IBlockState state, Rotation rot) {
+        return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
+    }
+
+    @Override
+    public @NotNull IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+        return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
+    }
+
+    //##########################################################
+    // IBlockAddition
+
+
+    @Override
+    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+        //TODO
+    }
+
+    @Override
+    public void registerResearchLocation() {
+        //TODO
+    }
+
+    @Override
+    public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
+        //TODO
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return ConfigHandlerTT.thaumicRestorer.enable;
+    }
+}

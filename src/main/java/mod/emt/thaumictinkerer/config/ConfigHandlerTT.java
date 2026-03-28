@@ -14,7 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ConfigHandlerTT {
     @Config.Name("Infusion Enchantments")
     public static InfusionEnchantConfig infusionEnchantments = new InfusionEnchantConfig();
-
+    @Config.Name("Thaumic Restorer")
+    public static ThaumicRestorerConfig thaumicRestorer = new ThaumicRestorerConfig();
 
 
     public static class InfusionEnchantConfig {
@@ -49,6 +50,24 @@ public class ConfigHandlerTT {
             @Config.RequiresMcRestart
             public boolean enable = true;
         }
+    }
+
+    public static class ThaumicRestorerConfig {
+        @Config.RequiresMcRestart
+        @Config.Name("Enable Thaumic Restorer")
+        @Config.Comment("Enables the Thaumic Restorer, a block that uses essentia to repair items.")
+        public boolean enable = true;
+
+        @Config.Name("Dynamic Aspects")
+        @Config.Comment({
+                "Enables item repair using aspects based on the item type.",
+                "  Armor = Praemunio (Protect)",
+                "  Weapons = Aversio (Aversion)",
+                "  Tools = Instrumentum (Tool)",
+                "  Other = Fabrico (Craft)",
+                "If set to false, all tools will be repaired with Fabrico (Craft)."
+        })
+        public boolean dynamicAspects = true;
     }
 
     @Mod.EventBusSubscriber(modid = ThaumicTinkerer.MOD_ID)
