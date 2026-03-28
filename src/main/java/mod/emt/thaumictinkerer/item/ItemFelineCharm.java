@@ -13,6 +13,7 @@ import org.jetbrains.annotations.NotNull;
 public class ItemFelineCharm extends AbstractItemAddition implements IBauble {
     public ItemFelineCharm() {
         super("feline_charm");
+        this.setMaxStackSize(1);
     }
 
     @Override
