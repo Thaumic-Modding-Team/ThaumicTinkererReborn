@@ -22,7 +22,7 @@
 | Stopwatch of the Timetwister |          |          |          |          |        |
 |     Tablet of Necromancy     |          |          |          |          |        |
 |         Thaumic Cake         | COMPLETE | COMPLETE | COMPLETE |          |        |
-|       Thaumic Restorer       |          |          |          |          |        |
+|       Thaumic Restorer       |   WIP    |          |          |          |        |
 |      Transvector Binder      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Transvector Dislocator    |          |          |          |          |        |
 |    Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
