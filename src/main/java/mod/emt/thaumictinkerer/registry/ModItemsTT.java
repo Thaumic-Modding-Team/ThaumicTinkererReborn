@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.registry;
 
 
 import mod.emt.thaumictinkerer.item.*;
+import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import net.minecraft.item.Item;
 

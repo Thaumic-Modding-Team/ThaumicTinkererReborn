@@ -2,7 +2,7 @@ package mod.emt.thaumictinkerer.event;
 
 import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
-import mod.emt.thaumictinkerer.item.ItemFelineCharm;
+import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import net.minecraft.entity.ai.RandomPositionGenerator;
 import net.minecraft.entity.monster.EntityCreeper;
 import net.minecraft.entity.player.EntityPlayer;
