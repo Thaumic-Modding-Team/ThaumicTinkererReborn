@@ -2,6 +2,7 @@
 ## Thaumic Tinkerer: Reborn
 |           Feature            |   Code   |  Model   | Texture  | Research | Recipe |
 |:----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
+|       Aquatic Alchemy        |    N/A   |    N/A   |    N/A   |          |        |
 |    Attractor (Corporeal)     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |     Attractor (Kinetic)      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Soul Mould)    |          |          |          |          |        |
@@ -16,6 +17,9 @@
 |      Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)      |          |          |          |          |        |
 |         Gas Remover          |          |          |          |          |        |
+| Infusion Enchant: Consuming  |          |          |          |          |        |
+|Infusion Enchant: Educational |          |          |          |          |        |
+|    Infusion Enchant: Wrath   |          |          |          |          |        |
 |        Infused Seeds         |          |          |          |          |        |
 |   Ring of Goliath's Might    | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Sigil of Memories       |          |          |          |          |        |
@@ -109,10 +113,7 @@
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
 | Hexcoal                        |                   | Coal item made from smelting Tainted Logs. Has random burntime between 1 and 2400.        |
-| Infusion Enchant: Consuming    |                   | Voids trash blocks such as cobblestone, stone, netherrack, or dirt.                       |
-| Infusion Enchant: Educational  |                   | Increases experience dropped.                                                             |
 | Infusion Enchant: Void Touched |                   | Gives tools voidmetal auto repair.                                                        |
-| Infusion Enchant: Wrath        |                   | Bonus damage to weapon. Stacks with Sharpness.                                            |
 | Nether Star Block              |                   | Nether Star storage block                                                                 |
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
 | Riding Crop                    |                   | Adds speed effect to mobs struck by the crop. Increases mounted movement speed when used. |
