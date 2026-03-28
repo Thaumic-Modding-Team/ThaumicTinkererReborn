@@ -1,6 +1,6 @@
 {
-  "parent": "item/generated",
+  "parent": "item/handheld",
   "textures": {
-    "layer0": "thaumictinkerer:items/ender_mirror"
+    "layer0": "thaumictinkerer:items/blood_sword"
   }
 }
