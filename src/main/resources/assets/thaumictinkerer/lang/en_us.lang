@@ -1,6 +1,8 @@
 itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
 
 # Chat
+chat.thaumictinkerer:attractor.mode.attract=Attractor Mode: ATTRACT
+chat.thaumictinkerer:attractor.mode.repulse=Attractor Mode: REPULSE
 chat.thaumictinkerer:golaith_ring.shattered=Your Goliath Ring shatters as it protects you from a fatal blow.
 chat.thaumictinkerer:transvector_binder.link_stored=Link Stored.
 chat.thaumictinkerer:transvector_binder.link_successful=Link Successful!

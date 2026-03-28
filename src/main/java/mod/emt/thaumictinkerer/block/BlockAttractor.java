@@ -11,12 +11,14 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
@@ -83,10 +85,22 @@ public class BlockAttractor extends BlockTileAddition {
 
     @Override
     public boolean onBlockActivated(@NotNull World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
-        //TODO: Open GUI
         TileEntity tile = worldIn.getTileEntity(pos);
         if(tile instanceof AbstractTileAttractor<?>) {
-            ((AbstractTileAttractor<?>) tile).openGui(playerIn);
+            if(playerIn.isSneaking()) {
+                AttractorMode nextMode = state.getValue(MODE).next();
+                worldIn.setBlockState(pos, state.withProperty(MODE, nextMode));
+                tile.validate();
+                worldIn.setTileEntity(pos, tile);
+                if(!worldIn.isRemote) {
+                    playerIn.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:attractor.mode." + nextMode.getName()), true);
+                } else {
+                    playerIn.playSound(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 0.4f, 0.7f);
+                }
+            } else {
+                //TODO: Open Gui
+                // ((AbstractTileAttractor<?>) tile).openGui(playerIn);
+            }
             return true;
         }
         return false;
@@ -168,7 +182,7 @@ public class BlockAttractor extends BlockTileAddition {
         REPULSE;
 
         public AttractorMode next() {
-            return AttractorMode.values()[this.ordinal() + 1 % AttractorMode.values().length];
+            return AttractorMode.values()[(this.ordinal() + 1) % AttractorMode.values().length];
         }
 
         @Override

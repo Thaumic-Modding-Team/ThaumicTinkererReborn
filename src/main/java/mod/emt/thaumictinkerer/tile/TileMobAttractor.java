@@ -5,12 +5,8 @@ import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     public ItemStackHandler stackHandler = new ItemStackHandler(12) {
@@ -21,7 +17,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            //TODO
+            //TODO: Only allow mob filters.
             return super.isItemValid(slot, stack);
         }
 
@@ -61,7 +57,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     @Override
     public void openGui(EntityPlayer player) {
         //TODO
-        //player.openGui(ThaumicTinkerer.instance, 0, this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+        // player.openGui(ThaumicTinkerer.instance, , this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
     }
 
     @Override
@@ -72,21 +68,47 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     public boolean checkEntity(EntityLivingBase entity) {
         if(entity instanceof EntityPlayer)
             return false;
-
-
         return true;
     }
 
-    @Override
-    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
+    public ItemStackHandler getStackHandler() {
+        return stackHandler;
     }
 
-    @Override
-    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
-        }
-        return super.getCapability(capability, facing);
+    public boolean getBlacklist() {
+        return blacklist;
     }
+
+    public void setBlacklist(boolean blacklist) {
+        this.blacklist = blacklist;
+    }
+
+    public boolean getIgnoreAdults() {
+        return ignoreAdults;
+    }
+
+    public void setIgnoreAdults(boolean ignoreAdults) {
+        this.ignoreAdults = ignoreAdults;
+    }
+
+    public boolean getIgnoreChild() {
+        return ignoreChild;
+    }
+
+    public void setIgnoreChild(boolean ignoreChild) {
+        this.ignoreChild = ignoreChild;
+    }
+
+//    @Override
+//    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
+//        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
+//    }
+//
+//    @Override
+//    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
+//        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+//            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
+//        }
+//        return super.getCapability(capability, facing);
+//    }
 }

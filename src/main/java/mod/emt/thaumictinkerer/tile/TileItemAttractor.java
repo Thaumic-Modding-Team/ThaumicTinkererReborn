@@ -1,17 +1,12 @@
 package mod.emt.thaumictinkerer.tile;
 
 import mod.emt.thaumictinkerer.api.tile.AbstractTileAttractor;
-import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.util.EnumFacing;
-import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 
 public class TileItemAttractor extends AbstractTileAttractor<EntityItem> {
     public ItemStackHandler stackHandler = new ItemStackHandler(12) {
@@ -54,7 +49,7 @@ public class TileItemAttractor extends AbstractTileAttractor<EntityItem> {
     @Override
     public void openGui(EntityPlayer player) {
         //TODO
-        //player.openGui(ThaumicTinkerer.instance, 0, this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+        // player.openGui(ThaumicTinkerer.instance, , this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
     }
 
     @Override
@@ -67,16 +62,20 @@ public class TileItemAttractor extends AbstractTileAttractor<EntityItem> {
             return false;
 
         boolean isEmpty = true;
-        for(int slot = 0; slot < this.stackHandler.getSlots(); slot++) {
-            ItemStack slotStack = this.stackHandler.getStackInSlot(slot);
-            if(!slotStack.isEmpty()) {
-                if(ItemHelper.itemMatches(slotStack, stack, this.matchNbt, this.matchMeta, this.matchOreDict)) {
-                    return true;
-                }
-                isEmpty = false;
-            }
-        }
+//        for(int slot = 0; slot < this.stackHandler.getSlots(); slot++) {
+//            ItemStack slotStack = this.stackHandler.getStackInSlot(slot);
+//            if(!slotStack.isEmpty()) {
+//                if(ItemHelper.itemMatches(slotStack, stack, this.matchNbt, this.matchMeta, this.matchOreDict)) {
+//                    return true;
+//                }
+//                isEmpty = false;
+//            }
+//        }
         return isEmpty;
+    }
+
+    public ItemStackHandler getStackHandler() {
+        return stackHandler;
     }
 
     public boolean getMatchMeta() {
@@ -95,16 +94,16 @@ public class TileItemAttractor extends AbstractTileAttractor<EntityItem> {
         this.matchOreDict = matchOreDict;
     }
 
-    @Override
-    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
-        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
-    }
-
-    @Override
-    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
-        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
-        }
-        return super.getCapability(capability, facing);
-    }
+//    @Override
+//    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
+//        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
+//    }
+//
+//    @Override
+//    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
+//        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+//            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
+//        }
+//        return super.getCapability(capability, facing);
+//    }
 }
