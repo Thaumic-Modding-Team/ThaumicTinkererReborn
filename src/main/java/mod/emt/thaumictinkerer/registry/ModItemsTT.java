@@ -23,6 +23,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());
         RegistrarTT.addAdditionToRegister(new ItemUmbralDye());
         RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
+        RegistrarTT.addAdditionToRegister(new ItemIgniumStriker());
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
     }
 }

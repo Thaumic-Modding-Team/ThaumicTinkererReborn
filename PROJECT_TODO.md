@@ -17,6 +17,7 @@
 |       Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)       |          |          |          |          |        |
 |          Gas Remover          |          |          |          |          |        |
+|            Igniter            | COMPLETE | COMPLETE | COMPLETE |          |        |
 |  Infusion Enchant: Consuming  |          |   N/A    | COMPLETE |          |        |
 | Infusion Enchant: Educational | COMPLETE |   N/A    | COMPLETE |          |        |
 |    Infusion Enchant: Wrath    |   WIP    |   N/A    | COMPLETE |          |        |
@@ -139,7 +140,6 @@
 | Aqua Infused Water Bucket    |             | Infinite water bucket.                                            |
 | Flux Scrubber                |             | Removes flux from the environment using Salis Mundus.             |
 | Greatwood Block              |             | Decorative greatwood block.                                       |
-| Igniter                      |             | Magic Wand flint and steel item.                                  |
 | Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
 | Terra Infused Obsidian       |             | Wither-proof obsidian.                                            |
 | Thaumium Framed Greatwood    |             | Blast-resistant decorative greatwood block.                       |

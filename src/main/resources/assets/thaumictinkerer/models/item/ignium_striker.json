@@ -1,0 +1,14 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "thaumictinkerer:items/ignium_striker"
+  },
+  "overrides": [
+    {
+      "predicate": {
+        "depleted": 1
+      },
+      "model": "thaumictinkerer:item/ignium_striker_depleted"
+    }
+  ]
+}
