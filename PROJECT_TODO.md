@@ -3,6 +3,7 @@
 |            Feature            |   Code   |  Model   | Texture  | Research | Recipe |
 |:-----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
 |        Aquatic Alchemy        |   N/A    |   N/A    |   N/A    |          |        |
+|   Aqua Infused Water Bucket   | COMPLETE | COMPLETE | COMPLETE |          |        |
 |     Attractor (Corporeal)     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Attractor (Kinetic)      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Soul Mould)     |          |          |          |          |        |
@@ -137,7 +138,6 @@
 ## Thaumic Restoration
 | Feature                      | Replacement | Description                                                       |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------|
-| Aqua Infused Water Bucket    |             | Infinite water bucket.                                            |
 | Flux Scrubber                |             | Removes flux from the environment using Salis Mundus.             |
 | Greatwood Block              |             | Decorative greatwood block.                                       |
 | Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
