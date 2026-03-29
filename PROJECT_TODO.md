@@ -28,7 +28,7 @@
 | Stopwatch of the Timetwister  |          |          |          |          |        |
 |     Tablet of Necromancy      |          |          |          |          |        |
 |         Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |        |
-|       Thaumic Restorer        | COMPLETE |          |          |          |        |
+|       Thaumic Restorer        | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Transvector Binder       | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Transvector Dislocator     |          |          |          |          |        |
 |     Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
@@ -39,33 +39,33 @@
 |          XP Talisman          |          |          |          |          |        |
 
 ## Thaumic Tinkerer: Kami Reborn
-|                      Feature                      | Code | Model | Texture | Research | Recipe |
-|:-------------------------------------------------:|:----:|:-----:|:-------:|:--------:|:------:|
-| (Armor - Awakened) Boots of the Horizontal Shield |      |       |         |          |        |
-|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |       |         |          |        |
-| (Armor - Awakened) Leggings of the Burning Mantle |      |       |         |          |        |
-|   (Armor - Awakened) Robes of the Stratosphere    |      |       |         |          |        |
-|             (Armor) Ichorcloth Boots              |      |       |         |          |        |
-|              (Armor) Ichorcloth Cowl              |      |       |         |          |        |
-|            (Armor) Ichorcloth Leggings            |      |       |         |          |        |
-|             (Armor) Ichorcloth Pouch              |      |       |         |          |        |
-|              (Armor) Ichorcloth Robe              |      |       |         |          |        |
-|           (Tool) Awakened Ichorium Axe            |      |       |         |          |        |
-|         (Tool) Awakened Ichorium Pickaxe          |      |       |         |          |        |
-|          (Tool) Awakened Ichorium Shovel          |      |       |         |          |        |
-|          (Tool) Awakened Ichorium Sword           |      |       |         |          |        |
-|                (Tool) Ichorium Axe                |      |       |         |          |        |
-|              (Tool) Ichorium Pickaxe              |      |       |         |          |        |
-|              (Tool) Ichorium Shovel               |      |       |         |          |        |
-|               (Tool) Ichorium Sword               |      |       |         |          |        |
-|                       Ichor                       |      |       |         |          |        |
-|                    Ichor Block                    |      |       |         |          |        |
-|                    Ichor Cloth                    |      |       |         |          |        |
-|                  Ichorium Ingot                   |      |       |         |          |        |
-|                  Ichorium Nugget                  |      |       |         |          |        |
-|             Infusion Enchant: Eternal             |      |  N/A  |         |          |        |
-|                    Proto Clay                     |      |       |         |          |        |
-|             Sword of the Dragonslayer             |      |       |         |          |        |
+|                      Feature                      | Code | Model | Texture  | Research | Recipe |
+|:-------------------------------------------------:|:----:|:-----:|:--------:|:--------:|:------:|
+| (Armor - Awakened) Boots of the Horizontal Shield |      |       |          |          |        |
+|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |       |          |          |        |
+| (Armor - Awakened) Leggings of the Burning Mantle |      |       |          |          |        |
+|   (Armor - Awakened) Robes of the Stratosphere    |      |       |          |          |        |
+|             (Armor) Ichorcloth Boots              |      |       |          |          |        |
+|              (Armor) Ichorcloth Cowl              |      |       |          |          |        |
+|            (Armor) Ichorcloth Leggings            |      |       |          |          |        |
+|             (Armor) Ichorcloth Pouch              |      |       |          |          |        |
+|              (Armor) Ichorcloth Robe              |      |       |          |          |        |
+|           (Tool) Awakened Ichorium Axe            |      |       |          |          |        |
+|         (Tool) Awakened Ichorium Pickaxe          |      |       |          |          |        |
+|          (Tool) Awakened Ichorium Shovel          |      |       |          |          |        |
+|          (Tool) Awakened Ichorium Sword           |      |       |          |          |        |
+|                (Tool) Ichorium Axe                |      |       |          |          |        |
+|              (Tool) Ichorium Pickaxe              |      |       |          |          |        |
+|              (Tool) Ichorium Shovel               |      |       |          |          |        |
+|               (Tool) Ichorium Sword               |      |       |          |          |        |
+|                       Ichor                       |      |       |          |          |        |
+|                    Ichor Block                    |      |       |          |          |        |
+|                    Ichor Cloth                    |      |       |          |          |        |
+|                  Ichorium Ingot                   |      |       |          |          |        |
+|                  Ichorium Nugget                  |      |       |          |          |        |
+|             Infusion Enchant: Eternal             |      |  N/A  | COMPLETE |          |        |
+|                    Proto Clay                     |      |       |          |          |        |
+|             Sword of the Dragonslayer             |      |       |          |          |        |
 
 ---
 
