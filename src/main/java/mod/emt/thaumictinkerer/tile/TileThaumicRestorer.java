@@ -18,6 +18,9 @@ import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
 import thaumcraft.api.aspects.IEssentiaTransport;
+import thaumcraft.client.fx.FXDispatcher;
+
+import java.awt.*;
 
 public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEssentiaTransport, IAspectContainer {
     protected ItemStackHandler stackHandler = new ItemStackHandler(1) {
@@ -41,7 +44,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
             markDirty();
         }
     };
-    public boolean isRepairing;
+    protected boolean isRepairing;
     public int count;
 
     @Override
@@ -71,6 +74,9 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
                     if(this.attemptDrainAndRepair()) {
                         this.isRepairing = true;
                         did = true;
+                    } else if(this.isRepairing) {
+                        this.isRepairing = false;
+                        did = true;
                     }
                 } else if (this.isRepairing) {
                     this.isRepairing = false;
@@ -79,7 +85,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
             }
         } else {
             if(this.isRepairing) {
-                //TODO: Do repair effects.
+                this.performRepairEffect();
             }
         }
 
@@ -88,11 +94,15 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         }
     }
 
-    protected ItemStack getStackToRepair() {
+    public ItemStack getStackToRepair() {
         return this.stackHandler.getStackInSlot(0);
     }
 
-    protected Aspect getRepairAspect() {
+    public boolean isRepairing() {
+        return isRepairing;
+    }
+
+    public Aspect getRepairAspect() {
         if(ConfigHandlerTT.thaumicRestorer.dynamicAspects) {
             ItemStack stack = this.getStackToRepair();
             if(!stack.isEmpty()) {
@@ -165,6 +175,21 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
             }
         }
         return 0;
+    }
+
+    public void performRepairEffect() {
+        if(this.world.rand.nextInt(20) == 0) {
+            Aspect aspect = this.getRepairAspect();
+            Color color = new Color(aspect.getColor());
+            EnumFacing zapOrigin = EnumFacing.HORIZONTALS[this.world.rand.nextInt(EnumFacing.HORIZONTALS.length)];
+            double xEnd = this.pos.getX() + 0.5;
+            double yEnd = this.pos.getY() + 1.125; // 1.0 + itemHeight / 2
+            double zEnd = this.pos.getZ() + 0.5;
+            double xStart = xEnd - (zapOrigin.getXOffset() * 0.25);
+            double yStart = this.pos.getY() + 0.875;
+            double zStart = zEnd - (zapOrigin.getZOffset() * 0.25);
+            FXDispatcher.INSTANCE.arcLightning(xStart, yStart, zStart, xEnd, yEnd, zEnd, color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, 0.25f);
+        }
     }
 
     @Override

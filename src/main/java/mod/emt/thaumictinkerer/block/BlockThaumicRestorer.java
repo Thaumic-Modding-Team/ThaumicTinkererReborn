@@ -1,6 +1,7 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.client.renderer.tile.TileThaumicRestorerTESR;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.tile.TileThaumicRestorer;
 import net.minecraft.block.BlockHorizontal;
@@ -17,8 +18,14 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -31,6 +38,7 @@ import java.util.Map;
 
 public class BlockThaumicRestorer extends BlockTileAddition {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
+    public static final AxisAlignedBB AABB_RESTORER = new AxisAlignedBB(0, 0, 0, 1.0, 0.75, 1.0);
 
     public BlockThaumicRestorer() {
         super("thaumic_restorer", Material.IRON, MapColor.PURPLE, TileThaumicRestorer.class);
@@ -38,6 +46,12 @@ public class BlockThaumicRestorer extends BlockTileAddition {
         this.setResistance(10.f);
         this.setSoundType(SoundType.METAL);
         this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull AxisAlignedBB getBoundingBox(@NotNull IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
+        return AABB_RESTORER;
     }
 
     @Override
@@ -65,6 +79,20 @@ public class BlockThaumicRestorer extends BlockTileAddition {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isSideSolid(@NotNull IBlockState base_state, IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing side) {
+        IBlockState state = world.getBlockState(pos);
+        return side == EnumFacing.DOWN || side == state.getValue(FACING).getOpposite();
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isFullCube(@NotNull IBlockState state) {
+        return false;
+    }
+
+    @SuppressWarnings("deprecation")
     @Override
     public boolean isOpaqueCube(@NotNull IBlockState state) {
         return false;
@@ -80,6 +108,7 @@ public class BlockThaumicRestorer extends BlockTileAddition {
         return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public @NotNull IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta));
@@ -95,11 +124,13 @@ public class BlockThaumicRestorer extends BlockTileAddition {
         return new BlockStateContainer(this, FACING);
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public @NotNull IBlockState withRotation(IBlockState state, Rotation rot) {
         return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public @NotNull IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
         return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
@@ -122,6 +153,13 @@ public class BlockThaumicRestorer extends BlockTileAddition {
     @Override
     public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
         //TODO
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerModel(ModelRegistryEvent event) {
+        super.registerModel(event);
+        ClientRegistry.bindTileEntitySpecialRenderer(TileThaumicRestorer.class, new TileThaumicRestorerTESR());
     }
 
     @Override
