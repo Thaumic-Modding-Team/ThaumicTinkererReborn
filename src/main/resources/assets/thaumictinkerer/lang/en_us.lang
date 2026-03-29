@@ -10,9 +10,13 @@ chat.thaumictinkerer:transvector_binder.out_of_range=Link out of range.
 chat.thaumictinkerer:transvector_binder.self_link=Block cannot be linked to itself.
 
 # Blocks
+tile.thaumictinkerer:arcane_quartz_block.name=Block of Arcane Quartz
+tile.thaumictinkerer:arcane_quartz_pillar.name=Arcane Quartz Pillar
+tile.thaumictinkerer:arcane_quartz_stairs.name=Arcane Quartz Stairs
 tile.thaumictinkerer:attractor_item.name=Kinetic Attractor
 tile.thaumictinkerer:attractor_mob.name=Corporeal Attractor
 tile.thaumictinkerer:attractor_player.name=Anima Attractor
+tile.thaumictinkerer:chiseled_arcane_quartz_block.name=Chiseled Arcane Quartz Block
 tile.thaumictinkerer:thaumic_cake.name=Thaumic Cake
 tile.thaumictinkerer:thaumic_restorer.name=Thaumic Restorer
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
@@ -23,6 +27,7 @@ enchantment.infusion.EDUCATIONAL=Educational
 enchantment.infusion.WRATH=Wrath
 
 # Items
+item.thaumictinkerer:arcane_quartz.name=Arcane Quartz
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
 item.thaumictinkerer:everfull_bucket.name=Everfull Bucket
