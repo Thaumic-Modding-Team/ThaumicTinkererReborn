@@ -1,7 +1,5 @@
 package mod.emt.thaumictinkerer.item;
 
-import javax.annotation.Nullable;
-
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.item.IItemAddition;
 import net.minecraft.advancements.CriteriaTriggers;
@@ -15,13 +13,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemBucket;
 import net.minecraft.item.ItemStack;
 import net.minecraft.stats.StatList;
-import net.minecraft.util.ActionResult;
-import net.minecraft.util.EnumActionResult;
-import net.minecraft.util.EnumFacing;
-import net.minecraft.util.EnumHand;
-import net.minecraft.util.EnumParticleTypes;
-import net.minecraft.util.SoundCategory;
-import net.minecraft.util.SoundEvent;
+import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
@@ -31,6 +23,7 @@ import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.aura.AuraHelper;
 import thaumcraft.client.fx.FXDispatcher;
 
+import javax.annotation.Nullable;
 import java.util.Objects;
 
 public class ItemEverfullBucket extends ItemBucket implements IItemAddition {

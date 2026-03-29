@@ -1,6 +1,11 @@
 package mod.emt.thaumictinkerer.utils.helpers;
 
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
+import net.minecraftforge.common.crafting.CraftingHelper;
+import net.minecraftforge.fluids.FluidStack;
+import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
+import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
 
@@ -20,6 +25,21 @@ public class ItemHelper {
                         return true;
                     }
                 }
+            }
+        }
+        return false;
+    }
+
+    public static boolean ingredientMatches(ItemStack stack, Object recipeIngredient) {
+        Ingredient ingredient = CraftingHelper.getIngredient(recipeIngredient);
+        if(ingredient != null) {
+            return ingredient.apply(stack);
+        } else if(recipeIngredient instanceof FluidStack) {
+            FluidStack fluidStack = (FluidStack) recipeIngredient;
+            IFluidHandlerItem handler = stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
+            if(handler != null) {
+                FluidStack drained = handler.drain(fluidStack, false);
+                return drained != null && drained.amount == fluidStack.amount;
             }
         }
         return false;
