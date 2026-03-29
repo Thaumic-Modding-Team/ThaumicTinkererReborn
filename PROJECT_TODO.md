@@ -2,8 +2,8 @@
 ## Thaumic Tinkerer: Reborn
 |            Feature            |   Code   |  Model   | Texture  | Research | Recipe |
 |:-----------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
-|        Aquatic Alchemy        |   N/A    |   N/A    |   N/A    |          |        |
 |   Aqua Infused Water Bucket   | COMPLETE | COMPLETE | COMPLETE |          |        |
+|        Aquatic Alchemy        |   N/A    |   N/A    |   N/A    |          |        |
 |     Attractor (Corporeal)     | COMPLETE | COMPLETE | COMPLETE |          |        |
 |      Attractor (Kinetic)      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Attractor (Soul Mould)     |          |          |          |          |        |
@@ -18,17 +18,25 @@
 |       Gas Phial (Light)       |          |          |          |          |        |
 |      Gas Phial (Shadow)       |          |          |          |          |        |
 |          Gas Remover          |          |          |          |          |        |
+|        Greatwood Block        |          |          |          |          |        |
 |            Igniter            | COMPLETE | COMPLETE | COMPLETE |          |        |
+|         Infused Seeds         |          |          |          |          |        |
 |  Infusion Enchant: Consuming  |          |   N/A    | COMPLETE |          |        |
 | Infusion Enchant: Educational | COMPLETE |   N/A    | COMPLETE |          |        |
 |    Infusion Enchant: Wrath    |   WIP    |   N/A    | COMPLETE |          |        |
-|         Infused Seeds         |          |          |          |          |        |
 |    Ring of Goliath's Might    | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Sigil of Memories       |          |          |          |          |        |
+|     Smokey Quartz (Block)     |          |          |          |          |        |
+|     Smokey Quartz (Item)      |          |          |          |          |        |
 | Stopwatch of the Timetwister  |          |          |          |          |        |
 |     Tablet of Necromancy      |          |          |          |          |        |
+|         Tainted Brick         |          |          |          |          |        |
+|         Tainted Stone         |          |          |          |          |        |
+|    Terra Infused Obsidian     |          |          |          |          |        |
 |         Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |        |
 |       Thaumic Restorer        | COMPLETE | COMPLETE | COMPLETE |          |        |
+|   Thaumium Framed Greatwood   |          |          |          |          |        |
+|     Thaumium Plated Stone     |          |          |          |          |        |
 |      Transvector Binder       | COMPLETE | COMPLETE | COMPLETE |          |        |
 |    Transvector Dislocator     |          |          |          |          |        |
 |     Transvector Interface     | COMPLETE | COMPLETE | COMPLETE |          |        |
@@ -89,7 +97,6 @@
 | Potion of Aqua               |                      | Drinking it gives you an effect that cools down lava around you                                                 |
 | Potion of Ignis              |                      | Drinking it gives you an effect that sets the targets on fire, with faster damage.                              |
 | Potion of Terra              |                      | Drinking it gives you an effect that places a barrier between you and the target when hitting them              |
-| Smokey Quartz                |                      | Crafting ingredient for Osmotic Enchanter multiblock                                                            |
 | Sword of the Condor          |                      | An upgraded Sword of Zephyr that pushes you forward, or backward if sneaking. Works while airborn.              |
 | Wand Focus: Distortion       |                      | Right-clicking and holding will cause most projectiles to dispel and disappear                                  |
 | Wand Focus: Experience Drain |                      | Let's you exchange experience for vis                                                                           |
@@ -114,24 +121,15 @@
 | BM Ritual: Delayed Insanity    |                   | Grants warp ward and reduces temporary warp                                               |
 | Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
-| Hexcoal                        |                   | Coal item made from smelting Tainted Logs. Has random burntime between 1 and 2400.        |
 | Infusion Enchant: Void Touched |                   | Gives tools voidmetal auto repair.                                                        |
 | Nether Star Block              |                   | Nether Star storage block                                                                 |
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
-| Riding Crop                    |                   | Adds speed effect to mobs struck by the crop. Increases mounted movement speed when used. |
-| Tainted Brick                  |                   | Decorative block made from Taint Stone                                                    |
-| Tainted Leaves                 |                   | Decorative block grown from Tainted Saplings                                              |
-| Tainted Log                    |                   | Decorative block grown from Tainted Saplings                                              |
-| Tainted Plank                  |                   | Decorative block grown from Tainted Saplings                                              |
-| Tainted Sapling                |                   | Grows tainted trees                                                                       |
-| Tainted Stone                  |                   | Decorative block                                                                          |
-| Vitenfruit                     |                   | Apple drop from Tainted trees, causes taint effects and warp                              |
 
 ## Planar Artifice
 | Feature                         | Replacement | Description                                      |
 |:--------------------------------|:-----------:|:-------------------------------------------------|
 | Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                  |
-| Infusion Enchant: Curious       |             | Grants a low chance to drop curiositiies.        |
+| Infusion Enchant: Curious       |             | Grants a low chance to drop curiosities.         |
 | Infusion Enchant: Projecting    |             | Increases reach distance.                        |
 | Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items. |
 
@@ -139,9 +137,5 @@
 | Feature                      | Replacement | Description                                                       |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------|
 | Flux Scrubber                |             | Removes flux from the environment using Salis Mundus.             |
-| Greatwood Block              |             | Decorative greatwood block.                                       |
 | Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
-| Terra Infused Obsidian       |             | Wither-proof obsidian.                                            |
-| Thaumium Framed Greatwood    |             | Blast-resistant decorative greatwood block.                       |
-| Thaumium Plated Stone        |             | Blast-resistant decorative stone block.                           |
 
