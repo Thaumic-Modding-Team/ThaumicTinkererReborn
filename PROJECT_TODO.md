@@ -115,6 +115,12 @@
 | Focus Effect: Celestial Teleport       |             | Instantly teleport to a linked Celestial Gateway                                                          |
 | Nether Shard                           |             | Crafting ingredient for Ichor. Not sure how they are obtained.                                            |
 
+**Celestial Gateway Rework**
+Celestial Gateway is split into two features, the block and the spell effect. The spell effect is bound to the block and can be cast
+to teleport the player to the block regardless of dimension or position. When the spell effect teleport takes place, the tile entity
+will save the position and world of the player. If the player interacts with the block with a caster, they will return to the saved
+position. Each player would need their own save point in the block saved to the tile data.
+
 ## Forbidden Magic
 | Feature                        |    Replacement    | Description                                                                               |
 |:-------------------------------|:-----------------:|:------------------------------------------------------------------------------------------|
