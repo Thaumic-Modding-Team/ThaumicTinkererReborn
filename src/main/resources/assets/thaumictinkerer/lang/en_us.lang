@@ -12,6 +12,7 @@ chat.thaumictinkerer:transvector_binder.self_link=Block cannot be linked to itse
 # Blocks
 tile.thaumictinkerer:attractor_item.name=Kinetic Attractor
 tile.thaumictinkerer:attractor_mob.name=Corporeal Attractor
+tile.thaumictinkerer:attractor_player.name=Anima Attractor
 tile.thaumictinkerer:thaumic_cake.name=Thaumic Cake
 tile.thaumictinkerer:thaumic_restorer.name=Thaumic Restorer
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
