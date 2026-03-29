@@ -13,6 +13,7 @@ import net.minecraft.item.EnumRarity;
 import net.minecraft.item.IItemPropertyGetter;
 import net.minecraft.item.ItemFlintAndSteel;
 import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagInt;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -27,9 +28,6 @@ import thaumcraft.common.lib.SoundsTC;
 import java.util.Objects;
 
 public class ItemIgniumStriker extends ItemFlintAndSteel implements IItemAddition, IRechargable {
-    protected static final int VIS_CAPACITY = 180;
-    protected static final int VIS_CONSUMPTION = 1;
-
     public ItemIgniumStriker() {
         this.setRegistryName(ThaumicTinkerer.MOD_ID, "ignium_striker");
         this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
@@ -68,30 +66,67 @@ public class ItemIgniumStriker extends ItemFlintAndSteel implements IItemAdditio
         pos = pos.offset(facing);
         ItemStack stack = player.getHeldItem(hand);
 
-        if(!player.canPlayerEdit(pos, facing, stack) || RechargeHelper.getCharge(stack) <= 0) {
-            world.playSound(player, pos, SoundsTC.ticks, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 1.5F + 0.8F);
-        } else {
-            if(world.isAirBlock(pos)) {
-                world.playSound(player, pos, SoundsTC.crystal, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 1.5F + 0.8F);
-                world.playSound(player, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
-                world.setBlockState(pos, Blocks.FIRE.getDefaultState(), 11);
-            }
+        if(this.drainEnergy(stack, true)) {
+            if (!player.canPlayerEdit(pos, facing, stack)) {
+                world.playSound(player, pos, SoundsTC.ticks, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 1.5F + 0.8F);
+            } else {
+                if (world.isAirBlock(pos)) {
+                    world.playSound(player, pos, SoundsTC.crystal, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 1.5F + 0.8F);
+                    world.playSound(player, pos, SoundEvents.ITEM_FLINTANDSTEEL_USE, SoundCategory.BLOCKS, 1.0F, itemRand.nextFloat() * 0.4F + 0.8F);
+                    world.setBlockState(pos, Blocks.FIRE.getDefaultState(), 11);
+                }
 
-            if(player instanceof EntityPlayerMP) {
-                CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP) player, pos, stack);
-            }
+                if (player instanceof EntityPlayerMP) {
+                    CriteriaTriggers.PLACED_BLOCK.trigger((EntityPlayerMP) player, pos, stack);
+                }
 
-            if(!player.isCreative()) {
-                RechargeHelper.consumeCharge(stack, player, VIS_CONSUMPTION);
+                if (!player.isCreative()) {
+                    this.drainEnergy(stack, false);
+                }
             }
         }
 
         return EnumActionResult.SUCCESS;
     }
 
+    public boolean drainEnergy(ItemStack stack, boolean simulate) {
+        int energy = this.getEnergy(stack);
+        int vis = this.getVisCharge(stack);
+
+        if(simulate) {
+            return energy > 0 || vis > 0;
+        }
+
+        if(energy > 0) {
+            this.setEnergy(stack, energy - 1);
+            return true;
+        } else if(vis > 0) {
+            this.setVisCharge(stack, vis - 1);
+            this.setEnergy(stack, 3);
+            return true;
+        }
+        return false;
+    }
+
+    public int getEnergy(ItemStack stack) {
+        return stack.getTagCompound() != null ? stack.getTagCompound().getInteger("energy") : 0;
+    }
+
+    public void setEnergy(ItemStack stack, int energy) {
+        stack.setTagInfo("energy", new NBTTagInt(energy));
+    }
+
+    public int getVisCharge(ItemStack stack) {
+        return RechargeHelper.getCharge(stack);
+    }
+
+    public void setVisCharge(ItemStack stack, int visCharge) {
+        stack.setTagInfo("tc.charge", new NBTTagInt(visCharge));
+    }
+
     @Override
     public int getMaxCharge(ItemStack stack, EntityLivingBase entity) {
-        return VIS_CAPACITY;
+        return 60;
     }
 
     @Override
