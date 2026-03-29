@@ -102,7 +102,8 @@ public class ItemIgniumStriker extends ItemFlintAndSteel implements IItemAdditio
             return true;
         } else if(vis > 0) {
             this.setVisCharge(stack, vis - 1);
-            this.setEnergy(stack, 3);
+            //Since the first strike is "consumed" when the vis is converted, the energy is set to 2.
+            this.setEnergy(stack, 2);
             return true;
         }
         return false;

@@ -4,14 +4,16 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.block.*;
 import mod.emt.thaumictinkerer.tile.TileItemAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
+import mod.emt.thaumictinkerer.tile.TilePlayerAttractor;
 import net.minecraft.block.Block;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(ThaumicTinkerer.MOD_ID)
 public class ModBlocksTT {
     public static final Block ENERGETIC_NITOR = null;
-    public static final Block ITEM_ATTRACTOR = null;
-    public static final Block MOB_ATTRACTOR = null;
+    public static final Block ATTRACTOR_ITEM = null;
+    public static final Block ATTRACTOR_MOB = null;
+    public static final Block ATTRACTOR_PLAYER = null;
     public static final Block THAUMIC_CAKE = null;
     public static final Block TRANSVECTOR_INTERFACE = null;
     public static final Block THAUMIC_RESTORER = null;
@@ -26,6 +28,7 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockThaumicCake());
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_item", TileItemAttractor.class));
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_player", TilePlayerAttractor.class));
         RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
     }
 }
