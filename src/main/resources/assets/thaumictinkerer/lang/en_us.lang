@@ -32,6 +32,7 @@ enchantment.infusion.WRATH=Wrath
 
 # Items
 item.thaumictinkerer:arcane_quartz.name=Arcane Quartz
+item.thaumictinkerer:condor_sword.name=Sword of the Condor
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
 item.thaumictinkerer:everfull_bucket.name=Everfull Bucket

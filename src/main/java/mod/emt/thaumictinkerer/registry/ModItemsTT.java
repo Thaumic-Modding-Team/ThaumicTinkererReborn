@@ -8,6 +8,7 @@ import net.minecraft.item.Item;
 
 public class ModItemsTT {
     public static final Item ARCANE_QUARTZ = null;
+    public static final Item CONDOR_SWORD = null;
     public static final Item ENDER_MIRROR = null;
     public static final Item EVERFULL_BUCKET = null;
     public static final Item ENERGETIC_NITOR = null;
@@ -29,6 +30,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemIgniumStriker());
         RegistrarTT.addAdditionToRegister(new ItemEverfullBucket());
         RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz", "gemArcaneQuartz"));
+        RegistrarTT.addAdditionToRegister(new ItemCondorSword());
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
     }
 }

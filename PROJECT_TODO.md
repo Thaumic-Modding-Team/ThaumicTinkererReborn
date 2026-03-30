@@ -35,6 +35,7 @@
 |       Smokey Quartz (Block)       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |       Smokey Quartz (Item)        | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |   Stopwatch of the Timetwister    |          |          |          |          |          |
+|        Sword of the Condor        | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Tablet of Necromancy        |          |          |          |          |          |
 |           Thaumic Cake            | COMPLETE | COMPLETE | COMPLETE |          |          |
 |         Thaumic Restorer          | COMPLETE | COMPLETE | COMPLETE |          |          |
@@ -101,7 +102,6 @@ These still need to be done, slabs are just a pain to do.
 | Potion of Aqua               |                      | Drinking it gives you an effect that cools down lava around you                                                 |
 | Potion of Ignis              |                      | Drinking it gives you an effect that sets the targets on fire, with faster damage.                              |
 | Potion of Terra              |                      | Drinking it gives you an effect that places a barrier between you and the target when hitting them              |
-| Sword of the Condor          |                      | An upgraded Sword of Zephyr that pushes you forward, or backward if sneaking. Works while airborn.              |
 | Wand Focus: Distortion       |                      | Right-clicking and holding will cause most projectiles to dispel and disappear                                  |
 | Wand Focus: Experience Drain |                      | Let's you exchange experience for vis                                                                           |
 | Wand Focus: Shadowbeam       |                      | Fires a beam of energy that can reflect the walls several times (see Shadowbeam Staff from Terraria).           |
