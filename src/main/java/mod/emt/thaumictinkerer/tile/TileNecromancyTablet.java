@@ -13,6 +13,7 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.BossInfo;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -21,69 +22,19 @@ import org.jetbrains.annotations.Nullable;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.aspects.IAspectContainer;
+import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.common.lib.events.EssentiaHandler;
 import thaumcraft.common.tiles.crafting.TilePedestal;
 
+import java.awt.*;
+
 public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAspectContainer {
     public static final ResourceLocation EMPTY = new ResourceLocation("");
-    public static final BlockPos[] PEDESTAL_OFFSETS = new BlockPos[] {
-            new BlockPos(3, 0, 0),
-            new BlockPos(-3, 0, 0),
-            new BlockPos(0, 0, 3),
-            new BlockPos(0, 0, -3),
-            new BlockPos(2, 0, 2),
-            new BlockPos(-2, 0, 2),
-            new BlockPos(2, 0, -2),
-            new BlockPos(-2, 0, -2)
-    };
-    public static final BlockPos[] QUARTZ_OFFSETS = new BlockPos[] {
-            //Middle
-            new BlockPos(-1, -1, -1),
-            new BlockPos(-1, -1, 0),
-            new BlockPos(-1, -1, 1),
-            new BlockPos(0, -1, -1),
-            new BlockPos(0, -1, 0),
-            new BlockPos(0, -1, 1),
-            new BlockPos(1, -1, -1),
-            new BlockPos(1, -1, 0),
-            new BlockPos(1, -1, 1),
-            //Outer
-            new BlockPos(2, -1, 0),
-            new BlockPos(-2, -1, 0),
-            new BlockPos(0, -1, 2),
-            new BlockPos(0, -1, -2)
-    };
-    public static final BlockPos[] NETHER_BRICK_OFFSETS = new BlockPos[] {
-            new BlockPos(3, -1, 0),
-            new BlockPos(3, -1, 1),
-            new BlockPos(2, -1, 1),
-            new BlockPos(2, -1, 2),
-            new BlockPos(1, -1, 2),
-            new BlockPos(1, -1, 3),
+    public static final int BEAM_EFFECT = 0;
+    public static final BlockPos[] PEDESTAL_OFFSETS;
+    public static final BlockPos[] QUARTZ_OFFSETS;
+    public static final BlockPos[] NETHER_BRICK_OFFSETS;
 
-            new BlockPos(0, -1, 3),
-            new BlockPos(-1, -1, 3),
-            new BlockPos(-1, -1, 2),
-            new BlockPos(-2, -1, 2),
-            new BlockPos(-2, -1, 1),
-            new BlockPos(3, -1, 1),
-
-            new BlockPos(-3, -1, 0),
-            new BlockPos(-3, -1, 1),
-            new BlockPos(-2, -1, 1),
-            new BlockPos(-2, -1, 2),
-            new BlockPos(-1, -1, 2),
-            new BlockPos(-1, -1, 3),
-
-            new BlockPos(0, -1, -3),
-            new BlockPos(-1, -1, -3),
-            new BlockPos(-1, -1, -2),
-            new BlockPos(-2, -1, -2),
-            new BlockPos(-2, -1, -1),
-            new BlockPos(3, -1, -1)
-
-
-    };
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
         public int getSlotLimit(int slot) {
@@ -98,7 +49,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     protected ResourceLocation recipeName = EMPTY;
     protected INecromaticRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
-    //TODO: Require salis mundis
+    protected boolean isProcessing;
     protected int spawnDelay = 40;
     public int count;
 
@@ -107,6 +58,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.readFromNBT(compound);
         this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
         this.spawnDelay = compound.getInteger("spawnDelay");
+        this.isProcessing = compound.getBoolean("isProcessing");
         this.recipeName = new ResourceLocation(compound.getString("recipeName"));
         this.recipeEssentia.readFromNBT(compound);
     }
@@ -116,6 +68,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.writeToNBT(compound);
         compound.setTag("inventory", this.stackHandler.serializeNBT());
         compound.setInteger("spawnDelay", this.spawnDelay);
+        compound.setBoolean("isProcessing", this.isProcessing);
         compound.setString("recipeName", this.recipeName != null ? this.recipeName.toString() : "");
         this.recipeEssentia.writeToNBT(compound);
         return compound;
@@ -125,8 +78,8 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public void update() {
         this.count++;
         boolean did = false;
-        if(!this.world.isRemote) {
-            if(this.isTabletActive()) {
+        if(this.isTabletActive()) {
+            if(!this.world.isRemote) {
                 if(!this.isStructureValid()) {
                     BlockNecromancyTablet.setTabletActiveState(this.world, this.pos, false);
                     this.resetRecipe();
@@ -135,6 +88,9 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     did |= this.checkAndUpdateRecipe();
                     did |= this.processRecipe();
                 }
+            } else {
+                this.drawPassiveParticles();
+                //TODO: Particle effects - maybe re-use effects from nature's aura?
             }
         }
 
@@ -216,18 +172,19 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     for (Aspect aspect : this.recipeEssentia.getAspects()) {
                         if (EssentiaHandler.drainEssentia(this, aspect, null, 12, 1)) {
                             this.recipeEssentia.remove(aspect, 1);
+                            this.isProcessing = true;
                             return true;
                         }
+                    }
+                    if(!this.recipeEssentia.aspects.isEmpty() && this.isProcessing) {
+                        this.isProcessing = false;
+                        return true;
                     }
                 }
             }
         }
         return false;
     }
-
-
-
-
 
     public void setRecipe(ResourceLocation recipeName, @Nullable INecromaticRecipe recipe) {
         this.recipeName = recipeName;
@@ -290,6 +247,37 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         }
     }
 
+    public void drawPassiveParticles() {
+        int particles = 0;
+        Color color = new Color(Aspect.DEATH.getColor());
+        for(BlockPos offset : QUARTZ_OFFSETS) {
+            if(this.world.rand.nextInt(40) != 0)
+                continue;
+
+            BlockPos particlePos = this.pos.add(offset.getX(), offset.getY() + 1, offset.getZ());
+            FXDispatcher.INSTANCE.drawWispyMotes(
+                    particlePos.getX() + this.world.rand.nextFloat(),
+                    particlePos.getY() + this.world.rand.nextGaussian(),
+                    particlePos.getZ() + this.world.rand.nextFloat(),
+                    0, 0, 0,
+                    20 + this.world.rand.nextInt(10),
+                    color.getRed() / 255.0f,
+                    color.getGreen() / 255.0f,
+                    color.getBlue() / 255.0f,
+                    -0.05f
+            );
+
+            particles++;
+            if(particles >= 4)
+                break;
+        }
+    }
+
+    @Override
+    public boolean receiveClientEvent(int id, int type) {
+        return false;
+    }
+
     @Override
     public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
         return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY;
@@ -347,5 +335,64 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     @Override
     public int containerContains(Aspect aspect) {
         return 0;
+    }
+
+    static {
+        PEDESTAL_OFFSETS = new BlockPos[] {
+                new BlockPos(3, 0, 0),
+                new BlockPos(-3, 0, 0),
+                new BlockPos(0, 0, 3),
+                new BlockPos(0, 0, -3),
+                new BlockPos(2, 0, 2),
+                new BlockPos(-2, 0, 2),
+                new BlockPos(2, 0, -2),
+                new BlockPos(-2, 0, -2)
+        };
+        QUARTZ_OFFSETS = new BlockPos[] {
+                //Middle
+                new BlockPos(-1, -1, -1),
+                new BlockPos(-1, -1, 0),
+                new BlockPos(-1, -1, 1),
+                new BlockPos(0, -1, -1),
+                new BlockPos(0, -1, 0),
+                new BlockPos(0, -1, 1),
+                new BlockPos(1, -1, -1),
+                new BlockPos(1, -1, 0),
+                new BlockPos(1, -1, 1),
+                //Outer
+                new BlockPos(2, -1, 0),
+                new BlockPos(-2, -1, 0),
+                new BlockPos(0, -1, 2),
+                new BlockPos(0, -1, -2)
+        };
+        NETHER_BRICK_OFFSETS = new BlockPos[] {
+                new BlockPos(3, -1, 0),
+                new BlockPos(3, -1, 1),
+                new BlockPos(2, -1, 1),
+                new BlockPos(2, -1, 2),
+                new BlockPos(1, -1, 2),
+                new BlockPos(1, -1, 3),
+
+                new BlockPos(0, -1, 3),
+                new BlockPos(-1, -1, 3),
+                new BlockPos(-1, -1, 2),
+                new BlockPos(-2, -1, 2),
+                new BlockPos(-2, -1, 1),
+                new BlockPos(3, -1, 1),
+
+                new BlockPos(-3, -1, 0),
+                new BlockPos(-3, -1, 1),
+                new BlockPos(-2, -1, 1),
+                new BlockPos(-2, -1, 2),
+                new BlockPos(-1, -1, 2),
+                new BlockPos(-1, -1, 3),
+
+                new BlockPos(0, -1, -3),
+                new BlockPos(-1, -1, -3),
+                new BlockPos(-1, -1, -2),
+                new BlockPos(-2, -1, -2),
+                new BlockPos(-2, -1, -1),
+                new BlockPos(3, -1, -1)
+        };
     }
 }
