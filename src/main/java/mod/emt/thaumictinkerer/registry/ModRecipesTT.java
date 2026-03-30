@@ -6,6 +6,7 @@ import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
@@ -16,16 +17,60 @@ import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.CrucibleRecipe;
+import thaumcraft.api.crafting.IDustTrigger;
+import thaumcraft.api.crafting.Part;
+import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
+@SuppressWarnings("ConstantConditions")
 public class ModRecipesTT {
 
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
+        initNecromancyPlatform();
         initArcaneWorkbenchRecipes();
         initCraftingRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
         initNecromancyRecipes();
+    }
+
+    private static void initNecromancyPlatform() {
+        Part PEDI = new Part(BlocksTC.pedestalArcane, null);
+        Part NECR = new Part(ModBlocksTT.NECROMANCY_TABLET, new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
+        Part QUAR = new Part(ModBlocksTT.ARCANE_QUARTZ_BLOCK, null);
+        Part NETH = new Part(Blocks.NETHER_BRICK, null);
+
+        Part[][][] blueprint = new Part[][][] {
+                {
+                        {null, null, null, PEDI, null, null, null},
+                        {null, PEDI, null, null, null, PEDI, null},
+                        {null, null, null, null, null, null, null},
+                        {PEDI, null, null, NECR, null, null, PEDI},
+                        {null, null, null, null, null, null, null},
+                        {null, PEDI, null, null, null, PEDI, null},
+                        {null, null, null, PEDI, null, null, null}
+                },
+                {
+                        {null, null, NETH, NETH, NETH, null, null},
+                        {null, NETH, NETH, QUAR, NETH, NETH, null},
+                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
+                        {NETH, QUAR, QUAR, QUAR, QUAR, QUAR, NETH},
+                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
+                        {null, NETH, NETH, QUAR, NETH, NETH, null},
+                        {null, null, NETH, NETH, NETH, null, null}
+                }
+        };
+        //TODO: Swap to this
+        // IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_NECROMANCY_TABLET", blueprint));
+        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("BASEAUROMANCY", blueprint));
+        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new ThaumcraftApi.BluePrint(
+                "BASEAUROMANCY",//TODO: swap to this - "TT_NECROMANCY_TABLET",
+                blueprint,
+                new ItemStack(Blocks.NETHER_BRICK, 24),
+                new ItemStack(ModBlocksTT.ARCANE_QUARTZ_BLOCK, 13),
+                new ItemStack(ModBlocksTT.NECROMANCY_TABLET)
+        ));
     }
 
     private static void initArcaneWorkbenchRecipes() {

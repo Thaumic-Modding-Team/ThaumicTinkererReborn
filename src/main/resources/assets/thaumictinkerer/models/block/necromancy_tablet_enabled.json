@@ -1,0 +1,7 @@
+{
+  "parent": "thaumictinkerer:block/necromancy_tablet_disabled",
+  "textures": {
+    "top": "thaumictinkerer:blocks/necromancy_tablet_top_enabled",
+    "side": "thaumictinkerer:blocks/necromancy_tablet_side"
+  }
+}

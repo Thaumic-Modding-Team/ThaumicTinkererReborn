@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.tile;
 
 import mod.emt.thaumictinkerer.api.recipes.INecromaticRecipe;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
+import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
@@ -98,7 +99,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     protected INecromaticRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
     //TODO: Require salis mundis
-    protected boolean isActivated = true;
     protected int spawnDelay;
     public int count;
 
@@ -106,7 +106,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public void readFromNBT(@NotNull NBTTagCompound compound) {
         super.readFromNBT(compound);
         this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
-        this.isActivated = compound.getBoolean("isActivated");
         this.spawnDelay = compound.getInteger("spawnDelay");
         this.recipeName = new ResourceLocation(compound.getString("recipeName"));
         this.recipeEssentia.readFromNBT(compound);
@@ -116,7 +115,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public @NotNull NBTTagCompound writeToNBT(@NotNull NBTTagCompound compound) {
         super.writeToNBT(compound);
         compound.setTag("inventory", this.stackHandler.serializeNBT());
-        compound.setBoolean("isActivated", this.isActivated);
         compound.setInteger("spawnDelay", this.spawnDelay);
         compound.setString("recipeName", this.recipeName != null ? this.recipeName.toString() : "");
         this.recipeEssentia.writeToNBT(compound);
@@ -128,9 +126,9 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         this.count++;
         boolean did = false;
         if(!this.world.isRemote) {
-            if(this.isActivated) {
+            if(this.isTabletActive()) {
                 if(!this.isStructureValid()) {
-                    this.isActivated = false;
+                    BlockNecromancyTablet.setTabletActiveState(this.world, this.pos, false);
                     this.resetRecipe();
                     did = true;
                 } else {
@@ -143,6 +141,10 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         if(did) {
             this.markDirty();
         }
+    }
+
+    public boolean isTabletActive() {
+        return this.world.getBlockState(this.pos).getValue(BlockNecromancyTablet.ENABLED);
     }
 
     @SuppressWarnings("ConstantConditions")

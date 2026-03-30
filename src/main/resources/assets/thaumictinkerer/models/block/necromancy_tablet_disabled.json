@@ -1,0 +1,24 @@
+{
+	"format_version": "1.9.0",
+	"credit": "Made with Blockbench",
+	"textures": {
+		"top": "thaumictinkerer:blocks/necromancy_tablet_top_disabled",
+		"side": "thaumictinkerer:blocks/necromancy_tablet_side",
+		"particle": "thaumictinkerer:blocks/necromancy_tablet_top_disabled"
+	},
+	"elements": [
+		{
+			"name": "plate",
+			"from": [0, 0, 0],
+			"to": [16, 2, 16],
+			"faces": {
+				"north": {"uv": [0, 12, 16, 14], "texture": "#side"},
+				"east": {"uv": [0, 12, 16, 14], "texture": "#side"},
+				"south": {"uv": [0, 12, 16, 14], "texture": "#side"},
+				"west": {"uv": [0, 12, 16, 14], "texture": "#side"},
+				"up": {"uv": [0, 0, 16, 16], "texture": "#top"},
+				"down": {"uv": [0, 0, 16, 16], "texture": "#top"}
+			}
+		}
+	]
+}

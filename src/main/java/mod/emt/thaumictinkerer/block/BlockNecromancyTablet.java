@@ -5,6 +5,8 @@ import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
 import mod.emt.thaumictinkerer.tile.TileNecromancyTablet;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -31,9 +33,21 @@ import java.util.Map;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
     public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
+    public static final PropertyBool ENABLED = PropertyBool.create("enabled");
 
     public BlockNecromancyTablet() {
         super("necromancy_tablet", Material.ROCK, MapColor.PURPLE, TileNecromancyTablet.class);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(ENABLED, false));
+    }
+
+    public static void setTabletActiveState(World world, BlockPos pos, boolean isActive) {
+        TileEntity tile = world.getTileEntity(pos);
+        if(tile instanceof TileNecromancyTablet) {
+            IBlockState state = world.getBlockState(pos);
+            world.setBlockState(pos, state.withProperty(ENABLED, isActive));
+            tile.validate();
+            world.setTileEntity(pos, tile);
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -93,6 +107,22 @@ public class BlockNecromancyTablet extends BlockTileAddition {
     @Override
     public boolean isFullCube(@NotNull IBlockState state) {
         return false;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(ENABLED, meta == 1);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(ENABLED) ? 1 : 0;
+    }
+
+    @Override
+    protected @NotNull BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, ENABLED);
     }
 
     //##########################################################

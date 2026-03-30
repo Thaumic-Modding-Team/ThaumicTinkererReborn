@@ -21,6 +21,7 @@ public class ModBlocksTT {
     public static final Block ATTRACTOR_PLAYER = null;
     public static final Block CHISELED_ARCANE_QUARTZ = null;
     public static final Block ENERGETIC_NITOR = null;
+    public static final Block NECROMANCY_TABLET = null;
     public static final Block TERRA_OBSIDIAN = null;
     public static final Block THAUMIC_CAKE = null;
     public static final Block THAUMIC_RESTORER = null;

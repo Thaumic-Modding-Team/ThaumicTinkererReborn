@@ -1,10 +1,11 @@
 {
   "forge_marker": 1,
   "defaults": {
-    "model": "thaumictinkerer:necromancy_tablet"
+    "model": "thaumictinkerer:necromancy_tablet_disabled"
   },
   "variants": {
-    "inventory": { "model": "thaumictinkerer:necromancy_tablet", "transform": "forge:default-block"},
-    "normal": [{}]
+    "inventory":      { "model": "thaumictinkerer:necromancy_tablet_disabled", "transform": "forge:default-block"},
+    "enabled=true":   { "model": "thaumictinkerer:necromancy_tablet_enabled" },
+    "enabled=false":  { "model": "thaumictinkerer:necromancy_tablet_disabled" }
   }
 }
