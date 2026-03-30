@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    " C ",
+    "CTC",
+    " C "
+  ],
+  "key": {
+    "C": {
+      "item": "minecraft:cobblestone"
+    },
+    "T": {
+      "type": "forge:ore_dict",
+      "ore": "plateThaumium"
+    }
+  },
+  "result": {
+    "item": "thaumictinkerer:thaumium_plated_cobblestone",
+    "count": 4
+  }
+}

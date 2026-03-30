@@ -28,7 +28,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
         RegistrarTT.addAdditionToRegister(new ItemIgniumStriker());
         RegistrarTT.addAdditionToRegister(new ItemEverfullBucket());
-        RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz"));
+        RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz", "gemArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
     }
 }
