@@ -322,7 +322,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     this.pos.getX() + 0.5,
                     this.pos.getY() + this.getRecipe().getEntityCenter(this.world),
                     this.pos.getZ() + 0.5,
-                    0,
+                    1,
                     sortedAspects.length > 0 ? sortedAspects[0].getColor() : Aspect.DEATH.getColor(),
                     false,
                     0.5f,
@@ -333,24 +333,25 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public void doItemPoof(int offsetIndex) {
-        if (this.world.isRemote) {
-            BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
-            FXDispatcher.INSTANCE.drawBamf(
-                    pedestalPos.getX() + 0.5,
-                    pedestalPos.getY() + 1.25,
-                    pedestalPos.getZ() + 0.5,
-                    true,
-                    true,
-                    EnumFacing.UP
-            );
-        }
+        if(!this.world.isRemote)
+            return;
+
+        BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
+        FXDispatcher.INSTANCE.drawBamf(
+                pedestalPos.getX() + 0.5,
+                pedestalPos.getY() + 1.25,
+                pedestalPos.getZ() + 0.5,
+                true,
+                true,
+                EnumFacing.UP
+        );
     }
 
     public void doSpawnPoof() {
         if(!this.world.isRemote)
             return;
 
-        //TODO: Spawn poof.
+
     }
 
     @Override
