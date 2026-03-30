@@ -79,6 +79,21 @@ public class BlockThaumicRestorer extends BlockTileAddition {
         return false;
     }
 
+    @Override
+    public void breakBlock(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof TileThaumicRestorer) {
+            IItemHandler handler = ((TileThaumicRestorer) tile).stackHandler;
+            for(int i = 0; i < handler.getSlots(); i++) {
+                ItemStack stack = handler.getStackInSlot(i);
+                if(!stack.isEmpty()) {
+                    spawnAsEntity(worldIn, pos, stack.copy());
+                }
+            }
+        }
+        super.breakBlock(worldIn, pos, state);
+    }
+
     @SuppressWarnings("deprecation")
     @Override
     public boolean isSideSolid(@NotNull IBlockState base_state, IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing side) {
