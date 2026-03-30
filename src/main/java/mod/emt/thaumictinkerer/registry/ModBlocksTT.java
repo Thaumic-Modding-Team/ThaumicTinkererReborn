@@ -21,9 +21,11 @@ public class ModBlocksTT {
     public static final Block ATTRACTOR_PLAYER = null;
     public static final Block CHISELED_ARCANE_QUARTZ = null;
     public static final Block ENERGETIC_NITOR = null;
+    public static final Block TERRA_OBSIDIAN = null;
     public static final Block THAUMIC_CAKE = null;
-    public static final Block TRANSVECTOR_INTERFACE = null;
     public static final Block THAUMIC_RESTORER = null;
+    public static final Block THAUMIUM_PLATED_COBBLESTONE = null;
+    public static final Block TRANSVECTOR_INTERFACE = null;
     public static final Block UMBRAL_ROSE = null;
 
     public static void initBlocks() {
@@ -41,7 +43,7 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterial("chiseled_arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE));
         RegistrarTT.addAdditionToRegister(new BlockMaterialPillar("arcane_quartz_pillar", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE));
         RegistrarTT.addAdditionToRegister(new BlockMaterialStairs("arcane_quartz_stairs", new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE).getDefaultState(), false));
-        RegistrarTT.addAdditionToRegister(new BlockMaterial("terra_obsidian", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 50.0F, 5000.0F, SoundType.STONE, true, false));
+        RegistrarTT.addAdditionToRegister(new BlockMaterial("terra_obsidian", Material.ROCK, MapColor.EMERALD, 20.0F, 5000.0F, SoundType.STONE, true, false));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("thaumium_plated_cobblestone", Material.ROCK, MapColor.STONE, 2.0F, 50.0F, SoundType.STONE, false, false));
     }
 }
