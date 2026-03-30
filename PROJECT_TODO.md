@@ -1,50 +1,50 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
-|              Feature              |   Code   |  Model   | Texture  | Research | Recipe |
-|:---------------------------------:|:--------:|:--------:|:--------:|:--------:|:------:|
-|     Aqua Infused Water Bucket     | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Aquatic Alchemy          |   N/A    |   N/A    |   N/A    |          |        |
-|       Attractor (Corporeal)       | COMPLETE | COMPLETE | COMPLETE |          |        |
-|        Attractor (Kinetic)        | COMPLETE | COMPLETE | COMPLETE |          |        |
-|      Attractor (Soul Mould)       |          |          |          |          |        |
-|          Black Hole Ring          |          |          |          |          |        |
-|      Decor - Greatwood Block      |          |          |          |          |        |
-|       Decor - Tainted Brick       |          |          |          |          |        |
-|       Decor - Tainted Stone       |          |          |          |          |        |
-|  Decor - Terra Infused Obsidian   | COMPLETE | COMPLETE | COMPLETE |          |        |
-| Decor - Thaumium Framed Greatwood |          |          |          |          |        |
-|   Decor - Thaumium Plated Stone   | COMPLETE | COMPLETE | COMPLETE |          |        |
-|        Dissimulation Block        |          |          |          |          |        |
-|          Dynamism Tablet          |          |          |          |          |        |
-|           Ender Mirror            | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Energetic Nitor          | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Essentia Funnel          |          |          |          |          |        |
-|         Ethereal Platform         |          |          |          |          |        |
-|           Feline Amulet           |          |          |          |          |        |
-|         Gas Phial (Light)         |          |          |          |          |        |
-|        Gas Phial (Shadow)         |          |          |          |          |        |
-|            Gas Remover            |          |          |          |          |        |
-|              Igniter              | COMPLETE | COMPLETE | COMPLETE |          |        |
-|           Infused Seeds           |          |          |          |          |        |
-|    Infusion Enchant: Consuming    |          |   N/A    | COMPLETE |          |        |
-|   Infusion Enchant: Educational   | COMPLETE |   N/A    | COMPLETE |          |        |
-|      Infusion Enchant: Wrath      |   WIP    |   N/A    | COMPLETE |          |        |
-|      Ring of Goliath's Might      | COMPLETE | COMPLETE | COMPLETE |          |        |
-|         Sigil of Memories         |          |          |          |          |        |
-|       Smokey Quartz (Block)       | COMPLETE | COMPLETE | COMPLETE |          |        |
-|       Smokey Quartz (Item)        | COMPLETE | COMPLETE | COMPLETE |          |        |
-|   Stopwatch of the Timetwister    |          |          |          |          |        |
-|       Tablet of Necromancy        |          |          |          |          |        |
-|           Thaumic Cake            | COMPLETE | COMPLETE | COMPLETE |          |        |
-|         Thaumic Restorer          | COMPLETE | COMPLETE | COMPLETE |          |        |
-|        Transvector Binder         | COMPLETE | COMPLETE | COMPLETE |          |        |
-|      Transvector Dislocator       |          |          |          |          |        |
-|       Transvector Interface       | COMPLETE | COMPLETE | COMPLETE |          |        |
-|            Umbral Dye             | COMPLETE | COMPLETE | COMPLETE |          |        |
-|            Umbral Rose            | COMPLETE | COMPLETE | COMPLETE |          |        |
-|          Umbral Rosebush          |          |          |          |          |        |
-|    Worldshaper's Looking Glass    |          |          |          |          |        |
-|            XP Talisman            |          |          |          |          |        |
+|              Feature              |   Code   |  Model   | Texture  | Research |  Recipe  |
+|:---------------------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|     Aqua Infused Water Bucket     | COMPLETE | COMPLETE | COMPLETE |          |          |
+|          Aquatic Alchemy          |   N/A    |   N/A    |   N/A    |          |          |
+|       Attractor (Corporeal)       | COMPLETE | COMPLETE | COMPLETE |          |          |
+|        Attractor (Kinetic)        | COMPLETE | COMPLETE | COMPLETE |          |          |
+|      Attractor (Soul Mould)       |          |          |          |          |          |
+|          Black Hole Ring          |          |          |          |          |          |
+|      Decor - Greatwood Block      |          |          |          |          |          |
+|       Decor - Tainted Brick       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|       Decor - Tainted Stone       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|  Decor - Terra Infused Obsidian   | COMPLETE | COMPLETE | COMPLETE |          |          |
+| Decor - Thaumium Framed Greatwood |          |          |          |          |          |
+|   Decor - Thaumium Plated Stone   | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|        Dissimulation Block        |          |          |          |          |          |
+|          Dynamism Tablet          |          |          |          |          |          |
+|           Ender Mirror            | COMPLETE | COMPLETE | COMPLETE |          |          |
+|          Energetic Nitor          | COMPLETE | COMPLETE | COMPLETE |          |          |
+|          Essentia Funnel          |          |          |          |          |          |
+|         Ethereal Platform         |          |          |          |          |          |
+|           Feline Amulet           |          |          |          |          |          |
+|         Gas Phial (Light)         |          |          |          |          |          |
+|        Gas Phial (Shadow)         |          |          |          |          |          |
+|            Gas Remover            |          |          |          |          |          |
+|              Igniter              | COMPLETE | COMPLETE | COMPLETE |          |          |
+|           Infused Seeds           |          |          |          |          |          |
+|    Infusion Enchant: Consuming    |          |   N/A    | COMPLETE |          |          |
+|   Infusion Enchant: Educational   | COMPLETE |   N/A    | COMPLETE |          |          |
+|      Infusion Enchant: Wrath      |   WIP    |   N/A    | COMPLETE |          |          |
+|      Ring of Goliath's Might      | COMPLETE | COMPLETE | COMPLETE |          |          |
+|         Sigil of Memories         |          |          |          |          |          |
+|       Smokey Quartz (Block)       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|       Smokey Quartz (Item)        | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|   Stopwatch of the Timetwister    |          |          |          |          |          |
+|       Tablet of Necromancy        |          |          |          |          |          |
+|           Thaumic Cake            | COMPLETE | COMPLETE | COMPLETE |          |          |
+|         Thaumic Restorer          | COMPLETE | COMPLETE | COMPLETE |          |          |
+|        Transvector Binder         | COMPLETE | COMPLETE | COMPLETE |          |          |
+|      Transvector Dislocator       |          |          |          |          |          |
+|       Transvector Interface       | COMPLETE | COMPLETE | COMPLETE |          |          |
+|            Umbral Dye             | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
+|            Umbral Rose            | COMPLETE | COMPLETE | COMPLETE |          |          |
+|          Umbral Rosebush          |          |          |          |          |          |
+|    Worldshaper's Looking Glass    |          |          |          |          |          |
+|            XP Talisman            |          |          |          |          |          |
 
 ## Thaumic Tinkerer: Kami Reborn
 |                      Feature                      | Code | Model | Texture  | Research | Recipe |

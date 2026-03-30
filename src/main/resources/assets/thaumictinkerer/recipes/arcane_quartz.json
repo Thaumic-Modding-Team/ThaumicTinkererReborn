@@ -1,0 +1,21 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "QQQ",
+    "QCQ",
+    "QQQ"
+  ],
+  "key": {
+    "C": {
+      "item": "thaumcraft:crystal_essence"
+    },
+    "Q": {
+      "type": "forge:ore_dict",
+      "ore": "gemQuartz"
+    }
+  },
+  "result": {
+    "item": "thaumictinkerer:arcane_quartz",
+    "count": 8
+  }
+}

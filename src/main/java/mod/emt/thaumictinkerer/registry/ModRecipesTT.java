@@ -7,7 +7,9 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.CrucibleRecipe;
@@ -16,6 +18,7 @@ public class ModRecipesTT {
 
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
         initArcaneWorkbenchRecipes();
+        initCraftingRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
         initNecromancyRecipes();
@@ -23,6 +26,19 @@ public class ModRecipesTT {
 
     private static void initArcaneWorkbenchRecipes() {
 
+    }
+
+    private static void initCraftingRecipes() {
+        GameRegistry.addShapedRecipe(
+                new ResourceLocation(ThaumicTinkerer.MOD_ID, "vitium_stone"),
+                null,
+                new ItemStack(ModBlocksTT.VITIUM_STONE, 8),
+                "CCC",
+                "C#C",
+                "CCC",
+                'C', "cobblestone",
+                '#', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX)
+        );
     }
 
     // TODO: Research keys and aspect balance

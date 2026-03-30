@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "thaumictinkerer:arcane_quartz_block"
+    }
+  },
+  "result": {
+    "item": "thaumictinkerer:arcane_quartz_pillar",
+    "count": 2
+  }
+}

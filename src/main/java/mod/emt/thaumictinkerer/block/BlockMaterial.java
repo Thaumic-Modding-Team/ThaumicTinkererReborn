@@ -8,25 +8,29 @@ import net.minecraft.init.Blocks;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
+import net.minecraftforge.oredict.OreDictionary;
 import org.jetbrains.annotations.NotNull;
 
 public class BlockMaterial extends AbstractBlockAddition {
     boolean beaconBlock;
     boolean flammable;
+    String oreDict;
 
-    public BlockMaterial(String name, Material material, MapColor mapColor, float hardness, float resistance, SoundType soundType, boolean beaconBlock, boolean flammable) {
+    public BlockMaterial(String name, Material material, MapColor mapColor, float hardness, float resistance, SoundType soundType, boolean beaconBlock, boolean flammable, String oreDict) {
         super(name, material, mapColor);
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setSoundType(soundType);
         this.beaconBlock = beaconBlock;
         this.flammable = flammable;
+        this.oreDict = oreDict;
     }
 
-    public BlockMaterial(String name, Material material, MapColor mapColor, float hardness, SoundType soundType) {
+    public BlockMaterial(String name, Material material, MapColor mapColor, float hardness, SoundType soundType, String oreDict) {
         super(name, material, mapColor);
         this.setHardness(hardness);
         this.setSoundType(soundType);
+        this.oreDict = oreDict;
     }
 
     @Override
@@ -53,6 +57,13 @@ public class BlockMaterial extends AbstractBlockAddition {
             return Blocks.PLANKS.getFireSpreadSpeed(world, pos, face);
         } else {
             return 0;
+        }
+    }
+
+    @Override
+    public void registerOreDicts() {
+        if (oreDict != null) {
+            OreDictionary.registerOre(oreDict, this);
         }
     }
 }
