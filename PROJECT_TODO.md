@@ -9,11 +9,9 @@
 |        Attractor (Player)         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |      Attractor (Soul Mould)       |          |          |          |          |          |
 |          Black Hole Ring          |          |          |          |          |          |
-|      Decor - Greatwood Block      |          |          |          |          |          |
 |       Decor - Tainted Brick       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |       Decor - Tainted Stone       | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |  Decor - Terra Infused Obsidian   | COMPLETE | COMPLETE | COMPLETE |          |          |
-| Decor - Thaumium Framed Greatwood |          |          |          |          |          |
 |   Decor - Thaumium Plated Stone   | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |        Dissimulation Block        |          |          |          |          |          |
 |          Dynamism Tablet          |          |          |          |          |          |
