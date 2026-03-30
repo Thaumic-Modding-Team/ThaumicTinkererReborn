@@ -6,6 +6,7 @@
 |          Aquatic Alchemy          |   N/A    |   N/A    |   N/A    |          |          |
 |       Attractor (Corporeal)       | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Attractor (Kinetic)        | COMPLETE | COMPLETE | COMPLETE |          |          |
+|        Attractor (Player)         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |      Attractor (Soul Mould)       |          |          |          |          |          |
 |          Black Hole Ring          |          |          |          |          |          |
 |      Decor - Greatwood Block      |          |          |          |          |          |
