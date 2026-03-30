@@ -33,6 +33,10 @@ public interface INecromancyRecipe {
 
     EntityEntry getSummonedEntity();
 
+    default Entity getSummonedEntity(World world) {
+        return this.getSummonedEntity().newInstance(world);
+    }
+
     INecromancyRecipe setSummonedEntity(EntityEntry entityEntry);
 
     default INecromancyRecipe setSummonedEntity(Class<? extends Entity> entityClazz) {

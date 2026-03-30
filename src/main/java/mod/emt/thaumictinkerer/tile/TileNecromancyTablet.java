@@ -7,6 +7,7 @@ import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -90,7 +91,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     did |= this.processRecipe();
                 }
             } else {
-                this.drawPassiveParticles();
+                this.doPassiveParticles();
             }
         }
 
@@ -131,11 +132,14 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         return true;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void completeCraft() {
         if(this.getRecipe() != null) {
             this.consumeComponents();
             this.consumeCenterItem();
             this.recipe.spawnEntity(this.world, this.pos);
+            this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_SPAWN, 0);
+            //TODO: Spawn sound effect.
             this.resetRecipe();
         }
     }
@@ -156,11 +160,12 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         return false;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public boolean processRecipe() {
         if(this.getRecipe() != null) {
             if(this.recipeEssentia.aspects.isEmpty()) {
                 if(this.spawnDelay > 0) {
-                    //TODO: Sound effect
+                    //TODO: Processing sound effect.
                     for(int i = 0; i < PEDESTAL_OFFSETS.length; i++) {
                         if(!this.getPedestalItemStack(PEDESTAL_OFFSETS[i]).isEmpty()) {
                             this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_BEAM, i);
@@ -168,7 +173,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     }
                     this.spawnDelay--;
                 } else {
-                    //TODO: Sound effect and summon entity effect.
                     this.completeCraft();
                 }
                 return true;
@@ -237,6 +241,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         return ItemStack.EMPTY;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void consumeComponents() {
         INecromancyRecipe recipe = this.getRecipe();
         if(recipe == null || !recipe.shouldConsumeComponents())
@@ -269,7 +274,23 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         }
     }
 
-    public void drawPassiveParticles() {
+    @Override
+    public boolean receiveClientEvent(int id, int type) {
+        switch (id) {
+            case EFFECT_BEAM:
+                this.doComponentBeam(type);
+                return true;
+            case EFFECT_CONSUME_ITEM:
+                this.doItemPoof(type);
+                return true;
+            case EFFECT_SPAWN:
+                this.doSpawnPoof();
+                return true;
+        }
+        return false;
+    }
+
+    public void doPassiveParticles() {
         int particles = 0;
         Color color = new Color(Aspect.DEATH.getColor());
         for(BlockPos offset : QUARTZ_OFFSETS) {
@@ -295,22 +316,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         }
     }
 
-    @Override
-    public boolean receiveClientEvent(int id, int type) {
-        switch (id) {
-            case EFFECT_BEAM:
-                this.doComponentBeam(type);
-                return true;
-            case EFFECT_CONSUME_ITEM:
-                this.doItemPoof(type);
-                return true;
-            case EFFECT_SPAWN:
-                this.doSpawnPoof();
-                return true;
-        }
-        return false;
-    }
-
     public void doComponentBeam(int offsetIndex) {
         if (this.world.isRemote && this.getRecipe() != null) {
             BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
@@ -333,25 +338,35 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public void doItemPoof(int offsetIndex) {
-        if(!this.world.isRemote)
-            return;
-
-        BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
-        FXDispatcher.INSTANCE.drawBamf(
-                pedestalPos.getX() + 0.5,
-                pedestalPos.getY() + 1.25,
-                pedestalPos.getZ() + 0.5,
-                true,
-                true,
-                EnumFacing.UP
-        );
+        if (this.world.isRemote) {
+            BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
+            FXDispatcher.INSTANCE.drawBamf(
+                    pedestalPos.getX() + 0.5,
+                    pedestalPos.getY() + 1.25,
+                    pedestalPos.getZ() + 0.5,
+                    true,
+                    true,
+                    EnumFacing.UP
+            );
+        }
     }
 
     public void doSpawnPoof() {
-        if(!this.world.isRemote)
-            return;
-
-
+        if(this.world.isRemote && this.getRecipe() != null) {
+            Entity entity = this.getRecipe().getSummonedEntity(this.world);
+            for(int i = 0; i < 20; ++i) {
+                double motionX = this.world.rand.nextGaussian() * 0.02D;
+                double motionY = this.world.rand.nextGaussian() * 0.02D;
+                double motionZ = this.world.rand.nextGaussian() * 0.02D;
+                this.world.spawnParticle(
+                        EnumParticleTypes.EXPLOSION_NORMAL,
+                        this.pos.getX() + 0.5 + (double) (this.world.rand.nextFloat() * entity.width * 2.0F) - entity.width - motionX * 10.0D,
+                        this.pos.getY() + (double) (this.world.rand.nextFloat() * entity.height) - motionY * 10.0D,
+                        this.pos.getZ() + 0.5 + (double) (this.world.rand.nextFloat() * entity.width * 2.0F) - entity.width - motionZ * 10.0D,
+                        motionX, motionY, motionZ
+                );
+            }
+        }
     }
 
     @Override

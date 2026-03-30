@@ -4,6 +4,7 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import net.minecraft.entity.passive.EntityCow;
+import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -12,6 +13,7 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreIngredient;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
@@ -127,6 +129,17 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("Mule", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("SkeletonHorse", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.UNDEAD, 10).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:pig"), new NecromancyRecipe()
+                .setSummonedEntity(EntityPig.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.EARTH, 10).add(Aspect.DESIRE, 5))
+                .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
+                .setComponents(
+                        new OreIngredient("leather"),
+                        Ingredient.fromItem(Items.BONE),
+                        new OreIngredient("tallow"),
+                        Ingredient.fromItem(Items.PORKCHOP)
+                )
+        );
 //        ThaumcraftApi.registerEntityTag("Pig", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Sheep", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow"), new NecromancyRecipe()
@@ -134,10 +147,10 @@ public class ModRecipesTT {
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 15))
                 .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
                 .setComponents(
+                        new OreIngredient("leather"),
+                        Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.MILK_BUCKET),
-                        Ingredient.fromItem(Items.LEATHER),
-                        Ingredient.fromItem(Items.BEEF),
-                        Ingredient.fromItem(Items.BONE)
+                        Ingredient.fromItem(Items.BEEF)
                 )
         );
         //TODO: Remove this. Test consuming recipe.
