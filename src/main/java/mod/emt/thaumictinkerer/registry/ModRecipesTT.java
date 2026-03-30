@@ -6,7 +6,6 @@ import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
@@ -37,7 +36,7 @@ public class ModRecipesTT {
 
     private static void initNecromancyPlatform() {
         Part PEDI = new Part(BlocksTC.pedestalArcane, null);
-        Part NECR = new Part(ModBlocksTT.NECROMANCY_TABLET, new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
+        Part NECR = new Part(new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 0), new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
         Part QUAR = new Part(ModBlocksTT.ARCANE_QUARTZ_BLOCK, null);
         Part NETH = new Part(Blocks.NETHER_BRICK, null);
 
