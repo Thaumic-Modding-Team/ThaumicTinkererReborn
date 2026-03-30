@@ -20,11 +20,22 @@ public class ItemHelper {
         if(matchOreDict) {
             //OreDict
             for(int oreId : OreDictionary.getOreIDs(filterStack)) {
-                for(int oreId2 : OreDictionary.getOreIDs(input)) {
-                    if(oreId == oreId2) {
-                        return true;
-                    }
+                if(hasOreDict(input, oreId)) {
+                    return true;
                 }
+            }
+        }
+        return false;
+    }
+
+    public static boolean hasOreDict(ItemStack stack, String oreDict) {
+        return hasOreDict(stack, OreDictionary.getOreID(oreDict));
+    }
+
+    public static boolean hasOreDict(ItemStack stack, int oreId) {
+        for(int stackId : OreDictionary.getOreIDs(stack)) {
+            if(stackId == oreId) {
+                return true;
             }
         }
         return false;
@@ -43,5 +54,27 @@ public class ItemHelper {
             }
         }
         return false;
+    }
+
+    public static ItemStack consumeIngredient(ItemStack stack, Object ingredient) {
+        if(stack.isEmpty())
+            return ItemStack.EMPTY;
+
+        stack = stack.copy();
+        if(ingredient instanceof FluidStack) {
+            IFluidHandlerItem handler = stack.getCapability(CapabilityFluidHandler.FLUID_HANDLER_ITEM_CAPABILITY, null);
+            if(handler != null) {
+                handler.drain((FluidStack) ingredient, true);
+                return handler.getContainer();
+            }
+        } else {
+            if(stack.getItem().hasContainerItem(stack)) {
+                return stack.getItem().getContainerItem(stack);
+            } else {
+                stack.shrink(1);
+                return stack;
+            }
+        }
+        return stack;
     }
 }

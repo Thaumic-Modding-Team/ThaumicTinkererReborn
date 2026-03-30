@@ -1,9 +1,11 @@
 package mod.emt.thaumictinkerer.api.recipes;
 
 import com.google.common.base.Preconditions;
+import net.minecraft.entity.Entity;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import thaumcraft.api.aspects.AspectList;
 
 public class NecromaticRecipe implements INecromaticRecipe {
@@ -17,7 +19,11 @@ public class NecromaticRecipe implements INecromaticRecipe {
         this.setSummonedEntity(summonedEntity);
         this.setEssentia(aspectList);
         this.setCenterIngredient(centerIngredient);
-        this.setCatalysts(catalysts);
+        this.setComponents(catalysts);
+    }
+
+    public NecromaticRecipe(Class<? extends Entity> entityClazz, AspectList aspectList, Object centerIngredient, Object... catalysts) {
+        this(EntityRegistry.getEntry(entityClazz), aspectList, centerIngredient, catalysts);
     }
 
     @Override
@@ -56,19 +62,19 @@ public class NecromaticRecipe implements INecromaticRecipe {
     }
 
     @Override
-    public Object[] getCatalysts() {
+    public Object[] getComponents() {
         return this.catalysts;
     }
 
     @Override
-    public NecromaticRecipe setCatalysts(Object... catalysts) {
+    public NecromaticRecipe setComponents(Object... catalysts) {
         Preconditions.checkArgument(catalysts.length <= 8, "Necromatic recipes cannot support more than 8 catalysts.");
         this.catalysts = catalysts;
         return this;
     }
 
     @Override
-    public boolean consumeCatalysts() {
+    public boolean shouldConsumeComponents() {
         return this.consumeCatalysts;
     }
 

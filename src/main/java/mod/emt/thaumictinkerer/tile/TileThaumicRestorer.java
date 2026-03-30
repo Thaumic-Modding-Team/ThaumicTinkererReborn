@@ -23,7 +23,7 @@ import thaumcraft.client.fx.FXDispatcher;
 import java.awt.*;
 
 public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEssentiaTransport, IAspectContainer {
-    protected ItemStackHandler stackHandler = new ItemStackHandler(1) {
+    public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
         public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
             return this.isItemValid(slot, stack) ? super.insertItem(slot, stack, simulate) : stack;

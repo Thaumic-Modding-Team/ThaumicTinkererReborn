@@ -42,5 +42,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterialPillar("arcane_quartz_pillar", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE));
         RegistrarTT.addAdditionToRegister(new BlockMaterialStairs("arcane_quartz_stairs", new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE).getDefaultState(), false));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("terra_obsidian", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 50.0F, 5000.0F, SoundType.STONE, true, false));
+        RegistrarTT.addAdditionToRegister(new BlockNecromancyTablet());
     }
 }

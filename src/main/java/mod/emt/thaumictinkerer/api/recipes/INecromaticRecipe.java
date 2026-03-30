@@ -18,11 +18,11 @@ public interface INecromaticRecipe {
 
     INecromaticRecipe setCenterIngredient(Object centerIngredient);
 
-    Object[] getCatalysts();
+    Object[] getComponents();
 
-    INecromaticRecipe setCatalysts(Object... catalysts);
+    INecromaticRecipe setComponents(Object... catalysts);
 
-    boolean consumeCatalysts();
+    boolean shouldConsumeComponents();
 
     AspectList getEssentia();
 
@@ -42,11 +42,10 @@ public interface INecromaticRecipe {
         return this;
     }
 
-    default void summonEntity(World world, BlockPos pos) {
+    default void spawnEntity(World world, BlockPos pos) {
         EntityEntry entry = this.getSummonedEntity();
         Entity entity = entry.newInstance(world);
-        //TODO: Adjust Y to account for plate height.
-        entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.5, pos.getZ() + 0.5);
+        entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.125, pos.getZ() + 0.5);
         world.spawnEntity(entity);
     }
 
@@ -60,7 +59,7 @@ public interface INecromaticRecipe {
         copy.removeIf(ItemStack::isEmpty);
 
         outer:
-        for(Object catalyst : this.getCatalysts()) {
+        for(Object catalyst : this.getComponents()) {
             for (int i = 0; i < copy.size(); i++) {
                 ItemStack stack = copy.get(i);
                 if (ItemHelper.ingredientMatches(stack, catalyst)) {
