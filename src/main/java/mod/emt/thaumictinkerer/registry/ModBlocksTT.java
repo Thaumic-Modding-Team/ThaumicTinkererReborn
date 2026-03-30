@@ -27,6 +27,8 @@ public class ModBlocksTT {
     public static final Block THAUMIUM_PLATED_COBBLESTONE = null;
     public static final Block TRANSVECTOR_INTERFACE = null;
     public static final Block UMBRAL_ROSE = null;
+    public static final Block VITIUM_STONE_BRICKS = null;
+    public static final Block VITIUM_STONE = null;
 
     public static void initBlocks() {
         //Block initialization goes here. Be sure to register them with RegistrarTT#addAdditionToRegister()
@@ -45,5 +47,7 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterialStairs("arcane_quartz_stairs", new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE).getDefaultState(), false));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("terra_obsidian", Material.ROCK, MapColor.EMERALD, 20.0F, 5000.0F, SoundType.STONE, true, false));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("thaumium_plated_cobblestone", Material.ROCK, MapColor.STONE, 2.0F, 50.0F, SoundType.STONE, false, false));
+        RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false));
+        RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone_bricks", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false));
     }
 }
