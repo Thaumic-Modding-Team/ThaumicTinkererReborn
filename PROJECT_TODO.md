@@ -11,7 +11,7 @@
 |      Decor - Greatwood Block      |          |          |          |          |        |
 |       Decor - Tainted Brick       |          |          |          |          |        |
 |       Decor - Tainted Stone       |          |          |          |          |        |
-|  Decor - Terra Infused Obsidian   |          |          |          |          |        |
+|  Decor - Terra Infused Obsidian   | COMPLETE | COMPLETE | COMPLETE |          |        |
 | Decor - Thaumium Framed Greatwood |          |          |          |          |        |
 |   Decor - Thaumium Plated Stone   |          |          |          |          |        |
 |        Dissimulation Block        |          |          |          |          |        |
@@ -31,8 +31,8 @@
 |      Infusion Enchant: Wrath      |   WIP    |   N/A    | COMPLETE |          |        |
 |      Ring of Goliath's Might      | COMPLETE | COMPLETE | COMPLETE |          |        |
 |         Sigil of Memories         |          |          |          |          |        |
-|       Smokey Quartz (Block)       |          |          |          |          |        |
-|       Smokey Quartz (Item)        |          |          |          |          |        |
+|       Smokey Quartz (Block)       | COMPLETE | COMPLETE | COMPLETE |          |        |
+|       Smokey Quartz (Item)        | COMPLETE | COMPLETE | COMPLETE |          |        |
 |   Stopwatch of the Timetwister    |          |          |          |          |        |
 |       Tablet of Necromancy        |          |          |          |          |        |
 |           Thaumic Cake            | COMPLETE | COMPLETE | COMPLETE |          |        |
