@@ -324,7 +324,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                 this.pos.getX() + 0.5,
                 this.pos.getY() + this.getRecipe().getEntityCenter(this.world),
                 this.pos.getZ() + 0.5,
-                0,
+                1,
                 sortedAspects.length > 0 ? sortedAspects[0].getColor() : Aspect.DEATH.getColor(),
                 false,
                 0.5f,
