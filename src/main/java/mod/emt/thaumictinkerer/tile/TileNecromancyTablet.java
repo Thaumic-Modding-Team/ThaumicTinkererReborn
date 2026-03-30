@@ -202,8 +202,10 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         if(this.recipe != null) {
             if(this.recipeEssentia.aspects.isEmpty()) {
                 if(this.spawnDelay > 0) {
+                    //TODO: Summon effect and item consuming effect.
                     this.spawnDelay--;
                 } else {
+                    //TODO: Sound effect and summon entity effect.
                     this.completeCraft();
                 }
                 return true;
