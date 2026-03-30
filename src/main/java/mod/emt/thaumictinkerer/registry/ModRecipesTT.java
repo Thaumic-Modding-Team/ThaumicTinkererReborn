@@ -1,7 +1,7 @@
 package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
-import mod.emt.thaumictinkerer.api.recipes.NecromaticRecipe;
+import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import net.minecraft.entity.passive.EntityCow;
 import net.minecraft.init.Blocks;
@@ -129,15 +129,25 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Pig", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Sheep", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow"), new NecromaticRecipe(
-                EntityCow.class,
-                new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 15),
-                Ingredient.fromItem(Items.ROTTEN_FLESH),
-                Ingredient.fromItem(Items.MILK_BUCKET),
-                Ingredient.fromItem(Items.LEATHER),
-                Ingredient.fromItem(Items.BEEF),
-                Ingredient.fromItem(Items.BONE)
-        ));
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow"), new NecromancyRecipe()
+                .setSummonedEntity(EntityCow.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 15))
+                .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
+                .setComponents(
+                        Ingredient.fromItem(Items.MILK_BUCKET),
+                        Ingredient.fromItem(Items.LEATHER),
+                        Ingredient.fromItem(Items.BEEF),
+                        Ingredient.fromItem(Items.BONE)
+                )
+        );
+        //TODO: Remove this. Test consuming recipe.
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow2"), new NecromancyRecipe()
+                .setSummonedEntity(EntityCow.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15))
+                .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
+                .setComponents(Ingredient.fromItem(Items.BONE))
+                .setConsumeComponents(true)
+        );
 //        ThaumcraftApi.registerEntityTag("Cow", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 15), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("MushroomCow", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.PLANT, 15).add(Aspect.EARTH, 15), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("SnowMan", (new AspectList()).add(Aspect.COLD, 10).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);

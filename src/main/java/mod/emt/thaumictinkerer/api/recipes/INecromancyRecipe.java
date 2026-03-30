@@ -13,34 +13,43 @@ import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import thaumcraft.api.aspects.AspectList;
 
-public interface INecromaticRecipe {
+public interface INecromancyRecipe {
 
     Object getCenterIngredient();
 
-    INecromaticRecipe setCenterIngredient(Object centerIngredient);
+    INecromancyRecipe setCenterIngredient(Object centerIngredient);
 
     Object[] getComponents();
 
-    INecromaticRecipe setComponents(Object... catalysts);
+    INecromancyRecipe setComponents(Object... catalysts);
 
     boolean shouldConsumeComponents();
 
+    INecromancyRecipe setConsumeComponents(boolean shouldConsume);
+
     AspectList getEssentia();
 
-    INecromaticRecipe setEssentia(AspectList aspectList);
+    INecromancyRecipe setAspects(AspectList aspectList);
 
     EntityEntry getSummonedEntity();
 
-    INecromaticRecipe setSummonedEntity(EntityEntry entityEntry);
+    INecromancyRecipe setSummonedEntity(EntityEntry entityEntry);
 
-    default INecromaticRecipe setSummonedEntity(Class<? extends Entity> entityClazz) {
+    default INecromancyRecipe setSummonedEntity(Class<? extends Entity> entityClazz) {
         this.setSummonedEntity(EntityRegistry.getEntry(entityClazz));
         return this;
     }
 
-    default INecromaticRecipe setSummonedEntity(ResourceLocation entityRegistryName) {
+    default INecromancyRecipe setSummonedEntity(ResourceLocation entityRegistryName) {
         this.setSummonedEntity(ForgeRegistries.ENTITIES.getValue(entityRegistryName));
         return this;
+    }
+
+    default double getEntityCenter(World world) {
+        Entity entity = this.getSummonedEntity().newInstance(world);
+        double center = entity.getYOffset() + (entity.height / 2.0f);
+        entity.setDead();
+        return center;
     }
 
     default void spawnEntity(World world, BlockPos pos) {

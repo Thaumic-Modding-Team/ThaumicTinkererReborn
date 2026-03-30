@@ -1,29 +1,24 @@
 package mod.emt.thaumictinkerer.api.recipes;
 
 import com.google.common.base.Preconditions;
-import net.minecraft.entity.Entity;
+import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.EntityEntry;
-import net.minecraftforge.fml.common.registry.EntityRegistry;
 import thaumcraft.api.aspects.AspectList;
 
-public class NecromaticRecipe implements INecromaticRecipe {
+public class NecromancyRecipe implements INecromancyRecipe {
     private EntityEntry entityEntry;
     private AspectList aspectList;
     private Object centerIngredient;
     private Object[] catalysts;
     private boolean consumeCatalysts;
 
-    public NecromaticRecipe(EntityEntry summonedEntity, AspectList aspectList, Object centerIngredient, Object... catalysts) {
-        this.setSummonedEntity(summonedEntity);
-        this.setEssentia(aspectList);
-        this.setCenterIngredient(centerIngredient);
-        this.setComponents(catalysts);
-    }
-
-    public NecromaticRecipe(Class<? extends Entity> entityClazz, AspectList aspectList, Object centerIngredient, Object... catalysts) {
-        this(EntityRegistry.getEntry(entityClazz), aspectList, centerIngredient, catalysts);
+    public NecromancyRecipe() {
+        this.setSummonedEntity(EntityPig.class);
+        this.setAspects(new AspectList());
+        this.setCenterIngredient(ItemStack.EMPTY);
     }
 
     @Override
@@ -32,7 +27,7 @@ public class NecromaticRecipe implements INecromaticRecipe {
     }
 
     @Override
-    public NecromaticRecipe setSummonedEntity(EntityEntry entityEntry) {
+    public NecromancyRecipe setSummonedEntity(EntityEntry entityEntry) {
         Preconditions.checkArgument(entityEntry != null, "EntityEntry cannot be null.");
         this.entityEntry = entityEntry;
         return this;
@@ -44,7 +39,7 @@ public class NecromaticRecipe implements INecromaticRecipe {
     }
 
     @Override
-    public NecromaticRecipe setEssentia(AspectList aspectList) {
+    public NecromancyRecipe setAspects(AspectList aspectList) {
         this.aspectList = aspectList;
         return this;
     }
@@ -55,7 +50,7 @@ public class NecromaticRecipe implements INecromaticRecipe {
     }
 
     @Override
-    public NecromaticRecipe setCenterIngredient(Object centerIngredient) {
+    public NecromancyRecipe setCenterIngredient(Object centerIngredient) {
         Preconditions.checkArgument(CraftingHelper.getIngredient(centerIngredient) != null || centerIngredient instanceof FluidStack, "Center ingredient must be an Ingredient or a FluidStack.");
         this.centerIngredient = centerIngredient;
         return this;
@@ -67,7 +62,7 @@ public class NecromaticRecipe implements INecromaticRecipe {
     }
 
     @Override
-    public NecromaticRecipe setComponents(Object... catalysts) {
+    public NecromancyRecipe setComponents(Object... catalysts) {
         Preconditions.checkArgument(catalysts.length <= 8, "Necromatic recipes cannot support more than 8 catalysts.");
         this.catalysts = catalysts;
         return this;
@@ -78,8 +73,9 @@ public class NecromaticRecipe implements INecromaticRecipe {
         return this.consumeCatalysts;
     }
 
-    public NecromaticRecipe setConsumeCatalysts() {
-        this.consumeCatalysts = true;
+    @Override
+    public INecromancyRecipe setConsumeComponents(boolean shouldConsume) {
+        this.consumeCatalysts = shouldConsume;
         return this;
     }
 }

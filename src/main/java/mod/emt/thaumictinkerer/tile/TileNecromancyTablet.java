@@ -1,6 +1,6 @@
 package mod.emt.thaumictinkerer.tile;
 
-import mod.emt.thaumictinkerer.api.recipes.INecromaticRecipe;
+import mod.emt.thaumictinkerer.api.recipes.INecromancyRecipe;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
 import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
@@ -13,7 +13,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.BlockPos;
-import net.minecraft.world.BossInfo;
 import net.minecraftforge.common.capabilities.Capability;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
@@ -30,7 +29,9 @@ import java.awt.*;
 
 public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAspectContainer {
     public static final ResourceLocation EMPTY = new ResourceLocation("");
-    public static final int BEAM_EFFECT = 0;
+    public static final int EFFECT_BEAM = 4;
+    public static final int EFFECT_CONSUME_ITEM = 5;
+    public static final int EFFECT_SPAWN = 6;
     public static final BlockPos[] PEDESTAL_OFFSETS;
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
@@ -46,11 +47,11 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
             markDirty();
         }
     };
-    protected ResourceLocation recipeName = EMPTY;
-    protected INecromaticRecipe recipe = null;
+    private ResourceLocation recipeName = EMPTY;
+    private INecromancyRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
     protected boolean isProcessing;
-    protected int spawnDelay = 40;
+    protected int spawnDelay = 100;
     public int count;
 
     @Override
@@ -90,7 +91,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                 }
             } else {
                 this.drawPassiveParticles();
-                //TODO: Particle effects - maybe re-use effects from nature's aura?
             }
         }
 
@@ -132,7 +132,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public void completeCraft() {
-        if(this.recipe != null) {
+        if(this.getRecipe() != null) {
             this.consumeComponents();
             this.consumeCenterItem();
             this.recipe.spawnEntity(this.world, this.pos);
@@ -143,12 +143,12 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public boolean checkAndUpdateRecipe() {
         ItemStack centerItem = this.getCenterItem();
         NonNullList<ItemStack> components = this.getComponents();
-        if (this.recipe == null || !this.recipe.matches(centerItem, components)) {
-            Tuple<ResourceLocation, INecromaticRecipe> tuple = NecromancyRecipeRegistry.getRecipeAndName(centerItem, components);
+        if (this.getRecipe() == null || !this.recipe.matches(centerItem, components)) {
+            Tuple<ResourceLocation, INecromancyRecipe> tuple = NecromancyRecipeRegistry.getRecipeAndName(centerItem, components);
             if(tuple != null) {
                 this.setRecipe(tuple.getFirst(), tuple.getSecond());
                 return true;
-            } else if(this.recipe != null) {
+            } else if(this.getRecipe() != null) {
                 this.resetRecipe();
                 return true;
             }
@@ -157,10 +157,15 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public boolean processRecipe() {
-        if(this.recipe != null) {
+        if(this.getRecipe() != null) {
             if(this.recipeEssentia.aspects.isEmpty()) {
                 if(this.spawnDelay > 0) {
-                    //TODO: Summon effect and item consuming effect.
+                    //TODO: Sound effect
+                    for(int i = 0; i < PEDESTAL_OFFSETS.length; i++) {
+                        if(!this.getPedestalItemStack(PEDESTAL_OFFSETS[i]).isEmpty()) {
+                            this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_BEAM, i);
+                        }
+                    }
                     this.spawnDelay--;
                 } else {
                     //TODO: Sound effect and summon entity effect.
@@ -186,7 +191,15 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         return false;
     }
 
-    public void setRecipe(ResourceLocation recipeName, @Nullable INecromaticRecipe recipe) {
+    @Nullable
+    public INecromancyRecipe getRecipe() {
+        if(this.recipe == null && !this.recipeName.equals(EMPTY)) {
+            this.recipe = NecromancyRecipeRegistry.getRecipe(this.recipeName);
+        }
+        return this.recipe;
+    }
+
+    public void setRecipe(ResourceLocation recipeName, @Nullable INecromancyRecipe recipe) {
         this.recipeName = recipeName;
         this.recipe = recipe;
         this.recipeEssentia = recipe != null ? recipe.getEssentia().copy() : new AspectList();
@@ -194,7 +207,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
 
     public void resetRecipe() {
         setRecipe(EMPTY, null);
-        this.spawnDelay = 40;
+        this.spawnDelay = 100;
     }
 
     public ItemStack getCenterItem() {
@@ -202,7 +215,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public void consumeCenterItem() {
-        if(this.recipe != null) {
+        if(this.getRecipe() != null) {
             ItemStack stack = this.getCenterItem();
             this.stackHandler.setStackInSlot(0, ItemHelper.consumeIngredient(stack, this.recipe.getCenterIngredient()));
         }
@@ -211,23 +224,32 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public NonNullList<ItemStack> getComponents() {
         NonNullList<ItemStack> components = NonNullList.create();
         for(BlockPos offset : PEDESTAL_OFFSETS) {
-            TileEntity tile = this.world.getTileEntity(this.pos.add(offset));
-            if(tile instanceof TilePedestal && ((TilePedestal) tile).getSizeInventory() > 0) {
-                components.add(((TilePedestal) tile).getStackInSlot(0));
-            }
+            components.add(this.getPedestalItemStack(offset));
         }
         return components;
     }
 
+    public ItemStack getPedestalItemStack(BlockPos pedestalOffset) {
+        TileEntity tile = this.world.getTileEntity(this.pos.add(pedestalOffset));
+        if(tile instanceof TilePedestal && ((TilePedestal) tile).getSizeInventory() > 0) {
+            return ((TilePedestal) tile).getStackInSlot(0);
+        }
+        return ItemStack.EMPTY;
+    }
+
     public void consumeComponents() {
-        if(this.recipe == null || !this.recipe.shouldConsumeComponents())
+        INecromancyRecipe recipe = this.getRecipe();
+        if(recipe == null || !recipe.shouldConsumeComponents())
             return;
 
         NonNullList<ItemStack> components = this.getComponents();
-        for(Object component : this.recipe.getComponents()) {
+        for(Object component : recipe.getComponents()) {
             for(int i = 0; i < components.size(); i++) {
                 ItemStack stack = components.get(i);
                 if(ItemHelper.ingredientMatches(stack, component)) {
+                    if(!stack.isEmpty()) {
+                        this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_CONSUME_ITEM, i);
+                    }
                     components.set(i, ItemHelper.consumeIngredient(stack, component));
                     break;
                 }
@@ -275,7 +297,62 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
 
     @Override
     public boolean receiveClientEvent(int id, int type) {
+        switch (id) {
+            case EFFECT_BEAM:
+                this.doComponentBeam(type);
+                return true;
+            case EFFECT_CONSUME_ITEM:
+                this.doItemPoof(type);
+                return true;
+            case EFFECT_SPAWN:
+                this.doSpawnPoof();
+                return true;
+        }
         return false;
+    }
+
+    public void doComponentBeam(int offsetIndex) {
+        if(!this.world.isRemote || this.getRecipe() == null)
+            return;
+
+        BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
+        Aspect[] sortedAspects = this.getRecipe().getEssentia().getAspectsSortedByAmount();
+        FXDispatcher.INSTANCE.beamBore(
+                pedestalPos.getX() + 0.5,
+                pedestalPos.getY() + 1.0,
+                pedestalPos.getZ() + 0.5,
+                this.pos.getX() + 0.5,
+                this.pos.getY() + this.getRecipe().getEntityCenter(this.world),
+                this.pos.getZ() + 0.5,
+                0,
+                sortedAspects.length > 0 ? sortedAspects[0].getColor() : Aspect.DEATH.getColor(),
+                false,
+                0.5f,
+                1,
+                1
+        );
+    }
+
+    public void doItemPoof(int offsetIndex) {
+        if(!this.world.isRemote)
+            return;
+
+        BlockPos pedestalPos = this.pos.add(PEDESTAL_OFFSETS[offsetIndex]);
+        FXDispatcher.INSTANCE.drawBamf(
+                pedestalPos.getX() + 0.5,
+                pedestalPos.getY() + 1.25,
+                pedestalPos.getZ() + 0.5,
+                true,
+                true,
+                EnumFacing.UP
+        );
+    }
+
+    public void doSpawnPoof() {
+        if(!this.world.isRemote)
+            return;
+
+
     }
 
     @Override
