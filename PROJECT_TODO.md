@@ -46,6 +46,9 @@
 |    Worldshaper's Looking Glass    |          |          |          |          |          |
 |            XP Talisman            |          |          |          |          |          |
 
+**Arcane Quartz Slabs**
+These still need to be done, slabs are just a pain to do.
+
 ## Thaumic Tinkerer: Kami Reborn
 |                      Feature                      | Code | Model | Texture  | Research | Recipe |
 |:-------------------------------------------------:|:----:|:-----:|:--------:|:--------:|:------:|
