@@ -99,7 +99,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     protected INecromaticRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
     //TODO: Require salis mundis
-    protected int spawnDelay;
+    protected int spawnDelay = 40;
     public int count;
 
     @Override
