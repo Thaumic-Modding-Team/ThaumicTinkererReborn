@@ -134,16 +134,16 @@ position. Each player would need their own save point in the block saved to the 
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
 
 ## Planar Artifice
-| Feature                         | Replacement | Description                                      |
-|:--------------------------------|:-----------:|:-------------------------------------------------|
-| Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                  |
-| Infusion Enchant: Curious       |             | Grants a low chance to drop curiosities.         |
-| Infusion Enchant: Projecting    |             | Increases reach distance.                        |
-| Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items. |
+| Feature                         | Replacement | Description                                           |
+|:--------------------------------|:-----------:|:------------------------------------------------------|
+| Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                       |
+| Flux Scrubber                   |             | Removes flux from the environment using Salis Mundus. |
+| Infusion Enchant: Curious       |             | Grants a low chance to drop curiosities.              |
+| Infusion Enchant: Projecting    |             | Increases reach distance.                             |
+| Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items.      |
 
 ## Thaumic Restoration
 | Feature                      | Replacement | Description                                                       |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------|
-| Flux Scrubber                |             | Removes flux from the environment using Salis Mundus.             |
 | Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
 
