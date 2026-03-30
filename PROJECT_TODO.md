@@ -13,7 +13,7 @@
 |       Decor - Tainted Stone       |          |          |          |          |        |
 |  Decor - Terra Infused Obsidian   | COMPLETE | COMPLETE | COMPLETE |          |        |
 | Decor - Thaumium Framed Greatwood |          |          |          |          |        |
-|   Decor - Thaumium Plated Stone   |          |          |          |          |        |
+|   Decor - Thaumium Plated Stone   | COMPLETE | COMPLETE | COMPLETE |          |        |
 |        Dissimulation Block        |          |          |          |          |        |
 |          Dynamism Tablet          |          |          |          |          |        |
 |           Ender Mirror            | COMPLETE | COMPLETE | COMPLETE |          |        |
