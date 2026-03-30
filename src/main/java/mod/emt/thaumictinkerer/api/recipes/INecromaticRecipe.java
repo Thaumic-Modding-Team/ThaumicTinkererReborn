@@ -1,5 +1,6 @@
 package mod.emt.thaumictinkerer.api.recipes;
 
+import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
@@ -46,7 +47,7 @@ public interface INecromaticRecipe {
         if(!world.isRemote) {
             EntityEntry entry = this.getSummonedEntity();
             Entity entity = entry.newInstance(world);
-            entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.25, pos.getZ() + 0.5);
+            entity.setPosition(pos.getX() + 0.5, pos.getY() + BlockNecromancyTablet.TABLET_AABB.maxY, pos.getZ() + 0.5);
             world.spawnEntity(entity);
         }
     }

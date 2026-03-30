@@ -30,7 +30,7 @@ import thaumcraft.api.aspects.AspectList;
 import java.util.Map;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
-    public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.25, 1.0);
+    public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
 
     public BlockNecromancyTablet() {
         super("necromancy_tablet", Material.ROCK, MapColor.PURPLE, TileNecromancyTablet.class);
