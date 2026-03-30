@@ -4,7 +4,7 @@
     "model": "thaumictinkerer:necromancy_tablet"
   },
   "variants": {
-    "normal": [{}],
-    "inventory": [{}]
+    "inventory": { "model": "thaumictinkerer:necromancy_tablet", "transform": "forge:default-block"},
+    "normal": [{}]
   }
 }
