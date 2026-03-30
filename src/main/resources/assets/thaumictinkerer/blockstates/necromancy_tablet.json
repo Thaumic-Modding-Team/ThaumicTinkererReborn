@@ -1,0 +1,10 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "thaumictinkerer:necromancy_tablet"
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

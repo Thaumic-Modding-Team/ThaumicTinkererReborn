@@ -45,7 +45,7 @@ public interface INecromaticRecipe {
     default void spawnEntity(World world, BlockPos pos) {
         EntityEntry entry = this.getSummonedEntity();
         Entity entity = entry.newInstance(world);
-        entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.125, pos.getZ() + 0.5);
+        entity.setPosition(pos.getX() + 0.5, pos.getY() + 0.25, pos.getZ() + 0.5);
         world.spawnEntity(entity);
     }
 

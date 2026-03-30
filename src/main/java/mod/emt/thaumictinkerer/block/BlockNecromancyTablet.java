@@ -1,6 +1,7 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
 import mod.emt.thaumictinkerer.tile.TileNecromancyTablet;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -8,6 +9,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
@@ -15,13 +17,20 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
+import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.aspects.AspectList;
+
+import java.util.Map;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
-    public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
+    public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.25, 1.0);
 
     public BlockNecromancyTablet() {
         super("necromancy_tablet", Material.ROCK, MapColor.PURPLE, TileNecromancyTablet.class);
@@ -84,5 +93,36 @@ public class BlockNecromancyTablet extends BlockTileAddition {
     @Override
     public boolean isFullCube(@NotNull IBlockState state) {
         return false;
+    }
+
+    //##########################################################
+    // IBlockAddition
+
+
+    @Override
+    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+        //TODO
+    }
+
+    @Override
+    public void registerResearchLocation() {
+        //TODO
+    }
+
+    @Override
+    public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
+        //TODO
+    }
+
+    @Override
+    public void registerModel(ModelRegistryEvent event) {
+        super.registerModel(event);
+        ClientRegistry.bindTileEntitySpecialRenderer(TileNecromancyTablet.class, new TileNecromancyTabletTESR());
+    }
+
+    @Override
+    public boolean isEnabled() {
+        //TODO
+        return true;
     }
 }
