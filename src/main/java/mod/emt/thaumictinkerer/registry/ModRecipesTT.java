@@ -303,7 +303,6 @@ public class ModRecipesTT {
 
 
         //Hostile
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.BrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("CaveSpider", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.DEATH, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Creeper", (new AspectList()).add(Aspect.PLANT, 15).add(Aspect.FIRE, 15), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Husk", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.FIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
@@ -313,6 +312,7 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("Slime", (new AspectList()).add(Aspect.LIFE, 10).add(Aspect.WATER, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Spider", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Stray", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.TRAP, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Thaumcraft.BrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Witch", (new AspectList()).add(Aspect.MAN, 15).add(Aspect.MAGIC, 5).add(Aspect.ALCHEMY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Zombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.EARTH, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
@@ -321,21 +321,26 @@ public class ModRecipesTT {
         //Nether
 //        ThaumcraftApi.registerEntityTag("Blaze", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.FIRE, 15).add(Aspect.FLIGHT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Ghast", (new AspectList()).add(Aspect.UNDEAD, 15).add(Aspect.FIRE, 15), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("PigZombie", (new AspectList()).add(Aspect.UNDEAD, 15).add(Aspect.FIRE, 15).add(Aspect.BEAST, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("WitherSkeleton", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 5).add(Aspect.ENTROPY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("LavaSlime", (new AspectList()).add(Aspect.WATER, 5).add(Aspect.FIRE, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("PigZombie", (new AspectList()).add(Aspect.UNDEAD, 15).add(Aspect.FIRE, 15).add(Aspect.BEAST, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Thaumcraft.Firebat", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.FIRE, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("WitherSkeleton", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 5).add(Aspect.ENTROPY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 
 
         //Alien
 //        ThaumcraftApi.registerEntityTag("Enderman", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.MOTION, 15).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Endermite", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.ELDRITCH, 5).add(Aspect.MOTION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Shulker", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.TRAP, 5).add(Aspect.FLIGHT, 5).add(Aspect.PROTECT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchCrab", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Thaumcraft.InhabitedZombie", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.UNDEAD, 10).add(Aspect.MAN, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
 
         //Arcane
+//        ThaumcraftApi.registerEntityTag("IllusionIllager", (new AspectList()).add(Aspect.SENSES, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)0)});
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)1)});
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)2)});
+//        ThaumcraftApi.registerEntityTag("VindicationIllager", (new AspectList()).add(Aspect.AVERSION, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 
 
         //Tainted
@@ -361,17 +366,14 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("Creeper", (new AspectList()).add(Aspect.PLANT, 15).add(Aspect.FIRE, 15).add(Aspect.ENERGY, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("powered", (byte)1)});
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 15).add(Aspect.WATER, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Elder", true)});
-
-
-//        ThaumcraftApi.registerEntityTag("VindicationIllager", (new AspectList()).add(Aspect.AVERSION, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("IllusionIllager", (new AspectList()).add(Aspect.SENSES, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.Firebat", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.FIRE, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.GiantBrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.MIND, 5).add(Aspect.AVERSION, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+
+
+
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchGuardian", (new AspectList()).add(Aspect.ELDRITCH, 20).add(Aspect.DEATH, 20).add(Aspect.UNDEAD, 20), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.CultistKnight", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAN, 15).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.CultistCleric", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAN, 15).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchCrab", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.InhabitedZombie", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.UNDEAD, 10).add(Aspect.MAN, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchWarden", (new AspectList()).add(Aspect.ELDRITCH, 40).add(Aspect.DEATH, 40).add(Aspect.UNDEAD, 40), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchGolem", (new AspectList()).add(Aspect.ELDRITCH, 40).add(Aspect.ENERGY, 40).add(Aspect.MECHANISM, 40), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.CultistLeader", (new AspectList()).add(Aspect.ELDRITCH, 40).add(Aspect.AVERSION, 40).add(Aspect.MAN, 40), new ThaumcraftApi.EntityTagsNBT[0]);
