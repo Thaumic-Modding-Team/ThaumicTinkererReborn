@@ -5,12 +5,13 @@ import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
 import mod.emt.thaumictinkerer.registry.RegistrarTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
+import net.minecraftforge.common.MinecraftForge;
 
 public class CommonProxy {
     public void preInit() {
         RegistrarTT.getProxyAdditions().forEach(IProxy::preInit);
         if(CompatHelper.isModTweakerLoaded) {
-            CTPlugin.init();
+            MinecraftForge.EVENT_BUS.register(new CTPlugin());
         }
     }
 
