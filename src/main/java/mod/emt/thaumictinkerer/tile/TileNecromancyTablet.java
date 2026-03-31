@@ -8,7 +8,6 @@ import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.registry.ModSoundEventsTT;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.block.state.IBlockState;
-import net.minecraft.entity.Entity;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
@@ -331,7 +330,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     pedestalPos.getY() + 1.0,
                     pedestalPos.getZ() + 0.5,
                     this.pos.getX() + 0.5,
-                    this.pos.getY() + this.getRecipe().getEntityCenter(this.world),
+                    this.pos.getY() + 0.625,
                     this.pos.getZ() + 0.5,
                     1,
                     sortedAspects.length > 0 ? sortedAspects[0].getColor() : Aspect.DEATH.getColor(),
@@ -359,16 +358,17 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
 
     public void doSpawnPoof() {
         if(this.world.isRemote && this.getRecipe() != null) {
-            Entity entity = this.getRecipe().getSummonedEntity(this.world);
+            double height = this.getRecipe().getEntityHeight(this.world);
+            double width = this.getRecipe().getEntityWidth(this.world);
             for(int i = 0; i < 20; ++i) {
                 double motionX = this.world.rand.nextGaussian() * 0.02D;
                 double motionY = this.world.rand.nextGaussian() * 0.02D;
                 double motionZ = this.world.rand.nextGaussian() * 0.02D;
                 this.world.spawnParticle(
                         EnumParticleTypes.EXPLOSION_NORMAL,
-                        this.pos.getX() + 0.5 + (double) (this.world.rand.nextFloat() * entity.width * 2.0F) - entity.width - motionX * 10.0D,
-                        this.pos.getY() + (double) (this.world.rand.nextFloat() * entity.height) - motionY * 10.0D,
-                        this.pos.getZ() + 0.5 + (double) (this.world.rand.nextFloat() * entity.width * 2.0F) - entity.width - motionZ * 10.0D,
+                        this.pos.getX() + 0.5 + (this.world.rand.nextFloat() * width * 2.0F) - width - motionX * 10.0D,
+                        this.pos.getY() + (this.world.rand.nextFloat() * height) - motionY * 10.0D,
+                        this.pos.getZ() + 0.5 + (this.world.rand.nextFloat() * width * 2.0F) - width - motionZ * 10.0D,
                         motionX, motionY, motionZ
                 );
             }

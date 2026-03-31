@@ -5,6 +5,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.world.World;
 import net.minecraftforge.common.crafting.CraftingHelper;
 import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.EntityEntry;
@@ -18,11 +19,15 @@ public class NecromancyRecipe implements INecromancyRecipe {
     private Object centerIngredient;
     private Object[] catalysts;
     private boolean consumeCatalysts;
+    private boolean dimensionsInitialized;
+    private double entityHeight;
+    private double entityWidth;
 
     public NecromancyRecipe() {
         this.setSummonedEntity(EntityPig.class);
         this.setAspects(new AspectList());
         this.setCenterIngredient(ItemStack.EMPTY);
+        this.dimensionsInitialized = false;
     }
 
     public NecromancyRecipe setSummonedEntity(EntityEntry entityEntry) {
@@ -63,6 +68,16 @@ public class NecromancyRecipe implements INecromancyRecipe {
         return this;
     }
 
+    private void syncEntityDimensions(World world) {
+        if(!this.dimensionsInitialized) {
+            Entity entity = this.getSummonedEntity(world);
+            this.entityHeight = entity.height;
+            this.entityWidth = entity.width;
+            this.dimensionsInitialized = true;
+            entity.setDead();
+        }
+    }
+
     @Override
     public EntityEntry getSummonedEntity() {
         return this.entityEntry;
@@ -86,5 +101,17 @@ public class NecromancyRecipe implements INecromancyRecipe {
     @Override
     public boolean shouldConsumeComponents() {
         return this.consumeCatalysts;
+    }
+
+    @Override
+    public double getEntityHeight(World world) {
+        this.syncEntityDimensions(world);
+        return this.entityHeight;
+    }
+
+    @Override
+    public double getEntityWidth(World world) {
+        this.syncEntityDimensions(world);
+        return this.entityWidth;
     }
 }

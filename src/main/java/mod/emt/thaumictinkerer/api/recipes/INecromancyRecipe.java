@@ -22,15 +22,12 @@ public interface INecromancyRecipe {
 
     EntityEntry getSummonedEntity();
 
+    double getEntityHeight(World world);
+
+    double getEntityWidth(World world);
+
     default Entity getSummonedEntity(World world) {
         return this.getSummonedEntity().newInstance(world);
-    }
-
-    default double getEntityCenter(World world) {
-        Entity entity = this.getSummonedEntity().newInstance(world);
-        double center = entity.getYOffset() + (entity.height / 2.0f);
-        entity.setDead();
-        return center;
     }
 
     default void spawnEntity(World world, BlockPos pos) {
