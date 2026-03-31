@@ -37,7 +37,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public static final BlockPos[] PEDESTAL_OFFSETS;
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
-    public static int timeTillSpawn = 135;
+    public static final int timeTillSpawn = 135;
 
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
@@ -53,7 +53,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     private ResourceLocation recipeName = EMPTY;
     private INecromancyRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
-    protected boolean isProcessing;
     protected int spawnDelay = timeTillSpawn;
     public int count;
 
@@ -62,7 +61,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.readFromNBT(compound);
         this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
         this.spawnDelay = compound.getInteger("spawnDelay");
-        this.isProcessing = compound.getBoolean("isProcessing");
         this.recipeName = new ResourceLocation(compound.getString("recipeName"));
         this.recipeEssentia.readFromNBT(compound);
     }
@@ -72,7 +70,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.writeToNBT(compound);
         compound.setTag("inventory", this.stackHandler.serializeNBT());
         compound.setInteger("spawnDelay", this.spawnDelay);
-        compound.setBoolean("isProcessing", this.isProcessing);
         compound.setString("recipeName", this.recipeName != null ? this.recipeName.toString() : "");
         this.recipeEssentia.writeToNBT(compound);
         return compound;
@@ -188,13 +185,8 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     for (Aspect aspect : this.recipeEssentia.getAspects()) {
                         if (EssentiaHandler.drainEssentia(this, aspect, null, 12, 1)) {
                             this.recipeEssentia.remove(aspect, 1);
-                            this.isProcessing = true;
                             return true;
                         }
-                    }
-                    if(!this.recipeEssentia.aspects.isEmpty() && this.isProcessing) {
-                        this.isProcessing = false;
-                        return true;
                     }
                 }
             }
