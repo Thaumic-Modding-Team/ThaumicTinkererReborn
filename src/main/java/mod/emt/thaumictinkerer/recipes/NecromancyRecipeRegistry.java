@@ -1,17 +1,35 @@
 package mod.emt.thaumictinkerer.recipes;
 
 import mod.emt.thaumictinkerer.api.recipes.INecromancyRecipe;
+import net.minecraft.entity.Entity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.Tuple;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 import org.jetbrains.annotations.Nullable;
 
+import java.util.Collection;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Set;
 
 public class NecromancyRecipeRegistry {
     private static final Map<ResourceLocation, INecromancyRecipe> NECROMATIC_RECIPES = new HashMap<>();
+
+    public static Set<ResourceLocation> getRecipeNames() {
+        return NECROMATIC_RECIPES.keySet();
+    }
+
+    public static Collection<INecromancyRecipe> getRecipes() {
+        return NECROMATIC_RECIPES.values();
+    }
+
+    @Nullable
+    public static INecromancyRecipe getRecipe(ResourceLocation recipeName) {
+        return NECROMATIC_RECIPES.getOrDefault(recipeName, null);
+    }
 
     @Nullable
     public static INecromancyRecipe getRecipe(ItemStack centerStack, NonNullList<ItemStack> catalysts) {
@@ -19,11 +37,6 @@ public class NecromancyRecipeRegistry {
                 .filter(recipe -> recipe.matches(centerStack, catalysts))
                 .findAny()
                 .orElse(null);
-    }
-
-    @Nullable
-    public static INecromancyRecipe getRecipe(ResourceLocation recipeName) {
-        return NECROMATIC_RECIPES.getOrDefault(recipeName, null);
     }
 
     @Nullable
@@ -49,6 +62,14 @@ public class NecromancyRecipeRegistry {
 
     public static void removeRecipe(ResourceLocation recipeName) {
         NECROMATIC_RECIPES.remove(recipeName);
+    }
+
+    public static void removeRecipe(EntityEntry entityEntry) {
+        NECROMATIC_RECIPES.values().removeIf(recipe -> recipe.getSummonedEntity().equals(entityEntry));
+    }
+
+    public static void removeRecipe(Class<? extends Entity> entityClass) {
+        removeRecipe(EntityRegistry.getEntry(entityClass));
     }
 
     public static void removeAllRecipes() {
