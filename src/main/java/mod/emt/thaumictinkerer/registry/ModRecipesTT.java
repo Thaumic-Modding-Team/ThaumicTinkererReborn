@@ -28,50 +28,11 @@ import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 public class ModRecipesTT {
 
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
-        initNecromancyPlatform();
         initArcaneWorkbenchRecipes();
         initCraftingRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
         initNecromancyRecipes();
-    }
-
-    private static void initNecromancyPlatform() {
-        Part PEDI = new Part(BlocksTC.pedestalArcane, null);
-        Part NECR = new Part(new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 0), new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
-        Part QUAR = new Part(ModBlocksTT.ARCANE_QUARTZ_BLOCK, null);
-        Part NETH = new Part(Blocks.NETHER_BRICK, null);
-
-        Part[][][] blueprint = new Part[][][] {
-                {
-                        {null, null, null, PEDI, null, null, null},
-                        {null, PEDI, null, null, null, PEDI, null},
-                        {null, null, null, null, null, null, null},
-                        {PEDI, null, null, NECR, null, null, PEDI},
-                        {null, null, null, null, null, null, null},
-                        {null, PEDI, null, null, null, PEDI, null},
-                        {null, null, null, PEDI, null, null, null}
-                },
-                {
-                        {null, null, NETH, NETH, NETH, null, null},
-                        {null, NETH, NETH, QUAR, NETH, NETH, null},
-                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
-                        {NETH, QUAR, QUAR, QUAR, QUAR, QUAR, NETH},
-                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
-                        {null, NETH, NETH, QUAR, NETH, NETH, null},
-                        {null, null, NETH, NETH, NETH, null, null}
-                }
-        };
-        //TODO: Swap to this
-        // IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_NECROMANCY_TABLET", blueprint));
-        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("BASEAUROMANCY", blueprint));
-        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new ThaumcraftApi.BluePrint(
-                "BASEAUROMANCY",//TODO: swap to this - "TT_NECROMANCY_TABLET",
-                blueprint,
-                new ItemStack(Blocks.NETHER_BRICK, 24),
-                new ItemStack(ModBlocksTT.ARCANE_QUARTZ_BLOCK, 13),
-                new ItemStack(ModBlocksTT.NECROMANCY_TABLET)
-        ));
     }
 
     private static void initArcaneWorkbenchRecipes() {
@@ -117,6 +78,10 @@ public class ModRecipesTT {
     }
 
     public static void initNecromancyRecipes() {
+        //TODO: Config disable.
+
+        initNecromancyPlatform();
+
 //        ThaumcraftApi.registerEntityTag("Zombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.EARTH, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Husk", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.FIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Giant", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
@@ -132,7 +97,7 @@ public class ModRecipesTT {
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:pig"), new NecromancyRecipe()
                 .setSummonedEntity(EntityPig.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.EARTH, 10).add(Aspect.DESIRE, 5))
-                .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
                 .setComponents(
                         new OreIngredient("leather"),
                         Ingredient.fromItem(Items.BONE),
@@ -145,7 +110,7 @@ public class ModRecipesTT {
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow"), new NecromancyRecipe()
                 .setSummonedEntity(EntityCow.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 15))
-                .setCenterIngredient(Ingredient.fromItem(Items.ROTTEN_FLESH))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
                 .setComponents(
                         new OreIngredient("leather"),
                         Ingredient.fromItem(Items.BONE),
@@ -224,5 +189,45 @@ public class ModRecipesTT {
 //        for(Aspect tag : Aspect.aspects.values()) {
 //            ThaumcraftApi.registerEntityTag("Thaumcraft.Wisp", (new AspectList()).add(tag, 5).add(Aspect.AURA, 5).add(Aspect.FLIGHT, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Type", tag.getTag())});
 //        }
+    }
+
+    private static void initNecromancyPlatform() {
+        //TODO: Config disable.
+
+        Part PEDI = new Part(BlocksTC.pedestalArcane, null);
+        Part NECR = new Part(new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 0), new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
+        Part QUAR = new Part(ModBlocksTT.ARCANE_QUARTZ_BLOCK, null);
+        Part NETH = new Part(Blocks.NETHER_BRICK, null);
+
+        Part[][][] blueprint = new Part[][][] {
+                {
+                        {null, null, null, PEDI, null, null, null},
+                        {null, PEDI, null, null, null, PEDI, null},
+                        {null, null, null, null, null, null, null},
+                        {PEDI, null, null, NECR, null, null, PEDI},
+                        {null, null, null, null, null, null, null},
+                        {null, PEDI, null, null, null, PEDI, null},
+                        {null, null, null, PEDI, null, null, null}
+                },
+                {
+                        {null, null, NETH, NETH, NETH, null, null},
+                        {null, NETH, NETH, QUAR, NETH, NETH, null},
+                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
+                        {NETH, QUAR, QUAR, QUAR, QUAR, QUAR, NETH},
+                        {NETH, NETH, QUAR, QUAR, QUAR, NETH, NETH},
+                        {null, NETH, NETH, QUAR, NETH, NETH, null},
+                        {null, null, NETH, NETH, NETH, null, null}
+                }
+        };
+        //TODO: Swap to this
+        // IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_NECROMANCY_TABLET", blueprint));
+        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("BASEAUROMANCY", blueprint));
+        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new ThaumcraftApi.BluePrint(
+                "BASEAUROMANCY",//TODO: swap to this - "TT_NECROMANCY_TABLET",
+                blueprint,
+                new ItemStack(Blocks.NETHER_BRICK, 24),
+                new ItemStack(ModBlocksTT.ARCANE_QUARTZ_BLOCK, 13),
+                new ItemStack(ModBlocksTT.NECROMANCY_TABLET)
+        ));
     }
 }

@@ -1,17 +1,24 @@
 package mod.emt.thaumictinkerer.registry;
 
 
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.item.*;
 import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
+import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
+import net.minecraftforge.fml.common.registry.GameRegistry;
 
+@GameRegistry.ObjectHolder(ThaumicTinkerer.MOD_ID)
 public class ModItemsTT {
     public static final Item ARCANE_QUARTZ = null;
     public static final Item CONDOR_SWORD = null;
     public static final Item ENDER_MIRROR = null;
     public static final Item EVERFULL_BUCKET = null;
     public static final Item ENERGETIC_NITOR = null;
+    public static final Item ENTITY_SOUL_ELDRITCH = null;
+    public static final Item ENTITY_SOUL_HOSTILE = null;
+    public static final Item ENTITY_SOUL_PEACEFUL = null;
     public static final Item FELINE_CHARM = null;
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
@@ -32,5 +39,8 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz", "gemArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new ItemCondorSword());
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 15, EnumRarity.UNCOMMON));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
     }
 }

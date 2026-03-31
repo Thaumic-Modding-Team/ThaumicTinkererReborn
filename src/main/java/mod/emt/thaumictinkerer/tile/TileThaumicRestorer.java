@@ -36,7 +36,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return stack.getItem().isDamageable();
+            return stack.getItem().isDamageable() && stack.getItem().isRepairable();
         }
 
         @Override

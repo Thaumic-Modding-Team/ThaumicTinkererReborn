@@ -38,6 +38,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
     public static final int SPAWN_DELAY_MAX = 140;
+    public static final int RESTART_DELAY_MAX = 60;
 
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
@@ -54,6 +55,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     private INecromancyRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
     protected int spawnDelay = SPAWN_DELAY_MAX;
+    protected int restartDelay = RESTART_DELAY_MAX;
     public int count;
 
     @Override
@@ -61,6 +63,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.readFromNBT(compound);
         this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
         this.spawnDelay = compound.getInteger("spawnDelay");
+        this.restartDelay = compound.getInteger("restartDelay");
         this.recipeName = new ResourceLocation(compound.getString("recipeName"));
         this.recipeEssentia.readFromNBT(compound);
     }
@@ -70,6 +73,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         super.writeToNBT(compound);
         compound.setTag("inventory", this.stackHandler.serializeNBT());
         compound.setInteger("spawnDelay", this.spawnDelay);
+        compound.setInteger("restartDelay", this.restartDelay);
         compound.setString("recipeName", this.recipeName != null ? this.recipeName.toString() : "");
         this.recipeEssentia.writeToNBT(compound);
         return compound;
@@ -100,7 +104,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     }
 
     public boolean isTabletActive() {
-        return this.world.getBlockState(this.pos).getValue(BlockNecromancyTablet.ENABLED);
+        return !this.world.isBlockPowered(this.pos) && this.world.getBlockState(this.pos).getValue(BlockNecromancyTablet.ENABLED);
     }
 
     @SuppressWarnings("ConstantConditions")
@@ -162,7 +166,19 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     @SuppressWarnings("ConstantConditions")
     public boolean processRecipe() {
         if(this.getRecipe() != null) {
-            if(this.recipeEssentia.aspects.isEmpty()) {
+            if(this.restartDelay > 0) {
+                this.restartDelay--;
+                return true;
+            } else if (!this.recipeEssentia.aspects.isEmpty()) {
+                if(this.count % 5 == 0) {
+                    for (Aspect aspect : this.recipeEssentia.getAspects()) {
+                        if (EssentiaHandler.drainEssentia(this, aspect, null, 12, 1)) {
+                            this.recipeEssentia.remove(aspect, 1);
+                            return true;
+                        }
+                    }
+                }
+            } else {
                 if(this.spawnDelay > 0) {
                     if(this.spawnDelay >= SPAWN_DELAY_MAX) {
                         this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_BEAM_START.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
@@ -179,15 +195,6 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
                     this.completeCraft();
                 }
                 return true;
-            } else {
-                if(this.count % 5 == 0) {
-                    for (Aspect aspect : this.recipeEssentia.getAspects()) {
-                        if (EssentiaHandler.drainEssentia(this, aspect, null, 12, 1)) {
-                            this.recipeEssentia.remove(aspect, 1);
-                            return true;
-                        }
-                    }
-                }
             }
         }
         return false;
@@ -205,6 +212,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         this.recipeName = recipeName;
         this.recipe = recipe;
         this.recipeEssentia = recipe != null ? recipe.getEssentia().copy() : new AspectList();
+        this.restartDelay = RESTART_DELAY_MAX;
     }
 
     public void resetRecipe() {
