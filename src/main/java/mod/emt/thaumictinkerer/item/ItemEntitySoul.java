@@ -17,10 +17,8 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Random;
 
 public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
-    public static final Random rand = new Random();
     private final IRarity rarity;
 
     public ItemEntitySoul(String unlocName, int uses, IRarity rarity) {
@@ -54,7 +52,7 @@ public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
 
     @Override
     public boolean hasContainerItem(@NotNull ItemStack stack) {
-        return stack.getItemDamage() > stack.getMaxDamage();
+        return stack.getItemDamage() < stack.getMaxDamage();
     }
 
     @Override
