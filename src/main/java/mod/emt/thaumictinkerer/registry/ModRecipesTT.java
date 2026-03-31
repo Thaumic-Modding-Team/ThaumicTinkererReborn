@@ -4,13 +4,14 @@ import com.google.common.collect.Lists;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
-import net.minecraft.entity.passive.EntityCow;
-import net.minecraft.entity.passive.EntityPig;
+import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.PotionTypes;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
+import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -126,6 +127,18 @@ public class ModRecipesTT {
 
 
         //Peaceful Mobs
+        //Common Animals
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:chicken"), new NecromancyRecipe()
+                .setSummonedEntity(EntityChicken.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.AIR, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("feather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.EGG),
+                        Ingredient.fromItem(Items.CHICKEN)
+                )
+        );
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:cow"), new NecromancyRecipe()
                 .setSummonedEntity(EntityCow.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 15))
@@ -148,25 +161,110 @@ public class ModRecipesTT {
                         Ingredient.fromItem(Items.PORKCHOP)
                 )
         );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:rabbit"), new NecromancyRecipe()
+                .setSummonedEntity(EntityRabbit.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.EARTH, 5).add(Aspect.MOTION, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        Ingredient.fromItem(Items.RABBIT_HIDE),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.RABBIT_FOOT),
+                        Ingredient.fromItem(Items.RABBIT)
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:sheep"), new NecromancyRecipe()
+                .setSummonedEntity(EntitySheep.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.EARTH, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("wool"),
+                        Ingredient.fromItem(Items.BONE),
+                        new OreIngredient("string"),
+                        Ingredient.fromItem(Items.MUTTON)
+                )
+        );
 
-//        ThaumcraftApi.registerEntityTag("Bat", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.DARKNESS, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Chicken", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Cow", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 15), new ThaumcraftApi.EntityTagsNBT[0]);
+        // Companion Animals
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:llama"), new NecromancyRecipe()
+                .setSummonedEntity(EntityLlama.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.WATER, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("leather"),
+                        new OreIngredient("wool"),
+                        new OreIngredient("wool"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER).getItem()),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:ocelot"), new NecromancyRecipe()
+                .setSummonedEntity(EntityOcelot.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("fish"),
+                        new OreIngredient("fish"),
+                        new OreIngredient("string"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(new ItemStack(Items.DYE, 1, 3).getItem()),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:parrot"), new NecromancyRecipe()
+                .setSummonedEntity(EntityParrot.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.SENSES, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("feather"),
+                        new OreIngredient("feather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(new ItemStack(Items.DYE, 1, 3).getItem()),
+                        Ingredient.fromItem(Items.COOKIE),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:wolf"), new NecromancyRecipe()
+                .setSummonedEntity(EntityWolf.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 10).add(Aspect.AVERSION, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        Ingredient.fromItem(new ItemStack(Blocks.WOOL, 1, 14).getItem()),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.MUTTON),
+                        Ingredient.fromItem(Items.MUTTON),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+
+        // Rare Animals
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
+                .setSummonedEntity(EntityMooshroom.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 30).add(Aspect.PLANT, 30).add(Aspect.EARTH, 30))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("leather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.MUSHROOM_STEW),
+                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
+                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
+                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
+                        Ingredient.fromItem(new ItemStack(ItemsTC.nuggets, 1, 10).getItem()),
+                        Ingredient.fromItem(Items.BEEF)
+                )
+                .setConsumeComponents(true)
+        );
 //        ThaumcraftApi.registerEntityTag("Donkey", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Horse", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Llama", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.WATER, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Mule", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("MushroomCow", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.PLANT, 15).add(Aspect.EARTH, 15), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Ozelot", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Parrot", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.SENSES, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Pig", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("PolarBear", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.COLD, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Rabbit", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.EARTH, 5).add(Aspect.MOTION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Sheep", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Squid", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Villager", (new AspectList()).add(Aspect.MAN, 15), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Wolf", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 10).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
 
 
