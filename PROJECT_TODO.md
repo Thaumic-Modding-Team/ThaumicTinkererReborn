@@ -113,9 +113,7 @@ These still need to be done, slabs are just a pain to do.
 | Bedrock Portal                         |             | Portal to Bedrock Dimension. Opened by right-clicking bedrock with an Awakened Pickaxe.                   |
 | Celestial Gateway                      |             | Instantly teleport between linked Celestial Gateways. Cannot teleport across dimensions.                  |
 | Celestial Pearl                        |             | Item used to link Celestial Gateways                                                                      |
-| Ender Shard                            |             | Crafting ingredient for Ichor. Not sure how they are obtained.                                            |
 | Focus Effect: Celestial Teleport       |             | Instantly teleport to a linked Celestial Gateway                                                          |
-| Nether Shard                           |             | Crafting ingredient for Ichor. Not sure how they are obtained.                                            |
 
 **Celestial Gateway Rework**
 Celestial Gateway is split into two features, the block and the spell effect. The spell effect is bound to the block and can be cast
