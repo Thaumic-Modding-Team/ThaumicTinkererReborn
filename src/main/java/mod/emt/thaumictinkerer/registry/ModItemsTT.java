@@ -44,11 +44,11 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemCondorSword());
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 15, EnumRarity.UNCOMMON));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 10, EnumRarity.UNCOMMON));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_demonic", 10, EnumRarity.RARE));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_alien", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_alien", 10, EnumRarity.EPIC));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_arcane", 10, EnumRarity.RARE));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 5, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 5, EnumRarity.EPIC));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
     }
 }
