@@ -1,0 +1,17 @@
+{
+  "block.necromancy_tablet.beam_process": {
+    "sounds": [
+      "thaumictinkerer:block/necromancy_tablet/beam_process"
+    ]
+  },
+  "block.necromancy_tablet.beam_start": {
+    "sounds": [
+      "thaumictinkerer:block/necromancy_tablet/beam_start"
+    ]
+  },
+  "block.necromancy_tablet.spawn_entity": {
+    "sounds": [
+      "thaumictinkerer:block/necromancy_tablet/spawn_entity"
+    ]
+  }
+}

@@ -5,6 +5,7 @@ import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
 import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import mod.emt.thaumictinkerer.registry.ModBlocksTT;
+import mod.emt.thaumictinkerer.registry.ModSoundEventsTT;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
@@ -36,7 +37,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public static final BlockPos[] PEDESTAL_OFFSETS;
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
-    public static int timeTillSpawn = 100;
+    public static int timeTillSpawn = 116;
 
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
@@ -140,7 +141,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
             this.consumeCenterItem();
             this.recipe.spawnEntity(this.world, this.pos);
             this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_SPAWN, 0);
-            //TODO: Spawn sound effect.
+            world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_SPAWN_ENTITY.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             this.resetRecipe();
         }
     }
@@ -166,7 +167,12 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
         if(this.getRecipe() != null) {
             if(this.recipeEssentia.aspects.isEmpty()) {
                 if(this.spawnDelay > 0) {
-                    //TODO: Processing sound effect.
+                    if(this.spawnDelay == 116) {
+                        world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_BEAM_START.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    }
+                    if(this.spawnDelay == 80) {
+                        world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_BEAM_PROCESS.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+                    }
                     for(int i = 0; i < PEDESTAL_OFFSETS.length; i++) {
                         if(!this.getPedestalItemStack(PEDESTAL_OFFSETS[i]).isEmpty()) {
                             this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_BEAM, i);
