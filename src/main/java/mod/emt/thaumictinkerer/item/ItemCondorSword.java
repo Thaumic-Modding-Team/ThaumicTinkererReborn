@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.item;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.item.IItemAddition;
 import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
+import mod.emt.thaumictinkerer.registry.ModMaterialsTT;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
@@ -16,7 +17,6 @@ import net.minecraft.util.math.Vec3d;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
 import org.jetbrains.annotations.NotNull;
-import thaumcraft.api.ThaumcraftMaterials;
 import thaumcraft.client.fx.FXDispatcher;
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
@@ -25,7 +25,7 @@ import java.util.Objects;
 
 public class ItemCondorSword extends ItemSword implements IItemAddition {
     public ItemCondorSword() {
-        super(ThaumcraftMaterials.TOOLMAT_ELEMENTAL); // TODO: Unique tool material
+        super(ModMaterialsTT.TOOL_CONDOR);
         this.setRegistryName(ThaumicTinkerer.MOD_ID, "condor_sword");
         this.setTranslationKey(Objects.requireNonNull(this.getRegistryName()).toString());
         this.setCreativeTab(ThaumicTinkerer.tabTT);
