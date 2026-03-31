@@ -15,6 +15,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Set;
 
+@SuppressWarnings("unused")
 public class NecromancyRecipeRegistry {
     private static final Map<ResourceLocation, INecromancyRecipe> NECROMATIC_RECIPES = new HashMap<>();
 
@@ -64,12 +65,12 @@ public class NecromancyRecipeRegistry {
         NECROMATIC_RECIPES.remove(recipeName);
     }
 
-    public static void removeRecipe(EntityEntry entityEntry) {
+    public static void removeRecipes(EntityEntry entityEntry) {
         NECROMATIC_RECIPES.values().removeIf(recipe -> recipe.getSummonedEntity().equals(entityEntry));
     }
 
-    public static void removeRecipe(Class<? extends Entity> entityClass) {
-        removeRecipe(EntityRegistry.getEntry(entityClass));
+    public static void removeRecipes(Class<? extends Entity> entityClass) {
+        removeRecipes(EntityRegistry.getEntry(entityClass));
     }
 
     public static void removeAllRecipes() {

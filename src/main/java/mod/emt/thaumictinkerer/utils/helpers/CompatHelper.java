@@ -8,6 +8,7 @@ import slimeknights.tconstruct.library.utils.ToolHelper;
 import thaumcraft.api.aspects.Aspect;
 
 public class CompatHelper {
+    public static final boolean isModTweakerLoaded = Loader.isModLoaded("modtweaker");
     public static final boolean isTinkersConstructLoaded = Loader.isModLoaded("tconstruct");
 
     //##########################################################

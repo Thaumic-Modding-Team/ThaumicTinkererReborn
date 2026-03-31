@@ -12,6 +12,7 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.INecromancyRecipe;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
+import mod.emt.thaumictinkerer.registry.ModRecipesTT;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.util.ResourceLocation;
@@ -24,12 +25,14 @@ import java.util.Arrays;
 import java.util.Collection;
 import java.util.stream.Collectors;
 
+@SuppressWarnings("unused")
 @RegistryDescription(linkGenerator = ThaumicTinkerer.MOD_ID)
 public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
     @GroovyBlacklist
     @Override
     public void onReload() {
-
+        NecromancyRecipeRegistry.removeAllRecipes();
+        ModRecipesTT.initNecromancyRecipes();
     }
 
     @MethodDescription(
@@ -78,7 +81,7 @@ public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
 
     @MethodDescription(type = MethodDescription.Type.REMOVAL, example = @Example("entity('minecraft:cow')"))
     public void removeRecipe(EntityEntry entityEntry) {
-        NecromancyRecipeRegistry.removeRecipe(entityEntry);
+        NecromancyRecipeRegistry.removeRecipes(entityEntry);
     }
 
     @MethodDescription(type = MethodDescription.Type.REMOVAL, example = @Example(commented = true))
