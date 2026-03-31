@@ -32,8 +32,7 @@ public interface INecromancyRecipe {
 
     default void spawnEntity(World world, BlockPos pos) {
         if(!world.isRemote) {
-            EntityEntry entry = this.getSummonedEntity();
-            Entity entity = entry.newInstance(world);
+            Entity entity = this.getSummonedEntity(world);
             entity.setPosition(pos.getX() + 0.5, pos.getY() + BlockNecromancyTablet.TABLET_AABB.maxY, pos.getZ() + 0.5);
             world.spawnEntity(entity);
         }
