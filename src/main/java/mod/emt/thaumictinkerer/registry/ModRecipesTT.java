@@ -9,6 +9,7 @@ import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.item.crafting.Ingredient;
@@ -169,7 +170,7 @@ public class ModRecipesTT {
                 .setComponents(
                         Ingredient.fromItem(Items.RABBIT_HIDE),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(Items.RABBIT_FOOT),
+                        Ingredient.fromItem(Items.CARROT),
                         Ingredient.fromItem(Items.RABBIT)
                 )
         );
@@ -179,8 +180,8 @@ public class ModRecipesTT {
                 .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
                 .setComponents(
                         new OreIngredient("wool"),
+                        new OreIngredient("wool"),
                         Ingredient.fromItem(Items.BONE),
-                        new OreIngredient("string"),
                         Ingredient.fromItem(Items.MUTTON)
                 )
         );
@@ -195,7 +196,7 @@ public class ModRecipesTT {
                         new OreIngredient("wool"),
                         new OreIngredient("wool"),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER).getItem()),
+                        Ingredient.fromStacks(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.WATER)),
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
                 .setConsumeComponents(true)
@@ -205,11 +206,11 @@ public class ModRecipesTT {
                 .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10))
                 .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
                 .setComponents(
-                        new OreIngredient("fish"),
-                        new OreIngredient("fish"),
+                        Ingredient.fromItem(Items.FISH),
+                        Ingredient.fromItem(Items.FISH),
                         new OreIngredient("string"),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(new ItemStack(Items.DYE, 1, 3).getItem()),
+                        Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 3)),
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
                 .setConsumeComponents(true)
@@ -222,7 +223,7 @@ public class ModRecipesTT {
                         new OreIngredient("feather"),
                         new OreIngredient("feather"),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(new ItemStack(Items.DYE, 1, 3).getItem()),
+                        Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 3)),
                         Ingredient.fromItem(Items.COOKIE),
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
@@ -233,7 +234,7 @@ public class ModRecipesTT {
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 10).add(Aspect.AVERSION, 5))
                 .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
                 .setComponents(
-                        Ingredient.fromItem(new ItemStack(Blocks.WOOL, 1, 14).getItem()),
+                        Ingredient.fromStacks(new ItemStack(Blocks.WOOL, 1, 14)),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.MUTTON),
@@ -254,8 +255,8 @@ public class ModRecipesTT {
                         new OreIngredient("fish"),
                         new OreIngredient("fish"),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(new ItemStack(Blocks.PACKED_ICE).getItem()),
-                        Ingredient.fromItem(new ItemStack(Blocks.PACKED_ICE).getItem()),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.PACKED_ICE)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.PACKED_ICE)),
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
                 .setConsumeComponents(true)
@@ -270,10 +271,10 @@ public class ModRecipesTT {
                         new OreIngredient("leather"),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.MUSHROOM_STEW),
-                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
-                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
-                        Ingredient.fromItem(new ItemStack(Blocks.RED_MUSHROOM).getItem()),
-                        Ingredient.fromItem(new ItemStack(ItemsTC.nuggets, 1, 10).getItem()),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.RED_MUSHROOM)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.RED_MUSHROOM)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.RED_MUSHROOM)),
+                        Ingredient.fromStacks(new ItemStack(ItemsTC.nuggets, 1, 10)),
                         Ingredient.fromItem(Items.BEEF)
                 )
                 .setConsumeComponents(true)
