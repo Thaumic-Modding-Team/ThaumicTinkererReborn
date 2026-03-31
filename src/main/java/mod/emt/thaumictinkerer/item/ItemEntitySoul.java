@@ -41,6 +41,11 @@ public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
     }
 
     @Override
+    public int getRGBDurabilityForDisplay(@NotNull ItemStack stack) {
+        return 1872873;
+    }
+
+    @Override
     public boolean hasContainerItem(@NotNull ItemStack stack) {
         return stack.getItemDamage() < stack.getMaxDamage();
     }
