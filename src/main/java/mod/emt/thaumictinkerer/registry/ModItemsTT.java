@@ -16,9 +16,13 @@ public class ModItemsTT {
     public static final Item ENDER_MIRROR = null;
     public static final Item EVERFULL_BUCKET = null;
     public static final Item ENERGETIC_NITOR = null;
+    public static final Item ENTITY_SOUL_ALIEN = null;
+    public static final Item ENTITY_SOUL_ARCANE = null;
+    public static final Item ENTITY_SOUL_DEMONIC = null;
     public static final Item ENTITY_SOUL_ELDRITCH = null;
     public static final Item ENTITY_SOUL_HOSTILE = null;
     public static final Item ENTITY_SOUL_PEACEFUL = null;
+    public static final Item ENTITY_SOUL_TAINTED = null;
     public static final Item FELINE_CHARM = null;
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
@@ -41,6 +45,10 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 15, EnumRarity.UNCOMMON));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_demonic", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_alien", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_arcane", 10, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 5, EnumRarity.RARE));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
     }
 }

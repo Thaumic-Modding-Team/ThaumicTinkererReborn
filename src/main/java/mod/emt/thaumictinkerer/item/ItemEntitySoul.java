@@ -24,7 +24,7 @@ public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
     public ItemEntitySoul(String unlocName, int uses, IRarity rarity) {
         super(unlocName);
         this.setMaxStackSize(1);
-        this.setMaxDamage(uses);
+        this.setMaxDamage(uses - 1);
         this.setNoRepair();
         this.canRepair = false;
         this.rarity = rarity;
