@@ -59,7 +59,6 @@ public class ItemCondorSword extends ItemSword implements IItemAddition {
 
         player.fallDistance = 0;
         player.getHeldItem(hand).damageItem(2, player);
-        player.getCooldownTracker().setCooldown(this, 5);
         player.swingArm(hand);
         return super.onItemRightClick(world, player, hand);
     }
