@@ -8,8 +8,16 @@ import net.minecraftforge.fluids.capability.CapabilityFluidHandler;
 import net.minecraftforge.fluids.capability.IFluidHandlerItem;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.oredict.OreDictionary;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
+import thaumcraft.api.aspects.Aspect;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ItemHelper {
+    private static Ingredient VIS_CRYSTAL_INGREDIENT;
+
     public static boolean itemMatches(ItemStack filterStack, ItemStack input, boolean matchNbt, boolean matchMeta, boolean matchOreDict) {
         if(filterStack.isEmpty() || input.isEmpty())
             return false;
@@ -76,5 +84,16 @@ public class ItemHelper {
             }
         }
         return stack;
+    }
+
+    public static Ingredient getVisCrystalIngredient() {
+        if(VIS_CRYSTAL_INGREDIENT == null) {
+            List<ItemStack> crystalStacks = new ArrayList<>();
+            for(Aspect aspect : Aspect.aspects.values()) {
+                crystalStacks.add(ThaumcraftApiHelper.makeCrystal(aspect));
+            }
+            VIS_CRYSTAL_INGREDIENT = Ingredient.fromStacks(crystalStacks.toArray(new ItemStack[0]));
+        }
+        return VIS_CRYSTAL_INGREDIENT;
     }
 }

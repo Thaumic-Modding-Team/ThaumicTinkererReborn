@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
+import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
@@ -26,11 +27,14 @@ import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.CrucibleRecipe;
 import thaumcraft.api.crafting.IDustTrigger;
 import thaumcraft.api.crafting.Part;
+import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.config.ConfigRecipes;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
 @SuppressWarnings("ConstantConditions")
 public class ModRecipesTT {
+    private static final ResourceLocation defaultGroup = new ResourceLocation("");
 
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
         initNecromancyPlatform();
@@ -82,7 +86,18 @@ public class ModRecipesTT {
     }
 
     private static void initArcaneWorkbenchRecipes() {
-
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "BASEAUROMANCY",//TODO: Research,
+                2,
+                new AspectList(),
+                ModItemsTT.ARCANE_QUARTZ,
+                "QQQ",
+                "QCQ",
+                "QQQ",
+                'Q', "gemQuartz",
+                'C', ItemHelper.getVisCrystalIngredient()
+        ));
     }
 
     private static void initCraftingRecipes() {
