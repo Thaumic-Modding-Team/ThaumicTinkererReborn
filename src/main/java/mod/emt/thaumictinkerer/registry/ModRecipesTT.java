@@ -4,6 +4,7 @@ import com.google.common.collect.Lists;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
+import net.minecraft.entity.monster.EntityPolarBear;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -242,6 +243,24 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
+        // Uncommon Animals
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:polar_bear"), new NecromancyRecipe()
+                .setSummonedEntity(EntityPolarBear.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.COLD, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("leather"),
+                        new OreIngredient("leather"),
+                        new OreIngredient("fish"),
+                        new OreIngredient("fish"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(new ItemStack(Blocks.PACKED_ICE).getItem()),
+                        Ingredient.fromItem(new ItemStack(Blocks.PACKED_ICE).getItem()),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+
         // Rare Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
                 .setSummonedEntity(EntityMooshroom.class)
@@ -262,7 +281,6 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("Donkey", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Horse", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Mule", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("PolarBear", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.COLD, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Villager", (new AspectList()).add(Aspect.MAN, 15), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
