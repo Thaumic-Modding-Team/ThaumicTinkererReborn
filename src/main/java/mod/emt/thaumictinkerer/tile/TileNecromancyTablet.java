@@ -36,6 +36,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public static final BlockPos[] PEDESTAL_OFFSETS;
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
+    public static int timeTillSpawn = 100;
 
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
@@ -52,7 +53,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     private INecromancyRecipe recipe = null;
     protected AspectList recipeEssentia = new AspectList();
     protected boolean isProcessing;
-    protected int spawnDelay = 100;
+    protected int spawnDelay = timeTillSpawn;
     public int count;
 
     @Override
@@ -211,7 +212,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
 
     public void resetRecipe() {
         setRecipe(EMPTY, null);
-        this.spawnDelay = 100;
+        this.spawnDelay = timeTillSpawn;
     }
 
     public ItemStack getCenterItem() {
