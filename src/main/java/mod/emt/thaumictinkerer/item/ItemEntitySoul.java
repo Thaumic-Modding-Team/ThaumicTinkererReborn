@@ -41,16 +41,6 @@ public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
     }
 
     @Override
-    public boolean isDamageable() {
-        return false;
-    }
-
-    @Override
-    public boolean showDurabilityBar(@NotNull ItemStack stack) {
-        return false;
-    }
-
-    @Override
     public boolean hasContainerItem(@NotNull ItemStack stack) {
         return stack.getItemDamage() < stack.getMaxDamage();
     }
