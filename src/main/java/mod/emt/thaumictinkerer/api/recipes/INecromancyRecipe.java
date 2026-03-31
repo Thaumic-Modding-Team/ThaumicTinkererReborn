@@ -17,36 +17,16 @@ public interface INecromancyRecipe {
 
     Object getCenterIngredient();
 
-    INecromancyRecipe setCenterIngredient(Object centerIngredient);
-
     Object[] getComponents();
-
-    INecromancyRecipe setComponents(Object... catalysts);
 
     boolean shouldConsumeComponents();
 
-    INecromancyRecipe setConsumeComponents(boolean shouldConsume);
-
     AspectList getEssentia();
-
-    INecromancyRecipe setAspects(AspectList aspectList);
 
     EntityEntry getSummonedEntity();
 
     default Entity getSummonedEntity(World world) {
         return this.getSummonedEntity().newInstance(world);
-    }
-
-    INecromancyRecipe setSummonedEntity(EntityEntry entityEntry);
-
-    default INecromancyRecipe setSummonedEntity(Class<? extends Entity> entityClazz) {
-        this.setSummonedEntity(EntityRegistry.getEntry(entityClazz));
-        return this;
-    }
-
-    default INecromancyRecipe setSummonedEntity(ResourceLocation entityRegistryName) {
-        this.setSummonedEntity(ForgeRegistries.ENTITIES.getValue(entityRegistryName));
-        return this;
     }
 
     default double getEntityCenter(World world) {
