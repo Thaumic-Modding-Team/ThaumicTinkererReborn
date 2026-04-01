@@ -1,7 +1,6 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
-import mod.emt.thaumictinkerer.client.renderer.tile.TileEssentiaFunnelTESR;
 import mod.emt.thaumictinkerer.tile.TileEssentiaFunnel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -15,7 +14,6 @@ import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
-import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -23,7 +21,6 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
-import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -127,8 +124,16 @@ public class BlockEssentiaFunnel extends BlockTileAddition {
 
     @Override
     public @NotNull BlockRenderLayer getRenderLayer() {
-        return BlockRenderLayer.CUTOUT_MIPPED;
+        return BlockRenderLayer.TRANSLUCENT;
     }
+
+    @Override
+    public boolean canRenderInLayer(@NotNull IBlockState state, @NotNull BlockRenderLayer layer) {
+        boolean hasJar = state.getValue(HAS_JAR);
+        return (!hasJar && layer == BlockRenderLayer.SOLID) || (hasJar && layer == BlockRenderLayer.TRANSLUCENT);
+    }
+
+
 
     @SuppressWarnings("deprecation")
     @Override

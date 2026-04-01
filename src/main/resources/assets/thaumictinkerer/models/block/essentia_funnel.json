@@ -3,9 +3,9 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"particle": "thaumictinkerer:blocks/funnel/funnel_top",
-		"funnel_top": "thaumictinkerer:blocks/funnel/funnel_top",
-		"funnel_side": "thaumictinkerer:blocks/funnel/funnel_side"
+		"particle": "thaumictinkerer:blocks/essentia_funnel_top",
+		"funnel_top": "thaumictinkerer:blocks/essentia_funnel_top",
+		"funnel_side": "thaumictinkerer:blocks/essentia_funnel_side"
 	},
 	"elements": [
 		{

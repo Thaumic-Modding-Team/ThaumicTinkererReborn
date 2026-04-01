@@ -3,11 +3,11 @@
 	"credit": "Made with Blockbench",
 	"parent": "block/block",
 	"textures": {
-		"particle": "thaumictinkerer:blocks/funnel/funnel_top",
-		"funnel_top": "thaumictinkerer:blocks/funnel/funnel_top",
-		"funnel_side": "thaumictinkerer:blocks/funnel/funnel_side",
+		"particle": "thaumictinkerer:blocks/essentia_funnel_top",
+		"funnel_top": "thaumictinkerer:blocks/essentia_funnel_top",
+		"funnel_side": "thaumictinkerer:blocks/essentia_funnel_side",
+		"jar_side": "thaumictinkerer:blocks/essentia_funnel_jar_side",
 		"jar_top": "thaumcraft:blocks/jar_top",
-		"jar_side": "thaumcraft:blocks/jar_side",
 		"jar_bottom": "thaumcraft:blocks/jar_bottom"
 	},
 	"elements": [
