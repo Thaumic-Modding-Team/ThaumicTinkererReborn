@@ -322,6 +322,7 @@ public class ModRecipesTT {
                         new OreIngredient("gunpowder")
                 )
         );
+        // TODO: Currently doesn't spawn with a bow
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:skeleton"), new NecromancyRecipe()
                 .setSummonedEntity(EntitySkeleton.class)
                 .setAspects(new AspectList().add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.EARTH, 5))
