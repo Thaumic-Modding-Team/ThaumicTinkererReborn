@@ -21,6 +21,7 @@ public class ModBlocksTT {
     public static final Block ATTRACTOR_PLAYER = null;
     public static final Block CHISELED_ARCANE_QUARTZ = null;
     public static final Block ENERGETIC_NITOR = null;
+    public static final Block ESSENTIA_FUNNEL = null;
     public static final Block NECROMANCY_TABLET = null;
     public static final Block TERRA_OBSIDIAN = null;
     public static final Block THAUMIC_CAKE = null;
@@ -51,5 +52,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterial("thaumium_plated_cobblestone", Material.ROCK, MapColor.STONE, 2.0F, 50.0F, SoundType.STONE, false, false, null));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false, null));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone_bricks", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false, null));
+        RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
     }
 }

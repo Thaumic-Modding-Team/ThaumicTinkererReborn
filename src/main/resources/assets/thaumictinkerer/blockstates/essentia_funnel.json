@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "default": {
+    "model": "thaumictinkerer:essentia_funnel",
+    "textures": {
+
+    }
+  },
+  "variants": {
+    "inventory": { "model": "thaumictinkerer:essentia_funnel", "transform": "forge:default-block" },
+    "has_jar=false": { "model": "thaumictinkerer:essentia_funnel"},
+    "has_jar=true": { "model": "thaumictinkerer:essentia_funnel_jar"}
+  }
+}
