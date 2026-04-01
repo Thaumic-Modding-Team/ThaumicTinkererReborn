@@ -30,7 +30,10 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 
 public class BlockEssentiaFunnel extends BlockTileAddition {
-    public static final AxisAlignedBB FUNNEL_AABB = new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.9375, 0.9375);
+    public static final AxisAlignedBB[] FUNNEL_AABBS = new AxisAlignedBB[] {
+            new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.375, 0.9375),
+            new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.875, 0.9375),
+    };
     public static final PropertyBool HAS_JAR = PropertyBool.create("has_jar");
 
     public BlockEssentiaFunnel() {
@@ -54,7 +57,7 @@ public class BlockEssentiaFunnel extends BlockTileAddition {
     @SuppressWarnings("deprecation")
     @Override
     public @NotNull AxisAlignedBB getBoundingBox(@NotNull IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
-        return FUNNEL_AABB;
+        return FUNNEL_AABBS[state.getValue(HAS_JAR) ? 1 : 0];
     }
 
     @Override
@@ -130,7 +133,7 @@ public class BlockEssentiaFunnel extends BlockTileAddition {
     @SuppressWarnings("deprecation")
     @Override
     public boolean isSideSolid(@NotNull IBlockState base_state, @NotNull IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing side) {
-        return side != EnumFacing.UP;
+        return false;
     }
 
     @Override
@@ -160,6 +163,6 @@ public class BlockEssentiaFunnel extends BlockTileAddition {
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);
-        ClientRegistry.bindTileEntitySpecialRenderer(TileEssentiaFunnel.class, new TileEssentiaFunnelTESR());
+        //ClientRegistry.bindTileEntitySpecialRenderer(TileEssentiaFunnel.class, new TileEssentiaFunnelTESR());
     }
 }

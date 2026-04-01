@@ -34,7 +34,7 @@
 |       Smokey Quartz (Item)        | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |   Stopwatch of the Timetwister    |          |          |          |          |          |
 |        Sword of the Condor        | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Tablet of Necromancy        |          |          |          |          |          |
+|       Tablet of Necromancy        | COMPLETE | COMPLETE | COMPLETE |          |          |
 |           Thaumic Cake            | COMPLETE | COMPLETE | COMPLETE |          |          |
 |         Thaumic Restorer          | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Transvector Binder         | COMPLETE | COMPLETE | COMPLETE |          |          |
