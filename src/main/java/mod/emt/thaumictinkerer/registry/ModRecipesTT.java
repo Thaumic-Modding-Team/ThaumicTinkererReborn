@@ -141,10 +141,8 @@ public class ModRecipesTT {
     public static void initNecromancyRecipes() {
         //TODO: Config disable.
 
-
-
-        //Peaceful Mobs
-        //Common
+        /* Peaceful Mobs */
+        //Common Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:chicken"), new NecromancyRecipe()
                 .setSummonedEntity(EntityChicken.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.FLIGHT, 5).add(Aspect.AIR, 5))
@@ -202,8 +200,8 @@ public class ModRecipesTT {
                 )
         );
 
-        // Companion
-        // TODO: Make this give the best attributes
+        //Companion Animals
+        //TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:donkey"), new NecromancyRecipe()
                 .setSummonedEntity(EntityDonkey.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -219,7 +217,7 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
-        // TODO: Make this give the best attributes
+        //TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:horse"), new NecromancyRecipe()
                 .setSummonedEntity(EntityHorse.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -292,7 +290,7 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
-        // Uncommon
+        //Uncommon Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:polar_bear"), new NecromancyRecipe()
                 .setSummonedEntity(EntityPolarBear.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.COLD, 10))
@@ -309,10 +307,13 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
+
+        /* Arcane Mobs */
+        //NPCs
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:villager"), new NecromancyRecipe()
                 .setSummonedEntity(EntityVillager.class)
                 .setAspects(new AspectList().add(Aspect.MAN, 15))
-                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
                 .setComponents(
                         new OreIngredient("blockEmerald"),
                         Ingredient.fromStacks(new ItemStack(Items.GOLDEN_APPLE, 1, 0)),
@@ -324,9 +325,12 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
+
+        //Constructs
         //TODO: Add iron golem custom recipe?
         //ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
+        //Rare Animals
         // Rare
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
                 .setSummonedEntity(EntityMooshroom.class)
