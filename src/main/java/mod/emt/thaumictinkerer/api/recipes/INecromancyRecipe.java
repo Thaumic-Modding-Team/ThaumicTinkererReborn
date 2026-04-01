@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.api.recipes;
 import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityLiving;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
@@ -33,7 +34,15 @@ public interface INecromancyRecipe {
     default void spawnEntity(World world, BlockPos pos) {
         if(!world.isRemote) {
             Entity entity = this.getSummonedEntity(world);
-            entity.setPosition(pos.getX() + 0.5, pos.getY() + BlockNecromancyTablet.TABLET_AABB.maxY, pos.getZ() + 0.5);
+            entity.setLocationAndAngles(
+                    pos.getX() + 0.5,
+                    pos.getY() + BlockNecromancyTablet.TABLET_AABB.maxY,
+                    pos.getZ() + 0.5,
+                    world.rand.nextFloat() * 360.0f, 0
+            );
+            if(entity instanceof EntityLiving) {
+                ((EntityLiving) entity).onInitialSpawn(world.getDifficultyForLocation(pos), null);
+            }
             world.spawnEntity(entity);
         }
     }
