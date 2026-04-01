@@ -186,6 +186,7 @@ public class ModRecipesTT {
                         Ingredient.fromItem(Items.RABBIT_HIDE),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.CARROT),
+                        Ingredient.merge(Lists.newArrayList(Ingredient.fromItem(Items.CARROT), Ingredient.fromItem(Items.RABBIT_FOOT))),
                         Ingredient.fromItem(Items.RABBIT)
                 )
         );
@@ -202,6 +203,7 @@ public class ModRecipesTT {
         );
 
         // Companion
+        // TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:donkey"), new NecromancyRecipe()
                 .setSummonedEntity(EntityDonkey.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -217,6 +219,7 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
+        // TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:horse"), new NecromancyRecipe()
                 .setSummonedEntity(EntityHorse.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -306,6 +309,23 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:villager"), new NecromancyRecipe()
+                .setSummonedEntity(EntityVillager.class)
+                .setAspects(new AspectList().add(Aspect.MAN, 15))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        new OreIngredient("blockEmerald"),
+                        Ingredient.fromStacks(new ItemStack(Items.GOLDEN_APPLE, 1, 0)),
+                        Ingredient.fromStacks(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.HEALING)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.merge(Lists.newArrayList(Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0)), Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 2)))),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        //TODO: Add iron golem custom recipe?
+        //ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
         // Rare
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
@@ -324,10 +344,6 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
-//        ThaumcraftApi.registerEntityTag("Villager", (new AspectList()).add(Aspect.MAN, 15), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-
-
 
         //Hostile
 //        ThaumcraftApi.registerEntityTag("CaveSpider", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.DEATH, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
