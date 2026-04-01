@@ -55,7 +55,7 @@ public class TileEssentiaFunnelTESR extends TileEntitySpecialRenderer<TileEssent
 
         float level = (float) Math.min(1.0, (float) aspectAmount / 250.0 * 0.625);
         Tessellator tessellator = Tessellator.getInstance();
-        renderBlocks.setRenderBounds(0.25, 0.25, 0.25, 0.75, 0.25 + level, 0.75);
+        renderBlocks.setRenderBounds(0.25, 0.1875, 0.25, 0.75, 0.1875 + level, 0.75);
         tessellator.getBuffer().begin(7, DefaultVertexFormats.POSITION_TEX_LMAP_COLOR);
 
         Color color = Color.BLACK;

@@ -1,6 +1,7 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.client.renderer.tile.TileEssentiaFunnelTESR;
 import mod.emt.thaumictinkerer.tile.TileEssentiaFunnel;
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -21,6 +22,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -29,7 +31,7 @@ import org.jetbrains.annotations.NotNull;
 public class BlockEssentiaFunnel extends BlockTileAddition {
     public static final AxisAlignedBB[] FUNNEL_AABBS = new AxisAlignedBB[] {
             new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.375, 0.9375),
-            new AxisAlignedBB(0.0625, 0, 0.0625, 0.9375, 0.875, 0.9375),
+            new AxisAlignedBB(0.1875, 0, 0.1875, 0.8125, 0.875, 0.8125),
     };
     public static final PropertyBool HAS_JAR = PropertyBool.create("has_jar");
 
@@ -168,6 +170,6 @@ public class BlockEssentiaFunnel extends BlockTileAddition {
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);
-        //ClientRegistry.bindTileEntitySpecialRenderer(TileEssentiaFunnel.class, new TileEssentiaFunnelTESR());
+        ClientRegistry.bindTileEntitySpecialRenderer(TileEssentiaFunnel.class, new TileEssentiaFunnelTESR());
     }
 }
