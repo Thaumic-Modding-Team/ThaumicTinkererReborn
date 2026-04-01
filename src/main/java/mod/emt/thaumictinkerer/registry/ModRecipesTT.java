@@ -5,7 +5,7 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
-import net.minecraft.entity.monster.EntityPolarBear;
+import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
@@ -18,6 +18,7 @@ import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.OreIngredient;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.ThaumcraftApiHelper;
@@ -141,9 +142,7 @@ public class ModRecipesTT {
     public static void initNecromancyRecipes() {
         //TODO: Config disable.
 
-
-
-        //Peaceful Mobs
+        /* Peaceful Mobs */
         //Common Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:chicken"), new NecromancyRecipe()
                 .setSummonedEntity(EntityChicken.class)
@@ -186,6 +185,7 @@ public class ModRecipesTT {
                         Ingredient.fromItem(Items.RABBIT_HIDE),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromItem(Items.CARROT),
+                        Ingredient.merge(Lists.newArrayList(Ingredient.fromItem(Items.CARROT), Ingredient.fromItem(Items.RABBIT_FOOT))),
                         Ingredient.fromItem(Items.RABBIT)
                 )
         );
@@ -201,7 +201,39 @@ public class ModRecipesTT {
                 )
         );
 
-        // Companion Animals
+        //Companion Animals
+        //TODO: Make this give the best attributes
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:donkey"), new NecromancyRecipe()
+                .setSummonedEntity(EntityDonkey.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.HAY_BLOCK)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.CHEST)),
+                        new OreIngredient("leather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.SUGAR),
+                        Ingredient.fromItem(Items.GOLDEN_CARROT),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        //TODO: Make this give the best attributes
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:horse"), new NecromancyRecipe()
+                .setSummonedEntity(EntityHorse.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_PEACEFUL))
+                .setComponents(
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.HAY_BLOCK)),
+                        Ingredient.fromItem(Items.LEAD),
+                        new OreIngredient("leather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(Items.SUGAR),
+                        Ingredient.fromItem(Items.GOLDEN_CARROT),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:llama"), new NecromancyRecipe()
                 .setSummonedEntity(EntityLlama.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.WATER, 5))
@@ -259,7 +291,7 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
-        // Uncommon Animals
+        //Uncommon Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:polar_bear"), new NecromancyRecipe()
                 .setSummonedEntity(EntityPolarBear.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.COLD, 10))
@@ -277,7 +309,86 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
-        // Rare Animals
+        /* Hostile */
+        //Common Hostiles
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:creeper"), new NecromancyRecipe()
+                .setSummonedEntity(EntityCreeper.class)
+                .setAspects(new AspectList().add(Aspect.PLANT, 15).add(Aspect.FIRE, 15))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.TNT)),
+                        Ingredient.fromItem(Items.BONE),
+                        new OreIngredient("treeLeaves"),
+                        new OreIngredient("gunpowder")
+                )
+        );
+        // TODO: Currently doesn't spawn with a bow
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:skeleton"), new NecromancyRecipe()
+                .setSummonedEntity(EntitySkeleton.class)
+                .setAspects(new AspectList().add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.EARTH, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 15)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromStacks(new ItemStack(Items.BOW, 1, OreDictionary.WILDCARD_VALUE)),
+                        Ingredient.fromItem(Items.ARROW)
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:spider"), new NecromancyRecipe()
+                .setSummonedEntity(EntitySpider.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10).add(Aspect.TRAP, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        new OreIngredient("string"),
+                        Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 15)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.WEB)),
+                        Ingredient.fromItem(Items.SPIDER_EYE)
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:zombie"), new NecromancyRecipe()
+                .setSummonedEntity(EntityZombie.class)
+                .setAspects(new AspectList().add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.EARTH, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        Ingredient.fromItem(Items.ROTTEN_FLESH),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        new OreIngredient("feather")
+                )
+        );
+//        ThaumcraftApi.registerEntityTag("CaveSpider", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.DEATH, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Husk", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.FIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("SkeletonHorse", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.UNDEAD, 10).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Silverfish", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Slime", (new AspectList()).add(Aspect.LIFE, 10).add(Aspect.WATER, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Stray", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.TRAP, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Thaumcraft.BrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("Witch", (new AspectList()).add(Aspect.MAN, 15).add(Aspect.MAGIC, 5).add(Aspect.ALCHEMY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
+//        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+
+        /* Arcane Mobs */
+        //NPCs
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:villager"), new NecromancyRecipe()
+                .setSummonedEntity(EntityVillager.class)
+                .setAspects(new AspectList().add(Aspect.MAN, 30))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("blockEmerald"),
+                        Ingredient.fromStacks(new ItemStack(Items.GOLDEN_APPLE, 1, 0)),
+                        Ingredient.fromStacks(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.HEALING)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.merge(Lists.newArrayList(Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0)), Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 2)))),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+
+        //Constructs
+        //TODO: Add iron golem custom recipe?
+        //ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+
+        //Rare Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
                 .setSummonedEntity(EntityMooshroom.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 30).add(Aspect.PLANT, 30).add(Aspect.EARTH, 30))
@@ -294,29 +405,6 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
-//        ThaumcraftApi.registerEntityTag("Donkey", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Horse", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Mule", (new AspectList()).add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Villager", (new AspectList()).add(Aspect.MAN, 15), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-
-
-
-        //Hostile
-//        ThaumcraftApi.registerEntityTag("CaveSpider", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.DEATH, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Creeper", (new AspectList()).add(Aspect.PLANT, 15).add(Aspect.FIRE, 15), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Husk", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.FIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Skeleton", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.EARTH, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("SkeletonHorse", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.UNDEAD, 10).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Silverfish", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Slime", (new AspectList()).add(Aspect.LIFE, 10).add(Aspect.WATER, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Spider", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ENTROPY, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Stray", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 5).add(Aspect.TRAP, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.BrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Witch", (new AspectList()).add(Aspect.MAN, 15).add(Aspect.MAGIC, 5).add(Aspect.ALCHEMY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Zombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.EARTH, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-
 
         //Nether
 //        ThaumcraftApi.registerEntityTag("Blaze", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.FIRE, 15).add(Aspect.FLIGHT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
