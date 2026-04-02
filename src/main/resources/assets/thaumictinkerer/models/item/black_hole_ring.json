@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "thaumictinkerer:items/black_hole_ring_disabled"
+  },
+  "overrides": [
+    {
+      "predicate": { "enabled": 1 },
+      "model": "thaumictinkerer:item/black_hole_ring_enabled"
+    }
+  ]
+}

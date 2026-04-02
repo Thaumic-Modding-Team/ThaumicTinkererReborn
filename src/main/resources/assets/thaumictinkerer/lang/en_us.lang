@@ -34,6 +34,7 @@ enchantment.infusion.WRATH=Wrath
 
 # Items
 item.thaumictinkerer:arcane_quartz.name=Arcane Quartz
+item.thaumictinkerer:black_hole_ring.name=Black Hole Ring
 item.thaumictinkerer:condor_sword.name=Sword of the Condor
 item.thaumictinkerer:ender_mirror.name=Ender Mirror
 item.thaumictinkerer:energetic_nitor.name=Energetic Nitor
@@ -54,6 +55,9 @@ item.thaumictinkerer:umbral_dye.name=Umbral Black
 item.thaumictinkerer:test_sword.name=Test Sword
 
 # Tooltip
+tooltip.thaumictinkerer:black_hole_ring.info=Contents:
+tooltip.thaumictinkerer:black_hole_ring.slot=%4s - %s
+tooltip.thaumictinkerer:empty=Empty
 tooltip.thaumictinkerer:enabled=Enabled
 tooltip.thaumictinkerer:disabled=Disabled
 tooltip.thaumictinkerer:entity_soul.fading=Fading

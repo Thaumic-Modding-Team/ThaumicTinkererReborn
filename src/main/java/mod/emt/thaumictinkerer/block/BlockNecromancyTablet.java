@@ -128,7 +128,6 @@ public class BlockNecromancyTablet extends BlockTileAddition {
     //##########################################################
     // IBlockAddition
 
-
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
         //TODO
