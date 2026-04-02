@@ -51,6 +51,7 @@ item.thaumictinkerer:goliath_ring.name=Ring of Goliath's Might
 item.thaumictinkerer:ignium_striker.name=Ignium Striker
 item.thaumictinkerer:transvector_binder.name=Transvector Binder
 item.thaumictinkerer:umbral_dye.name=Umbral Black
+item.thaumictinkerer:xp_talisman.name=Talisman of Experience
 
 item.thaumictinkerer:test_sword.name=Test Sword
 
@@ -67,5 +68,8 @@ tooltip.thaumictinkerer:transvector_binder.link_mode.block=Link Mode: Block
 tooltip.thaumictinkerer:transvector_binder.link_mode.face=Link Mode: Face
 tooltip.thaumictinkerer:transvector_binder.linked_face=Face: %s
 tooltip.thaumictinkerer:transvector_binder.linked_pos=Pos: x:%d y:%d z:%d
+tooltip.thaumictinkerer:xp_talisman.level=Levels: §a%d
+tooltip.thaumictinkerer:xp_talisman.partial=Partial Experience: §a%d
+tooltip.thaumictinkerer:xp_talisman.total=Total Experience: §a%d
 
 # Research

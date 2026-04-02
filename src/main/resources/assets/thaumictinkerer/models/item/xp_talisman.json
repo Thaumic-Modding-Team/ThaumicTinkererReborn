@@ -1,0 +1,12 @@
+{
+  "parent": "item/generated",
+  "textures": {
+    "layer0": "thaumictinkerer:items/xp_talisman_disabled"
+  },
+  "overrides": [
+    {
+      "predicate": { "enabled": 1 },
+      "model": "thaumictinkerer:item/xp_talisman_enabled"
+    }
+  ]
+}

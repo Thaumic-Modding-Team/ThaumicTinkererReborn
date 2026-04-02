@@ -6,6 +6,7 @@ import mod.emt.thaumictinkerer.item.*;
 import mod.emt.thaumictinkerer.item.bauble.ItemBlackHoleRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
+import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -52,5 +53,6 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 4, EnumRarity.EPIC));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
         //TODO: Fix this crap - RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
+        RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
     }
 }
