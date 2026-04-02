@@ -30,6 +30,7 @@ import thaumcraft.api.crafting.IDustTrigger;
 import thaumcraft.api.crafting.Part;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
+import thaumcraft.common.entities.monster.EntityEldritchCrab;
 import thaumcraft.common.entities.monster.EntityFireBat;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
@@ -54,7 +55,7 @@ public class ModRecipesTT {
         Part QUAR = new Part(ModBlocksTT.ARCANE_QUARTZ_BLOCK, null);
         Part NETH = new Part(Blocks.NETHER_BRICK, null);
 
-        Part[][][] blueprint = new Part[][][] {
+        Part[][][] blueprint = new Part[][][]{
                 {
                         {null, null, null, PEDI, null, null, null},
                         {null, PEDI, null, null, null, PEDI, null},
@@ -527,13 +528,59 @@ public class ModRecipesTT {
                 )
         );
 
-        //Alien
-//        ThaumcraftApi.registerEntityTag("Enderman", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.MOTION, 15).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Endermite", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.ELDRITCH, 5).add(Aspect.MOTION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Shulker", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.TRAP, 5).add(Aspect.FLIGHT, 5).add(Aspect.PROTECT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchCrab", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.InhabitedZombie", (new AspectList()).add(Aspect.ELDRITCH, 10).add(Aspect.UNDEAD, 10).add(Aspect.MAN, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+        /* Alien Mobs */
+        //Common End Hostiles
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:enderman"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEnderman.class)
+                .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.MOTION, 15).add(Aspect.DESIRE, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
+                .setComponents(
+                        new OreIngredient("grass"),
+                        new OreIngredient("netherrack"),
+                        new OreIngredient("endstone"),
+                        Ingredient.fromItem(Items.ENDER_EYE)
+                )
+        );
 
+        //Rare End Hostiles
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:endermite"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEndermite.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.ELDRITCH, 5).add(Aspect.MOTION, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
+                .setComponents(
+                        new OreIngredient("endstone"),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.END_BRICKS)),
+                        Ingredient.fromItem(ItemsTC.salisMundus),
+                        Ingredient.fromItem(Items.ENDER_EYE)
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:shulker"), new NecromancyRecipe()
+                .setSummonedEntity(EntityShulker.class)
+                .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.TRAP, 5).add(Aspect.FLIGHT, 5).add(Aspect.PROTECT, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
+                .setComponents(
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.PURPUR_BLOCK)),
+                        Ingredient.fromItem(Item.getItemFromBlock(Blocks.PURPUR_BLOCK)),
+                        Ingredient.merge(Lists.newArrayList(Ingredient.fromItem(Items.SKULL), new OreIngredient("skull"))),
+                        Ingredient.fromItem(ItemsTC.salisMundus),
+                        Ingredient.fromItem(Items.ENDER_EYE)
+                )
+                .setConsumeComponents(true)
+        );
+
+        //Common Eldritch Hostiles
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:eldritch_crab"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEldritchCrab.class)
+                .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
+                .setComponents(
+                        Ingredient.fromItem(ItemsTC.voidSeed),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 1), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromStacks(new ItemStack(ItemsTC.crimsonPlateHelm, 1, OreDictionary.WILDCARD_VALUE)),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH),
+                        Ingredient.fromItem(Items.ENDER_EYE)
+                )
+        );
 
         //Arcane
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)0)});
@@ -554,18 +601,11 @@ public class ModRecipesTT {
 //        ThaumcraftApi.registerEntityTag("EvocationIllager", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 
 
-
-
-
-
-
-
 //        ThaumcraftApi.registerEntityTag("Giant", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.EARTH, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Creeper", (new AspectList()).add(Aspect.PLANT, 15).add(Aspect.FIRE, 15).add(Aspect.ENERGY, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("powered", (byte)1)});
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 15).add(Aspect.WATER, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Elder", true)});
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.GiantBrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.MIND, 5).add(Aspect.AVERSION, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-
 
 
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchGuardian", (new AspectList()).add(Aspect.ELDRITCH, 20).add(Aspect.DEATH, 20).add(Aspect.UNDEAD, 20), new ThaumcraftApi.EntityTagsNBT[0]);
