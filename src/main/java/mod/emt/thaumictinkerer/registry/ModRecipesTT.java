@@ -419,7 +419,7 @@ public class ModRecipesTT {
                         Ingredient.fromStacks(new ItemStack(Items.GOLDEN_APPLE, 1, 0)),
                         Ingredient.fromStacks(PotionUtils.addPotionToItemStack(new ItemStack(Items.POTIONITEM), PotionTypes.HEALING)),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.merge(Lists.newArrayList(Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0)), Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 2)))),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
                         Ingredient.fromItem(ItemsTC.brain),
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
