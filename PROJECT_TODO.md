@@ -8,7 +8,7 @@
 |      Attractor (Kinetic)       | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Attractor (Player)       | COMPLETE | COMPLETE | COMPLETE |          |          |
 |     Attractor (Soul Mould)     |          |          |          |          |          |
-|        Black Hole Ring         |          |          |          |          |          |
+|        Black Hole Ring         |   WIP    | COMPLETE |          |          |          |
 |     Decor - Tainted Brick      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |     Decor - Tainted Stone      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 | Decor - Terra Infused Obsidian | COMPLETE | COMPLETE | COMPLETE |          |          |
@@ -20,9 +20,6 @@
 |        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Ethereal Platform        |          |          |          |          |          |
 |         Feline Amulet          |          |          |          |          |          |
-|       Gas Phial (Light)        |          |          |          |          |          |
-|       Gas Phial (Shadow)       |          |          |          |          |          |
-|          Gas Remover           |          |          |          |          |          |
 |            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |
 |         Infused Seeds          |          |          |          |          |          |
 |  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |
@@ -44,7 +41,7 @@
 |          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Umbral Rosebush         |          |          |          |          |          |
 |  Worldshaper's Looking Glass   |          |          |          |          |          |
-|          XP Talisman           |          |          |          |          |          |
+|          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |          |          |
 
 **Arcane Quartz Slabs**
 These still need to be done, slabs are just a pain to do.
@@ -93,6 +90,9 @@ These still need to be done, slabs are just a pain to do.
 | Focus Effect: Dislocation    |                      | Reposition a block from one location to another                                                                 |
 | Focus Effect: Efreet's Flame |                      | Smelt blocks and item entities in the world                                                                     |
 | Focus Effect: Telekinesis    |                      | Causes items to float towards the point of spell impact                                                         |
+| Gas Phial (Light)            |                      | Spawns a cloud of gas that increases light to 15.                                                               |
+| Gas Phial (Shadow)           |                      | Spawns a cloud of darkness that decreases light to 0.                                                           |
+| Gas Remover                  |                      | Removes all gas in an area around the user.                                                                     |
 | Imbued Grain                 |                      | 5 Essentia in the Primal varieties                                                                              |
 | Levitational Locomotive      |                      | Moves entities in a straight line between two points.                                                           |
 | Osmotic Enchanter            |                      | The functionality is slightly different. In even older versions it's completely different.                      |
