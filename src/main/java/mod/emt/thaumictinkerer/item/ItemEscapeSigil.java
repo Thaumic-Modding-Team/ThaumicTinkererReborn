@@ -44,12 +44,14 @@ public class ItemEscapeSigil extends AbstractItemAddition {
             return false;
         }
 
-        while(!world.isOutsideBuildHeight(tpPos)) {
+        int horizontalAttempts = 0;
+        while(!world.isOutsideBuildHeight(tpPos) || horizontalAttempts > 10) {
             if(world.getBlockState(tpPos).getBlock() == Blocks.BEDROCK) {
                 return false;
             } else if(this.isValidPosition(player, world, tpPos)) {
                 if(world.getBlockState(tpPos).getMaterial() == Material.LAVA) {
                     tpPos = this.shiftPositionHorizontally(world, tpPos);
+                    horizontalAttempts++;
                 } else {
                     return this.teleportTo(player, tpPos.getX() + 0.5, tpPos.getY(), tpPos.getZ() + 0.5);
                 }
