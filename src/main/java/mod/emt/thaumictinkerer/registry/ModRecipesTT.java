@@ -30,9 +30,7 @@ import thaumcraft.api.crafting.IDustTrigger;
 import thaumcraft.api.crafting.Part;
 import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
-import thaumcraft.common.entities.monster.EntityEldritchCrab;
-import thaumcraft.common.entities.monster.EntityFireBat;
-import thaumcraft.common.entities.monster.EntityPech;
+import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
 @SuppressWarnings("ConstantConditions")
@@ -405,10 +403,39 @@ public class ModRecipesTT {
                         Ingredient.fromItem(Items.BONE)
                 )
         );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:brainy_zombie"), new NecromancyRecipe()
+                .setSummonedEntity(EntityBrainyZombie.class)
+                .setAspects(new AspectList().add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        new OreIngredient("feather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+        );
 
+        //Rare Hostiles
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:furious_zombie"), new NecromancyRecipe()
+                .setSummonedEntity(EntityGiantBrainyZombie.class)
+                .setAspects(new AspectList().add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.MIND, 5).add(Aspect.AVERSION, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_HOSTILE))
+                .setComponents(
+                        new OreIngredient("feather"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(ItemsTC.voidSeed),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+        );
+
+        // TODO: Maybe only make it spawn small slimes?
 //        ThaumcraftApi.registerEntityTag("Slime", (new AspectList()).add(Aspect.LIFE, 10).add(Aspect.WATER, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.BrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 20).add(Aspect.MAN, 10).add(Aspect.MIND, 5).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Witch", (new AspectList()).add(Aspect.MAN, 15).add(Aspect.MAGIC, 5).add(Aspect.ALCHEMY, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 
         /* Arcane Mobs */
         //NPCs
@@ -470,6 +497,21 @@ public class ModRecipesTT {
                         new OreIngredient("leather"),
                         new OreIngredient("leather"),
                         Ingredient.fromStacks(new ItemStack(Items.IRON_AXE, 1, OreDictionary.WILDCARD_VALUE)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:witch"), new NecromancyRecipe()
+                .setSummonedEntity(EntityWitch.class)
+                .setAspects(new AspectList().add(Aspect.MAN, 15).add(Aspect.MAGIC, 5).add(Aspect.ALCHEMY, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("dustRedstone"),
+                        new OreIngredient("dustGlowstone"),
+                        new OreIngredient("gunpowder"),
+                        Ingredient.fromItem(Items.SUGAR),
                         Ingredient.fromItem(Items.BONE),
                         Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
                         Ingredient.fromItem(ItemsTC.brain),
@@ -633,24 +675,12 @@ public class ModRecipesTT {
         );
 
         //Tainted
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.Taintacle", (new AspectList()).add(Aspect.FLUX, 15).add(Aspect.BEAST, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeed", (new AspectList()).add(Aspect.FLUX, 20).add(Aspect.AURA, 10).add(Aspect.PLANT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeedPrime", (new AspectList()).add(Aspect.PLANT, 30).add(Aspect.BEAST, 30).add(Aspect.FLUX, 30), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.ThaumSlime", (new AspectList()).add(Aspect.LIFE, 5).add(Aspect.WATER, 5).add(Aspect.FLUX, 5).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
-
         //Eldritch
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 15).add(Aspect.WATER, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Elder", true)});
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.GiantBrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.MIND, 5).add(Aspect.AVERSION, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-
-
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.EldritchGuardian", (new AspectList()).add(Aspect.ELDRITCH, 20).add(Aspect.DEATH, 20).add(Aspect.UNDEAD, 20), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.CultistKnight", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAN, 15).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.CultistCleric", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAN, 15).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//
-//        for(Aspect tag : Aspect.aspects.values()) {
-//            ThaumcraftApi.registerEntityTag("Thaumcraft.Wisp", (new AspectList()).add(tag, 5).add(Aspect.AURA, 5).add(Aspect.FLIGHT, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Type", tag.getTag())});
-//        }
     }
 }
