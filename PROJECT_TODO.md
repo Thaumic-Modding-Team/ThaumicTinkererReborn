@@ -26,10 +26,10 @@
 | Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |          |          |
 |    Infusion Enchant: Wrath     |   WIP    |   N/A    | COMPLETE |          |          |
 |    Ring of Goliath's Might     | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Sigil of Memories        |          |          |          |          |          |
+|       Sigil of Memories        | COMPLETE | COMPLETE |          |          |          |
 |     Smokey Quartz (Block)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |      Smokey Quartz (Item)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|  Stopwatch of the Timetwister  |          |          |          |          |          |
+|  Stopwatch of the Timetwister  | COMPLETE | COMPLETE | COMPLETE |          |          |
 |      Sword of the Condor       | COMPLETE | COMPLETE | COMPLETE |          |          |
 |      Tablet of Necromancy      | COMPLETE | COMPLETE | COMPLETE |          |          |
 |          Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |          |
