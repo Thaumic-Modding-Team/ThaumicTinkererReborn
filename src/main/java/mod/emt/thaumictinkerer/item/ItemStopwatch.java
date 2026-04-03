@@ -134,6 +134,7 @@ public class ItemStopwatch extends AbstractItemAddition implements IProxy {
                     player.setPositionAndUpdate(posX, posY, posZ);
                     player.setHealth(health);
                     player.getFoodStats().readNBT(foodTag);
+                    player.fallDistance = 0;
                 }
                 this.clearPlayerPosition(stopwatch);
             }
