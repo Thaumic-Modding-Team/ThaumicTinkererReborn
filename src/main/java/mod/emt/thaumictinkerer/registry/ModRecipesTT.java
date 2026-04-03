@@ -32,6 +32,7 @@ import thaumcraft.api.crafting.ShapedArcaneRecipe;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.EntityEldritchCrab;
 import thaumcraft.common.entities.monster.EntityFireBat;
+import thaumcraft.common.entities.monster.EntityPech;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 
 @SuppressWarnings("ConstantConditions")
@@ -413,7 +414,7 @@ public class ModRecipesTT {
         //NPCs
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:villager"), new NecromancyRecipe()
                 .setSummonedEntity(EntityVillager.class)
-                .setAspects(new AspectList().add(Aspect.MAN, 30))
+                .setAspects(new AspectList().add(Aspect.MAN, 15))
                 .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
                 .setComponents(
                         new OreIngredient("blockEmerald"),
@@ -426,6 +427,55 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:pech"), new NecromancyRecipe()
+                .setSummonedEntity(EntityPech.class)
+                .setAspects(new AspectList().add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.DESIRE, 5))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("blockGold"),
+                        Ingredient.fromStacks(new ItemStack(ItemsTC.nuggets, 1, 10)),
+                        Ingredient.fromItem(ItemsTC.fabric),
+                        new OreIngredient("enderpearl"),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+
+        //Hostile NPCs
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:evoker"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEvoker.class)
+                .setAspects(new AspectList().add(Aspect.ELDRITCH, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("blockGold"),
+                        Ingredient.fromItem(ItemsTC.fabric),
+                        Ingredient.fromItem(ItemsTC.fabric),
+                        Ingredient.fromStacks(new ItemStack(ItemsTC.nuggets, 1, 10)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+                .setConsumeComponents(true)
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:vindicator"), new NecromancyRecipe()
+                .setSummonedEntity(EntityVindicator.class)
+                .setAspects(new AspectList().add(Aspect.AVERSION, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
+                .setComponents(
+                        new OreIngredient("blockEmerald"),
+                        new OreIngredient("leather"),
+                        new OreIngredient("leather"),
+                        Ingredient.fromStacks(new ItemStack(Items.IRON_AXE, 1, OreDictionary.WILDCARD_VALUE)),
+                        Ingredient.fromItem(Items.BONE),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromItem(ItemsTC.brain),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH)
+                )
+        );
 
         //Constructs
         //TODO: Add iron golem custom recipe?
@@ -434,7 +484,7 @@ public class ModRecipesTT {
         //Rare Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
                 .setSummonedEntity(EntityMooshroom.class)
-                .setAspects(new AspectList().add(Aspect.BEAST, 30).add(Aspect.PLANT, 30).add(Aspect.EARTH, 30))
+                .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.PLANT, 15).add(Aspect.EARTH, 15))
                 .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ARCANE))
                 .setComponents(
                         new OreIngredient("leather"),
@@ -582,13 +632,6 @@ public class ModRecipesTT {
                 )
         );
 
-        //Arcane
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.DESIRE, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)0)});
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.AVERSION, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)1)});
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.Pech", (new AspectList()).add(Aspect.MAN, 10).add(Aspect.AURA, 5).add(Aspect.EXCHANGE, 10).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("PechType", (byte)2)});
-//        ThaumcraftApi.registerEntityTag("VindicationIllager", (new AspectList()).add(Aspect.AVERSION, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-
-
         //Tainted
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.Taintacle", (new AspectList()).add(Aspect.FLUX, 15).add(Aspect.BEAST, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeed", (new AspectList()).add(Aspect.FLUX, 20).add(Aspect.AURA, 10).add(Aspect.PLANT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
@@ -597,9 +640,6 @@ public class ModRecipesTT {
 
 
         //Eldritch
-//        ThaumcraftApi.registerEntityTag("EvocationIllager", (new AspectList()).add(Aspect.ELDRITCH, 5).add(Aspect.MAGIC, 5).add(Aspect.MAN, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-
-
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 15).add(Aspect.WATER, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Elder", true)});
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.GiantBrainyZombie", (new AspectList()).add(Aspect.UNDEAD, 25).add(Aspect.MAN, 15).add(Aspect.MIND, 5).add(Aspect.AVERSION, 10), new ThaumcraftApi.EntityTagsNBT[0]);
