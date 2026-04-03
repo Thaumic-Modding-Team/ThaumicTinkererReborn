@@ -24,6 +24,7 @@ public class ModItemsTT {
     public static final Item ENTITY_SOUL_HOSTILE = null;
     public static final Item ENTITY_SOUL_PEACEFUL = null;
     public static final Item ENTITY_SOUL_TAINTED = null;
+    public static final Item ESCAPE_SIGIL = null;
     public static final Item FELINE_CHARM = null;
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
@@ -56,5 +57,6 @@ public class ModItemsTT {
         //TODO: Fix this crap - RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
         RegistrarTT.addAdditionToRegister(new ItemStopwatch());
+        RegistrarTT.addAdditionToRegister(new ItemEscapeSigil());
     }
 }

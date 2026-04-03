@@ -46,6 +46,7 @@ item.thaumictinkerer:entity_soul_eldritch.name=Eldritch Soul
 item.thaumictinkerer:entity_soul_hostile.name=Hostile Soul
 item.thaumictinkerer:entity_soul_peaceful.name=Peaceful Soul
 item.thaumictinkerer:entity_soul_tainted.name=Tainted Soul
+item.thaumictinkerer:escape_sigil.name=Sigil of Escape
 item.thaumictinkerer:everfull_bucket.name=Everfull Bucket
 item.thaumictinkerer:feline_charm.name=Feline Charm
 item.thaumictinkerer:goliath_ring.name=Ring of Goliath's Might
