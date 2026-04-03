@@ -171,7 +171,7 @@ public class ItemStopwatch extends AbstractItemAddition implements IProxy {
         int seconds = cooldownTicks / 20;
         String time = String.format("0:%02d", seconds);
 
-        int height = 20 * resolution.getScaleFactor();
+        int height = 10 * resolution.getScaleFactor();
         int width = 16 + 3 + mc.fontRenderer.getStringWidth(time);
         int xStart = resolution.getScaledWidth() / 2 - width / 2;
         int yStart = resolution.getScaledHeight() / 2 + height;
