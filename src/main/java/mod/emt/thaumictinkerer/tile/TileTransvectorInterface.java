@@ -8,7 +8,6 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
-import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.capabilities.Capability;
 import org.jetbrains.annotations.NotNull;
@@ -34,46 +33,48 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
     @Override
     public @NotNull NBTTagCompound writeToNBT(@NotNull NBTTagCompound compound) {
         super.writeToNBT(compound);
-        this.linkedFacing.forEach((face, link) -> {
-            compound.setTag(face.getName(), link.serializeNBT());
-        });
+        this.linkedFacing.forEach((face, link) -> compound.setTag(face.getName(), link.serializeNBT()));
         return compound;
     }
 
     @Override
-    public void createLink(EntityPlayer player, EnumHand hand, EnumFacing clickedFace, BlockPos linkPos, EnumFacing linkFace, boolean isFaceLinking) {
-        if (this.pos.equals(linkPos)) {
+    public void createLink(EntityPlayer player, EnumHand hand, EnumFacing clickedFace, TransvectorLink link, boolean isFaceLinking) {
+        if (link.isSelf(this.world, this.pos)) {
             player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.self_link"), true);
         } else {
-            if (!this.isInRange(linkPos)) {
+            if (!this.isInRange(link)) {
                 player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.out_of_range"), true);
             } else {
                 if (isFaceLinking) {
-                    this.linkToFace(clickedFace, linkPos, linkFace);
+                    this.linkToFace(clickedFace, link);
                 } else {
-                    this.linkToPosition(linkPos);
+                    this.linkToPosition(link);
                 }
                 player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_successful"), true);
             }
         }
     }
 
-    public boolean isInRange(BlockPos linkPos) {
+    public boolean isInRange(TransvectorLink link) {
         //TODO: Configurable distance
-        return this.pos.getX() - linkPos.getX() < 8
-                && this.pos.getY() - linkPos.getY() < 8
-                && this.pos.getZ() - linkPos.getZ() < 8;
+        return link.getWorld() != null
+                && this.world.provider.getDimension() == link.dimensionId
+                && this.pos.getX() - link.pos.getX() < 8
+                && this.pos.getY() - link.pos.getY() < 8
+                && this.pos.getZ() - link.pos.getZ() < 8;
     }
 
-    public void linkToPosition(BlockPos linkPos) {
-        for(EnumFacing facing : EnumFacing.VALUES) {
-            this.linkedFacing.put(facing, new TransvectorLink(linkPos, facing));
+    public void linkToPosition(TransvectorLink link) {
+        if(link.getWorld() != null) {
+            for (EnumFacing facing : EnumFacing.VALUES) {
+                this.linkedFacing.put(facing, new TransvectorLink(link.getWorld(), link.pos, facing));
+            }
+            this.markDirty();
         }
-        this.markDirty();
     }
 
-    public void linkToFace(EnumFacing transvectorFace, BlockPos linkPos, EnumFacing linkFace) {
-        this.linkedFacing.put(transvectorFace, new TransvectorLink(linkPos, linkFace));
+    public void linkToFace(EnumFacing transvectorFace, TransvectorLink link) {
+        this.linkedFacing.put(transvectorFace, link);
         this.markDirty();
     }
 
@@ -86,7 +87,7 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
     public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
         TransvectorLink linked = this.getLinkedFacing(facing);
         if(linked != null) {
-            TileEntity tile = linked.getTileEntity(this.world);
+            TileEntity tile = linked.getTileEntity();
             if(tile != null) {
                 return tile.hasCapability(capability, linked.face);
             }
@@ -98,7 +99,7 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
     public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
         TransvectorLink linked = this.getLinkedFacing(facing);
         if(linked != null) {
-            TileEntity tile = linked.getTileEntity(this.world);
+            TileEntity tile = linked.getTileEntity();
             if(tile != null) {
                 return tile.getCapability(capability, linked.face);
             }

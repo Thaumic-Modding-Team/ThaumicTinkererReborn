@@ -2,13 +2,14 @@ package mod.emt.thaumictinkerer.item;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
+import mod.emt.thaumictinkerer.utils.TransvectorLink;
+import mod.emt.thaumictinkerer.utils.helpers.WorldHelper;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagByte;
-import net.minecraft.nbt.NBTTagInt;
-import net.minecraft.nbt.NBTTagLong;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -23,7 +24,6 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
-import java.util.Objects;
 
 public class ItemTransvectorBinder extends AbstractItemAddition {
     public ItemTransvectorBinder() {
@@ -55,10 +55,9 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
             if (player.isSneaking()) {
                 this.linkToBlock(player, stack, pos, side);
             } else if (tile instanceof ITransvectorLink && this.isLinked(stack)) {
-                BlockPos linkPos = this.getLinkedPos(stack);
-                EnumFacing linkFace = this.getLinkedFacing(stack);
+                TransvectorLink link = this.getTransvectorLink(stack);
                 boolean isFaceLinking = this.isFaceLinkingMode(stack);
-                ((ITransvectorLink) tile).createLink(player, hand, side, linkPos, linkFace, isFaceLinking);
+                ((ITransvectorLink) tile).createLink(player, hand, side, link, isFaceLinking);
             }
             return EnumActionResult.SUCCESS;
         }
@@ -66,8 +65,7 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
     }
 
     public void linkToBlock(EntityPlayer player, ItemStack stack, BlockPos pos, EnumFacing facing) {
-        this.setLinkedPos(stack, pos);
-        this.setLinkedFacing(stack, facing);
+        this.setTransvectorLink(stack, player.world, pos, facing);
         player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:transvector_binder.link_stored"), true);
     }
 
@@ -79,34 +77,30 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
         } else {
             tooltip.add(I18n.format("tooltip.thaumictinkerer:transvector_binder.link_mode.block"));
         }
-        if(this.isLinked(stack)) {
-            BlockPos pos = this.getLinkedPos(stack);
-            EnumFacing facing = this.getLinkedFacing(stack);
-            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:transvector_binder.linked_face", Objects.requireNonNull(facing).toString()));
-            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:transvector_binder.linked_pos", pos.getX(), pos.getY(), pos.getZ()));
+        if(worldIn != null && this.isLinked(stack)) {
+            TransvectorLink link = this.getTransvectorLink(stack);
+            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:transvector_binder.linked_world", WorldHelper.getDimensionName(link.dimensionId)));
+            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:transvector_binder.linked_face", link.face.toString()));
+            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:transvector_binder.linked_pos", link.pos.getX(), link.pos.getY(), link.pos.getZ()));
         }
     }
 
     public boolean isLinked(ItemStack stack) {
-        return this.getLinkedFacing(stack) != null && this.getLinkedPos(stack) != null;
+        return !this.getTransvectorLink(stack).isEmpty();
     }
 
-    public BlockPos getLinkedPos(ItemStack stack) {
-        return stack.getTagCompound() != null ? BlockPos.fromLong(stack.getTagCompound().getLong("pos")) : null;
+    public TransvectorLink getTransvectorLink(ItemStack stack) {
+        return new TransvectorLink(stack.getTagCompound() != null ? stack.getTagCompound().getCompoundTag("link") : new NBTTagCompound());
     }
 
-    public void setLinkedPos(ItemStack stack, BlockPos pos) {
-        stack.setTagInfo("pos", new NBTTagLong(pos.toLong()));
+    public void setTransvectorLink(ItemStack stack, TransvectorLink link) {
+        stack.setTagInfo("link", link.serializeNBT());
     }
 
-    @Nullable
-    public EnumFacing getLinkedFacing(ItemStack stack) {
-        return stack.getTagCompound() != null ? EnumFacing.VALUES[stack.getTagCompound().getInteger("facing")] : null;
+    public void setTransvectorLink(ItemStack stack, World world, BlockPos pos, EnumFacing facing) {
+        this.setTransvectorLink(stack, new TransvectorLink(world, pos, facing));
     }
 
-    public void setLinkedFacing(ItemStack stack, EnumFacing facing) {
-        stack.setTagInfo("facing", new NBTTagInt(facing.ordinal()));
-    }
 
     public boolean isFaceLinkingMode(ItemStack stack) {
         return stack.getTagCompound() != null && stack.getTagCompound().getBoolean("faceLinkMode");
@@ -114,12 +108,5 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
 
     public void setFaceLinkMode(ItemStack stack, boolean faceLinkMode) {
         stack.setTagInfo("faceLinkMode", new NBTTagByte((byte) (faceLinkMode ? 1 : 0)));
-    }
-
-    public void clearLink(ItemStack stack) {
-        if(stack.getTagCompound() != null) {
-            stack.getTagCompound().removeTag("pos");
-            stack.getTagCompound().removeTag("facing");
-        }
     }
 }

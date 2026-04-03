@@ -3,7 +3,6 @@ package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.item.*;
-import mod.emt.thaumictinkerer.item.bauble.ItemBlackHoleRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
@@ -28,8 +27,10 @@ public class ModItemsTT {
     public static final Item FELINE_CHARM = null;
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
+    public static final Item RECALL_STOPWATCH = null;
     public static final Item TRANSVECTOR_BINDER = null;
     public static final Item UMBRAL_DYE = null;
+    public static final Item XP_TALISMAN = null;
 
     public static void initItems() {
         //Item initialization goes here. Be sure to register them with RegistrarTT#addAdditionToRegister()
@@ -54,5 +55,6 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
         //TODO: Fix this crap - RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
+        RegistrarTT.addAdditionToRegister(new ItemStopwatch());
     }
 }
