@@ -19,7 +19,7 @@
 |        Energetic Nitor         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Ethereal Platform        |          |          |          |          |          |
-|         Feline Amulet          |          |          |          |          |          |
+|         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |
 |            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |
 |         Infused Seeds          |          |          |          |          |          |
 |  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |

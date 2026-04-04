@@ -1,16 +1,27 @@
 package mod.emt.thaumictinkerer.item.bauble;
 
 import baubles.api.BaubleType;
-import baubles.api.IBauble;
-import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
+import baubles.api.BaublesApi;
+import baubles.api.cap.IBaublesItemHandler;
+import mod.emt.thaumictinkerer.api.IProxy;
+import mod.emt.thaumictinkerer.api.item.AbstractItemBauble;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.ai.RandomPositionGenerator;
+import net.minecraft.entity.monster.EntityCreeper;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.common.IRarity;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.living.LivingEvent;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 
-public class ItemFelineCharm extends AbstractItemAddition implements IBauble {
+public class ItemFelineCharm extends AbstractItemBauble implements IProxy {
     public ItemFelineCharm() {
         super("feline_charm");
         this.setMaxStackSize(1);
@@ -34,5 +45,59 @@ public class ItemFelineCharm extends AbstractItemAddition implements IBauble {
     @Override
     public BaubleType getBaubleType(ItemStack itemStack) {
         return BaubleType.CHARM;
+    }
+
+    @SubscribeEvent
+    public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
+        // Feline Charm
+        if(!event.getEntityLiving().world.isRemote && event.getEntityLiving() instanceof EntityCreeper) {
+            EntityCreeper creeper = (EntityCreeper) event.getEntityLiving();
+            EntityPlayer player = creeper.world.getClosestPlayerToEntity(creeper, 10.0D);
+
+            if(player != null && !player.isCreative()) {
+                IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
+
+                for(int i = 0; i < handler.getSlots(); i++) {
+                    ItemStack stack = handler.getStackInSlot(i);
+
+                    if(!stack.isEmpty() && stack.getItem() instanceof ItemFelineCharm) {
+                        if(creeper.getAttackTarget() == player) {
+                            creeper.setAttackTarget(null);
+
+                            // Prevents the creepers from exploding
+                            creeper.setCreeperState(-1);
+                        }
+
+                        Vec3d vec = RandomPositionGenerator.findRandomTargetBlockAwayFrom(creeper, 16, 7, new Vec3d(player.posX, player.posY, player.posZ));
+
+                        if(vec != null) {
+                            creeper.getNavigator().tryMoveToXYZ(vec.x, vec.y, vec.z, 1.5D);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    //TODO: All of this
+
+    @Override
+    public void preInit() {
+        MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @Override
+    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+
+    }
+
+    @Override
+    public void registerResearchLocation() {
+
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return true;
     }
 }
