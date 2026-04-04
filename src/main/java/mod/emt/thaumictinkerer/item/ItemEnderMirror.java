@@ -15,6 +15,7 @@ import org.jetbrains.annotations.NotNull;
 public class ItemEnderMirror extends AbstractItemAddition {
     public ItemEnderMirror() {
         super("ender_mirror");
+        this.setMaxStackSize(1);
     }
 
     @Override
