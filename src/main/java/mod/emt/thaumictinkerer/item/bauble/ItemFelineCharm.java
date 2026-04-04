@@ -2,7 +2,6 @@ package mod.emt.thaumictinkerer.item.bauble;
 
 import baubles.api.BaubleType;
 import baubles.api.BaublesApi;
-import baubles.api.cap.IBaublesItemHandler;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemBauble;
 import net.minecraft.entity.EntityLivingBase;
@@ -55,36 +54,28 @@ public class ItemFelineCharm extends AbstractItemBauble implements IProxy {
             EntityPlayer player = creeper.world.getClosestPlayerToEntity(creeper, 10.0D);
 
             if(player != null && !player.isCreative()) {
-                IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
+                int slot = BaublesApi.isBaubleEquipped(player, this);
+                if(slot > -1) {
+                    if(creeper.getAttackTarget() == player || creeper.getCreeperState() == 1 || creeper.hasIgnited()) {
+                        creeper.setAttackTarget(null);
+                        creeper.setCreeperState(-1);
+                    }
 
-                for(int i = 0; i < handler.getSlots(); i++) {
-                    ItemStack stack = handler.getStackInSlot(i);
-
-                    if(!stack.isEmpty() && stack.getItem() instanceof ItemFelineCharm) {
-                        if(creeper.getAttackTarget() == player) {
-                            creeper.setAttackTarget(null);
-
-                            // Prevents the creepers from exploding
-                            creeper.setCreeperState(-1);
-                        }
-
-                        Vec3d vec = RandomPositionGenerator.findRandomTargetBlockAwayFrom(creeper, 16, 7, new Vec3d(player.posX, player.posY, player.posZ));
-
-                        if(vec != null) {
-                            creeper.getNavigator().tryMoveToXYZ(vec.x, vec.y, vec.z, 1.5D);
-                        }
+                    Vec3d vec = RandomPositionGenerator.findRandomTargetBlockAwayFrom(creeper, 16, 7, new Vec3d(player.posX, player.posY, player.posZ));
+                    if(vec != null) {
+                        creeper.getNavigator().tryMoveToXYZ(vec.x, vec.y, vec.z, 1.5D);
                     }
                 }
             }
         }
     }
 
-    //TODO: All of this
-
     @Override
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
     }
+
+    //TODO: All of this
 
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
