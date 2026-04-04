@@ -16,6 +16,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.EnderTeleportEvent;
 import org.jetbrains.annotations.NotNull;
+import thaumcraft.common.lib.SoundsTC;
 
 import java.util.Random;
 
@@ -26,15 +27,15 @@ public class ItemEscapeSigil extends AbstractItemAddition {
     }
 
     @Override
-    public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World worldIn, EntityPlayer playerIn, @NotNull EnumHand handIn) {
-        ItemStack heldStack = playerIn.getHeldItem(handIn);
-        if(!this.teleportUp(worldIn, playerIn)) {
-            this.teleportRandomly(worldIn, playerIn);
+    public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World world, EntityPlayer player, @NotNull EnumHand hand) {
+        ItemStack heldStack = player.getHeldItem(hand);
+        if(!this.teleportUp(world, player)) {
+            this.teleportRandomly(world, player);
         }
-        if(!playerIn.isCreative()) {
+        if(!player.isCreative()) {
             heldStack.shrink(1);
         }
-        playerIn.playSound(SoundEvents.BLOCK_GLASS_BREAK, 1.0f, 1.0f);
+        player.playSound(SoundsTC.tool, 1.0F, 1.0F);
         return new ActionResult<>(EnumActionResult.SUCCESS, heldStack);
     }
 
