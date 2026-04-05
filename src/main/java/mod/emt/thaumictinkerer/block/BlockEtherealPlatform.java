@@ -17,10 +17,10 @@ import java.util.List;
 
 public class BlockEtherealPlatform extends AbstractBlockAddition {
     public BlockEtherealPlatform() {
-        super("ethereal_platform", Material.ROCK, MapColor.STONE);
-        this.setHardness(2.0f);
-        this.setResistance(12.0f);
-        this.setSoundType(SoundType.STONE);
+        super("ethereal_platform", Material.WOOD, MapColor.STONE, TileEtherealPlatform.class);
+        this.setHardness(2.0F);
+        this.setResistance(5.0F);
+        this.setSoundType(SoundType.WOOD);
     }
 
     @SuppressWarnings("deprecation")
