@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ConfigHandlerTT {
     @Config.Name("Infusion Enchantments")
     public static InfusionEnchantConfig infusionEnchantments = new InfusionEnchantConfig();
+    @Config.Name("Tablet of Necromancy")
+    public static NecromancyTabletConfig necromancyTablet = new NecromancyTabletConfig();
     @Config.Name("Thaumic Restorer")
     public static ThaumicRestorerConfig thaumicRestorer = new ThaumicRestorerConfig();
 
@@ -50,6 +52,16 @@ public class ConfigHandlerTT {
             @Config.RequiresMcRestart
             public boolean enable = true;
         }
+    }
+
+    public static class NecromancyTabletConfig {
+        @Config.Name("Entity Scale Overrides")
+        @Config.Comment({
+                "Specific scale overrides for entity displays in the Tablet of Necromancy JEI display.",
+                "  Format: modid:entityid=scale",
+                "  Example: minecraft:creeper=0.5"
+        })
+        public String[] scaleOverrides = new String[] {};
     }
 
     public static class ThaumicRestorerConfig {

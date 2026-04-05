@@ -58,6 +58,11 @@ item.thaumictinkerer:xp_talisman.name=Talisman of Experience
 
 item.thaumictinkerer:test_sword.name=Test Sword
 
+# JEI
+jei.thaumictinkerer:necromancy.consuming=Consumes Ingredients
+jei.thaumictinkerer:necromancy.repeatable=Repeatable
+jei.thaumictinkerer:necromancy.title=Tablet of Necromancy
+
 # Tooltip
 tooltip.thaumictinkerer:black_hole_ring.info=Contents:
 tooltip.thaumictinkerer:black_hole_ring.slot=%4s - %s

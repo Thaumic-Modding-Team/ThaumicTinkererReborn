@@ -4,20 +4,22 @@ import com.google.common.base.Preconditions;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.passive.EntityPig;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.crafting.CraftingHelper;
-import net.minecraftforge.fluids.FluidStack;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 import thaumcraft.api.aspects.AspectList;
 
+import java.util.List;
+
 public class NecromancyRecipe implements INecromancyRecipe {
     private EntityEntry entityEntry;
     private AspectList aspectList;
-    private Object centerIngredient;
-    private Object[] catalysts;
+    private Ingredient centerIngredient;
+    private Ingredient[] catalysts;
     private boolean consumeCatalysts;
     private boolean dimensionsInitialized;
     private double entityHeight;
@@ -26,7 +28,7 @@ public class NecromancyRecipe implements INecromancyRecipe {
     public NecromancyRecipe() {
         this.setSummonedEntity(EntityPig.class);
         this.setAspects(new AspectList());
-        this.setCenterIngredient(ItemStack.EMPTY);
+        this.setCenterIngredient(Ingredient.fromStacks(ItemStack.EMPTY));
         this.dimensionsInitialized = false;
     }
 
@@ -46,16 +48,20 @@ public class NecromancyRecipe implements INecromancyRecipe {
         return this;
     }
 
-    public NecromancyRecipe setCenterIngredient(Object centerIngredient) {
-        Preconditions.checkArgument(CraftingHelper.getIngredient(centerIngredient) != null || centerIngredient instanceof FluidStack, "Center ingredient must be an Ingredient or a FluidStack.");
+    public NecromancyRecipe setCenterIngredient(Ingredient centerIngredient) {
+        Preconditions.checkArgument(CraftingHelper.getIngredient(centerIngredient) != null, "Center ingredient must be an Ingredient.");
         this.centerIngredient = centerIngredient;
         return this;
     }
 
-    public NecromancyRecipe setComponents(Object... catalysts) {
+    public NecromancyRecipe setComponents(Ingredient... catalysts) {
         Preconditions.checkArgument(catalysts.length <= 8, "Necromatic recipes cannot support more than 8 catalysts.");
         this.catalysts = catalysts;
         return this;
+    }
+
+    public NecromancyRecipe setComponents(List<Ingredient> catalysts) {
+        return this.setComponents(catalysts.toArray(new Ingredient[0]));
     }
 
     public NecromancyRecipe setAspects(AspectList aspectList) {
@@ -89,12 +95,12 @@ public class NecromancyRecipe implements INecromancyRecipe {
     }
 
     @Override
-    public Object getCenterIngredient() {
+    public Ingredient getCenterIngredient() {
         return this.centerIngredient;
     }
 
     @Override
-    public Object[] getComponents() {
+    public Ingredient[] getComponents() {
         return this.catalysts;
     }
 

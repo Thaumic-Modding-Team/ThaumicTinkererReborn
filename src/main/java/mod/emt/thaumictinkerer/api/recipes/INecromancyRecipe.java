@@ -3,8 +3,12 @@ package mod.emt.thaumictinkerer.api.recipes;
 import mod.emt.thaumictinkerer.block.BlockNecromancyTablet;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.Entity;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.EntityLiving;
+import net.minecraft.init.Items;
+import net.minecraft.item.ItemMonsterPlacer;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -13,9 +17,9 @@ import thaumcraft.api.aspects.AspectList;
 
 public interface INecromancyRecipe {
 
-    Object getCenterIngredient();
+    Ingredient getCenterIngredient();
 
-    Object[] getComponents();
+    Ingredient[] getComponents();
 
     boolean shouldConsumeComponents();
 
@@ -29,6 +33,16 @@ public interface INecromancyRecipe {
 
     default Entity getSummonedEntity(World world) {
         return this.getSummonedEntity().newInstance(world);
+    }
+
+    default ItemStack getSpawnEgg() {
+        EntityList.EntityEggInfo eggInfo = this.getSummonedEntity().getEgg();
+        if(eggInfo != null) {
+            ItemStack egg = new ItemStack(Items.SPAWN_EGG);
+            ItemMonsterPlacer.applyEntityIdToItemStack(egg, eggInfo.spawnedID);
+            return egg;
+        }
+        return ItemStack.EMPTY;
     }
 
     default void spawnEntity(World world, BlockPos pos) {
