@@ -17,7 +17,7 @@ import java.util.List;
 
 public class BlockEtherealPlatform extends AbstractBlockAddition {
     public BlockEtherealPlatform() {
-        super("ethereal_platform", Material.WOOD, MapColor.STONE, TileEtherealPlatform.class);
+        super("ethereal_platform", Material.WOOD, MapColor.WOOD);
         this.setHardness(2.0F);
         this.setResistance(5.0F);
         this.setSoundType(SoundType.WOOD);
