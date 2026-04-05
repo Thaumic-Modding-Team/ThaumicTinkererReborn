@@ -184,7 +184,6 @@ public class ModRecipesTT {
                 .setComponents(
                         Ingredient.fromItem(Items.RABBIT_HIDE),
                         Ingredient.fromItem(Items.BONE),
-                        Ingredient.fromItem(Items.CARROT),
                         Ingredient.merge(Lists.newArrayList(Ingredient.fromItem(Items.CARROT), Ingredient.fromItem(Items.RABBIT_FOOT))),
                         Ingredient.fromItem(Items.RABBIT)
                 )
