@@ -8,7 +8,12 @@
   },
   "variants": {
     "inventory": [{}],
-    "passable=true": [{}],
+    "passable=true": {
+      "model": "cube_all",
+      "textures": {
+        "all": "thaumictinkerer:blocks/passable_wall_active"
+      }
+    },
     "passable=false": [{}]
   }
 }
