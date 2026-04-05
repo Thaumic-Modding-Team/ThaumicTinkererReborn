@@ -21,6 +21,7 @@ tile.thaumictinkerer:chiseled_arcane_quartz_block.name=Chiseled Arcane Quartz Bl
 tile.thaumictinkerer:essentia_funnel.name=Essentia Funnel
 tile.thaumictinkerer:ethereal_platform.name=Ethereal Platform
 tile.thaumictinkerer:necromancy_tablet.name=Tablet of Necromancy
+tile.thaumictinkerer:passable_wall.name=Paving Stone of Permeability
 tile.thaumictinkerer:terra_obsidian.name=Obsidia Terra
 tile.thaumictinkerer:thaumic_cake.name=Thaumic Cake
 tile.thaumictinkerer:thaumic_restorer.name=Thaumic Restorer

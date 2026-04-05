@@ -24,6 +24,7 @@ public class ModBlocksTT {
     public static final Block ESSENTIA_FUNNEL = null;
     public static final Block ETHEREAL_PLATFORM = null;
     public static final Block NECROMANCY_TABLET = null;
+    public static final Block PASSABLE_WALL = null;
     public static final Block TERRA_OBSIDIAN = null;
     public static final Block THAUMIC_CAKE = null;
     public static final Block THAUMIC_RESTORER = null;
@@ -55,5 +56,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone_bricks", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false, null));
         RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
         RegistrarTT.addAdditionToRegister(new BlockEtherealPlatform());
+        RegistrarTT.addAdditionToRegister(new BlockPassableWall());
     }
 }

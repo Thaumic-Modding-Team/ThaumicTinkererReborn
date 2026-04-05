@@ -1,0 +1,111 @@
+package mod.emt.thaumictinkerer.block;
+
+import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.tile.TilePassableWall;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyBool;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
+import net.minecraft.util.BlockRenderLayer;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
+
+public class BlockPassableWall extends BlockTileAddition {
+    public static final AxisAlignedBB EMPTY_AABB = new AxisAlignedBB(0, 0, 0, 0, 0, 0);
+    public static final PropertyBool PASSABLE = PropertyBool.create("passable");
+
+    public BlockPassableWall() {
+        super("passable_wall", Material.ROCK, MapColor.STONE, TilePassableWall.class);
+        this.setHardness(3.0f);
+        this.setResistance(20.0f);
+        this.setSoundType(SoundType.STONE);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(PASSABLE, false));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull AxisAlignedBB getBoundingBox(IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
+        return state.getValue(PASSABLE) ? EMPTY_AABB : super.getBoundingBox(state, source, pos);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public void addCollisionBoxToList(@NotNull IBlockState state, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull AxisAlignedBB entityBox, @NotNull List<AxisAlignedBB> collidingBoxes, @Nullable Entity entityIn, boolean isActualState) {
+        if(!state.getValue(PASSABLE)) {
+            super.addCollisionBoxToList(state, worldIn, pos, entityBox, collidingBoxes, entityIn, isActualState);
+        }
+    }
+
+    @Override
+    public void onNeighborChange(IBlockAccess world, @NotNull BlockPos pos, @NotNull BlockPos neighbor) {
+        IBlockState state = world.getBlockState(pos);
+        IBlockState neighborState = world.getBlockState(neighbor);
+        if(neighborState.getBlock() == this && world instanceof World) {
+            boolean passable = neighborState.getValue(PASSABLE);
+            if(state.getValue(PASSABLE) != passable) {
+                ((World) world).setBlockState(pos, state.withProperty(PASSABLE, passable));
+            }
+        }
+    }
+
+    @Override
+    public @Nullable Boolean isEntityInsideMaterial(@NotNull IBlockAccess world, @NotNull BlockPos blockpos, IBlockState state, @NotNull Entity entity, double yToTest, @NotNull Material materialIn, boolean testingHead) {
+        return !state.getValue(PASSABLE);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isFullCube(IBlockState state) {
+        return !state.getValue(PASSABLE);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isOpaqueCube(IBlockState state) {
+        return !state.getValue(PASSABLE);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean causesSuffocation(IBlockState state) {
+        return !state.getValue(PASSABLE);
+    }
+
+    @Override
+    public @NotNull BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.TRANSLUCENT;
+    }
+
+    @Override
+    public boolean canRenderInLayer(IBlockState state, @NotNull BlockRenderLayer layer) {
+        if(!state.getValue(PASSABLE)) {
+            return layer == BlockRenderLayer.SOLID;
+        }
+        return super.canRenderInLayer(state, layer);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(PASSABLE, meta == 1);
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(PASSABLE) ? 1 : 0;
+    }
+
+    @Override
+    protected @NotNull BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, PASSABLE);
+    }
+}
