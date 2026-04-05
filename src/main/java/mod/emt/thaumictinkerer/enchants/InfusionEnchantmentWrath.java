@@ -20,7 +20,6 @@ import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 import java.util.Collection;
 import java.util.UUID;
 
-// TODO: Temporary implementation until we adjust the attribute directly
 @Mod.EventBusSubscriber
 public class InfusionEnchantmentWrath implements IAddition, IProxy {
     //Copy of `Item#ATTACK_DAMAGE_MODIFIER`
