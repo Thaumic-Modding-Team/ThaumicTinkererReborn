@@ -2,10 +2,10 @@
 	"format_version": "1.9.0",
 	"credit": "Made with Blockbench",
 	"textures": {
-		"particle": "thaumictinkerer:blocks/pedestal_top",
-		"top": "thaumictinkerer:blocks/pedestal_top",
-		"side": "thaumictinkerer:blocks/pedestal_side",
-		"parts": "thaumictinkerer:blocks/pedestal_back"
+		"particle": "thaumictinkerer:blocks/thaumic_restorer_top",
+		"top": "thaumictinkerer:blocks/thaumic_restorer_top",
+		"side": "thaumictinkerer:blocks/thaumic_restorer_side",
+		"parts": "thaumictinkerer:blocks/thaumic_restorer_back"
 	},
 	"elements": [
 		{
