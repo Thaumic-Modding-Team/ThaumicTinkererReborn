@@ -18,15 +18,17 @@
 |          Ender Mirror          | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Energetic Nitor         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Ethereal Platform        |          |          |          |          |          |
-|         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |
+|       Ethereal Platform        | COMPLETE | COMPLETE | COMPLETE |          |          |
+|         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |          |
 |            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |
-|         Infused Seeds          |          |          |          |          |          |
 |  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |
 | Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |          |          |
+|  Infusion Enchant: Projecting  |          |          |          |          |          |
 |    Infusion Enchant: Wrath     |   WIP    |   N/A    | COMPLETE |          |          |
+|  Paving Stone of Permeability  | COMPLETE | COMPLETE | COMPLETE |          |          |
 |    Ring of Goliath's Might     | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Sigil of Memories        | COMPLETE | COMPLETE |          |          |          |
+|       Rod of Telekinesis       |          |          |          |          |          |
+|       Sigil of Memories        | COMPLETE | COMPLETE | COMPLETE |          |          |
 |     Smokey Quartz (Block)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |      Smokey Quartz (Item)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
 |  Stopwatch of the Timetwister  | COMPLETE | COMPLETE | COMPLETE |          |          |
@@ -81,39 +83,30 @@ These still need to be done, slabs are just a pain to do.
 ## Thaumic Tinkerer
 | Feature                      |     Replacement      | Description                                                                                                     |
 |:-----------------------------|:--------------------:|:----------------------------------------------------------------------------------------------------------------|
-| Aphrodisiac Concoction       |                      | A splash potion that can be thrown at animals to put them in love mode.                                         |
-| Elemental Fire: Aer          |                      | Places a elemental fire that transforms certain blocks to other blocks (dirt and wood to sand for example).     |
-| Elemental Fire: Aqua         |                      | Places a special elemental fire that transforms Nether blocks to other blocks (netherrack to snow for example). |
-| Elemental Fire: Ignis        |                      | Places a special elemental fire that transforms certain blocks to their Nether counterparts.                    |
-| Elemental Fire: Perditio     |                      | Places a special elemental fire that turns all other types of elemental fire to normal fire.                    |
-| Elemental Fire: Terra        |                      | Places a special elemental fire that transforms most blocks into dirt.                                          |
-| Focus Effect: Dislocation    |                      | Reposition a block from one location to another                                                                 |
+| Focus Effect: Aphrodisiac    |                      | A splash potion that can be thrown at animals to put them in love mode.                                         |
 | Focus Effect: Efreet's Flame |                      | Smelt blocks and item entities in the world                                                                     |
-| Focus Effect: Telekinesis    |                      | Causes items to float towards the point of spell impact                                                         |
 | Gas Phial (Light)            |                      | Spawns a cloud of gas that increases light to 15.                                                               |
 | Gas Phial (Shadow)           |                      | Spawns a cloud of darkness that decreases light to 0.                                                           |
 | Gas Remover                  |                      | Removes all gas in an area around the user.                                                                     |
 | Imbued Grain                 |                      | 5 Essentia in the Primal varieties                                                                              |
+| Infused Seeds                |                      | Aspect-themed seeds and crops.                                                                                  |
 | Levitational Locomotive      |                      | Moves entities in a straight line between two points.                                                           |
 | Osmotic Enchanter            |                      | The functionality is slightly different. In even older versions it's completely different.                      |
-| Potion of Aer                |                      | Drinking it gives you an effect that knocks the target upwards several times when hitting them                  |
-| Potion of Aqua               |                      | Drinking it gives you an effect that cools down lava around you                                                 |
-| Potion of Ignis              |                      | Drinking it gives you an effect that sets the targets on fire, with faster damage.                              |
-| Potion of Terra              |                      | Drinking it gives you an effect that places a barrier between you and the target when hitting them              |
-| Wand Focus: Distortion       |                      | Right-clicking and holding will cause most projectiles to dispel and disappear                                  |
-| Wand Focus: Experience Drain |                      | Let's you exchange experience for vis                                                                           |
-| Wand Focus: Shadowbeam       |                      | Fires a beam of energy that can reflect the walls several times (see Shadowbeam Staff from Terraria).           |
-| Wand Focus: Telekinesis      |                      | Unlike 1.12.2, the wand focus is continuous and far more effective, you can even drag the items on the air.     |
-| Wand Focus: Uprising         |                      | Pushes you forward whenever you right-click with it                                                             |
 | Warded Chest                 | Thaumic Augmentation | Similar to Augmentation's Warded Chest but the model and animation of it is interesting.                        |
 
 ## Thaumic Tinkerer: Kami
-| Feature                                | Replacement | Description                                                                                               |
-|:---------------------------------------|:-----------:|:----------------------------------------------------------------------------------------------------------|
-| Bedrock Portal                         |             | Portal to Bedrock Dimension. Opened by right-clicking bedrock with an Awakened Pickaxe.                   |
-| Celestial Gateway                      |             | Instantly teleport between linked Celestial Gateways. Cannot teleport across dimensions.                  |
-| Celestial Pearl                        |             | Item used to link Celestial Gateways                                                                      |
-| Focus Effect: Celestial Teleport       |             | Instantly teleport to a linked Celestial Gateway                                                          |
+| Feature                          | Replacement | Description                                                                                                     |
+|:---------------------------------|:-----------:|:----------------------------------------------------------------------------------------------------------------|
+| Bedrock Portal                   |             | Portal to Bedrock Dimension. Opened by right-clicking bedrock with an Awakened Pickaxe.                         |
+| Celestial Gateway                |             | Instantly teleport between linked Celestial Gateways. Cannot teleport across dimensions.                        |
+| Celestial Pearl                  |             | Item used to link Celestial Gateways                                                                            |
+| Elemental Fire: Aer              |             | Places a elemental fire that transforms certain blocks to other blocks (dirt and wood to sand for example).     |
+| Elemental Fire: Aqua             |             | Places a special elemental fire that transforms Nether blocks to other blocks (netherrack to snow for example). |
+| Elemental Fire: Ignis            |             | Places a special elemental fire that transforms certain blocks to their Nether counterparts.                    |
+| Elemental Fire: Perditio         |             | Places a special elemental fire that turns all other types of elemental fire to normal fire.                    |
+| Elemental Fire: Terra            |             | Places a special elemental fire that transforms most blocks into dirt.                                          |
+| Focus Effect: Celestial Teleport |             | Instantly teleport to a linked Celestial Gateway                                                                |
+| Focus Effect: Dislocation        |             | Reposition a block from one location to another                                                                 |
 
 **Celestial Gateway Rework**
 Celestial Gateway is split into two features, the block and the spell effect. The spell effect is bound to the block and can be cast
@@ -137,11 +130,4 @@ position. Each player would need their own save point in the block saved to the 
 | Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                       |
 | Flux Scrubber                   |             | Removes flux from the environment using Salis Mundus. |
 | Infusion Enchant: Curious       |             | Grants a low chance to drop curiosities.              |
-| Infusion Enchant: Projecting    |             | Increases reach distance.                             |
 | Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items.      |
-
-## Thaumic Restoration
-| Feature                      | Replacement | Description                                                       |
-|:-----------------------------|:-----------:|:------------------------------------------------------------------|
-| Paving Stone of Permeability |             | Right-click with a Caster's Gauntlet to make the blocks passable. |
-
