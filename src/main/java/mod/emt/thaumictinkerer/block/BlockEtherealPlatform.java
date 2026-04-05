@@ -27,10 +27,10 @@ public class BlockEtherealPlatform extends BlockTileAddition {
     public static final AxisAlignedBB EMPTY_AABB = new AxisAlignedBB(0, 0, 0, 0, 0, 0);
 
     public BlockEtherealPlatform() {
-        super("ethereal_platform", Material.ROCK, MapColor.STONE, TileEtherealPlatform.class);
-        this.setHardness(2.0f);
-        this.setResistance(12.0f);
-        this.setSoundType(SoundType.STONE);
+        super("ethereal_platform", Material.WOOD, MapColor.STONE, TileEtherealPlatform.class);
+        this.setHardness(2.0F);
+        this.setResistance(5.0F);
+        this.setSoundType(SoundType.WOOD);
         this.setDefaultState(this.blockState.getBaseState().withProperty(ETHEREAL, false));
     }
 
