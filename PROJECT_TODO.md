@@ -20,6 +20,8 @@
 |        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Ethereal Platform        | COMPLETE | COMPLETE | COMPLETE |          |          |
 |         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |          |
+|   Focus Effect: Aphrodisiac    |          |          |          |          |          |
+|  Focus Effect: Efreet's Flame  |          |          |          |          |          |
 |            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |
 |  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |
 | Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |          |          |
@@ -83,16 +85,12 @@ These still need to be done, slabs are just a pain to do.
 ## Thaumic Tinkerer
 | Feature                      |     Replacement      | Description                                                                                                     |
 |:-----------------------------|:--------------------:|:----------------------------------------------------------------------------------------------------------------|
-| Focus Effect: Aphrodisiac    |                      | A splash potion that can be thrown at animals to put them in love mode.                                         |
-| Focus Effect: Efreet's Flame |                      | Smelt blocks and item entities in the world                                                                     |
 | Gas Phial (Light)            |                      | Spawns a cloud of gas that increases light to 15.                                                               |
 | Gas Phial (Shadow)           |                      | Spawns a cloud of darkness that decreases light to 0.                                                           |
 | Gas Remover                  |                      | Removes all gas in an area around the user.                                                                     |
 | Imbued Grain                 |                      | 5 Essentia in the Primal varieties                                                                              |
 | Infused Seeds                |                      | Aspect-themed seeds and crops.                                                                                  |
 | Levitational Locomotive      |                      | Moves entities in a straight line between two points.                                                           |
-| Osmotic Enchanter            |                      | The functionality is slightly different. In even older versions it's completely different.                      |
-| Warded Chest                 | Thaumic Augmentation | Similar to Augmentation's Warded Chest but the model and animation of it is interesting.                        |
 
 ## Thaumic Tinkerer: Kami
 | Feature                          | Replacement | Description                                                                                                     |
@@ -118,16 +116,5 @@ position. Each player would need their own save point in the block saved to the 
 | Feature                        |    Replacement    | Description                                                                               |
 |:-------------------------------|:-----------------:|:------------------------------------------------------------------------------------------|
 | BM Ritual: Delayed Insanity    |                   | Grants warp ward and reduces temporary warp                                               |
-| Collar of Pain                 |                   | Vis Amulet that regenerates vis when the player takes damage                              |
 | Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
-| Infusion Enchant: Void Touched |                   | Gives tools voidmetal auto repair.                                                        |
-| Nether Star Block              |                   | Nether Star storage block                                                                 |
 | Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
-
-## Planar Artifice
-| Feature                         | Replacement | Description                                           |
-|:--------------------------------|:-----------:|:------------------------------------------------------|
-| Fundamental Curiosity           |             | Rewards Fundamentals knowledge.                       |
-| Flux Scrubber                   |             | Removes flux from the environment using Salis Mundus. |
-| Infusion Enchant: Curious       |             | Grants a low chance to drop curiosities.              |
-| Infusion Enchant: Transmutative |             | Chance to transforms mob drops into rarer items.      |
