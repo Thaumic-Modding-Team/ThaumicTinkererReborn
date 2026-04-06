@@ -33,6 +33,7 @@ tile.thaumictinkerer:vitium_stone.name=Vitium Stone
 
 # Infusion Enchantments
 enchantment.infusion.EDUCATIONAL=Educational
+enchantment.infusion.PROJECTING=Projecting
 enchantment.infusion.WRATH=Wrath
 
 # Items
