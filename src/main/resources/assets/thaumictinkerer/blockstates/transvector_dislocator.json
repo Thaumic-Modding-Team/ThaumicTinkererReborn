@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_column",
+    "textures": {
+      "end": "thaumictinkerer:blocks/transvector_dislocator_end",
+      "side": "thaumictinkerer:blocks/transvector_dislocator_side"
+    }
+  },
+  "variants": {
+    "normal": [{}],
+    "inventory": [{}]
+  }
+}

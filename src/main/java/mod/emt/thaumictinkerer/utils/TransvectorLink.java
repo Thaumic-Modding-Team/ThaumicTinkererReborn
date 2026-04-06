@@ -10,6 +10,7 @@ import net.minecraftforge.common.util.INBTSerializable;
 import org.jetbrains.annotations.Nullable;
 
 public class TransvectorLink implements INBTSerializable<NBTTagCompound> {
+    public static final TransvectorLink EMPTY = new TransvectorLink(new NBTTagCompound());
     public int dimensionId;
     public BlockPos pos;
     public EnumFacing face;
@@ -30,6 +31,10 @@ public class TransvectorLink implements INBTSerializable<NBTTagCompound> {
 
     @Nullable
     public World getWorld() {
+        if(this.isEmpty()) {
+            return null;
+        }
+
         if(this.world == null) {
             this.world = WorldHelper.getWorldFromId(this.dimensionId, true);
         }
@@ -42,14 +47,16 @@ public class TransvectorLink implements INBTSerializable<NBTTagCompound> {
     }
 
     public boolean isEmpty() {
-        return this.isEmpty;
+        return this == EMPTY || this.isEmpty;
     }
 
     @Nullable
     public TileEntity getTileEntity() {
-        World checkWorld = this.getWorld();
-        if(checkWorld != null) {
-            return checkWorld.getTileEntity(this.pos);
+        if(!this.isEmpty()) {
+            World checkWorld = this.getWorld();
+            if (checkWorld != null) {
+                return checkWorld.getTileEntity(this.pos);
+            }
         }
         return null;
     }

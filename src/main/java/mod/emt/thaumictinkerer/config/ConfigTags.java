@@ -1,7 +1,10 @@
 package mod.emt.thaumictinkerer.config;
 
-import mod.emt.thaumictinkerer.utils.helpers.ConfigItem;
+import mod.emt.thaumictinkerer.utils.ConfigItem;
 import mod.emt.thaumictinkerer.utils.helpers.LogHelper;
+import net.minecraft.block.Block;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -9,39 +12,42 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
 public class ConfigTags {
+    private static final List<ConfigItem> CONSUMING_WHITELIST = new ArrayList<>();
+    private static final Set<Block> DISLOCATOR_BLACKLIST = new HashSet<>();
     private static final Map<EntityEntry, Double> ENTITY_JEI_SCALES = new HashMap<>();
-    private static final List<ConfigItem> CONSUMING_BLOCKS = new ArrayList<>();
+
+    public static boolean shouldConsumingVoidDrop(ItemStack stack) {
+        return CONSUMING_WHITELIST.stream().anyMatch(item -> item.matches(stack));
+    }
+
+    public static boolean canDislocatorSwap(IBlockState state) {
+        return !DISLOCATOR_BLACKLIST.contains(state.getBlock());
+    }
 
     public static double getJeiEntityRenderScale(EntityEntry entityEntry) {
         return ENTITY_JEI_SCALES.getOrDefault(entityEntry, 1.0);
     }
 
-    public static boolean shouldConsumingVoidDrop(ItemStack stack) {
-        return CONSUMING_BLOCKS.stream().anyMatch(item -> item.matches(stack));
-    }
-
     public static void syncConfigs() {
-        syncConsumingBlocks();
+        syncConsumingWhitelist();
+        syncDislocatorBlacklist();
         syncEntityJeiScales();
     }
 
-    private static void syncConsumingBlocks() {
-        CONSUMING_BLOCKS.clear();
+    private static void syncConsumingWhitelist() {
+        CONSUMING_WHITELIST.clear();
         Pattern pattern = Pattern.compile("^(?:(\\w+)|(.+?:.+?):?(\\d*))$");
         for(String str : ConfigHandlerTT.infusionEnchantments.consuming.voidedBlocks) {
             try {
                 Matcher matcher = pattern.matcher(str);
                 if(matcher.find()) {
                     if(matcher.group(1) != null && !matcher.group(1).isEmpty()) {
-                        CONSUMING_BLOCKS.add(new ConfigItem(matcher.group(1)));
+                        CONSUMING_WHITELIST.add(new ConfigItem(matcher.group(1)));
                     } else {
                         ResourceLocation loc = new ResourceLocation(matcher.group(2));
                         Item item = ForgeRegistries.ITEMS.getValue(loc);
@@ -51,9 +57,9 @@ public class ConfigTags {
                         }
 
                         if(matcher.group(3) != null && !matcher.group(3).isEmpty()) {
-                            CONSUMING_BLOCKS.add(new ConfigItem(item, Integer.parseInt(matcher.group(3))));
+                            CONSUMING_WHITELIST.add(new ConfigItem(item, Integer.parseInt(matcher.group(3))));
                         } else {
-                            CONSUMING_BLOCKS.add(new ConfigItem(item));
+                            CONSUMING_WHITELIST.add(new ConfigItem(item));
                         }
                     }
                 } else {
@@ -63,6 +69,28 @@ public class ConfigTags {
                 LogHelper.error("Failed to parse consuming configuration: " + str);
             }
         }
+    }
+
+    private static void syncDislocatorBlacklist() {
+        DISLOCATOR_BLACKLIST.clear();
+        DISLOCATOR_BLACKLIST.add(Blocks.BARRIER);
+        DISLOCATOR_BLACKLIST.add(Blocks.BED);
+        DISLOCATOR_BLACKLIST.add(Blocks.BEDROCK);
+        DISLOCATOR_BLACKLIST.add(Blocks.CHAIN_COMMAND_BLOCK);
+        DISLOCATOR_BLACKLIST.add(Blocks.COMMAND_BLOCK);
+        DISLOCATOR_BLACKLIST.add(Blocks.END_GATEWAY);
+        DISLOCATOR_BLACKLIST.add(Blocks.END_PORTAL);
+        DISLOCATOR_BLACKLIST.add(Blocks.END_PORTAL_FRAME);
+        DISLOCATOR_BLACKLIST.add(Blocks.PISTON_EXTENSION);
+        DISLOCATOR_BLACKLIST.add(Blocks.PORTAL);
+        DISLOCATOR_BLACKLIST.add(Blocks.REPEATING_COMMAND_BLOCK);
+        DISLOCATOR_BLACKLIST.add(Blocks.STRUCTURE_BLOCK);
+        DISLOCATOR_BLACKLIST.add(Blocks.STRUCTURE_VOID);
+        /* TODO: These should be on the configuration blacklist.
+            public static final Block MOB_SPAWNER;
+         */
+
+        //TODO
     }
 
     private static void syncEntityJeiScales() {

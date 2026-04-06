@@ -58,5 +58,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockEtherealPlatform());
         RegistrarTT.addAdditionToRegister(new BlockPassableWall());
         RegistrarTT.addAdditionToRegister(new BlockDissimulation());
+        RegistrarTT.addAdditionToRegister(new BlockTransvectorDislocator());
     }
 }
