@@ -1,96 +1,96 @@
 # Planned Content
 ## Thaumic Tinkerer: Reborn
-|            Feature             |   Code   |  Model   | Texture  | Research |  Recipe  |
-|:------------------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|
-|   Aqua Infused Water Bucket    | COMPLETE | COMPLETE | COMPLETE |          |          |
-|        Aquatic Alchemy         |   N/A    |   N/A    |   N/A    |          |          |
-|     Attractor (Corporeal)      | COMPLETE | COMPLETE | COMPLETE |          |          |
-|      Attractor (Kinetic)       | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Attractor (Player)       | COMPLETE | COMPLETE | COMPLETE |          |          |
-|     Attractor (Soul Mould)     |          |          |          |          |          |
-|        Black Hole Ring         |   WIP    | COMPLETE |          |          |          |
-|     Decor - Tainted Brick      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|     Decor - Tainted Stone      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-| Decor - Terra Infused Obsidian | COMPLETE | COMPLETE | COMPLETE |          |          |
-| Decor - Thaumium Plated Stone  | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|      Dissimulation Block       |          |          |          |          |          |
-|        Dynamism Tablet         |          |          |          |          |          |
-|          Ender Mirror          | COMPLETE | COMPLETE | COMPLETE |          |          |
-|        Energetic Nitor         | COMPLETE | COMPLETE | COMPLETE |          |          |
-|        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Ethereal Platform        | COMPLETE | COMPLETE | COMPLETE |          |          |
-|         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |          |
-|   Focus Effect: Aphrodisiac    |          |          |          |          |          |
-|  Focus Effect: Efreet's Flame  |          |          |          |          |          |
-|            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |
-|  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |
-| Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |          |          |
-|  Infusion Enchant: Projecting  |          |          |          |          |          |
-|    Infusion Enchant: Wrath     |   WIP    |   N/A    | COMPLETE |          |          |
-|  Paving Stone of Permeability  | COMPLETE | COMPLETE | COMPLETE |          |          |
-|    Ring of Goliath's Might     | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Rod of Telekinesis       |          |          |          |          |          |
-|       Sigil of Memories        | COMPLETE | COMPLETE | COMPLETE |          |          |
-|     Smokey Quartz (Block)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|      Smokey Quartz (Item)      | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|  Stopwatch of the Timetwister  | COMPLETE | COMPLETE | COMPLETE |          |          |
-|      Sword of the Condor       | COMPLETE | COMPLETE | COMPLETE |          |          |
-|      Tablet of Necromancy      | COMPLETE | COMPLETE | COMPLETE |          |          |
-|          Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |          |
-|        Thaumic Restorer        | COMPLETE | COMPLETE | COMPLETE |          |          |
-|       Transvector Binder       | COMPLETE | COMPLETE | COMPLETE |          |          |
-|     Transvector Dislocator     |          |          |          |          |          |
-|     Transvector Interface      | COMPLETE | COMPLETE | COMPLETE |          |          |
-|           Umbral Dye           | COMPLETE | COMPLETE | COMPLETE |          | COMPLETE |
-|          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |
-|        Umbral Rosebush         |          |          |          |          |          |
-|  Worldshaper's Looking Glass   |          |          |          |          |          |
-|          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |          |          |
+|            Feature             |   Code   |  Model   | Texture  |  Config  | Research |  Recipe  |
+|:------------------------------:|:--------:|:--------:|:--------:|:--------:|:--------:|:--------:|
+|   Aqua Infused Water Bucket    | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Aquatic Alchemy         |   N/A    |   N/A    |   N/A    |          |          |          |
+|     Attractor (Corporeal)      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|      Attractor (Kinetic)       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|       Attractor (Player)       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Black Hole Ring         |   WIP    | COMPLETE |          |          |          |          |
+|     Decor - Tainted Brick      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+|     Decor - Tainted Stone      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+| Decor - Terra Infused Obsidian | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+| Decor - Thaumium Plated Stone  | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+|      Dissimulation Block       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Dynamism Tablet         |          |          |          |          |          |          |
+|          Ender Mirror          | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Energetic Nitor         | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Essentia Funnel         | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|       Ethereal Platform        | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|            Igniter             | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|  Infusion Enchant: Consuming   |          |   N/A    | COMPLETE |          |          |          |
+| Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |          |          |          |
+|  Infusion Enchant: Projecting  | COMPLETE |   N/A    | COMPLETE |          |          |          |
+|    Infusion Enchant: Wrath     | COMPLETE |   N/A    | COMPLETE |          |          |          |
+|  Paving Stone of Permeability  | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|    Ring of Goliath's Might     | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|       Rod of Telekinesis       |          |          |          |          |          |          |
+|       Sigil of Memories        | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|     Smokey Quartz (Block)      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+|      Smokey Quartz (Item)      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+|  Stopwatch of the Timetwister  | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|      Sword of the Condor       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|      Tablet of Necromancy      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|          Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Thaumic Restorer        | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
+|       Transvector Binder       | COMPLETE | COMPLETE | COMPLETE |   N/A    |          |          |
+|     Transvector Dislocator     | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
+|     Transvector Interface      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|           Umbral Dye           | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
+|          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|        Umbral Rosebush         |          |          |          |          |          |          |
+|  Worldshaper's Looking Glass   |          |          |          |          |          |          |
+|          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 
 **Arcane Quartz Slabs**
 These still need to be done, slabs are just a pain to do.
 
 ## Thaumic Tinkerer: Kami Reborn
-|                      Feature                      | Code | Model | Texture  | Research | Recipe |
-|:-------------------------------------------------:|:----:|:-----:|:--------:|:--------:|:------:|
-| (Armor - Awakened) Boots of the Horizontal Shield |      |       |          |          |        |
-|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |       |          |          |        |
-| (Armor - Awakened) Leggings of the Burning Mantle |      |       |          |          |        |
-|   (Armor - Awakened) Robes of the Stratosphere    |      |       |          |          |        |
-|             (Armor) Ichorcloth Boots              |      |       |          |          |        |
-|              (Armor) Ichorcloth Cowl              |      |       |          |          |        |
-|            (Armor) Ichorcloth Leggings            |      |       |          |          |        |
-|             (Armor) Ichorcloth Pouch              |      |       |          |          |        |
-|              (Armor) Ichorcloth Robe              |      |       |          |          |        |
-|           (Tool) Awakened Ichorium Axe            |      |       |          |          |        |
-|         (Tool) Awakened Ichorium Pickaxe          |      |       |          |          |        |
-|          (Tool) Awakened Ichorium Shovel          |      |       |          |          |        |
-|          (Tool) Awakened Ichorium Sword           |      |       |          |          |        |
-|                (Tool) Ichorium Axe                |      |       |          |          |        |
-|              (Tool) Ichorium Pickaxe              |      |       |          |          |        |
-|              (Tool) Ichorium Shovel               |      |       |          |          |        |
-|               (Tool) Ichorium Sword               |      |       |          |          |        |
-|                       Ichor                       |      |       |          |          |        |
-|                    Ichor Block                    |      |       |          |          |        |
-|                    Ichor Cloth                    |      |       |          |          |        |
-|                  Ichorium Ingot                   |      |       |          |          |        |
-|                  Ichorium Nugget                  |      |       |          |          |        |
-|             Infusion Enchant: Eternal             |      |  N/A  | COMPLETE |          |        |
-|                    Proto Clay                     |      |       |          |          |        |
-|             Sword of the Dragonslayer             |      |       |          |          |        |
+|                      Feature                      | Code | Model | Texture  | Config | Research | Recipe |
+|:-------------------------------------------------:|:----:|:-----:|:--------:|:------:|:--------:|:------:|
+| (Armor - Awakened) Boots of the Horizontal Shield |      |       |          |        |          |        |
+|   (Armor - Awakened) Cowl of the Abyssal Depths   |      |       |          |        |          |        |
+| (Armor - Awakened) Leggings of the Burning Mantle |      |       |          |        |          |        |
+|   (Armor - Awakened) Robes of the Stratosphere    |      |       |          |        |          |        |
+|             (Armor) Ichorcloth Boots              |      |       |          |        |          |        |
+|              (Armor) Ichorcloth Cowl              |      |       |          |        |          |        |
+|            (Armor) Ichorcloth Leggings            |      |       |          |        |          |        |
+|             (Armor) Ichorcloth Pouch              |      |       |          |        |          |        |
+|              (Armor) Ichorcloth Robe              |      |       |          |        |          |        |
+|           (Tool) Awakened Ichorium Axe            |      |       |          |        |          |        |
+|         (Tool) Awakened Ichorium Pickaxe          |      |       |          |        |          |        |
+|          (Tool) Awakened Ichorium Shovel          |      |       |          |        |          |        |
+|          (Tool) Awakened Ichorium Sword           |      |       |          |        |          |        |
+|                (Tool) Ichorium Axe                |      |       |          |        |          |        |
+|              (Tool) Ichorium Pickaxe              |      |       |          |        |          |        |
+|              (Tool) Ichorium Shovel               |      |       |          |        |          |        |
+|               (Tool) Ichorium Sword               |      |       |          |        |          |        |
+|                       Ichor                       |      |       |          |        |          |        |
+|                    Ichor Block                    |      |       |          |        |          |        |
+|                    Ichor Cloth                    |      |       |          |        |          |        |
+|                  Ichorium Ingot                   |      |       |          |        |          |        |
+|                  Ichorium Nugget                  |      |       |          |        |          |        |
+|             Infusion Enchant: Eternal             |      |  N/A  | COMPLETE |        |          |        |
+|                    Proto Clay                     |      |       |          |        |          |        |
+|             Sword of the Dragonslayer             |      |       |          |        |          |        |
 
 ---
 
 # Chopping Block
 ## Thaumic Tinkerer
-| Feature                      |     Replacement      | Description                                                                                                     |
-|:-----------------------------|:--------------------:|:----------------------------------------------------------------------------------------------------------------|
-| Gas Phial (Light)            |                      | Spawns a cloud of gas that increases light to 15.                                                               |
-| Gas Phial (Shadow)           |                      | Spawns a cloud of darkness that decreases light to 0.                                                           |
-| Gas Remover                  |                      | Removes all gas in an area around the user.                                                                     |
-| Imbued Grain                 |                      | 5 Essentia in the Primal varieties                                                                              |
-| Infused Seeds                |                      | Aspect-themed seeds and crops.                                                                                  |
-| Levitational Locomotive      |                      | Moves entities in a straight line between two points.                                                           |
+| Feature                      | Replacement | Description                                                          |
+|:-----------------------------|:-----------:|:---------------------------------------------------------------------|
+| Attractor (Soul Mould)       |             | Used to blacklist/whitelist entities for the Corporeal Attractor.    |
+| Focus Effect: Aphrodisiac    |             | Causes entities to go into breed mode or spawns particles on impact. |
+| Focus Effect: Efreet's Flame |             | Smelts blocks or item entities struck by the spell.                  |
+| Gas Phial (Light)            |             | Spawns a cloud of gas that increases light to 15.                    |
+| Gas Phial (Shadow)           |             | Spawns a cloud of darkness that decreases light to 0.                |
+| Gas Remover                  |             | Removes all gas in an area around the user.                          |
+| Imbued Grain                 |             | 5 Essentia in the Primal varieties                                   |
+| Infused Seeds                |             | Aspect-themed seeds and crops.                                       |
+| Levitational Locomotive      |             | Moves entities in a straight line between two points.                |
 
 ## Thaumic Tinkerer: Kami
 | Feature                          | Replacement | Description                                                                                                     |
@@ -113,8 +113,8 @@ will save the position and world of the player. If the player interacts with the
 position. Each player would need their own save point in the block saved to the tile data.
 
 ## Forbidden Magic
-| Feature                        |    Replacement    | Description                                                                               |
-|:-------------------------------|:-----------------:|:------------------------------------------------------------------------------------------|
-| BM Ritual: Delayed Insanity    |                   | Grants warp ward and reduces temporary warp                                               |
-| Euclidaisy                     |                   | Creates a random Vis Crystal every 20 seconds                                             |
-| Rapier of the Strix            |                   | Drains 25% of a players BM soul network LP on hit                                         |
+| Feature                        | Replacement | Description                                       |
+|:-------------------------------|:-----------:|:--------------------------------------------------|
+| BM Ritual: Delayed Insanity    |             | Grants warp ward and reduces temporary warp       |
+| Euclidaisy                     |             | Creates a random Vis Crystal every 20 seconds     |
+| Rapier of the Strix            |             | Drains 25% of a players BM soul network LP on hit |
