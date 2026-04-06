@@ -18,6 +18,7 @@ tile.thaumictinkerer:attractor_item.name=Kinetic Attractor
 tile.thaumictinkerer:attractor_mob.name=Corporeal Attractor
 tile.thaumictinkerer:attractor_player.name=Anima Attractor
 tile.thaumictinkerer:chiseled_arcane_quartz_block.name=Chiseled Arcane Quartz Block
+tile.thaumictinkerer:dissimulation_block.name=Dissimulation Block
 tile.thaumictinkerer:essentia_funnel.name=Essentia Funnel
 tile.thaumictinkerer:ethereal_platform.name=Ethereal Platform
 tile.thaumictinkerer:necromancy_tablet.name=Tablet of Necromancy
