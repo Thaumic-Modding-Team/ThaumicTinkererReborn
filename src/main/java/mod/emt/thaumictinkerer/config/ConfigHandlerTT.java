@@ -18,6 +18,8 @@ public class ConfigHandlerTT {
     public static NecromancyTabletConfig necromancyTablet = new NecromancyTabletConfig();
     @Config.Name("Thaumic Restorer")
     public static ThaumicRestorerConfig thaumicRestorer = new ThaumicRestorerConfig();
+    @Config.Name("Transvector Dislocator")
+    public static TransvectorDislocatorConfig transvectorDislocator = new TransvectorDislocatorConfig();
 
 
     public static class InfusionEnchantConfig {
@@ -80,6 +82,29 @@ public class ConfigHandlerTT {
                 "If set to false, all tools will be repaired with Fabrico (Craft)."
         })
         public boolean dynamicAspects = true;
+    }
+
+    public static class TransvectorDislocatorConfig {
+        @Config.Name("Block Blacklist")
+        public String[] blockBlacklist = new String[] {
+                "minecraft:mob_spawner"
+        };
+
+        @Config.Name("Transfer Blocks")
+        @Config.Comment("Allows the dislocator to transfer blocks.")
+        public boolean transferBlocks = true;
+
+        @Config.Name("Transfer Entities")
+        @Config.Comment("Allows the dislocator to transfer entities.")
+        public boolean transferEntities = true;
+
+        @Config.Name("Transfer Entities - Bosses")
+        @Config.Comment("Allows the dislocator to transfer bosses. This setting requires 'Transfer Entities' enabled.")
+        public boolean transferBosses = false;
+
+        @Config.Name("Transfer Entities - Players")
+        @Config.Comment("Allows the dislocator to transfer players. This setting requires 'Transfer Entities' enabled.")
+        public boolean transferPlayers = false;
     }
 
     @Mod.EventBusSubscriber(modid = ThaumicTinkerer.MOD_ID)

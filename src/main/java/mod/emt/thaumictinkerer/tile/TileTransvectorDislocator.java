@@ -2,9 +2,11 @@ package mod.emt.thaumictinkerer.tile;
 
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.config.ConfigTags;
 import mod.emt.thaumictinkerer.utils.TransvectorLink;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.nbt.NBTTagCompound;
@@ -12,6 +14,7 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
+import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraft.world.World;
@@ -21,6 +24,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class TileTransvectorDislocator extends TileEntityTT implements ITransvectorLink {
+    private static final AxisAlignedBB SWAP_AREA;
     private static final List<BlockPos> OFFSETS;
     protected TransvectorLink link = TransvectorLink.EMPTY;
     protected boolean isSwapping = false;
@@ -84,26 +88,30 @@ public class TileTransvectorDislocator extends TileEntityTT implements ITransvec
         TileEntity linkedTile = this.link.getTileEntity();
         if(linkedTile instanceof TileTransvectorDislocator) {
             TileTransvectorDislocator target = (TileTransvectorDislocator) linkedTile;
-            boolean transferred = false;
-            for(BlockPos offset : OFFSETS) {
-                BlockPos initialPos = this.pos.add(offset);
-                BlockPos targetPos = target.pos.add(offset);
-                transferred |= this.swapBlockPositions(this.world, initialPos, targetPos);
-            }
+            this.swapBlocks(target);
+            this.swapEntities(target);
+        }
+    }
 
-            if(transferred) {
-                this.world.playSound(this.pos.getX(), this.pos.getY(), this.pos.getZ(), SoundEvents.ENTITY_ENDERMEN_TELEPORT,
-                        SoundCategory.AMBIENT, 1.0F, 1.0F, false);
-                target.world.playSound(target.pos.getX(), target.pos.getY(), target.pos.getZ(), SoundEvents.ENTITY_ENDERMEN_TELEPORT,
-                        SoundCategory.AMBIENT, 1.0F, 1.0F, false);
-            }
+    public void swapBlocks(TileTransvectorDislocator target) {
+        if(!ConfigHandlerTT.transvectorDislocator.transferBlocks)
+            return;
 
-            //TODO: Swap entities?
+        boolean transferred = false;
+        for(BlockPos offset : OFFSETS) {
+            BlockPos initialPos = this.pos.add(offset);
+            BlockPos targetPos = target.pos.add(offset);
+            transferred |= this.swapBlock(this.world, initialPos, targetPos);
+        }
+
+        if(transferred) {
+            this.world.playSound(null, this.pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.AMBIENT, 1.0F, 1.0F);
+            target.world.playSound(null, target.pos, SoundEvents.ENTITY_ENDERMEN_TELEPORT, SoundCategory.AMBIENT, 1.0F, 1.0F);
         }
     }
 
     @SuppressWarnings("ConstantConditions")
-    public boolean swapBlockPositions(World world, BlockPos initialPos, BlockPos targetPos) {
+    public boolean swapBlock(World world, BlockPos initialPos, BlockPos targetPos) {
         IBlockState initialState = world.getBlockState(initialPos);
         IBlockState targetState = world.getBlockState(targetPos);
 
@@ -151,7 +159,52 @@ public class TileTransvectorDislocator extends TileEntityTT implements ITransvec
         return true;
     }
 
+    public List<Entity> getSwapEntities() {
+        List<Entity> entities = new ArrayList<>();
+        if(ConfigHandlerTT.transvectorDislocator.transferEntities) {
+            AxisAlignedBB area = SWAP_AREA.offset(this.pos);
+            entities.addAll(this.world.getEntitiesWithinAABB(Entity.class, area, this::isEntityValid));
+        }
+        return entities;
+    }
+
+    public boolean isEntityValid(Entity entity) {
+        return entity.isEntityAlive()
+                && (!(entity instanceof EntityPlayer) || ConfigHandlerTT.transvectorDislocator.transferPlayers)
+                && (entity.isNonBoss() || ConfigHandlerTT.transvectorDislocator.transferBosses);
+    }
+
+    public void swapEntities(TileTransvectorDislocator target) {
+        boolean transferred = false;
+        List<Entity> initialEntities = this.getSwapEntities();
+        List<Entity> targetEntities = target.getSwapEntities();
+
+        for (Entity entity : initialEntities) {
+            transferred |= swapEntity(this.pos, target.pos, entity);
+        }
+
+        for (Entity entity : targetEntities) {
+            transferred |= swapEntity(target.pos, this.pos, entity);
+        }
+
+        if(transferred) {
+            this.world.playSound(this.pos.getX(), this.pos.getY(), this.pos.getZ(), SoundEvents.ENTITY_ENDERMEN_TELEPORT,
+                    SoundCategory.AMBIENT, 1.0F, 1.0F, false);
+            target.world.playSound(target.pos.getX(), target.pos.getY(), target.pos.getZ(), SoundEvents.ENTITY_ENDERMEN_TELEPORT,
+                    SoundCategory.AMBIENT, 1.0F, 1.0F, false);
+        }
+    }
+
+    public boolean swapEntity(BlockPos initialPos, BlockPos targetPos, Entity entity) {
+        double xOffset = entity.posX - initialPos.getX();
+        double yOffset = entity.posY - initialPos.getY();
+        double zOffset = entity.posZ - initialPos.getZ();
+        entity.setPositionAndUpdate(targetPos.getX() + xOffset, targetPos.getY() + yOffset, targetPos.getZ() + zOffset);
+        return true;
+    }
+
     static {
+        SWAP_AREA = new AxisAlignedBB(-1, 1, -1, 1, 3, 1);
         OFFSETS = new ArrayList<>();
         for(int x = -1; x <= 1; x++) {
             for(int y = 1; y <= 3; y++) {

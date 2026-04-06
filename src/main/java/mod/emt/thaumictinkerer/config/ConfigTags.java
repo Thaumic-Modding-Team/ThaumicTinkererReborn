@@ -86,11 +86,16 @@ public class ConfigTags {
         DISLOCATOR_BLACKLIST.add(Blocks.REPEATING_COMMAND_BLOCK);
         DISLOCATOR_BLACKLIST.add(Blocks.STRUCTURE_BLOCK);
         DISLOCATOR_BLACKLIST.add(Blocks.STRUCTURE_VOID);
-        /* TODO: These should be on the configuration blacklist.
-            public static final Block MOB_SPAWNER;
-         */
 
-        //TODO
+        for(String str : ConfigHandlerTT.transvectorDislocator.blockBlacklist) {
+            ResourceLocation loc = new ResourceLocation(str);
+            Block block = ForgeRegistries.BLOCKS.getValue(loc);
+            if(block != null && block != Blocks.AIR) {
+                DISLOCATOR_BLACKLIST.add(block);
+            } else {
+                LogHelper.error("No registered block found for " + str);
+            }
+        }
     }
 
     private static void syncEntityJeiScales() {
