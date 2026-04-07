@@ -1,6 +1,12 @@
 {
   "parent": "item/generated",
   "textures": {
-    "layer0": "thaumictinkerer:items/consuming_sigil"
-  }
+    "layer0": "thaumictinkerer:items/consuming_sigil_disabled"
+  },
+  "overrides": [
+    {
+      "predicate": { "enabled": 1 },
+      "model": "thaumictinkerer:item/consuming_sigil_enabled"
+    }
+  ]
 }

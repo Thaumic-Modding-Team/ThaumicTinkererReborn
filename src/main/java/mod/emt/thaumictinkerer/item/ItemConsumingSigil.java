@@ -14,6 +14,7 @@ import net.minecraft.nbt.NBTTagByte;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.world.BlockEvent;
@@ -27,7 +28,7 @@ public class ItemConsumingSigil extends AbstractItemBauble implements IProxy {
     public ItemConsumingSigil() {
         super("consuming_sigil");
         this.setMaxStackSize(1);
-        //this.addPropertyOverride(new ResourceLocation("enabled"), (stack, worldIn, entityIn) -> getEnabled(stack) ? 1 : 0);
+        this.addPropertyOverride(new ResourceLocation("enabled"), (stack, worldIn, entityIn) -> getEnabled(stack) ? 1 : 0);
     }
 
     @Override
