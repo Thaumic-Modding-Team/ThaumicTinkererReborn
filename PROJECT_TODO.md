@@ -110,10 +110,3 @@ Celestial Gateway is split into two features, the block and the spell effect. Th
 to teleport the player to the block regardless of dimension or position. When the spell effect teleport takes place, the tile entity
 will save the position and world of the player. If the player interacts with the block with a caster, they will return to the saved
 position. Each player would need their own save point in the block saved to the tile data.
-
-## Forbidden Magic
-| Feature                        | Replacement | Description                                       |
-|:-------------------------------|:-----------:|:--------------------------------------------------|
-| BM Ritual: Delayed Insanity    |             | Grants warp ward and reduces temporary warp       |
-| Euclidaisy                     |             | Creates a random Vis Crystal every 20 seconds     |
-| Rapier of the Strix            |             | Drains 25% of a players BM soul network LP on hit |
