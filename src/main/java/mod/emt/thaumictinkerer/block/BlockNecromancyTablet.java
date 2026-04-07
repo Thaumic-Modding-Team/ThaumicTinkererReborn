@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.tile.TileNecromancyTablet;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -151,7 +152,6 @@ public class BlockNecromancyTablet extends BlockTileAddition {
 
     @Override
     public boolean isEnabled() {
-        //TODO
-        return true;
+        return ConfigHandlerTT.necromancyTablet.enable;
     }
 }

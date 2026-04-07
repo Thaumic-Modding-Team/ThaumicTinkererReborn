@@ -32,12 +32,12 @@
 |      Smokey Quartz (Item)      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 |  Stopwatch of the Timetwister  | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |      Sword of the Condor       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
-|      Tablet of Necromancy      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|      Tablet of Necromancy      | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
 |          Thaumic Cake          | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |        Thaumic Restorer        | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
 |       Transvector Binder       | COMPLETE | COMPLETE | COMPLETE |   N/A    |          |          |
 |     Transvector Dislocator     | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
-|     Transvector Interface      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
+|     Transvector Interface      | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
 |           Umbral Dye           | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 |          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |        Umbral Rosebush         |          |          |          |          |          |          |

@@ -20,8 +20,9 @@ public class ConfigHandlerTT {
     public static ThaumicRestorerConfig thaumicRestorer = new ThaumicRestorerConfig();
     @Config.Name("Transvector Dislocator")
     public static TransvectorDislocatorConfig transvectorDislocator = new TransvectorDislocatorConfig();
-
-
+    @Config.Name("Transvector Interface")
+    public static TransvectorInterfaceConfig transvectorInterface = new TransvectorInterfaceConfig();
+    
     public static class InfusionEnchantConfig {
         @Config.Name("Consuming Infusion Enchant")
         public ConsumingEnchantConfig consuming = new ConsumingEnchantConfig();
@@ -57,6 +58,10 @@ public class ConfigHandlerTT {
     }
 
     public static class NecromancyTabletConfig {
+        @Config.Name("Enable Tablet of Necromancy")
+        @Config.Comment("Enables the Tablet of Necromancy, used to summon creatures using reagents.")
+        public boolean enable = true;
+
         @Config.Name("Entity Scale Overrides")
         @Config.Comment({
                 "Specific scale overrides for entity displays in the Tablet of Necromancy JEI display.",
@@ -105,6 +110,12 @@ public class ConfigHandlerTT {
         @Config.Name("Transfer Entities - Players")
         @Config.Comment("Allows the dislocator to transfer players. This setting requires 'Transfer Entities' enabled.")
         public boolean transferPlayers = false;
+    }
+
+    public static class TransvectorInterfaceConfig {
+        @Config.Name("Enable Transvector Interface")
+        @Config.Comment("Enables the Transvector Interface, used to duplicate block face capabilities over a short distance.")
+        public boolean enable = true;
     }
 
     @Mod.EventBusSubscriber(modid = ThaumicTinkerer.MOD_ID)

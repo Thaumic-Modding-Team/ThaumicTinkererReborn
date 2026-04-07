@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.registry;
 import com.google.common.collect.Lists;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.monster.*;
@@ -47,7 +48,8 @@ public class ModRecipesTT {
     }
 
     private static void initNecromancyPlatform() {
-        //TODO: Config disable.
+        if(!ConfigHandlerTT.necromancyTablet.enable)
+            return;
 
         Part PEDI = new Part(BlocksTC.pedestalArcane, null);
         Part NECR = new Part(new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 0), new ItemStack(ModBlocksTT.NECROMANCY_TABLET, 1, 1));
@@ -140,7 +142,8 @@ public class ModRecipesTT {
     }
 
     public static void initNecromancyRecipes() {
-        //TODO: Config disable.
+        if(!ConfigHandlerTT.necromancyTablet.enable)
+            return;
 
         /* Peaceful Mobs */
         //Common Animals
