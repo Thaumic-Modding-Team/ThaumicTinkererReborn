@@ -204,7 +204,6 @@ public class ModRecipesTT {
         );
 
         //Companion Animals
-        //TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:donkey"), new NecromancyRecipe()
                 .setSummonedEntity(EntityDonkey.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -220,7 +219,6 @@ public class ModRecipesTT {
                 )
                 .setConsumeComponents(true)
         );
-        //TODO: Make this give the best attributes
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:horse"), new NecromancyRecipe()
                 .setSummonedEntity(EntityHorse.class)
                 .setAspects(new AspectList().add(Aspect.BEAST, 15).add(Aspect.EARTH, 5).add(Aspect.AIR, 5))
@@ -520,10 +518,6 @@ public class ModRecipesTT {
                         Ingredient.fromItem(Items.ROTTEN_FLESH)
                 )
         );
-
-        //Constructs
-        //TODO: Add iron golem custom recipe?
-        //ThaumcraftApi.registerEntityTag("VillagerGolem", (new AspectList()).add(Aspect.METAL, 15).add(Aspect.MAN, 5).add(Aspect.MECHANISM, 5).add(Aspect.MAGIC, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
         //Rare Animals
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("minecraft:mooshroom"), new NecromancyRecipe()
