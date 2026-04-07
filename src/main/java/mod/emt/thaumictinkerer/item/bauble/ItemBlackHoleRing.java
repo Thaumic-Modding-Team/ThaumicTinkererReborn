@@ -392,7 +392,8 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
             ItemStack ringCopy = handler.getStackInSlot(slot).copy();
             if(!ringCopy.isEmpty() && this.insertStack(ringCopy, toInsert, false).isEmpty()) {
                 handler.setStackInSlot(slot, ringCopy);
-                event.setCanceled(true);
+                event.getOriginalEntity().setItem(ItemStack.EMPTY);
+                event.getOriginalEntity().setDead();
             }
         }
     }

@@ -7,7 +7,6 @@
 |     Attractor (Corporeal)      | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |      Attractor (Kinetic)       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |       Attractor (Player)       | COMPLETE | COMPLETE | COMPLETE |          |          |          |
-|        Black Hole Ring         |          |          |          |          |          |          |
 |     Decor - Tainted Brick      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 |     Decor - Tainted Stone      | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 | Decor - Terra Infused Obsidian | COMPLETE | COMPLETE | COMPLETE |          |          |          |
@@ -41,7 +40,6 @@
 |           Umbral Dye           | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 |          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 |        Umbral Rosebush         |          |          |          |          |          |          |
-|  Worldshaper's Looking Glass   |          |          |          |          |          |          |
 |          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 
 **Arcane Quartz Slabs**
@@ -80,16 +78,18 @@ These still need to be done, slabs are just a pain to do.
 
 # Chopping Block
 ## Thaumic Tinkerer
-| Feature                      | Replacement | Description                                                          |
-|:-----------------------------|:-----------:|:---------------------------------------------------------------------|
-| Attractor (Soul Mould)       |             | Used to blacklist/whitelist entities for the Corporeal Attractor.    |
-| Focus Effect: Aphrodisiac    |             | Causes entities to go into breed mode or spawns particles on impact. |
-| Focus Effect: Efreet's Flame |             | Smelts blocks or item entities struck by the spell.                  |
-| Gas Phial (Light)            |             | Spawns a cloud of gas that increases light to 15.                    |
-| Gas Phial (Shadow)           |             | Spawns a cloud of darkness that decreases light to 0.                |
-| Gas Remover                  |             | Removes all gas in an area around the user.                          |
-| Infused Seeds                |             | Aspect-themed seeds and crops.                                       |
-| Levitational Locomotive      |             | Moves entities in a straight line between two points.                |
+| Feature                      | Replacement | Description                                                             |
+|:-----------------------------|:-----------:|:------------------------------------------------------------------------|
+| Attractor (Soul Mould)       |             | Used to blacklist/whitelist entities for the Corporeal Attractor.       |
+| Black Hole Ring              |             | Stores a MAX_INT                                                        |
+| Focus Effect: Aphrodisiac    |             | Causes entities to go into breed mode or spawns particles on impact.    |
+| Focus Effect: Efreet's Flame |             | Smelts blocks or item entities struck by the spell.                     |
+| Gas Phial (Light)            |             | Spawns a cloud of gas that increases light to 15.                       |
+| Gas Phial (Shadow)           |             | Spawns a cloud of darkness that decreases light to 0.                   |
+| Gas Remover                  |             | Removes all gas in an area around the user.                             |
+| Infused Seeds                |             | Aspect-themed seeds and crops.                                          |
+| Levitational Locomotive      |             | Moves entities in a straight line between two points.                   |
+| Worldshaper's Looking Glass  |             | Places blocks in the world in a pattern. Can pull from Black Hole Ring. |
 
 ## Thaumic Tinkerer: Kami
 | Feature                          | Replacement | Description                                                                                                     |
