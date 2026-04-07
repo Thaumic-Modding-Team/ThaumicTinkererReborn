@@ -58,5 +58,6 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
         RegistrarTT.addAdditionToRegister(new ItemStopwatch());
         RegistrarTT.addAdditionToRegister(new ItemEscapeSigil());
+        RegistrarTT.addAdditionToRegister(new ItemConsumingSigil());
     }
 }

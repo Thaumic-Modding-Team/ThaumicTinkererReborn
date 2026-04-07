@@ -42,7 +42,7 @@ public class ConfigTags {
     private static void syncConsumingWhitelist() {
         CONSUMING_WHITELIST.clear();
         Pattern pattern = Pattern.compile("^(?:(\\w+)|(.+?:.+?):?(\\d*))$");
-        for(String str : ConfigHandlerTT.infusionEnchantments.consuming.voidedBlocks) {
+        for(String str : ConfigHandlerTT.consumingSigil.voidedMaterials) {
             try {
                 Matcher matcher = pattern.matcher(str);
                 if(matcher.find()) {

@@ -12,6 +12,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
         name = ThaumicTinkerer.MOD_ID + "/" + ThaumicTinkerer.MOD_ID
 )
 public class ConfigHandlerTT {
+    @Config.Name("Sigil of Consuming")
+    public static ConsumingSigilConfig consumingSigil = new ConsumingSigilConfig();
     @Config.Name("Infusion Enchantments")
     public static InfusionEnchantConfig infusionEnchantments = new InfusionEnchantConfig();
     @Config.Name("Tablet of Necromancy")
@@ -22,23 +24,40 @@ public class ConfigHandlerTT {
     public static TransvectorDislocatorConfig transvectorDislocator = new TransvectorDislocatorConfig();
     @Config.Name("Transvector Interface")
     public static TransvectorInterfaceConfig transvectorInterface = new TransvectorInterfaceConfig();
-    
-    public static class InfusionEnchantConfig {
-        @Config.Name("Consuming Infusion Enchant")
-        public ConsumingEnchantConfig consuming = new ConsumingEnchantConfig();
 
+    public static class ConsumingSigilConfig {
+        @Config.Name("Voided Materials")
+        @Config.Comment("Materials that will be destroyed when harvested while this sigil is active.")
+        public String[] voidedMaterials = new String[] {
+                "minecraft:dirt:1",
+                "minecraft:dirt:2",
+                "minecraft:magma",
+                "minecraft:mossy_cobblestone",
+                "minecraft:mycelium",
+                "minecraft:snow",
+                "minecraft:snowball",
+                "minecraft:soul_sand",
+                "cobblestone",
+                "dirt",
+                "endstone",
+                "grass",
+                "gravel",
+                "netherrack",
+                "sand",
+                "sandstone",
+                "stone",
+                "stoneAndesite",
+                "stoneDiorite",
+                "stoneGranite"
+        };
+    }
+
+    public static class InfusionEnchantConfig {
         @Config.Name("Educational Infusion Enchant")
         public EducationalEnchantConfig educational = new EducationalEnchantConfig();
 
         @Config.Name("Wrath Infusion Enchant")
         public WrathEnchantConfig wrath = new WrathEnchantConfig();
-
-        public static class ConsumingEnchantConfig {
-            @Config.RequiresMcRestart
-            public boolean enable = true;
-
-            public String[] voidedBlocks = new String[] {};
-        }
 
         public static class EducationalEnchantConfig {
             @Config.RequiresMcRestart
