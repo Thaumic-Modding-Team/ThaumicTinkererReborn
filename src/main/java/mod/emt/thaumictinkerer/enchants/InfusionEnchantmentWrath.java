@@ -1,6 +1,6 @@
 package mod.emt.thaumictinkerer.enchants;
 
-import com.expandedevents.events.ItemAttributeModifierEvent;
+import com.expandedevents.api.event.ItemAttributeModifierEvent;
 import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
