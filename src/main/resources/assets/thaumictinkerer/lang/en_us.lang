@@ -88,6 +88,10 @@ tooltip.thaumictinkerer:xp_talisman.partial=Partial Experience: §a%d
 tooltip.thaumictinkerer:xp_talisman.total=Total Experience: §a%d
 
 # Research
+tc.research_category.THAUMIC_TINKERER=Thaumic Tinkering
+thaumictinkerer.research.thaumic_tinkerer_base.title=Thaumic Tinkering
+thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word 'Construct'
+thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say... There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.
 
 
 # GroovyScript

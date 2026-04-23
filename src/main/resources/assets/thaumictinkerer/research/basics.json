@@ -1,0 +1,30 @@
+{
+  "entries": [
+    {
+      "key": "THAUMIC_TINKERER_BASE",
+      "name": "thaumictinkerer.research.thaumic_tinkerer_base.title",
+      "icons": [
+        "thaumictinkerer:textures/research/r_thaumic_tinkering.png"
+      ],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["~FIRSTSTEPS"],
+      "siblings": ["~FIRSTSTEPS"],
+      "meta": ["ROUND", "SPIKY", "HIDDEN"],
+      "location": [0, 0],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.thaumic_tinkerer_base.stage.1",
+          "recipes": [
+            "thaumictinkerer:arcane_quartz",
+            "thaumictinkerer:arcane_quartz_block",
+            "thaumictinkerer:arcane_quartz_stairs",
+            "thaumictinkerer:arcane_quartz_pillar",
+            "thaumictinkerer:thaumium_plated_cobblestone",
+            "thaumictinkerer:vitium_stone",
+            "thaumictinkerer:vitium_stone_bricks"
+          ]
+        }
+      ]
+    }
+  ]
+}

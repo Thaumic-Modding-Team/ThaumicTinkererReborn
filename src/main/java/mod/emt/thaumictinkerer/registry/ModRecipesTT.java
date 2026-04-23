@@ -91,15 +91,15 @@ public class ModRecipesTT {
     private static void initArcaneWorkbenchRecipes() {
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "BASEAUROMANCY",//TODO: Research,
-                2,
+                "THAUMIC_TINKERER_BASE",
+                5,
                 new AspectList(),
-                ModItemsTT.ARCANE_QUARTZ,
+                new ItemStack(ModItemsTT.ARCANE_QUARTZ, 8),
                 "QQQ",
                 "QCQ",
                 "QQQ",
                 'Q', "gemQuartz",
-                'C', ItemHelper.getVisCrystalIngredient()
+                'C', ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
         ));
     }
 
