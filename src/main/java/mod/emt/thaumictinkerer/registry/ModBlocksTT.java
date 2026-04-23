@@ -30,23 +30,15 @@ public class ModBlocksTT {
     public static final Block THAUMIC_CAKE = null;
     public static final Block THAUMIC_RESTORER = null;
     public static final Block THAUMIUM_PLATED_COBBLESTONE = null;
+    public static final Block TRANSVECTOR_DISLOCATOR = null;
     public static final Block TRANSVECTOR_INTERFACE = null;
     public static final Block UMBRAL_ROSE = null;
+    public static final Block UMBRAL_ROSEBUSH = null;
     public static final Block VITIUM_STONE_BRICKS = null;
     public static final Block VITIUM_STONE = null;
 
     public static void initBlocks() {
-        //Block initialization goes here. Be sure to register them with RegistrarTT#addAdditionToRegister()
-        //TODO: Organize order
-        RegistrarTT.addAdditionToRegister(new BlockEnergeticNitor());
-        RegistrarTT.addAdditionToRegister(new BlockTransvectorInterface());
-        RegistrarTT.addAdditionToRegister(new BlockFlower("umbral_rose"));
-        RegistrarTT.addAdditionToRegister(new BlockThaumicCake());
-        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_item", TileItemAttractor.class));
-        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class));
-        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_player", TilePlayerAttractor.class));
-        RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
-        RegistrarTT.addAdditionToRegister(new BlockNecromancyTablet());
+        //Materials
         RegistrarTT.addAdditionToRegister(new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("chiseled_arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new BlockMaterialPillar("arcane_quartz_pillar", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
@@ -55,11 +47,26 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterial("thaumium_plated_cobblestone", Material.ROCK, MapColor.STONE, 2.0F, 50.0F, SoundType.STONE, false, false, null));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false, null));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("vitium_stone_bricks", Material.ROCK, MapColor.BLUE_STAINED_HARDENED_CLAY, 2.0F, 20.0F, SoundType.STONE, false, false, null));
-        RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
-        RegistrarTT.addAdditionToRegister(new BlockEtherealPlatform());
+        //Plants
+        RegistrarTT.addAdditionToRegister(new BlockFlower("umbral_rose"));
+        RegistrarTT.addAdditionToRegister(new BlockUmbralRosebush());
+        //Devices
         RegistrarTT.addAdditionToRegister(new BlockPassableWall());
+        RegistrarTT.addAdditionToRegister(new BlockEtherealPlatform());
         RegistrarTT.addAdditionToRegister(new BlockDissimulation());
         RegistrarTT.addAdditionToRegister(new BlockTransvectorDislocator());
-        RegistrarTT.addAdditionToRegister(new BlockUmbralRosebush());
+        RegistrarTT.addAdditionToRegister(new BlockTransvectorInterface());
+        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_item", TileItemAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_player", TilePlayerAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
+        RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
+        RegistrarTT.addAdditionToRegister(new BlockNecromancyTablet());
+
+        //Misc
+        RegistrarTT.addAdditionToRegister(new BlockThaumicCake());
+
+        //Blocks without items
+        RegistrarTT.addAdditionToRegister(new BlockEnergeticNitor());
     }
 }
