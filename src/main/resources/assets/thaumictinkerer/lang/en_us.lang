@@ -88,3 +88,20 @@ tooltip.thaumictinkerer:xp_talisman.partial=Partial Experience: §a%d
 tooltip.thaumictinkerer:xp_talisman.total=Total Experience: §a%d
 
 # Research
+
+
+# GroovyScript
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.title=Tablet of Necromancy
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.description=Uses catalysts and essentia to spawn entities
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addRecipe=Adds a recipe that does not consume components in the format `recipeName`, `entity`, `centerItem`, `aspectStacks`, `components`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addConsumingRecipe=Adds a recipe that consumes all components in the format `recipeName`, `entity`, `centerItem`, `aspectStacks`, `components`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe1=Removes a recipe in the format `recipeName`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe2=Removes a recipe in the format `entity`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.recipeName.value=The recipe name
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.summonedEntity.value=The summoned entity
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.centerItem.value=The center item
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.components.value=The recipe components
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.aspects.value=The recipe aspects
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.consumeComponents.value=Whether this recipe will consume all components on completion
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.streamRecipeNames=Returns a steam of all registered recipe names
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.getRecipe=Returns a recipe in the format `recipeName`. Can return null

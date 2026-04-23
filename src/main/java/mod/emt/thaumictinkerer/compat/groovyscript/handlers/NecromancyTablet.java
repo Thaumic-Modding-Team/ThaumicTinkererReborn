@@ -36,11 +36,12 @@ public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
     }
 
     @MethodDescription(
-            type = MethodDescription.Type.ADDITION
-            //TODO: Examples
+            type = MethodDescription.Type.ADDITION,
+            example = @Example("'minecraft:cow', entity('minecraft:cow'), item('thaumictinkerer:entity_soul_peaceful'), [aspect('bestia') * 15, aspect('terra') * 15], ore('leather'), item('minecraft:bone'), item('minecraft:milk_bucket'), item('minecraft:beef')")
     )
     public INecromancyRecipe addRecipe(String recipeName, EntityEntry entityEntry, IIngredient centerItem, Collection<AspectStack> aspectStacks, IIngredient... components) {
-        return new RecipeBuilder().recipeName(recipeName)
+        return new RecipeBuilder()
+                .recipeName(recipeName)
                 .summonedEntity(entityEntry)
                 .centerItem(centerItem)
                 .aspect(aspectStacks)
@@ -48,9 +49,13 @@ public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
                 .register();
     }
 
-    //TODO: Copy addRecipe description.
+    @MethodDescription(
+            type = MethodDescription.Type.ADDITION,
+            example = @Example("'minecraft:cow', entity('minecraft:cow'), item('thaumictinkerer:entity_soul_peaceful'), [aspect('bestia') * 15, aspect('terra') * 15], ore('leather'), item('minecraft:bone'), item('minecraft:milk_bucket'), item('minecraft:beef')")
+    )
     public INecromancyRecipe addConsumingRecipe(String recipeName, EntityEntry entityEntry, IIngredient centerItem, Collection<AspectStack> aspectStacks, IIngredient... components) {
-        return new RecipeBuilder().recipeName(recipeName)
+        return new RecipeBuilder()
+                .recipeName(recipeName)
                 .summonedEntity(entityEntry)
                 .centerItem(centerItem)
                 .aspect(aspectStacks)
@@ -74,12 +79,20 @@ public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
         return NecromancyRecipeRegistry.getRecipe(recipeName);
     }
 
-    @MethodDescription(type = MethodDescription.Type.REMOVAL, example = @Example("'minecraft:cow'"))
+    @MethodDescription(
+            type = MethodDescription.Type.REMOVAL,
+            example = @Example("'minecraft:cow'"),
+            description = "groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe1"
+    )
     public void removeRecipe(String recipeName) {
         NecromancyRecipeRegistry.removeRecipe(new ResourceLocation(recipeName));
     }
 
-    @MethodDescription(type = MethodDescription.Type.REMOVAL, example = @Example("entity('minecraft:cow')"))
+    @MethodDescription(
+            type = MethodDescription.Type.REMOVAL,
+            example = @Example("entity('minecraft:cow')"),
+            description = "groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe2"
+    )
     public void removeRecipe(EntityEntry entityEntry) {
         NecromancyRecipeRegistry.removeRecipes(entityEntry);
     }
@@ -89,18 +102,30 @@ public class NecromancyTablet extends VirtualizedRegistry<INecromancyRecipe> {
         NecromancyRecipeRegistry.removeAllRecipes();
     }
 
+    @RecipeBuilderDescription(
+            example = @Example(".recipeName('minecraft:cow')" +
+                    ".summonedEntity(entity('minecraft:cow'))" +
+                    ".centerItem(item('thaumictinkerer:entity_soul_peaceful'))" +
+                    ".components(ore('leather'), item('minecraft:bone'), item('minecraft:milk_bucket'), item('minecraft:beef'))" +
+                    ".aspect(aspect('bestia') * 15, aspect('terra') * 15)" +
+                    ".setConsumeComponents(false)")
+    )
+    public RecipeBuilder recipeBuilder() {
+        return new RecipeBuilder();
+    }
+
     public static class RecipeBuilder extends AbstractRecipeBuilder<INecromancyRecipe> {
         @Property(comp = @Comp(not = "null"))
         private String recipeName;
-        @Property(comp = @Comp(not = "null"))
+        @Property(comp = @Comp(not = "null"), priority = 1001)
         private EntityEntry summonedEntity;
-        @Property
+        @Property(comp = @Comp(not = "null"), priority = 1002)
         private IIngredient centerItem;
-        @Property
+        @Property(priority = 1003)
         private IIngredient[] components;
-        @Property
+        @Property(priority = 1004)
         private AspectList aspects = new AspectList();
-        @Property
+        @Property(priority = 1005)
         private boolean consumeComponents;
 
         public RecipeBuilder() {
