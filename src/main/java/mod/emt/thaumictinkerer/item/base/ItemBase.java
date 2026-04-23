@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.item;
+package mod.emt.thaumictinkerer.item.base;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
 import net.minecraftforge.oredict.OreDictionary;

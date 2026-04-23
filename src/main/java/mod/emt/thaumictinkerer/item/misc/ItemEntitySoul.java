@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.item;
+package mod.emt.thaumictinkerer.item.misc;
 
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;

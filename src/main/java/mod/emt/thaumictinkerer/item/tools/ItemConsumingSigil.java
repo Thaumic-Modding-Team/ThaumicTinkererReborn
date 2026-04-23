@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.item;
+package mod.emt.thaumictinkerer.item.tools;
 
 import baubles.api.BaubleType;
 import baubles.api.BaublesApi;

@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.item;
+package mod.emt.thaumictinkerer.item.tools;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.item.IItemAddition;

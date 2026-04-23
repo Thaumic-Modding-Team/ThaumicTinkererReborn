@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.item;
+package mod.emt.thaumictinkerer.item.tools;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
