@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.tile;
 
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.utils.TransvectorLink;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
@@ -56,12 +57,12 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
     }
 
     public boolean isInRange(TransvectorLink link) {
-        //TODO: Configurable distance
+        int range = ConfigHandlerTT.transvectorInterface.maxRange;
         return link.getWorld() != null
                 && this.world.provider.getDimension() == link.dimensionId
-                && this.pos.getX() - link.pos.getX() < 8
-                && this.pos.getY() - link.pos.getY() < 8
-                && this.pos.getZ() - link.pos.getZ() < 8;
+                && this.pos.getX() - link.pos.getX() <= range
+                && this.pos.getY() - link.pos.getY() <= range
+                && this.pos.getZ() - link.pos.getZ() <= range;
     }
 
     public void linkToPosition(TransvectorLink link) {

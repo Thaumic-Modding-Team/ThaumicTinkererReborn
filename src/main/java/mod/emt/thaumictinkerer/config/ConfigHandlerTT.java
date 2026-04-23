@@ -132,9 +132,15 @@ public class ConfigHandlerTT {
     }
 
     public static class TransvectorInterfaceConfig {
+        @Config.RequiresMcRestart
         @Config.Name("Enable Transvector Interface")
         @Config.Comment("Enables the Transvector Interface, used to duplicate block face capabilities over a short distance.")
         public boolean enable = true;
+
+        @Config.RangeInt(min = 1, max = 32)
+        @Config.Name("Maximum Range")
+        @Config.Comment("The maximum distance the Transvector Interface can be placed from the linked block.")
+        public int maxRange = 8;
     }
 
     @Mod.EventBusSubscriber(modid = ThaumicTinkerer.MOD_ID)
