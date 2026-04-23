@@ -36,7 +36,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            return stack.getItem().isDamageable() && stack.getItem().isRepairable();
+            return stack.getItem().isDamageable() && (stack.getItem().isRepairable() || CompatHelper.isTinkersArmoryArmor(stack));
         }
 
         @Override
@@ -107,8 +107,10 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
             ItemStack stack = this.getStackToRepair();
             if(!stack.isEmpty()) {
                 //TODO: Construct's Armory support.
-                if(CompatHelper.isTinkersConstructTool(stack)) {
+                if (CompatHelper.isTinkersConstructTool(stack)) {
                     return CompatHelper.getRepairAspect(stack);
+                } else if (CompatHelper.isTinkersArmoryArmor(stack)) {
+                    return Aspect.PROTECT;
                 } else if (stack.getItem() instanceof ItemArmor) {
                     return Aspect.PROTECT;
                 } else if (stack.getItem() instanceof ItemSword || stack.getItem() instanceof ItemBow) {
@@ -127,7 +129,9 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
     protected boolean shouldRepairStack() {
         ItemStack stack = this.getStackToRepair();
-        if(CompatHelper.isTinkersConstructTool(stack)) {
+        if(CompatHelper.isTinkersArmoryArmor(stack)) {
+            return CompatHelper.isTinkersArmorRepairable(stack);
+        } else if(CompatHelper.isTinkersConstructTool(stack)) {
             return CompatHelper.isTinkersToolRepairable(stack);
         } else {
             return !stack.isEmpty() && stack.isItemStackDamageable() && stack.isItemDamaged();
@@ -136,7 +140,9 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
     public int getRepairAmount() {
         ItemStack stack = this.getStackToRepair();
-        if(CompatHelper.isTinkersConstructTool(stack)) {
+        if(CompatHelper.isTinkersArmoryArmor(stack)) {
+            return CompatHelper.getTinkersArmorDamage(stack);
+        } else if(CompatHelper.isTinkersConstructTool(stack)) {
             return CompatHelper.getTinkersToolDamage(stack);
         } else {
             return !stack.isEmpty() ? stack.getItemDamage() : 0;
@@ -145,7 +151,9 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
     public void repairItemStack(int repairAmount) {
         ItemStack repairStack = this.getStackToRepair();
-        if(CompatHelper.isTinkersConstructTool(repairStack)) {
+        if(CompatHelper.isTinkersArmoryArmor(repairStack)) {
+            CompatHelper.repairTinkersArmor(repairStack, repairAmount);
+        } else if(CompatHelper.isTinkersConstructTool(repairStack)) {
             CompatHelper.repairTinkersTool(repairStack, repairAmount);
         } else {
             repairStack.setItemDamage(Math.max(repairStack.getItemDamage() - repairAmount, 0));

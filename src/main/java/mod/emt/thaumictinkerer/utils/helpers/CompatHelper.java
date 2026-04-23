@@ -1,5 +1,7 @@
 package mod.emt.thaumictinkerer.utils.helpers;
 
+import c4.conarm.common.armor.utils.ArmorHelper;
+import c4.conarm.lib.armor.ArmorCore;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.Loader;
 import slimeknights.tconstruct.library.tinkering.Category;
@@ -9,7 +11,29 @@ import thaumcraft.api.aspects.Aspect;
 
 public class CompatHelper {
     public static final boolean isModTweakerLoaded = Loader.isModLoaded("modtweaker");
+    public static final boolean isTinkersArmoryLoaded = Loader.isModLoaded("conarm");
     public static final boolean isTinkersConstructLoaded = Loader.isModLoaded("tconstruct");
+
+    //##########################################################
+    // Tinkers' Armory
+
+    public static boolean isTinkersArmoryArmor(ItemStack stack) {
+        return isTinkersArmoryLoaded && !stack.isEmpty() && stack.getItem() instanceof ArmorCore;
+    }
+
+    public static boolean isTinkersArmorRepairable(ItemStack stack) {
+        return isTinkersArmoryArmor(stack) && ToolHelper.getMaxDurability(stack) != ToolHelper.getCurrentDurability(stack);
+    }
+
+    public static int getTinkersArmorDamage(ItemStack stack) {
+        return isTinkersArmoryArmor(stack) ? ToolHelper.getMaxDurability(stack) - ToolHelper.getCurrentDurability(stack) : 0;
+    }
+
+    public static void repairTinkersArmor(ItemStack stack, int repairAmount) {
+        if(isTinkersArmoryArmor(stack)) {
+            ArmorHelper.repairArmor(stack, repairAmount);
+        }
+    }
 
     //##########################################################
     // Tinkers' Construct
