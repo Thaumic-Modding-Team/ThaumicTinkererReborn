@@ -68,7 +68,6 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
 
         boolean did = false;
         if(!this.world.isRemote) {
-            //TODO: This might be too slow.
             if(this.count % 5 == 0) {
                 if (this.shouldRepairStack()) {
                     if(this.attemptDrainAndRepair()) {
@@ -106,7 +105,6 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         if(ConfigHandlerTT.thaumicRestorer.dynamicAspects) {
             ItemStack stack = this.getStackToRepair();
             if(!stack.isEmpty()) {
-                //TODO: Construct's Armory support.
                 if (CompatHelper.isTinkersConstructTool(stack)) {
                     return CompatHelper.getRepairAspect(stack);
                 } else if (CompatHelper.isTinkersArmoryArmor(stack)) {

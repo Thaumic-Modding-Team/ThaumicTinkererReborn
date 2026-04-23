@@ -98,8 +98,7 @@ public class BlockAttractor extends BlockTileAddition {
                     playerIn.playSound(SoundEvents.ENTITY_EXPERIENCE_ORB_PICKUP, 0.4f, 0.7f);
                 }
             } else {
-                //TODO: Open Gui
-                // ((AbstractTileAttractor<?>) tile).openGui(playerIn);
+                ((AbstractTileAttractor<?>) tile).openGui(playerIn);
             }
             return true;
         }

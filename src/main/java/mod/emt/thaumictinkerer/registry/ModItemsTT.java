@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.item.*;
+import mod.emt.thaumictinkerer.item.base.ItemBase;
 import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
@@ -34,19 +35,13 @@ public class ModItemsTT {
     public static final Item XP_TALISMAN = null;
 
     public static void initItems() {
-        //Item initialization goes here. Be sure to register them with RegistrarTT#addAdditionToRegister()
-        //TODO: Organize order
-        RegistrarTT.addAdditionToRegister(new ItemEnderMirror());
-        RegistrarTT.addAdditionToRegister(new ItemEnergeticNitor());
-        RegistrarTT.addAdditionToRegister(new ItemGoliathRing());
-        RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());
-        RegistrarTT.addAdditionToRegister(new ItemUmbralDye());
-        RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
-        RegistrarTT.addAdditionToRegister(new ItemIgniumStriker());
-        RegistrarTT.addAdditionToRegister(new ItemEverfullBucket());
+        RegistrarTT.addAdditionToRegister(new ItemBase("umbral_dye", "dyeBlack"));
         RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz", "gemArcaneQuartz"));
-        RegistrarTT.addAdditionToRegister(new ItemCondorSword());
-        RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
+        RegistrarTT.addAdditionToRegister(new ItemEnergeticNitor());
+
+
+
+        //Entity Souls
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 16, EnumRarity.UNCOMMON));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 8, EnumRarity.UNCOMMON));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_demonic", 8, EnumRarity.RARE));
@@ -54,6 +49,23 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_arcane", 8, EnumRarity.RARE));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 4, EnumRarity.EPIC));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
+
+
+
+
+
+        //Baubles
+
+
+        //TODO: Organize order
+        RegistrarTT.addAdditionToRegister(new ItemEnderMirror());
+        RegistrarTT.addAdditionToRegister(new ItemGoliathRing());
+        RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());
+        RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
+        RegistrarTT.addAdditionToRegister(new ItemIgniumStriker());
+        RegistrarTT.addAdditionToRegister(new ItemEverfullBucket());
+        RegistrarTT.addAdditionToRegister(new ItemCondorSword());
+        RegistrarTT.addAdditionToRegister(new ItemSwordTest("test_sword"));
         //TODO: Fix this crap - RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
         RegistrarTT.addAdditionToRegister(new ItemStopwatch());
