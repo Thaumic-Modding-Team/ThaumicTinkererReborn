@@ -20,6 +20,7 @@ public class ModBlocksTT {
     public static final Block ATTRACTOR_MOB = null;
     public static final Block ATTRACTOR_PLAYER = null;
     public static final Block CHISELED_ARCANE_QUARTZ = null;
+    public static final Block DISSIMULATION_BLOCK = null;
     public static final Block ENERGETIC_NITOR = null;
     public static final Block ESSENTIA_FUNNEL = null;
     public static final Block ETHEREAL_PLATFORM = null;

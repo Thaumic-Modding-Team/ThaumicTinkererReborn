@@ -27,13 +27,32 @@ import org.jetbrains.annotations.Nullable;
 import java.util.List;
 
 public class BlockDissimulation extends BlockTileAddition {
-    //TODO: The One Probe support for stored blocks (also fixes error tooltip)
-
     public BlockDissimulation() {
         super("dissimulation_block", Material.ROCK, MapColor.STONE, TileDissimulation.class);
         this.setHardness(3.0f);
         this.setResistance(20.0f);
         this.setSoundType(SoundType.STONE);
+    }
+
+    @Override
+    public boolean canHarvestBlock(IBlockAccess world, @NotNull BlockPos pos, @NotNull EntityPlayer player) {
+        IBlockState state = world.getBlockState(pos);
+        if (state.getMaterial().isToolNotRequired()) {
+            return true;
+        }
+
+        ItemStack stack = player.getHeldItemMainhand();
+        String tool = this.getHarvestTool(state);
+        if (stack.isEmpty() || tool == null) {
+            return player.canHarvestBlock(state);
+        }
+
+        int toolLevel = stack.getItem().getHarvestLevel(stack, tool, player, state);
+        if (toolLevel < 0) {
+            return player.canHarvestBlock(state);
+        }
+
+        return toolLevel >= this.getHarvestLevel(state);
     }
 
     public IBlockState getStoredState(IBlockAccess world, BlockPos pos) {
