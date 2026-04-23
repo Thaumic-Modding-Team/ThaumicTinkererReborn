@@ -40,10 +40,11 @@ public class BlockFlower extends BlockBush implements IBlockAddition {
     }
 
     @Override
-    public Block.EnumOffsetType getOffsetType() {
+    public Block.@NotNull EnumOffsetType getOffsetType() {
         return Block.EnumOffsetType.XZ;
     }
 
+    @SuppressWarnings("deprecation")
     @Nonnull
     @Override
     public AxisAlignedBB getBoundingBox(IBlockState state, @Nonnull IBlockAccess world, @Nonnull BlockPos pos) {
@@ -51,7 +52,7 @@ public class BlockFlower extends BlockBush implements IBlockAddition {
     }
 
     @Override
-    public EnumPlantType getPlantType(IBlockAccess world, BlockPos pos) {
+    public @NotNull EnumPlantType getPlantType(@NotNull IBlockAccess world, @NotNull BlockPos pos) {
         return EnumPlantType.Plains;
     }
 

@@ -39,7 +39,7 @@
 |     Transvector Interface      | COMPLETE | COMPLETE | COMPLETE | COMPLETE |          |          |
 |           Umbral Dye           | COMPLETE | COMPLETE | COMPLETE |          |          | COMPLETE |
 |          Umbral Rose           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
-|        Umbral Rosebush         |          |          |          |          |          |          |
+|        Umbral Rosebush         | COMPLETE | COMPLETE |          |          |          |          |
 |          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |          |          |          |
 
 **Arcane Quartz Slabs**

@@ -59,5 +59,6 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockPassableWall());
         RegistrarTT.addAdditionToRegister(new BlockDissimulation());
         RegistrarTT.addAdditionToRegister(new BlockTransvectorDislocator());
+        RegistrarTT.addAdditionToRegister(new BlockUmbralRosebush());
     }
 }
