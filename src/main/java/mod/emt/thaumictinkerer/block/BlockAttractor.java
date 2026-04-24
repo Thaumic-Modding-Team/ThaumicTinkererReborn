@@ -25,6 +25,7 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import thaumcraft.client.fx.FXDispatcher;
 
 import java.util.List;
 import java.util.Random;
@@ -170,9 +171,32 @@ public class BlockAttractor extends BlockTileAddition {
     @SideOnly(Side.CLIENT)
     @Override
     public void randomDisplayTick(@NotNull IBlockState stateIn, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull Random rand) {
-        if(worldIn.isBlockPowered(pos) && rand.nextInt(5) == 0) {
-            //TODO: Effect while active.
+        if(worldIn.isBlockPowered(pos)) {
+            boolean isPulling = stateIn.getValue(MODE) == AttractorMode.ATTRACT;
+            for(int i = 0; i < 5; i++) {
+                if(rand.nextInt(5) == 0) {
+                    float motionX = (worldIn.rand.nextFloat() - 0.5f) * 0.05f;
+                    float motionY = (worldIn.rand.nextFloat() - 0.5f) * 0.05f;
+                    float motionZ = (worldIn.rand.nextFloat() - 0.5f) * 0.05f;
+                    int age = 20 + worldIn.rand.nextInt(10);
 
+                    float offsetX = 0.5f;
+                    float offsetY = worldIn.rand.nextFloat() * 0.8f + 0.2f;
+                    float offsetZ = 0.5f;
+                    if(isPulling) {
+                        offsetX += motionX * age * -1.0f;
+                        offsetY += motionY * age * -1.0f;
+                        offsetZ += motionZ * age * -1.0f;
+                    }
+
+                    FXDispatcher.INSTANCE.drawWispyMotes(
+                            pos.getX() + offsetX, pos.getY() + offsetY, pos.getZ() + offsetZ,
+                            motionX, motionY, motionZ, age,
+                            isPulling ? 0 : 1.0f, 0, isPulling ? 1.0f : 0,
+                            0
+                    );
+                }
+            }
         }
     }
 

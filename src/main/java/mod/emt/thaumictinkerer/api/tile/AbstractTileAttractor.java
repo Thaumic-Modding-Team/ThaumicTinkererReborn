@@ -2,12 +2,15 @@ package mod.emt.thaumictinkerer.api.tile;
 
 import mod.emt.thaumictinkerer.block.BlockAttractor;
 import mod.emt.thaumictinkerer.block.BlockAttractor.AttractorMode;
+import mod.emt.thaumictinkerer.network.PacketHandler;
+import mod.emt.thaumictinkerer.network.packets.MessageAttractorFX;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraftforge.fml.common.network.NetworkRegistry;
 import thaumcraft.codechicken.lib.vec.Vector3;
 
 public abstract class AbstractTileAttractor<S extends Entity> extends TileEntityTT implements ITickable {
@@ -73,7 +76,7 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
         return new AxisAlignedBB(this.pos.add(minX, minY, minZ), this.pos.add(maxX, maxY, maxZ));
     }
 
-    public void moveEntity(S entity, boolean shouldAttract) {
+    public void moveEntity(S entity, boolean isPulling) {
         Vector3 entityVec = Vector3.fromEntityCenter(entity);
         Vector3 tileVec = new Vector3(this.pos.getX() + 0.5, this.pos.getY() + 0.5, this.pos.getZ() + 0.5);
         Vector3 finalVec = tileVec.copy().subtract(entityVec);
@@ -82,9 +85,15 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
             finalVec.normalize();
         }
 
-        //TODO: Effects on moving entity.
+        double posX = entity.posX;
+        double posY = entity.posY + (entity.height / 2.0f);
+        double posZ = entity.posZ;
 
-        double movementModifier = shouldAttract ? 0.25 : -0.25;
+        PacketHandler.INSTANCE.sendToAllAround(
+                new MessageAttractorFX(posX, posY, posZ, isPulling),
+                new NetworkRegistry.TargetPoint(entity.world.provider.getDimension(), posX, posY, posZ, 32));
+
+        double movementModifier = isPulling ? 0.25 : -0.25;
         entity.motionX = finalVec.x * movementModifier;
         entity.motionY = finalVec.y * movementModifier;
         entity.motionZ = finalVec.z * movementModifier;

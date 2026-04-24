@@ -4,6 +4,7 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
+import mod.emt.thaumictinkerer.network.PacketHandler;
 import mod.emt.thaumictinkerer.registry.RegistrarTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
 import net.minecraft.util.ResourceLocation;
@@ -15,6 +16,7 @@ import thaumcraft.api.research.ResearchCategories;
 
 public class CommonProxy {
     public void preInit() {
+        PacketHandler.init();
         RegistrarTT.getProxyAdditions().forEach(IProxy::preInit);
         if(CompatHelper.isModTweakerLoaded) {
             MinecraftForge.EVENT_BUS.register(new CTPlugin());
