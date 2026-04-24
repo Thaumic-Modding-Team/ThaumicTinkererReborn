@@ -5,7 +5,6 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
-import mod.emt.thaumictinkerer.utils.helpers.ItemHelper;
 import net.minecraft.entity.monster.*;
 import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
