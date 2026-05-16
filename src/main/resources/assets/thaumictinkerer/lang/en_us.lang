@@ -91,7 +91,7 @@ tooltip.thaumictinkerer:xp_talisman.total=Total Experience: §a%d
 tc.research_category.THAUMIC_TINKERER=Thaumic Tinkering
 thaumictinkerer.research.thaumic_tinkerer_base.title=Thaumic Tinkering
 thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word 'Construct'
-thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say... There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.
+thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
 
 # GroovyScript
