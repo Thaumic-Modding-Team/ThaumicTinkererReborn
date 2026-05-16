@@ -56,23 +56,12 @@ public class ConfigHandlerTT {
         @Config.Name("Educational Infusion Enchant")
         public EducationalEnchantConfig educational = new EducationalEnchantConfig();
 
-        @Config.Name("Wrath Infusion Enchant")
-        public WrathEnchantConfig wrath = new WrathEnchantConfig();
-
         public static class EducationalEnchantConfig {
-            @Config.RequiresMcRestart
-            public boolean enable = true;
-
             @Config.RangeInt(min = 0, max = 100000)
             public int maxXpPerLevel = 10;
 
             @Config.RangeDouble(min = 0.01, max = 100.0)
             public double xpGainPerLevel = 0.25;
-        }
-
-        public static class WrathEnchantConfig {
-            @Config.RequiresMcRestart
-            public boolean enable = true;
         }
     }
 

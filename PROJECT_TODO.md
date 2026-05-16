@@ -18,9 +18,9 @@
 |       Ethereal Platform        | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |
 |         Feline Amulet          | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |
 |            Igniter             | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |
-| Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |   N/A    |          |          |
-|  Infusion Enchant: Projecting  | COMPLETE |   N/A    | COMPLETE |   N/A    |          |          |
-|    Infusion Enchant: Wrath     | COMPLETE |   N/A    | COMPLETE |   N/A    |          |          |
+| Infusion Enchant: Educational  | COMPLETE |   N/A    | COMPLETE |   N/A    |          | COMPLETE |
+|  Infusion Enchant: Projecting  | COMPLETE |   N/A    | COMPLETE |   N/A    |          | COMPLETE |
+|    Infusion Enchant: Wrath     | COMPLETE |   N/A    | COMPLETE |   N/A    |          | COMPLETE |
 |  Paving Stone of Permeability  | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |
 |    Ring of Goliath's Might     | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |
 |       Sigil of Consuming       | COMPLETE | COMPLETE | COMPLETE |   N/A    |          | COMPLETE |

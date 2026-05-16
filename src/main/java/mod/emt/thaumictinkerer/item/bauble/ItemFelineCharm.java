@@ -11,13 +11,11 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.util.math.Vec3d;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 
 public class ItemFelineCharm extends AbstractItemBauble implements IProxy {
@@ -73,22 +71,5 @@ public class ItemFelineCharm extends AbstractItemBauble implements IProxy {
     @Override
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-    //TODO: All of this
-
-    @Override
-    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-
-    }
-
-    @Override
-    public void registerResearchLocation() {
-
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }

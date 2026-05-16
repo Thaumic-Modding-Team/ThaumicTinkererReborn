@@ -4,17 +4,14 @@ import com.expandedevents.api.event.ItemAttributeModifierEvent;
 import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
-import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
 import net.minecraft.entity.SharedMonsterAttributes;
 import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import java.util.Collection;
@@ -58,21 +55,5 @@ public class InfusionEnchantmentWrath implements IAddition, IProxy {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.WRATH = ThaumicAPI.registerInfusionEnchantment(
                 "WRATH", 5, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
-    }
-
-    @Override
-    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        //TODO: Recipes
-    }
-
-    @Override
-    public void registerResearchLocation() {
-        //TODO: Research location
-    }
-
-    @Override
-    public boolean isEnabled() {
-        //TODO: Config toggle
-        return ConfigHandlerTT.infusionEnchantments.wrath.enable;
     }
 }

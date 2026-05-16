@@ -8,12 +8,10 @@ import mod.emt.thaumictinkerer.registry.ModEnchantsTT;
 import net.minecraft.entity.EntityLiving;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.event.entity.living.LivingExperienceDropEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 @Mod.EventBusSubscriber
@@ -43,20 +41,5 @@ public class InfusionEnchantmentEducational implements IAddition, IProxy {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.EDUCATIONAL = ThaumicAPI.registerInfusionEnchantment(
                 "EDUCATIONAL", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
-    }
-
-    @Override
-    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        //TODO: Recipes
-    }
-
-    @Override
-    public void registerResearchLocation() {
-        //TODO: Research location
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return ConfigHandlerTT.infusionEnchantments.educational.enable;
     }
 }

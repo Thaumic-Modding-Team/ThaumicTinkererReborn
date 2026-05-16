@@ -1,5 +1,6 @@
 package mod.emt.thaumictinkerer.block;
 
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
@@ -10,12 +11,15 @@ import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -27,10 +31,11 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
-import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-
-import java.util.Map;
+import thaumcraft.api.blocks.BlocksTC;
+import thaumcraft.api.crafting.InfusionRecipe;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
     public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
@@ -131,16 +136,26 @@ public class BlockNecromancyTablet extends BlockTileAddition {
 
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        //TODO
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new InfusionRecipe(
+                "",
+                new ItemStack(this),
+                5,
+                new AspectList().add(Aspect.UNDEAD, 75).add(Aspect.LIFE, 75).add(Aspect.SOUL, 75).add(Aspect.DEATH, 50).add(Aspect.EXCHANGE, 50).add(Aspect.DESIRE, 30),
+                BlocksTC.slabArcaneStone,
+                Items.EGG,
+                Items.PORKCHOP,
+                Items.BEEF,
+                Items.BONE,
+                Items.ROTTEN_FLESH,
+                Items.LEATHER,
+                Items.SKULL,
+                Blocks.MOSSY_COBBLESTONE,
+                "blockDiamond"
+        ));
     }
 
     @Override
     public void registerResearchLocation() {
-        //TODO
-    }
-
-    @Override
-    public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
         //TODO
     }
 

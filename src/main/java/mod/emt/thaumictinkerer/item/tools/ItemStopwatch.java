@@ -10,7 +10,6 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.*;
 import net.minecraft.util.ActionResult;
 import net.minecraft.util.EnumActionResult;
@@ -23,12 +22,7 @@ import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
-import thaumcraft.api.aspects.AspectEventProxy;
-import thaumcraft.api.aspects.AspectList;
-
-import java.util.Map;
 
 public class ItemStopwatch extends AbstractItemAddition implements IProxy {
     public static final int COOLDOWN_TIME = 1210;
@@ -190,28 +184,5 @@ public class ItemStopwatch extends AbstractItemAddition implements IProxy {
     @Override
     public void preInitClient() {
         MinecraftForge.EVENT_BUS.register(this);
-    }
-
-
-    //TODO: This stuff.
-
-    @Override
-    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-
-    }
-
-    @Override
-    public void registerResearchLocation() {
-
-    }
-
-    @Override
-    public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
-
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return true;
     }
 }

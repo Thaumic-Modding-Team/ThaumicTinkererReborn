@@ -9,11 +9,9 @@ import net.minecraft.entity.ai.attributes.AttributeModifier;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
-import net.minecraft.item.crafting.IRecipe;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.util.Constants;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.registries.IForgeRegistry;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 import java.util.UUID;
@@ -41,21 +39,5 @@ public class InfusionEnchantmentProjecting implements IAddition, IProxy {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.PROJECTING = ThaumicAPI.registerInfusionEnchantment(
                 "PROJECTING", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
-    }
-
-    @Override
-    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        //TODO
-    }
-
-    @Override
-    public void registerResearchLocation() {
-        //TODO
-    }
-
-    @Override
-    public boolean isEnabled() {
-        //TODO
-        return IAddition.super.isEnabled();
     }
 }

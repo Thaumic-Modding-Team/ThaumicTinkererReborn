@@ -1,5 +1,6 @@
 package mod.emt.thaumictinkerer.block;
 
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileThaumicRestorerTESR;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
@@ -13,6 +14,7 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
 import net.minecraft.inventory.EntityEquipmentSlot;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -31,10 +33,11 @@ import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
-import thaumcraft.api.aspects.AspectEventProxy;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-
-import java.util.Map;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.items.ItemsTC;
 
 public class BlockThaumicRestorer extends BlockTileAddition {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
@@ -156,16 +159,26 @@ public class BlockThaumicRestorer extends BlockTileAddition {
 
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        //TODO
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_restorer"), new InfusionRecipe(
+                "",
+                new ItemStack(this),
+                6,
+                new AspectList().add(Aspect.CRAFT, 60).add(Aspect.TOOL, 45).add(Aspect.ORDER, 30).add(Aspect.MAGIC, 30),
+                new ItemStack(Blocks.ANVIL, 1, 0),
+                "plankWood",
+                "leather",
+                "cobblestone",
+                ItemsTC.fabric,
+                "ingotThaumium",
+                "ingotIron",
+                "ingotGold",
+                "gemDiamond",
+                "blockEmerald"
+        ));
     }
 
     @Override
     public void registerResearchLocation() {
-        //TODO
-    }
-
-    @Override
-    public void registerAspects(AspectEventProxy registry, Map<ItemStack, AspectList> aspectMap) {
         //TODO
     }
 

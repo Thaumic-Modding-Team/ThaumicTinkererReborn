@@ -32,6 +32,7 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.items.consumables.ItemPhial;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
+import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
 
 @SuppressWarnings("ConstantConditions")
 public class ModRecipesTT {
@@ -43,6 +44,7 @@ public class ModRecipesTT {
         initCraftingRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
+        initInfusionEnchantmentRecipes();
         initNecromancyRecipes();
     }
 
@@ -252,21 +254,6 @@ public class ModRecipesTT {
                 'M', BlocksTC.mirror,
                 'C', ItemsTC.mechanismComplex
         ));
-        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_interface"), new ShapedArcaneRecipe(
-                defaultGroup,
-                "",
-                200,
-                new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
-                new ItemStack(ModBlocksTT.TRANSVECTOR_INTERFACE),
-                "SRS",
-                "LPL",
-                "SCS",
-                'S', BlocksTC.stoneArcane,
-                'R', "blockRedstone",
-                'L', "blockLapis",
-                'P', Items.ENDER_PEARL,
-                'C', ItemsTC.mechanismComplex
-        ));
     }
 
     private static void initCraftingRecipes() {
@@ -459,22 +446,6 @@ public class ModRecipesTT {
                 ThaumcraftApiHelper.makeCrystal(Aspect.METAL),
                 new ItemStack(ItemsTC.nuggets, 1, 10)
         ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new InfusionRecipe(
-                "",
-                new ItemStack(ModBlocksTT.NECROMANCY_TABLET),
-                5,
-                new AspectList().add(Aspect.UNDEAD, 75).add(Aspect.LIFE, 75).add(Aspect.SOUL, 75).add(Aspect.DEATH, 50).add(Aspect.EXCHANGE, 50).add(Aspect.DESIRE, 30),
-                BlocksTC.slabArcaneStone,
-                Items.EGG,
-                Items.PORKCHOP,
-                Items.BEEF,
-                Items.BONE,
-                Items.ROTTEN_FLESH,
-                Items.LEATHER,
-                Items.SKULL,
-                Blocks.MOSSY_COBBLESTONE,
-                "blockDiamond"
-        ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "recall_stopwatch"), new InfusionRecipe(
                 "",
                 new ItemStack(ModItemsTT.RECALL_STOPWATCH),
@@ -503,22 +474,6 @@ public class ModRecipesTT {
                 Items.EGG,
                 ThaumcraftApiHelper.makeCrystal(Aspect.LIFE)
         ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_restorer"), new InfusionRecipe(
-                "",
-                new ItemStack(ModBlocksTT.THAUMIC_RESTORER),
-                6,
-                new AspectList().add(Aspect.CRAFT, 60).add(Aspect.TOOL, 45).add(Aspect.ORDER, 30).add(Aspect.MAGIC, 30),
-                new ItemStack(Blocks.ANVIL, 1, 0),
-                "plankWood",
-                "leather",
-                "cobblestone",
-                ItemsTC.fabric,
-                "ingotThaumium",
-                "ingotIron",
-                "ingotGold",
-                "gemDiamond",
-                "blockEmerald"
-        ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"), new InfusionRecipe(
                 "",
                 new ItemStack(ModItemsTT.XP_TALISMAN),
@@ -534,6 +489,44 @@ public class ModRecipesTT {
                 "ingotGold",
                 BlocksTC.jarBrain
         ));
+    }
+
+    private static void initInfusionEnchantmentRecipes() {
+        InfusionEnchantmentRecipe educationalInfusion = new InfusionEnchantmentRecipe(
+                ModEnchantsTT.EDUCATIONAL,
+                new AspectList().add(Aspect.MIND, 100).add(Aspect.DESIRE, 50).add(Aspect.MAGIC, 30),
+                new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)),
+                Blocks.BOOKSHELF,
+                ModItemsTT.ARCANE_QUARTZ
+        );
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion"), educationalInfusion);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion_fake1"), new InfusionEnchantmentRecipe(
+                educationalInfusion, new ItemStack(Items.WOODEN_SWORD)));
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion_fake1"), new InfusionEnchantmentRecipe(
+                educationalInfusion, new ItemStack(Items.WOODEN_PICKAXE)));
+
+        InfusionEnchantmentRecipe projectingInfusion = new InfusionEnchantmentRecipe(
+                ModEnchantsTT.PROJECTING,
+                new AspectList().add(Aspect.DESIRE, 100).add(Aspect.TOOL, 80),
+                new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)),
+                Blocks.PISTON,
+                ModItemsTT.ARCANE_QUARTZ
+        );
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "projecting_infusion"), projectingInfusion);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "projecting_infusion_fake"), new InfusionEnchantmentRecipe(
+                projectingInfusion, new ItemStack(Items.WOODEN_PICKAXE)));
+
+        InfusionEnchantmentRecipe wrathInfusion = new InfusionEnchantmentRecipe(
+                ModEnchantsTT.WRATH,
+                new AspectList().add(Aspect.AVERSION, 80).add(Aspect.ENERGY, 60),
+                new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)),
+                ModItemsTT.ARCANE_QUARTZ,
+                ModItemsTT.ARCANE_QUARTZ,
+                ModItemsTT.ARCANE_QUARTZ
+        );
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "wrath_infusion"), wrathInfusion);
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "wrath_infusion_fake"), new InfusionEnchantmentRecipe(
+                wrathInfusion, new ItemStack(Items.WOODEN_SWORD)));
     }
 
     public static void initNecromancyRecipes() {
