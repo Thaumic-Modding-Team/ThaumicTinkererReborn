@@ -10,6 +10,7 @@ import net.minecraft.entity.passive.*;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.init.PotionTypes;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
@@ -25,10 +26,7 @@ import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.blocks.BlocksTC;
-import thaumcraft.api.crafting.CrucibleRecipe;
-import thaumcraft.api.crafting.IDustTrigger;
-import thaumcraft.api.crafting.Part;
-import thaumcraft.api.crafting.ShapedArcaneRecipe;
+import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
@@ -100,6 +98,59 @@ public class ModRecipesTT {
                 'Q', "gemQuartz",
                 'C', ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
         ));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "THAUMIC_TINKERER_BASE",
+                30,
+                new AspectList().add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
+                new ItemStack(ModBlocksTT.DISSIMULATION_BLOCK),
+                "SCS",
+                "PSP",
+                "SCS",
+                'S', BlocksTC.stoneArcane,
+                'P', Items.PRISMARINE_SHARD,
+                'C', Items.CLAY_BALL
+        ));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "escape_sigil"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "THAUMIC_TINKERER_BASE",
+                10,
+                new AspectList().add(Aspect.ORDER, 1),
+                new ItemStack(ModItemsTT.ESCAPE_SIGIL),
+                " L ",
+                "MPM",
+                " D ",
+                'L', ThaumcraftApiHelper.makeCrystal(Aspect.LIGHT),
+                'M', ThaumcraftApiHelper.makeCrystal(Aspect.MOTION),
+                'P', Items.ENDER_PEARL,
+                'D', ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
+        ));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ethereal_platform"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "THAUMIC_TINKERER_BASE",
+                50,
+                new AspectList().add(Aspect.AIR, 5).add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2),
+                new ItemStack(ModBlocksTT.ETHEREAL_PLATFORM, 4),
+                "ASA",
+                "SPS",
+                "ASA",
+                'A', ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
+                'S', BlocksTC.stoneArcane,
+                'P', Items.ENDER_PEARL
+        ));
+        ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "passable_wall"), new ShapedArcaneRecipe(
+                defaultGroup,
+                "THAUMIC_TINKERER_BASE",
+                50,
+                new AspectList().add(Aspect.WATER, 5).add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2),
+                new ItemStack(ModBlocksTT.PASSABLE_WALL, 4),
+                "WSW",
+                "SPS",
+                "WSW",
+                'W', ThaumcraftApiHelper.makeCrystal(Aspect.WATER),
+                'S', BlocksTC.stoneArcane,
+                'P', Items.ENDER_PEARL
+        ));
     }
 
     private static void initCraftingRecipes() {
@@ -134,10 +185,109 @@ public class ModRecipesTT {
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 "wool",
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)));
+
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "everfull_bucket"), new CrucibleRecipe(
+                "",
+                new ItemStack(ModItemsTT.EVERFULL_BUCKET),
+                Items.BUCKET,
+                new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
+        ));
     }
 
     private static void initInfusionRecipes() {
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ender_mirror"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.ENDER_MIRROR),
+                4,
+                new AspectList().add(Aspect.MAN, 60).add(Aspect.VOID, 40).add(Aspect.DARKNESS, 40).add(Aspect.EXCHANGE, 25),
+                ItemsTC.handMirror,
+                "obsidian",
+                "obsidian",
+                "obsidian",
+                "obsidian",
+                "obsidian",
+                Items.ENDER_EYE
+        ));
 
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.ENERGETIC_NITOR),
+                3,
+                new AspectList().add(Aspect.ENERGY, 60).add(Aspect.LIGHT, 45).add(Aspect.FIRE, 45).add(Aspect.AIR, 30),
+                Ingredient.fromItems(BlocksTC.nitor.values().stream().map(Item::getItemFromBlock).toArray(Item[]::new)),
+                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS),
+                ThaumcraftApiHelper.makeCrystal(Aspect.SENSES),
+                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS),
+                ThaumcraftApiHelper.makeCrystal(Aspect.SENSES)
+        ));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "feline_charm"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.FELINE_CHARM),
+                5,
+                new AspectList().add(Aspect.ENTROPY, 100).add(Aspect.BEAST, 100).add(Aspect.SOUL, 40),
+                new ItemStack(ItemsTC.baubles, 1, 4),
+                new ItemStack(ItemsTC.nuggets, 1, 10),
+                new ItemStack(Items.FISH, 1, 0),
+                "string",
+                new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage()),
+                new ItemStack(Blocks.SAPLING, 1, 3),
+                new ItemStack(Items.SKULL, 1, 4)
+        ));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "goliath_ring"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.GOLIATH_RING),
+                6,
+                new AspectList().add(Aspect.PROTECT, 75).add(Aspect.LIFE, 50),
+                new ItemStack(ItemsTC.baubles, 1, 5),
+                ThaumcraftApiHelper.makeCrystal(Aspect.PROTECT),
+                new ItemStack(Items.SHIELD),
+                ThaumcraftApiHelper.makeCrystal(Aspect.PROTECT),
+                new ItemStack(Items.DIAMOND_CHESTPLATE)
+        ));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ignium_striker"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.IGNIUM_STRIKER),
+                2,
+                new AspectList().add(Aspect.FIRE, 40).add(Aspect.METAL, 40).add(Aspect.TOOL, 30).add(Aspect.MAGIC, 10),
+                new ItemStack(Items.FLINT_AND_STEEL),
+                ThaumcraftApiHelper.makeCrystal(Aspect.FIRE),
+                new ItemStack(ItemsTC.ingots, 1, 0),
+                ThaumcraftApiHelper.makeCrystal(Aspect.METAL),
+                new ItemStack(ItemsTC.nuggets, 1, 10)
+        ));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_cake"), new InfusionRecipe(
+                "",
+                new ItemStack(ModBlocksTT.THAUMIC_CAKE),
+                2,
+                new AspectList().add(Aspect.CRAFT, 45).add(Aspect.DESIRE, 30).add(Aspect.ORDER, 30).add(Aspect.FLUX, 15).add(Aspect.ELDRITCH, 15),
+                Blocks.CAKE,
+                ItemsTC.salisMundus,
+                Items.EGG,
+                ThaumcraftApiHelper.makeCrystal(Aspect.DESIRE),
+                Items.MILK_BUCKET,
+                Items.EGG,
+                ThaumcraftApiHelper.makeCrystal(Aspect.LIFE)
+        ));
+
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"), new InfusionRecipe(
+                "",
+                new ItemStack(ModItemsTT.XP_TALISMAN),
+                5,
+                new AspectList().add(Aspect.MIND, 100).add(Aspect.DESIRE, 75).add(Aspect.EXCHANGE, 75).add(Aspect.MAGIC, 50),
+                new ItemStack(ItemsTC.baubles, 1, 4),
+                "ingotGold",
+                "gemDiamond",
+                "ingotGold",
+                new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)),
+                "ingotGold",
+                "gemDiamond",
+                "ingotGold",
+                BlocksTC.jarBrain
+        ));
     }
 
     public static void initNecromancyRecipes() {
