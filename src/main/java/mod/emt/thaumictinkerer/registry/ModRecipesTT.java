@@ -291,7 +291,7 @@ public class ModRecipesTT {
                 Items.BUCKET,
                 new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
         ));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rosebush"), new CrucibleRecipe(
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rose_bush"), new CrucibleRecipe(
                 "",
                 new ItemStack(ModBlocksTT.UMBRAL_ROSEBUSH),
                 new ItemStack(Blocks.DOUBLE_PLANT, 1, 4),

@@ -1,0 +1,88 @@
+{
+  "entries": [
+    {
+      "key": "TT_TERRA_OBSIDIAN",
+      "name": "thaumictinkerer.research.terra_obsidian.title",
+      "icons": [
+        "thaumictinkerer:terra_obsidian"
+      ],
+      "category": "THAUMIC_TINKERER",
+      "parents": [
+        "THAUMIC_TINKERER_BASE"
+      ],
+      "location": [
+        1,
+        1
+      ],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.terra_obsidian.stage.1",
+          "required_knowledge": [
+          ]
+        },
+        {
+          "text": "thaumictinkerer.research.terra_obsidian.stage.2",
+          "recipes": [
+            "thaumictinkerer:terra_obsidian"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_THAUMIC_CAKE",
+      "name": "thaumictinkerer.research.thaumic_cake.title",
+      "icons": [
+        "thaumictinkerer:thaumic_cake"
+      ],
+      "category": "THAUMIC_TINKERER",
+      "parents": [
+        "THAUMIC_TINKERER_BASE"
+      ],
+      "location": [
+        0,
+        2
+      ],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.thaumic_cake.stage.1",
+          "required_knowledge": [
+          ]
+        },
+        {
+          "text": "thaumictinkerer.research.thaumic_cake.stage.2",
+          "recipes": [
+            "thaumictinkerer:thaumic_cake"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_UMBRAL_ROSE_BUSH",
+      "name": "thaumictinkerer.research.umbral_rose_bush.title",
+      "icons": [
+        "thaumictinkerer:umbral_rose_bush"
+      ],
+      "category": "THAUMIC_TINKERER",
+      "parents": [
+        "THAUMIC_TINKERER_BASE"
+      ],
+      "location": [
+        -1,
+        1
+      ],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.umbral_rose_bush.stage.1",
+          "required_knowledge": [
+          ]
+        },
+        {
+          "text": "thaumictinkerer.research.umbral_rose_bush.stage.2",
+          "recipes": [
+            "thaumictinkerer:umbral_rose_bush"
+          ]
+        }
+      ]
+    }
+  ]
+}
