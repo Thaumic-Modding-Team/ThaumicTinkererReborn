@@ -9,7 +9,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["~FIRSTSTEPS"],
       "siblings": ["~FIRSTSTEPS"],
-      "meta": ["ROUND", "SPIKY", "HIDDEN"],
+      "meta": ["ROUND", "HIDDEN"],
       "location": [0, 0],
       "stages": [
         {

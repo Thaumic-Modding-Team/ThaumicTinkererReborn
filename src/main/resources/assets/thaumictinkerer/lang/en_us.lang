@@ -111,6 +111,48 @@ thaumictinkerer.research.umbral_rose_bush.title.subtitle=The end of the squid ga
 thaumictinkerer.research.umbral_rose_bush.stage.1=Constantly having to venture into the oceans to find and defeat squid for ink sacs is becoming an incredible annoyance.<BR>Thaumaturgy has yet to fail me, so there must be an answer I can devise.
 thaumictinkerer.research.umbral_rose_bush.stage.2=[WIP]
 
+# -- NECROMANCY
+thaumictinkerer.research.necromancy.title=Necromancy
+thaumictinkerer.research.necromancy.title.subtitle=Necronomicon not included
+thaumictinkerer.research.necromancy.stage.1=[WIP]
+thaumictinkerer.research.necromancy.stage.2=[WIP]
+
+# -- NECROMANCY: Alien Soul
+thaumictinkerer.research.alien_soul.title=Soul: Alien
+thaumictinkerer.research.alien_soul.title.subtitle=Void Spirits
+thaumictinkerer.research.alien_soul.stage.1=[WIP]
+thaumictinkerer.research.alien_soul.stage.2=[WIP]
+
+# -- NECROMANCY: Arcane Soul
+thaumictinkerer.research.arcane_soul.title=Soul: Arcane
+thaumictinkerer.research.arcane_soul.title.subtitle=Magical Spirits
+thaumictinkerer.research.arcane_soul.stage.1=[WIP]
+thaumictinkerer.research.arcane_soul.stage.2=[WIP]
+
+# -- NECROMANCY: Demonic Soul
+thaumictinkerer.research.demonic_soul.title=Soul: Demonic
+thaumictinkerer.research.demonic_soul.title.subtitle=Pyre Spirits
+thaumictinkerer.research.demonic_soul.stage.1=[WIP]
+thaumictinkerer.research.demonic_soul.stage.2=[WIP]
+
+# -- NECROMANCY: Eldritch Soul
+thaumictinkerer.research.eldritch_soul.title=Soul: Eldritch
+thaumictinkerer.research.eldritch_soul.title.subtitle=Reticent Spirits
+thaumictinkerer.research.eldritch_soul.stage.1=[WIP]
+thaumictinkerer.research.eldritch_soul.stage.2=[WIP]
+
+# -- NECROMANCY: Hostile Soul
+thaumictinkerer.research.hostile_soul.title=Soul: Hostile
+thaumictinkerer.research.hostile_soul.title.subtitle=Maddening Spirits
+thaumictinkerer.research.hostile_soul.stage.1=[WIP]
+thaumictinkerer.research.hostile_soul.stage.2=[WIP]
+
+# -- NECROMANCY: Tainted Soul
+thaumictinkerer.research.tainted_soul.title=Soul: Tainted
+thaumictinkerer.research.tainted_soul.title.subtitle=Parasitical Spirits
+thaumictinkerer.research.tainted_soul.stage.1=[WIP]
+thaumictinkerer.research.tainted_soul.stage.2=[WIP]
+
 # GroovyScript
 groovyscript.wiki.thaumictinkerer.necromancy_tablet.title=Tablet of Necromancy
 groovyscript.wiki.thaumictinkerer.necromancy_tablet.description=Uses catalysts and essentia to spawn entities
