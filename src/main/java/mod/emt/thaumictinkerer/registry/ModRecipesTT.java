@@ -109,11 +109,10 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_ITEM),
                 " I ",
-                "AIT",
+                "QIQ",
                 "WEW",
                 'I', "ingotIron",
-                'A', ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
-                'T', ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+                'Q', ModItemsTT.ARCANE_QUARTZ,
                 'W', BlocksTC.logGreatwood,
                 'E', new ItemStack(ItemsTC.nuggets, 1, 10)
         ));
@@ -124,11 +123,10 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_MOB),
                 " I ",
-                "AIT",
+                "QIQ",
                 "WEW",
                 'I', "ingotThaumium",
-                'A', ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
-                'T', ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+                'Q', ModItemsTT.ARCANE_QUARTZ,
                 'W', BlocksTC.logGreatwood,
                 'E', new ItemStack(ItemsTC.nuggets, 1, 10)
         ));
@@ -139,11 +137,10 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_PLAYER),
                 " I ",
-                "AIT",
+                "QIQ",
                 "WEW",
                 'I', "gemDiamond",
-                'A', ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
-                'T', ThaumcraftApiHelper.makeCrystal(Aspect.EARTH),
+                'Q', ModItemsTT.ARCANE_QUARTZ,
                 'W', BlocksTC.logGreatwood,
                 'E', new ItemStack(ItemsTC.nuggets, 1, 10)
         ));
@@ -152,7 +149,7 @@ public class ModRecipesTT {
                 "",
                 30,
                 new AspectList().add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
-                new ItemStack(ModBlocksTT.DISSIMULATION_BLOCK),
+                new ItemStack(ModBlocksTT.DISSIMULATION_BLOCK, 5),
                 "SCS",
                 "PSP",
                 "SCS",
@@ -166,13 +163,11 @@ public class ModRecipesTT {
                 10,
                 new AspectList().add(Aspect.ORDER, 1),
                 new ItemStack(ModItemsTT.ESCAPE_SIGIL),
-                " L ",
-                "MPM",
-                " D ",
-                'L', ThaumcraftApiHelper.makeCrystal(Aspect.LIGHT),
-                'M', ThaumcraftApiHelper.makeCrystal(Aspect.MOTION),
-                'P', Items.ENDER_PEARL,
-                'D', ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
+                " Q ",
+                "QPQ",
+                " Q ",
+                'Q', ModItemsTT.ARCANE_QUARTZ,
+                'P', Items.ENDER_PEARL
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"), new ShapedArcaneRecipe(
                 defaultGroup,
@@ -247,11 +242,12 @@ public class ModRecipesTT {
                 new ItemStack(ModBlocksTT.TRANSVECTOR_DISLOCATOR),
                 "SMS",
                 "GRG",
-                "SCS",
+                "QCQ",
                 'S', BlocksTC.stoneArcane,
                 'G', ItemsTC.mirroredGlass,
                 'R', ItemsTC.visResonator,
                 'M', BlocksTC.mirror,
+                'Q', ModBlocksTT.ARCANE_QUARTZ_BLOCK,
                 'C', ItemsTC.mechanismComplex
         ));
     }
@@ -313,7 +309,7 @@ public class ModRecipesTT {
                 ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
                 ThaumcraftApiHelper.makeCrystal(Aspect.AIR),
                 new ItemStack(ItemsTC.nuggets, 1, 10),
-                new ItemStack(BlocksTC.plankGreatwood)
+                ModBlocksTT.ARCANE_QUARTZ_BLOCK
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"), new InfusionRecipe(
                 "",
@@ -335,6 +331,8 @@ public class ModRecipesTT {
                 "obsidian",
                 "obsidian",
                 "obsidian",
+                ModItemsTT.ARCANE_QUARTZ,
+                ModItemsTT.ARCANE_QUARTZ,
                 Items.ENDER_EYE
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"), new InfusionRecipe(
@@ -442,9 +440,9 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.FIRE, 40).add(Aspect.METAL, 40).add(Aspect.TOOL, 30).add(Aspect.MAGIC, 10),
                 new ItemStack(Items.FLINT_AND_STEEL),
                 ThaumcraftApiHelper.makeCrystal(Aspect.FIRE),
-                new ItemStack(ItemsTC.ingots, 1, 0),
+                "ingotThaumium",
                 ThaumcraftApiHelper.makeCrystal(Aspect.METAL),
-                new ItemStack(ItemsTC.nuggets, 1, 10)
+                ModItemsTT.ARCANE_QUARTZ
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "recall_stopwatch"), new InfusionRecipe(
                 "",
@@ -452,13 +450,13 @@ public class ModRecipesTT {
                 10,
                 new AspectList().add(Aspect.MECHANISM, 100).add(Aspect.EXCHANGE, 100).add(Aspect.MAGIC, 50).add(Aspect.LIFE, 30).add(Aspect.SOUL, 30),
                 Items.CLOCK,
-                new ItemStack(ItemsTC.nuggets, 1, 10),
+                ModItemsTT.ARCANE_QUARTZ,
                 ModItemsTT.ESCAPE_SIGIL,
-                ItemsTC.salisMundus,
+                ModItemsTT.ARCANE_QUARTZ,
                 ModItemsTT.ESCAPE_SIGIL,
-                ItemsTC.mechanismComplex,
+                ModItemsTT.ARCANE_QUARTZ,
                 ModItemsTT.ESCAPE_SIGIL,
-                ItemsTC.salisMundus,
+                ModItemsTT.ARCANE_QUARTZ,
                 ModItemsTT.ESCAPE_SIGIL
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_cake"), new InfusionRecipe(
@@ -466,7 +464,7 @@ public class ModRecipesTT {
                 new ItemStack(ModBlocksTT.THAUMIC_CAKE),
                 2,
                 new AspectList().add(Aspect.CRAFT, 45).add(Aspect.DESIRE, 30).add(Aspect.ORDER, 30).add(Aspect.FLUX, 15).add(Aspect.ELDRITCH, 15),
-                Blocks.CAKE,
+                Items.CAKE,
                 ItemsTC.salisMundus,
                 Items.EGG,
                 ThaumcraftApiHelper.makeCrystal(Aspect.DESIRE),
@@ -481,11 +479,11 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.MIND, 100).add(Aspect.DESIRE, 75).add(Aspect.EXCHANGE, 75).add(Aspect.MAGIC, 50),
                 new ItemStack(ItemsTC.baubles, 1, 4),
                 "ingotGold",
-                "gemDiamond",
+                ModItemsTT.ARCANE_QUARTZ,
                 "ingotGold",
                 new IngredientNBTTC(new ItemStack(Items.ENCHANTED_BOOK)),
                 "ingotGold",
-                "gemDiamond",
+                ModItemsTT.ARCANE_QUARTZ,
                 "ingotGold",
                 BlocksTC.jarBrain
         ));

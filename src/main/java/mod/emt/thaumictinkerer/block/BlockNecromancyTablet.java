@@ -4,6 +4,7 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.tile.TileNecromancyTablet;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -34,7 +35,6 @@ import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
-import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.InfusionRecipe;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
@@ -141,7 +141,7 @@ public class BlockNecromancyTablet extends BlockTileAddition {
                 new ItemStack(this),
                 5,
                 new AspectList().add(Aspect.UNDEAD, 75).add(Aspect.LIFE, 75).add(Aspect.SOUL, 75).add(Aspect.DEATH, 50).add(Aspect.EXCHANGE, 50).add(Aspect.DESIRE, 30),
-                BlocksTC.slabArcaneStone,
+                ModBlocksTT.ARCANE_QUARTZ_BLOCK,
                 Items.EGG,
                 Items.PORKCHOP,
                 Items.BEEF,

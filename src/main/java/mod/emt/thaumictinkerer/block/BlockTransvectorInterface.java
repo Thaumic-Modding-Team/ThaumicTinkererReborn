@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.block;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.tile.TileTransvectorInterface;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -37,11 +38,12 @@ public class BlockTransvectorInterface extends BlockTileAddition {
                 new ItemStack(this),
                 "SRS",
                 "LPL",
-                "SCS",
+                "QCQ",
                 'S', BlocksTC.stoneArcane,
                 'R', "blockRedstone",
                 'L', "blockLapis",
                 'P', Items.ENDER_PEARL,
+                'Q', ModBlocksTT.ARCANE_QUARTZ_BLOCK,
                 'C', ItemsTC.mechanismComplex
         ));
     }
