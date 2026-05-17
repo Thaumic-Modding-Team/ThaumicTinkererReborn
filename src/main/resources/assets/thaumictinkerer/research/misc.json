@@ -1,11 +1,135 @@
 {
   "entries": [
     {
+      "key": "TT_ENDER_MIRROR",
+      "name": "thaumictinkerer.research.ender_mirror.title",
+      "icons": ["thaumictinkerer:ender_mirror"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE", "~MIRRORHAND"],
+      "location": [1, -1],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.ender_mirror.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.ender_mirror.stage.2",
+          "recipes": [
+            "thaumictinkerer:ender_mirror"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_ENERGETIC_NITOR",
+      "name": "thaumictinkerer.research.energetic_nitor.title",
+      "icons": ["thaumictinkerer:energetic_nitor"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE", "~HEDGEALCHEMY", "~INFUSION"],
+      "meta": ["REVERSE"],
+      "location": [1, 3],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.energetic_nitor.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.energetic_nitor.stage.2",
+          "recipes": [
+            "thaumictinkerer:energetic_nitor"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_ESCAPE_SIGIL",
+      "name": "thaumictinkerer.research.escape_sigil.title",
+      "icons": ["thaumictinkerer:escape_sigil"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["REVERSE"],
+      "location": [-1, 5],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.escape_sigil.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.escape_sigil.stage.2",
+          "recipes": [
+            "thaumictinkerer:escape_sigil"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_ESSENTIA_FUNNEL",
+      "name": "thaumictinkerer.research.essentia_funnel.title",
+      "icons": ["thaumictinkerer:essentia_funnel"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_EVERFULL_BUCKET", "~ESSENTIASMELTERTHAUMIUM"],
+      "location": [2, 6],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.essentia_funnel.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.essentia_funnel.stage.2",
+          "recipes": [
+            "thaumictinkerer:essentia_funnel"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_EVERFULL_BUCKET",
+      "name": "thaumictinkerer.research.everfull_bucket.title",
+      "icons": ["thaumictinkerer:everfull_bucket"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["REVERSE"],
+      "location": [1, 5],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.everfull_bucket.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.everfull_bucket.stage.2",
+          "recipes": [
+            "thaumictinkerer:everfull_bucket"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_RECALL_STOPWATCH",
+      "name": "thaumictinkerer.research.recall_stopwatch.title",
+      "icons": ["thaumictinkerer:recall_stopwatch"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_ESCAPE_SIGIL"],
+      "location": [-2, 6],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.recall_stopwatch.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.recall_stopwatch.stage.2",
+          "recipes": [
+            "thaumictinkerer:recall_stopwatch"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_TERRA_OBSIDIAN",
       "name": "thaumictinkerer.research.terra_obsidian.title",
       "icons": ["thaumictinkerer:terra_obsidian"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["REVERSE"],
       "location": [1, 1],
       "stages": [
         {
@@ -26,7 +150,8 @@
       "icons": ["thaumictinkerer:thaumic_cake"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
-      "location": [0, 2],
+      "meta": ["REVERSE"],
+      "location": [-1, 3],
       "stages": [
         {
           "text": "thaumictinkerer.research.thaumic_cake.stage.1",
@@ -41,11 +166,32 @@
       ]
     },
     {
+      "key": "TT_THAUMIC_RESTORER",
+      "name": "thaumictinkerer.research.thaumic_restorer.title",
+      "icons": ["thaumictinkerer:thaumic_restorer"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "location": [0, 6],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.thaumic_restorer.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.thaumic_restorer.stage.2",
+          "recipes": [
+            "thaumictinkerer:thaumic_restorer"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_UMBRAL_ROSEBUSH",
       "name": "thaumictinkerer.research.umbral_rosebush.title",
       "icons": ["thaumictinkerer:umbral_rose"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["REVERSE"],
       "location": [-1, 1],
       "stages": [
         {

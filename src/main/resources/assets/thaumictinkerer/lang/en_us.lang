@@ -94,6 +94,12 @@ thaumictinkerer.research.thaumic_tinkerer_base.title=Thaumic Tinkering
 thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word 'Construct'
 thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
+# -- EQUIPMENT: Ender Mirror
+thaumictinkerer.research.ender_mirror.title=Ender Mirror
+thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
+thaumictinkerer.research.ender_mirror.stage.1=[WIP]
+thaumictinkerer.research.ender_mirror.stage.2=[WIP]
+
 # -- EQUIPMENT: Feline Charm
 thaumictinkerer.research.feline_charm.title=Feline Charm
 thaumictinkerer.research.feline_charm.title.subtitle=Like black cats on a bad day
@@ -126,15 +132,33 @@ thaumictinkerer.research.condor_sword.stage.2=[WIP]
 
 # -- EQUIPMENT: Talisman of Experience
 thaumictinkerer.research.xp_talisman.title=Talisman of Experience
-thaumictinkerer.research.xp_talisman.title.subtitle=I'll take your 'time'
+thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
 thaumictinkerer.research.xp_talisman.stage.1=[WIP]
 thaumictinkerer.research.xp_talisman.stage.2=[WIP]
 
-# -- MISC: Ender Mirror
-thaumictinkerer.research.ender_mirror.title=Ender Mirror
-thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
-thaumictinkerer.research.ender_mirror.stage.1=[WIP]
-thaumictinkerer.research.ender_mirror.stage.2=[WIP]
+# -- MISC: Energetic Nitor
+thaumictinkerer.research.energetic_nitor.title=Energetic Nitor
+thaumictinkerer.research.energetic_nitor.title.subtitle=Lighting the path
+thaumictinkerer.research.energetic_nitor.stage.1=[WIP]
+thaumictinkerer.research.energetic_nitor.stage.2=[WIP]
+
+# -- MISC: Escape Sigil
+thaumictinkerer.research.escape_sigil.title=Escape Sigil
+thaumictinkerer.research.escape_sigil.title.subtitle=Think fast!
+thaumictinkerer.research.escape_sigil.stage.1=[WIP]
+thaumictinkerer.research.escape_sigil.stage.2=[WIP]
+
+# -- MISC: Essentia Funnel
+thaumictinkerer.research.essentia_funnel.title=Essentia Funnel
+thaumictinkerer.research.essentia_funnel.title.subtitle=[WIP]
+thaumictinkerer.research.essentia_funnel.stage.1=[WIP]
+thaumictinkerer.research.essentia_funnel.stage.2=[WIP]
+
+# -- MISC: Everfull Bucket
+thaumictinkerer.research.everfull_bucket.title=Everfull Bucket
+thaumictinkerer.research.everfull_bucket.title.subtitle=A whole ocean could fit in it!
+thaumictinkerer.research.everfull_bucket.stage.1=[WIP]
+thaumictinkerer.research.everfull_bucket.stage.2=[WIP]
 
 # -- MISC: Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title=Obsidia Terra
@@ -147,6 +171,18 @@ thaumictinkerer.research.thaumic_cake.title=Thaumic Cake
 thaumictinkerer.research.thaumic_cake.title.subtitle=Let them eat cake!
 thaumictinkerer.research.thaumic_cake.stage.1=People constantly tell me that I cannot have my cake and eat it too, but what do they know?<BR>As the very world bends to my will, what better way to expend my precious time on this planet than to find a solution to this sever lack of cake.<BR>They might think me mad, but at least I'm not desperate enough to eat pie.
 thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues think I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
+
+# -- MISC: Thaumic Restorer
+thaumictinkerer.research.thaumic_restorer.title=Thaumic Restorer
+thaumictinkerer.research.thaumic_restorer.title.subtitle=Undoing the damage you've done
+thaumictinkerer.research.thaumic_restorer.stage.1=[WIP]
+thaumictinkerer.research.thaumic_restorer.stage.2=[WIP]
+
+# -- MISC: Timetwister Stopwatch
+thaumictinkerer.research.recall_stopwatch.title=Timetwister Stopwatch
+thaumictinkerer.research.recall_stopwatch.title.subtitle=Back to the Past
+thaumictinkerer.research.recall_stopwatch.stage.1=[WIP]
+thaumictinkerer.research.recall_stopwatch.stage.2=[WIP]
 
 # -- MISC: Umbral Rose Bush
 thaumictinkerer.research.umbral_rosebush.title=Umbral Rose Bush
