@@ -41,6 +41,7 @@ public class CommonProxy {
                 new ResourceLocation(Thaumcraft.MODID, "textures/gui/gui_research_back_over.png"));
 
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/basics"));
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/equipment"));
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/misc"));
 
         RegistrarTT.getAdditions().forEach(IAddition::registerResearchLocation);

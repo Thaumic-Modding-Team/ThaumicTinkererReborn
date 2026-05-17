@@ -94,6 +94,48 @@ thaumictinkerer.research.thaumic_tinkerer_base.title=Thaumic Tinkering
 thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word 'Construct'
 thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
+# -- EQUIPMENT: Feline Charm
+thaumictinkerer.research.feline_charm.title=Feline Charm
+thaumictinkerer.research.feline_charm.title.subtitle=Like black cats on a bad day
+thaumictinkerer.research.feline_charm.stage.1=[WIP]
+thaumictinkerer.research.feline_charm.stage.2=[WIP]
+
+# -- EQUIPMENT: Ignium Striker
+thaumictinkerer.research.ignium_striker.title=Ignium Striker
+thaumictinkerer.research.ignium_striker.title.subtitle=Who needs a flint when you have the elements?
+thaumictinkerer.research.ignium_striker.stage.1=[WIP]
+thaumictinkerer.research.ignium_striker.stage.2=[WIP]
+
+# -- EQUIPMENT: Sigil of Consuming
+thaumictinkerer.research.consuming_sigil.title=Sigil of Consuming
+thaumictinkerer.research.consuming_sigil.title.subtitle=Don't ask questions, just consume
+thaumictinkerer.research.consuming_sigil.stage.1=[WIP]
+thaumictinkerer.research.consuming_sigil.stage.2=[WIP]
+
+# -- EQUIPMENT: Ring of Goliath's Might
+thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
+thaumictinkerer.research.goliath_ring.title.subtitle=Weak to stone
+thaumictinkerer.research.goliath_ring.stage.1=[WIP]
+thaumictinkerer.research.goliath_ring.stage.2=[WIP]
+
+# -- EQUIPMENT: Sword of the Condor
+thaumictinkerer.research.condor_sword.title=Sword of the Condor
+thaumictinkerer.research.condor_sword.title.subtitle=[WIP]
+thaumictinkerer.research.condor_sword.stage.1=[WIP]
+thaumictinkerer.research.condor_sword.stage.2=[WIP]
+
+# -- EQUIPMENT: Talisman of Experience
+thaumictinkerer.research.xp_talisman.title=Talisman of Experience
+thaumictinkerer.research.xp_talisman.title.subtitle=I'll take your 'time'
+thaumictinkerer.research.xp_talisman.stage.1=[WIP]
+thaumictinkerer.research.xp_talisman.stage.2=[WIP]
+
+# -- MISC: Ender Mirror
+thaumictinkerer.research.ender_mirror.title=Ender Mirror
+thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
+thaumictinkerer.research.ender_mirror.stage.1=[WIP]
+thaumictinkerer.research.ender_mirror.stage.2=[WIP]
+
 # -- MISC: Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title=Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title.subtitle=Green Obsidian
@@ -104,7 +146,7 @@ thaumictinkerer.research.terra_obsidian.stage.2=Who would have thought it was as
 thaumictinkerer.research.thaumic_cake.title=Thaumic Cake
 thaumictinkerer.research.thaumic_cake.title.subtitle=Let them eat cake!
 thaumictinkerer.research.thaumic_cake.stage.1=People constantly tell me that I cannot have my cake and eat it too, but what do they know?<BR>As the very world bends to my will, what better way to expend my precious time on this planet than to find a solution to this sever lack of cake.<BR>They might think me mad, but at least I'm not desperate enough to eat pie.
-thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues thing I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
+thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues think I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
 
 # -- MISC: Umbral Rose Bush
 thaumictinkerer.research.umbral_rosebush.title=Umbral Rose Bush
