@@ -264,19 +264,19 @@ public class ModRecipesTT {
 
     // TODO: Research keys and aspect balance
     private static void initCrucibleRecipes() {
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "AA_PRISMARINE"), new CrucibleRecipe(
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_prismarine"), new CrucibleRecipe(
                 "",
                 new ItemStack(Items.PRISMARINE_SHARD),
                 "paneGlass",
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
         ));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "AA_SEA_LANTERN"), new CrucibleRecipe(
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_sea_lantern"), new CrucibleRecipe(
                 "",
                 new ItemStack(Blocks.SEA_LANTERN),
                 new ItemStack(Blocks.REDSTONE_LAMP),
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
         ));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "AA_SPONGE"), new CrucibleRecipe(
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_sponge"), new CrucibleRecipe(
                 "",
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 "wool",

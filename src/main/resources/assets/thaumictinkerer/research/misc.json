@@ -1,6 +1,28 @@
 {
   "entries": [
     {
+      "key": "TT_AQUATIC_ALCHEMY",
+      "name": "thaumictinkerer.research.aquatic_alchemy.title",
+      "icons": ["minecraft:prismarine_shard", "minecraft:sea_lantern", "minecraft:sponge;1;0"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE", "~HEDGEALCHEMY"],
+      "location": [-1, -1],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.aquatic_alchemy.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.aquatic_alchemy.stage.2",
+          "recipes": [
+            "thaumictinkerer:aa_prismarine",
+            "thaumictinkerer:aa_sea_lantern",
+            "thaumictinkerer:aa_sponge"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_ENDER_MIRROR",
       "name": "thaumictinkerer.research.ender_mirror.title",
       "icons": ["thaumictinkerer:ender_mirror"],

@@ -136,6 +136,12 @@ thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
 thaumictinkerer.research.xp_talisman.stage.1=[WIP]
 thaumictinkerer.research.xp_talisman.stage.2=[WIP]
 
+# -- MISC: Aquatic Alchemy
+thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
+thaumictinkerer.research.aquatic_alchemy.title.subtitle=[WIP]
+thaumictinkerer.research.aquatic_alchemy.stage.1=[WIP]
+thaumictinkerer.research.aquatic_alchemy.stage.2=With mundane ingredients, I can artificially make my own prismarine shards as I so desire. I can also do the same for sea lanterns and sponges.
+
 # -- MISC: Energetic Nitor
 thaumictinkerer.research.energetic_nitor.title=Energetic Nitor
 thaumictinkerer.research.energetic_nitor.title.subtitle=Lighting the path
