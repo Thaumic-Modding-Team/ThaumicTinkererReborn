@@ -209,7 +209,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "terra_obsidian"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_TERRA_OBSIDIAN",
                 15,
                 new AspectList().add(Aspect.ORDER, 2).add(Aspect.EARTH, 2),
                 new ItemStack(ModBlocksTT.TERRA_OBSIDIAN),
@@ -292,7 +292,7 @@ public class ModRecipesTT {
                 new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rose_bush"), new CrucibleRecipe(
-                "",
+                "TT_UMBRAL_ROSE_BUSH",
                 new ItemStack(ModBlocksTT.UMBRAL_ROSEBUSH),
                 new ItemStack(Blocks.DOUBLE_PLANT, 1, 4),
                 new AspectList().add(Aspect.DARKNESS, 30).add(Aspect.LIFE, 30)
@@ -460,7 +460,7 @@ public class ModRecipesTT {
                 ModItemsTT.ESCAPE_SIGIL
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_cake"), new InfusionRecipe(
-                "",
+                "TT_THAUMIC_CAKE",
                 new ItemStack(ModBlocksTT.THAUMIC_CAKE),
                 2,
                 new AspectList().add(Aspect.CRAFT, 45).add(Aspect.DESIRE, 30).add(Aspect.ORDER, 30).add(Aspect.FLUX, 15).add(Aspect.ELDRITCH, 15),

@@ -96,19 +96,19 @@ thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand c
 # -- MISC: Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title=Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title.subtitle=Green Obsidian
-thaumictinkerer.research.terra_obsidian.stage.1=[WIP]
-thaumictinkerer.research.terra_obsidian.stage.2=[WIP]
+thaumictinkerer.research.terra_obsidian.stage.1=My attempts to contain certain powerful threats have been only moderately successful.<BR>Perhaps there is a way to further reinforce the already resilient nature of obsidian?
+thaumictinkerer.research.terra_obsidian.stage.2=Who would have thought it was as simple as infusing terra crystals into obsidian?<BR>Obsidia Terra, as I have dubbed this material, is 2.5 times more resistant to explosions than normal obsidian, yet is significantly easier to harvest with a pickaxe. Certainly a material this robust could be used to contain powerful fel creatures.
 
 # -- MISC: Thaumic Cake
 thaumictinkerer.research.thaumic_cake.title=Thaumic Cake
 thaumictinkerer.research.thaumic_cake.title.subtitle=Let them eat cake!
-thaumictinkerer.research.thaumic_cake.stage.1=[WIP]
-thaumictinkerer.research.thaumic_cake.stage.2=[WIP]
+thaumictinkerer.research.thaumic_cake.stage.1=People constantly tell me that I cannot have my cake and eat it too, but what do they know?<BR>As the very world bends to my will, what better way to expend my precious time on this planet than to find a solution to this sever lack of cake.<BR>They might think me mad, but at least I'm not desperate enough to eat pie.
+thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues thing I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
 
 # -- MISC: Umbral Rose Bush
 thaumictinkerer.research.umbral_rose_bush.title=Umbral Rose Bush
-thaumictinkerer.research.umbral_rose_bush.title.subtitle=[WIP]
-thaumictinkerer.research.umbral_rose_bush.stage.1=[WIP]
+thaumictinkerer.research.umbral_rose_bush.title.subtitle=The end of the squid game.
+thaumictinkerer.research.umbral_rose_bush.stage.1=Constantly having to venture into the oceans to find and defeat squid for ink sacs is becoming an incredible annoyance.<BR>Thaumaturgy has yet to fail me, so there must be an answer I can devise.
 thaumictinkerer.research.umbral_rose_bush.stage.2=[WIP]
 
 # GroovyScript
