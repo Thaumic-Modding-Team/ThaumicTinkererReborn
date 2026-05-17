@@ -64,10 +64,10 @@ public class ModItemsTT {
 
         //Entity Souls
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 16, EnumRarity.UNCOMMON));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 8, EnumRarity.UNCOMMON));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_demonic", 8, EnumRarity.RARE));
-        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_alien", 8, EnumRarity.EPIC));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_hostile", 16, EnumRarity.UNCOMMON));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_arcane", 8, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_demonic", 8, EnumRarity.RARE));
+        RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_alien", 8, EnumRarity.RARE));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_tainted", 4, EnumRarity.EPIC));
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_eldritch", 1, EnumRarity.EPIC));
 

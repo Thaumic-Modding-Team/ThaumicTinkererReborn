@@ -30,6 +30,7 @@ tile.thaumictinkerer:thaumium_plated_cobblestone.name=Thaumium Plated Cobbleston
 tile.thaumictinkerer:transvector_dislocator.name=Transvector Dislocator
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 tile.thaumictinkerer:umbral_rose.name=Umbral Rose
+tile.thaumictinkerer:umbral_rosebush.name=Umbral Rosebush
 tile.thaumictinkerer:vitium_stone_bricks.name=Vitium Stone Bricks
 tile.thaumictinkerer:vitium_stone.name=Vitium Stone
 
@@ -106,52 +107,53 @@ thaumictinkerer.research.thaumic_cake.stage.1=People constantly tell me that I c
 thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues thing I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
 
 # -- MISC: Umbral Rose Bush
-thaumictinkerer.research.umbral_rose_bush.title=Umbral Rose Bush
-thaumictinkerer.research.umbral_rose_bush.title.subtitle=The end of the squid game.
-thaumictinkerer.research.umbral_rose_bush.stage.1=Constantly having to venture into the oceans to find and defeat squid for ink sacs is becoming an incredible annoyance.<BR>Thaumaturgy has yet to fail me, so there must be an answer I can devise.
-thaumictinkerer.research.umbral_rose_bush.stage.2=[WIP]
+thaumictinkerer.research.umbral_rosebush.title=Umbral Rose Bush
+thaumictinkerer.research.umbral_rosebush.title.subtitle=Save the squids!
+thaumictinkerer.research.umbral_rosebush.stage.1=There's no sight more pathetic than a soggy Thaumaturge. Constantly having to venture into the oceans to find and defeat squid for ink sacs is becoming an incredible annoyance.<BR>Thaumaturgy has yet to fail me, so there must be an answer I can devise.
+thaumictinkerer.research.umbral_rosebush.stage.2=I have created a flower that grows roses that can be crushed into black dye.<BR>Though the plant grows slowly, using shears I can harvest individual roses, giving me a nearly infinite supply of ink without the need to get wet.
 
 # -- NECROMANCY
 thaumictinkerer.research.necromancy.title=Necromancy
 thaumictinkerer.research.necromancy.title.subtitle=Necronomicon not included
-thaumictinkerer.research.necromancy.stage.1=[WIP]
-thaumictinkerer.research.necromancy.stage.2=[WIP]
+thaumictinkerer.research.necromancy.stage.1=On my travels I have encountered strange caged devices in underground dungeons that appear to create creatures from nothing.<BR>Because all creatures are composed of essentia, I cannot help but I wonder if I could create a device that can replicate this process using essentia.
+thaumictinkerer.research.necromancy.stage.2=Though the process is closer to reconstruction than necromancy, empty vessels created through this process rapidly decay unless bound with an artificial soul.<BR>Using the Tablet of Necromancy and a properly constructed altar, I can use essentia to construct an empty vessel and bind an artificial soul to the created flesh.<BR>With the altar properly constructed, I merely need to place an entity soul into tablet and place the correct catalysts onto the surrounding pedestals.<BR>Once all the components are in place, the altar will begin drawing essentia from nearby sources automatically.<BR>Once enough essentia has been consumed, the creature will spawn directly above the tablet, slightly reducing the strength of the entity soul.
+thaumictinkerer.research.necromancy.addenda.1=It appears that the process of creating creatures is fully autonimous, as though the entity soul wants to be bound to a vessel.<BR>Should I wish to disable the altar or stop the spawning process I can apply a redstone signal to the tablet.
 
-# -- NECROMANCY: Alien Soul
+# -- NECROMANCY: ALIEN SOUL
 thaumictinkerer.research.alien_soul.title=Soul: Alien
 thaumictinkerer.research.alien_soul.title.subtitle=Void Spirits
-thaumictinkerer.research.alien_soul.stage.1=[WIP]
-thaumictinkerer.research.alien_soul.stage.2=[WIP]
+thaumictinkerer.research.alien_soul.stage.1=My attempts to raise extra-dimensional creatures have largely been fruitless.<BR>There is just something different about how their spirits embody living flesh.
+thaumictinkerer.research.alien_soul.stage.2=With this new soul I can now bind the souls of otherworldly beings to constructed vessels.<BR>However, the soul has proven to be much more fragile than expected, fading roughly twice as fast as the peaceful or hostile entity souls.
 
-# -- NECROMANCY: Arcane Soul
+# -- NECROMANCY: ARCANE SOUL
 thaumictinkerer.research.arcane_soul.title=Soul: Arcane
 thaumictinkerer.research.arcane_soul.title.subtitle=Magical Spirits
-thaumictinkerer.research.arcane_soul.stage.1=[WIP]
-thaumictinkerer.research.arcane_soul.stage.2=[WIP]
+thaumictinkerer.research.arcane_soul.stage.1=My testing has shown that the sentient creatures are significantly more difficult to summon than those without significant cognitive processes.<BR>Where there is a will, there is another roadblock to overcome in my research...
+thaumictinkerer.research.arcane_soul.stage.2=With this new soul type, I can bind the souls of sentient creatures to empty vessels.<BR>However, the soul has proven to be much more fragile than expected, fading roughly twice as fast as the peaceful or hostile entity souls.
 
-# -- NECROMANCY: Demonic Soul
+# -- NECROMANCY: DEMONIC SOUL
 thaumictinkerer.research.demonic_soul.title=Soul: Demonic
 thaumictinkerer.research.demonic_soul.title.subtitle=Pyre Spirits
-thaumictinkerer.research.demonic_soul.stage.1=[WIP]
-thaumictinkerer.research.demonic_soul.stage.2=[WIP]
+thaumictinkerer.research.demonic_soul.stage.1=I suppose it should have been obvious in retrospect. Creatures of the nether do not have souls like those found in the overworld.<BR>However, if the nether truly is some type of afterlife for this world, then those creatures must have some similarity to what I have found thus far.
+thaumictinkerer.research.demonic_soul.stage.2=With this new soul type I can now bind the souls of creatures from the nether to empty vessels.<BR>However, the soul has proven to be much more fragile than expected, fading roughly twice as fast as the peaceful or hostile entity souls.
 
-# -- NECROMANCY: Eldritch Soul
+# -- NECROMANCY: ELDRITCH SOUL
 thaumictinkerer.research.eldritch_soul.title=Soul: Eldritch
 thaumictinkerer.research.eldritch_soul.title.subtitle=Reticent Spirits
-thaumictinkerer.research.eldritch_soul.stage.1=[WIP]
-thaumictinkerer.research.eldritch_soul.stage.2=[WIP]
+thaumictinkerer.research.eldritch_soul.stage.1=Some creatures are completely beyond what the entity souls I have created thus far can handle.<BR>As the strength of a creature increases, the fragility of the soul also increases...
+thaumictinkerer.research.eldritch_soul.stage.2=I barely managed to stabilize this new soul type long enough for it to become tangible.<BR>Judging by the fragility of the eldritch soul, it may only have one use before fully dissipating. I can only imagine the creatures I can create with this...
 
-# -- NECROMANCY: Hostile Soul
+# -- NECROMANCY: HOSTILE SOUL
 thaumictinkerer.research.hostile_soul.title=Soul: Hostile
 thaumictinkerer.research.hostile_soul.title.subtitle=Maddening Spirits
-thaumictinkerer.research.hostile_soul.stage.1=[WIP]
-thaumictinkerer.research.hostile_soul.stage.2=[WIP]
+thaumictinkerer.research.hostile_soul.stage.1=Thus far, I have only managed to reconstruct relatively weak creatures, generally those who have little to no will of their own beyond basic animal instincts.<BR>To go further I will need a new type of soul...
+thaumictinkerer.research.hostile_soul.stage.2=I have managed to create a new entity soul capable of binding hostile creatures commonly encountered in the overworld.
 
-# -- NECROMANCY: Tainted Soul
+# -- NECROMANCY: TAINTED SOUL
 thaumictinkerer.research.tainted_soul.title=Soul: Tainted
 thaumictinkerer.research.tainted_soul.title.subtitle=Parasitical Spirits
-thaumictinkerer.research.tainted_soul.stage.1=[WIP]
-thaumictinkerer.research.tainted_soul.stage.2=[WIP]
+thaumictinkerer.research.tainted_soul.stage.1=Tainted beings are so unlike any other creatures I have encountered.<BR>The way taint and flux can infect and infest other creatures, leads me to believe that there is a connection I have not yet discovered.
+thaumictinkerer.research.tainted_soul.stage.2=I have managed to create a new entity soul capable of binding tainted creates to empty vessels.<BR>I should take care with these creatures as many of them can cause irreversible damage if left unchecked.
 
 # GroovyScript
 groovyscript.wiki.thaumictinkerer.necromancy_tablet.title=Tablet of Necromancy

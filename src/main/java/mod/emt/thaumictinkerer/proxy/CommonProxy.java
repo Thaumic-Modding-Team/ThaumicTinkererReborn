@@ -43,8 +43,6 @@ public class CommonProxy {
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/basics"));
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/misc"));
 
-        // TODO: Make this only register if Necromancy stuff is enabled
-        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/necromancy"));
         RegistrarTT.getAdditions().forEach(IAddition::registerResearchLocation);
     }
 }

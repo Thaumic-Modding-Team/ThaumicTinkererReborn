@@ -5,6 +5,7 @@ import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileNecromancyTabletTESR;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import mod.emt.thaumictinkerer.registry.ModBlocksTT;
+import mod.emt.thaumictinkerer.registry.ModItemsTT;
 import mod.emt.thaumictinkerer.tile.TileNecromancyTablet;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -33,9 +34,11 @@ import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.ThaumcraftApiHelper;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.aspects.AspectList;
 import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.common.items.consumables.ItemPhial;
 
 public class BlockNecromancyTablet extends BlockTileAddition {
     public static final AxisAlignedBB TABLET_AABB = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
@@ -134,10 +137,12 @@ public class BlockNecromancyTablet extends BlockTileAddition {
     //##########################################################
     // IBlockAddition
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+        //Necromancy Tablet
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new InfusionRecipe(
-                "",
+                "TT_NECROMANCY",
                 new ItemStack(this),
                 5,
                 new AspectList().add(Aspect.UNDEAD, 75).add(Aspect.LIFE, 75).add(Aspect.SOUL, 75).add(Aspect.DEATH, 50).add(Aspect.EXCHANGE, 50).add(Aspect.DESIRE, 30),
@@ -152,11 +157,76 @@ public class BlockNecromancyTablet extends BlockTileAddition {
                 Blocks.MOSSY_COBBLESTONE,
                 "blockDiamond"
         ));
+
+        //Entity Souls
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_alien"), new InfusionRecipe(
+                "TT_ALIEN_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_ALIEN),
+                4,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.ELDRITCH),
+                ThaumcraftApiHelper.makeCrystal(Aspect.MOTION),
+                ThaumcraftApiHelper.makeCrystal(Aspect.VOID)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_arcane"), new InfusionRecipe(
+                "TT_ARCANE_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_ARCANE),
+                2,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.MAGIC),
+                ThaumcraftApiHelper.makeCrystal(Aspect.MAN),
+                ThaumcraftApiHelper.makeCrystal(Aspect.AURA)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_demonic"), new InfusionRecipe(
+                "TT_DEMONIC_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_DEMONIC),
+                2,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.FIRE),
+                ThaumcraftApiHelper.makeCrystal(Aspect.UNDEAD),
+                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_eldritch"), new InfusionRecipe(
+                "TT_ELDRITCH_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_ELDRITCH),
+                8,
+                new AspectList().add(Aspect.SOUL, 50).add(Aspect.ENTROPY, 50),
+                ItemPhial.makeFilledPhial(Aspect.ELDRITCH),
+                ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
+                ThaumcraftApiHelper.makeCrystal(Aspect.SOUL)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_hostile"), new InfusionRecipe(
+                "TT_HOSTILE_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_HOSTILE),
+                2,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.AVERSION),
+                ThaumcraftApiHelper.makeCrystal(Aspect.UNDEAD),
+                ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_peaceful"), new InfusionRecipe(
+                "TT_NECROMANCY",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_PEACEFUL),
+                2,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.BEAST),
+                ThaumcraftApiHelper.makeCrystal(Aspect.LIFE),
+                ThaumcraftApiHelper.makeCrystal(Aspect.EARTH)
+        ));
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_tainted"), new InfusionRecipe(
+                "TT_TAINTED_SOUL",
+                new ItemStack(ModItemsTT.ENTITY_SOUL_TAINTED),
+                6,
+                new AspectList().add(Aspect.SOUL, 10),
+                ItemPhial.makeFilledPhial(Aspect.FLUX),
+                ThaumcraftApiHelper.makeCrystal(Aspect.ELDRITCH),
+                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
+        ));
     }
 
     @Override
     public void registerResearchLocation() {
-        //TODO
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/necromancy"));
     }
 
     @Override

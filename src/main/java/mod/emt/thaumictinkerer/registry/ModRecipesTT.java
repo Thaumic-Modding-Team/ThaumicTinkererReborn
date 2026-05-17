@@ -30,7 +30,6 @@ import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.*;
-import thaumcraft.common.items.consumables.ItemPhial;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
 
@@ -77,11 +76,9 @@ public class ModRecipesTT {
                         {null, null, NETH, NETH, NETH, null, null}
                 }
         };
-        //TODO: Swap to this
-        // IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_NECROMANCY_TABLET", blueprint));
-        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("BASEAUROMANCY", blueprint));
-        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"), new ThaumcraftApi.BluePrint(
-                "BASEAUROMANCY",//TODO: swap to this - "TT_NECROMANCY_TABLET",
+        IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_NECROMANCY", blueprint));
+        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_altar"), new ThaumcraftApi.BluePrint(
+                "TT_NECROMANCY",
                 blueprint,
                 new ItemStack(Blocks.NETHER_BRICK, 24),
                 new ItemStack(ModBlocksTT.ARCANE_QUARTZ_BLOCK, 13),
@@ -291,8 +288,8 @@ public class ModRecipesTT {
                 Items.BUCKET,
                 new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
         ));
-        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rose_bush"), new CrucibleRecipe(
-                "TT_UMBRAL_ROSE_BUSH",
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rosebush"), new CrucibleRecipe(
+                "TT_UMBRAL_ROSEBUSH",
                 new ItemStack(ModBlocksTT.UMBRAL_ROSEBUSH),
                 new ItemStack(Blocks.DOUBLE_PLANT, 1, 4),
                 new AspectList().add(Aspect.DARKNESS, 30).add(Aspect.LIFE, 30)
@@ -345,69 +342,6 @@ public class ModRecipesTT {
                 ThaumcraftApiHelper.makeCrystal(Aspect.SENSES),
                 ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS),
                 ThaumcraftApiHelper.makeCrystal(Aspect.SENSES)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_alien"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_ALIEN),
-                4,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.ELDRITCH),
-                ThaumcraftApiHelper.makeCrystal(Aspect.MOTION),
-                ThaumcraftApiHelper.makeCrystal(Aspect.VOID)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_arcane"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_ARCANE),
-                2,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.MAGIC),
-                ThaumcraftApiHelper.makeCrystal(Aspect.MAN),
-                ThaumcraftApiHelper.makeCrystal(Aspect.AURA)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_demonic"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_DEMONIC),
-                2,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.FIRE),
-                ThaumcraftApiHelper.makeCrystal(Aspect.UNDEAD),
-                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_eldritch"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_ELDRITCH),
-                8,
-                new AspectList().add(Aspect.SOUL, 50).add(Aspect.ENTROPY, 50),
-                ItemPhial.makeFilledPhial(Aspect.ELDRITCH),
-                ThaumcraftApiHelper.makeCrystal(Aspect.FLUX),
-                ThaumcraftApiHelper.makeCrystal(Aspect.SOUL)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_hostile"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_HOSTILE),
-                2,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.AVERSION),
-                ThaumcraftApiHelper.makeCrystal(Aspect.UNDEAD),
-                ThaumcraftApiHelper.makeCrystal(Aspect.ENTROPY)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_peaceful"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_PEACEFUL),
-                2,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.BEAST),
-                ThaumcraftApiHelper.makeCrystal(Aspect.LIFE),
-                ThaumcraftApiHelper.makeCrystal(Aspect.EARTH)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "entity_soul_tainted"), new InfusionRecipe(
-                "",
-                new ItemStack(ModItemsTT.ENTITY_SOUL_TAINTED),
-                6,
-                new AspectList().add(Aspect.SOUL, 10),
-                ItemPhial.makeFilledPhial(Aspect.FLUX),
-                ThaumcraftApiHelper.makeCrystal(Aspect.ELDRITCH),
-                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "feline_charm"), new InfusionRecipe(
                 "",
@@ -1056,6 +990,7 @@ public class ModRecipesTT {
                 )
         );
 
+        //TODO: Tainted and Eldritch summons.
         //Tainted
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeed", (new AspectList()).add(Aspect.FLUX, 20).add(Aspect.AURA, 10).add(Aspect.PLANT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 //        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeedPrime", (new AspectList()).add(Aspect.PLANT, 30).add(Aspect.BEAST, 30).add(Aspect.FLUX, 30), new ThaumcraftApi.EntityTagsNBT[0]);

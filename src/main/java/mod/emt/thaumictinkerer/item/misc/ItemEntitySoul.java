@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.item.misc;
 
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.ItemStack;
@@ -85,5 +86,10 @@ public class ItemEntitySoul extends AbstractItemAddition implements IProxy {
     @Override
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return ConfigHandlerTT.necromancyTablet.enable;
     }
 }

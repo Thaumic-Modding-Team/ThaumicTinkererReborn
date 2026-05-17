@@ -1,52 +1,53 @@
 {
   "forge_marker": 1,
   "variants": {
+    "inventory": { "model": "thaumictinkerer:umbral_rosebush" },
     "age=0": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage0"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage0"
       }
     },
     "age=1": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage1"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage1"
       }
     },
     "age=2": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage2"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage2"
       }
     },
     "age=3": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage3"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage3"
       }
     },
     "age=4": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage4"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage4"
       }
     },
     "age=5": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage5"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage5"
       }
     },
     "age=6": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage6"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage6"
       }
     },
     "age=7": {
       "model": "cross",
       "textures": {
-        "cross": "thaumictinkerer:blocks/crops/umbral_rosebush_stage7"
+        "cross": "thaumictinkerer:blocks/crops/rose/umbral_rosebush_stage7"
       }
     }
   }

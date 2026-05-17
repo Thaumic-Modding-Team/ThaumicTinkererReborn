@@ -1,29 +1,46 @@
 {
   "entries": [
     {
+      "key": "TT_NECROMANCY",
+      "name": "thaumictinkerer.research.necromancy.title",
+      "icons": ["thaumictinkerer:entity_soul_arcane"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["HIDDEN"],
+      "location": [-3, 0],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.necromancy.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.necromancy.stage.2",
+          "recipes": [
+            "thaumictinkerer:necromancy_tablet",
+            "thaumictinkerer:entity_soul_peaceful",
+            "thaumictinkerer:necromancy_altar"
+          ]
+        }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.necromancy.addenda.1",
+          "required_research": ["TT_NECROMANCY@2"]
+        }
+      ]
+    },
+    {
       "key": "TT_ALIEN_SOUL",
       "name": "thaumictinkerer.research.alien_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_alien"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_alien"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_ARCANE_SOUL"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN",
-        "REVERSE"
-      ],
-      "location": [
-        -7,
-        -2
-      ],
+      "parents": ["TT_ARCANE_SOUL"],
+      "meta": ["ROUND", "HIDDEN", "REVERSE"],
+      "location": [-7, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.alien_soul.stage.1",
-          "required_knowledge": [
-          ]
+          "required_knowledge": []
         },
         {
           "text": "thaumictinkerer.research.alien_soul.stage.2",
@@ -36,22 +53,11 @@
     {
       "key": "TT_ARCANE_SOUL",
       "name": "thaumictinkerer.research.arcane_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_arcane"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_arcane"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_HOSTILE_SOUL"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN",
-        "REVERSE"
-      ],
-      "location": [
-        -6,
-        -1
-      ],
+      "parents": ["TT_HOSTILE_SOUL"],
+      "meta": ["ROUND", "HIDDEN", "REVERSE"],
+      "location": [-6, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.arcane_soul.stage.1",
@@ -69,21 +75,11 @@
     {
       "key": "TT_DEMONIC_SOUL",
       "name": "thaumictinkerer.research.demonic_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_demonic"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_demonic"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_ARCANE_SOUL"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN"
-      ],
-      "location": [
-        -7,
-        0
-      ],
+      "parents": ["TT_ARCANE_SOUL"],
+      "meta": ["ROUND", "HIDDEN"],
+      "location": [-7, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.demonic_soul.stage.1",
@@ -101,21 +97,11 @@
     {
       "key": "TT_ELDRITCH_SOUL",
       "name": "thaumictinkerer.research.eldritch_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_eldritch"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_eldritch"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_TAINTED_SOUL"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN"
-      ],
-      "location": [
-        -9,
-        0
-      ],
+      "parents": ["TT_TAINTED_SOUL"],
+      "meta": ["ROUND", "HIDDEN"],
+      "location": [-9, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.eldritch_soul.stage.1",
@@ -133,22 +119,11 @@
     {
       "key": "TT_HOSTILE_SOUL",
       "name": "thaumictinkerer.research.hostile_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_hostile"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_hostile"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_NECROMANCY"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN",
-        "REVERSE"
-      ],
-      "location": [
-        -5,
-        0
-      ],
+      "parents": ["TT_NECROMANCY"],
+      "meta": ["ROUND", "HIDDEN", "REVERSE"],
+      "location": [-5, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.hostile_soul.stage.1",
@@ -164,56 +139,13 @@
       ]
     },
     {
-      "key": "TT_NECROMANCY",
-      "name": "thaumictinkerer.research.necromancy.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_arcane"
-      ],
-      "category": "THAUMIC_TINKERER",
-      "parents": [
-        "THAUMIC_TINKERER_BASE"
-      ],
-      "meta": [
-        "HIDDEN"
-      ],
-      "location": [
-        -3,
-        0
-      ],
-      "stages": [
-        {
-          "text": "thaumictinkerer.research.necromancy.stage.1",
-          "required_knowledge": [
-          ]
-        },
-        {
-          "text": "thaumictinkerer.research.necromancy.stage.2",
-          "recipes": [
-            "thaumictinkerer:necromancy_tablet",
-            "thaumictinkerer:entity_soul_peaceful"
-          ]
-        }
-      ]
-    },
-    {
       "key": "TT_TAINTED_SOUL",
       "name": "thaumictinkerer.research.tainted_soul.title",
-      "icons": [
-        "thaumictinkerer:entity_soul_tainted"
-      ],
+      "icons": ["thaumictinkerer:entity_soul_tainted"],
       "category": "THAUMIC_TINKERER",
-      "parents": [
-        "TT_ALIEN_SOUL",
-        "~TT_DEMONIC_SOUL"
-      ],
-      "meta": [
-        "ROUND",
-        "HIDDEN"
-      ],
-      "location": [
-        -8,
-        -1
-      ],
+      "parents": ["TT_ALIEN_SOUL", "~TT_DEMONIC_SOUL"],
+      "meta": ["ROUND", "HIDDEN"],
+      "location": [-8, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.tainted_soul.stage.1",
