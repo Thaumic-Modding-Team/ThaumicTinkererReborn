@@ -3,7 +3,7 @@
     {
       "key": "TT_NECROMANCY",
       "name": "thaumictinkerer.research.necromancy.title",
-      "icons": ["thaumictinkerer:entity_soul_arcane"],
+      "icons": ["thaumictinkerer:textures/research/r_necromancy.png"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
       "meta": ["HIDDEN"],
