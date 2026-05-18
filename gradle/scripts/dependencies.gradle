@@ -56,6 +56,8 @@ dependencies {
     implementation rfg.deobf(files('libs/thaumicapi-1.0.0.jar'))
     implementation rfg.deobf("curse.maven:magiculture-integrations-1064613:7445189")
     compileOnly rfg.deobf('curse.maven:botania-225643:3330934')
+    compileOnly rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
+    compileOnly rfg.deobf('curse.maven:tough-as-nails-246391:2639903')
 
     def modMap = [:]
     def loadMap = [:]
