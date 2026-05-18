@@ -96,13 +96,13 @@ thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand c
 
 # -- DEVICES: Anima Attractor
 thaumictinkerer.research.anima_attractor.title=Anima Attractor
-thaumictinkerer.research.anima_attractor.title.subtitle=[WIP]
+thaumictinkerer.research.anima_attractor.title.subtitle=Don't softlock yourself!
 thaumictinkerer.research.anima_attractor.stage.1=[WIP]
 thaumictinkerer.research.anima_attractor.stage.2=[WIP]
 
 # -- DEVICES: Corporeal Attractor
-thaumictinkerer.research.corporeal_attractor.title=Anima Attractor
-thaumictinkerer.research.corporeal_attractor.title.subtitle=[WIP]
+thaumictinkerer.research.corporeal_attractor.title=Corporeal Attractor
+thaumictinkerer.research.corporeal_attractor.title.subtitle=Disco Cow
 thaumictinkerer.research.corporeal_attractor.stage.1=[WIP]
 thaumictinkerer.research.corporeal_attractor.stage.2=[WIP]
 
