@@ -70,7 +70,7 @@ public class ItemEverfullBucket extends ItemBucket implements IItemAddition {
                     }
 
                     player.addStat(Objects.requireNonNull(StatList.getObjectUseStats(this)));
-                    AuraHelper.drainVis(world, blockpos1, 1.0F, false);
+                    AuraHelper.drainVis(world, blockpos1, 2.0F, false);
                     return new ActionResult<>(EnumActionResult.SUCCESS, stack);
                 } else
                     return new ActionResult<>(EnumActionResult.FAIL, stack);
