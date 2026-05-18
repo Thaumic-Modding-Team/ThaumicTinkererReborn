@@ -223,8 +223,8 @@ thaumictinkerer.research.escape_sigil.stage.2=[WIP]
 # -- MISC: Essentia Funnel
 thaumictinkerer.research.essentia_funnel.title=Essentia Funnel
 thaumictinkerer.research.essentia_funnel.title.subtitle=Topping the tank
-thaumictinkerer.research.essentia_funnel.stage.1=The process of emptying essentia from jars is a truly frustrating experience. I either have to dump massive amounts of flux into the environment or rely on piping that can only be described as "somewhat functional" at the best of times.<BR>There must be a better way...
-thaumictinkerer.research.essentia_funnel.stage.2=[WIP]
+thaumictinkerer.research.essentia_funnel.stage.1=The process of emptying essentia from jars is a truly frustrating experience. I either have to dump massive amounts of flux into the environment or rely on piping that can only be described as "somewhat functional".<BR>There must be a better way...
+thaumictinkerer.research.essentia_funnel.stage.2=I have developed rudimentary funnel capable of rapidly transferring essentia from one jar to another.<BR>The essentia funnel must be placed directly on top of a hopper, with the hopper facing into the essentia container.<BR>I can then place a jar into the funnel, which will rapidly drain the contents of the jar.
 
 # -- MISC: Everfull Bucket
 thaumictinkerer.research.everfull_bucket.title=Everfull Bucket
