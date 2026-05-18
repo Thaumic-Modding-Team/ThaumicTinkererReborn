@@ -36,7 +36,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
     public static final BlockPos[] PEDESTAL_OFFSETS;
     public static final BlockPos[] QUARTZ_OFFSETS;
     public static final BlockPos[] NETHER_BRICK_OFFSETS;
-    public static final int SPAWN_DELAY_MAX = 140;
+    public static final int SPAWN_DELAY_MAX = 110;
     public static final int RESTART_DELAY_MAX = 60;
 
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
@@ -141,7 +141,7 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
             this.consumeCenterItem();
             this.recipe.spawnEntity(this.world, this.pos);
             this.world.addBlockEvent(this.pos, ModBlocksTT.NECROMANCY_TABLET, EFFECT_SPAWN, 0);
-            this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_SPAWN_ENTITY.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+            this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_SUMMON_FINISH.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
             this.resetRecipe();
         }
     }
@@ -180,9 +180,9 @@ public class TileNecromancyTablet extends TileEntityTT implements ITickable, IAs
             } else {
                 if(this.spawnDelay > 0) {
                     if(this.spawnDelay >= SPAWN_DELAY_MAX) {
-                        this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_BEAM_START.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_SUMMON_START.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
                     } else if(this.spawnDelay == 104) {
-                        this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_BEAM_PROCESS.getSoundEvent(), SoundCategory.BLOCKS, 1.0F, 1.0F);
+                        this.world.playSound(null, pos, ModSoundEventsTT.BLOCK_NECROMANCY_TABLET_SUMMON_LOOP.getSoundEvent(), SoundCategory.BLOCKS, 0.5F, 1.0F);
                     }
                     for(int i = 0; i < PEDESTAL_OFFSETS.length; i++) {
                         if(!this.getPedestalItemStack(PEDESTAL_OFFSETS[i]).isEmpty()) {

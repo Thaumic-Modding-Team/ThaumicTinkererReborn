@@ -1,17 +1,19 @@
 {
-  "block.necromancy_tablet.beam_process": {
+  "block.necromancy_tablet.summon_finish": {
     "sounds": [
-      "thaumictinkerer:block/necromancy_tablet/beam_process"
+      "thaumictinkerer:block/necromancy_tablet/summon_finish1",
+      "thaumictinkerer:block/necromancy_tablet/summon_finish2"
     ]
   },
-  "block.necromancy_tablet.beam_start": {
+  "block.necromancy_tablet.summon_loop": {
     "sounds": [
-      "thaumictinkerer:block/necromancy_tablet/beam_start"
+      "thaumictinkerer:block/necromancy_tablet/summon_loop"
     ]
   },
-  "block.necromancy_tablet.spawn_entity": {
+  "block.necromancy_tablet.summon_start": {
     "sounds": [
-      "thaumictinkerer:block/necromancy_tablet/spawn_entity"
+      "thaumictinkerer:block/necromancy_tablet/summon_start1",
+      "thaumictinkerer:block/necromancy_tablet/summon_start2"
     ]
   }
 }
