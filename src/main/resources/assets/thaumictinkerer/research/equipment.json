@@ -1,6 +1,30 @@
 {
   "entries": [
     {
+      "key": "TT_ARCANE_INFUSION_ENCHANTMENT",
+      "name": "thaumictinkerer.research.arcane_infusion_enchantment.title",
+      "icons": ["thaumictinkerer:textures/research/r_wrath_infusion.png", "thaumictinkerer:textures/research/r_educational_infusion.png", "thaumictinkerer:textures/research/r_projecting_infusion.png"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_CONDOR_SWORD", "~INFUSIONENCHANTMENT"],
+      "meta": ["REVERSE"],
+      "location": [6, -3],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.arcane_infusion_enchantment.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.arcane_infusion_enchantment.stage.2",
+          "recipes": [
+            "thaumictinkerer:wrath_infusion_fake",
+            "thaumictinkerer:educational_infusion_fake1",
+            "thaumictinkerer:educational_infusion_fake2",
+            "thaumictinkerer:projecting_infusion_fake"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_CONDOR_SWORD",
       "name": "thaumictinkerer.research.condor_sword.title",
       "icons": ["thaumictinkerer:condor_sword"],
@@ -36,27 +60,6 @@
           "text": "thaumictinkerer.research.consuming_sigil.stage.2",
           "recipes": [
             "thaumictinkerer:consuming_sigil"
-          ]
-        }
-      ]
-    },
-    {
-      "key": "TT_EDUCATIONAL_INFUSION",
-      "name": "thaumictinkerer.research.educational_infusion.title",
-      "icons": ["thaumictinkerer:textures/research/r_educational_infusion.png"],
-      "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSIONENCHANTMENT"],
-      "location": [3, 2],
-      "stages": [
-        {
-          "text": "thaumictinkerer.research.educational_infusion.stage.1",
-          "required_knowledge": []
-        },
-        {
-          "text": "thaumictinkerer.research.educational_infusion.stage.2",
-          "recipes": [
-            "thaumictinkerer:educational_infusion_fake1",
-            "thaumictinkerer:educational_infusion_fake2"
           ]
         }
       ]
@@ -117,47 +120,6 @@
           "text": "thaumictinkerer.research.ignium_striker.stage.2",
           "recipes": [
             "thaumictinkerer:ignium_striker"
-          ]
-        }
-      ]
-    },
-    {
-      "key": "TT_PROJECTING_INFUSION",
-      "name": "thaumictinkerer.research.projecting_infusion.title",
-      "icons": ["thaumictinkerer:textures/research/r_projecting_infusion.png"],
-      "category": "THAUMIC_TINKERER",
-      "parents": ["TT_WRATH_INFUSION", "~INFUSIONENCHANTMENT"],
-      "meta": ["REVERSE"],
-      "location": [4, -4],
-      "stages": [
-        {
-          "text": "thaumictinkerer.research.projecting_infusion.stage.1",
-          "required_knowledge": []
-        },
-        {
-          "text": "thaumictinkerer.research.projecting_infusion.stage.2",
-          "recipes": [
-            "thaumictinkerer:projecting_infusion_fake"
-          ]
-        }
-      ]
-    },
-    {
-      "key": "TT_WRATH_INFUSION",
-      "name": "thaumictinkerer.research.wrath_infusion.title",
-      "icons": ["thaumictinkerer:textures/research/r_wrath_infusion.png"],
-      "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSIONENCHANTMENT"],
-      "location": [3, -2],
-      "stages": [
-        {
-          "text": "thaumictinkerer.research.wrath_infusion.stage.1",
-          "required_knowledge": []
-        },
-        {
-          "text": "thaumictinkerer.research.wrath_infusion.stage.2",
-          "recipes": [
-            "thaumictinkerer:wrath_infusion_fake"
           ]
         }
       ]
