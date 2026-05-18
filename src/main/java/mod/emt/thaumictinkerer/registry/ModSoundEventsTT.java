@@ -7,7 +7,8 @@ import net.minecraft.util.SoundEvent;
 public enum ModSoundEventsTT {
     BLOCK_NECROMANCY_TABLET_SUMMON_FINISH("block.necromancy_tablet.summon_finish"),
     BLOCK_NECROMANCY_TABLET_SUMMON_LOOP("block.necromancy_tablet.summon_loop"),
-    BLOCK_NECROMANCY_TABLET_SUMMON_START("block.necromancy_tablet.summon_start");
+    BLOCK_NECROMANCY_TABLET_SUMMON_START("block.necromancy_tablet.summon_start"),
+    BLOCK_THAUMIC_RESTORER_REPAIR_LOOP("block.thaumic_restorer.repair_loop");
 
     private final SoundEvent soundEvent;
 
