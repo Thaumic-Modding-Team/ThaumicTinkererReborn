@@ -5,9 +5,10 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum ModSoundEventsTT {
-    BLOCK_NECROMANCY_TABLET_BEAM_PROCESS("block.necromancy_tablet.beam_process"),
-    BLOCK_NECROMANCY_TABLET_BEAM_START("block.necromancy_tablet.beam_start"),
-    BLOCK_NECROMANCY_TABLET_SPAWN_ENTITY("block.necromancy_tablet.spawn_entity");
+    BLOCK_NECROMANCY_TABLET_SUMMON_FINISH("block.necromancy_tablet.summon_finish"),
+    BLOCK_NECROMANCY_TABLET_SUMMON_LOOP("block.necromancy_tablet.summon_loop"),
+    BLOCK_NECROMANCY_TABLET_SUMMON_START("block.necromancy_tablet.summon_start"),
+    BLOCK_THAUMIC_RESTORER_REPAIR_LOOP("block.thaumic_restorer.repair_loop");
 
     private final SoundEvent soundEvent;
 
