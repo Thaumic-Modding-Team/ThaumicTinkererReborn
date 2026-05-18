@@ -97,14 +97,14 @@ thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand c
 # -- EQUIPMENT: Ender Mirror
 thaumictinkerer.research.ender_mirror.title=Ender Mirror
 thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
-thaumictinkerer.research.ender_mirror.stage.1=[WIP]
-thaumictinkerer.research.ender_mirror.stage.2=[WIP]
+thaumictinkerer.research.ender_mirror.stage.1=If a magical hand mirror can grant me access to linked mirrors across dimensions, how much harder would it be to create something that access my personal ender chest inventory?
+thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to modify a magical hand mirror that will allow me to access my ender chest inventory from anywhere.
 
 # -- EQUIPMENT: Feline Charm
 thaumictinkerer.research.feline_charm.title=Feline Charm
 thaumictinkerer.research.feline_charm.title.subtitle=Like black cats on a bad day
-thaumictinkerer.research.feline_charm.stage.1=[WIP]
-thaumictinkerer.research.feline_charm.stage.2=[WIP]
+thaumictinkerer.research.feline_charm.stage.1=Creepers are a constant frustration. Not only do they blend into the environment, they also have a nasty penchant to hide behind walls and sneak up behind me.<BR>Perhaps I can create a tool that that can somehow neutralize these creatures.
+thaumictinkerer.research.feline_charm.stage.2=I have devised an amulet that muddles the perception of nearby creepers.<BR>While it cannot fully nutralize creeper detonations, while equipped, the feline amulet instils fear into nearby creepers, causing them to flee as though they were in the presence of a cat.<BR>So long as I do not perform hostile actions against the creatures, the amulet shouild grant me relative safety from their suicidal attacks.
 
 # -- EQUIPMENT: Ignium Striker
 thaumictinkerer.research.ignium_striker.title=Ignium Striker
@@ -139,8 +139,8 @@ thaumictinkerer.research.xp_talisman.stage.2=[WIP]
 # -- MISC: Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title.subtitle=[WIP]
-thaumictinkerer.research.aquatic_alchemy.stage.1=[WIP]
-thaumictinkerer.research.aquatic_alchemy.stage.2=With mundane ingredients, I can artificially make my own prismarine shards as I so desire. I can also do the same for sea lanterns and sponges.
+thaumictinkerer.research.aquatic_alchemy.stage.1=The ocean has a plethora of materials that can only be found when venturing into its deepest depths.<BR>Alchemy should provide a means to create these materials from common components.
+thaumictinkerer.research.aquatic_alchemy.stage.2=Using mundane ingredients, I can now artificially create my own prismarine shards, sea lanterns and sponges.
 
 # -- MISC: Energetic Nitor
 thaumictinkerer.research.energetic_nitor.title=Energetic Nitor

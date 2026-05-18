@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.item.base.ItemBase;
+import mod.emt.thaumictinkerer.item.bauble.ItemConsumingSigil;
 import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
 import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
