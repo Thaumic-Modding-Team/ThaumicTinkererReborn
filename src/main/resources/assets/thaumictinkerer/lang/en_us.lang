@@ -174,9 +174,9 @@ thaumictinkerer.research.goliath_ring.stage.2=[WIP]
 
 # -- EQUIPMENT: Sword of the Condor
 thaumictinkerer.research.condor_sword.title=Sword of the Condor
-thaumictinkerer.research.condor_sword.title.subtitle=[WIP]
-thaumictinkerer.research.condor_sword.stage.1=[WIP]
-thaumictinkerer.research.condor_sword.stage.2=[WIP]
+thaumictinkerer.research.condor_sword.title.subtitle=The condor does not fear the storm
+thaumictinkerer.research.condor_sword.stage.1=The Sword of the Zephyr has its uses, but its ability can be underwhelming compared to the other elemental tools. I should figure out how to improve it further.
+thaumictinkerer.research.condor_sword.stage.2=I have successfully upgraded my Sword of the Zephyr into what I call the Sword of the Condor!<BR>This removes its old whirlwind ability and instead allows me to charge into the air. I can right-click to charge into the direction I'm looking at, I can do this in reverse while sneaking. When I do this several times, it will also allow me to fly around.
 
 # -- EQUIPMENT: Talisman of Experience
 thaumictinkerer.research.xp_talisman.title=Talisman of Experience

@@ -32,6 +32,7 @@ import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
+import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 
 @SuppressWarnings("ConstantConditions")
 public class ModRecipesTT {
@@ -297,9 +298,14 @@ public class ModRecipesTT {
     }
 
     private static void initInfusionRecipes() {
+        ItemStack condorSwordStack = new ItemStack(ModItemsTT.CONDOR_SWORD);
+        EnumInfusionEnchantment.addInfusionEnchantment(condorSwordStack, EnumInfusionEnchantment.ARCING, 3);
+        if(ModEnchantsTT.EDUCATIONAL != null) {
+            EnumInfusionEnchantment.addInfusionEnchantment(condorSwordStack, ModEnchantsTT.EDUCATIONAL, 1);
+        }
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "condor_sword"), new InfusionRecipe(
                 "",
-                new ItemStack(ModItemsTT.CONDOR_SWORD),
+                condorSwordStack,
                 4,
                 new AspectList().add(Aspect.AIR, 150).add(Aspect.MOTION, 150).add(Aspect.AVERSION, 60).add(Aspect.MIND, 60).add(Aspect.ENERGY, 40),
                 new ItemStack(ItemsTC.elementalSword),
