@@ -97,20 +97,20 @@ thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand c
 # -- DEVICES: Anima Attractor
 thaumictinkerer.research.attractor_player.title=Anima Attractor
 thaumictinkerer.research.attractor_player.title.subtitle=Don't softlock yourself!
-thaumictinkerer.research.attractor_player.stage.1=[WIP]
-thaumictinkerer.research.attractor_player.stage.2=[WIP]
+thaumictinkerer.research.attractor_player.stage.1=I find it interesting that sentient beings in the world are harder to influence then items or other entities.<BR>Perhaps a more targeted approach will allow me to control their movement.
+thaumictinkerer.research.attractor_player.stage.2=When powered with redstone, the anima attractor pulls nearby players towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
 
 # -- DEVICES: Corporeal Attractor
 thaumictinkerer.research.attractor_mob.title=Corporeal Attractor
 thaumictinkerer.research.attractor_mob.title.subtitle=Disco Cow
-thaumictinkerer.research.attractor_mob.stage.1=[WIP]
-thaumictinkerer.research.attractor_mob.stage.2=[WIP]
+thaumictinkerer.research.attractor_mob.stage.1=While I have previously designed devices capable of preventing creatures from spawning, actually controlling the movements of these entities is another matter entirely.<BR>I'm sure a fence would suffice, but why go for a mundane solution when I can overcomplicate the issue using magic?
+thaumictinkerer.research.attractor_mob.stage.2=When powered with redstone, the corporeal attractor pulls nearby non-player entities towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
 
 # -- DEVICES: Kinetic Attractor
 thaumictinkerer.research.attractor_item.title=Kinetic Attractor
-thaumictinkerer.research.attractor_item.title.subtitle=[WIP]
-thaumictinkerer.research.attractor_item.stage.1=[WIP]
-thaumictinkerer.research.attractor_item.stage.2=[WIP]
+thaumictinkerer.research.attractor_item.title.subtitle=Item collection
+thaumictinkerer.research.attractor_item.stage.1=While the hungry chest is useful for collecting item drops, its limited range necessitates the use of another collection method to aid in the process.<BR>Perhaps I can fashion a device capable of interacting loose items on the ground?
+thaumictinkerer.research.attractor_item.stage.2=When powered with redstone, the kinetic attractor pulls nearby items towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
 
 # -- DEVICES: Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
@@ -152,7 +152,7 @@ thaumictinkerer.research.transvector_interface.stage.2=[WIP]
 thaumictinkerer.research.arcane_infusion_enchantment.title=Arcane Infusion Enchantment
 thaumictinkerer.research.arcane_infusion_enchantment.title.subtitle=When your weapon is still not cutting it
 thaumictinkerer.research.arcane_infusion_enchantment.stage.1=I've always thought to myself... How about new enchantments that are simple enough to just make my tools more powerful?<BR>It's now finally time for me to make that happen.
-thaumictinkerer.research.arcane_infusion_enchantment.stage.2=I now have access to new infusion enchantments that will further improve all my equipment.<BR>Like other infusion enchantments, they can be applied multiple times to the same item, but each level has an increased essentia cost when crafted.<PAGE>§oWrath§r<DIV>The infusion will first apply a base damage of +0.5 to the tool, and then add an additional +0.5 damage per level (Wrath I would give +1 damage).<DIV>§oRanks§r: 1-5<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oEducational§r<DIV>Each level of this infusion will further boost the amount of experience received from slaying creatures with the tool.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oProjecting§r<DIV>The infusion will add an additional +0.5 Reach Distance to the tool per level.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon
+thaumictinkerer.research.arcane_infusion_enchantment.stage.2=I now have access to new infusion enchantments that will further improve all my equipment.<BR>Like other infusion enchantments, they can be applied multiple times to the same item, but each level has an increased essentia cost when crafted.<PAGE>§oWrath§r<DIV>The infusion will first apply a base damage of +0.5 to the tool, and then add an additional +0.5 damage per level (Wrath I would give +1 damage).<DIV>§oRanks§r: 1-5<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oEducational§r<DIV>Each level of this infusion will further boost the amount of experience received from slaying creatures or breaking blocks.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oProjecting§r<DIV>The infusion will add an additional +0.5 Reach Distance to the tool per level.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon
 
 
 # -- EQUIPMENT: Feline Charm
@@ -188,8 +188,8 @@ thaumictinkerer.research.condor_sword.stage.2=I have successfully upgraded my Sw
 # -- EQUIPMENT: Talisman of Experience
 thaumictinkerer.research.xp_talisman.title=Talisman of Experience
 thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
-thaumictinkerer.research.xp_talisman.stage.1=[WIP]
-thaumictinkerer.research.xp_talisman.stage.2=[WIP]
+thaumictinkerer.research.xp_talisman.stage.1=With my recent successes in storing experience within brain jars, I find myself wondering if it would be possible to create a talisman capable of doing the same.
+thaumictinkerer.research.xp_talisman.stage.2=I have successfully manage to create a bauble capable of storing massive amounts of experience.<BR>When equipped, any experience I collect will be stored within the talisman.<BR>When enabled, any experience of my own will be drained and stored within the talisman.<BR>Should I wish to retrieve any stored experience, I simply need to right-click the talisman to extract one level at a time.
 
 # -- MISC: Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
@@ -200,14 +200,14 @@ thaumictinkerer.research.aquatic_alchemy.stage.2=Using mundane ingredients, I ca
 # -- MISC: Energetic Nitor
 thaumictinkerer.research.energetic_nitor.title=Energetic Nitor
 thaumictinkerer.research.energetic_nitor.title.subtitle=Lighting the path
-thaumictinkerer.research.energetic_nitor.stage.1=[WIP]
-thaumictinkerer.research.energetic_nitor.stage.2=[WIP]
+thaumictinkerer.research.energetic_nitor.stage.1=I can't even begin to count the number of torches I have used lighting up cave systems. Even worse, rarely traverse the same cave twice.<BR>Perhaps nitor may provide a solution...
+thaumictinkerer.research.energetic_nitor.stage.2=I have managed to create a more powerful nitor, capable of placing an infinite number of light sources. It can also be activated to place light sources automatically whenever I step into a dark area.<BR>However, light sources placed by this item are temporary, decaying and extinguishing themselves after a short duration.<BR>Torches and nitor may still be the best solution for long-term illumination, but this should suffice for exploration.
 
 # -- MISC: Escape Sigil
 thaumictinkerer.research.escape_sigil.title=Escape Sigil
 thaumictinkerer.research.escape_sigil.title.subtitle=Think fast!
-thaumictinkerer.research.escape_sigil.stage.1=[WIP]
-thaumictinkerer.research.escape_sigil.stage.2=[WIP]
+thaumictinkerer.research.escape_sigil.stage.1=Ender Pearls are useful for traveling short distances or escaping from dangerous situations, but their penchant for hurting me when used is an annoyance at best and potentially lethal at worst.<BR>Perhaps I can find a way to stabilize the pearl's effects to provide a more reliable means of escape.
+thaumictinkerer.research.escape_sigil.stage.2=This new type of stabilized ender pearl, which I have named the sigil of escape, is a massive improvement over ender pearls.<BR>While the item itself is significantly more fragile than a normal pearl, the effects are much more potent.<BR>When crushed in my hand, the pearl will transport me vertically to the first block exposed to the sky directly above me.<BR>If no safe location is found or if there is some barrier blocking the movement, the sigil will instead teleport me randomly to a nearby location.<BR>This sigil will be a godsend when I have lost my way while deep underground.
 
 # -- MISC: Essentia Funnel
 thaumictinkerer.research.essentia_funnel.title=Essentia Funnel
