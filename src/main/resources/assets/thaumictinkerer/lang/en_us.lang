@@ -132,7 +132,7 @@ thaumictinkerer.research.kinetic_attractor.stage.2=[WIP]
 
 # -- DEVICES: Paving Stone of Permeability
 thaumictinkerer.research.paving_stone_permeability.title=Paving Stone of Permeability
-thaumictinkerer.research.paving_stone_permeability.title.subtitle=[WIP]
+thaumictinkerer.research.paving_stone_permeability.title.subtitle=Quantum tunneling
 thaumictinkerer.research.paving_stone_permeability.stage.1=[WIP]
 thaumictinkerer.research.paving_stone_permeability.stage.2=[WIP]
 
@@ -157,14 +157,14 @@ thaumictinkerer.research.feline_charm.stage.2=I have devised an amulet that mudd
 # -- EQUIPMENT: Ignium Striker
 thaumictinkerer.research.ignium_striker.title=Ignium Striker
 thaumictinkerer.research.ignium_striker.title.subtitle=Who needs a flint when you have the elements?
-thaumictinkerer.research.ignium_striker.stage.1=[WIP]
-thaumictinkerer.research.ignium_striker.stage.2=[WIP]
+thaumictinkerer.research.ignium_striker.stage.1=I was struck with strange realization. Despite how far I have come, I am still relying on a rudimentary flint and steel to light fires.<BR>Since thaumaturgy has yielded solutions for every other mild inconvenience, why not apply it to this?
+thaumictinkerer.research.ignium_striker.stage.2=I have created designs for a vis powered striker. Not only is this tool virtually indestructible, the reliance on vis rather than physical durability means the device is easily replenished through normal vis recharging.
 
 # -- EQUIPMENT: Sigil of Consuming
 thaumictinkerer.research.consuming_sigil.title=Sigil of Consuming
 thaumictinkerer.research.consuming_sigil.title.subtitle=Don't ask questions, just consume
-thaumictinkerer.research.consuming_sigil.stage.1=[WIP]
-thaumictinkerer.research.consuming_sigil.stage.2=[WIP]
+thaumictinkerer.research.consuming_sigil.stage.1=Long days of mining often yield few useful resources, but a significant amount of common materials.<BR>While a cactus or lava might be solutions, they are hardly portable.
+thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, when enabled, instantly destroys any common materials I might pick up.<BR>I can toggle this function by sneaking and interacting with the sigil.
 
 # -- EQUIPMENT: Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
@@ -186,7 +186,7 @@ thaumictinkerer.research.xp_talisman.stage.2=[WIP]
 
 # -- MISC: Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
-thaumictinkerer.research.aquatic_alchemy.title.subtitle=[WIP]
+thaumictinkerer.research.aquatic_alchemy.title.subtitle=Ocean's bounty
 thaumictinkerer.research.aquatic_alchemy.stage.1=The ocean has a plethora of materials that can only be found when venturing into its deepest depths.<BR>Alchemy should provide a means to create these materials from common components.
 thaumictinkerer.research.aquatic_alchemy.stage.2=Using mundane ingredients, I can now artificially create my own prismarine shards, sea lanterns and sponges.
 
