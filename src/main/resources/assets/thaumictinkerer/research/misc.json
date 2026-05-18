@@ -143,6 +143,12 @@
             "thaumictinkerer:recall_stopwatch"
           ]
         }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.recall_stopwatch.addenda.1",
+          "required_knowledge": ["TT_RECALL_STOPWATCH@2"]
+        }
       ]
     },
     {

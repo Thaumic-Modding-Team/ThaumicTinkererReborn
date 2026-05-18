@@ -226,7 +226,7 @@ public class BlockNecromancyTablet extends BlockTileAddition {
 
     @Override
     public void registerResearchLocation() {
-        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/necromancy"));
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/optional/necromancy"));
     }
 
     @Override

@@ -95,16 +95,22 @@ thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word
 thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
 # -- DEVICES: Anima Attractor
-thaumictinkerer.research.anima_attractor.title=Anima Attractor
-thaumictinkerer.research.anima_attractor.title.subtitle=Don't softlock yourself!
-thaumictinkerer.research.anima_attractor.stage.1=[WIP]
-thaumictinkerer.research.anima_attractor.stage.2=[WIP]
+thaumictinkerer.research.attractor_player.title=Anima Attractor
+thaumictinkerer.research.attractor_player.title.subtitle=Don't softlock yourself!
+thaumictinkerer.research.attractor_player.stage.1=[WIP]
+thaumictinkerer.research.attractor_player.stage.2=[WIP]
 
 # -- DEVICES: Corporeal Attractor
-thaumictinkerer.research.corporeal_attractor.title=Corporeal Attractor
-thaumictinkerer.research.corporeal_attractor.title.subtitle=Disco Cow
-thaumictinkerer.research.corporeal_attractor.stage.1=[WIP]
-thaumictinkerer.research.corporeal_attractor.stage.2=[WIP]
+thaumictinkerer.research.attractor_mob.title=Corporeal Attractor
+thaumictinkerer.research.attractor_mob.title.subtitle=Disco Cow
+thaumictinkerer.research.attractor_mob.stage.1=[WIP]
+thaumictinkerer.research.attractor_mob.stage.2=[WIP]
+
+# -- DEVICES: Kinetic Attractor
+thaumictinkerer.research.attractor_item.title=Kinetic Attractor
+thaumictinkerer.research.attractor_item.title.subtitle=[WIP]
+thaumictinkerer.research.attractor_item.stage.1=[WIP]
+thaumictinkerer.research.attractor_item.stage.2=[WIP]
 
 # -- DEVICES: Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
@@ -124,17 +130,11 @@ thaumictinkerer.research.ethereal_platform.title.subtitle=Is it really there?
 thaumictinkerer.research.ethereal_platform.stage.1=[WIP]
 thaumictinkerer.research.ethereal_platform.stage.2=[WIP]
 
-# -- DEVICES: Kinetic Attractor
-thaumictinkerer.research.kinetic_attractor.title=Kinetic Attractor
-thaumictinkerer.research.kinetic_attractor.title.subtitle=[WIP]
-thaumictinkerer.research.kinetic_attractor.stage.1=[WIP]
-thaumictinkerer.research.kinetic_attractor.stage.2=[WIP]
-
 # -- DEVICES: Paving Stone of Permeability
-thaumictinkerer.research.paving_stone_permeability.title=Paving Stone of Permeability
-thaumictinkerer.research.paving_stone_permeability.title.subtitle=Quantum tunneling
-thaumictinkerer.research.paving_stone_permeability.stage.1=[WIP]
-thaumictinkerer.research.paving_stone_permeability.stage.2=[WIP]
+thaumictinkerer.research.passable_wall.title=Paving Stone of Permeability
+thaumictinkerer.research.passable_wall.title.subtitle=Quantum tunneling
+thaumictinkerer.research.passable_wall.stage.1=[WIP]
+thaumictinkerer.research.passable_wall.stage.2=[WIP]
 
 # -- DEVICES: Transvector Dislocator
 thaumictinkerer.research.transvector_dislocator.title=Transvector Dislocator
@@ -247,14 +247,15 @@ thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake
 # -- MISC: Thaumic Restorer
 thaumictinkerer.research.thaumic_restorer.title=Thaumic Restorer
 thaumictinkerer.research.thaumic_restorer.title.subtitle=Undoing the damage you've done
-thaumictinkerer.research.thaumic_restorer.stage.1=[WIP]
+thaumictinkerer.research.thaumic_restorer.stage.1=If physical objects can be broken down into essentia, then could essentia be use to reconstruct damaged items?<BR>If so, this could significantly reduce the cost of upkeep for my tools and armor.
 thaumictinkerer.research.thaumic_restorer.stage.2=[WIP]
 
 # -- MISC: Timetwister Stopwatch
 thaumictinkerer.research.recall_stopwatch.title=Timetwister Stopwatch
 thaumictinkerer.research.recall_stopwatch.title.subtitle=Back to the Past
-thaumictinkerer.research.recall_stopwatch.stage.1=[WIP]
-thaumictinkerer.research.recall_stopwatch.stage.2=[WIP]
+thaumictinkerer.research.recall_stopwatch.stage.1=With the success of the sigil of escape, I cannot help but wonder what else could be possible...
+thaumictinkerer.research.recall_stopwatch.stage.2=I have designed a device capable of rending the very fabric of reality and restoring matter to its previous state.<BR>Upon activation, a timer for 60 seconds starts.<BR>During this time I can move and act freely. Once the 60 seconds has expired, I will be recalled back to the location I activated the stopwatch, restoring my health and hunger to their previous values.
+thaumictinkerer.research.recall_stopwatch.addenda.1=It appears that the stopwatch only seems to effect my physical body. Any items damaged or destroyed during the timer will not be restored to their previous states.
 
 # -- MISC: Umbral Rose Bush
 thaumictinkerer.research.umbral_rosebush.title=Umbral Rose Bush

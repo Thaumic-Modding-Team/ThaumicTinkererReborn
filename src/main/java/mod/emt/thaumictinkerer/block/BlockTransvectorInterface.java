@@ -32,7 +32,7 @@ public class BlockTransvectorInterface extends BlockTileAddition {
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_interface"), new ShapedArcaneRecipe(
                 new ResourceLocation(""),
-                "",
+                "TT_TRANSVECTOR_INTERFACE",
                 200,
                 new AspectList().add(Aspect.ORDER, 10).add(Aspect.ENTROPY, 10),
                 new ItemStack(this),
@@ -50,7 +50,7 @@ public class BlockTransvectorInterface extends BlockTileAddition {
 
     @Override
     public void registerResearchLocation() {
-        //TODO
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/optional/interface"));
     }
 
     @Override

@@ -102,7 +102,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_item"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ATTRACTOR_ITEM",
                 75,
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_ITEM),
@@ -116,7 +116,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_mob"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ATTRACTOR_MOB",
                 75,
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_MOB),
@@ -130,7 +130,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_player"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ATTRACTOR_PLAYER",
                 75,
                 new AspectList().add(Aspect.AIR, 1).add(Aspect.EARTH, 1).add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ATTRACTOR_PLAYER),
@@ -144,7 +144,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_DISSIMULATION_BLOCK",
                 30,
                 new AspectList().add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.DISSIMULATION_BLOCK, 5),
@@ -157,7 +157,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "escape_sigil"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ESCAPE_SIGIL",
                 10,
                 new AspectList().add(Aspect.ORDER, 1),
                 new ItemStack(ModItemsTT.ESCAPE_SIGIL),
@@ -169,7 +169,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ESSENTIA_FUNNEL",
                 60,
                 new AspectList().add(Aspect.ORDER, 1).add(Aspect.ENTROPY, 1),
                 new ItemStack(ModBlocksTT.ESSENTIA_FUNNEL),
@@ -181,7 +181,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ethereal_platform"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_ETHEREAL_PLATFORM",
                 50,
                 new AspectList().add(Aspect.AIR, 5).add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2),
                 new ItemStack(ModBlocksTT.ETHEREAL_PLATFORM, 4),
@@ -194,7 +194,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "passable_wall"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_PASSABLE_WALL",
                 50,
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2),
                 new ItemStack(ModBlocksTT.PASSABLE_WALL, 4),
@@ -220,7 +220,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_TRANSVECTOR_DISLOCATOR",
                 25,
                 new AspectList().add(Aspect.ORDER, 2).add(Aspect.ENTROPY, 2),
                 new ItemStack(ModItemsTT.TRANSVECTOR_BINDER),
@@ -234,7 +234,7 @@ public class ModRecipesTT {
         ));
         ThaumcraftApi.addArcaneCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_dislocator"), new ShapedArcaneRecipe(
                 defaultGroup,
-                "",
+                "TT_TRANSVECTOR_DISLOCATOR",
                 100,
                 new AspectList().add(Aspect.ORDER, 5),
                 new ItemStack(ModBlocksTT.TRANSVECTOR_DISLOCATOR),
@@ -266,25 +266,25 @@ public class ModRecipesTT {
     // TODO: Research keys and aspect balance
     private static void initCrucibleRecipes() {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_prismarine"), new CrucibleRecipe(
-                "",
+                "TT_AQUATIC_ALCHEMY",
                 new ItemStack(Items.PRISMARINE_SHARD),
                 "paneGlass",
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_sea_lantern"), new CrucibleRecipe(
-                "",
+                "TT_AQUATIC_ALCHEMY",
                 new ItemStack(Blocks.SEA_LANTERN),
                 new ItemStack(Blocks.REDSTONE_LAMP),
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_sponge"), new CrucibleRecipe(
-                "",
+                "TT_AQUATIC_ALCHEMY",
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 "wool",
                 new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "everfull_bucket"), new CrucibleRecipe(
-                "",
+                "TT_EVERFULL_BUCKET",
                 new ItemStack(ModItemsTT.EVERFULL_BUCKET),
                 Items.BUCKET,
                 new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
@@ -304,7 +304,7 @@ public class ModRecipesTT {
             EnumInfusionEnchantment.addInfusionEnchantment(condorSwordStack, ModEnchantsTT.EDUCATIONAL, 1);
         }
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "condor_sword"), new InfusionRecipe(
-                "",
+                "TT_CONDOR_SWORD",
                 condorSwordStack,
                 4,
                 new AspectList().add(Aspect.AIR, 150).add(Aspect.MOTION, 150).add(Aspect.AVERSION, 60).add(Aspect.MIND, 60).add(Aspect.ENERGY, 40),
@@ -315,7 +315,7 @@ public class ModRecipesTT {
                 ModBlocksTT.ARCANE_QUARTZ_BLOCK
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"), new InfusionRecipe(
-                "",
+                "TT_CONSUMING_SIGIL",
                 new ItemStack(ModItemsTT.CONSUMING_SIGIL),
                 2,
                 new AspectList().add(Aspect.VOID, 50),
@@ -324,7 +324,7 @@ public class ModRecipesTT {
                 Items.LAVA_BUCKET
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ender_mirror"), new InfusionRecipe(
-                "",
+                "TT_ENDER_MIRROR",
                 new ItemStack(ModItemsTT.ENDER_MIRROR),
                 4,
                 new AspectList().add(Aspect.MAN, 60).add(Aspect.VOID, 40).add(Aspect.DARKNESS, 40).add(Aspect.EXCHANGE, 25),
@@ -339,7 +339,7 @@ public class ModRecipesTT {
                 Items.ENDER_EYE
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"), new InfusionRecipe(
-                "",
+                "TT_ENERGETIC_NITOR",
                 new ItemStack(ModItemsTT.ENERGETIC_NITOR),
                 3,
                 new AspectList().add(Aspect.ENERGY, 60).add(Aspect.LIGHT, 45).add(Aspect.FIRE, 45).add(Aspect.AIR, 30),
@@ -350,7 +350,7 @@ public class ModRecipesTT {
                 ThaumcraftApiHelper.makeCrystal(Aspect.SENSES)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "feline_charm"), new InfusionRecipe(
-                "",
+                "TT_FELINE_CHARM",
                 new ItemStack(ModItemsTT.FELINE_CHARM),
                 5,
                 new AspectList().add(Aspect.ENTROPY, 100).add(Aspect.BEAST, 100).add(Aspect.SOUL, 40),
@@ -363,7 +363,7 @@ public class ModRecipesTT {
                 new ItemStack(Items.SKULL, 1, 4)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "goliath_ring"), new InfusionRecipe(
-                "",
+                "TT_GOLIATH_RING",
                 new ItemStack(ModItemsTT.GOLIATH_RING),
                 6,
                 new AspectList().add(Aspect.PROTECT, 75).add(Aspect.LIFE, 50),
@@ -374,7 +374,7 @@ public class ModRecipesTT {
                 new ItemStack(Items.DIAMOND_CHESTPLATE)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "ignium_striker"), new InfusionRecipe(
-                "",
+                "TT_IGNIUM_STRIKER",
                 new ItemStack(ModItemsTT.IGNIUM_STRIKER),
                 2,
                 new AspectList().add(Aspect.FIRE, 40).add(Aspect.METAL, 40).add(Aspect.TOOL, 30).add(Aspect.MAGIC, 10),
@@ -385,7 +385,7 @@ public class ModRecipesTT {
                 ModItemsTT.ARCANE_QUARTZ
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "recall_stopwatch"), new InfusionRecipe(
-                "",
+                "TT_RECALL_STOPWATCH",
                 new ItemStack(ModItemsTT.RECALL_STOPWATCH),
                 10,
                 new AspectList().add(Aspect.MECHANISM, 100).add(Aspect.EXCHANGE, 100).add(Aspect.MAGIC, 50).add(Aspect.LIFE, 30).add(Aspect.SOUL, 30),
@@ -413,7 +413,7 @@ public class ModRecipesTT {
                 ThaumcraftApiHelper.makeCrystal(Aspect.LIFE)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"), new InfusionRecipe(
-                "",
+                "TT_XP_TALISMAN",
                 new ItemStack(ModItemsTT.XP_TALISMAN),
                 5,
                 new AspectList().add(Aspect.MIND, 100).add(Aspect.DESIRE, 75).add(Aspect.EXCHANGE, 75).add(Aspect.MAGIC, 50),
