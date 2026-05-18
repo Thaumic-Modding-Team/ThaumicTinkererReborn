@@ -440,7 +440,7 @@ public class ModRecipesTT {
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion"), educationalInfusion);
         ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion_fake1"), new InfusionEnchantmentRecipe(
                 educationalInfusion, new ItemStack(Items.WOODEN_SWORD)));
-        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion_fake1"), new InfusionEnchantmentRecipe(
+        ThaumcraftApi.addFakeCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "educational_infusion_fake2"), new InfusionEnchantmentRecipe(
                 educationalInfusion, new ItemStack(Items.WOODEN_PICKAXE)));
 
         InfusionEnchantmentRecipe projectingInfusion = new InfusionEnchantmentRecipe(

@@ -160,6 +160,24 @@ thaumictinkerer.research.ignium_striker.title.subtitle=Who needs a flint when yo
 thaumictinkerer.research.ignium_striker.stage.1=I was struck with strange realization. Despite how far I have come, I am still relying on a rudimentary flint and steel to light fires.<BR>Since thaumaturgy has yielded solutions for every other mild inconvenience, why not apply it to this?
 thaumictinkerer.research.ignium_striker.stage.2=I have created designs for a vis powered striker. Not only is this tool virtually indestructible, the reliance on vis rather than physical durability means the device is easily replenished through normal vis recharging.
 
+# -- EQUIPMENT: Infusion Enchantment: Educational
+thaumictinkerer.research.educational_infusion.title=Infusion Enchantment: Educational
+thaumictinkerer.research.educational_infusion.title.subtitle=You will LEARN!
+thaumictinkerer.research.educational_infusion.stage.1=[WIP]
+thaumictinkerer.research.educational_infusion.stage.2=[WIP]
+
+# -- EQUIPMENT: Infusion Enchantment: Projecting
+thaumictinkerer.research.projecting_infusion.title=Infusion Enchantment: Projecting
+thaumictinkerer.research.projecting_infusion.title.subtitle=Spears are better than swords
+thaumictinkerer.research.projecting_infusion.stage.1=[WIP]
+thaumictinkerer.research.projecting_infusion.stage.2=[WIP]
+
+# -- EQUIPMENT: Infusion Enchantment: Wrath
+thaumictinkerer.research.wrath_infusion.title=Infusion Enchantment: Wrath
+thaumictinkerer.research.wrath_infusion.title.subtitle=When your weapon is still not cutting it
+thaumictinkerer.research.wrath_infusion.stage.1=I've always thought to myself... "How about something that just simply adds more damage?". It's now finally time for me to make that happen.
+thaumictinkerer.research.wrath_infusion.stage.2=The Wrath infusion enchantment, simply put, makes my weapon deal more damage and is compatible with regular enchantments that affect damage.<BR>Like other infusion enchantments, it can be applied multiple times to the same item, but each rank has an increased essentia cost when crafted.<PAGE>§oWrath§r<DIV>The infusion will first apply a base damage of +0.5 to the tool, and then add an additional +0.5 damage per rank (Wrath I would give +1 damage).<DIV>§oRanks§r: 1-5<BR>§oTarget§r: weapon
+
 # -- EQUIPMENT: Sigil of Consuming
 thaumictinkerer.research.consuming_sigil.title=Sigil of Consuming
 thaumictinkerer.research.consuming_sigil.title.subtitle=Don't ask questions, just consume

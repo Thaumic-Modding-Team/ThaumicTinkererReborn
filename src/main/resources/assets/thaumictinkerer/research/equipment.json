@@ -6,7 +6,7 @@
       "icons": ["thaumictinkerer:condor_sword"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~ELEMENTALTOOLS", "~FOCUSELEMENTAL"],
-      "location": [3, -2],
+      "location": [5, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.condor_sword.stage.1",
@@ -26,7 +26,7 @@
       "icons": ["thaumictinkerer:consuming_sigil"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
-      "location": [4, 0],
+      "location": [6, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.consuming_sigil.stage.1",
@@ -41,12 +41,33 @@
       ]
     },
     {
+      "key": "TT_EDUCATIONAL_INFUSION",
+      "name": "thaumictinkerer.research.educational_infusion.title",
+      "icons": ["thaumictinkerer:textures/research/r_educational_infusion.png"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSIONENCHANTMENT"],
+      "location": [3, 2],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.educational_infusion.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.educational_infusion.stage.2",
+          "recipes": [
+            "thaumictinkerer:educational_infusion_fake1",
+            "thaumictinkerer:educational_infusion_fake2"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_FELINE_CHARM",
       "name": "thaumictinkerer.research.feline_charm.title",
       "icons": ["thaumictinkerer:feline_charm"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONSUMING_SIGIL"],
-      "location": [7, 0],
+      "location": [9, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.feline_charm.stage.1",
@@ -66,7 +87,7 @@
       "icons": ["thaumictinkerer:goliath_ring"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONSUMING_SIGIL"],
-      "location": [6, -1],
+      "location": [8, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.goliath_ring.stage.1",
@@ -86,7 +107,7 @@
       "icons": ["thaumictinkerer:ignium_striker"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
-      "location": [3, 2],
+      "location": [5, 2],
       "stages": [
         {
           "text": "thaumictinkerer.research.ignium_striker.stage.1",
@@ -101,12 +122,53 @@
       ]
     },
     {
+      "key": "TT_PROJECTING_INFUSION",
+      "name": "thaumictinkerer.research.projecting_infusion.title",
+      "icons": ["thaumictinkerer:textures/research/r_projecting_infusion.png"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_WRATH_INFUSION", "~INFUSIONENCHANTMENT"],
+      "meta": ["REVERSE"],
+      "location": [4, -4],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.projecting_infusion.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.projecting_infusion.stage.2",
+          "recipes": [
+            "thaumictinkerer:projecting_infusion_fake"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_WRATH_INFUSION",
+      "name": "thaumictinkerer.research.wrath_infusion.title",
+      "icons": ["thaumictinkerer:textures/research/r_wrath_infusion.png"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSIONENCHANTMENT"],
+      "location": [3, -2],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.wrath_infusion.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.wrath_infusion.stage.2",
+          "recipes": [
+            "thaumictinkerer:wrath_infusion_fake"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_XP_TALISMAN",
       "name": "thaumictinkerer.research.xp_talisman.title",
       "icons": ["thaumictinkerer:xp_talisman"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONSUMING_SIGIL"],
-      "location": [6, 1],
+      "location": [8, 1],
       "stages": [
         {
           "text": "thaumictinkerer.research.xp_talisman.stage.1",
