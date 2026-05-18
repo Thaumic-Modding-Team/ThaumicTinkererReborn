@@ -1,0 +1,166 @@
+{
+  "entries": [
+    {
+      "key": "TT_ANIMA_ATTRACTOR",
+      "name": "thaumictinkerer.research.anima_attractor.title",
+      "icons": ["thaumictinkerer:attractor_player"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_TRANSVECTOR_DISLOCATOR"],
+      "location": [0, -9],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.anima_attractor.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.anima_attractor.stage.2",
+          "recipes": [
+            "thaumictinkerer:attractor_player"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_CORPOREAL_ATTRACTOR",
+      "name": "thaumictinkerer.research.corporeal_attractor.title",
+      "icons": ["thaumictinkerer:attractor_mob"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_TRANSVECTOR_DISLOCATOR"],
+      "location": [1, -8],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.corporeal_attractor.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.corporeal_attractor.stage.2",
+          "recipes": [
+            "thaumictinkerer:attractor_mob"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_DISSIMULATION_BLOCK",
+      "name": "thaumictinkerer.research.dissimulation_block.title",
+      "icons": ["thaumictinkerer:dissimulation_block"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "location": [0, -3],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.dissimulation_block.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.dissimulation_block.stage.2",
+          "recipes": [
+            "thaumictinkerer:dissimulation_block"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_ETHEREAL_PLATFORM",
+      "name": "thaumictinkerer.research.ethereal_platform.title",
+      "icons": ["thaumictinkerer:ethereal_platform"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_DISSIMULATION_BLOCK"],
+      "location": [1, -4],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.ethereal_platform.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.ethereal_platform.stage.2",
+          "recipes": [
+            "thaumictinkerer:ethereal_platform"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_KINETIC_ATTRACTOR",
+      "name": "thaumictinkerer.research.kinetic_attractor.title",
+      "icons": ["thaumictinkerer:attractor_item"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_TRANSVECTOR_DISLOCATOR"],
+      "location": [-1, -8],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.kinetic_attractor.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.kinetic_attractor.stage.2",
+          "recipes": [
+            "thaumictinkerer:attractor_item"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_PAVING_STONE_PERMEABILITY",
+      "name": "thaumictinkerer.research.paving_stone_permeability.title",
+      "icons": ["thaumictinkerer:passable_wall"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_DISSIMULATION_BLOCK"],
+      "location": [-1, -4],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.paving_stone_permeability.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.paving_stone_permeability.stage.2",
+          "recipes": [
+            "thaumictinkerer:passable_wall"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_TRANSVECTOR_DISLOCATOR",
+      "name": "thaumictinkerer.research.transvector_dislocator.title",
+      "icons": ["thaumictinkerer:transvector_dislocator"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_DISSIMULATION_BLOCK"],
+      "location": [0, -6],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.transvector_dislocator.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.transvector_dislocator.stage.2",
+          "recipes": [
+            "thaumictinkerer:transvector_dislocator",
+            "thaumictinkerer:transvector_binder"
+          ]
+        }
+      ]
+    },
+    {
+      "key": "TT_TRANSVECTOR_INTERFACE",
+      "name": "thaumictinkerer.research.transvector_interface.title",
+      "icons": ["thaumictinkerer:transvector_interface"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_TRANSVECTOR_DISLOCATOR"],
+      "location": [-1, -5],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.transvector_interface.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.transvector_interface.stage.2",
+          "recipes": [
+            "thaumictinkerer:transvector_interface",
+            "thaumictinkerer:transvector_binder"
+          ]
+        }
+      ]
+    }
+  ]
+}

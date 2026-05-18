@@ -94,11 +94,59 @@ thaumictinkerer.research.thaumic_tinkerer_base.title=Thaumic Tinkering
 thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word 'Construct'
 thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
+# -- DEVICES: Anima Attractor
+thaumictinkerer.research.anima_attractor.title=Anima Attractor
+thaumictinkerer.research.anima_attractor.title.subtitle=[WIP]
+thaumictinkerer.research.anima_attractor.stage.1=[WIP]
+thaumictinkerer.research.anima_attractor.stage.2=[WIP]
+
+# -- DEVICES: Corporeal Attractor
+thaumictinkerer.research.corporeal_attractor.title=Anima Attractor
+thaumictinkerer.research.corporeal_attractor.title.subtitle=[WIP]
+thaumictinkerer.research.corporeal_attractor.stage.1=[WIP]
+thaumictinkerer.research.corporeal_attractor.stage.2=[WIP]
+
+# -- DEVICES: Dissimulation Block
+thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
+thaumictinkerer.research.dissimulation_block.title.subtitle=[WIP]
+thaumictinkerer.research.dissimulation_block.stage.1=[WIP]
+thaumictinkerer.research.dissimulation_block.stage.2=[WIP]
+
 # -- EQUIPMENT: Ender Mirror
 thaumictinkerer.research.ender_mirror.title=Ender Mirror
 thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
 thaumictinkerer.research.ender_mirror.stage.1=[WIP]
 thaumictinkerer.research.ender_mirror.stage.2=[WIP]
+
+# -- DEVICES: Ethereal Platform
+thaumictinkerer.research.ethereal_platform.title=Ethereal Platform
+thaumictinkerer.research.ethereal_platform.title.subtitle=Is it really there?
+thaumictinkerer.research.ethereal_platform.stage.1=[WIP]
+thaumictinkerer.research.ethereal_platform.stage.2=[WIP]
+
+# -- DEVICES: Kinetic Attractor
+thaumictinkerer.research.kinetic_attractor.title=Kinetic Attractor
+thaumictinkerer.research.kinetic_attractor.title.subtitle=[WIP]
+thaumictinkerer.research.kinetic_attractor.stage.1=[WIP]
+thaumictinkerer.research.kinetic_attractor.stage.2=[WIP]
+
+# -- DEVICES: Paving Stone of Permeability
+thaumictinkerer.research.paving_stone_permeability.title=Paving Stone of Permeability
+thaumictinkerer.research.paving_stone_permeability.title.subtitle=[WIP]
+thaumictinkerer.research.paving_stone_permeability.stage.1=[WIP]
+thaumictinkerer.research.paving_stone_permeability.stage.2=[WIP]
+
+# -- DEVICES: Transvector Dislocator
+thaumictinkerer.research.transvector_dislocator.title=Transvector Dislocator
+thaumictinkerer.research.transvector_dislocator.title.subtitle=No Blood Magic required
+thaumictinkerer.research.transvector_dislocator.stage.1=[WIP]
+thaumictinkerer.research.transvector_dislocator.stage.2=[WIP]
+
+# -- DEVICES: Transvector Interface
+thaumictinkerer.research.transvector_interface.title=Transvector Interface
+thaumictinkerer.research.transvector_interface.title.subtitle=Extended possibilities
+thaumictinkerer.research.transvector_interface.stage.1=[WIP]
+thaumictinkerer.research.transvector_interface.stage.2=[WIP]
 
 # -- EQUIPMENT: Feline Charm
 thaumictinkerer.research.feline_charm.title=Feline Charm
