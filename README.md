@@ -20,6 +20,8 @@ The Transvector Interface is completely optional and can be turned off in the co
 All of Necromancy's content are completely optional and can all be turned off in the config if they're too overpowered.
 
 ## 🔁 Mod Integration
+- **[ThaumicTweaker](https://www.curseforge.com/minecraft/mc-mods/thaumictweaker)**
+  - Full subtitle support for all research entries, see [here](https://github.com/Thaumic-Modding-Team/ThaumicTweaker/wiki/Research-Subtitles) for more info!
 - **[Tinkers' Antique](https://www.curseforge.com/minecraft/mc-mods/tinkers-antique) / [Antique Armory](https://www.curseforge.com/minecraft/mc-mods/antique-armory)**
   - Tinkers' equipment can be repaired with the Thaumic Restorer!
 
