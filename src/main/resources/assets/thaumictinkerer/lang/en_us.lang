@@ -106,12 +106,6 @@ thaumictinkerer.research.attractor_mob.title.subtitle=Disco Cow
 thaumictinkerer.research.attractor_mob.stage.1=While I have previously designed devices capable of preventing creatures from spawning, actually controlling the movements of these entities is another matter entirely.<BR>I'm sure a fence would suffice, but why go for a mundane solution when I can overcomplicate the issue using magic?
 thaumictinkerer.research.attractor_mob.stage.2=When powered with redstone, the corporeal attractor pulls nearby non-player entities towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
 
-# -- DEVICES: Kinetic Attractor
-thaumictinkerer.research.attractor_item.title=Kinetic Attractor
-thaumictinkerer.research.attractor_item.title.subtitle=Item collection
-thaumictinkerer.research.attractor_item.stage.1=While the hungry chest is useful for collecting item drops, its limited range necessitates the use of another collection method to aid in the process.<BR>Perhaps I can fashion a device capable of interacting loose items on the ground?
-thaumictinkerer.research.attractor_item.stage.2=When powered with redstone, the kinetic attractor pulls nearby items towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
-
 # -- DEVICES: Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title.subtitle=Glitch in the Matrix
@@ -127,8 +121,14 @@ thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to mod
 # -- DEVICES: Ethereal Platform
 thaumictinkerer.research.ethereal_platform.title=Ethereal Platform
 thaumictinkerer.research.ethereal_platform.title.subtitle=Is it really there?
-thaumictinkerer.research.ethereal_platform.stage.1=[WIP]
-thaumictinkerer.research.ethereal_platform.stage.2=[WIP]
+thaumictinkerer.research.ethereal_platform.stage.1=The Arcane Levitator is a marvelous invention, but using it as a proper elevator is an exercise in clumsiness. There must be a way to create a floor that understands intent.
+thaumictinkerer.research.ethereal_platform.stage.2=I have successfully created the perfect platform companion for the Arcane Levitator.<BR>The resulting block defies standard physics. To a casual observer walking over it, it feels like solid ground. However, should someone approach it from below or from the side, they will pass right through it as if it were mere air. Even more usefully, if I consciously choose to sneak, the block loses its collision box entirely, allowing me to drop straight through.
+
+# -- DEVICES: Kinetic Attractor
+thaumictinkerer.research.attractor_item.title=Kinetic Attractor
+thaumictinkerer.research.attractor_item.title.subtitle=Item collection
+thaumictinkerer.research.attractor_item.stage.1=While the hungry chest is useful for collecting item drops, its limited range necessitates the use of another collection method to aid in the process.<BR>Perhaps I can fashion a device capable of interacting loose items on the ground?
+thaumictinkerer.research.attractor_item.stage.2=When powered with redstone, the kinetic attractor pulls nearby items towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
 
 # -- DEVICES: Paving Stone of Permeability
 thaumictinkerer.research.passable_wall.title=Paving Stone of Permeability
