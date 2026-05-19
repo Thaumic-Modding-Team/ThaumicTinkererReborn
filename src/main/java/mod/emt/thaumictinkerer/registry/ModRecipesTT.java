@@ -760,7 +760,7 @@ public class ModRecipesTT {
                 )
         );
 
-        // TODO: Maybe only make it spawn small slimes?
+        // TODO: Add this in the future. Maybe only make it spawn small slimes?
 //        ThaumcraftApi.registerEntityTag("Slime", (new AspectList()).add(Aspect.LIFE, 10).add(Aspect.WATER, 10).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
         /* Arcane Mobs */

@@ -1,0 +1,24 @@
+{
+  "entries": [
+    {
+      "key": "TT_THAUMIC_RESTORER",
+      "name": "thaumictinkerer.research.thaumic_restorer.title",
+      "icons": ["thaumictinkerer:thaumic_restorer"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["THAUMIC_TINKERER_BASE"],
+      "location": [0, 4],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.thaumic_restorer.stage.1",
+          "required_knowledge": []
+        },
+        {
+          "text": "thaumictinkerer.research.thaumic_restorer.stage.2",
+          "recipes": [
+            "thaumictinkerer:thaumic_restorer"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -179,7 +179,7 @@ public class BlockThaumicRestorer extends BlockTileAddition {
 
     @Override
     public void registerResearchLocation() {
-        //TODO
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/optional/thaumic_restorer"));
     }
 
     @SideOnly(Side.CLIENT)

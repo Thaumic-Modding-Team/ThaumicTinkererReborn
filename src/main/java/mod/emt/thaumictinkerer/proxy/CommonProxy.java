@@ -33,7 +33,6 @@ public class CommonProxy {
     }
 
     private void registerResearch() {
-        //TODO: Register research.
         ResearchCategories.registerCategory(
                 "THAUMIC_TINKERER", "FIRSTSTEPS", new AspectList(),
                 new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/research/r_thaumic_tinkering.png"),
