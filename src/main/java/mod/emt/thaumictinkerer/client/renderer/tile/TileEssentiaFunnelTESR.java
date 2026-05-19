@@ -10,6 +10,8 @@ import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.client.renderer.vertex.DefaultVertexFormats;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.blocks.BlocksTC;
@@ -17,6 +19,7 @@ import thaumcraft.client.lib.RenderCubes;
 
 import java.awt.*;
 
+@SideOnly(Side.CLIENT)
 public class TileEssentiaFunnelTESR extends TileEntitySpecialRenderer<TileEssentiaFunnel> {
     private static final ResourceLocation TEX_BRINE = new ResourceLocation("thaumcraft", "textures/models/jarbrine.png");
 

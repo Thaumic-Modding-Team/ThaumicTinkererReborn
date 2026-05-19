@@ -15,6 +15,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 
@@ -88,6 +90,7 @@ public class BlockEnergeticNitor extends BlockTileAddition {
         return new BlockStateContainer(this, LIGHT);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);

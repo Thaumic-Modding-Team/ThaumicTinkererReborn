@@ -169,7 +169,7 @@ thaumictinkerer.research.ignium_striker.stage.2=I have created designs for a vis
 thaumictinkerer.research.consuming_sigil.title=Sigil of Consuming
 thaumictinkerer.research.consuming_sigil.title.subtitle=Don't ask questions, just consume
 thaumictinkerer.research.consuming_sigil.stage.1=Long days of mining often yield few useful resources, but a significant amount of common materials.<BR>While a cactus or lava might be solutions, they are hardly portable.
-thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, when enabled, instantly destroys any common materials I might pick up.<BR>I can toggle this function by sneaking and interacting with the sigil.
+thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, when enabled, instantly destroys any common materials when I harvest them.<BR>I can toggle this function by sneaking and interacting with the sigil.
 
 # -- EQUIPMENT: Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might

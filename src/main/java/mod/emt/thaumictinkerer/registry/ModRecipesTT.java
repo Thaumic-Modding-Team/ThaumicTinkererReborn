@@ -19,7 +19,6 @@ import net.minecraft.item.crafting.Ingredient;
 import net.minecraft.potion.PotionUtils;
 import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.event.RegistryEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 import net.minecraftforge.oredict.OreIngredient;
 import thaumcraft.api.ThaumcraftApi;

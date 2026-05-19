@@ -28,6 +28,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
@@ -229,6 +231,7 @@ public class BlockNecromancyTablet extends BlockTileAddition {
         ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/optional/necromancy"));
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);

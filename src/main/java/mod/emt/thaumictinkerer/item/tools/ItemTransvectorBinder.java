@@ -52,12 +52,14 @@ public class ItemTransvectorBinder extends AbstractItemAddition {
         ItemStack stack = player.getHeldItem(hand);
         TileEntity tile = world.getTileEntity(pos);
         if(tile != null) {
-            if (player.isSneaking()) {
-                this.linkToBlock(player, stack, pos, side);
-            } else if (tile instanceof ITransvectorLink && this.isLinked(stack)) {
-                TransvectorLink link = this.getTransvectorLink(stack);
-                boolean isFaceLinking = this.isFaceLinkingMode(stack);
-                ((ITransvectorLink) tile).createLink(player, hand, side, link, isFaceLinking);
+            if(!world.isRemote) {
+                if (player.isSneaking()) {
+                    this.linkToBlock(player, stack, pos, side);
+                } else if (tile instanceof ITransvectorLink && this.isLinked(stack)) {
+                    TransvectorLink link = this.getTransvectorLink(stack);
+                    boolean isFaceLinking = this.isFaceLinkingMode(stack);
+                    ((ITransvectorLink) tile).createLink(player, hand, side, link, isFaceLinking);
+                }
             }
             return EnumActionResult.SUCCESS;
         }

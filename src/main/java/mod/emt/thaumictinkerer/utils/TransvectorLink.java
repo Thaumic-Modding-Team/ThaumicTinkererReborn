@@ -36,7 +36,7 @@ public class TransvectorLink implements INBTSerializable<NBTTagCompound> {
         }
 
         if(this.world == null) {
-            this.world = WorldHelper.getWorldFromId(this.dimensionId, true);
+            this.world = WorldHelper.getWorldFromId(this.dimensionId, false);
         }
         return world;
     }

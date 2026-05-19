@@ -8,8 +8,11 @@ import net.minecraft.client.renderer.RenderItem;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
 import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 
+@SideOnly(Side.CLIENT)
 public class TileNecromancyTabletTESR extends TileEntitySpecialRenderer<TileNecromancyTablet> {
     @Override
     public void render(@NotNull TileNecromancyTablet tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {

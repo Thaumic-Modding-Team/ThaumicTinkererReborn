@@ -61,7 +61,7 @@ public class ItemXpTalisman extends AbstractItemBauble implements IProxy {
 
     @Override
     public void onWornTick(ItemStack stack, EntityLivingBase entityLiving) {
-        if(entityLiving instanceof EntityPlayer && this.getTalismanEnabled(stack)) {
+        if(entityLiving instanceof EntityPlayer && !entityLiving.world.isRemote && this.getTalismanEnabled(stack)) {
             EntityPlayer player = (EntityPlayer) entityLiving;
             if(player.experienceTotal > 0 && !player.isCreative()) {
                 int drained = this.removeExperienceFromPlayer(player, 1);

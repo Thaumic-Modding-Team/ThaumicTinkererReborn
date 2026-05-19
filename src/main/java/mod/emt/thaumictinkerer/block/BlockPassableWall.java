@@ -20,6 +20,8 @@ import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
@@ -94,12 +96,14 @@ public class BlockPassableWall extends BlockTileAddition {
         return !state.getValue(PASSABLE);
     }
 
+    @SideOnly(Side.CLIENT)
     @SuppressWarnings("deprecation")
     @Override
     public boolean shouldSideBeRendered(@NotNull IBlockState blockState, IBlockAccess blockAccess, BlockPos pos, @NotNull EnumFacing side) {
         return blockAccess.getBlockState(pos.offset(side)).getBlock() != this && (side == EnumFacing.UP || super.shouldSideBeRendered(blockState, blockAccess, pos, side));
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public @NotNull BlockRenderLayer getRenderLayer() {
         return BlockRenderLayer.TRANSLUCENT;
@@ -129,6 +133,7 @@ public class BlockPassableWall extends BlockTileAddition {
         return new BlockStateContainer(this, PASSABLE, LEVEL);
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);
