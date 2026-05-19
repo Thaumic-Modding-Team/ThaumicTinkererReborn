@@ -177,7 +177,7 @@ thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, w
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title.subtitle=Weak to stone
 thaumictinkerer.research.goliath_ring.stage.1=I've begun to ponder about the legendary resilience of ancient giants. Is it possible for me to condense such power into a wearable trinket?
-thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with stabilizing magical energies, I have designed the Ring of Goliath. A heavy, resonant bauble capable of absorbing immense trauma on behalf of its wearer.<BR>The ring will reduce all total damage taken by one, it will also save me from death. In order for it to save my own hide, the ring must absorb the entirety of the death blow into its own physical structure, the ring will then shatter completely into dust, leaving me vulnerable once more.
+thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with the corresponding essentia, I have designed the Ring of Goliath.<BR>The ring will reduce all total damage taken by one, it will also save me from death. In order for it to save my own hide, the ring must absorb the entirety of the death blow into its own physical structure, the ring will then shatter completely into dust, leaving me vulnerable once more.
 thaumictinkerer.research.goliath_ring.addenda.1=§lNote to self:§r The ring cannot protect me if I die to fall damage. I'm never jumping off that cliff again...
 
 # -- EQUIPMENT: Sword of the Condor
@@ -238,7 +238,7 @@ thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake
 thaumictinkerer.research.thaumic_restorer.title=Thaumic Restorer
 thaumictinkerer.research.thaumic_restorer.title.subtitle=Undoing the damage you've done
 thaumictinkerer.research.thaumic_restorer.stage.1=If physical objects can be broken down into essentia, then could essentia be use to reconstruct damaged items?<BR>If so, this could significantly reduce the cost of upkeep for my tools and armor.
-thaumictinkerer.research.thaumic_restorer.stage.2=[WIP]
+thaumictinkerer.research.thaumic_restorer.stage.2=Success! I have created a marvelous device I call the Thaumic Restorer.<BR>I can place a damaged tool on it by right-clicking with it on the device, then it will start restoring the tool using the corresponding jarred essentia connected to it. Tools will cost Instrumentum, weapons will cost Aversio, and armor will cost Praemunio.
 
 # -- MISC: Timetwister Stopwatch
 thaumictinkerer.research.recall_stopwatch.title=Timetwister Stopwatch
