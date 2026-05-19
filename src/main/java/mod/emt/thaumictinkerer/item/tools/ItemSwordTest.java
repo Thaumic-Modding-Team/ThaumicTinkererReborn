@@ -37,4 +37,9 @@ public class ItemSwordTest extends ItemSword implements IItemAddition {
             items.add(stack);
         }
     }
+
+    @Override
+    public boolean isEnabled() {
+        return false;
+    }
 }
