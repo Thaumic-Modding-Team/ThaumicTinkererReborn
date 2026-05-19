@@ -127,54 +127,54 @@
 
 ## ReForbidden Magic
 ### Completed/Cut
-| Item                                      |               Original Id               |                 New Id                 | Description                                                                 |
-|:------------------------------------------|:---------------------------------------:|:--------------------------------------:|:----------------------------------------------------------------------------|
-| Arcane Cake                               |      forbiddenmagicre:arcane_cake       |      thaumictinkerer:thaumic_cake      | Use Thaumic Tinkerer: Reborn for a similiar feature.                        |
-| Axe of the Skulltaker                     |       forbiddenmagicre:skull_axe        |    crimsonrevelations:execution_axe    | Use New Crimsone Revelations for an improved version.                       |
-| Bloody Scrivener's Tools                  |      forbiddenmagicre:scribe_blood      |  congregamystica:blood_scribing_tools  | Use Congrega Mystica for a similar feature.                                 |
-| Chameleon Axe                             |       forbiddenmagicre:morph_axe        |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.          |
-| Chameleon Pickaxe                         |       forbiddenmagicre:morph_pick       |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.          |
-| Chameleon Shovel                          |      forbiddenmagicre:morph_shovel      |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.          |
-| Chameleon Sword                           |      forbiddenmagicre:morph_sword       |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.          |
-| Crystal Scribing Tools                    | forbiddenmagicre:crystal_scribing_tools |                                        |                                                                             |
-| Diabolist Fork                            |     forbiddenmagicre:diabolist_fork     |                  N/A                   | Wrath Cage has been cut.                                                    |
-| Eldritch Blood Orb                        |                   N/A                   |                  N/A                   | Use Congrega Mystica for a similar feature.                                 |
-| Emerald Fragment                          |       forbiddenmagicre:resourcefm       |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Desidia Crystal                 |    forbiddenmagicre:resourceshard:4     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Gula Crystal                    |     forbiddenmagicre:gluttony_shard     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Invidia Crystal                 |    forbiddenmagicre:resourceshard:1     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Ira Crystal                     |     forbiddenmagicre:resourceshard      |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Lucrum Crystal                  |    forbiddenmagicre:resourceshard:5     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Luxuria Crystal                 |    forbiddenmagicre:resourceshard:3     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empowered Superbia Crystal                |    forbiddenmagicre:resourceshard:2     |                  N/A                   | Removed to reduce bloat.                                                    |
-| Empty Imprinting Crystal                  |      forbiddenmagicre:mob_crystal       |                  N/A                   | Wrath Cage has been cut.                                                    |
-| Enchant: Wrath                            |                   N/A                   |                  N/A                   | Converted into an infusion enchant in Thaumic Tinkerer: Reborn.             |
-| Infusion Enchant: Consuming               |                   N/A                   |                  N/A                   | Converted into a toggleable item in Thaumic Tinkerer: Reborn                |
-| Infusion Enchant: Educational             |                   N/A                   |                  N/A                   | Use Thaumic Tinkerer: Reborn for a similar feature.                         |
-| Infusion Enchant: Greedy                  |                   N/A                   |                  N/A                   | Emerald Fragment has been cut.                                              |
-| Nether Star Block                         |    forbiddenmagicre:netherstar_block    |      legendgear:nether_star_block      | LegendGear adds this block with a fancy render and new features.            |
-| Pickaxe of Distortion                     |    forbiddenmagicre:distortion_pick     | crimsonerevelations:distortion_pickaxe | Use New Crimsone Revelations for a similar feature.                         |
-| Rapier of the Strix                       |      forbiddenmagicre:blood_rapier      |    congregamystica:ethereal_rapier     | Use Congrega Mystica for a similar feature.                                 |
-| Riding Crop                               |      forbiddenmagicre:riding_crop       |                  N/A                   | Removed to avoid CurseForge restrictions.                                   |
-| Ring of Nutrition                         |     forbiddenmagicre:ring_nutrition     |   crimsonrevelations:nutrition_ring    | Use New Crimsone Revelations for a similar feature.                         |
-| Ritual of Delayed Insanity (Blood Ritual) |                   N/A                   |                  N/A                   | Use Congrega Mystica for a similar feature.                                 |
-| Shovel of the Purifier                    |    forbiddenmagicre:purifying_shovel    |  crimsonrevelations:purifying_shovel   | Use New Crimsone Revelations for a similar feature.                         |
-| Sword of the Dragonslayer                 |     forbiddenmagicre:dragon_slayer      |                  N/A                   | Use Kami: Reborn's Ichorium Sword of the Titanslayer for a similar feature. |
-| Taint Blood Shard                         |      forbiddenmagicre:resourcefm:2      |                  N/A                   | Removed to reduce bloat.                                                    |
-| Umbral Dye                                |      forbiddenmagicre:resourcefm:1      |       thaumictinkerer:umbral_dye       | Use Thaumic Tinkerer: Reborn for a similar feature.                         |
-| Umbral Rose                               |       forbiddenmagicre:black_rose       |      thaumictinkerer:umbral_rose       | Use Thaumic Tinkerer: Reborn for a similar feature.                         |
-| Umbral Rosebush                           |    forbiddenmagicre:black_rose_bush     |    thaumictinkerer:umbral_rosebush     | Use Thaumic Tinkerer: Reborn for a similar feature.                         |
-| Wrath Cage                                |       forbiddenmagicre:wrath_cage       |                  N/A                   | Removed. Using Thaumic Tinkerer: Reborn's Tablet of Necromancy.             |
+| Item                                      |               Original Id               |                 New Id                 | Description                                                                                                               |
+|:------------------------------------------|:---------------------------------------:|:--------------------------------------:|:--------------------------------------------------------------------------------------------------------------------------|
+| Arcane Cake                               |      forbiddenmagicre:arcane_cake       |      thaumictinkerer:thaumic_cake      | Use Thaumic Tinkerer: Reborn for a similiar feature.                                                                      |
+| Axe of the Skulltaker                     |       forbiddenmagicre:skull_axe        |    crimsonrevelations:execution_axe    | Use New Crimson Revelations for an improved version.                                                                      |
+| Bloody Scrivener's Tools                  |      forbiddenmagicre:scribe_blood      |  congregamystica:blood_scribing_tools  | Use Congrega Mystica for a similar feature.                                                                               |
+| Chameleon Axe                             |       forbiddenmagicre:morph_axe        |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.                                                        |
+| Chameleon Pickaxe                         |       forbiddenmagicre:morph_pick       |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.                                                        |
+| Chameleon Shovel                          |      forbiddenmagicre:morph_shovel      |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.                                                        |
+| Chameleon Sword                           |      forbiddenmagicre:morph_sword       |                  N/A                   | Converted into an infusion enchantment in New Crimson Revelations.                                                        |
+| Crystal Scribing Tools                    | forbiddenmagicre:crystal_scribing_tools |                  N/A                   | Copy of New Crimson Revelations' Scribing Tools of Knowledge (this item was added there first before ReForbidden Magic's) |
+| Diabolist Fork                            |     forbiddenmagicre:diabolist_fork     |                  N/A                   | Wrath Cage has been cut.                                                                                                  |
+| Eldritch Blood Orb                        |                   N/A                   |                  N/A                   | Use Congrega Mystica for a similar feature.                                                                               |
+| Emerald Fragment                          |       forbiddenmagicre:resourcefm       |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Desidia Crystal                 |    forbiddenmagicre:resourceshard:4     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Gula Crystal                    |     forbiddenmagicre:gluttony_shard     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Invidia Crystal                 |    forbiddenmagicre:resourceshard:1     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Ira Crystal                     |     forbiddenmagicre:resourceshard      |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Lucrum Crystal                  |    forbiddenmagicre:resourceshard:5     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Luxuria Crystal                 |    forbiddenmagicre:resourceshard:3     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empowered Superbia Crystal                |    forbiddenmagicre:resourceshard:2     |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Empty Imprinting Crystal                  |      forbiddenmagicre:mob_crystal       |                  N/A                   | Wrath Cage has been cut.                                                                                                  |
+| Enchant: Wrath                            |                   N/A                   |                  N/A                   | Converted into an infusion enchant in Thaumic Tinkerer: Reborn.                                                           |
+| Infusion Enchant: Consuming               |                   N/A                   |                  N/A                   | Converted into a toggleable item in Thaumic Tinkerer: Reborn                                                              |
+| Infusion Enchant: Educational             |                   N/A                   |                  N/A                   | Use Thaumic Tinkerer: Reborn for a similar feature.                                                                       |
+| Infusion Enchant: Greedy                  |                   N/A                   |                  N/A                   | Emerald Fragment has been cut.                                                                                            |
+| Nether Star Block                         |    forbiddenmagicre:netherstar_block    |      legendgear:nether_star_block      | LegendGear adds this block with a fancy render and new features.                                                          |
+| Pickaxe of Distortion                     |    forbiddenmagicre:distortion_pick     | crimsonerevelations:distortion_pickaxe | Use New Crimson Revelations for a similar feature.                                                                        |
+| Rapier of the Strix                       |      forbiddenmagicre:blood_rapier      |    congregamystica:ethereal_rapier     | Use Congrega Mystica for a similar feature.                                                                               |
+| Riding Crop                               |      forbiddenmagicre:riding_crop       |                  N/A                   | Removed to avoid CurseForge restrictions.                                                                                 |
+| Ring of Nutrition                         |     forbiddenmagicre:ring_nutrition     |   crimsonrevelations:nutrition_ring    | Use New Crimson Revelations for a similar feature.                                                                        |
+| Ritual of Delayed Insanity (Blood Ritual) |                   N/A                   |                  N/A                   | Use Congrega Mystica for a similar feature.                                                                               |
+| Shovel of the Purifier                    |    forbiddenmagicre:purifying_shovel    |  crimsonrevelations:purifying_shovel   | Use New Crimson Revelations for a similar feature.                                                                        |
+| Sword of the Dragonslayer                 |     forbiddenmagicre:dragon_slayer      |                  N/A                   | Use Kami: Reborn's Ichorium Sword of the Titanslayer for a similar feature.                                               |
+| Taint Blood Shard                         |      forbiddenmagicre:resourcefm:2      |                  N/A                   | Removed to reduce bloat.                                                                                                  |
+| Umbral Dye                                |      forbiddenmagicre:resourcefm:1      |       thaumictinkerer:umbral_dye       | Use Thaumic Tinkerer: Reborn for a similar feature.                                                                       |
+| Umbral Rose                               |       forbiddenmagicre:black_rose       |      thaumictinkerer:umbral_rose       | Use Thaumic Tinkerer: Reborn for a similar feature.                                                                       |
+| Umbral Rosebush                           |    forbiddenmagicre:black_rose_bush     |    thaumictinkerer:umbral_rosebush     | Use Thaumic Tinkerer: Reborn for a similar feature.                                                                       |
+| Wrath Cage                                |       forbiddenmagicre:wrath_cage       |                  N/A                   | Removed. Using Thaumic Tinkerer: Reborn's Tablet of Necromancy.                                                           |
 
 
 ### Not Yet Implemented
-| Item            |           Original Id            | New Id | Description |
-|:----------------|:--------------------------------:|:------:|:------------|
-| Hexcoal         | forbiddenmagicre:taint_charcoal  |  N/A   |             |
-| Tainted Brick   |  forbiddenmagicre:tainted_brick  |  N/A   |             |
-| Tainted Leaves  | forbiddenmagicre:leaves_tainted  |  N/A   |             |
-| Tainted Log     |   forbiddenmagicre:log_tainted   |  N/A   |             |
-| Tainted Plank   |  forbiddenmagicre:taint_planks   |  N/A   |             |
-| Tainted Sapling | forbiddenmagicre:sapling_tainted |  N/A   |             |
-| Tainted Stone   |  forbiddenmagicre:tainted_stone  |  N/A   |             |
-| Vintenfruit     |   forbiddenmagicre:taint_fruit   |  N/A   |             |
+| Item            |           Original Id            | New Id | Description                          |
+|:----------------|:--------------------------------:|:------:|:-------------------------------------|
+| Hexcoal         | forbiddenmagicre:taint_charcoal  |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Brick   |  forbiddenmagicre:tainted_brick  |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Leaves  | forbiddenmagicre:leaves_tainted  |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Log     |   forbiddenmagicre:log_tainted   |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Plank   |  forbiddenmagicre:taint_planks   |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Sapling | forbiddenmagicre:sapling_tainted |  N/A   | Not yet implemented. Pending rework. |
+| Tainted Stone   |  forbiddenmagicre:tainted_stone  |  N/A   | Not yet implemented. Pending rework. |
+| Vintenfruit     |   forbiddenmagicre:taint_fruit   |  N/A   | Not yet implemented. Pending rework. |
