@@ -176,8 +176,9 @@ thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, w
 # -- EQUIPMENT: Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title.subtitle=Weak to stone
-thaumictinkerer.research.goliath_ring.stage.1=[WIP]
-thaumictinkerer.research.goliath_ring.stage.2=[WIP]
+thaumictinkerer.research.goliath_ring.stage.1=I've begun to ponder about the legendary resilience of ancient giants. Is it possible for me to condense such power into a wearable trinket?
+thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with stabilizing magical energies, I have designed the Ring of Goliath. A heavy, resonant bauble capable of absorbing immense trauma on behalf of its wearer.<BR>The ring will reduce all total damage taken by one, it will also save me from death. In order for it to save my own hide, the ring must absorb the entirety of the death blow into its own physical structure, the ring will then shatter completely into dust, leaving me vulnerable once more.
+thaumictinkerer.research.goliath_ring.addenda.1=§lNote to self:§r The ring cannot protect me if I die to fall damage. I'm never jumping off that cliff again...
 
 # -- EQUIPMENT: Sword of the Condor
 thaumictinkerer.research.condor_sword.title=Sword of the Condor
