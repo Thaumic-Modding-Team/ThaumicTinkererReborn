@@ -54,6 +54,6 @@ public class InfusionEnchantmentWrath implements IAddition, IProxy {
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.WRATH = ThaumicAPI.registerInfusionEnchantment(
-                "WRATH", 5, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
+                "WRATH", 5, "TT_ARCANE_INFUSION_ENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
     }
 }

@@ -58,6 +58,6 @@ public class InfusionEnchantmentEducational implements IAddition, IProxy {
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.EDUCATIONAL = ThaumicAPI.registerInfusionEnchantment(
-                "EDUCATIONAL", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
+                "EDUCATIONAL", 3, "TT_ARCANE_INFUSION_ENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
     }
 }

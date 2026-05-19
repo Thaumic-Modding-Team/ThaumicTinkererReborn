@@ -38,6 +38,6 @@ public class InfusionEnchantmentProjecting implements IAddition, IProxy {
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
         ModEnchantsTT.PROJECTING = ThaumicAPI.registerInfusionEnchantment(
-                "PROJECTING", 3, "INFUSIONENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
+                "PROJECTING", 3, "TT_ARCANE_INFUSION_ENCHANTMENT", "weapon", "pickaxe", "shovel", "hoe", "axe");
     }
 }
