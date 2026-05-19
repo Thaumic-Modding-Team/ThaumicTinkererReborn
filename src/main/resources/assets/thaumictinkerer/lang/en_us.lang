@@ -145,8 +145,8 @@ thaumictinkerer.research.transvector_dislocator.stage.2=[WIP]
 # -- DEVICES: Transvector Interface
 thaumictinkerer.research.transvector_interface.title=Transvector Interface
 thaumictinkerer.research.transvector_interface.title.subtitle=Extended possibilities
-thaumictinkerer.research.transvector_interface.stage.1=[WIP]
-thaumictinkerer.research.transvector_interface.stage.2=[WIP]
+thaumictinkerer.research.transvector_interface.stage.1=As my automation setups grow more intricate, I find myself constantly battling a lack of physical space. A single chest or machine only has six faces, and fitting pipes, redstone, and conduits around it quickly turns into an unsightly mess. I need a way to interface with a block from a distance.
+thaumictinkerer.research.transvector_interface.stage.2=I have successfully bridged two points in space, creating the Transvector Interface.<BR>This block acts as a perfect physical extension of a targeted block in its nearby vicinity. Once linked, all six faces of the Interface will seamlessly mimic the corresponding faces of the target block. I can insert items, extract fluids, or apply redstone to the Interface, and the target block will receive them instantly as if I interacted with it directly.<BR>I can establish a connection by simply right-clicking the Transvector Interface with a Transvector Binder, and then right-click the target block I wish to link it to. Due to the volatile nature of localized space-folding, the maximum tether range is limited.
 
 # -- EQUIPMENT: Arcane Infusion Enchantment
 thaumictinkerer.research.arcane_infusion_enchantment.title=Arcane Infusion Enchantment
