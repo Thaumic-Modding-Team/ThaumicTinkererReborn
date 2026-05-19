@@ -49,7 +49,7 @@ public class ItemGoliathRing extends AbstractItemBauble implements IProxy {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
             float health = player.getHealth();
             float damage = event.getAmount();
-            if (health > 6.0f && damage >= health && event.getSource() != DamageSource.FALL) {
+            if (health >= 6.0f && damage >= health && event.getSource() != DamageSource.FALL) {
                 IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
                 int slot = BaublesApi.isBaubleEquipped(player, this);
                 if (handler != null && slot >= 0) {
