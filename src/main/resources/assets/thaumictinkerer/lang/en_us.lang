@@ -31,8 +31,6 @@ tile.thaumictinkerer:transvector_dislocator.name=Transvector Dislocator
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 tile.thaumictinkerer:umbral_rose.name=Umbral Rose
 tile.thaumictinkerer:umbral_rosebush.name=Umbral Rosebush
-tile.thaumictinkerer:vitium_stone_bricks.name=Vitium Stone Bricks
-tile.thaumictinkerer:vitium_stone.name=Vitium Stone
 
 # Infusion Enchantments
 enchantment.infusion.EDUCATIONAL=Educational

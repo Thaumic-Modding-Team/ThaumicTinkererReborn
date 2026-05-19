@@ -43,7 +43,6 @@ public class ModRecipesTT {
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
         initNecromancyPlatform();
         initArcaneWorkbenchRecipes();
-        initCraftingRecipes();
         initCrucibleRecipes();
         initInfusionRecipes();
         initInfusionEnchantmentRecipes();
@@ -250,19 +249,6 @@ public class ModRecipesTT {
                 'Q', ModBlocksTT.ARCANE_QUARTZ_BLOCK,
                 'C', ItemsTC.mechanismComplex
         ));
-    }
-
-    private static void initCraftingRecipes() {
-        GameRegistry.addShapedRecipe(
-                new ResourceLocation(ThaumicTinkerer.MOD_ID, "vitium_stone"),
-                null,
-                new ItemStack(ModBlocksTT.VITIUM_STONE, 8),
-                "CCC",
-                "C#C",
-                "CCC",
-                'C', "cobblestone",
-                '#', ThaumcraftApiHelper.makeCrystal(Aspect.FLUX)
-        );
     }
 
     private static void initCrucibleRecipes() {
