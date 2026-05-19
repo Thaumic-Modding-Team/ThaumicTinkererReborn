@@ -10,6 +10,7 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.DamageSource;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.IRarity;
@@ -48,7 +49,7 @@ public class ItemGoliathRing extends AbstractItemBauble implements IProxy {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
             float health = player.getHealth();
             float damage = event.getAmount();
-            if (health > 6.0f && damage >= health) {
+            if (health > 6.0f && damage >= health && event.getSource() != DamageSource.FALL) {
                 IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
                 int slot = BaublesApi.isBaubleEquipped(player, this);
                 if (handler != null && slot >= 0) {
