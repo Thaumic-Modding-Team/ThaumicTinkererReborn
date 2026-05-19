@@ -60,5 +60,4 @@ public class ThaumicTinkerer {
     //  Check any TODOs remaining
     //  Ensure all features work on server without crashes
     //  Create list showing original features and replacements (including old registry id and new registry id)
-    //  Clean up texture and model directory to removed unused files
 }

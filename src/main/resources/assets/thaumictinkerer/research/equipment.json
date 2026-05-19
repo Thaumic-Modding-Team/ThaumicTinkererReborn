@@ -3,7 +3,7 @@
     {
       "key": "TT_ARCANE_INFUSION_ENCHANTMENT",
       "name": "thaumictinkerer.research.arcane_infusion_enchantment.title",
-      "icons": ["thaumictinkerer:textures/research/r_wrath_infusion.png", "thaumictinkerer:textures/research/r_educational_infusion.png", "thaumictinkerer:textures/research/r_projecting_infusion.png"],
+      "icons": ["thaumictinkerer:textures/research/r_arcane_infusion.png"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONDOR_SWORD", "~INFUSIONENCHANTMENT"],
       "meta": ["REVERSE"],
