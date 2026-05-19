@@ -998,7 +998,6 @@ public class ModRecipesTT {
                 )
         );
 
-        //TODO: Eldritch summons.
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:eldritch_crab"), new NecromancyRecipe()
                 .setSummonedEntity(EntityEldritchCrab.class)
                 .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10))
@@ -1048,8 +1047,18 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
-        //Eldritch
-//        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 15).add(Aspect.WATER, 15), new ThaumcraftApi.EntityTagsNBT[]{new ThaumcraftApi.EntityTagsNBT("Elder", true)});
+        /* Eldritch Mobs */
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:eldritch_guardian"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEldritchGuardian.class)
+                .setAspects(new AspectList().add(Aspect.UNDEAD, 40).add(Aspect.DEATH, 40).add(Aspect.ELDRITCH, 40))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ELDRITCH))
+                .setComponents(
+                        Ingredient.fromItem(ItemsTC.salisMundus),
+                        Ingredient.fromItem(ItemsTC.voidSeed),
+                        Ingredient.fromItem(Items.ENDER_EYE),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.ELDRITCH))
+                )
+                .setConsumeComponents(true)
+        );
     }
 }
