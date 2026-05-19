@@ -133,8 +133,8 @@ thaumictinkerer.research.ethereal_platform.stage.2=[WIP]
 # -- DEVICES: Paving Stone of Permeability
 thaumictinkerer.research.passable_wall.title=Paving Stone of Permeability
 thaumictinkerer.research.passable_wall.title.subtitle=Quantum tunneling
-thaumictinkerer.research.passable_wall.stage.1=[WIP]
-thaumictinkerer.research.passable_wall.stage.2=[WIP]
+thaumictinkerer.research.passable_wall.stage.1=I already mastered the creation of paving stones that accelerate travel and repel continuous threats, but what if I created another type of paving stone that could simply... let me through? I might be able to do this using the aspect of Aqua.
+thaumictinkerer.research.passable_wall.stage.2=I've created a new type of paving stone called the Paving Stone of Permeability. It seems like these kind of blocks are not only temporary passable when right-clicked with a gauntlet, but they also act like a swimmable liquid.<BR>When these blocks are placed together, they will all act in sync to each other when one of them is toggled.
 
 # -- DEVICES: Transvector Dislocator
 thaumictinkerer.research.transvector_dislocator.title=Transvector Dislocator
