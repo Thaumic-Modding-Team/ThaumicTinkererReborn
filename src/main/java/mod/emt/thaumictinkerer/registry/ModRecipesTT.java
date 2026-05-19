@@ -263,7 +263,6 @@ public class ModRecipesTT {
         );
     }
 
-    // TODO: Research keys and aspect balance
     private static void initCrucibleRecipes() {
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_prismarine"), new CrucibleRecipe(
                 "TT_AQUATIC_ALCHEMY",
@@ -275,13 +274,13 @@ public class ModRecipesTT {
                 "TT_AQUATIC_ALCHEMY",
                 new ItemStack(Blocks.SEA_LANTERN),
                 new ItemStack(Blocks.REDSTONE_LAMP),
-                new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
+                new AspectList().add(Aspect.WATER, 40).add(Aspect.ENERGY, 40).add(Aspect.CRYSTAL, 40)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "aa_sponge"), new CrucibleRecipe(
                 "TT_AQUATIC_ALCHEMY",
                 new ItemStack(Blocks.SPONGE, 1, 0),
                 "wool",
-                new AspectList().add(Aspect.WATER, 5).add(Aspect.EARTH, 5)
+                new AspectList().add(Aspect.WATER, 5).add(Aspect.TRAP, 5).add(Aspect.VOID, 5)
         ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "everfull_bucket"), new CrucibleRecipe(
                 "TT_EVERFULL_BUCKET",
