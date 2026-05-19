@@ -30,6 +30,8 @@ import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.entities.monster.*;
+import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
+import thaumcraft.common.entities.monster.tainted.EntityTaintSwarm;
 import thaumcraft.common.lib.crafting.DustTriggerMultiblock;
 import thaumcraft.common.lib.crafting.InfusionEnchantmentRecipe;
 import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
@@ -862,6 +864,7 @@ public class ModRecipesTT {
                 .setConsumeComponents(true)
         );
 
+        // TODO: Add these horses in a future update
         //        ThaumcraftApi.registerEntityTag("SkeletonHorse", (new AspectList()).add(Aspect.BEAST, 5).add(Aspect.UNDEAD, 10).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
         //        ThaumcraftApi.registerEntityTag("ZombieHorse", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.UNDEAD, 5).add(Aspect.EARTH, 5).add(Aspect.AIR, 5), new ThaumcraftApi.EntityTagsNBT[0]);
 
@@ -995,11 +998,55 @@ public class ModRecipesTT {
                 )
         );
 
-        //TODO: Tainted and Eldritch summons.
-        //Tainted
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeed", (new AspectList()).add(Aspect.FLUX, 20).add(Aspect.AURA, 10).add(Aspect.PLANT, 5), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.TaintSeedPrime", (new AspectList()).add(Aspect.PLANT, 30).add(Aspect.BEAST, 30).add(Aspect.FLUX, 30), new ThaumcraftApi.EntityTagsNBT[0]);
-//        ThaumcraftApi.registerEntityTag("Thaumcraft.ThaumSlime", (new AspectList()).add(Aspect.LIFE, 5).add(Aspect.WATER, 5).add(Aspect.FLUX, 5).add(Aspect.ALCHEMY, 5), new ThaumcraftApi.EntityTagsNBT[0]);
+        //TODO: Eldritch summons.
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:eldritch_crab"), new NecromancyRecipe()
+                .setSummonedEntity(EntityEldritchCrab.class)
+                .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
+                .setComponents(
+                        Ingredient.fromItem(ItemsTC.voidSeed),
+                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 1), new ItemStack(Items.SKULL, 1, 2)),
+                        Ingredient.fromStacks(new ItemStack(ItemsTC.crimsonPlateHelm, 1, OreDictionary.WILDCARD_VALUE)),
+                        Ingredient.fromItem(Items.ROTTEN_FLESH),
+                        Ingredient.fromItem(Items.ENDER_EYE)
+                )
+        );
+
+        /* Tainted Mobs */
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:taint_crawler"), new NecromancyRecipe()
+                .setSummonedEntity(EntityTaintCrawler.class)
+                .setAspects(new AspectList().add(Aspect.BEAST, 5).add(Aspect.FLUX, 10))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_TAINTED))
+                .setComponents(
+                        Ingredient.fromStacks(new ItemStack(Items.DYE, 1, 15)),
+                        Ingredient.fromItem(Items.SPIDER_EYE),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX)),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX))
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:taint_swarm"), new NecromancyRecipe()
+                .setSummonedEntity(EntityTaintSwarm.class)
+                .setAspects(new AspectList().add(Aspect.AIR, 5).add(Aspect.FLIGHT, 5).add(Aspect.FLUX, 15))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_TAINTED))
+                .setComponents(
+                        Ingredient.fromItem(ItemsTC.salisMundus),
+                        Ingredient.fromItem(Items.SPIDER_EYE),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX)),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX))
+                )
+        );
+        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:thaumic_slime"), new NecromancyRecipe()
+                .setSummonedEntity(EntityThaumicSlime.class)
+                .setAspects(new AspectList().add(Aspect.LIFE, 15).add(Aspect.WATER, 15).add(Aspect.FLUX, 15).add(Aspect.ALCHEMY, 15))
+                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_TAINTED))
+                .setComponents(
+                        Ingredient.fromItem(ItemsTC.salisMundus),
+                        new OreIngredient("slimeball"),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX)),
+                        Ingredient.fromStacks(ThaumcraftApiHelper.makeCrystal(Aspect.FLUX))
+                )
+                .setConsumeComponents(true)
+        );
 
         //Eldritch
 //        ThaumcraftApi.registerEntityTag("Guardian", (new AspectList()).add(Aspect.BEAST, 10).add(Aspect.ELDRITCH, 10).add(Aspect.WATER, 10), new ThaumcraftApi.EntityTagsNBT[0]);
