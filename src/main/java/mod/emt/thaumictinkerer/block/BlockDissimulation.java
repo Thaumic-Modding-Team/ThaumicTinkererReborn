@@ -12,6 +12,7 @@ import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
+import net.minecraft.stats.StatList;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.BlockRenderLayer;
 import net.minecraft.util.EnumBlockRenderType;
@@ -25,6 +26,7 @@ import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
 import java.util.List;
+import java.util.Objects;
 
 public class BlockDissimulation extends BlockTileAddition {
     public BlockDissimulation() {
@@ -124,6 +126,41 @@ public class BlockDissimulation extends BlockTileAddition {
             return ((TileDissimulation) tile).getStoredState().getLightValue();
         }
         return 0;
+    }
+
+    @Override
+    public void harvestBlock(@NotNull World worldIn, EntityPlayer player, @NotNull BlockPos pos, @NotNull IBlockState state, @Nullable TileEntity te, @NotNull ItemStack stack) {
+        player.addStat(Objects.requireNonNull(StatList.getBlockStats(this)));
+        player.addExhaustion(0.005F);
+        this.harvesters.set(player);
+        this.dropBlockAsItem(worldIn, pos, worldIn.getBlockState(pos), 0);
+        this.harvesters.remove();
+    }
+
+    @Override
+    public boolean canSilkHarvest(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer player) {
+        return false;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    protected boolean canSilkHarvest() {
+        return false;
+    }
+
+    @Override
+    public @NotNull ItemStack getSilkTouchDrop(@NotNull IBlockState state) {
+        return new ItemStack(this);
+    }
+
+    @Override
+    public @Nullable String getHarvestTool(@NotNull IBlockState state) {
+        return "pickaxe";
+    }
+
+    @Override
+    public int getHarvestLevel(@NotNull IBlockState state) {
+        return 1;
     }
 
     @Override
