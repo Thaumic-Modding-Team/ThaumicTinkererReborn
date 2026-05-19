@@ -110,19 +110,19 @@ thaumictinkerer.research.attractor_mob.stage.2=When powered with redstone, the c
 thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title.subtitle=Glitch in the Matrix
 thaumictinkerer.research.dissimulation_block.stage.1=I've begun to notice subtle imperfections in how matter presents itself to the senses. If reality is merely a complex construct of light, shadow, and perception, perhaps I can manipulate the code of a block in order to mimic another block's appearance.
-thaumictinkerer.research.dissimulation_block.stage.2=My research into this has led to a startling, almost existential realization. What if the world around us is nothing more than a highly advanced simulation of matter? If reality is just a set of rules rendered by the universe, then those rules can be rewritten.<BR>This construct that I call the Dissimulation Block, acts as a physical hollow shell, a blank canvas waiting for a texture to render. It possesses the unique ability to perfectly mimic the appearance, texture, and sounds of almost any other block in existence. I simply need to place it down, then right-click any block I want on it to simulate its appearance. I can break the simulated block to revert it back to itself.
+thaumictinkerer.research.dissimulation_block.stage.2=My research into this has led to a startling, almost existential realization. What if the world around us is nothing more than a highly advanced simulation of matter? If reality is just a set of rules rendered by the universe, then those rules can be rewritten.<BR>This construct that I call the Dissimulation Block, acts as a physical hollow shell, a blank canvas waiting for a texture to render.<BR>It possesses the unique ability to perfectly mimic the appearance, texture, and sounds of almost any other block in existence. I simply need to place it down, then right-click any block I want on it to simulate its appearance. I can right click with an empty hand or break the simulated block to revert it back to itself.
 
 # -- EQUIPMENT: Ender Mirror
 thaumictinkerer.research.ender_mirror.title=Ender Mirror
 thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
 thaumictinkerer.research.ender_mirror.stage.1=If a magical hand mirror can grant me access to linked mirrors across dimensions, how much harder would it be to create something that access my personal ender chest inventory?
-thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to modify a magical hand mirror that will allow me to access my ender chest inventory from anywhere.
+thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to modify a magical hand mirror so it grants me to access my ender chest inventory from anywhere.
 
 # -- DEVICES: Ethereal Platform
 thaumictinkerer.research.ethereal_platform.title=Ethereal Platform
 thaumictinkerer.research.ethereal_platform.title.subtitle=Is it really there?
 thaumictinkerer.research.ethereal_platform.stage.1=The Arcane Levitator is a marvelous invention, but using it as a proper elevator is an exercise in clumsiness. There must be a way to create a floor that understands intent.
-thaumictinkerer.research.ethereal_platform.stage.2=I have successfully created the perfect platform companion for the Arcane Levitator.<BR>The resulting block defies standard physics. To a casual observer walking over it, it feels like solid ground. However, should someone approach it from below or from the side, they will pass right through it as if it were mere air. Even more usefully, if I consciously choose to sneak, the block loses its collision box entirely, allowing me to drop straight through.
+thaumictinkerer.research.ethereal_platform.stage.2=I have successfully created the perfect platform companion for the Arcane Levitator.<BR>The resulting block defies standard physics. To a casual observer walking over it, it feels like solid ground. However, should someone approach it from below or from the side, they will pass right through it as if it were mere air.<BR>Even more usefully, if I consciously choose to sneak, the block loses its collision entirely, allowing me to drop straight through.
 
 # -- DEVICES: Kinetic Attractor
 thaumictinkerer.research.attractor_item.title=Kinetic Attractor
@@ -140,13 +140,13 @@ thaumictinkerer.research.passable_wall.stage.2=I've created a new type of paving
 thaumictinkerer.research.transvector_dislocator.title=Transvector Dislocator
 thaumictinkerer.research.transvector_dislocator.title.subtitle=No Blood Magic required
 thaumictinkerer.research.transvector_dislocator.stage.1=During a recent encounter with a rather eccentric blood mage, I managed to "borrow" some highly intriguing plans detailing a ritual that could instantaneously swap two fragments of reality across vast distances.<BR>While their crude methods involved shedding life essence, I believe tossing that away in favor of something more fitting would be the best route.
-thaumictinkerer.research.transvector_dislocator.stage.2=I have successfully utilized the blood mage's stolen concepts with my own knowledge in Artifice. The result is the Transvector Dislocator.<BR>This block bridges reality itself. When given a sudden jolt of redstone, it instantaneously transports the block or entity directly above it to a linked dislocator. It can do this within a wide range.<PAGE>I can link two dislocators together by simply sneaking and right-clicking one of them with a Transvector Binder, and then right-click the other one to link it.
+thaumictinkerer.research.transvector_dislocator.stage.2=I have successfully utilized the blood mage's stolen concepts with my own knowledge in Artifice. The result is the Transvector Dislocator.<BR>This block bridges reality itself. When given a sudden jolt of redstone, it instantaneously transports the blocks and entities in a 3x3x3 area above it to a linked dislocator.<PAGE>I can link two dislocators together by simply sneaking and right-clicking one of them with a Transvector Binder, and then right-click the other one to link it.
 
 # -- DEVICES: Transvector Interface
 thaumictinkerer.research.transvector_interface.title=Transvector Interface
 thaumictinkerer.research.transvector_interface.title.subtitle=Extended possibilities
 thaumictinkerer.research.transvector_interface.stage.1=As my automation setups grow more intricate, I find myself constantly battling a lack of physical space. A single chest or machine only has six faces, and fitting pipes, redstone, and conduits around it quickly turns into an unsightly mess. I need a way to interface with a block from a distance.
-thaumictinkerer.research.transvector_interface.stage.2=I have successfully bridged two points in space, creating the Transvector Interface.<BR>This block acts as a perfect physical extension of a targeted block in its nearby vicinity. Once linked, all six faces of the Interface will seamlessly mimic the corresponding faces of the target block. I can insert items, extract fluids, or apply redstone to the Interface, and the target block will receive them instantly as if I interacted with it directly.<BR>I can establish a connection by simply sneaking and right-clicking the Transvector Interface with a Transvector Binder, and then right-click the target block I wish to link it to. Due to the volatile nature of localized space-folding, the maximum tether range is limited.
+thaumictinkerer.research.transvector_interface.stage.2=I have successfully bridged two points in space, creating the Transvector Interface.<BR>This block acts as a perfect physical extension of a targeted block in its nearby vicinity.<BR>The interface can be linked in two methods. One, it can be linked in block mode, which will copy all faces of the linked block, or two, it can be linked in face mode. In face mode, the interface can link to specific faces of the block, allowing connections to multiple blocks, so long as the interface sides are unique.<BR>Once linked, all six faces of the Interface will seamlessly mimic the corresponding faces of the target block. I can insert or extract items, fluids, or redstone power to the Interface, and the target block will receive them instantly as if I interacted with it directly.<BR>I can establish a connection by simply sneaking and right-clicking the Transvector Interface with a Transvector Binder, and then right-click the target block I wish to link it to. Due to the volatile nature of localized space-folding, the maximum tether range is limited.
 
 # -- EQUIPMENT: Arcane Infusion Enchantment
 thaumictinkerer.research.arcane_infusion_enchantment.title=Arcane Infusion Enchantment
@@ -159,7 +159,7 @@ thaumictinkerer.research.arcane_infusion_enchantment.stage.2=I now have access t
 thaumictinkerer.research.feline_charm.title=Feline Charm
 thaumictinkerer.research.feline_charm.title.subtitle=Like black cats on a bad day
 thaumictinkerer.research.feline_charm.stage.1=Creepers are a constant frustration. Not only do they blend into the environment, they also have a nasty penchant to hide behind walls and sneak up behind me.<BR>Perhaps I can create a tool that that can somehow neutralize these creatures.
-thaumictinkerer.research.feline_charm.stage.2=I have devised an amulet that muddles the perception of nearby creepers.<BR>While it cannot fully nutralize creeper detonations, while equipped, the feline amulet instils fear into nearby creepers, causing them to flee as though they were in the presence of a cat.<BR>So long as I do not perform hostile actions against the creatures, the amulet shouild grant me relative safety from their suicidal attacks.
+thaumictinkerer.research.feline_charm.stage.2=I have devised an amulet that muddles the perception of nearby creepers.<BR>While it cannot fully neutralize creeper detonations, while equipped, the feline amulet instills fear into nearby creepers, causing them to flee as though they were in the presence of a cat.<BR>So long as I do not perform hostile actions against the creatures, the amulet should grant me relative safety from their suicidal attacks.
 
 # -- EQUIPMENT: Ignium Striker
 thaumictinkerer.research.ignium_striker.title=Ignium Striker
@@ -177,8 +177,8 @@ thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, w
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title.subtitle=Weak to stone
 thaumictinkerer.research.goliath_ring.stage.1=I've begun to ponder about the legendary resilience of ancient giants. Is it possible for me to condense such power into a wearable trinket?
-thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with the corresponding essentia, I have designed the Ring of Goliath.<BR>The ring will reduce all total damage taken by one, it will also save me from death. In order for it to save my own hide, the ring must absorb the entirety of the death blow into its own physical structure, the ring will then shatter completely into dust, leaving me vulnerable once more.
-thaumictinkerer.research.goliath_ring.addenda.1=§lNote to self:§r The ring cannot protect me if I die to fall damage. I'm never jumping off that cliff again...
+thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with the corresponding essentia, I have designed the Ring of Goliath.<BR>The ring will reduce all total damage taken by one, it will also save me from death so long as my initial health is high enough..<BR>In order for it to protect me, the ring must absorb the entirety of the death blow into its own physical structure, causing the ring will then shatter into dust, leaving me barely clinging to life and vulnerable once more.
+thaumictinkerer.research.goliath_ring.addenda.1=The ring is unable to fully negate damage, and cannot protect me if I die to fall damage. I'm never jumping off that cliff again...
 
 # -- EQUIPMENT: Sword of the Condor
 thaumictinkerer.research.condor_sword.title=Sword of the Condor
@@ -208,7 +208,7 @@ thaumictinkerer.research.energetic_nitor.stage.2=I have managed to create a more
 thaumictinkerer.research.escape_sigil.title=Escape Sigil
 thaumictinkerer.research.escape_sigil.title.subtitle=Think fast!
 thaumictinkerer.research.escape_sigil.stage.1=Ender Pearls are useful for traveling short distances or escaping from dangerous situations, but their penchant for hurting me when used is an annoyance at best and potentially lethal at worst.<BR>Perhaps I can find a way to stabilize the pearl's effects to provide a more reliable means of escape.
-thaumictinkerer.research.escape_sigil.stage.2=This new type of stabilized ender pearl, which I have named the sigil of escape, is a massive improvement over ender pearls.<BR>While the item itself is significantly more fragile than a normal pearl, the effects are much more potent.<BR>When crushed in my hand, the pearl will transport me vertically to the first block exposed to the sky directly above me.<BR>If no safe location is found or if there is some barrier blocking the movement, the sigil will instead teleport me randomly to a nearby location.<BR>This sigil will be a godsend when I have lost my way while deep underground.
+thaumictinkerer.research.escape_sigil.stage.2=This new type of stabilized ender pearl, which I have named the sigil of escape, is a massive improvement over ender pearls.<BR>While the item itself is significantly more fragile than a normal pearl, the effects are much more potent.<BR>When crushed in my hand, the pearl will transport me vertically to the first block exposed to the sky directly above me.<BR>If no safe location is found or if there is some barrier blocking the movement, the sigil will instead teleport me randomly to a nearby location.
 
 # -- MISC: Essentia Funnel
 thaumictinkerer.research.essentia_funnel.title=Essentia Funnel
@@ -232,7 +232,7 @@ thaumictinkerer.research.terra_obsidian.stage.2=Who would have thought it was as
 thaumictinkerer.research.thaumic_cake.title=Thaumic Cake
 thaumictinkerer.research.thaumic_cake.title.subtitle=Let them eat cake!
 thaumictinkerer.research.thaumic_cake.stage.1=People constantly tell me that I cannot have my cake and eat it too, but what do they know?<BR>As the very world bends to my will, what better way to expend my precious time on this planet than to find a solution to this sever lack of cake.<BR>They might think me mad, but at least I'm not desperate enough to eat pie.
-thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues think I am mad for eating infinitely regrowing cake, but what do they know? It tastes fine to me!
+thaumictinkerer.research.thaumic_cake.stage.2=What's better than cake? More cake! What's better than more cake? Infinite cake!<BR>My colleagues think I am mad for eating infinitely regenerating cake, but what do they know? It tastes fine to me!
 
 # -- MISC: Thaumic Restorer
 thaumictinkerer.research.thaumic_restorer.title=Thaumic Restorer

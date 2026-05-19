@@ -3,7 +3,7 @@
     {
       "key": "TT_AQUATIC_ALCHEMY",
       "name": "thaumictinkerer.research.aquatic_alchemy.title",
-      "icons": ["minecraft:prismarine_shard", "minecraft:sea_lantern", "minecraft:sponge;1;0"],
+      "icons": ["minecraft:prismarine_shard"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~HEDGEALCHEMY"],
       "meta": ["REVERSE"],
