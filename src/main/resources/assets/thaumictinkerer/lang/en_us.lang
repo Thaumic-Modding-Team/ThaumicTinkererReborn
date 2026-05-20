@@ -31,7 +31,7 @@ tile.thaumictinkerer:thaumium_plated_cobblestone.name=Thaumium Plated Cobbleston
 tile.thaumictinkerer:transvector_dislocator.name=Transvector Dislocator
 tile.thaumictinkerer:transvector_interface.name=Transvector Interface
 tile.thaumictinkerer:umbral_rose.name=Umbral Rose
-tile.thaumictinkerer:umbral_rosebush.name=Umbral Rosebush
+tile.thaumictinkerer:umbral_rosebush.name=Umbral Rose Bush
 
 # Infusion Enchantments
 enchantment.infusion.EDUCATIONAL=Educational
@@ -189,7 +189,7 @@ thaumictinkerer.research.condor_sword.stage.2=I have successfully upgraded my Sw
 thaumictinkerer.research.xp_talisman.title=Talisman of Experience
 thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
 thaumictinkerer.research.xp_talisman.stage.1=With my recent successes in storing experience within brain jars, I find myself wondering if it would be possible to create a talisman capable of doing the same.
-thaumictinkerer.research.xp_talisman.stage.2=I have successfully manage to create a bauble capable of storing massive amounts of experience.<BR>When equipped, any experience I collect will be stored within the talisman.<BR>When enabled, any experience of my own will be drained and stored within the talisman.<BR>Should I wish to retrieve any stored experience, I simply need to right-click the talisman to extract one level at a time.
+thaumictinkerer.research.xp_talisman.stage.2=I have successfully managed to create a bauble capable of storing massive amounts of experience.<BR>When equipped, any experience I collect will be stored within the talisman.<BR>When enabled, any experience of my own will be drained and stored within the talisman.<BR>Should I wish to retrieve any stored experience, I simply need to right-click the talisman to extract one level at a time.
 
 # -- MISC: Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
