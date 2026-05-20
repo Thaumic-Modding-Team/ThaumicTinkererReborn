@@ -5,13 +5,13 @@
       "name": "thaumictinkerer.research.necromancy.title",
       "icons": ["thaumictinkerer:textures/research/r_necromancy.png"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE"],
+      "parents": ["THAUMIC_TINKERER_BASE", "~CrimsonRites", "~INFUSION", "~JARBRAIN"],
       "meta": ["HIDDEN"],
       "location": [-3, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.necromancy.stage.1",
-          "required_knowledge": [],
+          "required_knowledge": ["THEORY;GOLEMANCY;3","OBSERVATION;GOLEMANCY;3"],
           "warp": 3
         },
         {
@@ -35,13 +35,13 @@
       "name": "thaumictinkerer.research.alien_soul.title",
       "icons": ["thaumictinkerer:entity_soul_alien"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_ARCANE_SOUL"],
+      "parents": ["TT_ARCANE_SOUL", "~UNLOCKELDRITCH"],
       "meta": ["ROUND", "HIDDEN", "REVERSE"],
       "location": [-7, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.alien_soul.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["THEORY;ELDRITCH;2","OBSERVATION;GOLEMANCY;2"]
         },
         {
           "text": "thaumictinkerer.research.alien_soul.stage.2",
@@ -56,14 +56,13 @@
       "name": "thaumictinkerer.research.arcane_soul.title",
       "icons": ["thaumictinkerer:entity_soul_arcane"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_HOSTILE_SOUL"],
+      "parents": ["TT_HOSTILE_SOUL", "~FOCUSELEMENTAL"],
       "meta": ["ROUND", "HIDDEN", "REVERSE"],
       "location": [-6, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.arcane_soul.stage.1",
-          "required_knowledge": [
-          ]
+          "required_knowledge": ["THEORY;AUROMANCY;2","OBSERVATION;GOLEMANCY;2"]
         },
         {
           "text": "thaumictinkerer.research.arcane_soul.stage.2",
@@ -84,8 +83,7 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.demonic_soul.stage.1",
-          "required_knowledge": [
-          ]
+          "required_knowledge": ["THEORY;AUROMANCY;2","OBSERVATION;GOLEMANCY;2"]
         },
         {
           "text": "thaumictinkerer.research.demonic_soul.stage.2",
@@ -100,14 +98,13 @@
       "name": "thaumictinkerer.research.eldritch_soul.title",
       "icons": ["thaumictinkerer:entity_soul_eldritch"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_TAINTED_SOUL"],
+      "parents": ["TT_TAINTED_SOUL", "~FLUXRIFT", "~PRIMPEARL"],
       "meta": ["ROUND", "HIDDEN"],
       "location": [-9, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.eldritch_soul.stage.1",
-          "required_knowledge": [
-          ],
+          "required_knowledge": ["THEORY;ELDRITCH;3","OBSERVATION;GOLEMANCY;3"],
           "warp": 1
         },
         {
@@ -129,8 +126,7 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.hostile_soul.stage.1",
-          "required_knowledge": [
-          ]
+          "required_knowledge": ["THEORY;AUROMANCY;1","OBSERVATION;GOLEMANCY;1"]
         },
         {
           "text": "thaumictinkerer.research.hostile_soul.stage.2",
@@ -145,14 +141,13 @@
       "name": "thaumictinkerer.research.tainted_soul.title",
       "icons": ["thaumictinkerer:entity_soul_tainted"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_ALIEN_SOUL", "~TT_DEMONIC_SOUL"],
+      "parents": ["TT_ALIEN_SOUL", "~TT_DEMONIC_SOUL", "~WARP"],
       "meta": ["ROUND", "HIDDEN"],
       "location": [-8, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.tainted_soul.stage.1",
-          "required_knowledge": [
-          ],
+          "required_knowledge": ["THEORY;ELDRITCH;2","OBSERVATION;GOLEMANCY;2"],
           "warp": 1
         },
         {
