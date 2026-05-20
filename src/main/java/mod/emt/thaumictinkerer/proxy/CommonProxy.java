@@ -4,11 +4,16 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
+import mod.emt.thaumictinkerer.compat.datafixes.BlockDataFixer;
+import mod.emt.thaumictinkerer.compat.datafixes.ItemDataFixer;
 import mod.emt.thaumictinkerer.network.PacketHandler;
 import mod.emt.thaumictinkerer.registry.RegistrarTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.datafix.FixTypes;
 import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.common.util.ModFixs;
+import net.minecraftforge.fml.common.FMLCommonHandler;
 import thaumcraft.Thaumcraft;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
@@ -26,6 +31,10 @@ public class CommonProxy {
     public void init() {
         RegistrarTT.getProxyAdditions().forEach(IProxy::init);
         registerResearch();
+
+        ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(ThaumicTinkerer.MOD_ID, 1);
+        modFixer.registerFix(FixTypes.BLOCK_ENTITY, new BlockDataFixer());
+        modFixer.registerFix(FixTypes.ITEM_INSTANCE, new ItemDataFixer());
     }
 
     public void postInit() {
