@@ -1,0 +1,17 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "type": "forge:ore_dict",
+      "ore": "blockArcaneQuartz"
+    }
+  },
+  "result": {
+    "item": "thaumictinkerer:arcane_quartz_slab",
+    "data": 0,
+    "count": 6
+  }
+}

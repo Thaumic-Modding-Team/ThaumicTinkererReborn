@@ -1,6 +1,7 @@
 package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import mod.emt.thaumictinkerer.api.block.AbstractSlabAddition;
 import mod.emt.thaumictinkerer.block.*;
 import mod.emt.thaumictinkerer.tile.TileItemAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
@@ -15,6 +16,8 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 public class ModBlocksTT {
     public static final Block ARCANE_QUARTZ_BLOCK = null;
     public static final Block ARCANE_QUARTZ_PILLAR = null;
+    public static final Block ARCANE_QUARTZ_SLAB = null;
+    public static final Block ARCANE_QUARTZ_SLAB_DOUBLE = null;
     public static final Block ARCANE_QUARTZ_STAIRS = null;
     public static final Block ATTRACTOR_ITEM = null;
     public static final Block ATTRACTOR_MOB = null;
@@ -40,6 +43,8 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("chiseled_arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new BlockMaterialPillar("arcane_quartz_pillar", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz"));
+        RegistrarTT.addAdditionToRegister(new AbstractSlabAddition(new BlockMaterialSlab.Half("arcane_quartz_slab", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY).setSoundType(SoundType.STONE).setHardness(0.8F).setResistance(0.8F),
+                new BlockMaterialSlab.Double("arcane_quartz_slab", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY).setSoundType(SoundType.STONE).setHardness(0.8F).setResistance(0.8F)));
         RegistrarTT.addAdditionToRegister(new BlockMaterialStairs("arcane_quartz_stairs", new BlockMaterial("arcane_quartz_block", Material.ROCK, MapColor.CYAN_STAINED_HARDENED_CLAY, 0.8F, SoundType.STONE, "blockArcaneQuartz").getDefaultState(), false));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("terra_obsidian", Material.ROCK, MapColor.EMERALD, 20.0F, 5000.0F, SoundType.STONE, true, false, null));
         RegistrarTT.addAdditionToRegister(new BlockMaterial("thaumium_plated_cobblestone", Material.ROCK, MapColor.STONE, 2.0F, 50.0F, SoundType.STONE, false, false, null));

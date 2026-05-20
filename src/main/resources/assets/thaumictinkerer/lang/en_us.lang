@@ -13,6 +13,7 @@ chat.thaumictinkerer:recall_stopwatch.start=The stopwatch temporally links you t
 # Blocks
 tile.thaumictinkerer:arcane_quartz_block.name=Block of Arcane Quartz
 tile.thaumictinkerer:arcane_quartz_pillar.name=Arcane Quartz Pillar
+tile.thaumictinkerer:arcane_quartz_slab.name=Arcane Quartz Slab
 tile.thaumictinkerer:arcane_quartz_stairs.name=Arcane Quartz Stairs
 tile.thaumictinkerer:attractor_item.name=Kinetic Attractor
 tile.thaumictinkerer:attractor_mob.name=Corporeal Attractor
@@ -175,7 +176,7 @@ thaumictinkerer.research.consuming_sigil.stage.2=I have devised a device that, w
 thaumictinkerer.research.goliath_ring.title=Ring of Goliath's Might
 thaumictinkerer.research.goliath_ring.title.subtitle=Weak to stone
 thaumictinkerer.research.goliath_ring.stage.1=I've begun to ponder about the legendary resilience of ancient giants. Is it possible for me to condense such power into a wearable trinket?
-thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with the corresponding essentia, I have designed the Ring of Goliath.<BR>The ring will reduce all total damage taken by one, it will also save me from death so long as my initial health is high enough.<BR>In order for it to protect me, the ring must absorb the entirety of the death blow into its own physical structure, causing the ring will then shatter into dust, leaving me barely clinging to life and vulnerable once more.
+thaumictinkerer.research.goliath_ring.stage.2=My theories on giant-kin resilience have borne fruit. By combining the strength of diamond armor with the corresponding essentia, I have designed the Ring of Goliath.<BR>The ring will reduce all total damage taken by one, it will also save me from death so long as my initial health is high enough.<BR>In order for it to protect me, the ring must absorb the entirety of the death blow into its own physical structure, the ring will then shatter into dust, leaving me barely clinging to life and vulnerable once more.
 thaumictinkerer.research.goliath_ring.addenda.1=The ring is unable to fully negate damage, and cannot protect me if I die to fall damage. I'm never jumping off that cliff again...
 
 # -- EQUIPMENT: Sword of the Condor

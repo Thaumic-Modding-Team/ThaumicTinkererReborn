@@ -17,7 +17,9 @@
           "recipes": [
             "thaumictinkerer:arcane_quartz",
             "thaumictinkerer:arcane_quartz_block",
+            "thaumictinkerer:arcane_quartz_slab",
             "thaumictinkerer:arcane_quartz_stairs",
+            "thaumictinkerer:chiseled_arcane_quartz_block",
             "thaumictinkerer:arcane_quartz_pillar",
             "thaumictinkerer:thaumium_plated_cobblestone"
           ]

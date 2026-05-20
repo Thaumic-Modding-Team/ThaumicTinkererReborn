@@ -1,0 +1,16 @@
+{
+  "type": "forge:ore_shaped",
+  "pattern": [
+    "A",
+    "A"
+  ],
+  "key": {
+    "A": {
+      "item": "thaumictinkerer:arcane_quartz_slab",
+      "data": 0
+    }
+  },
+  "result": {
+    "item": "thaumictinkerer:chiseled_arcane_quartz_block"
+  }
+}

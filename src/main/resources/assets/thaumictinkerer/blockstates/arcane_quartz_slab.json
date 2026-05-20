@@ -1,0 +1,26 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "cube_all",
+    "textures": {
+      "particle": "thaumictinkerer:blocks/arcane_quartz",
+      "bottom": "thaumictinkerer:blocks/arcane_quartz",
+      "top": "thaumictinkerer:blocks/arcane_quartz",
+      "side": "thaumictinkerer:blocks/arcane_quartz"
+    }
+  },
+  "variants": {
+    "half=bottom,variant=default": {
+      "model": "half_slab"
+    },
+    "half=top,variant=default": {
+      "model": "upper_slab"
+    },
+    "normal": {
+      "model": "half_slab"
+    },
+    "inventory": {
+      "model": "half_slab"
+    }
+  }
+}
