@@ -11,7 +11,8 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.necromancy.stage.1",
-          "required_knowledge": []
+          "required_knowledge": [],
+          "warp": 3
         },
         {
           "text": "thaumictinkerer.research.necromancy.stage.2",
@@ -106,7 +107,8 @@
         {
           "text": "thaumictinkerer.research.eldritch_soul.stage.1",
           "required_knowledge": [
-          ]
+          ],
+          "warp": 1
         },
         {
           "text": "thaumictinkerer.research.eldritch_soul.stage.2",
@@ -150,7 +152,8 @@
         {
           "text": "thaumictinkerer.research.tainted_soul.stage.1",
           "required_knowledge": [
-          ]
+          ],
+          "warp": 1
         },
         {
           "text": "thaumictinkerer.research.tainted_soul.stage.2",
