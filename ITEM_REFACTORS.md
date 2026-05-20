@@ -54,7 +54,6 @@
 | Dissimulation Block            |     thaumictinkerer:dissimulation      |  thaumictinkerer:dissimulation_block   |                                                                           |
 | Enchanting Pillar              |   thaumictinkerer:enchantment_pillar   |      thaumicwonders:arcane_pillar      | Moved to Thaumic Wonders Unofficial.                                      |
 | Ender Shard                    |      thaumictinkerer:kamiresource      |                  N/A                   | Removed to reduce bloat.                                                  |
-| Energetic Nitor                |    thaumictinkerer:energetic_nitor     |    thaumictinkerer:energetic_nitor     |                                                                           |
 | Essentia Funnel                |         thaumictinkerer:funnel         |    thaumictinkerer:essentia_funnel     |                                                                           |
 | Feline Amulet                  |       thaumictinkerer:cat_amulet       |     thaumictinkerer:feline_amulet      |                                                                           |
 | Focus Effect: Ender Rift       |                  N/A                   |      thaumictinkerer:ender_mirror      | Removed. Converted into an item in Thaumic Tinkerer: Reborn               |
@@ -85,9 +84,7 @@
 | Tablet of Necromancy           |        thaumictinkerer:summoner        |   thaumictinkerer:necromancy_tablet    |                                                                           |
 | Thaumic Restorer               |        thaumictinkerer:repairer        |    thaumictinkerer:thaumic_restorer    |                                                                           |
 | Tome of Knowledge Sharing      |       thaumictinkerer:share_book       |      thaumicwonders:sharing_tome       | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
-| Transvector Binder             |       thaumictinkerer:connector        |   thaumictinkerer:transvector_binder   |                                                                           |
-| Transvector Dislocator         | thaumictinkerer:transvector_dislocator | thaumictinkerer:transvector_dislocator |                                                                           |
-| Transvector Interface          | thaumictinkerer:transvector_interface  | thaumictinkerer:transvector_interface  |                                                                           |
+| Transvector Binder             |       thaumictinkerer:connector        |   thaumictinkerer:transvector_binder   |                                                                           | |
 | XP Talisman                    |    thaumictinkerer:experience_charm    |      thaumictinkerer:xp_talisman       |                                                                           |
 
 ### Not Yet Implemented
