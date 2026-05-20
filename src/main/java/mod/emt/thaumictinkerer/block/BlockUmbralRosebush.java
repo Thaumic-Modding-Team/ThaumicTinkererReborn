@@ -40,16 +40,15 @@ import java.util.Random;
 })
 public class BlockUmbralRosebush extends BlockBush implements IGrowable, IShearable, IHarvestableCrop, IHornHarvestable, IBlockAddition {
     public static final PropertyInteger AGE = PropertyInteger.create("age", 0, 7);
-    //TODO: Corrected bounding boxes
     private static final AxisAlignedBB[] AABB_BUSH = new AxisAlignedBB[] {
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.125D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.25D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.375D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.5D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.625D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.75D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 0.875D, 1.0D),
-            new AxisAlignedBB(0.0D, 0.0D, 0.0D, 1.0D, 1.0D, 1.0D)
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.25, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.375, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.5, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.75, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.75, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.75, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.8125, 0.875),
+            new AxisAlignedBB(0.125, 0, 0.125, 0.875, 0.8125, 0.875)
     };
 
     public BlockUmbralRosebush() {
@@ -127,8 +126,7 @@ public class BlockUmbralRosebush extends BlockBush implements IGrowable, ISheara
         worldIn.setBlockState(pos, this.withAge(Math.min(age, maxAge)), 2);
     }
 
-    protected PropertyInteger getAgeProperty()
-    {
+    protected PropertyInteger getAgeProperty() {
         return AGE;
     }
 
