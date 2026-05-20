@@ -40,9 +40,6 @@
 |        Umbral Rosebush         | COMPLETE | COMPLETE |          |   N/A    | COMPLETE | COMPLETE |
 |          XP Talisman           | COMPLETE | COMPLETE | COMPLETE |   N/A    | COMPLETE | COMPLETE |
 
-**Arcane Quartz Slabs**
-These still need to be done, slabs are just a pain to do.
-
 ---
 
 # Chopping Block
