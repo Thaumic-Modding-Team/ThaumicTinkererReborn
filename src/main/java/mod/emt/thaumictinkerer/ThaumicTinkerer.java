@@ -60,5 +60,4 @@ public class ThaumicTinkerer {
     //  Check any TODOs remaining
     //  Ensure all features work on server without crashes
     //  Create list showing original features and replacements (including old registry id and new registry id)
-    //  Check datafixers and ids for a smoother transition for players using the older version of the mod in existing worlds
 }
