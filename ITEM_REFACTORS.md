@@ -1,38 +1,40 @@
 # Thaumcraft Mod ID Refactors
 ## Planar Artifice
 ### Completed/Cut
-| Item                          |                 Original Id                  | New Id | Description                                                    |
-|:------------------------------|:--------------------------------------------:|:------:|:---------------------------------------------------------------|
-| Alkimium Adaminite Smeltery   |  planarartifice:alkimium_smeltery_adaminite  |        |                                                                |
-| Alkimium Alchemical Construct | planarartifice:alchemical_alkimium_construct |        |                                                                |
-| Alkimium Essentia Centrifuge  |      planarartifice:alkimium_centrifuge      |        |                                                                |
-| Alkimium Essentia Smeltery    |       planarartifice:alkimium_smeltery       |        |                                                                |
-| Alkimium Ingot                |        planarartifice:alkimium_ingot         |        |                                                                |
-| Alkimium Mithminite Smeltery  | planarartifice:alkimium_smeltery_mithminite  |        |                                                                |
-| Alkimium Mithrillium Smeltery | planarartifice:alkimium_smeltery_mithrillium |        |                                                                |
-| Alkimium Nugget               |        planarartifice:alkimium_nugget        |        |                                                                |
-| Alkimium Plate                |        planarartifice:alkimium_plate         |        |                                                                |
-| Alkimium Thaumium Smeltery    |  planarartifice:alkimium_smeltery_thaumium   |        |                                                                |
-| Alkimium Void Smeltery        |    planarartifice:alkimium_smeltery_void     |        |                                                                |
-| Auxiliary Slurry Pump         |          planarartifice:smelter_aux          |        |                                                                |
-| Auxiliary Venting Port        |         planarartifice:smelter_vent          |        |                                                                |
-| Bismuth Ingot                 |         planarartifice:bismuth_ingot         |        |                                                                |
-| Bismuth Nugget                |        planarartifice:bismuth_nugget         |        |                                                                |
-| Bismuth Plate                 |         planarartifice:bismuth_plate         |        |                                                                |
-| Block of Alkimium             |        planarartifice:alkimium_block         |        |                                                                |
-| Block of Bismuth              |         planarartifice:bismuth_block         |        |                                                                |
-| Condensed Crystal Cluster     |   planarartifice:condensed_crystal_cluster   |        |                                                                |
-| Dimensional Singularity       |    planarartifice:dimensional_singularity    |  N/A   | Removed. Dimensional research was removed.                     |
-| Flux Scrubber                 |         planarartifice:flux_scrubber         |  N/A   | Removed. Original implementation was overpowered.              |
-| Flux Venting Circuit          |     planarartifice:flux_venting_circuit      |        |                                                                |
-| Infusion Enchant:             |                     N/A                      |  N/A   |                                                                |
-| Infusion Enchant:             |                     N/A                      |  N/A   |                                                                |
-| Infusion Enchant:             |                     N/A                      |  N/A   |                                                                |
-| Mirromirous Matrix            |       planarartifice:teleporter_matrix       |  N/A   | Removed. Use Thaumic Wonders Unofficial for a similar feature. |
-| Starving Chest                |       planarartifice:starving_chest:0        |        |                                                                |
-| Starving Chest                |       planarartifice:starving_chest:1        |        |                                                                |
-| Starving Chest                |       planarartifice:starving_chest:2        |        |                                                                |
-| Starving Chest                |       planarartifice:starving_chest:3        |        |                                                                |
+| Item                            |                 Original Id                  |                    New Id                    | Description                                                    |
+|:--------------------------------|:--------------------------------------------:|:--------------------------------------------:|:---------------------------------------------------------------|
+| Alkimium Adaminite Smeltery     |  planarartifice:alkimium_smeltery_adaminite  |  planarartifice:alkimium_smeltery_adaminite  |                                                                |
+| Alkimium Alchemical Construct   | planarartifice:alchemical_alkimium_construct |       planarartifice:alkimic_construct       |                                                                |
+| Alkimium Essentia Centrifuge    |      planarartifice:alkimium_centrifuge      |      planarartifice:alkimium_centrifuge      |                                                                |
+| Alkimium Essentia Smeltery      |       planarartifice:alkimium_smeltery       |       planarartifice:alkimium_smeltery       |                                                                |
+| Alkimium Ingot                  |        planarartifice:alkimium_ingot         |        planarartifice:alkimium_ingot         |                                                                |
+| Alkimium Mithminite Smeltery    | planarartifice:alkimium_smeltery_mithminite  | planarartifice:alkimium_smeltery_mithminite  |                                                                |
+| Alkimium Mithrillium Smeltery   | planarartifice:alkimium_smeltery_mithrillium | planarartifice:alkimium_smeltery_mithrillium |                                                                |
+| Alkimium Nugget                 |        planarartifice:alkimium_nugget        |        planarartifice:alkimium_nugget        |                                                                |
+| Alkimium Plate                  |        planarartifice:alkimium_plate         |        planarartifice:alkimium_plate         |                                                                |
+| Alkimium Thaumium Smeltery      |  planarartifice:alkimium_smeltery_thaumium   |  planarartifice:alkimium_smeltery_thaumium   |                                                                |
+| Alkimium Void Smeltery          |    planarartifice:alkimium_smeltery_void     |    planarartifice:alkimium_smeltery_void     |                                                                |
+| Auxiliary Slurry Pump           |          planarartifice:smelter_aux          |     planarartifice:alkimium_smelter_aux      |                                                                |
+| Auxiliary Venting Port          |         planarartifice:smelter_vent          |     planarartifice:alkimium_smelter_vent     |                                                                |
+| Bismuth Ingot                   |         planarartifice:bismuth_ingot         |         planarartifice:bismuth_ingot         |                                                                |
+| Bismuth Nugget                  |        planarartifice:bismuth_nugget         |        planarartifice:bismuth_nugget         |                                                                |
+| Bismuth Plate                   |         planarartifice:bismuth_plate         |         planarartifice:bismuth_plate         |                                                                |
+| Block of Alkimium               |        planarartifice:alkimium_block         |        planarartifice:alkimium_block         |                                                                |
+| Block of Bismuth                |         planarartifice:bismuth_block         |         planarartifice:bismuth_block         |                                                                |
+| Condensed Crystal Cluster       |   planarartifice:condensed_crystal_cluster   |                     N/A                      | Removed to reduce bloat.                                       |
+| Dimensional Singularity         |    planarartifice:dimensional_singularity    |                     N/A                      | Removed, dimensional research was removed.                     |
+| Focus Effect: Prismatnic Light  |                     N/A                      |                     N/A                      | Removed, very buggy implementation.                            |
+| Flux Scrubber                   |         planarartifice:flux_scrubber         |                     N/A                      | Removed, original implementation was overpowered.              |
+| Flux Venting Circuit            |     planarartifice:flux_venting_circuit      |                     N/A                      | Removed to reduce bloat.                                       |
+| Infusion Enchant: Aura Infusing |                     N/A                      |                     N/A                      | Rewritten.                                                     |
+| Infusion Enchant: Curious       |                     N/A                      |                     N/A                      |                                                                |
+| Infusion Enchant: Projecting    |                     N/A                      |                     N/A                      | Removed, use Thaumic Tinkerer: Reborn for a similar feature.   |
+| Infusion Enchant: Transmutative |                     N/A                      |                     N/A                      | Removed, limited functionality.                                |
+| Mirromirous Matrix              |       planarartifice:teleporter_matrix       |                     N/A                      | Removed, use Thaumic Wonders Unofficial for a similar feature. |
+| Starving Chest                  |       planarartifice:starving_chest:0        |     planarartifice:starving_chest_small      |                                                                |
+| Starving Chest                  |       planarartifice:starving_chest:1        |     planarartifice:starving_chest_medium     |                                                                |
+| Starving Chest                  |       planarartifice:starving_chest:2        |     planarartifice:starving_chest_large      |                                                                |
+| Starving Chest                  |       planarartifice:starving_chest:3        |      planarartifice:starving_chest_huge      |                                                                |
 
 ## Thaumic Tinkerer
 ### Completed/Cut
