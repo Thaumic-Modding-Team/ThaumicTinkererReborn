@@ -5,6 +5,7 @@ import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
 import mod.emt.thaumictinkerer.compat.datafixes.BlockDataFixer;
+import mod.emt.thaumictinkerer.compat.datafixes.ItemDataFixer;
 import mod.emt.thaumictinkerer.network.PacketHandler;
 import mod.emt.thaumictinkerer.registry.RegistrarTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
@@ -33,6 +34,7 @@ public class CommonProxy {
 
         ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(ThaumicTinkerer.MOD_ID, 1);
         modFixer.registerFix(FixTypes.BLOCK_ENTITY, new BlockDataFixer());
+        modFixer.registerFix(FixTypes.ITEM_INSTANCE, new ItemDataFixer());
     }
 
     public void postInit() {

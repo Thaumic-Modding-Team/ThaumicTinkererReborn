@@ -25,6 +25,7 @@ public class BlockDataFixer implements IFixableData {
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_chiseled"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "chiseled_arcane_quartz_block"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_pillar"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_pillar"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab"));
+        BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab_double"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab_double"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_stairs"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_stairs"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "funnel"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"));
@@ -37,8 +38,8 @@ public class BlockDataFixer implements IFixableData {
         // These blocks do not exist in this mod, turn them to something else
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "animation_tablet"), new ResourceLocation("minecraft", "observer"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "chlorophyte_ore"), new ResourceLocation("minecraft", "iron_ore"));
-        BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "enchantment_pillar"), new ResourceLocation(Thaumcraft.MODID, "pillar_arcane"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dummy_nitor"), new ResourceLocation("minecraft", "air"));
+        BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "enchantment_pillar"), new ResourceLocation(Thaumcraft.MODID, "pillar_arcane"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "example"), new ResourceLocation("minecraft", "air"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_farmland"), new ResourceLocation("minecraft", "farmland"));
         BLOCK_NAME_MAPPINGS.put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_grain_block"), new ResourceLocation("minecraft", "air"));
