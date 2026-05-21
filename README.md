@@ -46,7 +46,7 @@ Unlike the original, KAMI's content has been split off into its own addon separa
 - **Thaumic Restorer:** Repairs damaged items using essentia. Tools are repaired with Instrumentum, weapons with Aversio, and armor with Praemunio.
 - **Thaumium Plated Cobblestone:** A cheap but more resistant building block.
 - **Timetwister Stopwatch:** When used, stores the player location and stats. After 60 seconds, the player will teleport back to that location restoring their hunger and health to previous values.
-- **Umbral Roses:** A plant that grows and can be sheared for Umbral Roses, which can be crushed into black dye.
+- **Umbral Rose Bush:** A plant that grows and can be sheared for Umbral Roses, which can be crushed into black dye.
 
 ## Necromancy
 All Necromancy content is optional and can be disabled using the configuration.
