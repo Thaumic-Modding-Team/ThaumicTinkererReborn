@@ -6,6 +6,7 @@
       "icons": ["thaumictinkerer:transvector_interface"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_TRANSVECTOR_DISLOCATOR"],
+      "meta": ["HIDDEN"],
       "location": [2, -4],
       "stages": [
         {

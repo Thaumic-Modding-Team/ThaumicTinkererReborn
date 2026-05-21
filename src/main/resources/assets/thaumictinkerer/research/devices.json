@@ -66,6 +66,7 @@
       "icons": ["thaumictinkerer:dissimulation_block"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE"],
+      "meta": ["HIDDEN"],
       "location": [0, -2],
       "stages": [
         {
@@ -126,6 +127,7 @@
       "icons": ["thaumictinkerer:transvector_dislocator"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_DISSIMULATION_BLOCK", "~BASEARTIFICE"],
+      "meta": ["HIDDEN"],
       "location": [0, -4],
       "stages": [
         {

@@ -6,7 +6,7 @@
       "icons": ["thaumictinkerer:textures/research/r_arcane_infusion.png"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONDOR_SWORD", "~INFUSIONENCHANTMENT"],
-      "meta": ["REVERSE"],
+      "meta": ["REVERSE", "HIDDEN"],
       "location": [4, -3],
       "stages": [
         {
@@ -30,6 +30,7 @@
       "icons": ["thaumictinkerer:condor_sword"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~ELEMENTALTOOLS", "~FOCUSELEMENTAL"],
+      "meta": ["HIDDEN"],
       "location": [3, -2],
       "stages": [
         {
@@ -50,6 +51,7 @@
       "icons": ["thaumictinkerer:consuming_sigil"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION", "~METALLURGY@1"],
+      "meta": ["HIDDEN"],
       "location": [4, 0],
       "stages": [
         {

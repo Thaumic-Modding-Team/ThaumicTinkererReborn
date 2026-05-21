@@ -6,7 +6,7 @@
       "icons": ["minecraft:prismarine_shard"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~HEDGEALCHEMY"],
-      "meta": ["REVERSE"],
+      "meta": ["REVERSE", "HIDDEN"],
       "location": [-1, -1],
       "stages": [
         {
@@ -30,7 +30,7 @@
       "icons": ["thaumictinkerer:ender_mirror"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~MIRRORHAND"],
-      "meta": ["REVERSE"],
+      "meta": ["REVERSE", "HIDDEN"],
       "location": [1, -1],
       "stages": [
         {
@@ -95,6 +95,7 @@
       "icons": ["thaumictinkerer:essentia_funnel"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_EVERFULL_BUCKET", "~ESSENTIASMELTERTHAUMIUM"],
+      "meta": ["HIDDEN"],
       "location": [2, 4],
       "stages": [
         {
@@ -136,6 +137,7 @@
       "icons": ["thaumictinkerer:recall_stopwatch"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_ESCAPE_SIGIL", "~INFUSION"],
+      "meta": ["HIDDEN"],
       "location": [-2, 4],
       "stages": [
         {

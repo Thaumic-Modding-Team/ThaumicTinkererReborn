@@ -6,6 +6,7 @@
       "icons": ["thaumictinkerer:thaumic_restorer"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION", "~TUBES"],
+      "meta": ["HIDDEN"],
       "location": [0, 4],
       "stages": [
         {
