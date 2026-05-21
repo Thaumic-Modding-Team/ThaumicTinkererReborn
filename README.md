@@ -6,7 +6,7 @@
 
 Thaumic Tinkerer: Reborn is a complete rewrite of Thaumic Tinkerer for Thaumcraft 6. The mod introduces miscellaneous content that does not belong to a specific theme, making it perfect if you just want extra Thaumcraft content.
 
-Unlike the original, KAMI's content has been split off into its own addon separate from Thaumic Tinkerer. You can find this new mod here: [KAMI: Reborn]().
+Unlike the original, KAMI's content has been split off into its own addon separate from Thaumic Tinkerer. You can find this new mod here: [KAMI: Reborn](https://www.curseforge.com/minecraft/mc-mods/kami-reborn).
 
 ---
 
