@@ -5,7 +5,7 @@
       "name": "thaumictinkerer.research.necromancy.title",
       "icons": ["thaumictinkerer:textures/research/r_necromancy.png"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE", "~CrimsonRites", "~INFUSION", "~JARBRAIN"],
+      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION", "~CrimsonRites", "~JARBRAIN", "~CHARMUNDYING"],
       "meta": ["HIDDEN"],
       "location": [-3, 0],
       "stages": [

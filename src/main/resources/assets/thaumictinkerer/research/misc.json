@@ -11,7 +11,8 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.aquatic_alchemy.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;ALCHEMY;1"],
+          "required_item":["minecraft:prismarine_shard;1", "minecraft:prismarine_crystals;1"]
         },
         {
           "text": "thaumictinkerer.research.aquatic_alchemy.stage.2",
@@ -34,7 +35,8 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.ender_mirror.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["THEORY;ARTIFICE;2"],
+          "required_item":["minecraft:ender_chest;1"]
         },
         {
           "text": "thaumictinkerer.research.ender_mirror.stage.2",
@@ -55,7 +57,7 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.energetic_nitor.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["THEORY;ALCHEMY;2"]
         },
         {
           "text": "thaumictinkerer.research.energetic_nitor.stage.2",
@@ -76,7 +78,8 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.escape_sigil.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;BASICS;1"],
+          "required_item":["minecraft:ender_pearl;1"]
         },
         {
           "text": "thaumictinkerer.research.escape_sigil.stage.2",
@@ -96,7 +99,7 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.essentia_funnel.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["THEORY;ALCHEMY;2"]
         },
         {
           "text": "thaumictinkerer.research.essentia_funnel.stage.2",
@@ -111,13 +114,13 @@
       "name": "thaumictinkerer.research.everfull_bucket.title",
       "icons": ["thaumictinkerer:everfull_bucket"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE"],
+      "parents": ["THAUMIC_TINKERER_BASE", "~BASEALCHEMY"],
       "meta": ["REVERSE"],
       "location": [1, 3],
       "stages": [
         {
           "text": "thaumictinkerer.research.everfull_bucket.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;ALCHEMY;1"]
         },
         {
           "text": "thaumictinkerer.research.everfull_bucket.stage.2",
@@ -132,12 +135,12 @@
       "name": "thaumictinkerer.research.recall_stopwatch.title",
       "icons": ["thaumictinkerer:recall_stopwatch"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_ESCAPE_SIGIL"],
+      "parents": ["TT_ESCAPE_SIGIL", "~INFUSION"],
       "location": [-2, 4],
       "stages": [
         {
           "text": "thaumictinkerer.research.recall_stopwatch.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["THEORY;ARTIFICE;2", "OBSERVATION;AUROMANCY;1"]
         },
         {
           "text": "thaumictinkerer.research.recall_stopwatch.stage.2",
@@ -164,7 +167,8 @@
       "stages": [
         {
           "text": "thaumictinkerer.research.terra_obsidian.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;ARTIFICE;1"],
+          "required_item":["minecraft:obsidian;1"]
         },
         {
           "text": "thaumictinkerer.research.terra_obsidian.stage.2",
@@ -179,13 +183,14 @@
       "name": "thaumictinkerer.research.thaumic_cake.title",
       "icons": ["thaumictinkerer:thaumic_cake"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE"],
+      "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION"],
       "meta": ["REVERSE"],
       "location": [-1, 2],
       "stages": [
         {
           "text": "thaumictinkerer.research.thaumic_cake.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;BASICS;1", "OBSERVATION;INFUSION;1"],
+          "required_item":["minecraft:cake;1"]
         },
         {
           "text": "thaumictinkerer.research.thaumic_cake.stage.2",
@@ -200,13 +205,14 @@
       "name": "thaumictinkerer.research.umbral_rosebush.title",
       "icons": ["thaumictinkerer:umbral_rose"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["THAUMIC_TINKERER_BASE"],
+      "parents": ["THAUMIC_TINKERER_BASE", "~BASEALCHEMY"],
       "meta": ["REVERSE"],
       "location": [-1, 1],
       "stages": [
         {
           "text": "thaumictinkerer.research.umbral_rosebush.stage.1",
-          "required_knowledge": []
+          "required_knowledge": ["OBSERVATION;BASICS;1"],
+          "required_item":["minecraft:double_plant;1;4"]
         },
         {
           "text": "thaumictinkerer.research.umbral_rosebush.stage.2",
