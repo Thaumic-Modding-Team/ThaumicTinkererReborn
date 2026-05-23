@@ -63,7 +63,7 @@ All Necromancy content is optional and can be disabled using the configuration.
 ---
 
 ## 🙏 Special Thanks
-- Original Thaumic Tinkerer developers ~ gaeakat, pixlepix, Vazkii
+- Original Thaumic Tinkerer developers ~ pixlepix, Vazkii, and others
 - Some textures used from Fake Thaummy Pack ~ Fakeginkgo
 - Sounds for the Necromancy Tablet and Thaumic Restorer ~ PessiMysterio
 - Umbral Rose and Umbral Rose Bush textures ~ AveragePrussian
