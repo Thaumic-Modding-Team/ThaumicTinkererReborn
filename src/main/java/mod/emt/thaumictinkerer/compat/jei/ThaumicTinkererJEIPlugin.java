@@ -20,9 +20,9 @@ public class ThaumicTinkererJEIPlugin implements IModPlugin {
     public static NecromancyCategory NECROMANCY;
 
     @Override
-    public void registerCategories(IRecipeCategoryRegistration registry) {
+    public void registerCategories(@NotNull IRecipeCategoryRegistration registry) {
         if(ConfigHandlerTT.necromancyTablet.enable)
-            registry.addRecipeCategories(NECROMANCY = new NecromancyCategory());
+            registry.addRecipeCategories(NECROMANCY = new NecromancyCategory(registry.getJeiHelpers().getGuiHelper()));
     }
 
     @Override
