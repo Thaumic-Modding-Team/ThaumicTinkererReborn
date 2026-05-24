@@ -20,8 +20,7 @@ public class InfusionEnchantmentEducational implements IAddition, IProxy {
     @SubscribeEvent
     public void onXpDropped(LivingExperienceDropEvent event) {
         EntityPlayer player = event.getAttackingPlayer();
-
-        if(event.getEntity() instanceof EntityLiving) {
+        if(player != null && event.getEntity() instanceof EntityLiving) {
             ItemStack heldStack = player.getHeldItemMainhand();
             int level = EnumInfusionEnchantment.getInfusionEnchantmentLevel(heldStack, ModEnchantsTT.EDUCATIONAL);
             if(level > 0) {

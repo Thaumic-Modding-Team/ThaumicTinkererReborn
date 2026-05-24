@@ -47,7 +47,7 @@ public class ItemFelineCharm extends AbstractItemBauble implements IProxy {
     @SubscribeEvent
     public void onLivingUpdate(LivingEvent.LivingUpdateEvent event) {
         // Feline Charm
-        if(!event.getEntityLiving().world.isRemote && event.getEntityLiving() instanceof EntityCreeper) {
+        if(event.getEntityLiving() instanceof EntityCreeper && !event.getEntityLiving().world.isRemote) {
             EntityCreeper creeper = (EntityCreeper) event.getEntityLiving();
             EntityPlayer player = creeper.world.getClosestPlayerToEntity(creeper, 10.0D);
 
