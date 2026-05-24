@@ -1,0 +1,312 @@
+itemGroup.ThaumicTinkererTab=神秘工匠：重生
+
+# Chat
+chat.thaumictinkerer:attractor.mode.attract=牵引模式：吸引
+chat.thaumictinkerer:attractor.mode.repulse=牵引模式：排斥
+chat.thaumictinkerer:golaith_ring.shattered=你的歌利亚指环在抵挡致命一击时碎裂了。
+chat.thaumictinkerer:transvector_binder.link_stored=链接已储存。
+chat.thaumictinkerer:transvector_binder.link_successful=链接成功！
+chat.thaumictinkerer:transvector_binder.out_of_range=链接超出范围。
+chat.thaumictinkerer:transvector_binder.self_link=方块无法链接到自身。
+chat.thaumictinkerer:recall_stopwatch.start=秒表将你与当前位置暂时绑定。
+
+# Blocks
+tile.thaumictinkerer:arcane_quartz_block.name=奥术石英块
+tile.thaumictinkerer:arcane_quartz_pillar.name=奥术石英柱
+tile.thaumictinkerer:arcane_quartz_slab.name=奥术石英台阶
+tile.thaumictinkerer:arcane_quartz_stairs.name=奥术石英楼梯
+tile.thaumictinkerer:attractor_item.name=动力牵引仪
+tile.thaumictinkerer:attractor_mob.name=形体牵引仪
+tile.thaumictinkerer:attractor_player.name=灵魂牵引仪
+tile.thaumictinkerer:chiseled_arcane_quartz_block.name=錾制奥术石英块
+tile.thaumictinkerer:dissimulation_block.name=伪装方块
+tile.thaumictinkerer:essentia_funnel.name=源质漏槽
+tile.thaumictinkerer:ethereal_platform.name=天域平台
+tile.thaumictinkerer:necromancy_tablet.name=死灵石板
+tile.thaumictinkerer:passable_wall.name=渗透铺路石
+tile.thaumictinkerer:terra_obsidian.name=地之黑曜石
+tile.thaumictinkerer:thaumic_cake.name=神秘蛋糕
+tile.thaumictinkerer:thaumic_restorer.name=神秘修复台
+tile.thaumictinkerer:thaumium_plated_cobblestone.name=神秘镀层圆石
+tile.thaumictinkerer:transvector_dislocator.name=矢量转位仪
+tile.thaumictinkerer:transvector_interface.name=矢量转接口
+tile.thaumictinkerer:umbral_rose.name=暗影玫瑰
+tile.thaumictinkerer:umbral_rosebush.name=暗影玫瑰丛
+
+# Infusion Enchantments
+enchantment.infusion.EDUCATIONAL=教育
+enchantment.infusion.PROJECTING=延展
+enchantment.infusion.WRATH=暴怒
+
+# Items
+item.thaumictinkerer:arcane_quartz.name=奥术石英
+item.thaumictinkerer:black_hole_ring.name=黑洞指环
+item.thaumictinkerer:condor_sword.name=神鹫之剑
+item.thaumictinkerer:consuming_sigil.name=吞噬印记
+item.thaumictinkerer:ender_mirror.name=末影之镜
+item.thaumictinkerer:energetic_nitor.name=激能闪耀之光
+item.thaumictinkerer:entity_soul_alien.name=异域灵魂
+item.thaumictinkerer:entity_soul_arcane.name=奥术灵魂
+item.thaumictinkerer:entity_soul_demonic.name=恶魔灵魂
+item.thaumictinkerer:entity_soul_eldritch.name=邪术灵魂
+item.thaumictinkerer:entity_soul_hostile.name=敌对灵魂
+item.thaumictinkerer:entity_soul_peaceful.name=和平灵魂
+item.thaumictinkerer:entity_soul_tainted.name=腐化灵魂
+item.thaumictinkerer:escape_sigil.name=逃脱印记
+item.thaumictinkerer:everfull_bucket.name=无尽之桶
+item.thaumictinkerer:feline_charm.name=猫咪护符
+item.thaumictinkerer:goliath_ring.name=歌利亚之力指环
+item.thaumictinkerer:ignium_striker.name=炎素打火石
+item.thaumictinkerer:recall_stopwatch.name=时光扭曲秒表
+item.thaumictinkerer:transvector_binder.name=矢量绑定器
+item.thaumictinkerer:umbral_dye.name=暗影黑
+item.thaumictinkerer:xp_talisman.name=经验护符
+
+item.thaumictinkerer:test_sword.name=测试之剑
+
+# JEI
+jei.thaumictinkerer:necromancy.consuming=消耗材料
+jei.thaumictinkerer:necromancy.repeatable=可重复使用
+jei.thaumictinkerer:necromancy.title=死灵石板
+
+# Tooltip
+tooltip.thaumictinkerer:black_hole_ring.info=内容：
+tooltip.thaumictinkerer:black_hole_ring.slot=%4s - %s
+tooltip.thaumictinkerer:empty=空
+tooltip.thaumictinkerer:enabled=已启用
+tooltip.thaumictinkerer:disabled=已禁用
+tooltip.thaumictinkerer:entity_soul.fading=消逝
+tooltip.thaumictinkerer:entity_soul.fragile=脆弱
+tooltip.thaumictinkerer:entity_soul.resonant=共鸣
+tooltip.thaumictinkerer:transvector_binder.link_mode.block=链接模式：方块
+tooltip.thaumictinkerer:transvector_binder.link_mode.face=链接模式：面
+tooltip.thaumictinkerer:transvector_binder.linked_face=面：%s
+tooltip.thaumictinkerer:transvector_binder.linked_pos=坐标：x:%d y:%d z:%d
+tooltip.thaumictinkerer:transvector_binder.linked_world=世界：%s
+tooltip.thaumictinkerer:xp_talisman.level=等级：§a%d
+tooltip.thaumictinkerer:xp_talisman.partial=部分经验：§a%d
+tooltip.thaumictinkerer:xp_talisman.total=总经验：§a%d
+
+# Research
+tc.research_category.THAUMIC_TINKERER=神秘匠艺
+thaumictinkerer.research.thaumic_tinkerer_base.title=神秘匠艺
+thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=不是匠魂
+thaumictinkerer.research.thaumic_tinkerer_base.stage.1=宇宙是一台宏伟的发条机器，至少学者们是这么说的……<BR>我整理了一些零散研究，它们要么规模太小，要么过于具体，无法归入任何类别，这个杂集正是为此而设。<PAGE>奥术石英<DIV>一种特别有趣的材料，奥术石英本身不是特别有用，但它能与奥术机械完美结合。<BR>这些特性对我未来可能构思的设备将大有裨益。<PAGE>神秘镀层圆石<DIV>当圆石不足以满足需求时，何不加些神秘金属镀层呢？<BR>这样就能得到一种抗性显著增强，而且成本相对低廉的材料。
+
+# -- DEVICES: Anima Attractor
+thaumictinkerer.research.attractor_player.title=灵魂牵引仪
+thaumictinkerer.research.attractor_player.title.subtitle=别把自己卡住了！
+thaumictinkerer.research.attractor_player.stage.1=我发现一件有趣的事，有知觉的生物比物品或其他实体更难受到影响。<BR>或许更有针对性的手段能让我控制它们的移动。
+thaumictinkerer.research.attractor_player.stage.2=被红石充能时，灵魂牵引仪会把附近的玩家拉向该设备。<BR>潜行与其交互可改变极性。
+
+# -- DEVICES: Corporeal Attractor
+thaumictinkerer.research.attractor_mob.title=形体牵引仪
+thaumictinkerer.research.attractor_mob.title.subtitle=迪斯科牛
+thaumictinkerer.research.attractor_mob.stage.1=虽然我此前设计过能阻止生物生成的装置，但要实际控制这些实体的移动则完全是另一回事。<BR>我知道栅栏就够用了，但既然能用魔法把问题复杂化，何必选择凡俗的解决方案呢？
+thaumictinkerer.research.attractor_mob.stage.2=被红石充能时，形体牵引仪会把附近的非玩家实体拉向该设备。<BR>潜行与其交互可改变极性。
+
+# -- DEVICES: Dissimulation Block
+thaumictinkerer.research.dissimulation_block.title=伪装方块
+thaumictinkerer.research.dissimulation_block.title.subtitle=现实故障
+thaumictinkerer.research.dissimulation_block.stage.1=我开始注意到物质在感官呈现上的细微不完美之处。如果现实仅仅是光、影与感知的复杂构造，那么我或许能操纵方块的“代码”，使其模仿另一种方块的外观。
+thaumictinkerer.research.dissimulation_block.stage.2=对这一课题的研究得出了一个令人震惊、近乎存在主义式的领悟。如果我们周遭的世界不过是一种高度先进的物质模拟呢？如果现实仅仅是宇宙渲染出的一套规则，那么这些规则就能被改写。<BR>这个我称之为伪装方块的构造体，其本质是一个物理空壳，一块等待纹理渲染的空白画布。<BR>它拥有能完美模仿几乎任何现有方块外观、纹理和音效的独特能力。只需把它放下来，然后右键点击任意想要模拟的方块，它就会模仿其外观。空手右键点击或破坏被模拟的方块，即可将其恢复原状。
+
+# -- EQUIPMENT: Ender Mirror
+thaumictinkerer.research.ender_mirror.title=末影之镜
+thaumictinkerer.research.ender_mirror.title.subtitle=通往第四维度的“口袋”
+thaumictinkerer.research.ender_mirror.stage.1=既然魔镜能让我跨维度访问链接的镜子，那创造一件能访问我个人末影箱的物品又能有多难呢？
+thaumictinkerer.research.ender_mirror.stage.2=我成功改造了一面魔镜，使其能随时随地访问我的末影箱。
+
+# -- DEVICES: Ethereal Platform
+thaumictinkerer.research.ethereal_platform.title=天域平台
+thaumictinkerer.research.ethereal_platform.title.subtitle=它真的在那里吗？
+thaumictinkerer.research.ethereal_platform.stage.1=奥术悬浮台是一项了不起的发明，但把它当作真正的电梯却略显笨拙。一定有办法造出能理解使用者意图的地板。
+thaumictinkerer.research.ethereal_platform.stage.2=我成功为奥术悬浮台创造出了完美的平台伴侣。<BR>由此得来的方块违背了常规物理学。对不经意走过的人来说，它就像坚实的地面。然而，若有人从下方或侧面靠近，则会径直穿过，仿佛它只是空气一样。<BR>更实用的是，若我故意选择潜行，这种方块会完全失去碰撞效果，让我可以直接掉下去。
+
+# -- DEVICES: Kinetic Attractor
+thaumictinkerer.research.attractor_item.title=动力牵引仪
+thaumictinkerer.research.attractor_item.title.subtitle=物品收集
+thaumictinkerer.research.attractor_item.stage.1=虽然饕餮箱子能收集掉落物，但其范围实在有限，我需要另一种收集方法进行辅助。<BR>也许我能制造一个能与地面散落物品交互的装置？
+thaumictinkerer.research.attractor_item.stage.2=当被红石充能时，动力牵引仪会把附近物品拉向该设备。<BR>潜行与其交互可改变极性。
+
+# -- DEVICES: Paving Stone of Permeability
+thaumictinkerer.research.passable_wall.title=渗透铺路石
+thaumictinkerer.research.passable_wall.title.subtitle=量子隧穿
+thaumictinkerer.research.passable_wall.stage.1=我已经掌握了能加速行走、驱散持续威胁的铺路石制造方法，但如果再创造一种能直接让我穿过的铺路石呢？或许可以利用Aqua要素来实现。
+thaumictinkerer.research.passable_wall.stage.2=我创造了一种新型的铺路石，名为渗透铺路石。这类方块不仅能在用法师护手右键点击时临时供人穿行，而且表现得就像可以游泳的液体一样。<BR>当这些方块被放置在一起时，只要触发其中任意一个，它们就会全部同步做出反应。
+
+# -- DEVICES: Transvector Dislocator
+thaumictinkerer.research.transvector_dislocator.title=矢量转位仪
+thaumictinkerer.research.transvector_dislocator.title.subtitle=无需血魔法
+thaumictinkerer.research.transvector_dislocator.stage.1=最近，在与一位相当古怪的血魔法师接触时，我成功“借”到了一些非常有趣的图纸。其中详细记录了一种仪式，它能够跨越遥远的距离，瞬间互换两块现实碎片。<BR>虽然他们那种粗糙方法需要消耗生命源质，但我认为丢掉那一套，改用更合适的方式才是最佳途径。
+thaumictinkerer.research.transvector_dislocator.stage.2=我成功将从血魔法师那里偷来的概念与我自己的炼化学知识结合起来。其成果便是矢量转位仪。<BR>这种方块能将现实本身连接起来。当接收到红石脉冲时，它会将其上方3x3x3区域内的方块和实体瞬间传送到与之绑定的另一个转位仪处。<PAGE>我只需手持矢量绑定器，潜行并右键点击其中一个转位仪，然后再右击另一个，就能将这两个转位仪链接在一起。
+
+# -- DEVICES: Transvector Interface
+thaumictinkerer.research.transvector_interface.title=矢量转接口
+thaumictinkerer.research.transvector_interface.title.subtitle=扩展可能性
+thaumictinkerer.research.transvector_interface.stage.1=随着自动化布局日趋复杂，我发现自己一直在与有限的物理空间作斗争。单个箱子或机器只有六个面，而在它周围布满管道、红石和导管很快就会让一切变成一团乱麻。我需要一种能够远程与方块进行交互的方法。
+thaumictinkerer.research.transvector_interface.stage.2=我成功将空间中的两点连接在了一起，创造出了矢量转接口。<BR>这个方块可以作为其附近目标方块的完美物理延伸。<BR>接口可以通过两种模式进行链接。其一为方块模式，会复制链接方块的所有面；其二为面模式。在面模式下，接口可以链接到方块的特定面，只要接口各面不重复，就可以同时连接多个方块。<BR>链接完成后，接口的六个面将无缝模拟目标方块的对应面。我可以向接口输入/提取物品、流体或红石信号，目标方块会即刻接收到它们，就如同直接与目标方块交互一样。<BR>我只需手持矢量绑定器，潜行并右键点击矢量转接口，然后再右击要链接的目标方块，即可建立连接。由于局部空间折叠的不稳定性，最大绑定范围会受到限制。
+
+# -- EQUIPMENT: Arcane Infusion Enchantment
+thaumictinkerer.research.arcane_infusion_enchantment.title=奥术注魔魔咒
+thaumictinkerer.research.arcane_infusion_enchantment.title.subtitle=当你的武器依旧不够锋利时
+thaumictinkerer.research.arcane_infusion_enchantment.stage.1=我时常心想……能不能有一些简单的新附魔，能让我的工具变得更强大？<BR>现在终于到实现它的时候了。
+thaumictinkerer.research.arcane_infusion_enchantment.stage.2=我现在能够获得全新的注魔魔咒，进一步强化我所有的装备。<BR>与其他注魔附魔一样，它们可以多次施加到同一物品上，但每提升一级，消耗的源质都会增加，并且物品获得扭曲属性的概率也会提高。<PAGE>§o暴怒§r<DIV>该注魔首先会为工具提供+0.5的基础伤害，随后每级再获得额外的+0.5伤害（即I级暴怒魔咒提供+1伤害）。<DIV>§o等级§r：1-5<BR>§o目标§r：斧、锄、锹、镐、武器<PAGE>§o教育§r<DIV>每一级注魔都将进一步提升击杀生物或破坏方块时所获得的经验值数量。<DIV>§o等级§r：1-3<BR>§o目标§r：斧、锄、锹、镐、武器<PAGE>§o延展§r<DIV>每一级注魔为工具增加额外的+0.5触及距离。<DIV>§o等级§r：1-3<BR>§o目标§r：斧、锄、锹、镐、武器
+
+
+# -- EQUIPMENT: Feline Charm
+thaumictinkerer.research.feline_charm.title=猫咪护符
+thaumictinkerer.research.feline_charm.title.subtitle=就像倒霉日的黑猫
+thaumictinkerer.research.feline_charm.stage.1=爬行者总是让人头疼。它们不仅与周围环境融为一体，还特别喜欢躲在墙后或悄悄溜到我身后。<BR>或许我可以制作一种工具，以某种方式无害化这些生物。
+thaumictinkerer.research.feline_charm.stage.2=我设计出了一枚护符，可以扰乱附近爬行者的感知。<BR>虽然无法完全阻止爬行者爆炸，但装备上猫咪护符时，它会向附近的爬行者灌输恐惧，使它们像遇到猫一样四散奔逃。<BR>只要我不对这些生物做出敌对行为，护符就能让我相对安全地免受它们的自杀式袭击。
+
+# -- EQUIPMENT: Ignium Striker
+thaumictinkerer.research.ignium_striker.title=炎素打火石
+thaumictinkerer.research.ignium_striker.title.subtitle=有了元素，谁还需要燧石？
+thaumictinkerer.research.ignium_striker.stage.1=我突然意识到一个奇怪的事实。尽管我已经取得了如此大的成就，却仍然依赖原始的打火石来生火。<BR>既然神秘学已经为其他种种轻微不便都提供了解决方案，为什么不把它也应用到这里呢？
+thaumictinkerer.research.ignium_striker.stage.2=我设计出了一种由魔力驱动的打火石。这个工具不仅几乎坚不可摧，而且由于依赖魔力而非物理耐久，常规的魔力充能即可轻松续航。
+
+# -- EQUIPMENT: Sigil of Consuming
+thaumictinkerer.research.consuming_sigil.title=吞噬印记
+thaumictinkerer.research.consuming_sigil.title.subtitle=别问，吞就对了
+thaumictinkerer.research.consuming_sigil.stage.1=漫长的采矿往往只能产出少量有用资源，但能收获大量普通材料。<BR>仙人掌或熔岩或许算是种解决方案，但不便于随身携带。
+thaumictinkerer.research.consuming_sigil.stage.2=我设计了一个装置，一旦启用，就能在采集普通材料的瞬间将其销毁。<BR>潜行时与其交互可开关此功能。
+
+# -- EQUIPMENT: Ring of Goliath's Might
+thaumictinkerer.research.goliath_ring.title=歌利亚之力指环
+thaumictinkerer.research.goliath_ring.title.subtitle=弱点是石头
+thaumictinkerer.research.goliath_ring.stage.1=我开始思索古代巨人那传奇的坚韧生命力。能否将这种力量凝聚成一件可佩戴的小饰品呢？
+thaumictinkerer.research.goliath_ring.stage.2=对巨人之坚韧的理论研究结出了果实。通过将钻石盔甲的强度与相应的源质结合，我设计出了歌利亚指环。<BR>这枚指环能将所有受到的伤害减少1点，并且只要我的初始生命值足够高，它还能救我免于一死。<BR>为了保护我，指环必须将致命一击的伤害全部吸收到自身物理结构中，随后指环会碎裂成粉末，而我则勉强保住性命，重新变得脆弱不堪。
+thaumictinkerer.research.goliath_ring.addenda.1=这枚指环无法完全抵消伤害，也无法在我因摔落伤害而死时保护我。我再也不会从那个悬崖上跳下去了……
+
+# -- EQUIPMENT: Sword of the Condor
+thaumictinkerer.research.condor_sword.title=神鹫之剑
+thaumictinkerer.research.condor_sword.title.subtitle=神鹫不惧风暴
+thaumictinkerer.research.condor_sword.stage.1=风雷剑确实有用武之地，但相较于其他元素工具，其能力略显平庸。我得找到进一步强化它的办法。
+thaumictinkerer.research.condor_sword.stage.2=我成功升级了风雷剑，我称之为神鹫之剑！<BR>升级移除了旧有的旋风能力，转而让我能朝空中冲锋。右键点击可朝视线方向冲刺，潜行时可反向冲刺。若连续冲刺数次，还可让我飞翔。
+
+# -- EQUIPMENT: Talisman of Experience
+thaumictinkerer.research.xp_talisman.title=经验护符
+thaumictinkerer.research.xp_talisman.title.subtitle=死亡亦无法将我抹去
+thaumictinkerer.research.xp_talisman.stage.1=鉴于我最近成功将经验储存在了缸中之脑里，我想着能否创造一枚有相同功能的护符。
+thaumictinkerer.research.xp_talisman.stage.2=我成功创造了一件能存储海量经验的饰品。<BR>装备时，我收集的任何经验都将存入护符。<BR>启用时，我自身的经验会被吸取并存储在其中。<BR>若想取回存储的经验，只需手持护符右键点击，每点击一次即可取回一级。
+
+# -- MISC: Aquatic Alchemy
+thaumictinkerer.research.aquatic_alchemy.title=水生炼金术
+thaumictinkerer.research.aquatic_alchemy.title.subtitle=海洋的馈赠
+thaumictinkerer.research.aquatic_alchemy.stage.1=海洋蕴藏着大量只有深入最深处才能找到的材料。<BR>炼金术应该能提供用常见组分制造这些材料的方法。
+thaumictinkerer.research.aquatic_alchemy.stage.2=借助凡俗原料，我现在可自己制造海晶碎片、海晶灯和海绵。
+
+# -- MISC: Energetic Nitor
+thaumictinkerer.research.energetic_nitor.title=激能闪耀之光
+thaumictinkerer.research.energetic_nitor.title.subtitle=照亮前路
+thaumictinkerer.research.energetic_nitor.stage.1=我甚至数不清之前照亮洞穴用掉了多少火把。更糟的是，我很少两次涉足同一洞穴。<BR>或许闪耀之光能提供解决之道……
+thaumictinkerer.research.energetic_nitor.stage.2=我设法造出了一种更强大的闪耀之光，能够放置无限数量的光源。激活后，它还能在我踏入黑暗区域时自动放置光源。<BR>不过，它放置的是临时光源，短暂存在后便会衰减熄灭。<BR>火把和闪耀之光或许仍是长期照明的最佳选择，但对探索而言这已足够。
+
+# -- MISC: Escape Sigil
+thaumictinkerer.research.escape_sigil.title=逃脱印记
+thaumictinkerer.research.escape_sigil.title.subtitle=反应快点！
+thaumictinkerer.research.escape_sigil.stage.1=末影珍珠在短距离移动和逃离危险方面很是实用，但使用时会受伤的特性，往好了说，只是有点烦人，往坏了说，却可能致命。<BR>也许我能找到方法稳定珍珠的效果，提供更可靠的逃生手段。
+thaumictinkerer.research.escape_sigil.stage.2=我将这种新型的稳态末影珍珠命名为逃脱印记，它是对末影珍珠的一次巨大改进。<BR>虽然其本身比普通珍珠脆弱得多，但效果更为强大。<BR>捏碎它后，我会被垂直传送到头顶上方第一个直接暴露在天空下的方块处。<BR>如果没能找到安全位置，或者有某种阻挡移动的障碍，印记则会将我传送到附近随机地点。
+
+# -- MISC: Essentia Funnel
+thaumictinkerer.research.essentia_funnel.title=源质漏槽
+thaumictinkerer.research.essentia_funnel.title.subtitle=灌满储罐
+thaumictinkerer.research.essentia_funnel.stage.1=清空罐中的源质实在令人沮丧。要么向环境倾泻大量咒波，要么依赖那些只能被称为“勉强能用”的管道。<BR>一定有更好的法子……
+thaumictinkerer.research.essentia_funnel.stage.2=我开发出了一种能快速在罐子间转移源质的简陋漏槽。<BR>源质漏槽必须直接放置在漏斗之上，且该漏斗需朝向源质容器。<BR>然后我就可以把源质罐子放入漏槽，它会迅速排空罐子中的源质。
+
+# -- MISC: Everfull Bucket
+thaumictinkerer.research.everfull_bucket.title=无尽之桶
+thaumictinkerer.research.everfull_bucket.title.subtitle=能装下整片海洋！
+thaumictinkerer.research.everfull_bucket.stage.1=虽然无尽之瓮在基地里很有用，但它不便携带，难以在更边远的地区使用。
+thaumictinkerer.research.everfull_bucket.stage.2=我创造了一个模仿无尽之瓮行为的水桶，消耗来自灵气场的魔力无限产出水。<BR>效率自然比不上无尽之瓮。我估计每产出一桶水，消耗的魔力大约为无尽之瓮的两倍。
+
+# -- MISC: Obsidia Terra
+thaumictinkerer.research.terra_obsidian.title=地之黑曜石
+thaumictinkerer.research.terra_obsidian.title.subtitle=翠绿黑曜石
+thaumictinkerer.research.terra_obsidian.stage.1=拘束某些强大威胁的尝试只取得了部分成功。<BR>或许有方法能进一步强化黑曜石本就坚韧的性质？
+thaumictinkerer.research.terra_obsidian.stage.2=谁能想到只需将Terra魔力水晶碎片注入黑曜石就成了呢？<BR>我将这种材料命名为地之黑曜石，其爆炸抗性是普通黑曜石的2.5倍，但用镐开采反而更轻松。这样坚固的材料一定能用于关押强大的邪恶生物。
+
+# -- MISC: Thaumic Cake
+thaumictinkerer.research.thaumic_cake.title=神秘蛋糕
+thaumictinkerer.research.thaumic_cake.title.subtitle=何不食蛋糕！
+thaumictinkerer.research.thaumic_cake.stage.1=人们总说鱼与熊掌不可兼得，但他们懂什么？<BR>既然世界都屈从于我的意志，那么，在这颗星球上，还有什么比解决“蛋糕严重匮乏”这个问题，更值得我耗费宝贵时间的呢？<BR>他们或许会以为我疯了，但至少我还没绝望到去吃派。
+thaumictinkerer.research.thaumic_cake.stage.2=有什么比蛋糕更好？更多蛋糕！有什么比更多蛋糕还好？无限蛋糕！<BR>同僚们都觉得我疯了，竟然去吃一块能无限再生的蛋糕。但他们懂什么？我觉得味道挺好的！
+
+# -- MISC: Thaumic Restorer
+thaumictinkerer.research.thaumic_restorer.title=神秘修复台
+thaumictinkerer.research.thaumic_restorer.title.subtitle=弥补你造成的损伤
+thaumictinkerer.research.thaumic_restorer.stage.1=如果物理对象可以被分解为源质，那么能否用源质来重构受损物品？<BR>若能如此，便能大幅降低工具与盔甲的维护成本。
+thaumictinkerer.research.thaumic_restorer.stage.2=成功了！我创造了一台我称之为神秘修复台的奇妙设备。<BR>我可以手持受损的工具，右键点击将其置于修复台上，随后修复台会使用与之连接的罐中对应源质修复工具。工具消耗Instrumentum，武器消耗Aversio，盔甲消耗Praemunio。
+
+# -- MISC: Timetwister Stopwatch
+thaumictinkerer.research.recall_stopwatch.title=时光扭曲秒表
+thaumictinkerer.research.recall_stopwatch.title.subtitle=回到过去
+thaumictinkerer.research.recall_stopwatch.stage.1=逃脱印记的成功让我不禁遐想还有何等可能……
+thaumictinkerer.research.recall_stopwatch.stage.2=我设计了一个能够撕裂现实结构、将物质恢复至先前状态的设备。<BR>激活后，会开始一个60秒的计时。<BR>在此期间我可自由移动与行动。60秒过后，我会被传送回一开始激活秒表的位置，并将生命值与饥饿值恢复至先前数值。
+thaumictinkerer.research.recall_stopwatch.addenda.1=秒表似乎只影响我的物理身躯。计时期间损坏或摧毁的任何物品都不会恢复至先前状态。
+
+# -- MISC: Umbral Rose Bush
+thaumictinkerer.research.umbral_rosebush.title=暗影玫瑰丛
+thaumictinkerer.research.umbral_rosebush.title.subtitle=拯救鱿鱼！
+thaumictinkerer.research.umbral_rosebush.stage.1=没有比一个湿漉漉的神秘使更可悲的景象了。总是不得不闯进海洋，寻找并击败鱿鱼以获取墨囊，我越来越受不了了。<BR>神秘学还没让我失望过，想必我能想出答案。
+thaumictinkerer.research.umbral_rosebush.stage.2=我创造出了一种花卉，开出的玫瑰可碾制成黑色染料。<BR>尽管这种植物生长缓慢，但我可用剪刀收获单朵玫瑰。这样我无需弄下水，就能获得近乎无限的墨水供应。
+
+# -- NECROMANCY
+thaumictinkerer.research.necromancy.title=死灵术
+thaumictinkerer.research.necromancy.title.subtitle=不含死灵之书
+thaumictinkerer.research.necromancy.stage.1=在旅途中，我在地下地牢中遇到过一些奇怪的笼状装置，似乎能凭空造出生物。<BR>既然所有生物都由源质构成，我不禁想，能否创造一台能用源质复制此过程的装置。
+thaumictinkerer.research.necromancy.stage.2=尽管过程更接近重构而非死灵术，通过此过程造出的空洞容器会迅速衰败，除非在其中束缚人造灵魂。<BR>借助死灵石板和构建正确的祭坛，我可以用源质构建空洞容器，并将人造灵魂束缚至创造出的肉体中。<BR>正确构建祭坛后，只需将实体灵魂放入石板，并将正确的催化物放置在周围基座上即可。<BR>一旦所有组分就位，祭坛将自动从附近的源质来源中抽取源质。<BR>消耗足够源质后，生物会直接在石板上方生成，同时略微降低实体灵魂的强度。
+thaumictinkerer.research.necromancy.addenda.1=创造生物的过程似乎是完全自主的，仿佛实体灵魂渴望被束缚到容器中。<BR>若我想禁用祭坛或停止生成过程，可向石板施加红石信号。
+
+# -- NECROMANCY: ALIEN SOUL
+thaumictinkerer.research.alien_soul.title=灵魂：异域
+thaumictinkerer.research.alien_soul.title.subtitle=虚空精魄
+thaumictinkerer.research.alien_soul.stage.1=我复活额外维度生物的尝试基本都无果而终。<BR>其精魄具现为活体血肉的方式有些不同。
+thaumictinkerer.research.alien_soul.stage.2=凭借这种新灵魂，我现在可将异界存在的灵魂束缚至构建的容器中。<BR>不过，这灵魂比我想的要脆弱得多，消逝速度大约是和平或敌对实体灵魂的两倍。
+
+# -- NECROMANCY: ARCANE SOUL
+thaumictinkerer.research.arcane_soul.title=灵魂：奥术
+thaumictinkerer.research.arcane_soul.title.subtitle=魔法精魄
+thaumictinkerer.research.arcane_soul.stage.1=我的测试表明，有知觉的生物比没有显著认知过程的生物更难召唤。<BR>有志者，事竟成，又一个研究中需要克服的障碍……
+thaumictinkerer.research.arcane_soul.stage.2=凭借这种新的灵魂类型，我能将有知觉生物的灵魂束缚至空洞容器中。<BR>不过，这灵魂比我想的要脆弱得多，消逝速度大约是和平或敌对实体灵魂的两倍。
+
+# -- NECROMANCY: DEMONIC SOUL
+thaumictinkerer.research.demonic_soul.title=灵魂：恶魔
+thaumictinkerer.research.demonic_soul.title.subtitle=烈焰精魄
+thaumictinkerer.research.demonic_soul.stage.1=现在想来，这本该是显而易见的。下界生物并不像主世界生物那样拥有灵魂。<BR>不过，若下界真是这个世界的某种来世，那么那些生物必定与我迄今所发现的生物有某种相似之处。
+thaumictinkerer.research.demonic_soul.stage.2=凭借这种新灵魂类型，我现在可将下界生物的灵魂束缚至空洞容器中。<BR>不过，这灵魂比我想的要脆弱得多，消逝速度大约是和平或敌对实体灵魂的两倍。
+
+# -- NECROMANCY: ELDRITCH SOUL
+thaumictinkerer.research.eldritch_soul.title=灵魂：邪术
+thaumictinkerer.research.eldritch_soul.title.subtitle=缄默精魄
+thaumictinkerer.research.eldritch_soul.stage.1=有些生物，完全不是我目前造出的那些实体灵魂能处理得了的。<BR>随着生物强度增加，灵魂的脆弱性也随之增加……
+thaumictinkerer.research.eldritch_soul.stage.2=我勉强将这种新的灵魂类型稳定到足以使其具象化。<BR>从邪术灵魂的脆弱性来看，它可能只使用一次便会彻底消散。我简直无法想象能用此创造出何等生物……
+
+# -- NECROMANCY: HOSTILE SOUL
+thaumictinkerer.research.hostile_soul.title=灵魂：敌对
+thaumictinkerer.research.hostile_soul.title.subtitle=疯狂精魄
+thaumictinkerer.research.hostile_soul.stage.1=迄今为止，我只成功重构了相对弱小的生物，通常是那些除基本动物本能外几乎没有自身意志的存在。<BR>要更进一步，我需要一种新类型的灵魂……
+thaumictinkerer.research.hostile_soul.stage.2=我成功创造出了一种能束缚主世界常见敌对生物的实体灵魂。
+
+# -- NECROMANCY: TAINTED SOUL
+thaumictinkerer.research.tainted_soul.title=灵魂：腐化
+thaumictinkerer.research.tainted_soul.title.subtitle=寄生精魂
+thaumictinkerer.research.tainted_soul.stage.1=腐化存在与我遇到的其他任何生物截然不同。<BR>腐化与咒波能够感染侵扰其他生物，这让我相信其中存在某种我尚未发现的联系。
+thaumictinkerer.research.tainted_soul.stage.2=我成功创造了一个新的实体灵魂，它能够将腐化造物束缚在空洞容器中。<BR>我应小心对待这些生物，因为如果不加以控制，其中有不少会造成不可逆的损害。
+
+# GroovyScript
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.title=死灵石板
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.description=使用催化物和源质生成实体
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addRecipe=以`配方名称`, `实体`, `中心物品`, `要素`, `组分`的格式添加一个不消耗组分的配方
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addConsumingRecipe=以`配方名称`, `实体`, `中心物品`, `要素`, `组分`的格式添加一个消耗所有组分的配方
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe1=以`配方名称`的格式移除一个配方
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe2=以`实体`的格式移除一个配方
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.recipeName.value=配方名称
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.summonedEntity.value=召唤的实体
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.centerItem.value=中心物品
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.components.value=配方组分
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.aspects.value=配方要素
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.consumeComponents.value=该配方完成时是否会消耗所有组分
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.streamRecipeNames=返回所有已注册配方名称的的序列
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.getRecipe=以`配方名称`的格式返回一个配方。可以返回null
