@@ -45,7 +45,7 @@ public class ItemGoliathRing extends AbstractItemBauble implements IProxy {
 
     @SubscribeEvent
     public void onLivingDamage(LivingDamageEvent event) {
-        if(!event.getEntityLiving().world.isRemote && event.getEntityLiving() instanceof EntityPlayer) {
+        if(event.getEntityLiving() instanceof EntityPlayer && !event.getEntityLiving().world.isRemote) {
             EntityPlayer player = (EntityPlayer) event.getEntityLiving();
             float health = player.getHealth();
             float damage = event.getAmount();
