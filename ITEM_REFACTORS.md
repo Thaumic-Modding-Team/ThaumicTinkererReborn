@@ -38,54 +38,54 @@
 
 ## Thaumic Tinkerer
 ### Completed/Cut
-| Item                           |              Original Id               |                 New Id                 | Description                                                               |
-|:-------------------------------|:--------------------------------------:|:--------------------------------------:|:--------------------------------------------------------------------------|
-| Awakened Ichorium Axe          |    thaumictinkerer:ichorium_axe_adv    |       kami:awakened_ichorium_axe       |                                                                           |
-| Awakened Ichorium Pickaxe      |   thaumictinkerer:ichorium_pick_adv    |     kami:awakened_ichorium_pickaxe     |                                                                           |
-| Awakened Ichorium Shovel       |  thaumictinkerer:ichorium_shovel_adv   |     kami:awakened_ichorium_shovel      |                                                                           |
-| Awakened Ichorium Sword        |   thaumictinkerer:ichorium_sword_adv   |      kami:awakened_ichorium_sword      |                                                                           |
-| Black Quartz Block             |   thaumictinkerer:black_quartz_block   |   thaumictinkerer:arcae_quartz_block   |                                                                           |
-| Boots of the Horizontal Shield |       thaumictinkerer:kami_boots       |     kami:awakened_ichorweave_hood      |                                                                           |
-| Cleansing Charm                |   thaumictinkerer:cleaning_talisman    |                  N/A                   | Removed to avoid duplicate features. Use Thaumcraft's Verdant Charm.      |
-| Condensed Mob Aspect           |  thaumictinkerer:condensed_mob_aspect  |                  N/A                   | Removed. Tablet of Necromancy has been overhauled.                        |
-| Corporeal Attractor            |       thaumictinkerer:mob_magnet       |     thaumictinkerer:attractor_mob      |                                                                           |
-| Cowl of the Abyssal Depths     |       thaumictinkerer:kami_helm        |     kami:awakened_ichorweave_boots     |                                                                           |
-| Cursed Spirit's Blade          |      thaumictinkerer:blood_sword       |                  N/A                   | Removed. Tablet of Necromancy has been overhauled.                        |
-| Dissimulation Block            |     thaumictinkerer:dissimulation      |  thaumictinkerer:dissimulation_block   |                                                                           |
-| Enchanting Pillar              |   thaumictinkerer:enchantment_pillar   |      thaumicwonders:arcane_pillar      | Moved to Thaumic Wonders Unofficial.                                      |
-| Ender Shard                    |      thaumictinkerer:kamiresource      |                  N/A                   | Removed to reduce bloat.                                                  |
-| Essentia Funnel                |         thaumictinkerer:funnel         |    thaumictinkerer:essentia_funnel     |                                                                           |
-| Feline Amulet                  |       thaumictinkerer:cat_amulet       |     thaumictinkerer:feline_amulet      |                                                                           |
-| Focus Effect: Ender Rift       |                  N/A                   |      thaumictinkerer:ender_mirror      | Removed. Converted into an item in Thaumic Tinkerer: Reborn               |
-| Helmet of Revealing            |     thaumictinkerer:revealing_helm     |                  N/A                   | Feature has been added into base Thaumcraft with ThaumicTweaker.          |
-| Ichor                          |     thaumictinkerer:kamiresource:2     |               kami:ichor               |                                                                           |
-| Ichor Block                    |      thaumictinkerer:ichor_block       |            kami:ichor_block            |                                                                           |
-| Ichor Cloth                    |     thaumictinkerer:kamiresource:4     |         kami:ichorweave_fabric         |                                                                           |
-| Ichorcloth Boots               |      thaumictinkerer:ichor_boots       |         kami:ichorweave_boots          |                                                                           |
-| Ichorcloth Cowl                |       thaumictinkerer:ichor_helm       |          kami:ichorweave_hood          |                                                                           |
-| Ichorcloth Leggings            |       thaumictinkerer:ichor_legs       |        kami:ichorweave_leggings        |                                                                           |
-| Ichorcloth Pouch               |      thaumictinkerer:focus_pouch       |            kami:focus_pouch            |                                                                           |
-| Ichorcloth Robe                |      thaumictinkerer:ichor_chest       |          kami:ichorweave_robe          |                                                                           |
-| Ichorium Axe                   |      thaumictinkerer:ichorium_axe      |           kami:ichorium_axe            |                                                                           |
-| Ichorium Ingot                 |     thaumictinkerer:kamiresource:3     |          kami:ichorium_ingot           |                                                                           |
-| Ichorium Nugget                |     thaumictinkerer:kamiresource:5     |          kami:ichorium_nugget          |                                                                           |
-| Ichorium Pickaxe               |     thaumictinkerer:ichorium_pick      |         kami:ichorium_pickaxe          |                                                                           |
-| Ichorium Shovel                |    thaumictinkerer:ichorium_shovel     |          kami:ichorium_shovel          |                                                                           |
-| Ichorium Sword                 |     thaumictinkerer:ichorium_sword     |          kami:ichorium_sword           |                                                                           |
-| Kinetic Attractor              |         thaumictinkerer:magnet         |     thaumictinkerer:attractor_item     |                                                                           |
-| Leggings of the Burning Mantle |       thaumictinkerer:kami_legs        |   kami:awakened_ichorweave_leggings    |                                                                           |
-| Mob Aspect                     |       thaumictinkerer:mob_aspect       |                  N/A                   | Removed. Tablet of Necromancy has been overhauled.                        |
-| Nether Shard                   |     thaumictinkerer:kamiresource:1     |                  N/A                   | Removed to reduce bloat.                                                  |
-| Osmotic Enchanter              |   thaumictinkerer:osmotic_enchanter    |   thaumicwonders:essentia_enchanter    | Moved to Thaumic Wonders Unofficial.                                      |
-| Proto Clay                     |       thaumictinkerer:proto_clay       |                  N/A                   | Removed to reduce bloat. Awakened pickaxe can now harvest most materials. |
-| Robes of the Stratosphere      |       thaumictinkerer:kami_chest       |     kami:awakened_ichorweave_robe      |                                                                           |
-| Smokey Quartz                  |      thaumictinkerer:black_quartz      |     thaumictinkerer:arcane_quartz      |                                                                           |
-| Spellbinding Cloth             |   thaumictinkerer:spellbinding_cloth   |    thaumicwonder:disjunction_cloth     | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
-| Tablet of Necromancy           |        thaumictinkerer:summoner        |   thaumictinkerer:necromancy_tablet    |                                                                           |
-| Thaumic Restorer               |        thaumictinkerer:repairer        |    thaumictinkerer:thaumic_restorer    |                                                                           |
-| Tome of Knowledge Sharing      |       thaumictinkerer:share_book       |      thaumicwonders:sharing_tome       | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
-| Transvector Binder             |       thaumictinkerer:connector        |   thaumictinkerer:transvector_binder   |                                                                           | |
-| XP Talisman                    |    thaumictinkerer:experience_charm    |      thaumictinkerer:xp_talisman       |                                                                           |
+| Item                           |              Original Id               |               New Id                | Description                                                               |
+|:-------------------------------|:--------------------------------------:|:-----------------------------------:|:--------------------------------------------------------------------------|
+| Awakened Ichorium Axe          |    thaumictinkerer:ichorium_axe_adv    |     kami:awakened_ichorium_axe      |                                                                           |
+| Awakened Ichorium Pickaxe      |   thaumictinkerer:ichorium_pick_adv    |   kami:awakened_ichorium_pickaxe    |                                                                           |
+| Awakened Ichorium Shovel       |  thaumictinkerer:ichorium_shovel_adv   |    kami:awakened_ichorium_shovel    |                                                                           |
+| Awakened Ichorium Sword        |   thaumictinkerer:ichorium_sword_adv   |    kami:awakened_ichorium_sword     |                                                                           |
+| Black Quartz Block             |   thaumictinkerer:black_quartz_block   | thaumictinkerer:arcane_quartz_block |                                                                           |
+| Boots of the Horizontal Shield |       thaumictinkerer:kami_boots       |    kami:awakened_ichorweave_hood    |                                                                           |
+| Cleansing Charm                |   thaumictinkerer:cleaning_talisman    |                 N/A                 | Removed to avoid duplicate features. Use Thaumcraft's Verdant Charm.      |
+| Condensed Mob Aspect           |  thaumictinkerer:condensed_mob_aspect  |                 N/A                 | Removed. Tablet of Necromancy has been overhauled.                        |
+| Corporeal Attractor            |       thaumictinkerer:mob_magnet       |    thaumictinkerer:attractor_mob    |                                                                           |
+| Cowl of the Abyssal Depths     |       thaumictinkerer:kami_helm        |   kami:awakened_ichorweave_boots    |                                                                           |
+| Cursed Spirit's Blade          |      thaumictinkerer:blood_sword       |                 N/A                 | Removed. Tablet of Necromancy has been overhauled.                        |
+| Dissimulation Block            |     thaumictinkerer:dissimulation      | thaumictinkerer:dissimulation_block |                                                                           |
+| Enchanting Pillar              |   thaumictinkerer:enchantment_pillar   |    thaumicwonders:arcane_pillar     | Moved to Thaumic Wonders Unofficial.                                      |
+| Ender Shard                    |      thaumictinkerer:kamiresource      |                 N/A                 | Removed to reduce bloat.                                                  |
+| Essentia Funnel                |         thaumictinkerer:funnel         |   thaumictinkerer:essentia_funnel   |                                                                           |
+| Feline Amulet                  |       thaumictinkerer:cat_amulet       |    thaumictinkerer:feline_amulet    |                                                                           |
+| Focus Effect: Ender Rift       |                  N/A                   |    thaumictinkerer:ender_mirror     | Removed. Converted into an item in Thaumic Tinkerer: Reborn               |
+| Helmet of Revealing            |     thaumictinkerer:revealing_helm     |                 N/A                 | Feature has been added into base Thaumcraft with ThaumicTweaker.          |
+| Ichor                          |     thaumictinkerer:kamiresource:2     |             kami:ichor              |                                                                           |
+| Ichor Block                    |      thaumictinkerer:ichor_block       |          kami:ichor_block           |                                                                           |
+| Ichor Cloth                    |     thaumictinkerer:kamiresource:4     |       kami:ichorweave_fabric        |                                                                           |
+| Ichorcloth Boots               |      thaumictinkerer:ichor_boots       |        kami:ichorweave_boots        |                                                                           |
+| Ichorcloth Cowl                |       thaumictinkerer:ichor_helm       |        kami:ichorweave_hood         |                                                                           |
+| Ichorcloth Leggings            |       thaumictinkerer:ichor_legs       |      kami:ichorweave_leggings       |                                                                           |
+| Ichorcloth Pouch               |      thaumictinkerer:focus_pouch       |          kami:focus_pouch           |                                                                           |
+| Ichorcloth Robe                |      thaumictinkerer:ichor_chest       |        kami:ichorweave_robe         |                                                                           |
+| Ichorium Axe                   |      thaumictinkerer:ichorium_axe      |          kami:ichorium_axe          |                                                                           |
+| Ichorium Ingot                 |     thaumictinkerer:kamiresource:3     |         kami:ichorium_ingot         |                                                                           |
+| Ichorium Nugget                |     thaumictinkerer:kamiresource:5     |        kami:ichorium_nugget         |                                                                           |
+| Ichorium Pickaxe               |     thaumictinkerer:ichorium_pick      |        kami:ichorium_pickaxe        |                                                                           |
+| Ichorium Shovel                |    thaumictinkerer:ichorium_shovel     |        kami:ichorium_shovel         |                                                                           |
+| Ichorium Sword                 |     thaumictinkerer:ichorium_sword     |         kami:ichorium_sword         |                                                                           |
+| Kinetic Attractor              |         thaumictinkerer:magnet         |   thaumictinkerer:attractor_item    |                                                                           |
+| Leggings of the Burning Mantle |       thaumictinkerer:kami_legs        |  kami:awakened_ichorweave_leggings  |                                                                           |
+| Mob Aspect                     |       thaumictinkerer:mob_aspect       |                 N/A                 | Removed. Tablet of Necromancy has been overhauled.                        |
+| Nether Shard                   |     thaumictinkerer:kamiresource:1     |                 N/A                 | Removed to reduce bloat.                                                  |
+| Osmotic Enchanter              |   thaumictinkerer:osmotic_enchanter    |  thaumicwonders:essentia_enchanter  | Moved to Thaumic Wonders Unofficial.                                      |
+| Proto Clay                     |       thaumictinkerer:proto_clay       |                 N/A                 | Removed to reduce bloat. Awakened pickaxe can now harvest most materials. |
+| Robes of the Stratosphere      |       thaumictinkerer:kami_chest       |    kami:awakened_ichorweave_robe    |                                                                           |
+| Smokey Quartz                  |      thaumictinkerer:black_quartz      |    thaumictinkerer:arcane_quartz    |                                                                           |
+| Spellbinding Cloth             |   thaumictinkerer:spellbinding_cloth   |   thaumicwonder:disjunction_cloth   | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
+| Tablet of Necromancy           |        thaumictinkerer:summoner        |  thaumictinkerer:necromancy_tablet  |                                                                           |
+| Thaumic Restorer               |        thaumictinkerer:repairer        |  thaumictinkerer:thaumic_restorer   |                                                                           |
+| Tome of Knowledge Sharing      |       thaumictinkerer:share_book       |     thaumicwonders:sharing_tome     | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
+| Transvector Binder             |       thaumictinkerer:connector        | thaumictinkerer:transvector_binder  |                                                                           | |
+| XP Talisman                    |    thaumictinkerer:experience_charm    |     thaumictinkerer:xp_talisman     |                                                                           |
 
 ### Not Yet Implemented
 | Item                             |             Original Id             | New Id | Description                          |
