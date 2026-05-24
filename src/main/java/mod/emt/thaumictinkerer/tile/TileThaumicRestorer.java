@@ -3,13 +3,17 @@ package mod.emt.thaumictinkerer.tile;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
 import mod.emt.thaumictinkerer.block.BlockThaumicRestorer;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.registry.ModSoundEventsTT;
+import mod.emt.thaumictinkerer.sound.SoundLoopTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
+import net.minecraft.client.Minecraft;
 import net.minecraft.item.*;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
@@ -67,6 +71,12 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         this.count++;
 
         boolean did = false;
+        if(this.isRepairing && this.count == 5) {
+            if(FMLLaunchHandler.side().isClient() && this.world.isRemote) {
+                Minecraft.getMinecraft().getSoundHandler().playSound(new SoundLoopTT(ModSoundEventsTT.BLOCK_THAUMIC_RESTORER_REPAIR_LOOP.getSoundEvent(), this, 1.0F));
+            }
+        }
+
         if(!this.world.isRemote) {
             if(this.count % 5 == 0) {
                 if (this.shouldRepairStack()) {

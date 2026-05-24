@@ -1,18 +1,15 @@
 package mod.emt.thaumictinkerer.compat.jei.categories;
 
-import com.buuz135.thaumicjei.ThaumcraftJEIPlugin;
-import com.buuz135.thaumicjei.drawable.AlphaDrawable;
-import com.buuz135.thaumicjei.drawable.ItemStackDrawable;
-import com.buuz135.thaumicjei.ingredient.AspectIngredientRender;
 import com.invadermonky.thaumicapi.api.ThaumicAPIJEIPlugin;
+import com.invadermonky.thaumicapi.jei.AspectIngredientRender;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeCategory;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import mod.emt.thaumictinkerer.compat.jei.drawables.AlphaDrawable;
 import mod.emt.thaumictinkerer.compat.jei.wrappers.NecromancyRecipeWrapper;
-import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
 import net.minecraft.client.renderer.GlStateManager;
@@ -21,12 +18,13 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.math.MathHelper;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import thaumcraft.api.aspects.AspectList;
 
 import java.util.List;
 
 public class NecromancyCategory implements IRecipeCategory<NecromancyRecipeWrapper> {
+    public static final ResourceLocation TEXTURE = new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/gui/jei_necromancy_overlay.png");
+
     @Override
     public @NotNull String getUid() {
         return "THAUMIC_TINKERER_NECROMANCY";
@@ -44,18 +42,7 @@ public class NecromancyCategory implements IRecipeCategory<NecromancyRecipeWrapp
 
     @Override
     public @NotNull IDrawable getBackground() {
-        return new AlphaDrawable(
-                new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/gui/jei_necromancy_overlay.png"),
-                0, 0,
-                86, 86,
-                40, 44,
-                30, 30);
-    }
-
-    @SuppressWarnings("ConstantConditions")
-    @Override
-    public @Nullable IDrawable getIcon() {
-        return new ItemStackDrawable(new ItemStack(ModBlocksTT.NECROMANCY_TABLET));
+        return new AlphaDrawable(TEXTURE, 0, 0, 86, 86, 40, 44, 30, 30);
     }
 
     @Override
@@ -90,9 +77,9 @@ public class NecromancyCategory implements IRecipeCategory<NecromancyRecipeWrapp
         int x = 0;
 
         for(List<AspectList> aspectList : ingredients.getInputs(ThaumicAPIJEIPlugin.ASPECT_INGREDIENT)) {
-            recipeLayout.getIngredientsGroup(ThaumcraftJEIPlugin.ASPECT_LIST).init(x + slot, true, new AspectIngredientRender(),
+            recipeLayout.getIngredientsGroup(ThaumicAPIJEIPlugin.ASPECT_INGREDIENT).init(x + slot, true, new AspectIngredientRender(),
                     76 - center + x * 22, 135, 16, 16, 0, 0);
-            recipeLayout.getIngredientsGroup(ThaumcraftJEIPlugin.ASPECT_LIST).set(x + slot, aspectList);
+            recipeLayout.getIngredientsGroup(ThaumicAPIJEIPlugin.ASPECT_INGREDIENT).set(x + slot, aspectList);
             x++;
         }
     }
