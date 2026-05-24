@@ -2,13 +2,13 @@ package mod.emt.thaumictinkerer.compat.jei.categories;
 
 import com.invadermonky.thaumicapi.api.ThaumicAPIJEIPlugin;
 import com.invadermonky.thaumicapi.jei.AspectIngredientRender;
-import mezz.jei.api.IGuiHelper;
 import mezz.jei.api.gui.IDrawable;
 import mezz.jei.api.gui.IRecipeLayout;
 import mezz.jei.api.ingredients.IIngredients;
 import mezz.jei.api.ingredients.VanillaTypes;
 import mezz.jei.api.recipe.IRecipeCategory;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import mod.emt.thaumictinkerer.compat.jei.drawables.AlphaDrawable;
 import mod.emt.thaumictinkerer.compat.jei.wrappers.NecromancyRecipeWrapper;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.Gui;
@@ -24,15 +24,6 @@ import java.util.List;
 
 public class NecromancyCategory implements IRecipeCategory<NecromancyRecipeWrapper> {
     public static final ResourceLocation TEXTURE = new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/gui/jei_necromancy_overlay.png");
-
-    private final IDrawable background;
-
-    public NecromancyCategory(IGuiHelper helper) {
-        this.background = helper
-                .drawableBuilder(TEXTURE, 0, 0, 86, 86)
-                .addPadding(40, 44, 30, 30)
-                .build();
-    }
 
     @Override
     public @NotNull String getUid() {
@@ -51,7 +42,7 @@ public class NecromancyCategory implements IRecipeCategory<NecromancyRecipeWrapp
 
     @Override
     public @NotNull IDrawable getBackground() {
-        return this.background;
+        return new AlphaDrawable(TEXTURE, 0, 0, 86, 86, 40, 44, 30, 30);
     }
 
     @Override
