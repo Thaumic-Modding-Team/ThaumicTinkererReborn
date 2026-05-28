@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.tile;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
 import mod.emt.thaumictinkerer.block.BlockThaumicRestorer;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.registry.ModSoundEventsTT;
 import mod.emt.thaumictinkerer.sound.SoundLoopTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
@@ -13,7 +14,8 @@ import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fml.relauncher.FMLLaunchHandler;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
@@ -27,6 +29,8 @@ import thaumcraft.client.fx.FXDispatcher;
 import java.awt.*;
 
 public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEssentiaTransport, IAspectContainer {
+    public static final int REPAIR_EFFECT = 0;
+
     public ItemStackHandler stackHandler = new ItemStackHandler(1) {
         @Override
         public @NotNull ItemStack insertItem(int slot, @NotNull ItemStack stack, boolean simulate) {
@@ -71,17 +75,12 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         this.count++;
 
         boolean did = false;
-        if(this.isRepairing && this.count == 5) {
-            if(FMLLaunchHandler.side().isClient() && this.world.isRemote) {
-                Minecraft.getMinecraft().getSoundHandler().playSound(new SoundLoopTT(ModSoundEventsTT.BLOCK_THAUMIC_RESTORER_REPAIR_LOOP.getSoundEvent(), this, 1.0F));
-            }
-        }
-
         if(!this.world.isRemote) {
             if(this.count % 5 == 0) {
                 if (this.shouldRepairStack()) {
                     if(this.attemptDrainAndRepair()) {
                         this.isRepairing = true;
+                        this.doRepairEffects();
                         did = true;
                     } else if(this.isRepairing) {
                         this.isRepairing = false;
@@ -91,10 +90,6 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
                     this.isRepairing = false;
                     did = true;
                 }
-            }
-        } else {
-            if(this.isRepairing) {
-                this.performRepairEffect();
             }
         }
 
@@ -193,19 +188,43 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         return 0;
     }
 
-    public void performRepairEffect() {
-        if(this.world.rand.nextInt(20) == 0) {
-            Aspect aspect = this.getRepairAspect();
-            Color color = new Color(aspect.getColor());
-            EnumFacing zapOrigin = EnumFacing.HORIZONTALS[this.world.rand.nextInt(EnumFacing.HORIZONTALS.length)];
-            double xEnd = this.pos.getX() + 0.5;
-            double yEnd = this.pos.getY() + 1.125; // 1.0 + itemHeight / 2
-            double zEnd = this.pos.getZ() + 0.5;
-            double xStart = xEnd - (zapOrigin.getXOffset() * 0.25);
-            double yStart = this.pos.getY() + 0.875;
-            double zStart = zEnd - (zapOrigin.getZOffset() * 0.25);
-            FXDispatcher.INSTANCE.arcLightning(xStart, yStart, zStart, xEnd, yEnd, zEnd, color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, 0.25f);
+    public void doRepairEffects() {
+        if(!this.world.isRemote && this.count % 5 == 0) {
+            this.world.addBlockEvent(this.pos, ModBlocksTT.THAUMIC_RESTORER, REPAIR_EFFECT, this.count % 20);
         }
+    }
+
+    @Override
+    public boolean receiveClientEvent(int id, int type) {
+        if(id == REPAIR_EFFECT) {
+            if(this.world.isRemote) {
+                this.playRepairLoop();
+                if(type == 0) {
+                    this.performRepairEffect();
+                }
+            }
+            return true;
+        } else {
+            return super.receiveClientEvent(id, type);
+        }
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void playRepairLoop() {
+        Minecraft.getMinecraft().getSoundHandler().playSound(new SoundLoopTT(ModSoundEventsTT.BLOCK_THAUMIC_RESTORER_REPAIR_LOOP.getSoundEvent(), this, 1.0F));
+    }
+
+    public void performRepairEffect() {
+        Aspect aspect = this.getRepairAspect();
+        Color color = new Color(aspect.getColor());
+        EnumFacing zapOrigin = EnumFacing.HORIZONTALS[this.world.rand.nextInt(EnumFacing.HORIZONTALS.length)];
+        double xEnd = this.pos.getX() + 0.5;
+        double yEnd = this.pos.getY() + 1.125; // 1.0 + itemHeight / 2
+        double zEnd = this.pos.getZ() + 0.5;
+        double xStart = xEnd - (zapOrigin.getXOffset() * 0.25);
+        double yStart = this.pos.getY() + 0.875;
+        double zStart = zEnd - (zapOrigin.getZOffset() * 0.25);
+        FXDispatcher.INSTANCE.arcLightning(xStart, yStart, zStart, xEnd, yEnd, zEnd, color.getRed() / 255.0f, color.getGreen() / 255.0f, color.getBlue() / 255.0f, 0.25f);
     }
 
     @Override
@@ -264,6 +283,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         if(repairAspect != null && aspect == repairAspect && amount > 0 && this.canInputFrom(facing)) {
             amount = Math.min(amount, this.getRepairAmount());
             this.repairItemStack(amount);
+            this.doRepairEffects();
             this.markDirty();
             return amount;
         }
