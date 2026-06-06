@@ -10,6 +10,7 @@ import mod.emt.thaumictinkerer.api.recipes.INecromancyRecipe;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.recipes.NecromancyRecipeRegistry;
 import net.minecraft.util.ResourceLocation;
+import net.minecraftforge.fml.common.Optional;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import stanhebben.zenscript.annotations.ZenClass;
 import stanhebben.zenscript.annotations.ZenMethod;
@@ -22,6 +23,7 @@ import java.util.stream.Collectors;
 @ZenRegister
 @ZenClass("mods." + ThaumicTinkerer.MOD_ID + ".NecromancyTablet")
 public class NecromancyTabletCT {
+    @Optional.Method(modid = "modtweaker")
     @ZenMethod
     public static void addRecipe(String recipeName, IEntityDefinition entityDefinition, IIngredient centerItem, CTAspectStack[] aspectStacks, IIngredient... components) {
         AspectList aspectList = new AspectList();
@@ -38,6 +40,7 @@ public class NecromancyTabletCT {
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation(recipeName), recipe);
     }
 
+    @Optional.Method(modid = "modtweaker")
     @ZenMethod
     public static void addConsumingRecipe(String recipeName, IEntityDefinition entityDefinition, IIngredient centerItem, CTAspectStack[] aspectStacks, IIngredient... components) {
         AspectList aspectList = new AspectList();
