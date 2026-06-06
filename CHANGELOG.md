@@ -1,9 +1,16 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.0.3
+### Fixed
+- Fixed Thaumic Restorer crashing on servers.
+- Fixed some missing effects on the Thaumic Restorer.
+
+---
+
 ## 1.0.2
 ### Added
-- Added `zh_cn.lang` courtesy of ZHAY10086
+- Added `zh_cn.lang` courtesy of ZHAY10086.
 ### Fixed
-- Fixed crash when ThaumicJEI is not installed 
+- Fixed crash when ThaumicJEI is not installed.
 
 ---
 
