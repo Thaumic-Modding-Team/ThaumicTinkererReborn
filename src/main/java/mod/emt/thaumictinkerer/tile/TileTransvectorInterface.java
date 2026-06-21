@@ -89,7 +89,7 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
         TransvectorLink linked = this.getLinkedFacing(facing);
         if(linked != null) {
             TileEntity tile = linked.getTileEntity();
-            if(tile != null) {
+            if(tile != null && !(tile instanceof TileTransvectorInterface)) {
                 return tile.hasCapability(capability, linked.face);
             }
         }
@@ -101,7 +101,7 @@ public class TileTransvectorInterface extends TileEntityTT implements ITransvect
         TransvectorLink linked = this.getLinkedFacing(facing);
         if(linked != null) {
             TileEntity tile = linked.getTileEntity();
-            if(tile != null) {
+            if(tile != null && !(tile instanceof TileTransvectorInterface)) {
                 return tile.getCapability(capability, linked.face);
             }
         }

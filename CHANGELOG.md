@@ -1,4 +1,10 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.0.4
+### Fixed
+- Fixed stack overflow crash when a Transvector Interface linked to another Transvector interface.
+
+---
+
 ## 1.0.3
 ### Fixed
 - Fixed Thaumic Restorer crashing on servers.
