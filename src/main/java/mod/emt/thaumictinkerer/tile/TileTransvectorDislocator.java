@@ -115,7 +115,7 @@ public class TileTransvectorDislocator extends TileEntityTT implements ITransvec
         IBlockState initialState = world.getBlockState(initialPos);
         IBlockState targetState = world.getBlockState(targetPos);
 
-        if(!ConfigTags.canDislocatorSwap(initialState) || !ConfigTags.canDislocatorSwap(targetState))
+        if(!ConfigTags.canDislocatorSwap(world, initialPos, initialState) || !ConfigTags.canDislocatorSwap(world, targetPos, targetState))
             return false;
 
         TileEntity initialTile = world.getTileEntity(initialPos);

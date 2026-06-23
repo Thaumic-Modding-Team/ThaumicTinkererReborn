@@ -9,6 +9,8 @@ import net.minecraft.init.Items;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.ResourceLocation;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.World;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.ForgeRegistries;
 
@@ -25,8 +27,8 @@ public class ConfigTags {
         return CONSUMING_WHITELIST.stream().anyMatch(item -> item.matches(stack));
     }
 
-    public static boolean canDislocatorSwap(IBlockState state) {
-        return !DISLOCATOR_BLACKLIST.contains(state.getBlock());
+    public static boolean canDislocatorSwap(World world, BlockPos pos, IBlockState state) {
+        return state.getBlockHardness(world, pos) > -1 && !DISLOCATOR_BLACKLIST.contains(state.getBlock());
     }
 
     public static double getJeiEntityRenderScale(EntityEntry entityEntry) {
