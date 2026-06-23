@@ -983,19 +983,6 @@ public class ModRecipesTT {
                 )
         );
 
-        NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:eldritch_crab"), new NecromancyRecipe()
-                .setSummonedEntity(EntityEldritchCrab.class)
-                .setAspects(new AspectList().add(Aspect.ELDRITCH, 10).add(Aspect.BEAST, 10).add(Aspect.TRAP, 10))
-                .setCenterIngredient(Ingredient.fromItem(ModItemsTT.ENTITY_SOUL_ALIEN))
-                .setComponents(
-                        Ingredient.fromItem(ItemsTC.voidSeed),
-                        Ingredient.fromStacks(new ItemStack(Items.SKULL, 1, 0), new ItemStack(Items.SKULL, 1, 1), new ItemStack(Items.SKULL, 1, 2)),
-                        Ingredient.fromStacks(new ItemStack(ItemsTC.crimsonPlateHelm, 1, OreDictionary.WILDCARD_VALUE)),
-                        Ingredient.fromItem(Items.ROTTEN_FLESH),
-                        Ingredient.fromItem(Items.ENDER_EYE)
-                )
-        );
-
         /* Tainted Mobs */
         NecromancyRecipeRegistry.addRecipe(new ResourceLocation("thaumcraft:taint_crawler"), new NecromancyRecipe()
                 .setSummonedEntity(EntityTaintCrawler.class)
