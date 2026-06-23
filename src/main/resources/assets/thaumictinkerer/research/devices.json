@@ -79,6 +79,12 @@
             "thaumictinkerer:dissimulation_block"
           ]
         }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.dissimulation_block.addenda.1",
+          "required_research": ["TT_DISSIMULATION_BLOCK@2"]
+        }
       ]
     },
     {
