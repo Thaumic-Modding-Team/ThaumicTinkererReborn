@@ -6,8 +6,12 @@
 ---
 
 ## 1.0.5
+### Added
+- Added an addendum to the Dissimulation Block's research regarding unexpected results of certain blocks it can mimic.
+### Changed
+- Umbral Rosebush can now be sheared using shears that do not extend the `ItemShears` class.
 ### Fixed
-- Umbral Rosebush can now be sheared using shears that do not extend the `ItemShears` class
+- Fixed duplicate Necromancy Tablet recipe.
 
 ---
 

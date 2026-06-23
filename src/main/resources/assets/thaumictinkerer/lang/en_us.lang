@@ -110,6 +110,7 @@ thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title.subtitle=Glitch in the Matrix
 thaumictinkerer.research.dissimulation_block.stage.1=I've begun to notice subtle imperfections in how matter presents itself to the senses. If reality is merely a complex construct of light, shadow, and perception, perhaps I can manipulate the code of a block in order to mimic another block's appearance.
 thaumictinkerer.research.dissimulation_block.stage.2=My research into this has led to a startling, almost existential realization. What if the world around us is nothing more than a highly advanced simulation of matter? If reality is just a set of rules rendered by the universe, then those rules can be rewritten.<BR>This construct that I call the Dissimulation Block, acts as a physical hollow shell, a blank canvas waiting for a texture to render.<BR>It possesses the unique ability to perfectly mimic the appearance, texture, and sounds of almost any other block in existence. I simply need to place it down, then right-click any block I want on it to simulate its appearance. I can right click with an empty hand or break the simulated block to revert it back to itself.
+thaumictinkerer.research.dissimulation_block.addenda.1=It should be noted that certain blocks it can mimic may yield unpredictable results. There is unfortunately nothing I can do about these apparent glitches.
 
 # -- EQUIPMENT: Ender Mirror
 thaumictinkerer.research.ender_mirror.title=Ender Mirror
