@@ -50,19 +50,20 @@ dependencies {
 
     implementation rfg.deobf("curse.maven:thaumcraft-223628:2629023")
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
-    implementation rfg.deobf('curse.maven:thaumcraftfix-1069346:7288369')
-    implementation rfg.deobf('curse.maven:thaumictweaker-1341797:7523519')
     implementation rfg.deobf("curse.maven:expanded-events-1396395:7912680")
     implementation rfg.deobf("curse.maven:thaumicapi-1533287:8066628")
-    implementation rfg.deobf("curse.maven:magiculture-integrations-1064613:7445189")
-    compileOnly rfg.deobf('curse.maven:botania-225643:3330934')
-    compileOnly rfg.deobf('curse.maven:simpledifficulty-360779:3613814')
-    compileOnly rfg.deobf('curse.maven:tough-as-nails-246391:2639903')
 
     def modMap = [:]
     def loadMap = [:]
+    modMap.put(["curse.maven:botania-225643:3330934"], project.use_botania)
     modMap.put(["curse.maven:antique-armory-1394222:7339320", "curse.maven:tinkers-antique-1242239:7339332", "curse.maven:mantle-74924:2713386"], project.use_constructsarmory)
+    modMap.put(["curse.maven:magiculture-integrations-1064613:7445189"], project.use_magicultureintegrations)
+    modMap.put(["curse.maven:simpledifficulty-360779:3613814"], project.use_simpledifficulty)
+    modMap.put(["curse.maven:thaumcraftfix-1069346:7288369"], project.use_thaumcraftfix)
+    modMap.put(["curse.maven:thaumic-augmentation-319441:6047659"], project.use_thaumicaugmentation)
+    modMap.put(["curse.maven:thaumictweaker-1341797:7523519"], project.use_thaumictweaker)
     modMap.put(["curse.maven:tinkers-antique-1242239:7339332", "curse.maven:mantle-74924:2713386"], project.use_tinkersconstruct)
+    modMap.put(["curse.maven:tough-as-nails-246391:2639903"], project.use_toughasnails)
 
     loadMap.clear()
     modMap.each{mods, load -> {
