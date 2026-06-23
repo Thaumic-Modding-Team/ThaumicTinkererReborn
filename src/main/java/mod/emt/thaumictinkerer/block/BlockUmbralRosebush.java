@@ -75,7 +75,7 @@ public class BlockUmbralRosebush extends BlockBush implements IGrowable, ISheara
     public boolean onBlockActivated(@NotNull World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack heldStack = playerIn.getHeldItem(hand);
         int age = this.getAge(state);
-        if(heldStack.getItem() instanceof ItemShears && age >= 4) {
+        if(this.isShears(heldStack) && age >= 4) {
             worldIn.setBlockState(pos, this.withAge(age - 1), 2);
             spawnAsEntity(worldIn, pos, new ItemStack(ModBlocksTT.UMBRAL_ROSE));
             playerIn.playSound(SoundEvents.ENTITY_SHEEP_SHEAR, 1.0f, 1.0f);
@@ -124,6 +124,10 @@ public class BlockUmbralRosebush extends BlockBush implements IGrowable, ISheara
         age += (age < 4 ? worldIn.rand.nextInt(2) + 1 : 1);
         int maxAge = this.getMaxAge();
         worldIn.setBlockState(pos, this.withAge(Math.min(age, maxAge)), 2);
+    }
+
+    public boolean isShears(ItemStack stack) {
+        return !stack.isEmpty() && (stack.getItem() instanceof ItemShears || stack.getItem().getToolClasses(stack).contains("shears"));
     }
 
     protected PropertyInteger getAgeProperty() {
