@@ -73,4 +73,4 @@ All Necromancy content is optional and can be disabled using the configuration.
 
 ## Licensing
 
-New assets (textures, sounds, models, etc) for this mod are **All Rights Reserved** (see LICENSE_ASSETS). Everything else is **CC BY-NC-SA 3.0 Unported** (see LICENSE).
+Code and new assets (textures, sounds, models, etc) for this mod are **All Rights Reserved** (see LICENSE and LICENSE_ASSETS). Original Thaumic Tinkerer assets are **CC BY-NC-SA 3.0 Unported** (see LICENSE_ASSETS_TT).
