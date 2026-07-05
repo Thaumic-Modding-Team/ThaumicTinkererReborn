@@ -9,10 +9,6 @@ public class CTPlugin {
     @SubscribeEvent
     public void onScriptReloading(ScriptRunEvent.Pre event) {
         NecromancyRecipeRegistry.removeAllRecipes();
-    }
-
-    @SubscribeEvent
-    public void onScriptReloadingPost(ScriptRunEvent.Post event) {
         ModRecipesTT.initNecromancyRecipes();
     }
 }

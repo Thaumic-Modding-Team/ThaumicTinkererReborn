@@ -1,6 +1,7 @@
 # Thaumic Tinkerer: Reborn Changelog
 ## 1.0.6
 ### Fixed
+- Fixed Necromancy Tablet CraftTweaker recipe removal methods not working
 - Fixed Transvector Dislocator moving unbreakable blocks
 
 ---
