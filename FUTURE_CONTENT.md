@@ -3,6 +3,7 @@ This is a list of general content that did not make the initial cut for the firs
 
 | Feature                      | Replacement | Description                                                             |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------------|
+| Advanced Recharge Pedestal   |             | Upgraded Recharge Pedestal that's faster and more efficient.            |
 | Attractor (Soul Mould)       |             | Used to blacklist/whitelist entities for the Corporeal Attractor.       |
 | Black Hole Ring              |             | Stores MAX_INT of a single item                                         |
 | Dynamism Tablet              |             | Auto-clicker device                                                     | 
