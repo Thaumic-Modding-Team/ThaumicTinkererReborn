@@ -1,4 +1,9 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.0.7
+### Added
+- Added `ru_ru.lang` courtesy of leskovetz
+---
+
 ## 1.0.6
 ### Fixed
 - Fixed Necromancy Tablet CraftTweaker recipe removal methods not working
