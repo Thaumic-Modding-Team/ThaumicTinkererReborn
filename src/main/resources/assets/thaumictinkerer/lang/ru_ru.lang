@@ -1,0 +1,312 @@
+itemGroup.ThaumicTinkererTab=Thaumic Tinkerer: Reborn
+
+# Chat
+chat.thaumictinkerer:attractor.mode.attract=Режим притягивателя: ПРИТЯЖЕНИЕ
+chat.thaumictinkerer:attractor.mode.repulse=Режим притягивателя: ОТТАЛКИВАНИЕ
+chat.thaumictinkerer:golaith_ring.shattered=Ваше кольцо Голиафа рассыпается, защитив вас от смертельного удара.
+chat.thaumictinkerer:transvector_binder.link_stored=Связь сохранена.
+chat.thaumictinkerer:transvector_binder.link_successful=Связь успешно установлена!
+chat.thaumictinkerer:transvector_binder.out_of_range=Связь вне зоны доступа.
+chat.thaumictinkerer:transvector_binder.self_link=Блок не может быть привязан к самому себе.
+chat.thaumictinkerer:recall_stopwatch.start=Секундомер временно привязывает вас к этому месту.
+
+# Blocks
+tile.thaumictinkerer:arcane_quartz_block.name=Блок мистического кварца
+tile.thaumictinkerer:arcane_quartz_pillar.name=Колонна мистического кварца
+tile.thaumictinkerer:arcane_quartz_slab.name=Плита из мистического кварца
+tile.thaumictinkerer:arcane_quartz_stairs.name=Ступени из мистического кварца
+tile.thaumictinkerer:attractor_item.name=Кинетический притягиватель
+tile.thaumictinkerer:attractor_mob.name=Телесный притягиватель
+tile.thaumictinkerer:attractor_player.name=Душевный притягиватель
+tile.thaumictinkerer:chiseled_arcane_quartz_block.name=Резной блок мистического кварца
+tile.thaumictinkerer:dissimulation_block.name=Блок маскировки
+tile.thaumictinkerer:essentia_funnel.name=Воронка эссенции
+tile.thaumictinkerer:ethereal_platform.name=Эфирная платформа
+tile.thaumictinkerer:necromancy_tablet.name=Плита некромантии
+tile.thaumictinkerer:passable_wall.name=Проницаемый камень
+tile.thaumictinkerer:terra_obsidian.name=Обсидиан Terra
+tile.thaumictinkerer:thaumic_cake.name=Таум-торт
+tile.thaumictinkerer:thaumic_restorer.name=Таум-восстановитель
+tile.thaumictinkerer:thaumium_plated_cobblestone.name=Покрытый таумиумом булыжник
+tile.thaumictinkerer:transvector_dislocator.name=Трансвекторный дислокатор
+tile.thaumictinkerer:transvector_interface.name=Трансвекторный интерфейс
+tile.thaumictinkerer:umbral_rose.name=Теневая роза
+tile.thaumictinkerer:umbral_rosebush.name=Куст теневой розы
+
+# Infusion Enchantments
+enchantment.infusion.EDUCATIONAL=Обучение
+enchantment.infusion.PROJECTING=Проекция
+enchantment.infusion.WRATH=Гнев
+
+# Items
+item.thaumictinkerer:arcane_quartz.name=Мистический кварц
+item.thaumictinkerer:black_hole_ring.name=Кольцо черной дыры
+item.thaumictinkerer:condor_sword.name=Меч Кондора
+item.thaumictinkerer:consuming_sigil.name=Сигил поглощения
+item.thaumictinkerer:ender_mirror.name=Эндер-зеркало
+item.thaumictinkerer:energetic_nitor.name=Энергетический нитор
+item.thaumictinkerer:entity_soul_alien.name=Инопланетная душа
+item.thaumictinkerer:entity_soul_arcane.name=Мистическая душа
+item.thaumictinkerer:entity_soul_demonic.name=Демоническая душа
+item.thaumictinkerer:entity_soul_eldritch.name=Древняя душа
+item.thaumictinkerer:entity_soul_hostile.name=Враждебная душа
+item.thaumictinkerer:entity_soul_peaceful.name=Мирная душа
+item.thaumictinkerer:entity_soul_tainted.name=Искаженная душа
+item.thaumictinkerer:escape_sigil.name=Сигил побега
+item.thaumictinkerer:everfull_bucket.name=Неисчерпаемое ведро
+item.thaumictinkerer:feline_charm.name=Кошачий оберег
+item.thaumictinkerer:goliath_ring.name=Кольцо Голиафа
+item.thaumictinkerer:ignium_striker.name=Высекатель из Игниума
+item.thaumictinkerer:recall_stopwatch.name=Секундомер повелителя времени
+item.thaumictinkerer:transvector_binder.name=Трансвекторный связыватель
+item.thaumictinkerer:umbral_dye.name=Теневой черный краситель
+item.thaumictinkerer:xp_talisman.name=Талисман опыта
+
+item.thaumictinkerer:test_sword.name=Тестовый меч
+
+# JEI
+jei.thaumictinkerer:necromancy.consuming=Расходует ингредиенты
+jei.thaumictinkerer:necromancy.repeatable=Многоразовый
+jei.thaumictinkerer:necromancy.title=Плита некромантии
+
+# Tooltip
+tooltip.thaumictinkerer:black_hole_ring.info=Содержимое:
+tooltip.thaumictinkerer:black_hole_ring.slot=%4s - %s
+tooltip.thaumictinkerer:empty=Пусто
+tooltip.thaumictinkerer:enabled=Включено
+tooltip.thaumictinkerer:disabled=Выключено
+tooltip.thaumictinkerer:entity_soul.fading=Угасающая
+tooltip.thaumictinkerer:entity_soul.fragile=Хрупкая
+tooltip.thaumictinkerer:entity_soul.resonant=Яркая
+tooltip.thaumictinkerer:transvector_binder.link_mode.block=Режим связи=Блок
+tooltip.thaumictinkerer:transvector_binder.link_mode.face=Режим связи=Сторона
+tooltip.thaumictinkerer:transvector_binder.linked_face=Сторона=%s
+tooltip.thaumictinkerer:transvector_binder.linked_pos=Поз=x:%d y:%d z:%d
+tooltip.thaumictinkerer:transvector_binder.linked_world=Мир=%s
+tooltip.thaumictinkerer:xp_talisman.level=Уровни=§a%d
+tooltip.thaumictinkerer:xp_talisman.partial=Частичный опыт=§a%d
+tooltip.thaumictinkerer:xp_talisman.total=Всего опыта=§a%d
+
+# Research
+tc.research_category.THAUMIC_TINKERER=Thaumic Tinkerer
+thaumictinkerer.research.thaumic_tinkerer_base.title=Таум-инженерия
+thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Без использования слова «Конструкция»
+thaumictinkerer.research.thaumic_tinkerer_base.stage.1=Вселенная — это грандиозный часовой механизм, по крайней мере так говорят ученые...<BR>Существует несколько исследований, которыми я занимался, но они слишком малы или специфичны, чтобы поместиться где-либо еще, именно для этого и предназначена эта коллекция мелочей.<PAGE>Мистический кварц<DIV>Уникально интересный материал, таум-кварц не особо полезен сам по себе, но он идеально интегрируется с магическими механизмами.<BR>Эти свойства будут полезны для любых будущих устройств, которые я могу измыслить.<PAGE>Покрытый таумиумом булыжник<DIV>Когда обычного булыжника недостаточно, почему бы не добавить таумиевое покрытие?<BR>Это дает значительно более устойчивый материал, который относительно дешев в производстве.
+
+# -- DEVICES=Anima Attractor
+thaumictinkerer.research.attractor_player.title=Душевный притягиватель
+thaumictinkerer.research.attractor_player.title.subtitle=Не заприте самого себя!
+thaumictinkerer.research.attractor_player.stage.1=Мне кажется интересным, что на разумных существ в мире труднее повлиять, чем на предметы или другие сущности.<BR>Возможно, более целенаправленный подход позволит мне управлять их движением.
+thaumictinkerer.research.attractor_player.stage.2=При подаче сигнала редстоуна душевный притягиватель подтягивает близлежащих игроков к устройству.<BR>Приседание и взаимодействие с притягивателем меняют полярность.
+
+# -- DEVICES=Corporeal Attractor
+thaumictinkerer.research.attractor_mob.title=Телесный притягиватель
+thaumictinkerer.research.attractor_mob.title.subtitle=Диско-корова
+thaumictinkerer.research.attractor_mob.stage.1=Хотя ранее я разрабатывал устройства, способные предотвратить появление существ, фактическое управление перемещением этих сущностей — совсем другое дело.<BR>Я уверен, что забора было бы достаточно, но зачем использовать банальное решение, если я могу усложнить задачу с помощью магии?
+thaumictinkerer.research.attractor_mob.stage.2=При подаче сигнала редстоуна телесный притягиватель подтягивает близлежащих существ (кроме игроков) к устройству.<BR>Приседание и взаимодействие с притягивателем меняют полярность.
+
+# -- DEVICES=Dissimulation Block
+thaumictinkerer.research.dissimulation_block.title=Блок маскировки
+thaumictinkerer.research.dissimulation_block.title.subtitle=Сбой в Матрице
+thaumictinkerer.research.dissimulation_block.stage.1=Я начал замечать тонкие несовершенства в том, как материя предстает перед чувствами. Если реальность — это всего лишь сложная конструкция из света, тени и восприятия, возможно, я смогу манипулировать кодом блока, чтобы имитировать внешний вид другого блока.
+thaumictinkerer.research.dissimulation_block.stage.2=Мои исследования в этой области привели к поразительному, почти экзистенциальному осознанию. Что если окружающий нас мир — не более чем высокоразвитая симуляция материи? Если реальность — это просто набор правил, визуализируемых Вселенной, то эти правила можно переписать.<BR>Эта конструкция, которую я назову Блоком маскировки, служит физической полой оболочкой, чистым холстом, ожидающим текстуры.<BR>Он обладает уникальной способностью идеально имитировать внешний вид, текстуру и звуки почти любого другого существующего блока. Мне просто нужно установить его, а затем ПКМ любым желаемым блоком по нему, чтобы сымитировать его вид. Я могу щелкнуть ПКМ пустой рукой или сломать имитируемый блок, чтобы вернуть его в исходное состояние.
+thaumictinkerer.research.dissimulation_block.addenda.1=Следует отметить, что некоторые блоки, которые он имитирует, могут приводить к непредсказуемым результатам. К сожалению, я ничего не могу поделать с этими видимыми сбоями.
+
+# -- EQUIPMENT=Ender Mirror
+thaumictinkerer.research.ender_mirror.title=Эндер-зеркало
+thaumictinkerer.research.ender_mirror.title.subtitle=«Карман» в четвертое измерение
+thaumictinkerer.research.ender_mirror.stage.1=Если волшебное ручное зеркало может предоставить мне доступ к связанным зеркалам сквозь измерения, насколько сложнее будет создать что-то, что получает доступ к моему инвентарю эндер-сундука?
+thaumictinkerer.research.ender_mirror.stage.2=Мне успешно удалось модифицировать волшебное ручное зеркало так, чтобы оно предоставляло доступ к инвентарю моего эндер-сундука из любой точки мира.
+
+# -- DEVICES=Ethereal Platform
+thaumictinkerer.research.ethereal_platform.title=Эфирная платформа
+thaumictinkerer.research.ethereal_platform.title.subtitle=Видишь суслика?
+thaumictinkerer.research.ethereal_platform.stage.1=Магический подъемник — чудесное изобретение, но использовать его как полноценный лифт неудобно. Должен быть способ создать пол, который понимает мои намерения без лишних махинаций.
+thaumictinkerer.research.ethereal_platform.stage.2=Я успешно создал идеальную платформу для магического подъемника.<BR>Полученный блок бросает вызов стандартной физике. Случайному наблюдателю, идущему по нему, он кажется твердым грунтом. Однако если кто-то приблизится к нему снизу или сбоку, он пройдет сквозь него, как сквозь воздух.<BR>Что еще более полезно, если я сознательно решу присесть (Shift), блок полностью теряет коллизию, позволяя мне провалиться сквозь него.
+
+# -- DEVICES=Kinetic Attractor
+thaumictinkerer.research.attractor_item.title=Кинетический притягиватель
+thaumictinkerer.research.attractor_item.title.subtitle=Сбор предметов
+thaumictinkerer.research.attractor_item.stage.1=Хотя голодный сундук полезен для сбора выпадающих предметов, его ограниченный радиус требует использования другого метода сбора для помощи в этом процессе.<BR>Возможно, я смогу создать устройство, способное взаимодействовать со всяким барахлом, лежащим на земле?
+thaumictinkerer.research.attractor_item.stage.2=При подаче сигнала редстоуна это устройство притягивает к себе близлежащие предметы.<BR>Приседание и взаимодействие с притягивателем меняют полярность.
+
+# -- DEVICES=Paving Stone of Permeability
+thaumictinkerer.research.passable_wall.title=Проницаемый камень
+thaumictinkerer.research.passable_wall.title.subtitle=Квантовое туннелирование
+thaumictinkerer.research.passable_wall.stage.1=Я уже освоил создание брусчатки, ускоряющей движение и отпугивающей угрозы, но что, если бы у меня получилось изобрести еще один тип, который мог бы просто... пропускать меня сквозь себя? Думаю, для этого пригодился бы аспект Aqua.
+thaumictinkerer.research.passable_wall.stage.2=Я создал новый тип камня, называемый проницаемым. Похоже, что эти блоки не только становятся временно проходимыми при щелчке ПКМ перчаткой, но и ведут себя как жидкость, в которой можно плавать.<BR>Когда они размещены рядом, то меняют режим синхронно при переключении одного из них.
+
+# -- DEVICES=Transvector Dislocator
+thaumictinkerer.research.transvector_dislocator.title=Трансвекторный дислокатор
+thaumictinkerer.research.transvector_dislocator.title.subtitle=Бескровная магия
+thaumictinkerer.research.transvector_dislocator.stage.1=Во время недавней встречи с довольно эксцентричным магом крови мне удалось «позаимствовать» весьма любопытные чертежи ритуала, способного мгновенно менять местами два фрагмента реальности на больших расстояниях.<BR>Хотя их, м, своебразные методы включали в обмазывание свиной кровью при свечах, я считаю, что лучше отбросить это в пользу чего-то более санитарно-пригодного.
+thaumictinkerer.research.transvector_dislocator.stage.2=Я успешно соединил украденные у мага крови концепции со своими знаниями в изобретениях. Результатом стал Трансвекторный дислокатор.<BR>Этот блок связывает две точки в реальности таким образом, что при получении редстоун-импульса он мгновенно перемещает блоки и сущности в области 3x3x3 над собой к связанному дислокатору.<PAGE>Для того, чтобы их связать, мне стоит просто присесть рядом и щелкнуть ПКМ по одному из них Трансвекторным связывателем, а затем щелкнув ПКМ по другому.
+
+# -- DEVICES=Transvector Interface
+thaumictinkerer.research.transvector_interface.title=Трансвекторный интерфейс
+thaumictinkerer.research.transvector_interface.title.subtitle=Расширенные возможности
+thaumictinkerer.research.transvector_interface.stage.1=По мере того как мои схемы автоматизации становятся все более сложными, я постоянно сталкиваюсь с нехваткой физического пространства. У одного сундука или механизма всего шесть граней, и размещение труб, редстоуна и проводов вокруг быстро превращается в хаос. Мне нужен способ взаимодействовать с блоком на расстоянии.
+thaumictinkerer.research.transvector_interface.stage.2=Я успешно связал две точки в пространстве, создав Трансвекторный интерфейс.<BR>Этот блок служит идеальным физическим продолжением целевого блока поблизости.<BR>Интерфейс можно привязать двумя способами. Во-первых, в режиме блока, который скопирует все грани целевого блока, во-вторых, в режиме граней. В режиме граней интерфейс может подключаться к определенным граням блока, позволяя подключаться к нескольким блокам, пока стороны интерфейса уникальны.<BR>После связывания все шесть граней интерфейса будут плавно имитировать соответствующие грани целевого блока. Я могу помещать или извлекать предметы, жидкости или энергию редстоуна в интерфейс, и целевой блок получит их мгновенно, как если бы я взаимодействовал с ним напрямую.<BR>Я могу установить связь, просто присев и щелкнув ПКМ по Трансвекторному интерфейсу Трансвекторным связывателем, а затем щелкнув ПКМ по целевому блоку. Из-за нестабильной природы локального искривления пространства максимальная дальность связи ограничена.
+
+# -- EQUIPMENT=Arcane Infusion Enchantment
+thaumictinkerer.research.arcane_infusion_enchantment.title=Мистические зачарования наполнения
+thaumictinkerer.research.arcane_infusion_enchantment.title.subtitle=Когда твое оружие всё еще не справляется
+thaumictinkerer.research.arcane_infusion_enchantment.stage.1=Я всегда думал про себя... Как насчет новых зачарований, достаточно простых, чтобы просто сделать мои инструменты мощнее?<BR>Наконец пришло время воплотить это в жизнь.
+thaumictinkerer.research.arcane_infusion_enchantment.stage.2=Теперь у меня есть доступ к новым зачарованиям наполнения, которые еще больше улучшат всё мое оборудование.<BR>Как и другие зачарования инфузией, их можно наносить несколько раз на один и тот же предмет, но каждый уровень увеличивает стоимость эссенции при создании и шанс приданию предмету свойства Искажения.<PAGE>§oГнев§r<DIV>Инфузия сначала добавляет +0.5 к урону инструмента, а затем добавляет дополнительно +0.5 урона за уровень (Гнев I дает +1 к урону).<DIV>§oУровни§r=1-5<BR>§oЦель§r=топор, мотыга, лопата, кирка, оружие<PAGE>§oОбучение§r<DIV>Каждый уровень этого наполнения еще больше увеличивает количество опыта, получаемого за убийство существ или разрушение блоков.<DIV>§oУровни§r=1-3<BR>§oЦель§r=топор, мотыга, лопата, кирка, оружие<PAGE>§oПроецирующий§r<DIV>Наполнение добавляет дополнительно +0.5 к дальности атаки/взаимодействия инструменту за каждый уровень.<DIV>§oУровни§r=1-3<BR>§oЦель§r=топор, мотыга, лопата, кирка, оружие
+
+# -- EQUIPMENT=Feline Charm
+thaumictinkerer.research.feline_charm.title=Кошачий оберег
+thaumictinkerer.research.feline_charm.title.subtitle=Как черная кошка в неудачный день
+thaumictinkerer.research.feline_charm.stage.1=Криперы — постоянная проблема. Мало того, что они сливаются с окружением, у них еще есть скверная привычка прятаться за стенами и подкрадываться сзади.<BR>Возможно, я смогу создать инструмент, который сможет каким-то образом нейтрализовать этих существ.
+thaumictinkerer.research.feline_charm.stage.2=Я разработал амулет, который сбивает с толку близлежащих криперов.<BR>Хотя он не может полностью отменить их детонацию, пока он экипирован, то внушает страх криперам, заставляя их убегать, как если бы они находились в присутствии кошки.<BR>Пока я не совершаю враждебных действий против зеленых захватчиков, амулет должен обеспечить мне относительную безопасность от их суицидальных атак.
+
+# -- EQUIPMENT=Ignium Striker
+thaumictinkerer.research.ignium_striker.title=Высекатель из Игниума
+thaumictinkerer.research.ignium_striker.title.subtitle=Кому нужен кремень, когда есть стихии?
+thaumictinkerer.research.ignium_striker.stage.1=Меня озарило странное осознание. Несмотря на то, как далеко я продвинулся, я все еще полагаюсь на примитивное огниво для разведения огня.<BR>Поскольку тауматургия дала решения для всех остальных мелких неудобств, почему бы не применить ее и к этому?
+thaumictinkerer.research.ignium_striker.stage.2=Я создал чертежи для огнива, работающего на вис. Этот инструмент не только практически неразрушим, но и благодаря опоре на вис, а не на физическую прочность, легко пополняется за счет обычной подзарядки на пьедестале.
+
+# -- EQUIPMENT=Sigil of Consuming
+thaumictinkerer.research.consuming_sigil.title=Сигил поглощения
+thaumictinkerer.research.consuming_sigil.title.subtitle=Груды мусора
+thaumictinkerer.research.consuming_sigil.stage.1=Долгие дни добычи полезных ископаемых часто приносят мало ценных ресурсов, но огромное количество обычных материалов.<BR>Хотя кактус или лава могут быть решением, их вряд ли можно назвать портативными.
+thaumictinkerer.research.consuming_sigil.stage.2=Я разработал устройство, которое при включении мгновенно уничтожает любые обычные материалы при их добыче.<BR>Я могу переключать эту функцию, присев и взаимодействуя с сигилом.
+
+# -- EQUIPMENT=Ring of Goliath's Might
+thaumictinkerer.research.goliath_ring.title=Кольцо Голиафа
+thaumictinkerer.research.goliath_ring.title.subtitle=Слабость к камню
+thaumictinkerer.research.goliath_ring.stage.1=Я начал размышлять о легендарной стойкости древних гигантов. Возможно ли сконцентрировать такую силу в носимой безделушке?
+thaumictinkerer.research.goliath_ring.stage.2=Мои теории о стойкости гигантов принесли плоды. Объединив прочность алмазной брони с соответствующей эссенцией, я создал Кольцо Голиафа.<BR>Кольцо уменьшит весь получаемый урон на единицу, а также спасет меня от смерти, пока мое первоначальное здоровье достаточно высоко.<BR>Чтобы защитить меня, кольцо должно поглотить весь смертельный удар в свою физическую структуру, после чего кольцо рассыплется в пыль, оставив меня едва цепляющимся за жизнь и снова уязвимым.
+thaumictinkerer.research.goliath_ring.addenda.1=Кольцо неспособно полностью свести урон к нулю и не может защитить меня от гибели при падении. Я больше никогда не спрыгну с этого утеса...
+
+# -- EQUIPMENT=Sword of the Condor
+thaumictinkerer.research.condor_sword.title=Меч Кондора
+thaumictinkerer.research.condor_sword.title.subtitle=Кондор не боится бури
+thaumictinkerer.research.condor_sword.stage.1=Меч Западных Ветров занял довольно узкую нишу, но его способность не знает равных по сравнению с другими инструментами стихий. Мне следует разобраться, как улучшить его еще сильнее.
+thaumictinkerer.research.condor_sword.stage.2=Я успешно обновил свой Меч Западных Ветров до того, что я называю Мечом Кондора!<BR>Это удаляет его старую способность вихря и вместо этого позволяет мне взмывать в воздух. Я могу щелкнуть ПКМ, чтобы совершить рывок в направлении взгляда, или сделать это в обратном направлении во время приседания. Если я сделаю это несколько раз, это фактически позволит мне летать.
+
+# -- EQUIPMENT=Talisman of Experience
+thaumictinkerer.research.xp_talisman.title=Талисман опыта
+thaumictinkerer.research.xp_talisman.title.subtitle=Смерть - не конец
+thaumictinkerer.research.xp_talisman.stage.1=С моими недавними успехами в хранении опыта в банках с мозгами я задаюсь вопросом можно ли создать талисман, способный делать то же самое.
+thaumictinkerer.research.xp_talisman.stage.2=Мне успешно удалось создать украшение, способное хранить огромные объемы опыта.<BR>При экипировке любой собираемый мной опыт будет сохраняться в талисмане.<BR>При включении весь мой собственный опыт будет выкачиваться и сохраняться в талисмане.<BR>Если я захочу извлечь сохраненный опыт, мне просто нужно щелкнуть ПКМ по талисману, чтобы извлекать по одному уровню за раз.
+
+# -- MISC=Aquatic Alchemy
+thaumictinkerer.research.aquatic_alchemy.title=Водная алхимия
+thaumictinkerer.research.aquatic_alchemy.title.subtitle=Дары морей
+thaumictinkerer.research.aquatic_alchemy.stage.1=В океане есть множество материалов, которые можно найти, только погрузившись в самые глубокие пучины.<BR>Алхимия должна предоставить способ создания этих материалов из более приземленных компонентов.
+thaumictinkerer.research.aquatic_alchemy.stage.2=Используя обычные ингредиенты, теперь я могу искусственно создавать свои собственные осколки призмарина, морские фонари и губки.
+
+# -- MISC=Energetic Nitor
+thaumictinkerer.research.energetic_nitor.title=Энергетический нитор
+thaumictinkerer.research.energetic_nitor.title.subtitle=Освещая путь
+thaumictinkerer.research.energetic_nitor.stage.1=Я даже не могу сосчитать количество факелов, которые сейчас коптят в пещерах по всему миру. Что еще хуже, я редко прохожу по одной и той же пещере дважды, а значит ресурсы тратятся неэффективно.<BR>Возможно, нитор сможет предложить решение...
+thaumictinkerer.research.energetic_nitor.stage.2=Мне удалось создать более мощный нитор, способный размещать бесконечное количество источников света. Его также можно активировать, чтобы он автоматически размещал источники света всякий раз, когда я ступаю в темную область.<BR>Однако стоит держать в голове, что они являются временными, так как гаснут через непродолжительное время.<BR>Факелы и нитор всё еще могут быть лучшим решением для долгосрочного освещения, но этого должно быть достаточно для исследований.
+
+# -- MISC=Escape Sigil
+thaumictinkerer.research.escape_sigil.title=Сигил побега
+thaumictinkerer.research.escape_sigil.title.subtitle=Думай быстро!
+thaumictinkerer.research.escape_sigil.stage.1=Жемчуг края полезен для путешествий на короткие расстояния или побега из опасных ситуаций, но их склонность причинять мне вред при использовании — в лучшем случае досада, а в худшем — смертельный риск.<BR>Возможно, я смогу найти способ стабилизировать эффекты жемчужины, чтобы обеспечить более надежное средство побега.
+thaumictinkerer.research.escape_sigil.stage.2=Этот новый тип стабилизированного жемчуга края, который я назвал сигилом побега, является значительным шагом вперед в пространственной магии.<BR>Хотя сам предмет значительно более хрупок, чем обычная жемчужина, его эффекты гораздо мощнее.<BR>При раздавливании в руке он перенесет меня по вертикали к первому блоку, открытому к небу прямо надо мной.<BR>Если безопасное место не найдено или есть какое-то препятствие, блокирующее движение, сигил вместо этого телепортирует меня в случайную точку поблизости.
+
+# -- MISC=Essentia Funnel
+thaumictinkerer.research.essentia_funnel.title=Воронка эссенции
+thaumictinkerer.research.essentia_funnel.title.subtitle=Заполнение резервуара
+thaumictinkerer.research.essentia_funnel.stage.1=Процесс опустошения эссенции из банок — поистине раздражающее занятие. Мне приходится либо выбрасывать огромные объемы порчи в окружающую среду, либо полагаться на трубы, которые можно описать как «довольно прихотливые».<BR>Должен быть лучший способ...
+thaumictinkerer.research.essentia_funnel.stage.2=Я разработал примитивную воронку, способную быстро переливать эссенцию из одной банки в другую.<BR>Воронка эссенции должна быть помещена непосредственно поверх воронки (хоппера), при этом она должна быть направлена в контейнер для эссенции.<BR>Затем я могу поместить туда банку, что приведет к её быстрому опустошению.
+
+# -- MISC=Everfull Bucket
+thaumictinkerer.research.everfull_bucket.title=Неисчерпаемое ведро
+thaumictinkerer.research.everfull_bucket.title.subtitle=В нем мог бы поместиться целый океан!
+thaumictinkerer.research.everfull_bucket.stage.1=Хотя неисчерпаемый кувшин полезен на базе, статический характер устройства затрудняет его использование в более отдаленных районах.
+thaumictinkerer.research.everfull_bucket.stage.2=Я создал ведро, имитирующее поведение неисчерпаемого кувшина, бесконечно выдающее воду за счет вис, извлекаемой из ауры.<BR>Процесс не столь эффективен, как у кувшина. По моим оценкам, оно потребляет примерно в два раза больше вис на каждое произведенное ведро воды.
+
+# -- MISC=Obsidia Terra
+thaumictinkerer.research.terra_obsidian.title=Обсидиан Terra
+thaumictinkerer.research.terra_obsidian.title.subtitle=Зеленый обсидиан
+thaumictinkerer.research.terra_obsidian.stage.1=Мои попытки сдержать определенные мощные угрозы увенчались лишь умеренным успехом.<BR>Возможно, есть способ еще больше укрепить и без того стойкую природу обсидиана?
+thaumictinkerer.research.terra_obsidian.stage.2=Кто бы мог подумать, что всё так просто — наполнить кристаллы terra в обсидиан?<BR>Обсидиан Terra, как я назвал этот материал, в 2.5 раза устойчивее к взрывам, чем обычный обсидиан, но его значительно проще добывать киркой. Безусловно, такой прочный материал можно использовать для сдерживания могущественных жутких существ.
+
+# -- MISC=Thaumic Cake
+thaumictinkerer.research.thaumic_cake.title=Таум-торт
+thaumictinkerer.research.thaumic_cake.title.subtitle=Если нет хлеба, пусть едят пирожные
+thaumictinkerer.research.thaumic_cake.stage.1=Люди постоянно говорят мне, что нельзя и торт съесть, и сохранить его, но что они знают?<BR>Поскольку сам мир прогибается под мою волю, какой лучший способ потратить свое драгоценное время на этой планете, чем найти решение этой острой нехватки торта.<BR>Пусть считают меня сумасшедшим!.
+thaumictinkerer.research.thaumic_cake.stage.2=Что может быть лучше торта? Еще больше торта! Что может быть лучше большего количества торта? Бесконечный торт!<BR>Мои коллеги думают, что я сошел с ума, поедая бесконечно регенерирующий торт, но кто их спрашивает? На вкус он вполне хорош!
+
+# -- MISC=Thaumic Restorer
+thaumictinkerer.research.thaumic_restorer.title=Таум-восстановитель
+thaumictinkerer.research.thaumic_restorer.title.subtitle=Исправление нанесенного ущерба
+thaumictinkerer.research.thaumic_restorer.stage.1=Если физические объекты можно расщепить на эссенцию, можно ли использовать эссенцию для восстановления поврежденных предметов?<BR>Если да, это могло бы значительно снизить затраты на обслуживание моих инструментов и брони.
+thaumictinkerer.research.thaumic_restorer.stage.2=Успех! Я создал чудесное устройство, которое называю Таум-восстановителем.<BR>Я могу поместить на него поврежденный инструмент, щелкнув им ПКМ по устройству, после чего оно начнет восстанавливать инструмент, используя соответствующую эссенцию из банки, подключенную к нему. Инструменты будут стоить Instrumentum, оружие — Aversio, а броня — Praemunio.
+
+# -- MISC=Timetwister Stopwatch
+thaumictinkerer.research.recall_stopwatch.title=Секундомер повелителя времени
+thaumictinkerer.research.recall_stopwatch.title.subtitle=Назад в прошлое
+thaumictinkerer.research.recall_stopwatch.stage.1=С успехом сигила побега я не могу не задаться вопросом, что еще может быть возможно...
+thaumictinkerer.research.recall_stopwatch.stage.2=Я спроектировал устройство, способное разрывать саму ткань реальности и возвращать материю в прежнее состояние.<BR>При активации запускается таймер на 60 секунд.<BR>В течение этого времени я могу свободно передвигаться и действовать. Как только 60 секунд истекут, я буду возвращен в место, где активировал секундомер, с восстановлением моего здоровья и голода до предыдущих значений.
+thaumictinkerer.research.recall_stopwatch.addenda.1=Похоже, секундомер влияет только на мое физическое тело. Любые предметы, поврежденные или уничтоженные во время действия таймера, не будут возвращены в прежнее состояние.
+
+# -- MISC=Umbral Rose Bush
+thaumictinkerer.research.umbral_rosebush.title=Куст теневой розы
+thaumictinkerer.research.umbral_rosebush.title.subtitle=За спасение спрутов
+thaumictinkerer.research.umbral_rosebush.stage.1=Нет зрелища более жалкого, чем промокший Тауматург. Постоянная необходимость отправляться в океаны, чтобы находить и побеждать спрутов ради чернильных мешков, становится невероятным раздражителем.<BR>Тауматургия меня еще не подводила, поэтому должен быть ответ, который я могу придумать.
+thaumictinkerer.research.umbral_rosebush.stage.2=Я создал цветок, на котором растут розы, которые можно измельчить в черный краситель.<BR>Хотя растение растет медленно, с помощью ножниц я могу собирать отдельные розы, что дает мне почти бесконечный запас чернил без необходимости мокнуть.
+
+# -- NECROMANCY
+thaumictinkerer.research.necromancy.title=Некромантия
+thaumictinkerer.research.necromancy.title.subtitle=Некрономикон в комплект не входит
+thaumictinkerer.research.necromancy.stage.1=В своих путешествиях я сталкивался со странными решетчатыми устройствами в подземных подземельях, которые, кажется, создают существ из ничего.<BR>Поскольку все существа состоят из эссенции, я не могу не задаться вопросом, смогу ли я создать устройство, способное воспроизвести этот процесс с использованием эссенции.
+thaumictinkerer.research.necromancy.stage.2=Хотя этот процесс ближе к реконструкции, чем к некромантии, пустые сосуды, созданные таким образом, быстро распадаются, если их не привязать искусственной душой.<BR>Используя Плиту некромантии и правильно построенный алтарь, я могу использовать эссенцию для создания пустого сосуда и привязки искусственной души к созданной плоти.<BR>Когда алтарь возведен, мне нужно лишь поместить душу сущности в плиту и расставить нужные катализаторы на окружающие пьедесталы.<BR>Как только все компоненты окажутся на месте, алтарь автоматически начнет вытягивать эссенцию из близлежащих источников.<BR>После поглощения достаточного количества эссенции конструкций, прямо над ней материализуется существо, слегка снизив прочность души.
+thaumictinkerer.research.necromancy.addenda.1=Похоже, процесс создания существ полностью автономен, как если бы душа сущности сама хотела быть привязанной к сосуду.<BR>Если я захочу отключить алтарь или приостановить процесс реконструкции, мне стоит просто подать сигнал редстоуна на плиту.
+
+# -- NECROMANCY=ALIEN SOUL
+thaumictinkerer.research.alien_soul.title=Душа: Чужеродная
+thaumictinkerer.research.alien_soul.title.subtitle=Духи Бездны
+thaumictinkerer.research.alien_soul.stage.1=Мои попытки поднять иноизмерных существ в основном были бесплодными.<BR>Есть что-то иное в том, как их духи воплощают живую плоть.
+thaumictinkerer.research.alien_soul.stage.2=С этой новой душой я теперь могу привязывать души инопланетных существ к созданным сосудам.<BR>Однако душа оказалась гораздо более хрупкой, чем ожидалось, угасая примерно в два раза быстрее, чем мирные или враждебные души.
+
+# -- NECROMANCY=ARCANE SOUL
+thaumictinkerer.research.arcane_soul.title=Душа: Мистическая
+thaumictinkerer.research.arcane_soul.title.subtitle=Магические духи
+thaumictinkerer.research.arcane_soul.stage.1=Мои тесты показали, что разумных существ значительно труднее призывать, чем тех, у кого нет серьезных мыслительных процессов.<BR>Где есть воля, там появляется еще одно препятствие для преодоления в моих исследованиях...
+thaumictinkerer.research.arcane_soul.stage.2=С этим новым типом души я могу привязывать души разумных существ к пустым сосудам.<BR>Однако душа оказалась гораздо более хрупкой, чем ожидалось, угасая примерно в два раза быстрее, чем мирные или враждебные души.
+
+# -- NECROMANCY=DEMONIC SOUL
+thaumictinkerer.research.demonic_soul.title=Душа: Демоническая
+thaumictinkerer.research.demonic_soul.title.subtitle=Духи ада
+thaumictinkerer.research.demonic_soul.stage.1=Полагаю, оглядываясь назад, это должно было быть очевидным. У существ Незера нет душ, подобных тем, что находятся в верхнем мире.<BR>Однако если Незер действительно является своего рода загробной жизнью для этого мира, то эти существа должны иметь некоторое сходство с тем, что я нашел до сих пор.
+thaumictinkerer.research.demonic_soul.stage.2=С этим новым типом души я теперь могу привязывать души существ из Незера к пустым сосудам.<BR>Однако душа оказалась гораздо более хрупкой, чем ожидалось, угасая примерно в два раза быстрее, чем мирные или враждебные души.
+
+# -- NECROMANCY=ELDRITCH SOUL
+thaumictinkerer.research.eldritch_soul.title=Душа: Древняя
+thaumictinkerer.research.eldritch_soul.title.subtitle=Незримые духи
+thaumictinkerer.research.eldritch_soul.stage.1=Некоторые существа находятся далеко за пределами того, с чем могут справиться души, созданные мной до сих пор.<BR>По мере увеличения силы существа хрупкость души также возрастает...
+thaumictinkerer.research.eldritch_soul.stage.2=Мне едва удалось стабилизировать этот новый тип души на достаточно долгое время, чтобы он стал осязаемым.<BR>Судя по хрупкости древней души, она может иметь только одно использование перед полным рассеиванием. Я могу только представить, каких существ я могу создать с ее помощью...
+
+# -- NECROMANCY=HOSTILE SOUL
+thaumictinkerer.research.hostile_soul.title=Душа: Враждебная
+thaumictinkerer.research.hostile_soul.title.subtitle=Дурманящие духи
+thaumictinkerer.research.hostile_soul.stage.1=До сих пор мне удавалось воссоздавать только относительно слабых существ, в основном тех, у кого мало или совсем нет собственной воли, помимо базовых животных инстинктов.<BR>Чтобы идти дальше, мне понадобится новый тип души...
+thaumictinkerer.research.hostile_soul.stage.2=Мне удалось создать новую душу сущности, способную привязывать враждебных существ, обычно встречающихся в Оверворлде.
+
+# -- NECROMANCY=TAINTED SOUL
+thaumictinkerer.research.tainted_soul.title=Душа: Скверная
+thaumictinkerer.research.tainted_soul.title.subtitle=Духи-паразиты
+thaumictinkerer.research.tainted_soul.stage.1=Зараженные существа настолько не похожи ни на каких других существ, которых я встречал.<BR>То, как порча и флюкс могут заражать и поражать других существ, наводит меня на мысль, что существует связь, которую я еще не обнаружил.
+thaumictinkerer.research.tainted_soul.stage.2=Мне удалось создать новую душу сущности, способную привязывать зараженных существ к пустым сосудам.<BR>Мне следует соблюдать осторожность с ними, так как многие могут нанести необратимый ущерб, если их не контролировать.
+
+# GroovyScript
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.title=Плита некромантии
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.description=Использует катализаторы и эссенцию для спауна сущностей
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addRecipe=Добавляет рецепт, который не расходует компоненты в формате `recipeName`, `entity`, `centerItem`, `aspectStacks`, `components`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.addConsumingRecipe=Добавляет рецепт, который расходует все компоненты в формате `recipeName`, `entity`, `centerItem`, `aspectStacks`, `components`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe1=Удаляет рецепт в формате `recipeName`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.removeRecipe2=Удаляет рецепт в формате `entity`
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.recipeName.value=Имя рецепта
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.summonedEntity.value=Призываемая сущность
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.centerItem.value=Центральный предмет
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.components.value=Компоненты рецепта
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.aspects.value=Аспекты рецепта
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.consumeComponents.value=Будут ли расходоваться все компоненты рецепта по завершении
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.streamRecipeNames=Возвращает поток всех зарегистрированных имен рецептов
+groovyscript.wiki.thaumictinkerer.necromancy_tablet.getRecipe=Возвращает рецепт в формате `recipeName`. Может возвращать null
