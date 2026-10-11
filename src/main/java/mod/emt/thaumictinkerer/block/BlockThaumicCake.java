@@ -58,7 +58,7 @@ public class BlockThaumicCake extends BlockCake implements IBlockAddition {
     @Override
     public @NotNull Item getItemDropped(IBlockState state, @NotNull Random rand, int fortune) {
         if(state.getValue(BITES) == 0) {
-            return ForgeRegistries.ITEMS.getValue(THAUMIC_CAKE);
+            return Item.getItemFromBlock(this);
         }
 
         return Items.AIR;
@@ -66,7 +66,7 @@ public class BlockThaumicCake extends BlockCake implements IBlockAddition {
 
     @Override
     public @NotNull ItemStack getItem(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state) {
-        return new ItemStack(ForgeRegistries.ITEMS.getValue(THAUMIC_CAKE));
+        return new ItemStack(this);
     }
 
     private boolean eatCake(World world, BlockPos pos, IBlockState state, EntityPlayer player) {
@@ -101,13 +101,13 @@ public class BlockThaumicCake extends BlockCake implements IBlockAddition {
 
     @Override
     public void updateTick(@NotNull World world, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull Random rand) {
-        super.updateTick(world, pos, state, rand);
         int slicesEaten = getMetaFromState(state);
 
         // Restore slices overtime
         if(slicesEaten > 0) {
             slicesEaten--;
             world.setBlockState(pos, state.withProperty(BITES, slicesEaten), 2);
+            world.updateComparatorOutputLevel(pos, this);
         }
     }
 
