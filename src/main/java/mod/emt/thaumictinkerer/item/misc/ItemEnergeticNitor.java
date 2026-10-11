@@ -33,7 +33,7 @@ public class ItemEnergeticNitor extends AbstractItemAddition {
         if(!worldIn.isRemote && entityIn instanceof EntityPlayer && this.isEnabled(stack)) {
             EntityPlayer player = (EntityPlayer) entityIn;
             BlockPos pos = player.getPosition();
-            if(worldIn.isAirBlock(pos) && player.ticksExisted % 5 == 0 && worldIn.getLight(pos) <= 8) {
+            if(worldIn.isAirBlock(pos) && player.ticksExisted % 5 == 0 && worldIn.getLightFromNeighbors(pos) <= 8) {
                 worldIn.setBlockState(pos, ModBlocksTT.ENERGETIC_NITOR.getDefaultState());
             }
         }

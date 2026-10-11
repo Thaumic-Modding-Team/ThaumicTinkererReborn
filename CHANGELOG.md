@@ -6,6 +6,7 @@
 - Thaumic Restorer now restores 2 points of damage per essentia by default
 ### Fixed
 - Fixed Thaumic Cake not updating comparator level after regenerating slices
+- Fixed Energetic Nitor not automatically placing light sources at night
 
 ---
 
