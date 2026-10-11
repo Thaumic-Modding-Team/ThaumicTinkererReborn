@@ -164,7 +164,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
     }
 
     protected boolean attemptDrainAndRepair() {
-        int essentia = this.drawEssentia();
+        int essentia = this.drawEssentia() * ConfigHandlerTT.thaumicRestorer.damagePerEssentia;
         if(essentia > 0) {
             this.repairItemStack(essentia);
             return true;

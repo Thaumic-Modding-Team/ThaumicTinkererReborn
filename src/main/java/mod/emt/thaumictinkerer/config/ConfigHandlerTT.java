@@ -95,6 +95,11 @@ public class ConfigHandlerTT {
                 "If set to false, all tools will be repaired with Fabrico (Craft)."
         })
         public boolean dynamicAspects = true;
+
+        @Config.RangeInt(min = 1, max = 10000)
+        @Config.Name("Damage Per Essentia")
+        @Config.Comment("The amount of tool damage repaired by 1 essentia. Higher values will reduce the cost of repairing items.")
+        public int damagePerEssentia = 2;
     }
 
     public static class TransvectorDislocatorConfig {
