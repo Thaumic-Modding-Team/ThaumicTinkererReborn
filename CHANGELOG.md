@@ -1,4 +1,14 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.0.8
+### Added
+- Added configuration option adjusting the amount of damage repaired per point of essentia by the Thaumic Restorer
+### Changed
+- Thaumic Restorer now restores 2 points of damage per essentia by default
+### Fixed
+- Fixed Thaumic Cake not updating comparator level after regenerating slices
+
+---
+
 ## 1.0.7
 ### Added
 - Added `ru_ru.lang` courtesy of leskovetz
