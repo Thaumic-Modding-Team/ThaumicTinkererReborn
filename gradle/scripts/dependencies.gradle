@@ -51,7 +51,7 @@ dependencies {
     implementation rfg.deobf("curse.maven:thaumcraft-223628:2629023")
     implementation rfg.deobf('curse.maven:baubles-227083:2518667')
     implementation rfg.deobf("curse.maven:expanded-events-1396395:8204032")
-    implementation rfg.deobf("curse.maven:thaumicapi-1533287:8066628")
+    implementation rfg.deobf("curse.maven:thaumicapi-1533287:9140362")
 
     def modMap = [:]
     def loadMap = [:]
