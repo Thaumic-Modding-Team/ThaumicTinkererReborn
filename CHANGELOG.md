@@ -1,18 +1,14 @@
 # Thaumic Tinkerer: Reborn Changelog
-## 1.0.8
+## 1.0.7
 ### Added
 - Added configuration option adjusting the amount of damage repaired per point of essentia by the Thaumic Restorer
+- Added `ru_ru.lang` courtesy of leskovetz
 ### Changed
 - Thaumic Restorer now restores 2 points of damage per essentia by default
 ### Fixed
 - Fixed Thaumic Cake not updating comparator level after regenerating slices
 - Fixed Energetic Nitor not automatically placing light sources at night
 
----
-
-## 1.0.7
-### Added
-- Added `ru_ru.lang` courtesy of leskovetz
 ---
 
 ## 1.0.6
