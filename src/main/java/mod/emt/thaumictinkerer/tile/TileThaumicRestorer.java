@@ -292,7 +292,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         Aspect repairAspect = this.getRepairAspect();
         if(repairAspect != null && aspect == repairAspect && amount > 0 && this.canInputFrom(facing)) {
             amount = Math.min(amount, this.getRepairAmount());
-            this.repairItemStack(amount);
+            this.repairItemStack(ConfigHandlerTT.thaumicRestorer.damagePerEssentia);
             this.doRepairEffects();
             this.markDirty();
             return amount;

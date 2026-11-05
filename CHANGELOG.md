@@ -1,4 +1,10 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.0.9
+### Fixed
+- Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser 
+
+---
+
 ## 1.0.8
 ### Added
 - Added configuration option adjusting the amount of damage repaired per point of essentia by the Thaumic Restorer
