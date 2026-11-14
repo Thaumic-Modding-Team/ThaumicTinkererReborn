@@ -23,11 +23,19 @@ public class TileEnergeticNitor extends TileEntity implements ITickable {
             }
         }
 
-        if(world.isRemote) {
-            FXDispatcher.INSTANCE.drawNitorFlames(pos.getX() + 0.5F + world.rand.nextGaussian() * 0.025D, pos.getY() + 0.45F + world.rand.nextGaussian() * 0.025D,
-                    pos.getZ() + 0.5F + world.rand.nextGaussian() * 0.025D, world.rand.nextGaussian() * 0.0025D, world.rand.nextFloat() * 0.06F, world.rand.nextGaussian() * 0.0025D, 15606528, 0);
-            if(count++ % 10 == 0) {
-                FXDispatcher.INSTANCE.drawNitorCore(pos.getX() + 0.5F, pos.getY() + 0.49F, pos.getZ() + 0.5F, 0.0, 0.0, 0.0);
+        if(this.world.isRemote) {
+            FXDispatcher.INSTANCE.drawNitorFlames(
+                    this.pos.getX() + 0.5F + this.world.rand.nextGaussian() * 0.025D,
+                    this.pos.getY() + 0.45F + this.world.rand.nextGaussian() * 0.025D,
+                    this.pos.getZ() + 0.5F + this.world.rand.nextGaussian() * 0.025D,
+                    this.world.rand.nextGaussian() * 0.0025D,
+                    this.world.rand.nextFloat() * 0.06F,
+                    this.world.rand.nextGaussian() * 0.0025D,
+                    15606528, 0);
+            if(this.count++ % 10 == 0) {
+                FXDispatcher.INSTANCE.drawNitorCore(
+                        this.pos.getX() + 0.5F, this.pos.getY() + 0.49F, this.pos.getZ() + 0.5F,
+                        0.0, 0.0, 0.0);
             }
         }
     }

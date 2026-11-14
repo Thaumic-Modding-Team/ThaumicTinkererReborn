@@ -32,6 +32,11 @@ public class ItemDataFixer implements IFixableData {
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "experience_charm"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "funnel"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"));
+
+        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_light_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_light"));
+        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"));
+        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_shadow_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_shadow"));
+
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_item"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "mob_magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_mob"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "nitor_vapor"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"));
@@ -49,9 +54,6 @@ public class ItemDataFixer implements IFixableData {
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "enchantment_pillar"), new ResourceLocation(Thaumcraft.MODID, "pillar_arcane"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "example"), new ResourceLocation("minecraft", "air"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "form_revealer"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_light_item"), new ResourceLocation(Thaumcraft.MODID, "phial"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_shadow_item"), new ResourceLocation(Thaumcraft.MODID, "phial"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aer_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aer"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aqua_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aqua"));
         ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_farmland"), new ResourceLocation("minecraft", "farmland"));

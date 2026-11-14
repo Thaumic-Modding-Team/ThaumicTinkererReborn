@@ -76,6 +76,7 @@ public class RegistrarTT {
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event) {
         getAdditions().forEach(addition -> addition.registerModel(event));
+        ModEntitiesTT.registerEntityRenders();
     }
 
     public static List<IAddition> getAdditions() {

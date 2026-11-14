@@ -2,7 +2,6 @@ package mod.emt.thaumictinkerer.item;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.item.IItemAddition;
-import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemBlockSpecial;
 

@@ -27,6 +27,7 @@ public class ModBlocksTT {
     public static final Block ENERGETIC_NITOR = null;
     public static final Block ESSENTIA_FUNNEL = null;
     public static final Block ETHEREAL_PLATFORM = null;
+    public static final Block LUMINOUS_GAS = null;
     public static final Block NECROMANCY_TABLET = null;
     public static final Block PASSABLE_WALL = null;
     public static final Block TERRA_OBSIDIAN = null;
@@ -69,5 +70,6 @@ public class ModBlocksTT {
 
         //Blocks without items
         RegistrarTT.addAdditionToRegister(new BlockEnergeticNitor());
+        RegistrarTT.addAdditionToRegister(new BlockLuminousGas());
     }
 }

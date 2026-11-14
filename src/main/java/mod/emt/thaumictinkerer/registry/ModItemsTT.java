@@ -9,6 +9,7 @@ import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
 import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
 import mod.emt.thaumictinkerer.item.misc.ItemEnergeticNitor;
 import mod.emt.thaumictinkerer.item.misc.ItemEntitySoul;
+import mod.emt.thaumictinkerer.item.misc.ItemGasPhial;
 import mod.emt.thaumictinkerer.item.tools.*;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -31,6 +32,9 @@ public class ModItemsTT {
     public static final Item ENTITY_SOUL_TAINTED = null;
     public static final Item ESCAPE_SIGIL = null;
     public static final Item FELINE_CHARM = null;
+    public static final Item GAS_PHIAL_LIGHT = null;
+    public static final Item GAS_PHIAL_SHADOW = null;
+    public static final Item GAS_REMOVER = null;
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
     public static final Item RECALL_STOPWATCH = null;
@@ -45,6 +49,9 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemBase("umbral_dye", "dyeBlack"));
         RegistrarTT.addAdditionToRegister(new ItemBase("arcane_quartz", "gemArcaneQuartz"));
         RegistrarTT.addAdditionToRegister(new ItemEnergeticNitor());
+        RegistrarTT.addAdditionToRegister(new ItemGasRemover());
+        RegistrarTT.addAdditionToRegister(new ItemGasPhial("gas_phial_light", true));
+        RegistrarTT.addAdditionToRegister(new ItemGasPhial("gas_phial_shadow", false));
 
         //Tools
         RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());

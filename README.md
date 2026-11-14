@@ -42,6 +42,7 @@ Unlike the original, KAMI's content has been split off into its own addon separa
 - **Essentia Funnel:** A hopper addon that allows rapid transfer of essentia out of jars.
 - **Everfull Bucket:** Uses vis to generate water source blocks.
 - **Obsidia Terra:** Reinforced obsidian with 2.5 times the blast resistance of obsidian.
+- **Phial of Luminous/Shadowy Gas:** Phials of gas that can be thrown to create areas of light or shadow.
 - **Thaumic Cake:** Regenerating cake that grants Regeneration I when consumed.
 - **Thaumic Restorer:** Repairs damaged items using essentia. Tools are repaired with Instrumentum, weapons with Aversio, and armor with Praemunio.
 - **Thaumium Plated Cobblestone:** A cheap but more resistant building block.

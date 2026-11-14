@@ -7,6 +7,7 @@ import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
 import mod.emt.thaumictinkerer.compat.datafixes.BlockDataFixer;
 import mod.emt.thaumictinkerer.compat.datafixes.ItemDataFixer;
 import mod.emt.thaumictinkerer.network.PacketHandler;
+import mod.emt.thaumictinkerer.registry.ModEntitiesTT;
 import mod.emt.thaumictinkerer.registry.RegistrarTT;
 import mod.emt.thaumictinkerer.utils.helpers.CompatHelper;
 import net.minecraft.util.ResourceLocation;
@@ -30,6 +31,7 @@ public class CommonProxy {
 
     public void init() {
         RegistrarTT.getProxyAdditions().forEach(IProxy::init);
+        ModEntitiesTT.registerEntities();
         registerResearch();
 
         ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(ThaumicTinkerer.MOD_ID, 1);
