@@ -1,6 +1,7 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.AbstractBlockAddition;
+import mod.emt.thaumictinkerer.item.tools.ItemGasRemover;
 import mod.emt.thaumictinkerer.registry.ModItemsTT;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
@@ -12,11 +13,14 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.MobEffects;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumBlockRenderType;
 import net.minecraft.util.EnumFacing;
+import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
@@ -73,12 +77,10 @@ public class BlockLuminousGas extends AbstractBlockAddition {
     @SideOnly(Side.CLIENT)
     @Override
     public void randomDisplayTick(@NotNull IBlockState state, @NotNull World world, @NotNull BlockPos pos, @NotNull Random rand) {
-        Item mainhand = Minecraft.getMinecraft().player.getHeldItemMainhand().getItem();
-        Item offhand = Minecraft.getMinecraft().player.getHeldItemOffhand().getItem();
         double j = 1.2D;
 
         // Holding a Gas Remover on either hand will make the particles more visible
-        if(mainhand == ModItemsTT.GAS_REMOVER || offhand == ModItemsTT.GAS_REMOVER) {
+        if(isHoldingGasRemover(Minecraft.getMinecraft().player)) {
             FXDispatcher.INSTANCE.drawWispyMotes(
                     pos.getX() + 0.5D + world.rand.nextDouble() * j - j / 2,
                     pos.getY() + 0.5D + world.rand.nextDouble() * j - j / 2,
@@ -103,6 +105,16 @@ public class BlockLuminousGas extends AbstractBlockAddition {
                     -0.2F
             );
         }
+    }
+
+    public static boolean isHoldingGasRemover(EntityPlayer player) {
+        for(EnumHand hand : EnumHand.values()) {
+            ItemStack stack = player.getHeldItem(hand);
+            if(!stack.isEmpty() && stack.getItem() instanceof ItemGasRemover) {
+                return true;
+            }
+        }
+        return false;
     }
 
     @SuppressWarnings("deprecation")
