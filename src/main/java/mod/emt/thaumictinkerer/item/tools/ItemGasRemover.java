@@ -54,6 +54,6 @@ public class ItemGasRemover extends AbstractItemAddition {
 
     @Override
     public int getMaxItemUseDuration(@NotNull ItemStack stack) {
-        return 40;
+        return 30;
     }
 }

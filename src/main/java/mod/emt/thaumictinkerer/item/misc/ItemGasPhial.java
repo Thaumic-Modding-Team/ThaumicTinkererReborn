@@ -1,7 +1,14 @@
 package mod.emt.thaumictinkerer.item.misc;
 
+import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
 import mod.emt.thaumictinkerer.entity.EntityGasPhial;
+import net.minecraft.block.BlockDispenser;
+import net.minecraft.dispenser.BehaviorProjectileDispense;
+import net.minecraft.dispenser.IBehaviorDispenseItem;
+import net.minecraft.dispenser.IBlockSource;
+import net.minecraft.dispenser.IPosition;
+import net.minecraft.entity.IProjectile;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
@@ -16,7 +23,7 @@ import net.minecraftforge.common.IRarity;
 import net.minecraftforge.items.ItemHandlerHelper;
 import org.jetbrains.annotations.NotNull;
 
-public class ItemGasPhial extends AbstractItemAddition {
+public class ItemGasPhial extends AbstractItemAddition implements IProxy {
     private final boolean isLight;
 
     public ItemGasPhial(String unlocName, boolean isLight) {
@@ -53,5 +60,34 @@ public class ItemGasPhial extends AbstractItemAddition {
     @Override
     public boolean hasEffect(@NotNull ItemStack stack) {
         return true;
+    }
+
+    @Override
+    public void init() {
+        BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(this, new PhialDispenserLogic());
+    }
+
+    public static class PhialDispenserLogic implements IBehaviorDispenseItem {
+        @Override
+        public @NotNull ItemStack dispense(@NotNull IBlockSource source, @NotNull ItemStack stack) {
+            return new BehaviorProjectileDispense() {
+                @Override
+                protected @NotNull IProjectile getProjectileEntity(@NotNull World worldIn, @NotNull IPosition position, @NotNull ItemStack stackIn) {
+                    ItemStack thrown = ItemHandlerHelper.copyStackWithSize(stack, 1);
+                    boolean isLightEmitting = thrown.getItem() instanceof ItemGasPhial && ((ItemGasPhial) thrown.getItem()).isLightEmitting();
+                    return new EntityGasPhial(worldIn, position.getX(), position.getY(), position.getZ(), thrown, isLightEmitting);
+                }
+
+                @Override
+                protected float getProjectileInaccuracy() {
+                    return super.getProjectileInaccuracy() * 0.5f;
+                }
+
+                @Override
+                protected float getProjectileVelocity() {
+                    return super.getProjectileVelocity() * 1.25f;
+                }
+            }.dispense(source, stack);
+        }
     }
 }
