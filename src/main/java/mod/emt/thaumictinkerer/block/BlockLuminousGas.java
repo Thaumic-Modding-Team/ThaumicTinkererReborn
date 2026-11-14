@@ -1,12 +1,14 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.AbstractBlockAddition;
+import mod.emt.thaumictinkerer.registry.ModItemsTT;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;
 import net.minecraft.block.state.BlockFaceShape;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
@@ -26,6 +28,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
+import thaumcraft.client.fx.FXDispatcher;
 
 import java.util.Random;
 
@@ -69,9 +72,37 @@ public class BlockLuminousGas extends AbstractBlockAddition {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void randomDisplayTick(@NotNull IBlockState stateIn, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull Random rand) {
-        //TODO: Particle effects go here
-        //TODO: Add a more visible effect if the player is holding a gas remover. It's clientside so you can use Minecraft.getMinecraft().player
+    public void randomDisplayTick(@NotNull IBlockState state, @NotNull World world, @NotNull BlockPos pos, @NotNull Random rand) {
+        Item mainhand = Minecraft.getMinecraft().player.getHeldItemMainhand().getItem();
+        Item offhand = Minecraft.getMinecraft().player.getHeldItemOffhand().getItem();
+        double j = 1.2D;
+
+        // Holding a Gas Remover on either hand will make the particles more visible
+        if(mainhand == ModItemsTT.GAS_REMOVER || offhand == ModItemsTT.GAS_REMOVER) {
+            FXDispatcher.INSTANCE.drawWispyMotes(
+                    pos.getX() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    pos.getY() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    pos.getZ() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    0.0D, 0.0D, 0.0D,
+                    10,
+                    state.getValue(LUMINOUS) ? 0.85F + world.rand.nextFloat() * 0.15F : 0.35F + world.rand.nextFloat() * 0.25F,
+                    state.getValue(LUMINOUS) ? 0.65F + world.rand.nextFloat() * 0.30F : 0.08F + world.rand.nextFloat() * 0.10F,
+                    state.getValue(LUMINOUS) ? world.rand.nextFloat() * 0.08F : 0.45F + world.rand.nextFloat() * 0.25F,
+                    -0.2F
+            );
+        } else {
+            FXDispatcher.INSTANCE.drawWispyMotes(
+                    pos.getX() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    pos.getY() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    pos.getZ() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                    0.0D, 0.0D, 0.0D,
+                    10,
+                    state.getValue(LUMINOUS) ? 0.15F + world.rand.nextFloat() * 0.06F : 0.08F + world.rand.nextFloat() * 0.10F,
+                    state.getValue(LUMINOUS) ? 0.10F + world.rand.nextFloat() * 0.05F : 0.02F + world.rand.nextFloat() * 0.04F,
+                    state.getValue(LUMINOUS) ? 0.005F + world.rand.nextFloat() * 0.02F : 0.12F + world.rand.nextFloat() * 0.12F,
+                    -0.2F
+            );
+        }
     }
 
     @SuppressWarnings("deprecation")

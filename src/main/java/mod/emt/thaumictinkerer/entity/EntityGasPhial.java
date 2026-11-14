@@ -87,9 +87,9 @@ public class EntityGasPhial extends EntityThrowable {
                             checkPos.getZ() + 0.5D + world.rand.nextDouble() * j - j / 2,
                             0.0D, 0.0D, 0.0D,
                             10,
-                            this.isLightEmitting() ? 0.85F + world.rand.nextFloat() * 0.15F : 0.18F + world.rand.nextFloat() * 0.20F,
-                            this.isLightEmitting() ? 0.65F + world.rand.nextFloat() * 0.30F : 0.02F + world.rand.nextFloat() * 0.08F,
-                            this.isLightEmitting() ? world.rand.nextFloat() * 0.08F : 0.25F + world.rand.nextFloat() * 0.25F,
+                            this.isLightEmitting() ? 0.85F + world.rand.nextFloat() * 0.15F : 0.35F + world.rand.nextFloat() * 0.25F,
+                            this.isLightEmitting() ? 0.65F + world.rand.nextFloat() * 0.30F : 0.08F + world.rand.nextFloat() * 0.10F,
+                            this.isLightEmitting() ? world.rand.nextFloat() * 0.08F : 0.45F + world.rand.nextFloat() * 0.25F,
                             -0.2F
                     );
                 }
