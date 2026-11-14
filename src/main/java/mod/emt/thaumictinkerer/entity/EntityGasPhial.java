@@ -20,6 +20,7 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import org.jetbrains.annotations.NotNull;
+import thaumcraft.client.fx.FXDispatcher;
 
 import java.util.HashSet;
 import java.util.List;
@@ -75,11 +76,22 @@ public class EntityGasPhial extends EntityThrowable {
         for(BlockPos offset : OFFSETS) {
             BlockPos checkPos = offset.add(impact);
             IBlockState checkState = this.world.getBlockState(checkPos);
-            if (checkState.getBlock().isAir(checkState, this.world, checkPos) && checkState.getBlock().isReplaceable(this.world, checkPos)) {
-                if (!this.world.isRemote) {
+            if(checkState.getBlock().isAir(checkState, this.world, checkPos) && checkState.getBlock().isReplaceable(this.world, checkPos)) {
+                if(!this.world.isRemote) {
                     this.world.setBlockState(checkPos, state);
                 } else {
-                    //TODO: Impact effect
+                    double j = 1.2D;
+                    FXDispatcher.INSTANCE.drawWispyMotes(
+                            checkPos.getX() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                            checkPos.getY() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                            checkPos.getZ() + 0.5D + world.rand.nextDouble() * j - j / 2,
+                            0.0D, 0.0D, 0.0D,
+                            10,
+                            this.isLightEmitting() ? 0.85F + world.rand.nextFloat() * 0.15F : 0.18F + world.rand.nextFloat() * 0.20F,
+                            this.isLightEmitting() ? 0.65F + world.rand.nextFloat() * 0.30F : 0.02F + world.rand.nextFloat() * 0.08F,
+                            this.isLightEmitting() ? world.rand.nextFloat() * 0.08F : 0.25F + world.rand.nextFloat() * 0.25F,
+                            -0.2F
+                    );
                 }
             }
         }
