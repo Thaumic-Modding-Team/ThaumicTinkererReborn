@@ -5,70 +5,146 @@ import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemBauble;
-import mod.emt.thaumictinkerer.recipes.crafting.RecipeBlackHoleRingExtract;
-import mod.emt.thaumictinkerer.recipes.crafting.RecipeBlackHoleRingInsert;
+import mod.emt.thaumictinkerer.container.handlers.BlackHoleRingHandler;
+import mod.emt.thaumictinkerer.recipes.crafting.RecipeBlackHoleRingClearSlot;
+import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.nbt.NBTTagByte;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraft.nbt.NBTTagList;
+import net.minecraft.nbt.NBTTagInt;
+import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.util.math.RayTraceResult;
+import net.minecraft.util.math.Vec3d;
+import net.minecraft.util.text.Style;
+import net.minecraft.util.text.TextComponentTranslation;
+import net.minecraft.util.text.TextFormatting;
 import net.minecraft.world.World;
 import net.minecraftforge.common.IRarity;
 import net.minecraftforge.common.MinecraftForge;
-import net.minecraftforge.common.util.Constants;
+import net.minecraftforge.common.capabilities.ICapabilityProvider;
+import net.minecraftforge.common.util.FakePlayer;
+import net.minecraftforge.event.entity.player.EntityItemPickupEvent;
 import net.minecraftforge.event.world.BlockEvent;
 import net.minecraftforge.fml.common.eventhandler.EventPriority;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.gameevent.PlayerEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.CapabilityItemHandler;
+import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.ItemHandlerHelper;
 import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 
-import java.util.LinkedHashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
+    private static final Map<UUID, ItemStack> PROVISION_CACHE = new HashMap<>();
+
     public ItemBlackHoleRing() {
         super("black_hole_ring");
         this.addPropertyOverride(new ResourceLocation("enabled"), ((stack, worldIn, entityIn) -> this.isEnabled() ? 1 : 0));
     }
 
     @Override
-    public void onUpdate(@NotNull ItemStack stack, @NotNull World worldIn, @NotNull Entity entityIn, int itemSlot, boolean isSelected) {
-        if(!worldIn.isRemote && this.getEnabled(stack) && entityIn instanceof EntityPlayer) {
-            this.onWornTick(stack, (EntityPlayer) entityIn);
-        }
+    public @Nullable ICapabilityProvider initCapabilities(@NotNull ItemStack stack, @Nullable NBTTagCompound nbt) {
+        return new BlackHoleRingHandler(stack);
     }
 
     @Override
-    public void onWornTick(ItemStack ring, EntityLivingBase player) {
-        Tuple<ItemStack, Integer> toGive = this.getToGivePlayer(ring);
-        if(toGive != null && player instanceof EntityPlayer) {
-            ItemHandlerHelper.giveItemToPlayer((EntityPlayer) player, toGive.getFirst(), toGive.getSecond());
-            this.clearToGivePlayer(ring);
+    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+        if(entityIn instanceof EntityPlayer) {
+            UUID playerId = ((EntityPlayer) entityIn).getGameProfile().getId();
+            if(PROVISION_CACHE.containsKey(playerId)) {
+                this.provideMaterials((EntityPlayer) entityIn, stack, PROVISION_CACHE.get(playerId));
+            }
         }
     }
 
     @Override
     public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World worldIn, EntityPlayer playerIn, @NotNull EnumHand handIn) {
-        ItemStack stack = playerIn.getHeldItem(handIn);
+        ItemStack heldStack = playerIn.getHeldItem(handIn);
         if(playerIn.isSneaking()) {
-            this.setEnabled(stack, !this.getEnabled(stack));
+            this.setRingEnabled(heldStack, !this.isRingEnabled(heldStack));
         } else {
-            this.nextActiveSlot(stack);
+            this.nextActiveSlot(heldStack);
+            if(!worldIn.isRemote) {
+                ItemStack currStack = this.getCurrentStack(heldStack);
+                ItemStack filterStack = this.getCurrentFilter(heldStack);
+                if(!filterStack.isEmpty()) {
+                    String itemName = filterStack.getDisplayName();
+                    int count = currStack.getCount();
+                    playerIn.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:black_hole_ring.slotinfo", itemName, count), true);
+                } else {
+                    playerIn.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:black_hole_ring.slotempty", new TextComponentTranslation("tooltip.thaumictinkerer:empty")).setStyle(new Style().setColor(TextFormatting.GRAY)), true);
+                }
+            }
         }
-        return new ActionResult<>(EnumActionResult.SUCCESS, stack);
+        return new ActionResult<>(EnumActionResult.SUCCESS, heldStack);
+    }
+
+    @Override
+    public @NotNull EnumActionResult onItemUse(@NotNull EntityPlayer player, @NotNull World worldIn, @NotNull BlockPos pos, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
+        ItemStack heldStack = player.getHeldItem(hand);
+        RayTraceResult trace = new RayTraceResult(new Vec3d(hitX, hitY, hitZ), facing, pos);
+        IBlockState state = worldIn.getBlockState(pos);
+        ItemStack blockStack = state.getBlock().getPickBlock(state, trace, worldIn, pos, player);
+        if (!blockStack.isEmpty()) {
+            int slot = this.getActiveSlot(heldStack);
+            BlackHoleRingHandler handler = this.getRingHandler(heldStack);
+            if (handler != null && handler.getFilter(slot).isEmpty()) {
+                handler.setFilter(slot, blockStack);
+                if(!worldIn.isRemote) {
+                    player.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:black_hole_ring.selected", blockStack.getDisplayName()), false);
+                }
+            }
+        }
+        return EnumActionResult.SUCCESS;
+    }
+
+    @Override
+    public @NotNull EnumActionResult onItemUseFirst(EntityPlayer player, @NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing side, float hitX, float hitY, float hitZ, @NotNull EnumHand hand) {
+        ItemStack heldItem = player.getHeldItem(hand);
+        if(player.isSneaking()) {
+            TileEntity tile = world.getTileEntity(pos);
+            if (tile != null) {
+                IItemHandler tileHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
+                BlackHoleRingHandler ringHandler = this.getRingHandler(heldItem);
+                if (tileHandler != null && ringHandler != null) {
+                    //Pulling from the current active slot and inserting into the tile inventory
+                    int slot = this.getActiveSlot(heldItem);
+                    ItemStack slotStack = ringHandler.getStackInSlot(slot);
+                    while(!slotStack.isEmpty()) {
+                        ItemStack toInsert = ringHandler.extractItem(slot, ringHandler.getSlotLimit(slot), true);
+                        ItemStack rem = ItemHandlerHelper.insertItem(tileHandler, toInsert, true);
+                        if (rem.isEmpty() || rem.getCount() != toInsert.getCount()) {
+                            ItemHandlerHelper.insertItem(tileHandler, ringHandler.extractItem(slot, toInsert.getCount() - rem.getCount(), false), false);
+                            slotStack = ringHandler.getStackInSlot(slot);
+                        } else {
+                            break;
+                        }
+                    }
+                    return EnumActionResult.SUCCESS;
+                }
+            }
+        }
+        return super.onItemUseFirst(player, world, pos, side, hitX, hitY, hitZ, hand);
+    }
+
+    @Override
+    public boolean hasEffect(@NotNull ItemStack stack) {
+        return this.isRingEnabled(stack);
     }
 
     @Override
@@ -79,18 +155,120 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(@NotNull ItemStack stack, @Nullable World worldIn, @NotNull List<String> tooltip, @NotNull ITooltipFlag flagIn) {
-        tooltip.add(I18n.format("tooltip.thaumictinkerer:" + (this.getEnabled(stack) ? "enabled" : "disabled")));
+        tooltip.add(I18n.format("tooltip.thaumictinkerer:" + (this.isRingEnabled(stack) ? "enabled" : "disabled")));
         tooltip.add(I18n.format("tooltip.thaumictinkerer:black_hole_ring.info"));
-        if(this.isRingEmpty(stack)) {
-            tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:empty"));
-        } else {
-            //TODO: Create an indicator for the currently active slot.
+        BlackHoleRingHandler handler = this.getRingHandler(stack);
+        if(handler != null) {
             int activeSlot = this.getActiveSlot(stack);
-            this.getRingContents(stack).forEach((contents, amount) -> {
-                //TODO: fix these colors in the language key
-                //TODO: Change the amount into a formatted string
-                tooltip.add("  " + I18n.format("tooltip.thaumictinkerer:black_hole_ring.slot", contents.getDisplayName(), amount));
-            });
+            for (int i = 0; i < handler.getSlots(); i++) {
+                String info = (i == activeSlot ? " ┠>" : " ┠ ");
+                ItemStack filterStack = handler.getFilter(i);
+                ItemStack slotStack = handler.getStackInSlot(i);
+                if(filterStack.isEmpty()) {
+                    info += I18n.format("tooltip.thaumictinkerer:empty");
+                } else {
+                    info += filterStack.getDisplayName() + " x" + slotStack.getCount();
+                }
+                tooltip.add(info);
+            }
+        }
+    }
+
+    public List<ItemStack> getBlackHoleRings(EntityPlayer player) {
+        List<ItemStack> rings = new ArrayList<>();
+        IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
+        for(int i = 0; i < handler.getSlots(); i++) {
+            ItemStack stack = handler.getStackInSlot(i);
+            if(!stack.isEmpty() && stack.getItem() instanceof ItemBlackHoleRing) {
+                rings.add(stack);
+            }
+        }
+        for(int i = 0; i < player.inventory.getSizeInventory(); i++) {
+            ItemStack stack = player.inventory.getStackInSlot(i);
+            if(!stack.isEmpty() && stack.getItem() instanceof ItemBlackHoleRing) {
+                rings.add(stack);
+            }
+        }
+        return rings;
+    }
+
+    @Nullable
+    public BlackHoleRingHandler getRingHandler(ItemStack ring) {
+        IItemHandler handler = ring.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+        return handler instanceof BlackHoleRingHandler ? (BlackHoleRingHandler) handler : null;
+    }
+
+    public ItemStack getCurrentStack(ItemStack ring) {
+        BlackHoleRingHandler handler = this.getRingHandler(ring);
+        return handler != null ? handler.getStackInSlot(this.getActiveSlot(ring)) : ItemStack.EMPTY;
+    }
+
+    public ItemStack getCurrentFilter(ItemStack ring) {
+        BlackHoleRingHandler handler = this.getRingHandler(ring);
+        return handler != null ? handler.getFilter(this.getActiveSlot(ring)) : ItemStack.EMPTY;
+    }
+
+    public void provideMaterials(EntityPlayer player, ItemStack ringStack, ItemStack toProvide) {
+        if(!player.getHeldItem(EnumHand.MAIN_HAND).isEmpty()) {
+            PROVISION_CACHE.remove(player.getGameProfile().getId());
+            return;
+        }
+
+        if(!this.isRingEnabled(ringStack)) {
+            return;
+        }
+
+        BlackHoleRingHandler handler = this.getRingHandler(ringStack);
+        if(handler != null) {
+            for(int i = 0; i < handler.getSlots(); i++) {
+                ItemStack stack = handler.getStackInSlot(i);
+                if(!stack.isEmpty() && ItemHandlerHelper.canItemStacksStack(stack, toProvide)) {
+                    ItemStack extracted = handler.extractItem(i, stack.getMaxStackSize(), false);
+                    ItemHandlerHelper.giveItemToPlayer(player, extracted, player.inventory.currentItem);
+                    PROVISION_CACHE.remove(player.getGameProfile().getId());
+                    return;
+                }
+            }
+        }
+    }
+
+    //##########################################################
+    // Tag Stuff
+
+    public boolean isRingEnabled(ItemStack stack) {
+        return stack.getTagCompound() != null && stack.getTagCompound().getBoolean("enabled");
+    }
+
+    public void setRingEnabled(ItemStack stack, boolean enabled) {
+        stack.setTagInfo("enabled", new NBTTagByte((byte) (enabled ? 1 : 0)));
+    }
+
+    public int getActiveSlot(ItemStack stack) {
+        return stack.getTagCompound() != null ? stack.getTagCompound().getInteger("activeSlot") : 0;
+    }
+
+    public void setActiveSlot(ItemStack stack, int slot) {
+        stack.setTagInfo("activeSlot", new NBTTagInt(slot));
+    }
+
+    public void nextActiveSlot(ItemStack stack) {
+        int activeSlot = this.getActiveSlot(stack);
+        IItemHandler handler = stack.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+        if(handler != null) {
+            this.setActiveSlot(stack, (activeSlot + 1) % handler.getSlots());
+        }
+    }
+
+    //##########################################################
+    // IBauble
+
+    @Override
+    public void onWornTick(ItemStack stack, EntityLivingBase player) {
+        if(player instanceof EntityPlayer) {
+            UUID playerId = ((EntityPlayer) player).getGameProfile().getId();
+            if(PROVISION_CACHE.containsKey(playerId)) {
+                this.provideMaterials((EntityPlayer) player, stack, PROVISION_CACHE.get(playerId));
+            }
         }
     }
 
@@ -104,296 +282,54 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         return BaubleType.RING;
     }
 
-    public boolean isRingEmpty(ItemStack ring) {
-        return ring.getTagCompound() == null
-                || !ring.getTagCompound().hasKey("inventory")
-                || ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND).isEmpty();
-    }
-
-    public Map<ItemStack, Integer> getRingContents(ItemStack ring) {
-        Map<ItemStack, Integer> contents = new LinkedHashMap<>();
-        if(ring.getTagCompound() != null) {
-            NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-            for(int i = 0; i < list.tagCount(); i++) {
-                NBTTagCompound tag = list.getCompoundTagAt(i);
-                contents.put(new ItemStack(tag.getCompoundTag("item")), tag.getInteger("amount"));
-            }
-        }
-        return contents;
-    }
-
-    public void addItem(ItemStack ring, ItemStack stack) {
-        if(ring.getTagCompound() == null) {
-            ring.setTagCompound(new NBTTagCompound());
-        }
-
-        NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-        for(int i = 0; i < list.tagCount(); i++) {
-            NBTTagCompound tag = list.getCompoundTagAt(i);
-            ItemStack listStack = new ItemStack(tag.getCompoundTag("item"));
-            if(ItemHandlerHelper.canItemStacksStack(listStack, stack)) {
-                int current = tag.getInteger("amount");
-                tag.setInteger("amount", current + stack.getCount());
-                return;
-            }
-        }
-        ItemStack copy = stack.copy();
-        int amount = copy.getCount();
-        copy.setCount(1);
-
-        NBTTagCompound tag = new NBTTagCompound();
-        tag.setTag("item", copy.serializeNBT());
-        tag.setInteger("amount", amount);
-        list.appendTag(tag);
-    }
-
-    public void removeItem(ItemStack ring, ItemStack stack) {
-        if(ring.getTagCompound() != null) {
-            NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-            for(int i = 0; i < list.tagCount(); i++) {
-                NBTTagCompound tag = list.getCompoundTagAt(i);
-                ItemStack listStack = new ItemStack(tag.getCompoundTag("item"));
-                if(ItemHandlerHelper.canItemStacksStack(listStack, stack)) {
-                    list.removeTag(i);
-                    if(this.getActiveSlot(ring) == i) {
-                        this.nextActiveSlot(ring);
-                    }
-                    if(list.isEmpty()) {
-                        ring.getTagCompound().removeTag("inventory");
-                    }
-                    return;
-                }
-            }
-        }
-    }
-
-    public void removeAllItems(ItemStack ring) {
-        if(ring.getTagCompound() != null) {
-            ring.getTagCompound().removeTag("inventory");
-            ring.getTagCompound().removeTag("activeSlot");
-        }
-    }
-
-    public int getContainedAmount(ItemStack ring, ItemStack stack) {
-        if(ring.getTagCompound() != null) {
-            NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-            for(int i = 0; i < list.tagCount(); i++) {
-                NBTTagCompound tag = list.getCompoundTagAt(i);
-                ItemStack listStack = new ItemStack(tag.getCompoundTag("item"));
-                if(ItemHandlerHelper.canItemStacksStack(listStack, stack)) {
-                    return tag.getInteger("amount");
-                }
-            }
-        }
-        return -1;
-    }
-
-    public void setContainedAmount(ItemStack ring, ItemStack stack, int amount) {
-        if(ring.getTagCompound() == null) {
-            ring.setTagCompound(new NBTTagCompound());
-        }
-
-        NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-        for(int i = 0; i < list.tagCount(); i++) {
-            NBTTagCompound tag = list.getCompoundTagAt(i);
-            ItemStack listStack = new ItemStack(tag.getCompoundTag("item"));
-            if(ItemHandlerHelper.canItemStacksStack(listStack, stack)) {
-                tag.setInteger("amount", amount);
-                ring.getTagCompound().setTag("inventory", list);
-                return;
-            }
-        }
-        NBTTagCompound newTag = new NBTTagCompound();
-        newTag.setTag("item", stack.serializeNBT());
-        newTag.setInteger("amount", amount);
-        list.appendTag(newTag);
-        ring.getTagCompound().setTag("inventory", list);
-    }
-
-
-
-
-
-
-
-
-    public boolean canInsertItem(ItemStack ring, ItemStack stack) {
-        if(ring.getTagCompound() != null) {
-            NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-            for(int i = 0; i < list.tagCount(); i++) {
-                NBTTagCompound tag = list.getCompoundTagAt(i);
-                ItemStack listStack = new ItemStack(tag.getCompoundTag("item"));
-                if(ItemHandlerHelper.canItemStacksStack(listStack, stack)) {
-                    return true;
-                }
-            }
-        }
-        return false;
-    }
-
-    public ItemStack insertStack(ItemStack ring, ItemStack stack, boolean forceInsert) {
-        return insertAmount(ring, stack, stack.getCount(), forceInsert);
-    }
-
-    public ItemStack insertAmount(ItemStack ring, ItemStack stack, int amount, boolean forceInsert) {
-        if(forceInsert || (this.getEnabled(ring) && this.canInsertItem(ring, stack))) {
-            int current = Math.max(0, this.getContainedAmount(ring, stack));
-            this.setContainedAmount(ring, stack, current + amount);
-            return ItemStack.EMPTY;
-        }
-        return stack;
-    }
-
-
-
-
-
-
-
-    public ItemStack extractStack(ItemStack ring, ItemStack stack, boolean removeIfEmpty) {
-        return this.extractAmount(ring, stack, stack.getCount(), removeIfEmpty);
-    }
-
-    public ItemStack extractAmount(ItemStack ring, ItemStack stack, int amount, boolean removeIfEmpty) {
-        if(amount <= 0)
-            return ItemStack.EMPTY;
-
-        int current = this.getContainedAmount(ring, stack);
-        if(current > -1) {
-            if(current == 0) {
-                if(removeIfEmpty) {
-                    this.removeItem(ring, stack);
-                }
-            } else {
-                int extracted = Math.min(amount, current);
-                ItemStack copy = stack.copy();
-                copy.setCount(extracted);
-                this.setContainedAmount(ring, stack, current - extracted);
-                return copy;
-            }
-        }
-        return ItemStack.EMPTY;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-    @Nullable
-    public Tuple<ItemStack,Integer> getToGivePlayer(ItemStack ring) {
-        if(ring.getTagCompound() != null && ring.getTagCompound().hasKey("toGive")) {
-            NBTTagCompound tag = ring.getTagCompound().getCompoundTag("toGive");
-            ItemStack toGive = new ItemStack(tag.getCompoundTag("item"));
-            int slot = tag.getInteger("slot");
-            return new Tuple<>(toGive, slot);
-        }
-        return null;
-    }
-
-    public void setToGivePlayer(ItemStack ring, ItemStack toGive, int slotPriority) {
-        NBTTagCompound tag = new NBTTagCompound();
-        tag.setTag("item", toGive.serializeNBT());
-        tag.setInteger("slot", slotPriority);
-        ring.setTagInfo("toGive", tag);
-    }
-
-    public void clearToGivePlayer(ItemStack ring) {
-        if(ring.getTagCompound() != null) {
-            ring.getTagCompound().removeTag("toGive");
-        }
-    }
-
-    public boolean getEnabled(ItemStack ring) {
-        return ring.getTagCompound() != null && ring.getTagCompound().getBoolean("isEnabled");
-    }
-
-    public void setEnabled(ItemStack ring, boolean isEnabled) {
-        ring.setTagInfo("isEnabled", new NBTTagByte((byte) (isEnabled ? 1 : 0)));
-    }
-
-    public int getActiveSlot(ItemStack ring) {
-        if(ring.getTagCompound() != null && ring.getTagCompound().hasKey("activeSlot")) {
-            return ring.getTagCompound().getInteger("activeSlot");
-        }
-        return -1;
-    }
-
-    public void nextActiveSlot(ItemStack ring) {
-        int activeSlot = this.getActiveSlot(ring);
-        if(ring.getTagCompound() != null && ring.getTagCompound().hasKey("inventory") && activeSlot > -1) {
-            NBTTagList list = ring.getTagCompound().getTagList("inventory", Constants.NBT.TAG_COMPOUND);
-            if(list.tagCount() > 0) {
-                int next = (activeSlot + 1) % list.tagCount();
-                ring.getTagCompound().setInteger("activeSlot", next);
-            } else {
-                ring.getTagCompound().removeTag("activeSlot");
-            }
-        }
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    //##########################################################
+    // Events
 
     @SuppressWarnings("deprecation")
     @SubscribeEvent(priority = EventPriority.LOWEST)
     public void onBlockPlaced(BlockEvent.PlaceEvent event) {
-        if(!event.isCanceled() && event.getEntity() instanceof EntityPlayer && !event.getEntity().world.isRemote && event.getHand() != null) {
-            EntityPlayer player = (EntityPlayer) event.getEntity();
-            EnumHand hand = event.getHand();
-            IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
-            int slot = BaublesApi.isBaubleEquipped(player, this);
-            if(slot > -1) {
-                ItemStack ring = handler.getStackInSlot(slot).copy();
-                ItemStack placedStack = player.getHeldItem(hand);
-                if(this.getEnabled(ring) && !placedStack.isEmpty() && placedStack.getCount() == 1 && !player.isCreative()) {
-                    ItemStack extracted = this.extractAmount(ring, placedStack, 1, false);
-                    if(!extracted.isEmpty()) {
-                        int invSlot = hand == EnumHand.MAIN_HAND ? player.inventory.currentItem : player.inventory.getSizeInventory() - 1;
-                        this.setToGivePlayer(ring, extracted, invSlot);
-                        handler.setStackInSlot(slot, ring);
-                    }
-                }
+        EntityPlayer player = event.getPlayer();
+        if(player != null && !(player instanceof FakePlayer) && !player.isCreative() && event.getHand() == EnumHand.MAIN_HAND) {
+            ItemStack heldStack = player.getHeldItem(event.getHand());
+            if(heldStack.getCount() == 1) {
+                PROVISION_CACHE.put(player.getGameProfile().getId(), heldStack.copy());
             }
         }
     }
 
     @SubscribeEvent
-    public void onItemPickup(PlayerEvent.ItemPickupEvent event) {
-        ItemStack toInsert = event.getStack();
-        int slot = BaublesApi.isBaubleEquipped(event.player, this);
-        if(!toInsert.isEmpty() && slot > -1) {
-            IBaublesItemHandler handler = BaublesApi.getBaublesHandler(event.player);
-            ItemStack ringCopy = handler.getStackInSlot(slot).copy();
-            if(!ringCopy.isEmpty() && this.insertStack(ringCopy, toInsert, false).isEmpty()) {
-                handler.setStackInSlot(slot, ringCopy);
-                event.getOriginalEntity().setItem(ItemStack.EMPTY);
-                event.getOriginalEntity().setDead();
+    public void onItemPickup(EntityItemPickupEvent event) {
+        EntityPlayer player = event.getEntityPlayer();
+        World world = player.world;
+        EntityItem entityItem = event.getItem();
+        ItemStack toPickUp = entityItem.getItem();
+
+        if(!entityItem.isEntityAlive() || toPickUp.isEmpty())
+            return;
+
+        for(ItemStack ring : this.getBlackHoleRings(player)) {
+            if(!this.isRingEnabled(ring)) {
+                continue;
+            }
+
+            IItemHandler handler = ring.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, null);
+            if(handler != null) {
+                ItemStack remaining = ItemHandlerHelper.insertItem(handler, toPickUp, false);
+                if(remaining.isEmpty()) {
+                    entityItem.setItem(ItemStack.EMPTY);
+                    entityItem.setDead();
+                    event.setCanceled(true);
+                    world.playSound(null,
+                            player.posX, player.posY + 0.5, player.posZ,
+                            SoundEvents.ENTITY_ITEM_PICKUP,
+                            SoundCategory.PLAYERS,
+                            0.2F,
+                            ((world.rand.nextFloat() - world.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                    return;
+                } else if(toPickUp.getCount() != remaining.getCount()) {
+                    entityItem.setItem(remaining);
+                    toPickUp = remaining;
+                }
             }
         }
     }
@@ -408,8 +344,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
 
     @Override
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
-        registry.register(new RecipeBlackHoleRingExtract());
-        registry.register(new RecipeBlackHoleRingInsert());
+        registry.register(new RecipeBlackHoleRingClearSlot());
     }
 
     @Override

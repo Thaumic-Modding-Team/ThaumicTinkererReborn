@@ -1,8 +1,9 @@
 # Thaumic Tinkerer: Reborn Changelog
 ## 1.1.0
 ### Added
-- Added Luminous and Shadowy Gas Phials. These can be thrown to create small areas of light or darkness.
-- Added Gas Remover, used to remove nearby Luminous or Shadowy Gas.
+- Added Luminous and Shadowy Gas Phials. These can be thrown to create small areas of light or darkness
+- Added Gas Remover, used to remove nearby Luminous or Shadowy Gas
+- Added Black Hole Ring, used to store a Integer.MAX_VALUE of up to 5 blocks
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
 

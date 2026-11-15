@@ -3,10 +3,7 @@ package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.item.base.ItemBase;
-import mod.emt.thaumictinkerer.item.bauble.ItemConsumingSigil;
-import mod.emt.thaumictinkerer.item.bauble.ItemFelineCharm;
-import mod.emt.thaumictinkerer.item.bauble.ItemGoliathRing;
-import mod.emt.thaumictinkerer.item.bauble.ItemXpTalisman;
+import mod.emt.thaumictinkerer.item.bauble.*;
 import mod.emt.thaumictinkerer.item.misc.ItemEnergeticNitor;
 import mod.emt.thaumictinkerer.item.misc.ItemEntitySoul;
 import mod.emt.thaumictinkerer.item.misc.ItemGasPhial;
@@ -18,6 +15,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 @GameRegistry.ObjectHolder(ThaumicTinkerer.MOD_ID)
 public class ModItemsTT {
     public static final Item ARCANE_QUARTZ = null;
+    public static final Item BLACK_HOLE_RING = null;
     public static final Item CONDOR_SWORD = null;
     public static final Item CONSUMING_SIGIL = null;
     public static final Item ENDER_MIRROR = null;
@@ -67,7 +65,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemConsumingSigil());
         RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
-        //TODO: RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
+        RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
         //TODO: Worldshaper's Looking glass
 
         //Entity Souls

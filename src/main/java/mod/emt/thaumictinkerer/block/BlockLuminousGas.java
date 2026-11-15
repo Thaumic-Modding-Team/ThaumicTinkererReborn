@@ -2,7 +2,6 @@ package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.api.block.AbstractBlockAddition;
 import mod.emt.thaumictinkerer.item.tools.ItemGasRemover;
-import mod.emt.thaumictinkerer.registry.ModItemsTT;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyBool;

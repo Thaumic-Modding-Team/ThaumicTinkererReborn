@@ -20,6 +20,7 @@ Unlike the original, KAMI's content has been split off into its own addon separa
 
 ## Equipment
 
+- **Black Hole Ring:** Stores a near infinite amount of up to 5 blocks. When enabled, stores picked up blocks and supplies players placing blocks.
 - **Feline Charm:** When equipped, causes nearby creepers to flee in terror.
 - **Ignium Striker:** Vis powered Flint and Steel.
 - **Ring of Goliath's Might:** Reduces damage taken by 1 and protects the user from death and shatters if the user has more than 6 health.
