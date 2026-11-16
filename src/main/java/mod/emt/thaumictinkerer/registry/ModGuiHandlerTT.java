@@ -1,8 +1,11 @@
 package mod.emt.thaumictinkerer.registry;
 
 import mod.emt.thaumictinkerer.client.gui.GuiMobAttractor;
+import mod.emt.thaumictinkerer.client.gui.GuiPlayerAttractor;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerMobAttractor;
+import mod.emt.thaumictinkerer.inventory.containers.ContainerPlayerAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
+import mod.emt.thaumictinkerer.tile.TilePlayerAttractor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
@@ -22,7 +25,7 @@ public class ModGuiHandlerTT implements IGuiHandler {
             case ID_MOB_ATTRACTOR:
                 return new ContainerMobAttractor(player, (TileMobAttractor) world.getTileEntity(new BlockPos(x, y, z)));
             case ID_PLAYER_ATTRACTOR:
-                return null;
+                return new ContainerPlayerAttractor(player, (TilePlayerAttractor) world.getTileEntity(new BlockPos(x, y, z)));
         }
         return null;
     }
@@ -35,7 +38,7 @@ public class ModGuiHandlerTT implements IGuiHandler {
             case ID_MOB_ATTRACTOR:
                 return new GuiMobAttractor(new ContainerMobAttractor(player, (TileMobAttractor) world.getTileEntity(new BlockPos(x, y, z))));
             case ID_PLAYER_ATTRACTOR:
-                return null;
+                return new GuiPlayerAttractor(new ContainerPlayerAttractor(player, (TilePlayerAttractor) world.getTileEntity(new BlockPos(x, y, z))));
         }
         return null;
     }

@@ -16,6 +16,7 @@ chat.thaumictinkerer:recall_stopwatch.start=The stopwatch temporally links you t
 # Gui
 gui.thaumictinkerer:attractor.ignore_adult=Ignore Adults
 gui.thaumictinkerer:attractor.ignore_child=Ignore Babies
+gui.thaumictinkerer:attractor.ignore_sneak=Ignore Sneak
 gui.thaumictinkerer:attractor.whitelist=Whitelist
 
 # Blocks

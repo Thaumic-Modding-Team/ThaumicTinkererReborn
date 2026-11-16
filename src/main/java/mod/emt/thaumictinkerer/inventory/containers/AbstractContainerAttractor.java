@@ -1,14 +1,11 @@
 package mod.emt.thaumictinkerer.inventory.containers;
 
 import mod.emt.thaumictinkerer.api.tile.AbstractTileAttractor;
-import mod.emt.thaumictinkerer.item.misc.ItemSoulMould;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.Slot;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import net.minecraftforge.items.SlotItemHandler;
 import org.jetbrains.annotations.NotNull;
@@ -23,6 +20,8 @@ public abstract class AbstractContainerAttractor<T extends AbstractTileAttractor
         this.bindTileInventory();
         this.bindPlayerInventory();
     }
+
+    public abstract boolean isValidAttractorItem(ItemStack stack);
 
     public EntityPlayer getPlayer() {
         return player;
@@ -55,17 +54,6 @@ public abstract class AbstractContainerAttractor<T extends AbstractTileAttractor
     }
 
     @Override
-    public void detectAndSendChanges() {
-        super.detectAndSendChanges();
-    }
-
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void updateProgressBar(int id, int data) {
-        super.updateProgressBar(id, data);
-    }
-
-    @Override
     public @NotNull ItemStack transferStackInSlot(@NotNull EntityPlayer playerIn, int index) {
         ItemStack stack = ItemStack.EMPTY;
         Slot slot = this.inventorySlots.get(index);
@@ -81,7 +69,7 @@ public abstract class AbstractContainerAttractor<T extends AbstractTileAttractor
                 }
             } else {
                 //Move from player to attractor
-                if(ItemSoulMould.getEntity(slotStack) != null) {
+                if(this.isValidAttractorItem(slotStack)) {
                     if (!this.mergeItemStack(slotStack, 0, attractorInvSize, false)) {
                         return ItemStack.EMPTY;
                     }

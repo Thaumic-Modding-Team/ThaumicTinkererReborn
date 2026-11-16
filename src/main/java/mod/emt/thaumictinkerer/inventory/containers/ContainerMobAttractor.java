@@ -1,7 +1,9 @@
 package mod.emt.thaumictinkerer.inventory.containers;
 
+import mod.emt.thaumictinkerer.item.misc.ItemSoulMould;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import org.jetbrains.annotations.NotNull;
 
 public class ContainerMobAttractor extends AbstractContainerAttractor<TileMobAttractor> {
@@ -11,6 +13,11 @@ public class ContainerMobAttractor extends AbstractContainerAttractor<TileMobAtt
 
     public ContainerMobAttractor(EntityPlayer player, TileMobAttractor tile) {
         super(player, tile);
+    }
+
+    @Override
+    public boolean isValidAttractorItem(ItemStack stack) {
+        return ItemSoulMould.getEntity(stack) != null;
     }
 
     @Override

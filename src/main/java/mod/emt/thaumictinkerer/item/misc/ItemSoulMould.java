@@ -135,7 +135,7 @@ public class ItemSoulMould extends AbstractItemAddition {
 
     public void setPlayer(ItemStack stack, EntityPlayer player) {
         clearEntityInfo(stack);
-        stack.setTagInfo("UUID", new NBTTagString(player.getGameProfile().getId().toString()));
+        stack.setTagInfo("playerId", new NBTTagString(player.getGameProfile().getId().toString()));
         stack.setTagInfo("playerName", new NBTTagString(player.getName()));
     }
 

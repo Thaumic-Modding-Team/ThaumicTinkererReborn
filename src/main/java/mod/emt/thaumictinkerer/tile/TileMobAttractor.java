@@ -78,10 +78,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
             for(int i = 0; i < this.stackHandler.getSlots(); i++) {
                 ItemStack stack = this.stackHandler.getStackInSlot(i);
                 EntityEntry entry = ItemSoulMould.getEntity(stack);
-                if(entry == null)
-                    continue;
-
-                if(entity.getClass().equals(entry.getEntityClass())) {
+                if(entry != null && entity.getClass().equals(entry.getEntityClass())) {
                     return this.isWhitelist();
                 }
             }
