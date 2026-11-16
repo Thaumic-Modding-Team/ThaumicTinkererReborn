@@ -23,7 +23,7 @@ public class BlackHoleRingHandler implements IItemHandlerModifiable, ICapability
         this.ringStack = ring;
         this.filter = NonNullList.withSize(5, ItemStack.EMPTY);
         this.stacks = NonNullList.withSize(5, ItemStack.EMPTY);
-        this.deserializeNBT(ring.getTagCompound() != null ? ring.getTagCompound() : new NBTTagCompound());
+        this.deserializeNBT(ring.getTagCompound() != null ? ring.getTagCompound().getCompoundTag("inventory") : new NBTTagCompound());
     }
 
     public ItemStack getRing() {
