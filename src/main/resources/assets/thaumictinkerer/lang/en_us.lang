@@ -17,6 +17,9 @@ chat.thaumictinkerer:recall_stopwatch.start=The stopwatch temporally links you t
 gui.thaumictinkerer:attractor.ignore_adult=Ignore Adults
 gui.thaumictinkerer:attractor.ignore_child=Ignore Babies
 gui.thaumictinkerer:attractor.ignore_sneak=Ignore Sneak
+gui.thaumictinkerer:attractor.match_meta=Match Meta
+gui.thaumictinkerer:attractor.match_nbt=Match NBT
+gui.thaumictinkerer:attractor.match_ore=Match OreDict
 gui.thaumictinkerer:attractor.whitelist=Whitelist
 
 # Blocks

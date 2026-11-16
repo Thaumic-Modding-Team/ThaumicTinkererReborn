@@ -4,6 +4,8 @@
 - Added Luminous and Shadowy Gas Phials. These can be thrown to create small areas of light or darkness
 - Added Gas Remover, used to remove nearby Luminous or Shadowy Gas
 - Added Black Hole Ring, used to store a Integer.MAX_VALUE of up to 5 different blocks
+- Added Soul Mould, used to blacklist/whitelist entities affected by the Corporeal and Anima Attractors
+- Added Gui to the Corporeal, Kinetic and Anima Attractors
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
 
