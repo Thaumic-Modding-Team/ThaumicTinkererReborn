@@ -57,6 +57,11 @@ public class TileItemAttractor extends AbstractTileAttractor<EntityItem> {
         return entity.isEntityAlive() && this.blacklist != this.itemMatches(entity.getItem());
     }
 
+    @Override
+    public void dropInventory() {
+
+    }
+
     public boolean itemMatches(ItemStack stack) {
         if(stack.isEmpty())
             return false;

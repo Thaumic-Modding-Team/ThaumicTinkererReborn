@@ -7,26 +7,21 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 
 public class TilePlayerAttractor extends AbstractTileAttractor<EntityPlayer> {
-    public ItemStackHandler stackHandler = new ItemStackHandler(12) {
+    public ItemStackHandler stackHandler = new ItemStackHandler(15) {
         @Override
         protected void onContentsChanged(int slot) {
             markDirty();
         }
     };
-    protected boolean blacklist = false;
 
     @Override
     public void readFromNBT(@NotNull NBTTagCompound compound) {
         super.readFromNBT(compound);
-        this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
-        this.blacklist = compound.getBoolean("blacklist");
     }
 
     @Override
     public @NotNull NBTTagCompound writeToNBT(@NotNull NBTTagCompound compound) {
         super.writeToNBT(compound);
-        compound.setTag("inventory", this.stackHandler.serializeNBT());
-        compound.setBoolean("blacklist", this.blacklist);
         return compound;
     }
 
@@ -44,6 +39,12 @@ public class TilePlayerAttractor extends AbstractTileAttractor<EntityPlayer> {
     public boolean isValidEntity(EntityPlayer entity) {
         return entity.isEntityAlive();
     }
+
+    @Override
+    public ItemStackHandler getStackHandler() {
+        return this.stackHandler;
+    }
+
 
 //    @Override
 //    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {

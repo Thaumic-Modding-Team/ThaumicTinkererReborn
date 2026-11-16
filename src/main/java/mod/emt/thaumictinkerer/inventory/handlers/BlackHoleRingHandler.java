@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.container.handlers;
+package mod.emt.thaumictinkerer.inventory.handlers;
 
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;

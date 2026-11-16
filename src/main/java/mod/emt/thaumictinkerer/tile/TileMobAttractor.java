@@ -1,12 +1,20 @@
 package mod.emt.thaumictinkerer.tile;
 
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.tile.AbstractTileAttractor;
+import mod.emt.thaumictinkerer.item.misc.ItemSoulMould;
+import mod.emt.thaumictinkerer.registry.ModGuiHandlerTT;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.NBTTagCompound;
+import net.minecraft.util.EnumFacing;
+import net.minecraftforge.common.capabilities.Capability;
+import net.minecraftforge.fml.common.registry.EntityEntry;
+import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 
 public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     public ItemStackHandler stackHandler = new ItemStackHandler(12) {
@@ -17,8 +25,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
 
         @Override
         public boolean isItemValid(int slot, @NotNull ItemStack stack) {
-            //TODO: Only allow mob filters.
-            return super.isItemValid(slot, stack);
+            return stack.getItem() instanceof ItemSoulMould && ItemSoulMould.getEntity(stack) != null;
         }
 
         @Override
@@ -26,15 +33,12 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
             markDirty();
         }
     };
-    public boolean blacklist = false;
     public boolean ignoreAdults = false;
     public boolean ignoreChild = false;
 
     @Override
     public void readFromNBT(@NotNull NBTTagCompound compound) {
         super.readFromNBT(compound);
-        this.stackHandler.deserializeNBT(compound.getCompoundTag("inventory"));
-        this.blacklist = compound.getBoolean("blacklist");
         this.ignoreAdults = compound.getBoolean("ignoreAdults");
         this.ignoreChild = compound.getBoolean("ignoreChild");
     }
@@ -42,8 +46,6 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     @Override
     public @NotNull NBTTagCompound writeToNBT(@NotNull NBTTagCompound compound) {
         super.writeToNBT(compound);
-        compound.setTag("inventory", this.stackHandler.serializeNBT());
-        compound.setBoolean("blacklist", this.blacklist);
         compound.setBoolean("ignoreAdults", this.ignoreAdults);
         compound.setBoolean("ignoreChild", this.ignoreChild);
         return compound;
@@ -56,59 +58,69 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
 
     @Override
     public void openGui(EntityPlayer player) {
-        //TODO
-        // player.openGui(ThaumicTinkerer.instance, , this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
+        player.openGui(ThaumicTinkerer.instance, ModGuiHandlerTT.ID_MOB_ATTRACTOR, this.world, this.pos.getX(), this.pos.getY(), this.pos.getZ());
     }
 
     @Override
     public boolean isValidEntity(EntityLivingBase entity) {
-        return entity.isEntityAlive() && this.blacklist != this.checkEntity(entity);
+        return entity.isEntityAlive() && this.checkEntity(entity);
     }
 
-    public boolean checkEntity(EntityLivingBase entity) {
-        if(entity instanceof EntityPlayer)
-            return false;
-        return true;
-    }
-
+    @Override
     public ItemStackHandler getStackHandler() {
         return stackHandler;
     }
 
-    public boolean getBlacklist() {
-        return blacklist;
+    public boolean checkEntity(EntityLivingBase entity) {
+        if(entity instanceof EntityPlayer || (entity.isChild() && this.ignoreChild()) || (!entity.isChild() && this.ignoreAdults())) {
+            return false;
+        } else {
+            for(int i = 0; i < this.stackHandler.getSlots(); i++) {
+                ItemStack stack = this.stackHandler.getStackInSlot(i);
+                EntityEntry entry = ItemSoulMould.getEntity(stack);
+                if(entry == null)
+                    continue;
+
+                if(entity.getClass().equals(entry.getEntityClass())) {
+                    return this.isWhitelist();
+                }
+            }
+        }
+        return !this.isWhitelist();
     }
 
-    public void setBlacklist(boolean blacklist) {
-        this.blacklist = blacklist;
-    }
-
-    public boolean getIgnoreAdults() {
+    public boolean ignoreAdults() {
         return ignoreAdults;
     }
 
     public void setIgnoreAdults(boolean ignoreAdults) {
-        this.ignoreAdults = ignoreAdults;
+        if(this.ignoreAdults != ignoreAdults) {
+            this.ignoreAdults = ignoreAdults;
+            this.markDirty();
+        }
     }
 
-    public boolean getIgnoreChild() {
+    public boolean ignoreChild() {
         return ignoreChild;
     }
 
     public void setIgnoreChild(boolean ignoreChild) {
-        this.ignoreChild = ignoreChild;
+        if(this.ignoreChild != ignoreChild) {
+            this.ignoreChild = ignoreChild;
+            this.markDirty();
+        }
     }
 
-//    @Override
-//    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
-//        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
-//    }
-//
-//    @Override
-//    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
-//        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
-//            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
-//        }
-//        return super.getCapability(capability, facing);
-//    }
+    @Override
+    public boolean hasCapability(@NotNull Capability<?> capability, @Nullable EnumFacing facing) {
+        return capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY || super.hasCapability(capability, facing);
+    }
+
+    @Override
+    public @Nullable <T> T getCapability(@NotNull Capability<T> capability, @Nullable EnumFacing facing) {
+        if(capability == CapabilityItemHandler.ITEM_HANDLER_CAPABILITY) {
+            return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
+        }
+        return super.getCapability(capability, facing);
+    }
 }

@@ -5,7 +5,7 @@ import baubles.api.BaublesApi;
 import baubles.api.cap.IBaublesItemHandler;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.item.AbstractItemBauble;
-import mod.emt.thaumictinkerer.container.handlers.BlackHoleRingHandler;
+import mod.emt.thaumictinkerer.inventory.handlers.BlackHoleRingHandler;
 import mod.emt.thaumictinkerer.recipes.crafting.RecipeBlackHoleRingClearSlot;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.resources.I18n;

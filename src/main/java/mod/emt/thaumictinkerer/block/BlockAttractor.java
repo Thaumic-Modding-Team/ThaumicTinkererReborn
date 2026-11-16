@@ -90,9 +90,7 @@ public class BlockAttractor extends BlockTileAddition {
         if(tile instanceof AbstractTileAttractor<?>) {
             if(playerIn.isSneaking()) {
                 AttractorMode nextMode = state.getValue(MODE).next();
-                worldIn.setBlockState(pos, state.withProperty(MODE, nextMode));
-                tile.validate();
-                worldIn.setTileEntity(pos, tile);
+                ((AbstractTileAttractor<?>) tile).setAttractorMode(state, nextMode);
                 if(!worldIn.isRemote) {
                     playerIn.sendStatusMessage(new TextComponentTranslation("chat.thaumictinkerer:attractor.mode." + nextMode.getName()), true);
                 } else {
@@ -104,6 +102,15 @@ public class BlockAttractor extends BlockTileAddition {
             return true;
         }
         return false;
+    }
+
+    @Override
+    public void breakBlock(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof AbstractTileAttractor) {
+            ((AbstractTileAttractor<?>) tile).dropInventory();
+        }
+        super.breakBlock(worldIn, pos, state);
     }
 
     @SuppressWarnings("deprecation")

@@ -7,6 +7,7 @@ import mod.emt.thaumictinkerer.item.bauble.*;
 import mod.emt.thaumictinkerer.item.misc.ItemEnergeticNitor;
 import mod.emt.thaumictinkerer.item.misc.ItemEntitySoul;
 import mod.emt.thaumictinkerer.item.misc.ItemGasPhial;
+import mod.emt.thaumictinkerer.item.misc.ItemSoulMould;
 import mod.emt.thaumictinkerer.item.tools.*;
 import net.minecraft.item.EnumRarity;
 import net.minecraft.item.Item;
@@ -36,6 +37,7 @@ public class ModItemsTT {
     public static final Item GOLIATH_RING = null;
     public static final Item IGNIUM_STRIKER = null;
     public static final Item RECALL_STOPWATCH = null;
+    public static final Item SOUL_MOULD = null;
     public static final Item TRANSVECTOR_BINDER = null;
     public static final Item UMBRAL_DYE = null;
     public static final Item XP_TALISMAN = null;
@@ -50,6 +52,7 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemGasRemover());
         RegistrarTT.addAdditionToRegister(new ItemGasPhial("gas_phial_light", true));
         RegistrarTT.addAdditionToRegister(new ItemGasPhial("gas_phial_shadow", false));
+        RegistrarTT.addAdditionToRegister(new ItemSoulMould());
 
         //Tools
         RegistrarTT.addAdditionToRegister(new ItemTransvectorBinder());

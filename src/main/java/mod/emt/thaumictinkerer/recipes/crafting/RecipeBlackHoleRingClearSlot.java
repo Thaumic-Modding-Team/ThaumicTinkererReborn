@@ -1,7 +1,7 @@
 package mod.emt.thaumictinkerer.recipes.crafting;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
-import mod.emt.thaumictinkerer.container.handlers.BlackHoleRingHandler;
+import mod.emt.thaumictinkerer.inventory.handlers.BlackHoleRingHandler;
 import mod.emt.thaumictinkerer.item.bauble.ItemBlackHoleRing;
 import net.minecraft.inventory.InventoryCrafting;
 import net.minecraft.item.ItemStack;

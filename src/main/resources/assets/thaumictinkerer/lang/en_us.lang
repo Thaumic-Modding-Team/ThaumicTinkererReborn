@@ -13,6 +13,11 @@ chat.thaumictinkerer:transvector_binder.out_of_range=Link out of range.
 chat.thaumictinkerer:transvector_binder.self_link=Block cannot be linked to itself.
 chat.thaumictinkerer:recall_stopwatch.start=The stopwatch temporally links you to this location.
 
+# Gui
+gui.thaumictinkerer:attractor.ignore_adult=Ignore Adults
+gui.thaumictinkerer:attractor.ignore_child=Ignore Babies
+gui.thaumictinkerer:attractor.whitelist=Whitelist
+
 # Blocks
 tile.thaumictinkerer:arcane_quartz_block.name=Block of Arcane Quartz
 tile.thaumictinkerer:arcane_quartz_pillar.name=Arcane Quartz Pillar
@@ -64,6 +69,7 @@ item.thaumictinkerer:gas_remover.name=Gas Remover
 item.thaumictinkerer:goliath_ring.name=Ring of Goliath's Might
 item.thaumictinkerer:ignium_striker.name=Ignium Striker
 item.thaumictinkerer:recall_stopwatch.name=Timetwister Stopwatch
+item.thaumictinkerer:soul_mould.name=Soul Mould
 item.thaumictinkerer:transvector_binder.name=Transvector Binder
 item.thaumictinkerer:umbral_dye.name=Umbral Black
 item.thaumictinkerer:xp_talisman.name=Talisman of Experience
@@ -84,6 +90,7 @@ tooltip.thaumictinkerer:disabled=Disabled
 tooltip.thaumictinkerer:entity_soul.fading=Fading
 tooltip.thaumictinkerer:entity_soul.fragile=Fragile
 tooltip.thaumictinkerer:entity_soul.resonant=Resonant
+tooltip.thaumictinkerer:soul_mould.bound=Bound To: %s
 tooltip.thaumictinkerer:transvector_binder.link_mode.block=Link Mode: Block
 tooltip.thaumictinkerer:transvector_binder.link_mode.face=Link Mode: Face
 tooltip.thaumictinkerer:transvector_binder.linked_face=Face: %s

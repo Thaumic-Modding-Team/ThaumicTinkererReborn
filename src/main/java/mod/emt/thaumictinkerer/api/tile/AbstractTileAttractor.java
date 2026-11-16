@@ -4,22 +4,48 @@ import mod.emt.thaumictinkerer.block.BlockAttractor;
 import mod.emt.thaumictinkerer.block.BlockAttractor.AttractorMode;
 import mod.emt.thaumictinkerer.network.PacketHandler;
 import mod.emt.thaumictinkerer.network.packets.MessageAttractorFX;
+import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.items.ItemStackHandler;
+import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import thaumcraft.codechicken.lib.vec.Vector3;
 
 public abstract class AbstractTileAttractor<S extends Entity> extends TileEntityTT implements ITickable {
+    private boolean isWhitelist = false;
 
     public abstract Class<S> getEntityClass();
 
     public abstract void openGui(EntityPlayer player);
 
     public abstract boolean isValidEntity(S entity);
+
+    public abstract ItemStackHandler getStackHandler();
+
+    @Override
+    public void readFromNBT(@NotNull NBTTagCompound compound) {
+        super.readFromNBT(compound);
+        this.getStackHandler().deserializeNBT(compound.getCompoundTag("inventory"));
+        this.setIsWhitelist(compound.getBoolean("isWhitelist"));
+    }
+
+    @Override
+    public @NotNull NBTTagCompound writeToNBT(@NotNull NBTTagCompound compound) {
+        super.writeToNBT(compound);
+        compound.setTag("inventory", this.getStackHandler().serializeNBT());
+        compound.setBoolean("isWhitelist", this.isWhitelist());
+        return compound;
+    }
 
     @Override
     public void update() {
@@ -34,6 +60,21 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
                         this.moveEntity(entity, mode == AttractorMode.ATTRACT);
                     }
                 }
+            }
+        }
+    }
+
+    @Override
+    public @Nullable ITextComponent getDisplayName() {
+        IBlockState state = this.world.getBlockState(this.pos);
+        return new TextComponentTranslation(state.getBlock().getTranslationKey() + ".name");
+    }
+
+    public void dropInventory() {
+        for(int i = 0; i < this.getStackHandler().getSlots(); i++) {
+            ItemStack stack = this.getStackHandler().getStackInSlot(i);
+            if(!stack.isEmpty()) {
+                Block.spawnAsEntity(this.world, this.pos, stack.copy());
             }
         }
     }
@@ -57,6 +98,23 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
     public AttractorMode getAttractorMode() {
         IBlockState state = this.world.getBlockState(this.pos);
         return state.getValue(BlockAttractor.MODE);
+    }
+
+    public void setAttractorMode(IBlockState state, AttractorMode mode) {
+        this.world.setBlockState(this.pos, state.withProperty(BlockAttractor.MODE, mode));
+        this.validate();
+        this.world.setTileEntity(this.pos, this);
+    }
+
+    public boolean isWhitelist() {
+        return isWhitelist;
+    }
+
+    public void setIsWhitelist(boolean isWhitelist) {
+        if(this.isWhitelist != isWhitelist) {
+            this.isWhitelist = isWhitelist;
+            this.markDirty();
+        }
     }
 
     public int getSearchRadius(int redstonePower) {
