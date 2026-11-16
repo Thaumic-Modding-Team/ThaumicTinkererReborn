@@ -166,6 +166,7 @@ public class BlockLuminousGas extends AbstractBlockAddition {
         //Gas does not have an item
     }
 
+    @SideOnly(Side.CLIENT)
     @Override
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);
