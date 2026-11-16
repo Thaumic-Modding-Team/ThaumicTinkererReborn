@@ -1,5 +1,6 @@
 package mod.emt.thaumictinkerer.compat.datafixes;
 
+import com.google.common.collect.ImmutableMap;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import net.minecraft.item.Item;
 import net.minecraft.nbt.NBTTagCompound;
@@ -16,61 +17,58 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ItemDataFixer implements IFixableData {
-    private static final Map<ResourceLocation, ResourceLocation> ITEM_NAME_MAPPINGS  = new HashMap<>();
+    private static final Map<ResourceLocation, ResourceLocation> ITEM_NAME_MAPPINGS  = ImmutableMap.copyOf(new HashMap<ResourceLocation, ResourceLocation>() {{
+        // Energetic Nitor, Soul Mould, Transvector Dislocator and Transvector Interface use the same ids in the original mod
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_block"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_chiseled"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "chiseled_arcane_quartz_block"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_pillar"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_pillar"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab_double"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab_double"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_stairs"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_stairs"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "cat_amulet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "feline_charm"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "connector"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "experience_charm"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "funnel"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"));
 
-    static {
-        // Energetic Nitor, Transvector Dislocator and Transvector Interface use the same ids in the original mod
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_block"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_chiseled"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "chiseled_arcane_quartz_block"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_pillar"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_pillar"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_slab_double"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_slab_double"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_quartz_block_stairs"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "arcane_quartz_stairs"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "cat_amulet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "feline_charm"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "connector"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "dissimulation_block"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "experience_charm"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "xp_talisman"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "funnel"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "essentia_funnel"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_light_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_light"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_shadow_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_shadow"));
 
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_light_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_light"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_remover"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_shadow_item"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_shadow"));
-
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_item"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "mob_magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_mob"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "nitor_vapor"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "repairer"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_restorer"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "summoner"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_item"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "mob_magnet"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "attractor_mob"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "nitor_vapor"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "energetic_nitor"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "repairer"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "thaumic_restorer"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "summoner"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "necromancy_tablet"));
 
         // These items do not exist in this mod, turn them to something else
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "animation_tablet"), new ResourceLocation("minecraft", "observer"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "block_talisman"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "blood_sword"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "condor_sword"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "chlorophyte_ore"), new ResourceLocation("minecraft", "iron_ore"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "cleaning_talisman"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "condensed_mob_aspect"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dummy_nitor"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "enchantment_pillar"), new ResourceLocation(Thaumcraft.MODID, "pillar_arcane"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "example"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "form_revealer"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aer_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aer"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aqua_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aqua"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_farmland"), new ResourceLocation("minecraft", "farmland"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_grain_block"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_ignis_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_ignis"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_seeds"), new ResourceLocation("minecraft", "wheat_seeds"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_terra_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_terra"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infusion_spark"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "light_gas"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "mob_aspect"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "osmotic_enchanter"), new ResourceLocation("minecraft", "enchanting_table"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "revealing_helm"), new ResourceLocation(Thaumcraft.MODID, "goggles"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "shadow_gas"), new ResourceLocation("minecraft", "air"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "share_book"), new ResourceLocation(Thaumcraft.MODID, "thaumonomicon"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "soul_mould"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "escape_sigil"));
-        ITEM_NAME_MAPPINGS .put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "spellbinding_cloth"), new ResourceLocation(Thaumcraft.MODID, "fabric"));
-    }
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "animation_tablet"), new ResourceLocation("minecraft", "observer"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "block_talisman"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "blood_sword"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "condor_sword"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "chlorophyte_ore"), new ResourceLocation("minecraft", "iron_ore"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "cleaning_talisman"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "consuming_sigil"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "condensed_mob_aspect"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dummy_nitor"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "enchantment_pillar"), new ResourceLocation(Thaumcraft.MODID, "pillar_arcane"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "example"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "form_revealer"), new ResourceLocation(ThaumicTinkerer.MOD_ID, "transvector_binder"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aer_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aer"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_aqua_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_aqua"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_farmland"), new ResourceLocation("minecraft", "farmland"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_grain_block"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_ignis_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_ignis"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_seeds"), new ResourceLocation("minecraft", "wheat_seeds"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infused_terra_fruit"), new ResourceLocation(Thaumcraft.MODID, "crystal_terra"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "infusion_spark"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "light_gas"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "mob_aspect"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "osmotic_enchanter"), new ResourceLocation("minecraft", "enchanting_table"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "revealing_helm"), new ResourceLocation(Thaumcraft.MODID, "goggles"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "shadow_gas"), new ResourceLocation("minecraft", "air"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "share_book"), new ResourceLocation(Thaumcraft.MODID, "thaumonomicon"));
+        put(new ResourceLocation(ThaumicTinkerer.MOD_ID, "spellbinding_cloth"), new ResourceLocation(Thaumcraft.MODID, "fabric"));
+    }});
 
     public ItemDataFixer() {
         MinecraftForge.EVENT_BUS.register(this);
