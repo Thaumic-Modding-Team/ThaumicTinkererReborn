@@ -116,12 +116,14 @@ thaumictinkerer.research.attractor_player.title=Anima Attractor
 thaumictinkerer.research.attractor_player.title.subtitle=Don't softlock yourself!
 thaumictinkerer.research.attractor_player.stage.1=I find it interesting that sentient beings in the world are harder to influence then items or other entities.<BR>Perhaps a more targeted approach will allow me to control their movement.
 thaumictinkerer.research.attractor_player.stage.2=When powered with redstone, the anima attractor pulls nearby players towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
+thaumictinkerer.research.attractor_player.addenda.1=Soul Moulds can be used to filter players that are pulled or repulsed by the Anima Attractor.<BR>To bind the Soul Mould to a player, right-click the player with the mould in hand. Once the mould is bound, you can place it in the attractor inventory to filter that player.<BR>You can also sneak and interact with a bed to bind the Soul Mould to the last player that slept in the bed.
 
 # -- DEVICES: Corporeal Attractor
 thaumictinkerer.research.attractor_mob.title=Corporeal Attractor
 thaumictinkerer.research.attractor_mob.title.subtitle=Disco Cow
 thaumictinkerer.research.attractor_mob.stage.1=While I have previously designed devices capable of preventing creatures from spawning, actually controlling the movements of these entities is another matter entirely.<BR>I'm sure a fence would suffice, but why go for a mundane solution when I can overcomplicate the issue using magic?
 thaumictinkerer.research.attractor_mob.stage.2=When powered with redstone, the corporeal attractor pulls nearby non-player entities towards the device.<BR>Sneaking and interacting with the attractor changes the polarity.
+thaumictinkerer.research.attractor_mob.addenda.1=Soul Moulds can be used to filter entities that are pulled or repulsed by the Corporeal Attractor.<BR>To bind the mould to an entity, right-click the entity with a Soul Mould in hand. Once the mould is bound, you can place it into the attractor inventory to filter that entity.
 
 # -- DEVICES: Dissimulation Block
 thaumictinkerer.research.dissimulation_block.title=Dissimulation Block
