@@ -11,6 +11,7 @@ Unlike the original, KAMI's content has been split off into its own addon separa
 ---
 
 ## Devices
+- **Advanced Recharge Pedestal:** A multiblock structure that recharges Vis powered items twice as fast and drains Vis from a 3x3 chunk area.
 - **Attractors (Anima/Corporeal/Kinetic):** Pulls items/entities/players towards it (depending on the attractor type). Sneaking and right-clicking the attractor changes the polarity.
 - **Dissimulation Block:** A block that can mimic the appearance and behavior of other blocks.
 - **Ethereal Platform:** Passable from the underneath or from the side, but not from the top. Sneaking allows players to sink through the top of the block. Perfect for elevators and the Arcane Levitator.
