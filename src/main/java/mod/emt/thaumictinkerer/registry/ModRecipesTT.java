@@ -1,7 +1,6 @@
 package mod.emt.thaumictinkerer.registry;
 
 import com.google.common.collect.Lists;
-import com.invadermonky.thaumicapi.api.ThaumicAPI;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.recipes.NecromancyRecipe;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
@@ -31,7 +30,6 @@ import thaumcraft.api.blocks.BlocksTC;
 import thaumcraft.api.crafting.*;
 import thaumcraft.api.items.ItemsTC;
 import thaumcraft.common.blocks.basic.BlockPillar;
-import thaumcraft.common.config.ConfigRecipes;
 import thaumcraft.common.entities.monster.*;
 import thaumcraft.common.entities.monster.tainted.EntityTaintCrawler;
 import thaumcraft.common.entities.monster.tainted.EntityTaintSwarm;

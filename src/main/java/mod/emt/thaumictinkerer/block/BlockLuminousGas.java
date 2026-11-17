@@ -67,7 +67,6 @@ public class BlockLuminousGas extends AbstractBlockAddition {
 
     @Override
     public void onEntityCollision(@NotNull World worldIn, @NotNull BlockPos pos, IBlockState state, @NotNull Entity entityIn) {
-        //TODO: Check if this works.
         if(state.getValue(LUMINOUS) && entityIn instanceof EntityLivingBase) {
             ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(MobEffects.GLOWING, 10, 0, true, false));
         }

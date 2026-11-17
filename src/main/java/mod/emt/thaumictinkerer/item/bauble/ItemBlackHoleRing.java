@@ -339,10 +339,4 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     public void registerRecipe(IForgeRegistry<IRecipe> registry) {
         registry.register(new RecipeBlackHoleRingClearSlot());
     }
-
-    @Override
-    public boolean isEnabled() {
-        //TODO: Config disable
-        return true;
-    }
 }

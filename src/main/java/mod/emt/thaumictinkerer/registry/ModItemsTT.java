@@ -69,7 +69,6 @@ public class ModItemsTT {
         RegistrarTT.addAdditionToRegister(new ItemFelineCharm());
         RegistrarTT.addAdditionToRegister(new ItemXpTalisman());
         RegistrarTT.addAdditionToRegister(new ItemBlackHoleRing());
-        //TODO: Worldshaper's Looking glass
 
         //Entity Souls
         RegistrarTT.addAdditionToRegister(new ItemEntitySoul("entity_soul_peaceful", 16, EnumRarity.UNCOMMON));
