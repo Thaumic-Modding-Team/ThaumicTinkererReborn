@@ -174,6 +174,11 @@ thaumictinkerer.research.arcane_infusion_enchantment.title.subtitle=When your we
 thaumictinkerer.research.arcane_infusion_enchantment.stage.1=I've always thought to myself... How about new enchantments that are simple enough to just make my tools more powerful?<BR>It's now finally time for me to make that happen.
 thaumictinkerer.research.arcane_infusion_enchantment.stage.2=I now have access to new infusion enchantments that will further improve all my equipment.<BR>Like other infusion enchantments, they can be applied multiple times to the same item, but each level has an increased essentia cost when crafted, and an increased chance to give it the Warping property.<PAGE>§oWrath§r<DIV>The infusion will first apply a base damage of +0.5 to the tool, and then add an additional +0.5 damage per level (Wrath I would give +1 damage).<DIV>§oRanks§r: 1-5<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oEducational§r<DIV>Each level of this infusion will further boost the amount of experience received from slaying creatures or breaking blocks.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon<PAGE>§oProjecting§r<DIV>The infusion will add an additional +0.5 Reach Distance to the tool per level.<DIV>§oRanks§r: 1-3<BR>§oTarget§r: axe, hoe, shovel, pickaxe, weapon
 
+# -- EQUIPMENT: Black Hole Ring
+thaumictinkerer.research.black_hole_ring.title=Black Hole Ring
+thaumictinkerer.research.black_hole_ring.title.subtitle=Approaching the Schwarzschild radius
+thaumictinkerer.research.black_hole_ring.stage.1=While the sigil of consuming may be useful for destroying items, sometimes I want to store the items rather than voiding them entirely.<BR>My experiments into mirrors may provide the solution of how to retrieve materials from an inaccessible location.
+thaumictinkerer.research.black_hole_ring.stage.2=I have successfully created a ring that is capable of storing and retrieving near infinite amounts of up to five items.<BR>When enabled, the ring will automatically collect and store any item that I pick up that match the ring slot filters.<BR>The enabled/disabled status of the ring can be toggled by sneak right-clicking air.<BR>To bind an item to a slot for collection, select a currently empty slot, then right-click the block in the world.<BR>To change the currently selected slot, right-click air while holding the ring.<BR>To remove the filter from a slot, set the active slot to the desired filter, then place the ring into a crafting table.<BR>To extract the items stored within the ring, select desired slot, then right-click an inventory or chest while sneaking.<BR>Additionally, while the ring is active, placing blocks into the world will attempt to provision the player with matching blocks stored within the ring.
 
 # -- EQUIPMENT: Feline Charm
 thaumictinkerer.research.feline_charm.title=Feline Charm
@@ -212,6 +217,12 @@ thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
 thaumictinkerer.research.xp_talisman.stage.1=With my recent successes in storing experience within brain jars, I find myself wondering if it would be possible to create a talisman capable of doing the same.
 thaumictinkerer.research.xp_talisman.stage.2=I have successfully managed to create a bauble capable of storing massive amounts of experience.<BR>When equipped, any experience I collect will be stored within the talisman.<BR>When enabled, any experience of my own will be drained and stored within the talisman.<BR>Should I wish to retrieve any stored experience, I simply need to right-click the talisman to extract one level at a time.
 
+# -- MISC: Advanced Recharge Pedestal
+thaumictinkerer.research.advanced_recharger.title=Advanced Recharge Pedestal
+thaumictinkerer.research.advanced_recharger.title.subtitle=Charging ahead
+thaumictinkerer.research.advanced_recharger.stage.1=The recharge pedestal is certainly a wonder of technology, but a major limitation is the inability to drain vis from anywhere except its immediate vicinity.<BR>Perhaps I could find a way to integrate functionality of the workbench charger directly into the pedestal.
+thaumictinkerer.research.advanced_recharger.stage.2=The recharge pedestal I have created is significantly more effective than my previous iterations of this device.<BR>I successfully integrated the workbench charger into the housing, allowing the pedestal to drain vis from the 3x3 chunk area centered on the device.<BR>Additionally, this new pedestal also doubles the vis recharging speed of the device.<BR>However, this increased drain causes a small degree of instability, requiring a simple structure to stabilize the process.
+
 # -- MISC: Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title=Aquatic Alchemy
 thaumictinkerer.research.aquatic_alchemy.title.subtitle=Ocean's bounty
@@ -241,6 +252,12 @@ thaumictinkerer.research.everfull_bucket.title=Everfull Bucket
 thaumictinkerer.research.everfull_bucket.title.subtitle=A whole ocean could fit in it!
 thaumictinkerer.research.everfull_bucket.stage.1=While the everful urn is useful around my base, the static nature of the device makes it difficult to utilize in more remote areas.
 thaumictinkerer.research.everfull_bucket.stage.2=I have created a bucket that mimics the behavior of the everful urn, endlessly dispensing water at the cost vis pulled from the aura.<BR>The process is not quite as efficient as the urn. I estimate it consumes roughly twice the vis per bucket of water produced.
+
+# -- MISC: Luminous Gas
+thaumictinkerer.research.luminous_gas.title=Luminous Gas
+thaumictinkerer.research.luminous_gas.title.subtitle=Let there be light!
+thaumictinkerer.research.luminous_gas.stage.1=My experiments with nitor have gotten me to the cusp of stabilizing certain types of essentia so they do not fade when removed from specialized containers.
+thaumictinkerer.research.luminous_gas.stage.2=I have managed to transform the essentia within a phial into gas.<BR>Most types of this gas will immediately disperse when freed from its container, but gas made from lux and tenebrae appears to linger.<PAGE>Phial of Luminous Gas<DIV>Lux essentia creates a gas that, when released, creates an area of bright light.<BR>Any creature that comes in contact with the gas will glow briefly.<PAGE>Phial of Shadowy Gas<DIV>Tenebrae essentia creates a gas that suppresses all light and creates areas of pure darkness. Even near torches are unable penetrate the darkness created by this gas.<BR>I should be wary, as any area covered by the gas is dark enough that hostile entities appear within them.<PAGE>Gas Remover<DIV>The gaseous nature of the released essentia makes removing any remnants a bit cumbersome.<BR>For this purpose I have created a device that, will remove all gas in an area surrounding the user.<BR>While holding the device, the particles emitting from the gas itself become much more energetic, significantly increasing their visibility.
 
 # -- MISC: Obsidia Terra
 thaumictinkerer.research.terra_obsidian.title=Obsidia Terra

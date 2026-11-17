@@ -35,8 +35,15 @@
         {
           "text": "thaumictinkerer.research.attractor_player.stage.2",
           "recipes": [
-            "thaumictinkerer:attractor_player"
+            "thaumictinkerer:attractor_player",
+            "thaumictinkerer:soul_mould"
           ]
+        }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.attractor_player.addenda.1",
+          "required_research": ["TT_ATTRACTOR_PLAYER"]
         }
       ]
     },
@@ -55,8 +62,15 @@
         {
           "text": "thaumictinkerer.research.attractor_mob.stage.2",
           "recipes": [
-            "thaumictinkerer:attractor_mob"
+            "thaumictinkerer:attractor_mob",
+            "thaumictinkerer:soul_mould"
           ]
+        }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.attractor_mob.addenda.1",
+          "required_research": ["TT_ATTRACTOR_PLAYER"]
         }
       ]
     },

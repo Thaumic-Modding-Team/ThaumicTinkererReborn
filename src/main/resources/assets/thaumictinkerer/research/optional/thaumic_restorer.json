@@ -7,7 +7,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION", "~TUBES"],
       "meta": ["HIDDEN"],
-      "location": [0, 4],
+      "location": [0, 5],
       "stages": [
         {
           "text": "thaumictinkerer.research.thaumic_restorer.stage.1",

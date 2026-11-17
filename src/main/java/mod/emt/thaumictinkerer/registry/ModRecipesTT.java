@@ -44,14 +44,6 @@ import thaumcraft.common.lib.enchantment.EnumInfusionEnchantment;
 public class ModRecipesTT {
     private static final ResourceLocation defaultGroup = new ResourceLocation("");
 
-    //TODO: Research
-    //  Advanced Recharger
-    //  Advanced Recharger Multiblock
-    //  Black Hole Ring
-    //  Gas Phial: Light
-    //  Gas Phial: Shadow
-    //  Gas Remover
-
     public static void initRecipes(RegistryEvent.Register<IRecipe> event) {
         initNecromancyPlatform();
         initAdvancedRecharger();
@@ -122,7 +114,7 @@ public class ModRecipesTT {
                 }
         };
         IDustTrigger.registerDustTrigger(new DustTriggerMultiblock("TT_ADVANCED_RECHARGER", blueprint));
-        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "advanced_recharger"), new ThaumcraftApi.BluePrint(
+        ThaumcraftApi.addMultiblockRecipeToCatalog(new ResourceLocation(ThaumicTinkerer.MOD_ID, "advanced_recharger_structure"), new ThaumcraftApi.BluePrint(
                 "TT_ADVANCED_RECHARGER",
                 blueprint,
                 new ItemStack(BlocksTC.stoneArcane, 8),
@@ -342,6 +334,19 @@ public class ModRecipesTT {
                 Items.BUCKET,
                 new AspectList().add(Aspect.WATER, 30).add(Aspect.CRAFT, 10).add(Aspect.VOID, 10)
         ));
+
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_light"), new CrucibleRecipe(
+                "TT_LUMINOUS_GAS",
+                new ItemStack(ModItemsTT.GAS_PHIAL_LIGHT),
+                new IngredientNBTTC(ItemPhial.makeFilledPhial(Aspect.LIGHT)),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.LIGHT, 20)
+        ));
+        ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_shadow"), new CrucibleRecipe(
+                "TT_LUMINOUS_GAS",
+                new ItemStack(ModItemsTT.GAS_PHIAL_SHADOW),
+                new IngredientNBTTC(ItemPhial.makeFilledPhial(Aspect.DARKNESS)),
+                new AspectList().add(Aspect.AIR, 20).add(Aspect.DARKNESS, 20)
+        ));
         ThaumcraftApi.addCrucibleRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "umbral_rosebush"), new CrucibleRecipe(
                 "TT_UMBRAL_ROSEBUSH",
                 new ItemStack(ModBlocksTT.UMBRAL_ROSEBUSH),
@@ -357,14 +362,14 @@ public class ModRecipesTT {
                 6,
                 new AspectList().add(Aspect.AURA, 200).add(Aspect.MAGIC, 100).add(Aspect.ENERGY, 50).add(Aspect.EXCHANGE, 50),
                 BlocksTC.rechargePedestal,
+                ItemsTC.quicksilver,
+                new OreIngredient("gemAmber"),
+                new OreIngredient("gemAmber"),
                 new OreIngredient("gemAmber"),
                 new OreIngredient("ingotThaumium"),
-                new OreIngredient("gemAmber"),
                 new OreIngredient("ingotThaumium"),
-                new OreIngredient("gemAmber"),
                 new OreIngredient("ingotThaumium"),
-                new OreIngredient("gemAmber"),
-                ItemsTC.quicksilver
+                BlocksTC.arcaneWorkbenchCharger
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "black_hole_ring"), new InfusionRecipe(
                 "TT_BLACK_HOLE_RING",
@@ -444,24 +449,6 @@ public class ModRecipesTT {
                 new ItemStack(Items.DYE, 1, EnumDyeColor.BROWN.getDyeDamage()),
                 new ItemStack(Blocks.SAPLING, 1, 3),
                 new ItemStack(Items.SKULL, 1, 4)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_light"), new InfusionRecipe(
-                "TT_LUMINOUS_GAS",
-                new ItemStack(ModItemsTT.GAS_PHIAL_LIGHT),
-                2,
-                new AspectList().add(Aspect.AIR, 20),
-                new IngredientNBTTC(ItemPhial.makeFilledPhial(Aspect.LIGHT)),
-                ThaumcraftApiHelper.makeCrystal(Aspect.LIGHT),
-                ThaumcraftApiHelper.makeCrystal(Aspect.LIGHT)
-        ));
-        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "gas_phial_shadow"), new InfusionRecipe(
-                "TT_LUMINOUS_GAS",
-                new ItemStack(ModItemsTT.GAS_PHIAL_SHADOW),
-                2,
-                new AspectList().add(Aspect.AIR, 20),
-                new IngredientNBTTC(ItemPhial.makeFilledPhial(Aspect.DARKNESS)),
-                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS),
-                ThaumcraftApiHelper.makeCrystal(Aspect.DARKNESS)
         ));
         ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "goliath_ring"), new InfusionRecipe(
                 "TT_GOLIATH_RING",

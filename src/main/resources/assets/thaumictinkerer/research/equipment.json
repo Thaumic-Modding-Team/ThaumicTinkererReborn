@@ -25,6 +25,27 @@
       ]
     },
     {
+      "key": "TT_BLACK_HOLE_RING",
+      "name": "thaumictinkerer.research.black_hole_ring.title",
+      "icons": ["thaumictinkerer:black_hole_ring"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_CONSUMING_SIGIL", "~MIRROR"],
+      "meta": ["HIDDEN"],
+      "location": [5, 2],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.black_hole_ring.stage.1",
+          "required_knowledge": ["OBSERVATION;ARTIFICE;1", "THEORY;ARTIFICE;1"]
+        },
+        {
+          "text": "thaumictinkerer.research.black_hole_ring.stage.2",
+          "recipes": [
+            "thaumictinkerer:black_hole_ring"
+          ]
+        }
+      ]
+    },
+    {
       "key": "TT_CONDOR_SWORD",
       "name": "thaumictinkerer.research.condor_sword.title",
       "icons": ["thaumictinkerer:condor_sword"],
