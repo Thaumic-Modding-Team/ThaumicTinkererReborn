@@ -6,8 +6,11 @@
 - Added Black Hole Ring, used to store a Integer.MAX_VALUE of up to 5 different blocks
 - Added Soul Mould, used to blacklist/whitelist entities affected by the Corporeal and Anima Attractors
 - Added Gui to the Corporeal, Kinetic and Anima Attractors along with several toggleable options
+- Added Advanced Recharge Pedestal, a multiblock recharge pedestal that operates twice as fast and drains from a 3x3 chunk area
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
+- Fixed several Necromancy recipes activating with any Vis crystal
+- Fixed several Arcane Workbench recipes completing with any vis crystal
 
 ---
 
