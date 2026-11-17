@@ -14,6 +14,7 @@ import net.minecraftforge.fml.common.registry.GameRegistry;
 
 @GameRegistry.ObjectHolder(ThaumicTinkerer.MOD_ID)
 public class ModBlocksTT {
+    public static final Block ADVANCED_RECHARGER = null;
     public static final Block ARCANE_QUARTZ_BLOCK = null;
     public static final Block ARCANE_QUARTZ_PILLAR = null;
     public static final Block ARCANE_QUARTZ_SLAB = null;
@@ -64,6 +65,7 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
         RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
         RegistrarTT.addAdditionToRegister(new BlockNecromancyTablet());
+        RegistrarTT.addAdditionToRegister(new BlockAdvancedRecharger());
 
         //Misc
         RegistrarTT.addAdditionToRegister(new BlockThaumicCake());

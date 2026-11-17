@@ -23,6 +23,7 @@ gui.thaumictinkerer:attractor.match_ore=Match OreDict
 gui.thaumictinkerer:attractor.whitelist=Whitelist
 
 # Blocks
+tile.thaumictinkerer:advanced_recharger.name=Advanced Recharge Pedestal
 tile.thaumictinkerer:arcane_quartz_block.name=Block of Arcane Quartz
 tile.thaumictinkerer:arcane_quartz_pillar.name=Arcane Quartz Pillar
 tile.thaumictinkerer:arcane_quartz_slab.name=Arcane Quartz Slab

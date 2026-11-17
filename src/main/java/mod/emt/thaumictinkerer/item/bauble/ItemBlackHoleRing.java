@@ -173,7 +173,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         }
     }
 
-    public List<ItemStack> getBlackHoleRings(EntityPlayer player) {
+    public static List<ItemStack> getBlackHoleRings(EntityPlayer player) {
         List<ItemStack> rings = new ArrayList<>();
         IBaublesItemHandler handler = BaublesApi.getBaublesHandler(player);
         for(int i = 0; i < handler.getSlots(); i++) {
@@ -300,7 +300,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         if(!entityItem.isEntityAlive() || toPickUp.isEmpty())
             return;
 
-        for(ItemStack ring : this.getBlackHoleRings(player)) {
+        for(ItemStack ring : getBlackHoleRings(player)) {
             if(!this.isRingEnabled(ring)) {
                 continue;
             }
