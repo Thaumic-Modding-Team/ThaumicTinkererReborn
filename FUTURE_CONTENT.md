@@ -3,7 +3,6 @@ This is a list of general content that did not make the initial cut for the firs
 
 | Feature                      | Replacement | Description                                                             |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------------|
-| Advanced Recharge Pedestal   |             | Upgraded Recharge Pedestal that's faster and more efficient.            |
 | Dynamism Tablet              |             | Auto-clicker device                                                     | 
 | Focus Effect: Aphrodisiac    |             | Causes entities to go into breed mode or spawns particles on impact.    |
 | Focus Effect: Efreet's Flame |             | Smelts blocks or item entities struck by the spell.                     |
