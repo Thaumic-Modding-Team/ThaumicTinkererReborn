@@ -44,6 +44,7 @@
 | Awakened Ichorium Pickaxe      |  thaumictinkerer:ichorium_pick_adv   |   kami:awakened_ichorium_pickaxe    |                                                                           |
 | Awakened Ichorium Shovel       | thaumictinkerer:ichorium_shovel_adv  |    kami:awakened_ichorium_shovel    |                                                                           |
 | Awakened Ichorium Sword        |  thaumictinkerer:ichorium_sword_adv  |    kami:awakened_ichorium_sword     |                                                                           |
+| Black Hole Ring                |    thaumictinkerer:block_talisman    |   thaumictinkerer:black_hole_ring   |                                                                           |
 | Black Quartz Block             |  thaumictinkerer:black_quartz_block  | thaumictinkerer:arcane_quartz_block |                                                                           |
 | Boots of the Horizontal Shield |      thaumictinkerer:kami_boots      |    kami:awakened_ichorweave_hood    |                                                                           |
 | Cleansing Charm                |  thaumictinkerer:cleaning_talisman   |                 N/A                 | Removed to avoid duplicate features. Use Thaumcraft's Verdant Charm.      |
@@ -59,7 +60,6 @@
 | Focus Effect: Ender Rift       |                 N/A                  |    thaumictinkerer:ender_mirror     | Removed. Converted into an item in Thaumic Tinkerer: Reborn               |
 | Gas Phial (Light)              |    thaumictinkerer:gas_light_item    |   thaumictinkerer:gas_phial_light   |                                                                           |
 | Gas Phial (Shadow)             |   thaumictinkerer:gas_shadow_item    |  thaumictinkerer:gas_phial_shadow   |                                                                           |
-| Gas Remover                    |     thaumictinkerer:gas_remover      |     thaumictinkerer:gas_remover     |                                                                           |
 | Helmet of Revealing            |    thaumictinkerer:revealing_helm    |                 N/A                 | Feature has been added into base Thaumcraft with ThaumicTweaker.          |
 | Ichor                          |    thaumictinkerer:kamiresource:2    |             kami:ichor              |                                                                           |
 | Ichor Block                    |     thaumictinkerer:ichor_block      |          kami:ichor_block           |                                                                           |
@@ -94,7 +94,6 @@
 | Item                             |             Original Id             | New Id | Description                          |
 |:---------------------------------|:-----------------------------------:|:------:|:-------------------------------------|
 | Bedrock Portal                   |   thaumictinkerer:bedrock_portal    |  N/A   | Not yet implemented.                 |
-| Black Hole Ring                  |   thaumictinkerer:block_talisman    |  N/A   | Not yet implemented. Pending rework. |
 | Celestial Gateway                |      thaumictinkerer:warp_gate      |  N/A   | Not yet implemented. Pending rework. |
 | Celestial Pearl                  |      thaumictinkerer:sky_pearl      |  N/A   | Not yet implemented. Pending rework. |
 | Dynamism Tablet                  |  thaumictinkerer:animation_tablet   |  N/A   | Not yet implemented. Pending rework. |
@@ -121,7 +120,6 @@
 | Imbued Grain                     | thaumictinkerer:infused_ignis_fruit |  N/A   | Not yet implemented. Pending rework. |
 | Imbued Grain                     | thaumictinkerer:infused_terra_fruit |  N/A   | Not yet implemented. Pending rework. |
 | Infused Seeds                    |    thaumictinkerer:infused_seeds    |  N/A   | Not yet implemented. Pending rework. |
-| Soul Mould                       |     thaumictinkerer:soul_mould      |  N/A   | Not yet implemented. Pending rework. |
 | Worldshaper's Looking Glass      |  thaumictinkerer:placement_mirror   |  N/A   | Not yet implemented. Pending rework. |
 
 ## ReForbidden Magic
