@@ -1,0 +1,13 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "thaumictinkerer:dynamism_tablet"
+  },
+  "variants": {
+    "inventory":    { "model": "thaumictinkerer:dynamism_tablet", "transform": "forge:default-block" },
+    "facing=north": { "model": "thaumictinkerer:dynamism_tablet" },
+    "facing=south": { "model": "thaumictinkerer:dynamism_tablet", "y": 180 },
+    "facing=east":  { "model": "thaumictinkerer:dynamism_tablet", "y": 90 },
+    "facing=west":  { "model": "thaumictinkerer:dynamism_tablet", "y": 270 }
+  }
+}
