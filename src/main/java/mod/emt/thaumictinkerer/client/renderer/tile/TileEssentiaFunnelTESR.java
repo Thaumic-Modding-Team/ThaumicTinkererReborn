@@ -25,7 +25,6 @@ public class TileEssentiaFunnelTESR extends TileEntitySpecialRenderer<TileEssent
 
     @Override
     public void render(@NotNull TileEssentiaFunnel tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        super.render(tile, x, y, z, partialTicks, destroyStage, alpha);
         if(!tile.getJarStack().isEmpty()) {
             GlStateManager.pushMatrix();
             GlStateManager.translate(x, y, z);

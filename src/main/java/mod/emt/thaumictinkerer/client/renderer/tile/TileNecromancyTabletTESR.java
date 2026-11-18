@@ -16,7 +16,6 @@ import org.jetbrains.annotations.NotNull;
 public class TileNecromancyTabletTESR extends TileEntitySpecialRenderer<TileNecromancyTablet> {
     @Override
     public void render(@NotNull TileNecromancyTablet tile, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
-        super.render(tile, x, y, z, partialTicks, destroyStage, alpha);
         GlStateManager.pushMatrix();
         GlStateManager.translate(x, y, z);
         this.renderItem(tile, partialTicks);
