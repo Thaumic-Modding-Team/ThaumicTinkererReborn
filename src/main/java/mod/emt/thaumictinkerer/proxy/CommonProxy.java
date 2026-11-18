@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.proxy;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
+import mod.emt.thaumictinkerer.casters.foci.FocusEffectLovestruck;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
 import mod.emt.thaumictinkerer.compat.datafixes.BlockDataFixer;
 import mod.emt.thaumictinkerer.compat.datafixes.ItemDataFixer;
@@ -20,6 +21,7 @@ import net.minecraftforge.fml.common.network.NetworkRegistry;
 import thaumcraft.Thaumcraft;
 import thaumcraft.api.ThaumcraftApi;
 import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.casters.FocusEngine;
 import thaumcraft.api.research.ResearchCategories;
 
 public class CommonProxy {
@@ -34,6 +36,7 @@ public class CommonProxy {
     public void init() {
         RegistrarTT.getProxyAdditions().forEach(IProxy::init);
         ModEntitiesTT.registerEntities();
+        registerFoci();
         registerResearch();
 
         ModFixs modFixer = FMLCommonHandler.instance().getDataFixer().init(ThaumicTinkerer.MOD_ID, 1);
@@ -44,6 +47,10 @@ public class CommonProxy {
     public void postInit() {
         RegistrarTT.getProxyAdditions().forEach(IProxy::postInit);
         NetworkRegistry.INSTANCE.registerGuiHandler(ThaumicTinkerer.instance, new ModGuiHandlerTT());
+    }
+
+    private void registerFoci() {
+        FocusEngine.registerElement(FocusEffectLovestruck.class, new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/foci/lovestruck.png"), 16728727);
     }
 
     private void registerResearch() {
