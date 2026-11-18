@@ -25,6 +25,7 @@ public class ModBlocksTT {
     public static final Block ATTRACTOR_PLAYER = null;
     public static final Block CHISELED_ARCANE_QUARTZ = null;
     public static final Block DISSIMULATION_BLOCK = null;
+    public static final Block DYNAMISM_TABLET = null;
     public static final Block ENERGETIC_NITOR = null;
     public static final Block ESSENTIA_FUNNEL = null;
     public static final Block ETHEREAL_PLATFORM = null;
@@ -66,6 +67,7 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
         RegistrarTT.addAdditionToRegister(new BlockNecromancyTablet());
         RegistrarTT.addAdditionToRegister(new BlockAdvancedRecharger());
+        RegistrarTT.addAdditionToRegister(new BlockDynamismTablet());
 
         //Misc
         RegistrarTT.addAdditionToRegister(new BlockThaumicCake());

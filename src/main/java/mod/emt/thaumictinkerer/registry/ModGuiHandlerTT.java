@@ -1,11 +1,14 @@
 package mod.emt.thaumictinkerer.registry;
 
+import mod.emt.thaumictinkerer.client.gui.GuiDynamismTablet;
 import mod.emt.thaumictinkerer.client.gui.GuiItemAttractor;
 import mod.emt.thaumictinkerer.client.gui.GuiMobAttractor;
 import mod.emt.thaumictinkerer.client.gui.GuiPlayerAttractor;
+import mod.emt.thaumictinkerer.inventory.containers.ContainerDyamismTablet;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerItemAttractor;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerMobAttractor;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerPlayerAttractor;
+import mod.emt.thaumictinkerer.tile.TileDynamismTablet;
 import mod.emt.thaumictinkerer.tile.TileItemAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
 import mod.emt.thaumictinkerer.tile.TilePlayerAttractor;
@@ -19,6 +22,7 @@ public class ModGuiHandlerTT implements IGuiHandler {
     public static final int ID_ITEM_ATTRACTOR = 0;
     public static final int ID_MOB_ATTRACTOR = 1;
     public static final int ID_PLAYER_ATTRACTOR = 2;
+    public static final int ID_DYNAMISM_TABLET = 3;
 
     @Override
     public @Nullable Object getServerGuiElement(int ID, EntityPlayer player, World world, int x, int y, int z) {
@@ -29,6 +33,8 @@ public class ModGuiHandlerTT implements IGuiHandler {
                 return new ContainerMobAttractor(player, (TileMobAttractor) world.getTileEntity(new BlockPos(x, y, z)));
             case ID_PLAYER_ATTRACTOR:
                 return new ContainerPlayerAttractor(player, (TilePlayerAttractor) world.getTileEntity(new BlockPos(x, y, z)));
+            case ID_DYNAMISM_TABLET:
+                return new ContainerDyamismTablet(player, (TileDynamismTablet) world.getTileEntity(new BlockPos(x, y, z)));
         }
         return null;
     }
@@ -42,6 +48,8 @@ public class ModGuiHandlerTT implements IGuiHandler {
                 return new GuiMobAttractor(new ContainerMobAttractor(player, (TileMobAttractor) world.getTileEntity(new BlockPos(x, y, z))));
             case ID_PLAYER_ATTRACTOR:
                 return new GuiPlayerAttractor(new ContainerPlayerAttractor(player, (TilePlayerAttractor) world.getTileEntity(new BlockPos(x, y, z))));
+            case ID_DYNAMISM_TABLET:
+                return new GuiDynamismTablet(new ContainerDyamismTablet(player, (TileDynamismTablet) world.getTileEntity(new BlockPos(x, y, z))));
         }
         return null;
     }

@@ -1,0 +1,136 @@
+package mod.emt.thaumictinkerer.block;
+
+import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
+import mod.emt.thaumictinkerer.client.renderer.tile.TileDynamismTabletTESR;
+import mod.emt.thaumictinkerer.registry.ModGuiHandlerTT;
+import mod.emt.thaumictinkerer.tile.TileDynamismTablet;
+import net.minecraft.block.BlockHorizontal;
+import net.minecraft.block.SoundType;
+import net.minecraft.block.material.MapColor;
+import net.minecraft.block.material.Material;
+import net.minecraft.block.properties.PropertyDirection;
+import net.minecraft.block.state.BlockStateContainer;
+import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.*;
+import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.BlockPos;
+import net.minecraft.world.IBlockAccess;
+import net.minecraft.world.World;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.items.IItemHandler;
+import org.jetbrains.annotations.NotNull;
+
+public class BlockDynamismTablet extends BlockTileAddition {
+    public static final PropertyDirection FACING = BlockHorizontal.FACING;
+    public static final AxisAlignedBB AABB_TABLET = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
+
+    public BlockDynamismTablet() {
+        super("dynamism_tablet", Material.ROCK, MapColor.STONE, TileDynamismTablet.class);
+        this.setHardness(2.0f);
+        this.setResistance(20.0f);
+        this.setSoundType(SoundType.STONE);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(FACING, EnumFacing.NORTH));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull AxisAlignedBB getBoundingBox(@NotNull IBlockState state, @NotNull IBlockAccess source, @NotNull BlockPos pos) {
+        return AABB_TABLET;
+    }
+
+    @Override
+    public boolean onBlockActivated(@NotNull World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state, @NotNull EntityPlayer playerIn, @NotNull EnumHand hand, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof TileDynamismTablet) {
+            playerIn.openGui(ThaumicTinkerer.instance, ModGuiHandlerTT.ID_DYNAMISM_TABLET, worldIn, pos.getX(), pos.getY(), pos.getZ());
+        }
+        return true;
+    }
+
+    @Override
+    public void breakBlock(World worldIn, @NotNull BlockPos pos, @NotNull IBlockState state) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(tile instanceof TileDynamismTablet) {
+            IItemHandler handler = ((TileDynamismTablet) tile).getStackHandler();
+            for(int i = 0; i < handler.getSlots(); i++) {
+                ItemStack stack = handler.getStackInSlot(i);
+                if(!stack.isEmpty()) {
+                    spawnAsEntity(worldIn, pos, stack.copy());
+                }
+            }
+        }
+        super.breakBlock(worldIn, pos, state);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isSideSolid(@NotNull IBlockState base_state, IBlockAccess world, @NotNull BlockPos pos, @NotNull EnumFacing side) {
+        IBlockState state = world.getBlockState(pos);
+        return side == EnumFacing.DOWN || side == state.getValue(FACING).getOpposite();
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isFullCube(@NotNull IBlockState state) {
+        return false;
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public boolean isOpaqueCube(@NotNull IBlockState state) {
+        return false;
+    }
+
+    @Override
+    public @NotNull BlockRenderLayer getRenderLayer() {
+        return BlockRenderLayer.CUTOUT_MIPPED;
+    }
+
+    @Override
+    public @NotNull IBlockState getStateForPlacement(@NotNull World world, @NotNull BlockPos pos, @NotNull EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer, @NotNull EnumHand hand) {
+        return this.getDefaultState().withProperty(FACING, placer.getHorizontalFacing().getOpposite());
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull IBlockState getStateFromMeta(int meta) {
+        return this.getDefaultState().withProperty(FACING, EnumFacing.byHorizontalIndex(meta));
+    }
+
+    @Override
+    public int getMetaFromState(IBlockState state) {
+        return state.getValue(FACING).getHorizontalIndex();
+    }
+
+    @Override
+    protected @NotNull BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, FACING);
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull IBlockState withRotation(IBlockState state, Rotation rot) {
+        return state.withProperty(FACING, rot.rotate(state.getValue(FACING)));
+    }
+
+    @SuppressWarnings("deprecation")
+    @Override
+    public @NotNull IBlockState withMirror(IBlockState state, Mirror mirrorIn) {
+        return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerModel(ModelRegistryEvent event) {
+        super.registerModel(event);
+        ClientRegistry.bindTileEntitySpecialRenderer(TileDynamismTablet.class, new TileDynamismTabletTESR());
+    }
+}
