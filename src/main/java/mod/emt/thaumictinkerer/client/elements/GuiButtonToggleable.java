@@ -1,24 +1,26 @@
 package mod.emt.thaumictinkerer.client.elements;
 
-import mod.emt.thaumictinkerer.client.gui.AbstractGuiAttractor;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.FontRenderer;
 import net.minecraft.client.gui.GuiButton;
 import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import org.jetbrains.annotations.NotNull;
 
 @SideOnly(Side.CLIENT)
-public class GuiButtonAttractor extends GuiButton {
+public class GuiButtonToggleable extends GuiButton {
+    private final ResourceLocation texture;
     private final int textureX;
     private final int textureY;
     private boolean toggled;
 
-    public GuiButtonAttractor(int buttonId, int x, int y, boolean isToggled) {
-        super(buttonId, x, y, 11, 11, "");
-        this.textureX = 176;
-        this.textureY = 0;
+    public GuiButtonToggleable(ResourceLocation texture, int buttonId, int x, int y, int textureX, int textureY, int width, int height, boolean isToggled) {
+        super(buttonId, x, y, width, height, "");
+        this.texture = texture;
+        this.textureX = textureX;
+        this.textureY = textureY;
         this.toggled = isToggled;
     }
 
@@ -34,7 +36,7 @@ public class GuiButtonAttractor extends GuiButton {
     public void drawButton(@NotNull Minecraft mc, int mouseX, int mouseY, float partialTicks) {
         if(this.visible) {
             FontRenderer fontRenderer = mc.fontRenderer;
-            mc.getTextureManager().bindTexture(AbstractGuiAttractor.TEXTURE);
+            mc.getTextureManager().bindTexture(texture);
             GlStateManager.color(1.0f, 1.0f, 1.0f, 1.0f);
             this.hovered = mouseX >= this.x && mouseY >= this.y && mouseX < this.x + this.width && mouseY < this.y + this.height;
             int state = this.isToggled() ? 1 : 0;
@@ -55,10 +57,5 @@ public class GuiButtonAttractor extends GuiButton {
 
             this.drawCenteredString(fontRenderer, this.displayString, this.x + this.width / 2, this.y + (this.height - 8) / 2, j);
         }
-    }
-
-    @Override
-    public void drawButtonForegroundLayer(int mouseX, int mouseY) {
-
     }
 }

@@ -1,6 +1,6 @@
 package mod.emt.thaumictinkerer.client.gui;
 
-import mod.emt.thaumictinkerer.client.elements.GuiButtonAttractor;
+import mod.emt.thaumictinkerer.client.elements.GuiButtonToggleable;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerPlayerAttractor;
 import mod.emt.thaumictinkerer.tile.TilePlayerAttractor;
 import net.minecraft.client.gui.GuiButton;
@@ -17,8 +17,8 @@ public class GuiPlayerAttractor extends AbstractGuiAttractor<ContainerPlayerAttr
     public void initGui() {
         super.initGui();
         TilePlayerAttractor attractor = this.getContainer().getAttractor();
-        this.addButton(new GuiButtonAttractor(ContainerPlayerAttractor.BUTTON_WHITELIST, this.getGuiLeft() + 84, this.getGuiTop() + 31, attractor.isWhitelist()));
-        this.addButton(new GuiButtonAttractor(ContainerPlayerAttractor.BUTTON_IGNORE_SNEAK, this.getGuiLeft() + 84, this.getGuiTop() + 45, attractor.ignoreSneak()));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerPlayerAttractor.BUTTON_WHITELIST, this.getGuiLeft() + 84, this.getGuiTop() + 31, 176, 0, 11, 11, attractor.isWhitelist()));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerPlayerAttractor.BUTTON_IGNORE_SNEAK, this.getGuiLeft() + 84, this.getGuiTop() + 45, 176, 0, 11, 11, attractor.ignoreSneak()));
     }
 
     @Override
@@ -34,8 +34,8 @@ public class GuiPlayerAttractor extends AbstractGuiAttractor<ContainerPlayerAttr
             return;
 
         if(button.id == ContainerPlayerAttractor.BUTTON_WHITELIST || button.id == ContainerPlayerAttractor.BUTTON_IGNORE_SNEAK) {
-            if(button instanceof GuiButtonAttractor) {
-                ((GuiButtonAttractor) button).setToggled(!((GuiButtonAttractor) button).isToggled());
+            if(button instanceof GuiButtonToggleable) {
+                ((GuiButtonToggleable) button).setToggled(!((GuiButtonToggleable) button).isToggled());
                 this.mc.playerController.sendEnchantPacket(this.inventorySlots.windowId, button.id);
             }
         }

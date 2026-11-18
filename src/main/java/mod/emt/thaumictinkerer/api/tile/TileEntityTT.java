@@ -5,6 +5,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.network.NetworkManager;
 import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.text.ITextComponent;
+import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.common.util.Constants;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
@@ -30,5 +32,11 @@ public class TileEntityTT extends TileEntity {
     @Override
     public void onDataPacket(@NotNull NetworkManager net, SPacketUpdateTileEntity pkt) {
         this.readFromNBT(pkt.getNbtCompound());
+    }
+
+    @Override
+    public @Nullable ITextComponent getDisplayName() {
+        IBlockState state = this.world.getBlockState(this.pos);
+        return new TextComponentTranslation(state.getBlock().getTranslationKey() + ".name");
     }
 }

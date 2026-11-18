@@ -13,12 +13,9 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.math.AxisAlignedBB;
-import net.minecraft.util.text.ITextComponent;
-import net.minecraft.util.text.TextComponentTranslation;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
-import org.jetbrains.annotations.Nullable;
 import thaumcraft.codechicken.lib.vec.Vector3;
 
 public abstract class AbstractTileAttractor<S extends Entity> extends TileEntityTT implements ITickable {
@@ -62,12 +59,6 @@ public abstract class AbstractTileAttractor<S extends Entity> extends TileEntity
                 }
             }
         }
-    }
-
-    @Override
-    public @Nullable ITextComponent getDisplayName() {
-        IBlockState state = this.world.getBlockState(this.pos);
-        return new TextComponentTranslation(state.getBlock().getTranslationKey() + ".name");
     }
 
     public void dropInventory() {

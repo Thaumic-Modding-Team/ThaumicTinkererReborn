@@ -1,6 +1,6 @@
 package mod.emt.thaumictinkerer.client.gui;
 
-import mod.emt.thaumictinkerer.client.elements.GuiButtonAttractor;
+import mod.emt.thaumictinkerer.client.elements.GuiButtonToggleable;
 import mod.emt.thaumictinkerer.inventory.containers.ContainerMobAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
 import net.minecraft.client.gui.GuiButton;
@@ -20,9 +20,9 @@ public class GuiMobAttractor extends AbstractGuiAttractor<ContainerMobAttractor>
     public void initGui() {
         super.initGui();
         TileMobAttractor attractor = this.getContainer().getAttractor();
-        this.addButton(new GuiButtonAttractor(ContainerMobAttractor.BUTTON_WHITELIST, this.getGuiLeft() + 84, this.getGuiTop() + 24, attractor.isWhitelist()));
-        this.addButton(new GuiButtonAttractor(ContainerMobAttractor.BUTTON_IGNORE_CHILD, this.getGuiLeft() + 84, this.getGuiTop() + 38, attractor.ignoreChild()));
-        this.addButton(new GuiButtonAttractor(ContainerMobAttractor.BUTTON_IGNORE_ADULT, this.getGuiLeft() + 84, this.getGuiTop() + 52, attractor.ignoreAdults()));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerMobAttractor.BUTTON_WHITELIST, this.getGuiLeft() + 84, this.getGuiTop() + 24, 176, 0, 11, 11, attractor.isWhitelist()));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerMobAttractor.BUTTON_IGNORE_CHILD, this.getGuiLeft() + 84, this.getGuiTop() + 38, 176, 0, 11, 11, attractor.ignoreChild()));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerMobAttractor.BUTTON_IGNORE_ADULT, this.getGuiLeft() + 84, this.getGuiTop() + 52, 176, 0, 11, 11, attractor.ignoreAdults()));
     }
 
     @Override
@@ -39,8 +39,8 @@ public class GuiMobAttractor extends AbstractGuiAttractor<ContainerMobAttractor>
             return;
 
         if (button.id == ContainerMobAttractor.BUTTON_WHITELIST || button.id == ContainerMobAttractor.BUTTON_IGNORE_CHILD || button.id == ContainerMobAttractor.BUTTON_IGNORE_ADULT) {
-            if(button instanceof GuiButtonAttractor) {
-                ((GuiButtonAttractor) button).setToggled(!((GuiButtonAttractor) button).isToggled());
+            if(button instanceof GuiButtonToggleable) {
+                ((GuiButtonToggleable) button).setToggled(!((GuiButtonToggleable) button).isToggled());
                 this.mc.playerController.sendEnchantPacket(this.inventorySlots.windowId, button.id);
             }
         }
