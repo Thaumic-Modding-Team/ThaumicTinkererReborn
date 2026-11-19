@@ -118,7 +118,7 @@ public class FocusEffectEfreetsFlame extends FocusEffect {
         IBlockState newState = itemBlock.getBlock().getStateForPlacement(world, pos, target.sideHit, hitX, hitY, hitZ, result.getMetadata(), player, EnumHand.MAIN_HAND);
 
         if (world.setBlockState(pos, newState, 3)) {
-            world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0F, 1.0F);
+            world.playSound(null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.3F, 1.0F);
             return true;
         }
 
@@ -192,7 +192,7 @@ public class FocusEffectEfreetsFlame extends FocusEffect {
         }
 
         if (smelted > 0) {
-            world.playSound(null, x, y, z, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.5F, 1.0F);
+            world.playSound(null, x, y, z, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 0.3F, 1.0F);
         }
 
         return smelted > 0;
