@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.proxy;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.IAddition;
 import mod.emt.thaumictinkerer.api.IProxy;
+import mod.emt.thaumictinkerer.casters.foci.FocusEffectEfreetsFlame;
 import mod.emt.thaumictinkerer.casters.foci.FocusEffectLovestruck;
 import mod.emt.thaumictinkerer.compat.crafttweaker.CTPlugin;
 import mod.emt.thaumictinkerer.compat.datafixes.BlockDataFixer;
@@ -50,6 +51,7 @@ public class CommonProxy {
     }
 
     private void registerFoci() {
+        FocusEngine.registerElement(FocusEffectEfreetsFlame.class, new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/foci/efreets_flame.png"), 25565230);
         FocusEngine.registerElement(FocusEffectLovestruck.class, new ResourceLocation(ThaumicTinkerer.MOD_ID, "textures/foci/lovestruck.png"), 16728727);
     }
 
