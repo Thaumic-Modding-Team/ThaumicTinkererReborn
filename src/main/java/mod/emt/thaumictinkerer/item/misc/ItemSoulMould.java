@@ -37,7 +37,7 @@ public class ItemSoulMould extends AbstractItemAddition {
     @Override
     public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World world, EntityPlayer player, @NotNull EnumHand hand) {
         ItemStack stack = player.getHeldItem(hand);
-        RayTraceResult trace = PlayerHelper.rayTrace(player, 0);
+        RayTraceResult trace = PlayerHelper.rayTraceBlocks(player, 0);
         if(player.isSneaking() && trace == null || trace.typeOfHit == RayTraceResult.Type.MISS) {
             clearEntityInfo(stack);
             if(world.isRemote) {

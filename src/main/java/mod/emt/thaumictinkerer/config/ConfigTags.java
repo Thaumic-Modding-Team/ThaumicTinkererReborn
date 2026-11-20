@@ -1,7 +1,7 @@
 package mod.emt.thaumictinkerer.config;
 
-import mod.emt.thaumictinkerer.utils.ConfigItem;
 import mod.emt.thaumictinkerer.utils.helpers.LogHelper;
+import mod.emt.thaumictinkerer.utils.misc.ConfigItem;
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.init.Blocks;

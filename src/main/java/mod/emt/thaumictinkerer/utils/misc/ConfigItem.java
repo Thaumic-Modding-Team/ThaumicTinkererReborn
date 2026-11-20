@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.utils;
+package mod.emt.thaumictinkerer.utils.misc;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;

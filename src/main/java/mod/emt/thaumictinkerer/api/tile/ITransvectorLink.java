@@ -1,6 +1,6 @@
 package mod.emt.thaumictinkerer.api.tile;
 
-import mod.emt.thaumictinkerer.utils.TransvectorLink;
+import mod.emt.thaumictinkerer.utils.misc.TransvectorLink;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;

@@ -23,6 +23,7 @@ gui.thaumictinkerer:attractor.match_ore=Match OreDict
 gui.thaumictinkerer:attractor.whitelist=Whitelist
 gui.thaumictinkerer:dynamism_tablet.left_click=Left Click
 gui.thaumictinkerer:dynamism_tablet.right_click=Right Click
+gui.thaumictinkerer:dynamism_tablet.sneaking=Sneaking
 
 # Blocks
 tile.thaumictinkerer:advanced_recharger.name=Advanced Recharge Pedestal

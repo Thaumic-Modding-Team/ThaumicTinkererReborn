@@ -44,6 +44,15 @@ public class GuiDynamismTablet extends GuiContainer {
     }
 
     @Override
+    public void initGui() {
+        super.initGui();
+        TileDynamismTablet tablet = this.getContainer().getTablet();
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerDyamismTablet.BUTTON_LEFT_CLICK, this.getGuiLeft() + 84, this.getGuiTop() + 24, 176, 0, 11, 11, tablet.getClickMode() == TileDynamismTablet.ClickMode.LEFT_CLICK));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerDyamismTablet.BUTTON_RIGHT_CLICK, this.getGuiLeft() + 84, this.getGuiTop() + 38, 176, 0, 11, 11, tablet.getClickMode() == TileDynamismTablet.ClickMode.RIGHT_CLICK));
+        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerDyamismTablet.BUTTON_SNEAKING, this.getGuiLeft() + 84, this.getGuiTop() + 52, 176, 0, 11, 11, tablet.isSneaking()));
+    }
+
+    @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         ITextComponent tileName = this.getContainer().getTablet().getDisplayName();
         if(tileName != null) {
@@ -51,16 +60,9 @@ public class GuiDynamismTablet extends GuiContainer {
             this.fontRenderer.drawString(name, 8, 6, 0x404040);
         }
         this.fontRenderer.drawString(this.getContainer().getPlayer().inventory.getDisplayName().getUnformattedText(), 8, this.ySize - 92, 0x404040);
-        this.fontRenderer.drawString(I18n.format("gui.thaumictinkerer:dynamism_tablet.left_click"), 98, 33, 0x0e0e0e);
-        this.fontRenderer.drawString(I18n.format("gui.thaumictinkerer:dynamism_tablet.right_click"), 98, 47, 0x0e0e0e);
-    }
-
-    @Override
-    public void initGui() {
-        super.initGui();
-        TileDynamismTablet tablet = this.getContainer().getTablet();
-        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerDyamismTablet.BUTTON_LEFT_CLICK, this.getGuiLeft() + 84, this.getGuiTop() + 31, 176, 0, 11, 11, tablet.getClickMode() == TileDynamismTablet.ClickMode.LEFT_CLICK));
-        this.addButton(new GuiButtonToggleable(TEXTURE, ContainerDyamismTablet.BUTTON_RIGHT_CLICK, this.getGuiLeft() + 84, this.getGuiTop() + 45, 176, 0, 11, 11, tablet.getClickMode() == TileDynamismTablet.ClickMode.RIGHT_CLICK));
+        this.fontRenderer.drawString(I18n.format("gui.thaumictinkerer:dynamism_tablet.left_click"), 98, 26, 0x0e0e0e);
+        this.fontRenderer.drawString(I18n.format("gui.thaumictinkerer:dynamism_tablet.right_click"), 98, 40, 0x0e0e0e);
+        this.fontRenderer.drawString(I18n.format("gui.thaumictinkerer:dynamism_tablet.sneaking"), 98, 54, 0x0e0e0e);
     }
 
     @Override
@@ -77,6 +79,10 @@ public class GuiDynamismTablet extends GuiContainer {
         } else if (button.id == ContainerDyamismTablet.BUTTON_RIGHT_CLICK) {
             toggle1 = (GuiButtonToggleable) button;
             toggle2 = (GuiButtonToggleable) this.buttonList.get(ContainerDyamismTablet.BUTTON_LEFT_CLICK);
+        } else if(button.id == ContainerDyamismTablet.BUTTON_SNEAKING) {
+            toggle1 = (GuiButtonToggleable) button;
+            toggle1.setToggled(!toggle1.isToggled());
+            this.mc.playerController.sendEnchantPacket(this.inventorySlots.windowId, button.id);
         }
 
         if (toggle1 != null && toggle2 != null && !toggle1.isToggled()) {

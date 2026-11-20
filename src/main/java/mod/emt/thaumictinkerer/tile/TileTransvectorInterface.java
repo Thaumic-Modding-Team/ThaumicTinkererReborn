@@ -3,7 +3,7 @@ package mod.emt.thaumictinkerer.tile;
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
 import mod.emt.thaumictinkerer.api.tile.TileEntityTT;
 import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
-import mod.emt.thaumictinkerer.utils.TransvectorLink;
+import mod.emt.thaumictinkerer.utils.misc.TransvectorLink;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.tileentity.TileEntity;

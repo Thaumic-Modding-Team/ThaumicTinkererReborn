@@ -1,10 +1,13 @@
 package mod.emt.thaumictinkerer.block;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
+import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileDynamismTabletTESR;
 import mod.emt.thaumictinkerer.registry.ModGuiHandlerTT;
 import mod.emt.thaumictinkerer.tile.TileDynamismTablet;
+import mod.emt.thaumictinkerer.utils.misc.FakePlayerTT;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockHorizontal;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -22,13 +25,17 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.common.MinecraftForge;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
+import net.minecraftforge.fml.common.eventhandler.EventPriority;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
 import org.jetbrains.annotations.NotNull;
 
-public class BlockDynamismTablet extends BlockTileAddition {
+public class BlockDynamismTablet extends BlockTileAddition implements IProxy {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
     public static final AxisAlignedBB AABB_TABLET = new AxisAlignedBB(0, 0, 0, 1.0, 0.125, 1.0);
 
@@ -68,6 +75,17 @@ public class BlockDynamismTablet extends BlockTileAddition {
             }
         }
         super.breakBlock(worldIn, pos, state);
+    }
+
+    @Override
+    public void neighborChanged(@NotNull IBlockState state, World worldIn, @NotNull BlockPos pos, @NotNull Block blockIn, @NotNull BlockPos fromPos) {
+        TileEntity tile = worldIn.getTileEntity(pos);
+        if(!worldIn.isRemote && tile instanceof TileDynamismTablet) {
+            BlockPos frontPos = pos.offset(((TileDynamismTablet) tile).getTabletFront());
+            if(frontPos.equals(fromPos)) {
+                ((TileDynamismTablet) tile).resetBreakProgress();
+            }
+        }
     }
 
     @SuppressWarnings("deprecation")
@@ -132,5 +150,38 @@ public class BlockDynamismTablet extends BlockTileAddition {
     public void registerModel(ModelRegistryEvent event) {
         super.registerModel(event);
         ClientRegistry.bindTileEntitySpecialRenderer(TileDynamismTablet.class, new TileDynamismTabletTESR());
+    }
+
+    //##########################################################
+    // Events and IProxy
+
+    @SubscribeEvent(priority = EventPriority.LOW)
+    public void onGetBreakSpeed(PlayerEvent.BreakSpeed event) {
+        if(event.getEntityPlayer() instanceof FakePlayerTT) {
+            FakePlayerTT player = (FakePlayerTT) event.getEntityPlayer();
+            if(!(player.getFakePlayerTile() instanceof TileDynamismTablet)) {
+                return;
+            }
+
+
+            TileDynamismTablet tile = (TileDynamismTablet) player.getFakePlayerTile();
+
+            int currProgress = tile.getBreakProgress();
+            int maxProgress = tile.getBreakProgressMax();
+            if(maxProgress <= 0) {
+                currProgress = tile.getMaxActivationCounter();
+                maxProgress = (int) Math.ceil(event.getState().getBlockHardness(player.world, event.getPos()) * 20.0);
+                tile.setBreakProgressMax(maxProgress);
+            } else {
+                currProgress += tile.getMaxActivationCounter();
+                event.setNewSpeed((float) currProgress);
+            }
+            tile.setBreakProgress(currProgress);
+        }
+    }
+
+    @Override
+    public void preInit() {
+        MinecraftForge.EVENT_BUS.register(this);
     }
 }

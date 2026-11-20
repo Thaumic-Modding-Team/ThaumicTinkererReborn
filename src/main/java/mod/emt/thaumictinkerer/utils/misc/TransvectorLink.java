@@ -1,4 +1,4 @@
-package mod.emt.thaumictinkerer.utils;
+package mod.emt.thaumictinkerer.utils.misc;
 
 import mod.emt.thaumictinkerer.utils.helpers.WorldHelper;
 import net.minecraft.nbt.NBTTagCompound;

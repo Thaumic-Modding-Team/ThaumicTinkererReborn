@@ -2,8 +2,8 @@ package mod.emt.thaumictinkerer.item.tools;
 
 import mod.emt.thaumictinkerer.api.item.AbstractItemAddition;
 import mod.emt.thaumictinkerer.api.tile.ITransvectorLink;
-import mod.emt.thaumictinkerer.utils.TransvectorLink;
 import mod.emt.thaumictinkerer.utils.helpers.WorldHelper;
+import mod.emt.thaumictinkerer.utils.misc.TransvectorLink;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
