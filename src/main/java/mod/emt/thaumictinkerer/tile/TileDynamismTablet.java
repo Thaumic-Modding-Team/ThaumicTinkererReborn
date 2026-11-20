@@ -182,9 +182,9 @@ public class TileDynamismTablet extends TileEntityTT implements ITickable {
             case BOTTOM:
                 return EnumFacing.DOWN;
             case FRONT:
-                return front;
-            case BACK:
                 return front.getOpposite();
+            case BACK:
+                return front;
             case LEFT:
                 return front.rotateYCCW();
             case RIGHT:
@@ -313,6 +313,16 @@ public class TileDynamismTablet extends TileEntityTT implements ITickable {
         public ClickDirection getNext() {
             ClickDirection[] values = ClickDirection.values();
             return values[(this.ordinal() + 1) % values.length];
+        }
+
+        public String getTranslationKey() {
+            return "gui.thaumictinkerer:dynamism_tablet.click_direction." + this;
+        }
+
+
+        @Override
+        public String toString() {
+            return super.toString().toLowerCase();
         }
     }
 }

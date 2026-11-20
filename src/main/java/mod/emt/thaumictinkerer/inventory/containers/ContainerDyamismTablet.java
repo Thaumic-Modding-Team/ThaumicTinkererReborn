@@ -14,6 +14,7 @@ public class ContainerDyamismTablet extends Container {
     public static final int BUTTON_LEFT_CLICK = 0;
     public static final int BUTTON_RIGHT_CLICK = 1;
     public static final int BUTTON_SNEAKING = 2;
+    public static final int BUTTON_CLICK_DIRECTION = 3;
 
     private final EntityPlayer player;
     private final TileDynamismTablet tile;
@@ -59,6 +60,8 @@ public class ContainerDyamismTablet extends Container {
             tablet.setClickMode(ClickMode.RIGHT_CLICK);
         } else if(id == BUTTON_SNEAKING) {
             tablet.setIsSneaking(!tablet.isSneaking());
+        } else if(id == BUTTON_CLICK_DIRECTION) {
+            tablet.setClickDirection(tablet.getClickDirection().getNext());
         }
         return false;
     }
