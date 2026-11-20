@@ -1,13 +1,16 @@
 # Thaumic Tinkerer: Reborn Changelog
 ## 1.1.0
 ### Added
-- Added Luminous and Shadowy Gas Phials. These can be thrown to create small areas of light or darkness
-- Added Gas Remover, used to remove nearby Luminous or Shadowy Gas
-- Added Black Hole Ring, used to store a Integer.MAX_VALUE of up to 5 different blocks
-- Added Soul Mould, used to blacklist/whitelist entities affected by the Corporeal and Anima Attractors
-- Added Gui to the Corporeal, Kinetic and Anima Attractors along with several toggleable options
 - Added Advanced Recharge Pedestal, a multiblock recharge pedestal that operates twice as fast and drains from a 3x3 chunk area
+- Added Black Hole Ring, used to store a Integer.MAX_VALUE of up to 5 different blocks
+- Added Corporeal, Kinetic and Anima Attractor GUIs along with several toggleable options
 - Added Dynamism Tablet, a device used to simulate player mouse interactions
+- Added Gas Remover, used to remove nearby Luminous or Shadowy Gas
+- Added Luminous and Shadowy Gas Phials. These can be thrown to create small areas of light or darkness
+- Added Soul Mould, used to blacklist/whitelist entities affected by the Corporeal and Anima Attractors
+- Added Spell Effect: Collector, teleports all nearby items to the point of impact, can also be used to teleport items to the caster
+- Added Spell Effect: Efreet's Flame, smelts blocks and dropped items in-world
+- Added Spell Effect: Lovestruck, causes animals to go into love mode temporarily
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
 - Fixed several Necromancy recipes activating with any Vis crystal
