@@ -7,6 +7,7 @@
 - Added Soul Mould, used to blacklist/whitelist entities affected by the Corporeal and Anima Attractors
 - Added Gui to the Corporeal, Kinetic and Anima Attractors along with several toggleable options
 - Added Advanced Recharge Pedestal, a multiblock recharge pedestal that operates twice as fast and drains from a 3x3 chunk area
+- Added Dynamism Tablet, a device used to simulate player mouse interactions
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
 - Fixed several Necromancy recipes activating with any Vis crystal

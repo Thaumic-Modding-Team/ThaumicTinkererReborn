@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "key": "TT_DYNAMISM_TABLET",
+      "name": "thaumictinkerer.research.dynamism_tablet.title",
+      "icons": ["thaumictinkerer:dynamism_tablet"],
+      "category": "THAUMIC_TINKERER",
+      "parents": ["TT_TRANSVECTOR_DISLOCATOR", "~SEALUSE"],
+      "meta": ["HIDDEN"],
+      "location": [-2, -4],
+      "stages": [
+        {
+          "text": "thaumictinkerer.research.dynamism_tablet.stage.1",
+          "required_knowledge": ["OBSERVATION;ARTIFICE;1", "THEORY;GOLEMANCY;1"]
+        },
+        {
+          "text": "thaumictinkerer.research.dynamism_tablet.stage.2",
+          "recipes": [
+            "thaumictinkerer:dynamism_tablet"
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -14,6 +14,8 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 public class ConfigHandlerTT {
     @Config.Name("Sigil of Consuming")
     public static ConsumingSigilConfig consumingSigil = new ConsumingSigilConfig();
+    @Config.Name("Dynamism Tablet")
+    public static DynamismTabletConfig dynamismTablet = new DynamismTabletConfig();
     @Config.Name("Infusion Enchantments")
     public static InfusionEnchantConfig infusionEnchantments = new InfusionEnchantConfig();
     @Config.Name("Tablet of Necromancy")
@@ -50,6 +52,13 @@ public class ConfigHandlerTT {
                 "stoneDiorite",
                 "stoneGranite"
         };
+    }
+
+    public static class DynamismTabletConfig {
+        @Config.RequiresMcRestart
+        @Config.Name("Enable Dynamism Tablet")
+        @Config.Comment("Enables the Dynamism Tablet, a fake player auto-clicker device.")
+        public boolean enable = true;
     }
 
     public static class InfusionEnchantConfig {

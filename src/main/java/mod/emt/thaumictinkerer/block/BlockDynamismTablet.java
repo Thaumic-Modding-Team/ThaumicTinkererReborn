@@ -4,6 +4,8 @@ import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.IProxy;
 import mod.emt.thaumictinkerer.api.block.BlockTileAddition;
 import mod.emt.thaumictinkerer.client.renderer.tile.TileDynamismTabletTESR;
+import mod.emt.thaumictinkerer.config.ConfigHandlerTT;
+import mod.emt.thaumictinkerer.registry.ModBlocksTT;
 import mod.emt.thaumictinkerer.registry.ModGuiHandlerTT;
 import mod.emt.thaumictinkerer.tile.TileDynamismTablet;
 import mod.emt.thaumictinkerer.utils.misc.FakePlayerTT;
@@ -17,7 +19,10 @@ import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
+import net.minecraft.item.crafting.IRecipe;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.*;
 import net.minecraft.util.math.AxisAlignedBB;
@@ -33,7 +38,16 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.items.IItemHandler;
+import net.minecraftforge.oredict.OreIngredient;
+import net.minecraftforge.registries.IForgeRegistry;
 import org.jetbrains.annotations.NotNull;
+import thaumcraft.api.ThaumcraftApi;
+import thaumcraft.api.aspects.Aspect;
+import thaumcraft.api.aspects.AspectList;
+import thaumcraft.api.crafting.InfusionRecipe;
+import thaumcraft.api.crafting.IngredientNBTTC;
+import thaumcraft.api.golems.GolemHelper;
+import thaumcraft.api.items.ItemsTC;
 
 public class BlockDynamismTablet extends BlockTileAddition implements IProxy {
     public static final PropertyDirection FACING = BlockHorizontal.FACING;
@@ -145,15 +159,8 @@ public class BlockDynamismTablet extends BlockTileAddition implements IProxy {
         return state.withRotation(mirrorIn.toRotation(state.getValue(FACING)));
     }
 
-    @SideOnly(Side.CLIENT)
-    @Override
-    public void registerModel(ModelRegistryEvent event) {
-        super.registerModel(event);
-        ClientRegistry.bindTileEntitySpecialRenderer(TileDynamismTablet.class, new TileDynamismTabletTESR());
-    }
-
     //##########################################################
-    // Events and IProxy
+    // Events
 
     @SubscribeEvent(priority = EventPriority.LOW)
     public void onGetBreakSpeed(PlayerEvent.BreakSpeed event) {
@@ -180,8 +187,48 @@ public class BlockDynamismTablet extends BlockTileAddition implements IProxy {
         }
     }
 
+    //##########################################################
+    // IAddition and IProxy
+
     @Override
     public void preInit() {
         MinecraftForge.EVENT_BUS.register(this);
+    }
+
+    @SideOnly(Side.CLIENT)
+    @Override
+    public void registerModel(ModelRegistryEvent event) {
+        super.registerModel(event);
+        ClientRegistry.bindTileEntitySpecialRenderer(TileDynamismTablet.class, new TileDynamismTabletTESR());
+    }
+
+    @SuppressWarnings("ConstantConditions")
+    @Override
+    public void registerRecipe(IForgeRegistry<IRecipe> registry) {
+        ThaumcraftApi.addInfusionCraftingRecipe(new ResourceLocation(ThaumicTinkerer.MOD_ID, "dynamism_tablet"), new InfusionRecipe(
+                "TT_DYNAMISM_TABLET",
+                new ItemStack(ModBlocksTT.DYNAMISM_TABLET),
+                4,
+                new AspectList().add(Aspect.MECHANISM, 100).add(Aspect.ENERGY, 25).add(Aspect.MAN, 25).add(Aspect.TOOL, 25).add(Aspect.MOTION, 25),
+                new IngredientNBTTC(GolemHelper.getSealStack("thaumcraft:use")),
+                Blocks.LIGHT_WEIGHTED_PRESSURE_PLATE,
+                ItemsTC.mechanismComplex,
+                new OreIngredient("plateBrass"),
+                new OreIngredient("plateBrass"),
+                Items.COMPARATOR,
+                new ItemStack(ItemsTC.mind, 1, 1),
+                ItemsTC.morphicResonator,
+                new ItemStack(ItemsTC.nuggets, 1, 10)
+        ));
+    }
+
+    @Override
+    public void registerResearchLocation() {
+        ThaumcraftApi.registerResearchLocation(new ResourceLocation(ThaumicTinkerer.MOD_ID, "research/optional/dynamism_tablet"));
+    }
+
+    @Override
+    public boolean isEnabled() {
+        return ConfigHandlerTT.dynamismTablet.enable;
     }
 }

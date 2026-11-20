@@ -148,11 +148,11 @@ thaumictinkerer.research.dissimulation_block.stage.1=I've begun to notice subtle
 thaumictinkerer.research.dissimulation_block.stage.2=My research into this has led to a startling, almost existential realization. What if the world around us is nothing more than a highly advanced simulation of matter? If reality is just a set of rules rendered by the universe, then those rules can be rewritten.<BR>This construct that I call the Dissimulation Block, acts as a physical hollow shell, a blank canvas waiting for a texture to render.<BR>It possesses the unique ability to perfectly mimic the appearance, texture, and sounds of almost any other block in existence. I simply need to place it down, then right-click any block I want on it to simulate its appearance. I can right click with an empty hand or break the simulated block to revert it back to itself.
 thaumictinkerer.research.dissimulation_block.addenda.1=It should be noted that certain blocks it can mimic may yield unpredictable results. There is unfortunately nothing I can do about these apparent glitches.
 
-# -- EQUIPMENT: Ender Mirror
-thaumictinkerer.research.ender_mirror.title=Ender Mirror
-thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
-thaumictinkerer.research.ender_mirror.stage.1=If a magical hand mirror can grant me access to linked mirrors across dimensions, how much harder would it be to create something that access my personal ender chest inventory?
-thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to modify a magical hand mirror so it grants me to access my ender chest inventory from anywhere.
+# -- DEVICES: Dynamism Tablet
+thaumictinkerer.research.dynamism_tablet.title=Dynamism Tablet
+thaumictinkerer.research.dynamism_tablet.title.subtitle=It's got Abby Normal's brain.
+thaumictinkerer.research.dynamism_tablet.stage.1=While golems are useful for many tasks, they are often temperamental and easily distracted, to say nothing of their penchant to become trapped behind bookshelves or under stairs.<BR>Perhaps I can find a way to replicate a golem's ability to interact with objects in a stationary device.
+thaumictinkerer.research.dynamism_tablet.stage.2=While the device is rudimentary, it is nonetheless capable of mimicking player interactions for any creature or block placed in front of the device. Though the operation is slower than if I were to perform the action manually.<BR>For the device to operate, it must be powered by redstone and provided with items or tools used for the interaction.
 
 # -- DEVICES: Ethereal Platform
 thaumictinkerer.research.ethereal_platform.title=Ethereal Platform
@@ -195,6 +195,12 @@ thaumictinkerer.research.black_hole_ring.title=Black Hole Ring
 thaumictinkerer.research.black_hole_ring.title.subtitle=Approaching the Schwarzschild radius
 thaumictinkerer.research.black_hole_ring.stage.1=While the sigil of consuming may be useful for destroying items, sometimes I want to store the items rather than voiding them entirely.<BR>My experiments into mirrors may provide the solution of how to retrieve materials from an inaccessible location.
 thaumictinkerer.research.black_hole_ring.stage.2=I have successfully created a ring that is capable of storing and retrieving near infinite amounts of up to five items.<BR>When enabled, the ring will automatically collect and store any item that I pick up that match the ring slot filters.<BR>The enabled/disabled status of the ring can be toggled by sneak right-clicking air.<BR>To bind an item to a slot for collection, select a currently empty slot, then right-click the block in the world.<BR>To change the currently selected slot, right-click air while holding the ring.<BR>To remove the filter from a slot, set the active slot to the desired filter, then place the ring into a crafting table.<BR>To extract the items stored within the ring, select desired slot, then right-click an inventory or chest while sneaking.<BR>Additionally, while the ring is active, placing blocks into the world will attempt to provision the player with matching blocks stored within the ring.
+
+# -- EQUIPMENT: Ender Mirror
+thaumictinkerer.research.ender_mirror.title=Ender Mirror
+thaumictinkerer.research.ender_mirror.title.subtitle=A 'pocket' to the fourth dimension
+thaumictinkerer.research.ender_mirror.stage.1=If a magical hand mirror can grant me access to linked mirrors across dimensions, how much harder would it be to create something that access my personal ender chest inventory?
+thaumictinkerer.research.ender_mirror.stage.2=I have successfully managed to modify a magical hand mirror so it grants me to access my ender chest inventory from anywhere.
 
 # -- EQUIPMENT: Feline Charm
 thaumictinkerer.research.feline_charm.title=Feline Charm

@@ -3,7 +3,6 @@ This is a list of general content that did not make the initial cut for the firs
 
 | Feature                      | Replacement | Description                                                             |
 |:-----------------------------|:-----------:|:------------------------------------------------------------------------|
-| Dynamism Tablet              |             | Auto-clicker device                                                     | 
 | Focus Effect: Aphrodisiac    |             | Causes entities to go into breed mode or spawns particles on impact.    |
 | Focus Effect: Efreet's Flame |             | Smelts blocks or item entities struck by the spell.                     |
 | Focus Effect: Worldshaper    |             | Places blocks in the world in a pattern. Can pull from Black Hole Ring. |
