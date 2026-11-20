@@ -11,6 +11,7 @@
 - Added Spell Effect: Collector, teleports all nearby items to the point of impact, can also be used to teleport items to the caster
 - Added Spell Effect: Efreet's Flame, smelts blocks and dropped items in-world
 - Added Spell Effect: Lovestruck, causes animals to go into love mode temporarily
+- Added Spell Effect: Worldshaper, used to place blocks in the world
 ### Fixed
 - Fixed Thaumic Restorer bypassing configuration setting when repairing using an Emptying Essentia Transfuser
 - Fixed several Necromancy recipes activating with any Vis crystal
