@@ -5,6 +5,7 @@ import net.minecraft.util.ResourceLocation;
 import net.minecraft.util.SoundEvent;
 
 public enum ModSoundEventsTT {
+    BLOCK_CORPOREAL_ATTRACT0R_DISCO_COW("block.corporeal_attractor.disco_cow"),
     BLOCK_NECROMANCY_TABLET_SUMMON_FINISH("block.necromancy_tablet.summon_finish"),
     BLOCK_NECROMANCY_TABLET_SUMMON_LOOP("block.necromancy_tablet.summon_loop"),
     BLOCK_NECROMANCY_TABLET_SUMMON_START("block.necromancy_tablet.summon_start"),

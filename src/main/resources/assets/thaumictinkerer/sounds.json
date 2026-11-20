@@ -1,4 +1,9 @@
 {
+  "block.corporeal_attractor.disco_cow": {
+    "sounds": [
+      "thaumictinkerer:block/corporeal_attractor/disco_cow"
+    ]
+  },
   "block.necromancy_tablet.summon_finish": {
     "sounds": [
       "thaumictinkerer:block/necromancy_tablet/summon_finish1",
