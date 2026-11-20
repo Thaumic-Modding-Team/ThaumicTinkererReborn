@@ -201,6 +201,38 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         return handlers;
     }
 
+    /**
+     * Attempts to extract any items matching the passed ItemStack from rings in the player's inventory.
+     *
+     * @param player The player
+     * @param toExtract The item that will be extracted
+     * @param amount The total amount of items to extract
+     * @return The total number of matching items extracted from any rings
+     */
+    public static int extractStacksFromRings(EntityPlayer player, ItemStack toExtract, int amount, boolean simulate) {
+        int extractedAmount = 0;
+        for(BlackHoleRingHandler handler : getRingHandlers(player, false)) {
+            for(int i = 0; i < handler.getSlots(); i++) {
+                ItemStack slotStack = handler.getStackInSlot(i);
+                if(!slotStack.isEmpty() && ItemHandlerHelper.canItemStacksStack(toExtract, slotStack)) {
+                    while (extractedAmount < amount) {
+                        ItemStack extracted = handler.extractItem(i, amount - extractedAmount, simulate);
+                        if(!extracted.isEmpty()) {
+                            extractedAmount += extracted.getCount();
+                        } else {
+                            break;
+                        }
+                    }
+
+                    if(extractedAmount >= amount) {
+                        return extractedAmount;
+                    }
+                }
+            }
+        }
+        return extractedAmount;
+    }
+
     public static BlackHoleRingHandler getRingHandler(ItemStack ring) {
         return new BlackHoleRingHandler(ring);
     }
