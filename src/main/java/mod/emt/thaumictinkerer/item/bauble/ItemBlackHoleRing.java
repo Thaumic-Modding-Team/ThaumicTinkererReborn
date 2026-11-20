@@ -63,7 +63,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     }
 
     @Override
-    public void onUpdate(ItemStack stack, World worldIn, Entity entityIn, int itemSlot, boolean isSelected) {
+    public void onUpdate(@NotNull ItemStack stack, @NotNull World worldIn, @NotNull Entity entityIn, int itemSlot, boolean isSelected) {
         if(entityIn instanceof EntityPlayer) {
             UUID playerId = ((EntityPlayer) entityIn).getGameProfile().getId();
             if(PROVISION_CACHE.containsKey(playerId)) {
@@ -76,7 +76,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     public @NotNull ActionResult<ItemStack> onItemRightClick(@NotNull World worldIn, EntityPlayer playerIn, @NotNull EnumHand handIn) {
         ItemStack heldStack = playerIn.getHeldItem(handIn);
         if(playerIn.isSneaking()) {
-            this.setRingEnabled(heldStack, !this.isRingEnabled(heldStack));
+            this.setRingEnabled(heldStack, !isRingEnabled(heldStack));
         } else {
             this.nextActiveSlot(heldStack);
             if(!worldIn.isRemote) {
@@ -102,7 +102,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         ItemStack blockStack = state.getBlock().getPickBlock(state, trace, worldIn, pos, player);
         if (!blockStack.isEmpty()) {
             int slot = this.getActiveSlot(heldStack);
-            BlackHoleRingHandler handler = this.getRingHandler(heldStack);
+            BlackHoleRingHandler handler = getRingHandler(heldStack);
             if (handler.getFilter(slot).isEmpty()) {
                 handler.setFilter(slot, blockStack);
                 if(!worldIn.isRemote) {
@@ -123,7 +123,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
                 IItemHandler tileHandler = tile.getCapability(CapabilityItemHandler.ITEM_HANDLER_CAPABILITY, side);
                 if (tileHandler != null) {
                     //Pulling from the current active slot and inserting into the tile inventory
-                    BlackHoleRingHandler ringHandler = this.getRingHandler(heldItem);
+                    BlackHoleRingHandler ringHandler = getRingHandler(heldItem);
                     int slot = this.getActiveSlot(heldItem);
                     ItemStack slotStack = ringHandler.getStackInSlot(slot);
                     while(!slotStack.isEmpty()) {
@@ -145,7 +145,7 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
 
     @Override
     public boolean hasEffect(@NotNull ItemStack stack) {
-        return this.isRingEnabled(stack);
+        return isRingEnabled(stack);
     }
 
     @Override
@@ -156,9 +156,9 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     @SideOnly(Side.CLIENT)
     @Override
     public void addInformation(@NotNull ItemStack stack, @Nullable World worldIn, @NotNull List<String> tooltip, @NotNull ITooltipFlag flagIn) {
-        tooltip.add(I18n.format("tooltip.thaumictinkerer:" + (this.isRingEnabled(stack) ? "enabled" : "disabled")));
+        tooltip.add(I18n.format("tooltip.thaumictinkerer:" + (isRingEnabled(stack) ? "enabled" : "disabled")));
         tooltip.add(I18n.format("tooltip.thaumictinkerer:black_hole_ring.info"));
-        BlackHoleRingHandler handler = this.getRingHandler(stack);
+        BlackHoleRingHandler handler = getRingHandler(stack);
         int activeSlot = this.getActiveSlot(stack);
         for (int i = 0; i < handler.getSlots(); i++) {
             String info = (i == activeSlot ? " ┠>" : " ┠ ");
@@ -191,16 +191,26 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         return rings;
     }
 
-    public BlackHoleRingHandler getRingHandler(ItemStack ring) {
+    public static List<BlackHoleRingHandler> getRingHandlers(EntityPlayer player, boolean enabledOnly) {
+        List<BlackHoleRingHandler> handlers = new ArrayList<>();
+        for(ItemStack ring : getBlackHoleRings(player)) {
+            if(!enabledOnly || isRingEnabled(ring)) {
+                handlers.add(getRingHandler(ring));
+            }
+        }
+        return handlers;
+    }
+
+    public static BlackHoleRingHandler getRingHandler(ItemStack ring) {
         return new BlackHoleRingHandler(ring);
     }
 
     public ItemStack getCurrentStack(ItemStack ring) {
-        return this.getRingHandler(ring).getStackInSlot(this.getActiveSlot(ring));
+        return getRingHandler(ring).getStackInSlot(this.getActiveSlot(ring));
     }
 
     public ItemStack getCurrentFilter(ItemStack ring) {
-        return this.getRingHandler(ring).getFilter(this.getActiveSlot(ring));
+        return getRingHandler(ring).getFilter(this.getActiveSlot(ring));
     }
 
     public void provideMaterials(EntityPlayer player, ItemStack ringStack, ItemStack toProvide) {
@@ -209,11 +219,11 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
             return;
         }
 
-        if(!this.isRingEnabled(ringStack)) {
+        if(!isRingEnabled(ringStack)) {
             return;
         }
 
-        BlackHoleRingHandler handler = this.getRingHandler(ringStack);
+        BlackHoleRingHandler handler = getRingHandler(ringStack);
         for(int i = 0; i < handler.getSlots(); i++) {
             ItemStack stack = handler.getStackInSlot(i);
             if(!stack.isEmpty() && ItemHandlerHelper.canItemStacksStack(stack, toProvide)) {
@@ -228,8 +238,8 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
     //##########################################################
     // Tag Stuff
 
-    public boolean isRingEnabled(ItemStack stack) {
-        return stack.getTagCompound() != null && stack.getTagCompound().getBoolean("enabled");
+    public static boolean isRingEnabled(ItemStack stack) {
+        return stack.getItem() instanceof ItemBlackHoleRing && stack.getTagCompound() != null && stack.getTagCompound().getBoolean("enabled");
     }
 
     public void setRingEnabled(ItemStack stack, boolean enabled) {
@@ -300,29 +310,22 @@ public class ItemBlackHoleRing extends AbstractItemBauble implements IProxy {
         if(!entityItem.isEntityAlive() || toPickUp.isEmpty())
             return;
 
-        for(ItemStack ring : getBlackHoleRings(player)) {
-            if(!this.isRingEnabled(ring)) {
-                continue;
-            }
-
-            BlackHoleRingHandler handler = this.getRingHandler(ring);
-            if(handler != null) {
-                ItemStack remaining = ItemHandlerHelper.insertItem(handler, toPickUp, false);
-                if(remaining.isEmpty()) {
-                    entityItem.setItem(ItemStack.EMPTY);
-                    entityItem.setDead();
-                    event.setCanceled(true);
-                    world.playSound(null,
-                            player.posX, player.posY + 0.5, player.posZ,
-                            SoundEvents.ENTITY_ITEM_PICKUP,
-                            SoundCategory.PLAYERS,
-                            0.2F,
-                            ((world.rand.nextFloat() - world.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
-                    return;
-                } else if(toPickUp.getCount() != remaining.getCount()) {
-                    entityItem.setItem(remaining);
-                    toPickUp = remaining;
-                }
+        for(BlackHoleRingHandler handler : getRingHandlers(player, true)) {
+            ItemStack remaining = ItemHandlerHelper.insertItem(handler, toPickUp, false);
+            if(remaining.isEmpty()) {
+                entityItem.setItem(ItemStack.EMPTY);
+                entityItem.setDead();
+                event.setCanceled(true);
+                world.playSound(null,
+                        player.posX, player.posY + 0.5, player.posZ,
+                        SoundEvents.ENTITY_ITEM_PICKUP,
+                        SoundCategory.PLAYERS,
+                        0.2F,
+                        ((world.rand.nextFloat() - world.rand.nextFloat()) * 0.7F + 1.0F) * 2.0F);
+                return;
+            } else if(toPickUp.getCount() != remaining.getCount()) {
+                entityItem.setItem(remaining);
+                toPickUp = remaining;
             }
         }
     }
