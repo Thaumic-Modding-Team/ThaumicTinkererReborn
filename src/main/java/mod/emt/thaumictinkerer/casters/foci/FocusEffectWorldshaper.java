@@ -2,6 +2,7 @@ package mod.emt.thaumictinkerer.casters.foci;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 
+import mod.emt.thaumictinkerer.item.bauble.ItemBlackHoleRing;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.ItemStack;
@@ -26,6 +27,7 @@ import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.events.ServerEvents;
 
 import javax.annotation.Nullable;
+import java.util.concurrent.atomic.AtomicBoolean;
 
 public class FocusEffectWorldshaper extends FocusEffect implements IFocusBlockPicker {
     @Override
@@ -83,8 +85,13 @@ public class FocusEffectWorldshaper extends FocusEffect implements IFocusBlockPi
         ItemStack placementStack = pickedBlock.copy();
         placementStack.setCount(1);
         world.playSound(null, placementPos, SoundsTC.wand, SoundCategory.PLAYERS, 0.25F, 1.0F);
-        ServerEvents.addRunnableServer(world, () -> ServerEvents.addSwapper(world, placementPos, null, placementStack, true, 0, player, true, true,
-                8776595, true, false, 0, ServerEvents.DEFAULT_PREDICATE, 0.0F), 0);
+        AtomicBoolean fromRing = new AtomicBoolean(false);
+        if(!player.isCreative()) {
+            fromRing.set(ItemBlackHoleRing.extractStacksFromRings(player, placementStack, 1, false) > 0);
+        }
+        ServerEvents.addRunnableServer(world, () -> ServerEvents.addSwapper(world, placementPos, null, placementStack,
+                !fromRing.get(), 0, player, true, true, 8776595, true, false, 0,
+                ServerEvents.DEFAULT_PREDICATE, 0.0F), 0);
         return true;
     }
 
