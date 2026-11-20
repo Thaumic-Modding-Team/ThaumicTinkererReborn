@@ -122,8 +122,11 @@ thaumictinkerer.research.thaumic_tinkerer_base.title.subtitle=Excluding the word
 thaumictinkerer.research.thaumic_tinkerer_base.stage.1=The universe is a grand clockwork machine, or so the scholars say...<BR>There are several bits of research that I've tinkered with that are too small or too specific to fit anywhere, that's what this collection of bits and bobs is for.<PAGE>Arcane Quartz<DIV>A uniquely interesting material, arcane quartz is not particularly useful on it's own but it does integrate cleanly with arcane mechanisms.<BR>These properties will be useful for any future devices I might conceive.<PAGE>Thaumium Plated Stone<DIV>When cobblestone just isn't enough, why not add some thaumium plating?<BR>This results in a significantly more resistant material that is relatively cheap to manufacture.
 
 # Foci
+focus.common.teleport_to_caster=Teleport to Caster
+focus.thaumictinkerer.collector.name=Collector
+focus.thaumictinkerer.collector.text=Teleports all nearby dropped items to the impact point. If the respective setting is enabled, the dropped items will teleport to the caster instead.
 focus.thaumictinkerer.efreets_flame.name=Efreet's Flame
-focus.thaumictinkerer.efreets_flame.text=Hurls unique flame that smelts blocks and dropped items in the world like a furnace.
+focus.thaumictinkerer.efreets_flame.text=Hurls a unique flame that smelts blocks and dropped items in the world like a furnace.
 focus.thaumictinkerer.lovestruck.name=Lovestruck
 focus.thaumictinkerer.lovestruck.text=The essence from this effect will put animals on love mode temporarily, other targets have varying effects.
 

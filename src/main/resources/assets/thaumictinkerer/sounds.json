@@ -20,5 +20,10 @@
     "sounds": [
       "thaumictinkerer:block/thaumic_restorer/repair_loop"
     ]
+  },
+  "foci.collector.shoot": {
+    "sounds": [
+      "thaumictinkerer:foci/collector/shoot"
+    ]
   }
 }
