@@ -1,4 +1,3 @@
-
 package mod.emt.thaumictinkerer.casters.foci;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
