@@ -30,7 +30,7 @@ public class TileAdvancedRechargerTESR extends TileEntitySpecialRenderer<TileAdv
 
             GlStateManager.pushMatrix();
             GlStateManager.disableLighting();
-            GlStateManager.translate(0.5, 1.0, 0.5);
+            GlStateManager.translate(0.5, 1.25, 0.5);
             GlStateManager.rotate(rotation, 0, 1.0f, 0);
             GlStateManager.pushAttrib();
             RenderHelper.enableStandardItemLighting();
