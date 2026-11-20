@@ -129,6 +129,8 @@ focus.thaumictinkerer.efreets_flame.name=Efreet's Flame
 focus.thaumictinkerer.efreets_flame.text=Hurls a unique flame that smelts blocks and dropped items in the world like a furnace.
 focus.thaumictinkerer.lovestruck.name=Lovestruck
 focus.thaumictinkerer.lovestruck.text=The essence from this effect will put animals on love mode temporarily, other targets have varying effects.
+focus.thaumictinkerer.worldshaper.name=Worldshaper
+focus.thaumictinkerer.worldshaper.text=Places blocks on the impact point. Sneak and right-click a block to select it for placing.
 
 # -- DEVICES: Anima Attractor
 thaumictinkerer.research.attractor_player.title=Anima Attractor
