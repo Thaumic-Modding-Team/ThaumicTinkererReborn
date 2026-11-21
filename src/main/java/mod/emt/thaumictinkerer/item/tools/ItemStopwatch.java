@@ -93,7 +93,6 @@ public class ItemStopwatch extends AbstractItemAddition implements IProxy {
             NBTTagCompound foodTag = new NBTTagCompound();
             player.getFoodStats().writeNBT(foodTag);
             stopwatch.setTagInfo("foodStats", foodTag);
-            //TODO: SimpleDifficulty and TAN compat?
         }
     }
 

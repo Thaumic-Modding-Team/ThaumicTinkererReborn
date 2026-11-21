@@ -37,8 +37,6 @@ public class ItemGasRemover extends AbstractItemAddition {
                     if(state.getBlock() instanceof BlockLuminousGas) {
                         if(!worldIn.isRemote) {
                             worldIn.setBlockToAir(pos);
-                        } else {
-                            //TODO: Do particle effect
                         }
                     }
                 }

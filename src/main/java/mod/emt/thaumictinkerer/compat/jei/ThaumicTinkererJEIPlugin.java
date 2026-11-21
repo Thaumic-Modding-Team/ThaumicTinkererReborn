@@ -1,6 +1,5 @@
 package mod.emt.thaumictinkerer.compat.jei;
 
-import mezz.jei.api.IJeiRuntime;
 import mezz.jei.api.IModPlugin;
 import mezz.jei.api.IModRegistry;
 import mezz.jei.api.JEIPlugin;
@@ -28,11 +27,6 @@ public class ThaumicTinkererJEIPlugin implements IModPlugin {
     @Override
     public void register(@NotNull IModRegistry registry) {
         this.initNecromancyTablet(registry);
-    }
-
-    @Override
-    public void onRuntimeAvailable(@NotNull IJeiRuntime jeiRuntime) {
-        //TODO: Hide unless research unlocked?
     }
 
     @SuppressWarnings("ConstantConditions")
