@@ -1,0 +1,13 @@
+{
+	"package": "mod.emt.thaumictinkerer.core.mixins" ,
+	"required": true ,
+	"refmap": "mixins.thaumictinkerer.refmap.json" ,
+	"target": "@env(DEFAULT)" ,
+	"minVersion": "0.8.5" ,
+	"compatibilityLevel": "JAVA_8" ,
+	"mixins": [
+		"FocusEffectExchangeMixin"
+	] ,
+	"server": [] ,
+	"client": []
+}
