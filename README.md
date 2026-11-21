@@ -35,6 +35,12 @@ Unlike the original, KAMI's content has been split off into its own addon separa
 - **Infusion Enchantment: Projecting:** Increases reach distance by +0.5 per level.
 - **Infusion Enchantment: Wrath:** Increases the base damage of a weapon by +0.5 plus an additional +0.5 damage per level. This damage stacks with the Sharpness enchant.
 
+## Foci
+- **Spell Effect: Collector:** Teleports all nearby items to the point of impact, can also be used to teleport items to the caster.
+- **Spell Effect: Efreet's Flame:** Smelts blocks and dropped items in-world.
+- **Spell Effect: Lovestruck:** Causes animals to go into love mode temporarily.
+- **Spell Effect: Worldshaper:** Used to place blocks in the world
+
 ## Misc
 
 - **Aquatic Alchemy:** Extra alchemy recipes to create Prismarine Shards, Sponges, and Sea Lanterns.
