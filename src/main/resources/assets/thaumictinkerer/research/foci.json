@@ -5,8 +5,9 @@
       "name": "thaumictinkerer.research.focus_collector.title",
       "icons": ["focus:focus.thaumictinkerer.collector"],
       "category": "THAUMIC_TINKERER",
-      "parents": ["TT_ATTRACTOR_ITEM", "~BASEAUROMANCY"],
-      "location": [-2, -6],
+      "parents": ["THAUMIC_TINKERER_BASE","~TT_ATTRACTOR_ITEM", "~BASEAUROMANCY"],
+      "meta": ["HIDDEN"],
+      "location": [-3, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.focus_collector.stage.1",
@@ -24,7 +25,8 @@
       "icons": ["focus:focus.thaumictinkerer.efreets_flame"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_IGNIUM_STRIKER", "~INFERNALFURNACE", "~FOCUSELEMENTAL", "~FOCUSADVANCED"],
-      "location": [3, 4],
+      "meta": ["HIDDEN"],
+      "location": [4, 3],
       "stages": [
         {
           "text": "thaumictinkerer.research.focus_efreets_flame.stage.1",
@@ -41,7 +43,7 @@
       "icons": ["focus:focus.thaumictinkerer.lovestruck"],
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~FOCUSHEAL"],
-      "location": [-3, -2],
+      "location": [-3, 2],
       "stages": [
         {
           "text": "thaumictinkerer.research.focus_lovestruck.stage.1",
@@ -58,7 +60,8 @@
       "icons": ["focus:focus.thaumictinkerer.worldshaper"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_CONSUMING_SIGIL", "~FOCUSEXCHANGE"],
-      "location": [4, 3],
+      "meta": ["HIDDEN"],
+      "location": [5, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.focus_worldshaper.stage.1",

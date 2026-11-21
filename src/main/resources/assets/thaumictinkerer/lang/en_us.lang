@@ -200,6 +200,7 @@ thaumictinkerer.research.black_hole_ring.title=Black Hole Ring
 thaumictinkerer.research.black_hole_ring.title.subtitle=Approaching the Schwarzschild radius
 thaumictinkerer.research.black_hole_ring.stage.1=While the sigil of consuming may be useful for destroying items, sometimes I want to store the items rather than voiding them entirely.<BR>My experiments into mirrors may provide the solution of how to retrieve materials from an inaccessible location.
 thaumictinkerer.research.black_hole_ring.stage.2=I have successfully created a ring that is capable of storing and retrieving near infinite amounts of up to five items.<BR>When enabled, the ring will automatically collect and store any item that I pick up that match the ring slot filters.<BR>The enabled/disabled status of the ring can be toggled by sneak right-clicking air.<BR>To bind an item to a slot for collection, select a currently empty slot, then right-click the block in the world.<BR>To change the currently selected slot, right-click air while holding the ring.<BR>To remove the filter from a slot, set the active slot to the desired filter, then place the ring into a crafting table.<BR>To extract the items stored within the ring, select desired slot, then right-click an inventory or chest while sneaking.<BR>Additionally, while the ring is active, placing blocks into the world will attempt to provision the player with matching blocks stored within the ring.
+thaumictinkerer.research.black_hole_ring.addenda.1=It appears that this ring has a synergy with the Exchange focus effect.<BR>Whenever a block would have been pulled from my inventory, it instead is taken from the ring if a matching block is found.
 
 # -- EQUIPMENT: Ender Mirror
 thaumictinkerer.research.ender_mirror.title=Ender Mirror
@@ -247,27 +248,27 @@ thaumictinkerer.research.xp_talisman.stage.2=I have successfully managed to crea
 # -- FOCI: Focus Effect: Collector
 thaumictinkerer.research.focus_collector.title=Focus Effect: Collector
 thaumictinkerer.research.focus_collector.title.subtitle=How many light-years does it take to grab this?
-thaumictinkerer.research.focus_collector.stage.1=The Kinetic Attractor does a fine job at gathering items, but I wonder if there is a way to make this somewhat portable? I'll be able to much more easily gather items this way.
-thaumictinkerer.research.focus_collector.stage.2=Well I definitely did not expect it to turn out like this...<BR>This effect that I call Collector is able to attract dropped items to the point of impact, except the speed is immense, it ends up being like teleportation! I can also set it to have the items go towards me instead which makes this very useful for farms.<BR>Unfortunately, I am unable to get this to work on entities, even after numerous attempts.
+thaumictinkerer.research.focus_collector.stage.1=The Kinetic Attractor does a fine job at gathering items, but I wonder if there is a way to make the effect portable?
+thaumictinkerer.research.focus_collector.stage.2=Well I definitely did not expect it to turn out like this...<BR>This effect that I call Collector is able to attract dropped items to the point of impact, except the speed is immense, it ends up being practically teleportation!<BR>I can also configure the spell to pull the items go towards me instead of the impact point, making it very useful for collecting items from a distance..<BR>Unfortunately, this spell appears to have no effect on non-items.
 
 # -- FOCI: Focus Effect: Efreet's Flame
 thaumictinkerer.research.focus_efreets_flame.title=Focus Effect: Efreet's Flame
 thaumictinkerer.research.focus_efreets_flame.title.subtitle=All burned up
 thaumictinkerer.research.focus_efreets_flame.stage.1=The Ignium Striker has recently gave me some inspiration. If I'm able to use vis to start fires, perhaps I can also use it as a portable furnace?
-thaumictinkerer.research.focus_efreets_flame.stage.2=This is exactly what I needed! The Efreet's Flame effect can be used to convert blocks and dropped items into their smelted counterparts, I can even increase its power to smelt more dropped items at once (upwards to 16).
+thaumictinkerer.research.focus_efreets_flame.stage.2=This is exactly what I needed! The Efreet's Flame effect can convert blocks and dropped items into their smelted counterparts.<BR>I can even increase its power to smelt more dropped items at once (up to 16 total).
 
 # -- FOCI: Focus Effect: Lovestruck
 thaumictinkerer.research.focus_lovestruck.title=Focus Effect: Lovestruck
 thaumictinkerer.research.focus_lovestruck.title.subtitle=Love is in the air
-thaumictinkerer.research.focus_lovestruck.stage.1=Having to constantly feed animals to have them breed is always a chore. I have so far been using what I learned from the Heal focus to study a potential effect that will completely negate the requirement of different food items.
-thaumictinkerer.research.focus_lovestruck.stage.2=This new effect that I call Lovestruck has some sort of special aroma that causes animals to breed without requiring a specific food item.<BR>Oddly it also seems to affect other entities, but the most it can do is briefly charm them without any other outcome.
+thaumictinkerer.research.focus_lovestruck.stage.1=Having to constantly feed animals to have them breed is always a chore.<BR>I know there are ways to automate this, but perhaps I can apply what I know of spells to come up with a solution.
+thaumictinkerer.research.focus_lovestruck.stage.2=This new effect that I call Lovestruck has some sort of special aroma that causes animals to enter a breeding frenzy regardless of hunger.<BR>Oddly it also seems to affect other entities, but the most it can do is briefly charm them without any other outcome.
 
 # -- FOCI: Focus Effect: Worldshaper
 thaumictinkerer.research.focus_worldshaper.title=Focus Effect: Worldshaper
 thaumictinkerer.research.focus_worldshaper.title.subtitle=Cosmic Constructor
-thaumictinkerer.research.focus_worldshaper.stage.1=Exchange allows me to swap blocks but is limited to only that. Perhaps there's a way to modify it a bit to aid with building?
-thaumictinkerer.research.focus_worldshaper.stage.2=The Worldshaper focus is similar to Exchange with a major difference, I can again select what block I want to use by sneaking and right-clicking that block. Instead of swapping blocks, I can place blocks right at the impact point, this allows for placing blocks in much longer distances than normal.
-thaumictinkerer.research.focus_worldshaper.addenda.1=Apparently this effect also interacts with the Black Hole Ring, Worldshaper will prioritize placing blocks selected within it over my own inventory.
+thaumictinkerer.research.focus_worldshaper.stage.1=The Exchange spell may allow me to swap blocks, but it is limited to only converting blocks that are not air.<BR>Perhaps there is a way to modify it the spell to aid with construction?
+thaumictinkerer.research.focus_worldshaper.stage.2=The Worldshaper focus is similar to Exchange with a major difference, I can again select what block I want to use by sneaking and right-clicking that block.<BR>Instead of swapping blocks, the spell actually pulls items from my inventory and places them in the world!<BR>This includes placing blocks at the spell impact point, allowing me to place blocks at distances far beyond what I could reach naturally.
+thaumictinkerer.research.focus_worldshaper.addenda.1=Apparently this effect also interacts with the Black Hole Ring.<BR>When a block stored within the ring is placed by Worldshaper, the spell will instead pull the block from the ring rather than from my inventory.
 
 # -- MISC: Advanced Recharge Pedestal
 thaumictinkerer.research.advanced_recharger.title=Advanced Recharge Pedestal

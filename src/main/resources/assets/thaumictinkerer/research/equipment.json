@@ -43,6 +43,12 @@
             "thaumictinkerer:black_hole_ring"
           ]
         }
+      ],
+      "addenda": [
+        {
+          "text": "thaumictinkerer.research.black_hole_ring.addenda.1",
+          "required_research": ["FOCUSEXCHANGE"]
+        }
       ]
     },
     {
