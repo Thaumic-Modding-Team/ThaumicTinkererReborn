@@ -25,7 +25,7 @@
       "icons": ["focus:focus.thaumictinkerer.efreets_flame"],
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_IGNIUM_STRIKER", "~INFERNALFURNACE", "~FOCUSELEMENTAL", "~FOCUSADVANCED"],
-      "meta": ["HIDDEN"],
+      "meta": ["HIDDEN", "REVERSE"],
       "location": [4, 3],
       "stages": [
         {

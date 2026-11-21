@@ -1,4 +1,10 @@
 # Thaumic Tinkerer: Reborn Changelog
+## 1.1.1
+### Fixed
+- Fixed Efreet's Flame research arrow pointing the wrong direction (yes it bothered me)
+
+---
+
 ## 1.1.0
 ### Added
 - Added Advanced Recharge Pedestal, a multiblock recharge pedestal that operates twice as fast and drains from a 3x3 chunk area
