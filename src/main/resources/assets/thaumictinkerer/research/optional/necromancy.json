@@ -7,7 +7,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["THAUMIC_TINKERER_BASE", "~INFUSION", "~CrimsonRites", "~JARBRAIN", "~CHARMUNDYING"],
       "meta": ["HIDDEN"],
-      "location": [-3, 0],
+      "location": [-4, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.necromancy.stage.1",
@@ -37,7 +37,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_ARCANE_SOUL", "~UNLOCKELDRITCH"],
       "meta": ["ROUND", "HIDDEN", "REVERSE"],
-      "location": [-7, -2],
+      "location": [-8, -2],
       "stages": [
         {
           "text": "thaumictinkerer.research.alien_soul.stage.1",
@@ -58,7 +58,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_HOSTILE_SOUL", "~FOCUSELEMENTAL"],
       "meta": ["ROUND", "HIDDEN", "REVERSE"],
-      "location": [-6, -1],
+      "location": [-7, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.arcane_soul.stage.1",
@@ -79,7 +79,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_ARCANE_SOUL"],
       "meta": ["ROUND", "HIDDEN"],
-      "location": [-7, 0],
+      "location": [-8, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.demonic_soul.stage.1",
@@ -100,7 +100,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_TAINTED_SOUL", "~FLUXRIFT", "~PRIMPEARL"],
       "meta": ["ROUND", "HIDDEN"],
-      "location": [-9, 0],
+      "location": [-10, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.eldritch_soul.stage.1",
@@ -122,7 +122,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_NECROMANCY"],
       "meta": ["ROUND", "HIDDEN", "REVERSE"],
-      "location": [-5, 0],
+      "location": [-6, 0],
       "stages": [
         {
           "text": "thaumictinkerer.research.hostile_soul.stage.1",
@@ -143,7 +143,7 @@
       "category": "THAUMIC_TINKERER",
       "parents": ["TT_ALIEN_SOUL", "~TT_DEMONIC_SOUL", "~WARP"],
       "meta": ["ROUND", "HIDDEN"],
-      "location": [-8, -1],
+      "location": [-9, -1],
       "stages": [
         {
           "text": "thaumictinkerer.research.tainted_soul.stage.1",

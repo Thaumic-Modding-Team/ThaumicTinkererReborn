@@ -47,10 +47,9 @@ public class FocusEffectCollector extends FocusEffect {
         return 1 + (getSettingValue("power") - 1) + (getSettingValue("teleport_to_caster") == 0 ? 0 : 8);
     }
 
-    // TODO: Add research and put requirement here
     @Override
     public String getResearch() {
-        return "FOCUSHEAL";
+        return "TT_FOCUS_COLLECTOR";
     }
 
     @Override

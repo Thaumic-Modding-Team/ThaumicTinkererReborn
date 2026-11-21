@@ -40,7 +40,6 @@ public class FocusEffectWorldshaper extends FocusEffect implements IFocusBlockPi
         return "focus." + ThaumicTinkerer.MOD_ID + ".worldshaper";
     }
 
-    // TODO: Add research and put requirement here
     @Override
     public int getComplexity() {
         return 2;
@@ -48,7 +47,7 @@ public class FocusEffectWorldshaper extends FocusEffect implements IFocusBlockPi
 
     @Override
     public String getResearch() {
-        return "FOCUSHEAL";
+        return "TT_FOCUS_WORLDSHAPER";
     }
 
     @Override

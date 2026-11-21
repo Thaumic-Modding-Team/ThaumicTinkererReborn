@@ -50,10 +50,9 @@ public class FocusEffectEfreetsFlame extends FocusEffect {
         return 10 + this.getSettingValue("power") * 4;
     }
 
-    // TODO: Add research and put requirement here
     @Override
     public String getResearch() {
-        return "FOCUSHEAL";
+        return "TT_FOCUS_EFREETS_FLAME";
     }
 
     @Override

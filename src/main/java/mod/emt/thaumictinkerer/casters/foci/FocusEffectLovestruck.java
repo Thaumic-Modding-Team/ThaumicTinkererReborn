@@ -36,10 +36,9 @@ public class FocusEffectLovestruck extends FocusEffect {
         return 15;
     }
 
-    // TODO: Add research and put requirement here
     @Override
     public String getResearch() {
-        return "FOCUSHEAL";
+        return "TT_FOCUS_LOVESTRUCK";
     }
 
     @Override

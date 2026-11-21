@@ -244,6 +244,31 @@ thaumictinkerer.research.xp_talisman.title.subtitle=Death cannot undo me
 thaumictinkerer.research.xp_talisman.stage.1=With my recent successes in storing experience within brain jars, I find myself wondering if it would be possible to create a talisman capable of doing the same.
 thaumictinkerer.research.xp_talisman.stage.2=I have successfully managed to create a bauble capable of storing massive amounts of experience.<BR>When equipped, any experience I collect will be stored within the talisman.<BR>When enabled, any experience of my own will be drained and stored within the talisman.<BR>Should I wish to retrieve any stored experience, I simply need to right-click the talisman to extract one level at a time.
 
+# -- FOCI: Focus Effect: Collector
+thaumictinkerer.research.focus_collector.title=Focus Effect: Collector
+thaumictinkerer.research.focus_collector.title.subtitle=How many light-years does it take to grab this?
+thaumictinkerer.research.focus_collector.stage.1=The Kinetic Attractor does a fine job at gathering items, but I wonder if there is a way to make this somewhat portable? I'll be able to much more easily gather items this way.
+thaumictinkerer.research.focus_collector.stage.2=Well I definitely did not expect it to turn out like this...<BR>This effect that I call Collector is able to attract dropped items to the point of impact, except the speed is immense, it ends up being like teleportation! I can also set it to have the items go towards me instead which makes this very useful for farms.<BR>Unfortunately, I am unable to get this to work on entities, even after numerous attempts.
+
+# -- FOCI: Focus Effect: Efreet's Flame
+thaumictinkerer.research.focus_efreets_flame.title=Focus Effect: Efreet's Flame
+thaumictinkerer.research.focus_efreets_flame.title.subtitle=All burned up
+thaumictinkerer.research.focus_efreets_flame.stage.1=The Ignium Striker has recently gave me some inspiration. If I'm able to use vis to start fires, perhaps I can also use it as a portable furnace?
+thaumictinkerer.research.focus_efreets_flame.stage.2=This is exactly what I needed! The Efreet's Flame effect can be used to convert blocks and dropped items into their smelted counterparts, I can even increase its power to smelt more dropped items at once (upwards to 16).
+
+# -- FOCI: Focus Effect: Lovestruck
+thaumictinkerer.research.focus_lovestruck.title=Focus Effect: Lovestruck
+thaumictinkerer.research.focus_lovestruck.title.subtitle=Love is in the air
+thaumictinkerer.research.focus_lovestruck.stage.1=Having to constantly feed animals to have them breed is always a chore. I have so far been using what I learned from the Heal focus to study a potential effect that will completely negate the requirement of different food items.
+thaumictinkerer.research.focus_lovestruck.stage.2=This new effect that I call Lovestruck has some sort of special aroma that causes animals to breed without requiring a specific food item.<BR>Oddly it also seems to affect other entities, but the most it can do is briefly charm them without any other outcome.
+
+# -- FOCI: Focus Effect: Worldshaper
+thaumictinkerer.research.focus_worldshaper.title=Focus Effect: Worldshaper
+thaumictinkerer.research.focus_worldshaper.title.subtitle=Cosmic Constructor
+thaumictinkerer.research.focus_worldshaper.stage.1=Exchange allows me to swap blocks but is limited to only that. Perhaps there's a way to modify it a bit to aid with building?
+thaumictinkerer.research.focus_worldshaper.stage.2=The Worldshaper focus is similar to Exchange with a major difference, I can again select what block I want to use by sneaking and right-clicking that block. Instead of swapping blocks, I can place blocks right at the impact point, this allows for placing blocks in much longer distances than normal.
+thaumictinkerer.research.focus_worldshaper.addenda.1=Apparently this effect also interacts with the Black Hole Ring, Worldshaper will prioritize placing blocks selected within it over my own inventory.
+
 # -- MISC: Advanced Recharge Pedestal
 thaumictinkerer.research.advanced_recharger.title=Advanced Recharge Pedestal
 thaumictinkerer.research.advanced_recharger.title.subtitle=Charging ahead
