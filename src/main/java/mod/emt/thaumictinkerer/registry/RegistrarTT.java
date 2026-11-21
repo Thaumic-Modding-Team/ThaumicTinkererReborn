@@ -10,6 +10,7 @@ import net.minecraft.enchantment.Enchantment;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.SoundEvent;
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
@@ -47,6 +48,13 @@ public class RegistrarTT {
         IForgeRegistry<Item> registry = event.getRegistry();
         getItemAdditions().forEach(item -> item.registerItem(registry));
         getAdditions().forEach(IAddition::registerOreDicts);
+    }
+
+    @SubscribeEvent
+    public static void registerSounds(RegistryEvent.Register<SoundEvent> event) {
+        for(ModSoundEventsTT soundEvent : ModSoundEventsTT.values()) {
+            event.getRegistry().register(soundEvent.getSoundEvent());
+        }
     }
 
     @SubscribeEvent

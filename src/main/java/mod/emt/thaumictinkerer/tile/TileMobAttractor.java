@@ -70,7 +70,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     public void update() {
         super.update();
         if(!this.world.isRemote) {
-            if (this.world.getTotalWorldTime() % 200L == 0 && this.checkDiscoCow()) {
+            if (this.world.getTotalWorldTime() % 400L == 0 && this.checkDiscoCow()) {
                 this.beginDiscoCow();
             }
 
@@ -153,8 +153,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     }
 
     public boolean checkDiscoCow() {
-        //TODO: Remove force true
-        if(this.world.rand.nextInt(HolidayHelper.isAprilFools() ? 10 : 100) == 0 || true) {
+        if(this.world.rand.nextInt(HolidayHelper.isAprilFools() ? 4 : 10) == 0) {
             IBlockState state = this.world.getBlockState(this.pos);
             if (this.getRedstonePower() > 0 && state.getValue(BlockAttractor.MODE) == BlockAttractor.AttractorMode.ATTRACT && state.getValue(BlockAttractor.FACING) == EnumFacing.UP) {
                 List<EntityCow> cows = this.world.getEntitiesWithinAABB(EntityCow.class, new AxisAlignedBB(this.pos.offset(EnumFacing.DOWN)));
