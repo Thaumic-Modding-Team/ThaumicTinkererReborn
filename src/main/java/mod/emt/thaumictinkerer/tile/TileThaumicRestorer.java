@@ -188,6 +188,7 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
         return 0;
     }
 
+    @SuppressWarnings("ConstantConditions")
     public void doRepairEffects() {
         if(!this.world.isRemote && this.count % 5 == 0) {
             this.world.addBlockEvent(this.pos, ModBlocksTT.THAUMIC_RESTORER, REPAIR_EFFECT, this.count % 20);
@@ -199,7 +200,6 @@ public class TileThaumicRestorer extends TileEntityTT implements ITickable, IEss
     public boolean receiveClientEvent(int id, int type) {
         if(id == REPAIR_EFFECT) {
             if(this.world.isRemote) {
-                //TODO: Bugged. Make sound play instantly instead?
                 //Currently only plays after 5 ticks then stops playing when activated again
                 if (!this.getStackToRepair().isEmpty()) {
                     if(!playedRepairingSound) {
