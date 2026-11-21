@@ -80,22 +80,22 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     @Override
     public void update() {
         super.update();
-//        if(!this.world.isRemote) {
-//            if(this.world.getTotalWorldTime() % 200L == 0 /*&& this.world.rand.nextInt(100) == 0*/) {
-//                if (this.checkDiscoCow()) {
-//                    this.beginDiscoCow();
-//                }
-//            }
-//
-//            if(this.discoCowDuration > 0 && this.discoCow != null) {
-//                this.discoCowDuration--;
-//                this.rotateCow(this.discoCow);
-//                this.world.addBlockEvent(this.pos, this.world.getBlockState(this.pos).getBlock(), EFFECT_DISCO_COW, -1);
-//            } else {
-//                this.discoCow = null;
-//                this.discoCowDuration = 0;
-//            }
-//        }
+        if(!this.world.isRemote) {
+            if(this.world.getTotalWorldTime() % 200L == 0 /*&& this.world.rand.nextInt(100) == 0*/) {
+                if (this.checkDiscoCow()) {
+                    this.beginDiscoCow();
+                }
+            }
+
+            if(this.discoCowDuration > 0 && this.discoCow != null) {
+                this.discoCowDuration--;
+                this.rotateCow(this.discoCow);
+                this.world.addBlockEvent(this.pos, this.world.getBlockState(this.pos).getBlock(), EFFECT_DISCO_COW, -1);
+            } else {
+                this.discoCow = null;
+                this.discoCowDuration = 0;
+            }
+        }
     }
 
     @Override
@@ -175,11 +175,13 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     }
 
     public void rotateCow(EntityCow cow) {
-        //TODO: Figure out how to rotate the cow.
-
-        //Rotating cow
-        float rotation = ((DISCO_COW_DURATION - this.discoCowDuration) * 18) % 360;
-        cow.setPositionAndRotation(cow.posX, cow.posY, cow.posZ, rotation, cow.rotationPitch);
+        float rotation = ((DISCO_COW_DURATION - this.discoCowDuration) * 18.0F) % 360.0F;
+        cow.rotationYaw = rotation;
+        cow.prevRotationYaw = rotation;
+        cow.renderYawOffset = rotation;
+        cow.prevRenderYawOffset = rotation;
+        cow.rotationYawHead = rotation;
+        cow.prevRotationYawHead = rotation;
     }
 
     @SideOnly(Side.CLIENT)
@@ -259,6 +261,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
                 }
                 if(this.discoCow != null) {
                     this.discoCowDuration--;
+                    this.rotateCow(this.discoCow);
                     this.doClientDiscoCow(this.discoCow);
                 } else {
                     this.discoCowDuration = -1;
