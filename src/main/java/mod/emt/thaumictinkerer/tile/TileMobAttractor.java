@@ -164,8 +164,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     }
 
     public boolean checkDiscoCow() {
-        boolean isAprilFools = HolidayHelper.isAprilFools();
-        if((isAprilFools && this.world.rand.nextInt(10) == 0) || this.world.rand.nextInt(100) == 0) {
+        if(this.world.rand.nextInt(HolidayHelper.isAprilFools() ? 10 : 100) == 0) {
             IBlockState state = this.world.getBlockState(this.pos);
             if (this.getRedstonePower() > 0 && state.getValue(BlockAttractor.MODE) == BlockAttractor.AttractorMode.ATTRACT && state.getValue(BlockAttractor.FACING) == EnumFacing.UP) {
                 List<EntityCow> cows = this.world.getEntitiesWithinAABB(EntityCow.class, new AxisAlignedBB(this.pos.offset(EnumFacing.DOWN)));
