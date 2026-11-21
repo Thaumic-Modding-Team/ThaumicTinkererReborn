@@ -3,6 +3,7 @@ package mod.emt.thaumictinkerer.registry;
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
 import mod.emt.thaumictinkerer.api.block.AbstractSlabAddition;
 import mod.emt.thaumictinkerer.block.*;
+import mod.emt.thaumictinkerer.client.renderer.tile.TileMobAttractorTESR;
 import mod.emt.thaumictinkerer.tile.TileItemAttractor;
 import mod.emt.thaumictinkerer.tile.TileMobAttractor;
 import mod.emt.thaumictinkerer.tile.TilePlayerAttractor;
@@ -10,7 +11,11 @@ import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
+import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 @GameRegistry.ObjectHolder(ThaumicTinkerer.MOD_ID)
 public class ModBlocksTT {
@@ -61,7 +66,14 @@ public class ModBlocksTT {
         RegistrarTT.addAdditionToRegister(new BlockTransvectorDislocator());
         RegistrarTT.addAdditionToRegister(new BlockTransvectorInterface());
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_item", TileItemAttractor.class));
-        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class));
+        RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_mob", TileMobAttractor.class) {
+            @SideOnly(Side.CLIENT)
+            @Override
+            public void registerModel(ModelRegistryEvent event) {
+                super.registerModel(event);
+                ClientRegistry.bindTileEntitySpecialRenderer(TileMobAttractor.class, new TileMobAttractorTESR());
+            }
+        });
         RegistrarTT.addAdditionToRegister(new BlockAttractor("attractor_player", TilePlayerAttractor.class));
         RegistrarTT.addAdditionToRegister(new BlockEssentiaFunnel());
         RegistrarTT.addAdditionToRegister(new BlockThaumicRestorer());
