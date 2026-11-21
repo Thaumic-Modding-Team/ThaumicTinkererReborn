@@ -53,6 +53,7 @@
 | Cowl of the Abyssal Depths     |      thaumictinkerer:kami_helm       |   kami:awakened_ichorweave_boots    |                                                                           |
 | Cursed Spirit's Blade          |     thaumictinkerer:blood_sword      |                 N/A                 | Removed. Tablet of Necromancy has been overhauled.                        |
 | Dissimulation Block            |    thaumictinkerer:dissimulation     | thaumictinkerer:dissimulation_block |                                                                           |
+| Dynamism Tablet                |   thaumictinkerer:animation_tablet   |   thaumictinkerer:dynamism_tablet   |                                                                           |
 | Enchanting Pillar              |  thaumictinkerer:enchantment_pillar  |    thaumicwonders:arcane_pillar     | Moved to Thaumic Wonders Unofficial.                                      |
 | Ender Shard                    |     thaumictinkerer:kamiresource     |                 N/A                 | Removed to reduce bloat.                                                  |
 | Essentia Funnel                |        thaumictinkerer:funnel        |   thaumictinkerer:essentia_funnel   |                                                                           |
@@ -88,39 +89,37 @@
 | Thaumic Restorer               |       thaumictinkerer:repairer       |  thaumictinkerer:thaumic_restorer   |                                                                           |
 | Tome of Knowledge Sharing      |      thaumictinkerer:share_book      |     thaumicwonders:sharing_tome     | Removed. Use Thaumic Wonders Unofficial for similar feature.              |
 | Transvector Binder             |      thaumictinkerer:connector       | thaumictinkerer:transvector_binder  |                                                                           | |
+| Worldshaper's Looking Glass    |   thaumictinkerer:placement_mirror   |                 N/A                 | Removed. Converted into a spell effect.                                   |
 | XP Talisman                    |   thaumictinkerer:experience_charm   |     thaumictinkerer:xp_talisman     |                                                                           |
 
 ### Not Yet Implemented
-| Item                             |             Original Id             | New Id | Description                          |
-|:---------------------------------|:-----------------------------------:|:------:|:-------------------------------------|
-| Bedrock Portal                   |   thaumictinkerer:bedrock_portal    |  N/A   | Not yet implemented.                 |
-| Celestial Gateway                |      thaumictinkerer:warp_gate      |  N/A   | Not yet implemented. Pending rework. |
-| Celestial Pearl                  |      thaumictinkerer:sky_pearl      |  N/A   | Not yet implemented. Pending rework. |
-| Dynamism Tablet                  |  thaumictinkerer:animation_tablet   |  N/A   | Not yet implemented. Pending rework. |
-| Enchant: Ascent Boost            |                 N/A                 |  N/A   |                                      |
-| Enchant: Desintegrate            |                 N/A                 |  N/A   |                                      |
-| Enchant: Dispersed Strikes       |                 N/A                 |  N/A   |                                      |
-| Enchant: Final Strike            |                 N/A                 |  N/A   |                                      |
-| Enchant: Flaming Touch           |                 N/A                 |  N/A   |                                      |
-| Enchant: Focused Strike          |                 N/A                 |  N/A   |                                      |
-| Enchant: Pounce                  |                 N/A                 |  N/A   |                                      |
-| Enchant: Quick Draw              |                 N/A                 |  N/A   |                                      |
-| Enchant: Shatter                 |                 N/A                 |  N/A   |                                      |
-| Enchant: Shockwave               |                 N/A                 |  N/A   |                                      |
-| Enchant: Slow Fall               |                 N/A                 |  N/A   |                                      |
-| Enchant: Tunnel                  |                 N/A                 |  N/A   |                                      |
-| Enchant: Valiance                |                 N/A                 |  N/A   |                                      |
-| Enchant: Vampirism               |                 N/A                 |  N/A   |                                      |
-| Focus Effect: Celestial Teleport |                 N/A                 |  N/A   | Not yet implemented. Pending rework. |
-| Focus Effect: Dislocation        |                 N/A                 |  N/A   | Not yet implemented. Pending rework. |
-| Focus Effect: Efreet's Flame     |                 N/A                 |  N/A   | Not yet implemented. Pending rework. |
-| Focus Effect: Telekinesis        |                 N/A                 |  N/A   | Not yet implemented. Pending rework. |
-| Imbued Grain                     |  thaumictinkerer:infused_aer_fruit  |  N/A   | Not yet implemented. Pending rework. |
-| Imbued Grain                     | thaumictinkerer:infused_aqua_fruit  |  N/A   | Not yet implemented. Pending rework. |
-| Imbued Grain                     | thaumictinkerer:infused_ignis_fruit |  N/A   | Not yet implemented. Pending rework. |
-| Imbued Grain                     | thaumictinkerer:infused_terra_fruit |  N/A   | Not yet implemented. Pending rework. |
-| Infused Seeds                    |    thaumictinkerer:infused_seeds    |  N/A   | Not yet implemented. Pending rework. |
-| Worldshaper's Looking Glass      |  thaumictinkerer:placement_mirror   |  N/A   | Not yet implemented. Pending rework. |
+| Item                             |             Original Id             | New Id | Description                             |
+|:---------------------------------|:-----------------------------------:|:------:|:----------------------------------------|
+| Bedrock Portal                   |   thaumictinkerer:bedrock_portal    |  N/A   | Not yet implemented.                    |
+| Celestial Gateway                |      thaumictinkerer:warp_gate      |  N/A   | Not yet implemented. Pending rework.    |
+| Celestial Pearl                  |      thaumictinkerer:sky_pearl      |  N/A   | Not yet implemented. Pending rework.    |
+| Enchant: Ascent Boost            |                 N/A                 |  N/A   |                                         |
+| Enchant: Desintegrate            |                 N/A                 |  N/A   |                                         |
+| Enchant: Dispersed Strikes       |                 N/A                 |  N/A   |                                         |
+| Enchant: Final Strike            |                 N/A                 |  N/A   |                                         |
+| Enchant: Flaming Touch           |                 N/A                 |  N/A   |                                         |
+| Enchant: Focused Strike          |                 N/A                 |  N/A   |                                         |
+| Enchant: Pounce                  |                 N/A                 |  N/A   |                                         |
+| Enchant: Quick Draw              |                 N/A                 |  N/A   |                                         |
+| Enchant: Shatter                 |                 N/A                 |  N/A   |                                         |
+| Enchant: Shockwave               |                 N/A                 |  N/A   |                                         |
+| Enchant: Slow Fall               |                 N/A                 |  N/A   |                                         |
+| Enchant: Tunnel                  |                 N/A                 |  N/A   |                                         |
+| Enchant: Valiance                |                 N/A                 |  N/A   |                                         |
+| Enchant: Vampirism               |                 N/A                 |  N/A   |                                         |
+| Focus Effect: Celestial Teleport |                 N/A                 |  N/A   | Not yet implemented. Pending rework.    |
+| Focus Effect: Dislocation        |                 N/A                 |  N/A   | Not yet implemented. Pending rework.    |
+| Focus Effect: Telekinesis        |                 N/A                 |  N/A   | Not yet implemented. Pending rework.    |
+| Imbued Grain                     |  thaumictinkerer:infused_aer_fruit  |  N/A   | Not yet implemented. Pending rework.    |
+| Imbued Grain                     | thaumictinkerer:infused_aqua_fruit  |  N/A   | Not yet implemented. Pending rework.    |
+| Imbued Grain                     | thaumictinkerer:infused_ignis_fruit |  N/A   | Not yet implemented. Pending rework.    |
+| Imbued Grain                     | thaumictinkerer:infused_terra_fruit |  N/A   | Not yet implemented. Pending rework.    |
+| Infused Seeds                    |    thaumictinkerer:infused_seeds    |  N/A   | Not yet implemented. Pending rework.    |
 
 ## ReForbidden Magic
 ### Completed/Cut
