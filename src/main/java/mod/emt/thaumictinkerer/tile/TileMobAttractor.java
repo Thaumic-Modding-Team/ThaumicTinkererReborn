@@ -22,8 +22,8 @@ import net.minecraft.nbt.NBTTagCompound;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.AxisAlignedBB;
+import net.minecraft.util.math.MathHelper;
 import net.minecraftforge.common.capabilities.Capability;
-import net.minecraftforge.fml.client.FMLClientHandler;
 import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -32,7 +32,6 @@ import net.minecraftforge.items.ItemStackHandler;
 import org.jetbrains.annotations.NotNull;
 import org.jetbrains.annotations.Nullable;
 import org.lwjgl.opengl.GL11;
-import thaumcraft.codechicken.lib.vec.Vector3;
 
 import java.util.List;
 import java.util.Random;
@@ -90,10 +89,20 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
             if(this.discoCowDuration > 0 && this.discoCow != null) {
                 this.discoCowDuration--;
                 this.rotateCow(this.discoCow);
-                this.world.addBlockEvent(this.pos, this.world.getBlockState(this.pos).getBlock(), EFFECT_DISCO_COW, -1);
             } else {
                 this.discoCow = null;
                 this.discoCowDuration = 0;
+            }
+        } else {
+            if(this.discoCowDuration > 0) {
+                this.discoCowDuration--;
+
+                if(this.discoCow != null) {
+                    this.rotateCow(this.discoCow);
+                }
+            } else {
+                this.discoCow = null;
+                this.discoCowDuration = -1;
             }
         }
     }
@@ -185,25 +194,30 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     }
 
     @SideOnly(Side.CLIENT)
-    public void doClientDiscoCow(EntityCow cow) {
-        //TODO: This isn't rendering the beams and is causing the sky to flicker
+    public void doClientDiscoCow(EntityCow cow, float partialTicks) {
+        Minecraft mc = Minecraft.getMinecraft();
 
-        //Sparkle Effects
-        Vector3 cowCenter = Vector3.fromEntityCenter(cow);
-        float ticks = Minecraft.getMinecraft().getRenderPartialTicks();
-        GlStateManager.pushMatrix();
-        GlStateManager.translate(cowCenter.x, cowCenter.y, cowCenter.z);
+        // Sparkle Effects
+        double x = cow.lastTickPosX + (cow.posX - cow.lastTickPosX) * partialTicks;
+        double y = cow.lastTickPosY + (cow.posY - cow.lastTickPosY) * partialTicks;
+        double z = cow.lastTickPosZ + (cow.posZ - cow.lastTickPosZ) * partialTicks;
+
+        x -= mc.getRenderManager().viewerPosX;
+        y += cow.height * 0.5D + 0.35D;
+        y -= mc.getRenderManager().viewerPosY;
+        z -= mc.getRenderManager().viewerPosZ;
 
         Random random = new Random(187L);
-        int q = !FMLClientHandler.instance().getClient().gameSettings.fancyGraphics ? 10 : 20;
+        int q = mc.gameSettings.fancyGraphics ? 20 : 10;
         Tessellator tessellator = Tessellator.getInstance();
         BufferBuilder wr = tessellator.getBuffer();
-        RenderHelper.disableStandardItemLighting();
+        float ticks = DISCO_COW_DURATION - this.discoCowDuration + partialTicks;
         float f1 = ticks / 500.0F;
-        float f3 = 0.9F;
-        float f2 = 0.0F;
+        float f3 = 0.0F;
 
         GlStateManager.pushMatrix();
+        GlStateManager.translate((float) x, (float) y, (float) z);
+        RenderHelper.disableStandardItemLighting();
         GlStateManager.disableTexture2D();
         GlStateManager.shadeModel(GL11.GL_SMOOTH);
         GlStateManager.enableBlend();
@@ -211,31 +225,43 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
         GlStateManager.disableAlpha();
         GlStateManager.enableCull();
         GlStateManager.depthMask(false);
-        GlStateManager.pushMatrix();
 
-        for(int i = 0; i < q; ++i) {
+        float rainbowSpeed = ticks * 0.025F;
+
+        for (int i = 0; i < q; ++i) {
             GlStateManager.rotate(random.nextFloat() * 360.0F, 1.0F, 0.0F, 0.0F);
             GlStateManager.rotate(random.nextFloat() * 360.0F, 0.0F, 1.0F, 0.0F);
             GlStateManager.rotate(random.nextFloat() * 360.0F, 0.0F, 0.0F, 1.0F);
             GlStateManager.rotate(random.nextFloat() * 360.0F, 1.0F, 0.0F, 0.0F);
             GlStateManager.rotate(random.nextFloat() * 360.0F, 0.0F, 1.0F, 0.0F);
             GlStateManager.rotate(random.nextFloat() * 360.0F + f1 * 360.0F, 0.0F, 0.0F, 1.0F);
+
+            float hue = (rainbowSpeed + (float) i / q) % 1.0F;
+            int rgb = MathHelper.hsvToRGB(hue, 1.0F, 1.0F);
+            float red = ((rgb >> 16) & 255) / 255.0F;
+            float green = ((rgb >> 8) & 255) / 255.0F;
+            float blue = (rgb & 255) / 255.0F;
+
             wr.begin(6, DefaultVertexFormats.POSITION_COLOR);
-            float fa = random.nextFloat() * 20.0F + 5.0F + f2 * 10.0F;
-            float f4 = random.nextFloat() * 2.0F + 1.0F + f2 * 2.0F;
-            fa /= 30.0F / (Math.min(ticks, 10) / 10.0F);
-            f4 /= 30.0F / (Math.min(ticks, 10) / 10.0F);
-            wr.pos(0.0F, 0.0F, 0.0F).color(1.0F, 1.0F, 1.0F, 1.0F - f2).endVertex();
-            wr.pos(-0.866 * (double)f4, fa, -0.5F * f4).color(1.0F, 0.0F, 1.0F, 0.0F).endVertex();
-            wr.pos(0.866 * (double)f4, fa, -0.5F * f4).color(1.0F, 0.0F, 1.0F, 0.0F).endVertex();
-            wr.pos(0.0F, fa, f4).color(1.0F, 0.0F, 1.0F, 0.0F).endVertex();
-            wr.pos(-0.866 * (double)f4, fa, -0.5F * f4).color(1.0F, 0.0F, 1.0F, 0.0F).endVertex();
+
+            float fa = random.nextFloat() * 20.0F + 5.0F + f3 * 10.0F;
+            float f4 = random.nextFloat() * 2.0F + 1.0F + f3 * 2.0F;
+            float fade = Math.min(ticks, 10.0F) / 10.0F;
+            float beamScale = 0.25F;
+
+            fa *= fade * beamScale;
+            f4 *= fade * beamScale;
+
+            wr.pos(0.0, 0.0, 0.0).color(1.0F, 1.0F, 1.0F, 1.0F - f3).endVertex();
+            wr.pos(-0.866 * f4, fa, -0.5F * f4).color(red, green, blue, 0.0F).endVertex();
+            wr.pos(0.866 * f4, fa, -0.5F * f4).color(red, green, blue, 0.0F).endVertex();
+            wr.pos(0.0, fa, f4).color(red, green, blue, 0.0F).endVertex();
+            wr.pos(-0.866 * f4, fa, -0.5F * f4).color(red, green, blue, 0.0F).endVertex();
             tessellator.draw();
         }
 
-        GlStateManager.popMatrix();
         GlStateManager.depthMask(true);
-        GlStateManager.disableCull();
+        GlStateManager.enableCull();
         GlStateManager.blendFunc(GlStateManager.SourceFactor.SRC_ALPHA, GlStateManager.DestFactor.ONE_MINUS_SRC_ALPHA);
         GlStateManager.disableBlend();
         GlStateManager.shadeModel(GL11.GL_FLAT);
@@ -243,7 +269,6 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
         GlStateManager.enableTexture2D();
         GlStateManager.enableAlpha();
         RenderHelper.enableStandardItemLighting();
-        GlStateManager.popMatrix();
 
         GlStateManager.popMatrix();
     }
@@ -251,20 +276,11 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     @Override
     public boolean receiveClientEvent(int id, int type) {
         if(id == EFFECT_DISCO_COW) {
-            if(this.world.isRemote) {
-                if(type != -1) {
-                    Entity entity = this.world.getEntityByID(type);
-                    if (entity instanceof EntityCow) {
-                        this.discoCow = (EntityCow) entity;
-                        this.discoCowDuration = DISCO_COW_DURATION;
-                    }
-                }
-                if(this.discoCow != null) {
-                    this.discoCowDuration--;
-                    this.rotateCow(this.discoCow);
-                    this.doClientDiscoCow(this.discoCow);
-                } else {
-                    this.discoCowDuration = -1;
+            if(this.world.isRemote && type != -1) {
+                Entity entity = this.world.getEntityByID(type);
+                if(entity instanceof EntityCow) {
+                    this.discoCow = (EntityCow) entity;
+                    this.discoCowDuration = DISCO_COW_DURATION;
                 }
             }
             return true;
@@ -283,5 +299,14 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
             return CapabilityItemHandler.ITEM_HANDLER_CAPABILITY.cast(this.stackHandler);
         }
         return super.getCapability(capability, facing);
+    }
+
+    @SideOnly(Side.CLIENT)
+    public void renderDiscoCow(float partialTicks) {
+        if (this.discoCow == null || this.discoCowDuration <= 0) {
+            return;
+        }
+
+        this.doClientDiscoCow(this.discoCow, partialTicks);
     }
 }
