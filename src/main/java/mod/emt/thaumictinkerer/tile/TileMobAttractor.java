@@ -184,7 +184,7 @@ public class TileMobAttractor extends AbstractTileAttractor<EntityLivingBase> {
     }
 
     public void rotateCow(EntityCow cow) {
-        float rotation = ((DISCO_COW_DURATION - this.discoCowDuration) * 18.0F) % 360.0F;
+        float rotation = ((DISCO_COW_DURATION - this.discoCowDuration) * 25.0F) % 360.0F;
         cow.rotationYaw = rotation;
         cow.prevRotationYaw = rotation;
         cow.renderYawOffset = rotation;
