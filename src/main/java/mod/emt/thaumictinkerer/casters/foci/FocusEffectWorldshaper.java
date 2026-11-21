@@ -1,7 +1,6 @@
 package mod.emt.thaumictinkerer.casters.foci;
 
 import mod.emt.thaumictinkerer.ThaumicTinkerer;
-
 import mod.emt.thaumictinkerer.item.bauble.ItemBlackHoleRing;
 import net.minecraft.entity.Entity;
 import net.minecraft.entity.player.EntityPlayer;
@@ -10,19 +9,15 @@ import net.minecraft.util.SoundCategory;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
-
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
 import thaumcraft.api.aspects.Aspect;
 import thaumcraft.api.casters.FocusEffect;
+import thaumcraft.api.casters.ICaster;
 import thaumcraft.api.casters.IFocusBlockPicker;
 import thaumcraft.api.casters.Trajectory;
-import thaumcraft.api.casters.ICaster;
-
 import thaumcraft.client.fx.ParticleEngine;
 import thaumcraft.client.fx.particles.FXGeneric;
-
 import thaumcraft.common.lib.SoundsTC;
 import thaumcraft.common.lib.events.ServerEvents;
 
